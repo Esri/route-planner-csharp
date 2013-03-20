@@ -2,6 +2,8 @@
 
 Routing and scheduling sample application using arcgis.com directions (network analysis) services.
 
+![App](https://raw.github.com/ArcGIS/route-planner-csharp/master/RoutePlanner80.png)
+
 ## Features
 
 Route Planner is a complete sample application for scheduling multiple vehicles.  Describe your routes, import your orders, build routes, and send driving directions to your drivers.
