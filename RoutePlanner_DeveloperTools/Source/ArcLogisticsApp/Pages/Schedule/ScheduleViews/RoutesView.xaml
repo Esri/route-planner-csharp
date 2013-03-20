@@ -1,0 +1,162 @@
+<app_controls:DockableContent x:Class="ESRI.ArcLogistics.App.Pages.RoutesView"
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    xmlns:grid_helpers="clr-namespace:ESRI.ArcLogistics.App.GridHelpers"
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:special_insertion_row="clr-namespace:ESRI.ArcLogistics.App.SpecialInsertionRow"
+    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Luna"
+    Title="{StaticResource RoutesText}">
+    <Grid x:Name="LayoutRoot" Background="{StaticResource ContentBackgroundColor}">
+        <Grid.Resources>
+            <xcdg:DataGridCollectionViewSource x:Key="routesGridItemsCollection"
+                                               AutoCreateItemProperties="False"
+                                               DefaultCalculateDistinctValues="False"
+                                               CreatingNewItem="_DataGridCollectionViewSourceCreatingNewItem"
+                                               NewItemCreated="_DataGridCollectionViewSourceNewItemCreated"
+                                               CommittingNewItem="_DataGridCollectionViewSourceCommittingNewItem"
+                                               CancelingNewItem="_DataGridCollectionViewSourceCancelingNewItem"
+                                               BeginningEdit="_DataGridCollectionViewSourceBeginningEdit"
+                                               EditBegun="_DataGridCollectionViewSourceEditBegun"
+                                               CommittingEdit="_DataGridCollectionViewSourceCommittingEdit"
+                                               EditCommitted="_DataGridCollectionViewSourceEditCommitted"
+                                               EditCanceled="_DataGridCollectionViewSourceEditCanceled"
+                                               CancelingEdit="_DataGridCollectionViewSourceCancelingEdit"
+                                               NewItemCanceled="_NewItemCanceled"
+                                               NewItemCommitted="_DataGridCollectionViewSourceNewItemCommitted">
+                <!-- Define the detail data for the master grid. In this case, we will use the custom detail description
+                 that retrieves a list of the employees that report to the "master" employee. -->
+                <xcdg:DataGridCollectionViewSource.DetailDescriptions>
+                    <grid_helpers:RouteDetailDescription AutoCreateItemProperties="False" />
+                </xcdg:DataGridCollectionViewSource.DetailDescriptions>
+            </xcdg:DataGridCollectionViewSource>
+
+            <!--The detail configuration not visible when empty-->
+            <xcdg:DetailConfiguration x:Key="routeDetailConfiguration"
+                RelationName="RouteInfo"
+                Title=""
+                AutoCreateDetailConfigurations="False"
+                UseDefaultHeadersFooters="False"
+                AllowDetailToggle="False"
+                IsDeleteCommandEnabled="False">
+                <xcdg:DetailConfiguration.Headers>
+                    <DataTemplate>
+                        <xcdg:ColumnManagerRow/>
+                    </DataTemplate>
+                </xcdg:DetailConfiguration.Headers>
+            </xcdg:DetailConfiguration>
+
+            <xcdg:IndexToOddConverter x:Key="rowIndexConverter"/>
+
+            <Style TargetType="{x:Type xcdg:DataRow}">
+                <Setter Property="Height" Value="{StaticResource XceedRowDefaultHeight}"/>
+                <EventSetter Event="DragOver" Handler="_DragOverRow"/>
+                <EventSetter Event="DragLeave" Handler="_DragLeaveRow"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=(xcdg:DataGridControl.DataGridContext).HasDetails, RelativeSource={RelativeSource Self}}"
+                          Value="True" >
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFC0C1C0" Offset="1"/>
+                                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                </LinearGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <app_controls:CommandButtonGroup HorizontalAlignment="Left"
+                                         Grid.Row="0"
+                                         Margin="{StaticResource ViewButtonsStackMargin}"
+                                         x:Name="commandButtonsGroup"
+                                         Focusable="False"/>
+        <Border HorizontalAlignment="Stretch"
+                Margin="{StaticResource ViewContentMargin}"
+                Width="Auto"
+                Grid.Row="1"
+                BorderThickness="0"
+                BorderBrush="{x:Null}" Focusable="False">
+
+            <Grid Name="controlsGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Border Margin="0"
+                        SnapsToDevicePixels="True"
+                        BorderThickness="{StaticResource GridBorderThickness}"
+                        BorderBrush="{StaticResource ApplicationBorder}" x:Name="GridBorder">
+                    <Grid VerticalAlignment="Stretch"
+                          HorizontalAlignment="Stretch"
+                          x:Name="gridControlsGrid"
+                          Background="White">
+
+                        <!-- Text shown when context is empty. -->
+                        <TextBlock x:Name="EmptyContextText"
+                                   Style="{StaticResource HelpTextBlockStyle}"
+                                   Background="Transparent"
+                                   VerticalAlignment="Stretch"
+                                   HorizontalAlignment="Left" />
+
+                        <!-- Routes table view -->
+                        <!-- TODO: AutoCreateColumns="True" because in v 3.2 grid doesn't find default cell editors for null objects
+            http://xceed.com/CS/forums/thread/22484.aspx-->
+                        <app_controls:DataGridControlEx
+                            x:Name="RoutesGrid"
+                            AllowDrop="True"
+                            AllowDrag="False"
+                            Drop="_DataGridControlDrop"
+                            MouseMove="_MouseMove"
+                            PreviewMouseLeftButtonDown="_DataGridControlPreviewMouseLeftButtonDown"
+                            MultipleItemsDragSupport="True"
+                            AutoCreateColumns="True"
+                            ItemsSource="{Binding Source={StaticResource routesGridItemsCollection}}"
+                            IsEnabled="True"
+                            ReadOnly="False"
+                            Visibility="Visible">
+                            <xcdg:DataGridControl.View>
+                               
+                                <xcdg:TableflowView
+                                    AllowColumnChooser="True"
+                                    AreHeadersSticky="True"
+                                    ColumnStretchMode="None"
+                                    IsColumnVirtualizationEnabled="True">
+                                    <xcdg:TableflowView.FixedHeaders>
+                                        <DataTemplate>
+                                            <DataTemplate.Resources>
+                                                <VisualBrush x:Key="textBrush" Stretch="Uniform" TileMode="None" Viewport="10,0,160,25" ViewportUnits="Absolute">
+                                                    <VisualBrush.Visual>
+                                                        <StackPanel Background="#00FFFFFF">
+                                                            <TextBlock Width="Auto" Height="Auto" FontSize="12" Foreground="DarkGray" Text="{StaticResource RoutesPageInsertionHelpText}"/>
+                                                        </StackPanel>
+                                                    </VisualBrush.Visual>
+                                                </VisualBrush>
+                                            </DataTemplate.Resources>
+
+                                            <special_insertion_row:RouteInsertionRow AllowDrop="True"
+                                                Style="{StaticResource insertionStyle}"
+                                                Initialized="_RoutesInsertionRowInitialized" Loaded="_RouteInsertionRowLoaded"/>
+                                        </DataTemplate>
+                                    </xcdg:TableflowView.FixedHeaders>
+                                </xcdg:TableflowView>
+
+                            </xcdg:DataGridControl.View>
+                        </app_controls:DataGridControlEx>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+        <Grid x:Name="lockedGrid"
+              Margin="0,0,0,0"
+              Background="{StaticResource LockedPageBackground}"
+              Grid.RowSpan="2"
+              Visibility="Hidden"/>
+    </Grid>
+</app_controls:DockableContent>

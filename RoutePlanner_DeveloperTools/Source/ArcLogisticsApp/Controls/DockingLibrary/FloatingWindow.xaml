@@ -1,0 +1,10 @@
+﻿<Window x:Class="ESRI.ArcLogistics.App.Controls.FloatingWindow"
+   x:ClassModifier="internal"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   Title="DockingLibrary" Height="300" Width="300" MinHeight="200" MinWidth="270"
+   WindowStyle="SingleBorderWindow"
+   ShowInTaskbar="False"
+   Loaded="OnLoaded" >
+   <Grid/>
+</Window>

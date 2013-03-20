@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ActiveReportsLayout Version="3.1" PrintWidth="14803.2" MaxPages="200" DocumentName="ARNet Document" ScriptLang="C#" MasterReport="0">
+  <StyleSheet>
+    <Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; " />
+    <Style Name="Heading1" Value="font-size: 16pt; font-weight: bold; " />
+    <Style Name="Heading2" Value="font-family: Times New Roman; font-size: 14pt; font-weight: bold; font-style: italic; " />
+    <Style Name="Heading3" Value="font-size: 13pt; font-weight: bold; " />
+  </StyleSheet>
+  <Sections>
+    <Section Type="ReportHeader" Name="ReportHeader" Height="838" BackColor="16777215">
+      <Control Type="AR.Label" Name="lblTitle" Left="0" Top="0" Width="4320" Height="540" Caption="Dispatcher Summary" Style="ddo-char-set: 204; color: Teal; text-decoration: none; text-align: center; font-weight: bold; font-style: italic; font-size: 20.25pt; " />
+      <Control Type="AR.Label" Name="lblComment1" Left="0" Top="540" Width="1440" Height="270" Caption="Print Date/Time:" Style="ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="labelPrintDate" Left="1440" Top="540" Width="1440" Height="270" Caption="Print Date" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelPrintTime" Left="2880" Top="540" Width="1440" Height="270" Caption="Print Time" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Line" Name="lineNameDecorator" X1="0" Y1="540" X2="4320" Y2="540" LineColor="8421376" LineWeight="2" />
+    </Section>
+    <Section Type="PageHeader" Name="PageHeader" Height="630" BackStyle="1" BackColor="8421376" CanGrow="0">
+      <Control Type="AR.Label" Name="lblVehicle" Left="0" Top="90" Width="1170" Height="270" Caption="Vehicle" Style="color: White; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblDriver" Left="1260" Top="90" Width="1170" Height="270" Caption="Driver" Style="color: White; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblOrders" Left="2520" Top="90" Width="630" Height="270" Caption="Orders" Style="color: White; ddo-char-set: 204; text-align: right; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblCost" Left="3240" Top="90" Width="810" Height="270" Caption="Cost" Style="color: White; ddo-char-set: 204; text-align: right; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblCapacities" Left="5940" Top="90" Width="3150" Height="270" Caption="Capacities" Style="color: White; ddo-char-set: 204; text-align: right; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblViolationTime" Left="4140" Top="90" Width="810" Height="540" Caption="Violation Time" Style="color: White; ddo-char-set: 204; text-align: left; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblViolations" Left="5040" Top="90" Width="810" Height="270" Caption="Violations" Style="color: White; ddo-char-set: 204; text-align: right; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblMiles" Left="9180" Top="90" Width="810" Height="270" Caption="Km" Style="color: White; ddo-char-set: 204; text-align: right; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblOvertime" Left="10080" Top="90" Width="810" Height="270" Caption="Overtime" Style="color: White; ddo-char-set: 204; text-align: left; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblServiceTime" Left="10980" Top="90" Width="810" Height="540" Caption="Service Time" Style="color: White; ddo-char-set: 204; text-align: left; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblDriveTime" Left="11880" Top="90" Width="990" Height="540" Caption="Drive               Time" Style="color: White; ddo-char-set: 204; text-align: left; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblEnd" Left="13860" Top="90" Width="900" Height="270" Caption="End" Style="color: White; ddo-char-set: 204; text-align: center; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblStart" Left="12960" Top="90" Width="900" Height="270" Caption="Start" Style="color: White; ddo-char-set: 204; text-align: center; font-style: normal; font-size: 9pt; " />
+    </Section>
+    <Section Type="GroupHeader" Name="GroupHeader" Height="450" DataField="Schedule.ID" BackColor="16777215">
+      <Control Type="AR.Label" Name="lblSchedule" Left="90" Top="90" Width="900" Height="270" Caption="Schedule:" Style="color: Teal; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblScheduleDescription" DataField="=PlannedDate.ToShortDateString();" Left="990" Top="90" Width="990" Height="270" Caption="PlannedDate" Style="color: Teal; ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+    </Section>
+    <Section Type="Detail" Name="Detail" Height="614" BackColor="16777215" KeepTogether="1" CanGrow="0" CanShrink="1">
+      <Control Type="AR.Label" Name="labelVechicle" DataField="VehicleName" Left="0" Top="0" Width="1170" Height="270" Caption="Vehicle Name" Style="color: Black; ddo-char-set: 204; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelDriver" DataField="DriverName" Left="1260" Top="0" Width="1440" Height="270" Caption="Driver Name" Style="color: Black; ddo-char-set: 204; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelEnd" DataField="EndTimeString" Left="13860" Top="0" Width="900" Height="270" Caption="End" Style="color: Black; ddo-char-set: 204; text-align: right; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="labelOrders" DataField="TotalOrders" Left="2790" Top="0" Width="360" Height="270" Caption="Orders" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxCost" DataField="TotalCost" Left="3240" Top="0" Width="810" Height="270" Text="Cost" OutputFormat="$#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelViolTime" Left="4230" Top="0" Width="810" Height="270" Caption="ViolTime" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxViolations" DataField="TotalViolations" Left="5130" Top="0" Width="450" Height="270" Text="Violations" OutputFormat="#,##0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxMiles" DataField="TotalKM" Left="9180" Top="0" Width="810" Height="270" Text="Km" OutputFormat="#,##0.0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelOvertime" Left="10080" Top="0" Width="810" Height="270" Caption="Overtime" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelServiceTime" Left="10980" Top="0" Width="810" Height="270" Caption="ServiceTime" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelDriveTime" Left="11880" Top="0" Width="990" Height="270" Caption="DriverTime" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxCapacities" Left="5670" Top="0" Width="3420" Height="270" Text="Capacities" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelEndDate" DataField="=(StartDate == EndDate)? null : EndDate;" Visible="0" Left="13860" Top="270" Width="900" Height="270" Caption="EndDate" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: inherit; " />
+      <Control Type="AR.Label" Name="labelStartDate" DataField="=(StartDate == EndDate)? null : StartDate;" Visible="0" Left="12960" Top="270" Width="900" Height="270" Caption="StartDate" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: inherit; " />
+      <Control Type="AR.Label" Name="labelStart" DataField="StartTimeString" Left="12960" Top="0" Width="900" Height="270" Caption="Start" Style="color: Black; ddo-char-set: 204; text-align: right; font-style: normal; font-size: 9pt; " />
+    </Section>
+    <Section Type="GroupFooter" Name="GroupFooter" Height="644" BackColor="16777215" CanShrink="1">
+      <Control Type="AR.Label" Name="lblSubTotal" Left="90" Top="90" Width="1890" Height="270" Caption="Subtotal" Style="color: Teal; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Field" Name="textBoxSubTotalOrders" DataField="TotalOrders" Left="2610" Top="90" Width="540" Height="270" Text="TotalOrders" OutputFormat="#,##0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxSubTotalCost" DataField="TotalCost" Left="3240" Top="90" Width="810" Height="270" Text="TotalCost" OutputFormat="$#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Label" Name="labelSubTotalViolationTime" Left="4230" Top="90" Width="810" Height="270" Caption="ViolTime" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxSubTotalMiles" DataField="TotalKM" Left="9180" Top="90" Width="810" Height="270" Text="TotalKm" OutputFormat="#,##0.0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Label" Name="labelSubTotalOverTime" Left="10080" Top="90" Width="810" Height="270" Caption="TotalOT" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelSubTotalServiceTime" Left="10980" Top="90" Width="810" Height="270" Caption="TotalServiceTime" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelSubTotalDriverTime" Left="11880" Top="90" Width="990" Height="270" Caption="TotalTime" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxSubTotalCapacities" Left="5670" Top="90" Width="3420" Height="270" Text="Capacities" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxSubTotalViolations" DataField="TotalViolations" Left="5130" Top="90" Width="450" Height="270" Text="Violations" OutputFormat="#,##0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Line" Name="lineVerticalSeparator1" X1="0" Y1="0" X2="14803.2" Y2="0" />
+      <Control Type="AR.Field" Name="textBoxSubTotalViolationTime" DataField="TotalViolationTime" Visible="0" Left="4230" Top="360" Width="810" Height="270" Text="ViolTime" CanGrow="0" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxSubTotalServiceTime" DataField="TotalServiceTime" Visible="0" Left="10980" Top="360" Width="810" Height="270" Text="TotalServiceTime" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxSubTotalOverTime" DataField="TotalOT" Visible="0" Left="10080" Top="360" Width="810" Height="270" Text="TotalOT" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxSubTotalDriverTime" DataField="TotalTime" Visible="0" Left="11880" Top="360" Width="990" Height="270" Text="TotalTime" CanGrow="0" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+    </Section>
+    <Section Type="PageFooter" Name="PageFooter" Height="360" BackColor="16777215" CanGrow="0">
+      <Control Type="AR.ReportInfo" Name="reportInfo" Left="1440" Top="0" Width="11880" Height="270" FormatString="{PageNumber} of {PageCount}" Style="text-align: center; " />
+    </Section>
+    <Section Type="ReportFooter" Name="ReportFooter" Height="645" BackColor="16777215" CanShrink="1">
+      <Control Type="AR.Label" Name="lblTotal" Left="90" Top="90" Width="1890" Height="270" Caption="Total" Style="color: Red; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Field" Name="textBoxTotalOrder" DataField="TotalOrders" Left="2070" Top="90" Width="1080" Height="270" Text="TotalOrders" OutputFormat="#,##0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalCost" DataField="TotalCost" Left="3240" Top="90" Width="810" Height="270" Text="TotalCost" OutputFormat="$#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Label" Name="labelTotalViolTime" Left="4230" Top="90" Width="810" Height="270" Caption="ViolTime" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxTotalMiles" DataField="TotalKM" Left="9180" Top="90" Width="810" Height="270" Text="TotalKm" OutputFormat="#,##0.0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Label" Name="labelTotalOvertime" Left="10080" Top="90" Width="810" Height="270" Caption="TotalOT" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelTotalServiceTime" Left="10980" Top="90" Width="810" Height="270" Caption="TotalServiceTime" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelTotalDriverTime" Left="11880" Top="90" Width="990" Height="270" Caption="TotalTime" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxTotalCapacities" Left="5670" Top="90" Width="3420" Height="270" Text="Capacities" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalViolations" DataField="TotalViolations" Left="5130" Top="90" Width="450" Height="270" Text="Violations" OutputFormat="#,##0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Line" Name="line1" X1="0" Y1="0" X2="14803.2" Y2="0" LineColor="8421376" LineWeight="2" />
+      <Control Type="AR.Field" Name="textBoxTotalDriverTime" DataField="TotalTime" Visible="0" Left="11880" Top="360" Width="990" Height="270" Text="TotalTime" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalServiceTime" DataField="TotalServiceTime" Visible="0" Left="10980" Top="360" Width="810" Height="270" Text="TotalServiceTime" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalOvertime" DataField="TotalOT" Visible="0" Left="10080" Top="360" Width="810" Height="270" Text="TotalOT" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalViolTime" DataField="TotalViolationTime" Visible="0" Left="4230" Top="360" Width="810" Height="270" Text="ViolTime" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+    </Section>
+  </Sections>
+  <ReportComponentTray />
+  <DataSources>
+    <OleDbDataSource ConnectE="13IdEUWXLb8jDY6d7T6jJYmDRKY5Eee4itGMLIPDLT+VBQkrRemRcHciYcI1dvBprE9fQStE8tu+isu2CxpLq60nUFW0DfO+2JqbUlMrmZBzNYCg0lK/2VTwRb+N2Jid385Ewa4c8Mt+7KgVjOhLTA==" SQL="SELECT * FROM `Route` `Route` INNER JOIN `Schedule` &#xD;&#xA;`Schedule` ON `Route`.`ScheduleID`=`Schedule`.`ID` ORDER BY `Schedule`.`PlannedDate`, `Route`.`VehicleName`" />
+  </DataSources>
+  <Script><![CDATA[using System;
+using System.Data;
+using System.Data.OleDb;
+using System.Drawing;
+using System.Diagnostics;
+
+private const float SPACE_SEPARATOR_WIDTH = 0.0625f;
+private const string CAPACITIES_FORMAT = "Total{0}";
+private const string SELECT_STRING_SCHEMA = "SELECT FieldNames FROM `Schema` WHERE Type = \"Capacities\"";
+private const string SELECT_STRING_SCHEDULE = "SELECT ID FROM `Schedule` ";
+private const string TIME_FORMAT_ONLY_HOUR = "{0}h";
+private const string TIME_FORMAT = "{0}h {1}m";
+private const int MINUTES_PER_HOUR = 60;
+private const string STOP_TABLE_NAME_FORMAT = "Stop.{0}";
+
+       public class Helper
+        {
+            public Helper()
+            {
+            }
+
+            // NOTE: supported only Label and TextBox
+            public static void AddControls(string[] namesArray, string controlName, string fieldFormat,
+                                           ControlCollection controls)
+            {
+                AddControls(namesArray, controlName, fieldFormat, controls, string.Empty);
+            }
+
+            public static void AddControls(string[] namesArray, string controlName, string fieldFormat,
+                                           ControlCollection controls, string formulaFormat)
+            {
+                Debug.Assert(!string.IsNullOrEmpty(controlName));
+                Debug.Assert(!string.IsNullOrEmpty(fieldFormat));
+
+                int index = _FindCapacitiesControlIndex(controlName, controls);
+                Debug.Assert(-1 != index);
+
+                ARControl control = controls[index];
+
+                RectangleF rect = control.Bounds;
+                float newControlWidth = (rect.Width - SPACE_SEPARATOR_WIDTH * (namesArray.Length - 1)) / namesArray.Length;
+                PointF location = rect.Location;
+                SizeF size = new SizeF(newControlWidth, rect.Height);
+
+                controls.RemoveAt(index); // remove prototype
+
+                if (null == namesArray)
+                    return; // EXIT
+
+                bool isLabel = control is Label;
+                for (int i = 0; i < namesArray.Length; ++i)
+                {
+                    if (0 < i)
+                        location.X += SPACE_SEPARATOR_WIDTH + newControlWidth;
+                    RectangleF rectControl = new RectangleF(location, size);
+
+                    ARControl newControl = (isLabel) ?
+                                   _CreateLabel(control, rectControl, namesArray[i]) :
+                                   _CreateTextBox(control, rectControl, namesArray[i], fieldFormat, formulaFormat);
+
+                    controls.Insert(index + i, newControl);
+                }
+            }
+
+        public static void SetLabelTextFromField(string fieldName, string labelControlName,
+                                                 FieldCollection fields, ControlCollection controls)
+        {
+           string realName = fieldName;
+           if (fields[realName] == null)
+            {
+                string stopFieldName = string.Format(STOP_TABLE_NAME_FORMAT, realName);
+                if (fields[stopFieldName] != null)
+                     realName = stopFieldName;
+            }
+                     
+            _SetLabelText(fields[realName].Value.ToString(), labelControlName, controls);
+        }
+        
+        public static void SetLabelTextFromTextBox(string textboxControlName, string labelControlName,
+                                                   ControlCollection controls)
+        {
+            TextBox textBox = (TextBox)controls[textboxControlName];
+            _SetLabelText(textBox.Text, labelControlName, controls);
+        }
+        
+        private static string _FormatTimeValue(string value)
+        {
+            int totalTime = (int)double.Parse(value);
+            int totalTimeHour = (int)totalTime / MINUTES_PER_HOUR;
+            int restInMinutes = totalTime - totalTimeHour * MINUTES_PER_HOUR;
+
+            string result = null;
+            if (0 < restInMinutes)
+                result = string.Format(TIME_FORMAT, totalTimeHour, restInMinutes.ToString("00"));
+            else
+                result = string.Format(TIME_FORMAT_ONLY_HOUR, totalTimeHour);
+
+            Debug.Assert(!string.IsNullOrEmpty(result));
+            return result;
+        }
+
+        private static void _SetLabelText(string value, string labelControlName,
+                                        ControlCollection controls)
+        {
+            ((Label)controls[labelControlName]).Text = _FormatTimeValue(value);
+        }
+        
+            private static int _FindCapacitiesControlIndex(string controlName,
+                                                           ControlCollection controls)
+            {
+                int index = -1;
+                for (int i = 0; i < controls.Count; ++i)
+                {
+                    if (controlName == controls[i].Name)
+                    {
+                        index = i;
+                        break; // founded
+                    }
+                }
+
+                Debug.Assert(-1 != index);
+                return index;
+            }
+
+            private static ARControl _CreateLabel(ARControl prototypeControl,
+                                                  RectangleF rectControl, string name)
+            {
+                Label prototypeCtrl = (Label)prototypeControl;
+                Label lb = new Label();
+                lb.Name = prototypeControl.Name + name;
+                lb.Bounds = rectControl;
+                lb.Text = name;
+                lb.ForeColor = prototypeCtrl.ForeColor;
+                lb.BackColor = prototypeCtrl.BackColor;
+                lb.Alignment = prototypeCtrl.Alignment;
+                lb.Visible = prototypeCtrl.Visible;
+                lb.Style = prototypeCtrl.Style;
+                lb.Font = prototypeCtrl.Font;
+                return lb;
+            }
+
+            private static ARControl _CreateTextBox(ARControl prototypeControl,
+                                                    RectangleF rectControl, string name,
+                                                    string fieldFormat, string formulaFormat)
+            {
+                TextBox prototypeCtrl = (TextBox)prototypeControl;
+                TextBox tb = new TextBox();
+                tb.Name = prototypeControl.Name + name;
+                tb.Bounds = rectControl;
+                tb.Text = name;
+                tb.ForeColor = prototypeCtrl.ForeColor;
+                tb.BackColor = prototypeCtrl.BackColor;
+                tb.Alignment = prototypeCtrl.Alignment;
+                tb.SummaryGroup = prototypeCtrl.SummaryGroup;
+                tb.SummaryRunning = prototypeCtrl.SummaryRunning;
+                tb.SummaryType = prototypeCtrl.SummaryType;
+                tb.OutputFormat = prototypeCtrl.OutputFormat;
+                string fieldName = string.Format(fieldFormat, name);
+                tb.DataField = (string.IsNullOrEmpty(formulaFormat)) ? fieldName : string.Format(formulaFormat, fieldName);
+                tb.Visible = prototypeCtrl.Visible;
+                tb.Style = prototypeCtrl.Style;
+                tb.Font = prototypeCtrl.Font;
+                return tb;
+            }
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////
+
+        public void ActiveReport_DataInitialize()
+        {
+            Section groupFooter = rpt.Sections["GroupFooter"];
+            groupFooter.Visible = false;
+
+            // check - count of section more than 1
+            DataSources.OleDBDataSource ds = (DataSources.OleDBDataSource)rpt.DataSource;
+            using (OleDbConnection cnn = new OleDbConnection(ds.ConnectionString))
+            {
+                if (cnn.State == ConnectionState.Closed)
+                    cnn.Open();
+
+                using (OleDbCommand cmd = new OleDbCommand(SELECT_STRING_SCHEDULE, cnn))
+                {
+                    int rowCount = 0;
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ++rowCount;
+                            if (1 < rowCount)
+                            {
+                                groupFooter.Visible = true;
+                                break; // NOTE: result founded
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+public void ActiveReport_ReportStart()
+{
+            // update report print time and date
+            ControlCollection reportHeaderControls = rpt.Sections["ReportHeader"].Controls;
+            ((Label)reportHeaderControls["labelPrintDate"]).Text = DateTime.Now.ToShortDateString();
+            ((Label)reportHeaderControls["labelPrintTime"]).Text = DateTime.Now.ToLongTimeString();
+
+            // read dynamic fields
+            DataSources.OleDBDataSource ds = (DataSources.OleDBDataSource)rpt.DataSource;
+            using (OleDbConnection cnn = new OleDbConnection(ds.ConnectionString))
+            {
+                if (cnn.State == System.Data.ConnectionState.Closed)
+                    cnn.Open();
+
+                using (OleDbCommand cmd = new OleDbCommand(SELECT_STRING_SCHEMA, cnn))
+                {
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        ControlCollection pageHeaderControls = rpt.Sections["PageHeader"].Controls;
+                        ControlCollection detailControls = rpt.Sections["Detail"].Controls;
+                        ControlCollection groupFooterControls = rpt.Sections["GroupFooter"].Controls;
+                        ControlCollection reportFooterControls = rpt.Sections["ReportFooter"].Controls;
+
+                        if (reader.Read())
+                        {   // NOTE: only one proper record present in table get fields list
+                            string names = reader["FieldNames"].ToString();
+                            string[] nameArray = names.Split(new char[] { ',' });
+                            Debug.Assert(0 < nameArray.Length);
+               
+                            Helper.AddControls(nameArray, "lblCapacities", CAPACITIES_FORMAT, pageHeaderControls);
+                            Helper.AddControls(nameArray, "textBoxCapacities", CAPACITIES_FORMAT, detailControls);
+                            Helper.AddControls(nameArray, "textBoxSubTotalCapacities",  CAPACITIES_FORMAT, groupFooterControls);
+                            Helper.AddControls(nameArray, "textBoxTotalCapacities", CAPACITIES_FORMAT,  reportFooterControls);
+                        }
+                        else
+                        {
+                            pageHeaderControls["lblCapacities"].Visible = 
+                            detailControls["textBoxCapacities"].Visible = 
+                            groupFooterControls["textBoxSubTotalCapacities"].Visible = 
+                            reportFooterControls["textBoxTotalCapacities"].Visible = false;
+                       }
+                  }
+            }
+       }
+ }
+
+public void Detail_Format()
+{
+           ControlCollection controls = rpt.Sections["Detail"].Controls;
+           if (!string.IsNullOrEmpty(((Label)controls["labelStartDate"]).Text))
+               controls["labelStartDate"].Visible = controls["labelEndDate"].Visible = true;
+
+            FieldCollection fields = rpt.Fields;
+            Helper.SetLabelTextFromField("TotalViolationTime", "labelViolTime", fields, controls);
+            Helper.SetLabelTextFromField("TotalOT", "labelOvertime", fields, controls);
+            Helper.SetLabelTextFromField("TotalServiceTime", "labelServiceTime", fields, controls);
+            Helper.SetLabelTextFromField("TotalTime", "labelDriveTime", fields, controls);
+}
+public void GroupFooter_Format()
+{
+            ControlCollection controls = rpt.Sections["GroupFooter"].Controls;
+            Helper.SetLabelTextFromTextBox("textBoxSubTotalViolationTime", "labelSubTotalViolationTime", controls);
+            Helper.SetLabelTextFromTextBox("textBoxSubTotalOverTime", "labelSubTotalOverTime", controls);
+            Helper.SetLabelTextFromTextBox("textBoxSubTotalServiceTime", "labelSubTotalServiceTime", controls);
+            Helper.SetLabelTextFromTextBox("textBoxSubTotalDriverTime", "labelSubTotalDriverTime", controls);
+}
+
+public void ReportFooter_Format()
+{
+            ControlCollection controls = rpt.Sections["ReportFooter"].Controls;
+            Helper.SetLabelTextFromTextBox("textBoxTotalViolTime", "labelTotalViolTime", controls);
+            Helper.SetLabelTextFromTextBox("textBoxTotalOvertime", "labelTotalOvertime", controls);
+            Helper.SetLabelTextFromTextBox("textBoxTotalServiceTime", "labelTotalServiceTime", controls);
+            Helper.SetLabelTextFromTextBox("textBoxTotalDriverTime", "labelTotalDriverTime", controls);
+}]]></Script>
+  <PageSettings LeftMargin="720" RightMargin="720" TopMargin="720" BottomMargin="720" Orientation="2" />
+  <Parameters />
+</ActiveReportsLayout>

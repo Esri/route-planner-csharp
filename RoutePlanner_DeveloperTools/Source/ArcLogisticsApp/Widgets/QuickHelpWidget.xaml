@@ -1,0 +1,13 @@
+﻿<widgets:PageWidgetBase x:Class="ESRI.ArcLogistics.App.Widgets.QuickHelpWidget"
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:widgets="clr-namespace:ESRI.ArcLogistics.App.Widgets">
+    <Grid>
+        <TextBlock x:Name="QuickHelpText" 
+                   Style="{DynamicResource HelpTextBlockStyle}" 
+                   Background="Transparent" 
+                   VerticalAlignment="Stretch" 
+                   HorizontalAlignment="Stretch" />
+    </Grid>
+</widgets:PageWidgetBase>

@@ -1,0 +1,42 @@
+﻿<ControlTemplate
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:esriConverters="clr-namespace:ESRI.ArcGIS.Client.ValueConverters;assembly=ESRI.ArcGIS.Client"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+
+    <ControlTemplate.Resources>
+        <esriConverters:DictionaryConverter x:Key="Converter" />
+    </ControlTemplate.Resources>
+
+    <Grid Focusable="False">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="SelectionStates">
+                <VisualState x:Name="Selected">
+                    <Storyboard>
+                        <ColorAnimation BeginTime="00:00:00"
+															Storyboard.TargetName="Element"
+															Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)" 
+															To="{DynamicResource SelectionColor}" Duration="0:0:.1" />
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Unselected">
+                    <Storyboard>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <!--For polyline and polygon template, a Path element with the name "Element" is required-->
+        <Path x:Name="Element"
+                  StrokeDashCap="Round"
+                  StrokeLineJoin="Round"
+                  Fill="{Binding Path=Attributes, Converter={StaticResource Converter}, ConverterParameter='Fill', Mode=OneWay}"
+                  Stroke="{DynamicResource ZonePolylineBorderColor}" StrokeThickness="2">
+
+            <!--<Path.BitmapEffect>
+                <DropShadowBitmapEffect Color="#FF4F5257" Direction="315" Opacity="100" ShadowDepth="3" Softness="0.2"/>
+            </Path.BitmapEffect>-->
+        </Path>
+    </Grid>
+
+</ControlTemplate>

@@ -1,0 +1,26 @@
+<ControlTemplate
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+
+    <Grid Focusable="False" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Width="24" Height="24" Background="Transparent">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                <TranslateTransform X="-12" Y="-12"/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="16" Height="16" Fill="#FF316CB4" Stroke="#FF606060" RenderTransformOrigin="0.5,0.5" x:Name="rectangle">
+            <Rectangle.BitmapEffect>
+                <BitmapEffectGroup>
+                    <DropShadowBitmapEffect Color="#FF4F5257" Direction="315" Opacity="100" ShadowDepth="3" Softness="0.2"/>
+                </BitmapEffectGroup>
+            </Rectangle.BitmapEffect>
+
+            <Rectangle.RenderTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+    </Grid>
+</ControlTemplate>

@@ -1,0 +1,39 @@
+<ResourceDictionary
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:arcLogisticsPages="clr-namespace:ESRI.ArcLogistics.App.Pages;assembly=ESRI.ArcLogistics.App"
+xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib">
+
+    <coll:ArrayList x:Key="itemProperties">
+        <xcdg:DataGridItemProperty Name="IsDefault" />
+        <xcdg:DataGridItemProperty Name="Name" />
+        <xcdg:DataGridItemProperty Name="Type" SortComparer="{StaticResource toStringComparer}"/>
+        <xcdg:DataGridItemProperty Name="Description" />
+    </coll:ArrayList>
+
+    <coll:ArrayList x:Key="columns">
+        <xcdg:Column FieldName="IsDefault"
+            Title="{DynamicResource DefaultColumnHeader}"
+            CellEditorDisplayConditions="Always" />
+         <xcdg:Column FieldName="Name"
+            Title="{DynamicResource NameColumnHeader}"
+            CellEditor="{DynamicResource DefaultStringEditor}" />
+        <xcdg:Column FieldName="Type"
+            Title="{DynamicResource TypeColumnHeader}"
+            ReadOnly="True"/>
+        <xcdg:Column FieldName="Description"
+            Title="{DynamicResource DescriptionColumnHeader}"
+            CellEditor="{DynamicResource DefaultStringEditor}" />
+    </coll:ArrayList>
+
+    <!-- Page print configuration -->
+    <DataTemplate x:Key="printHeader">
+        <Label Content="{DynamicResource InportProfilesPagePrintHeader}"
+            HorizontalAlignment="Center"
+            FontFamily="{DynamicResource DefaultApplicationFont}"
+            FontWeight="Bold"
+            FontSize="{DynamicResource LargeFontSize}"/>
+    </DataTemplate>
+
+</ResourceDictionary>

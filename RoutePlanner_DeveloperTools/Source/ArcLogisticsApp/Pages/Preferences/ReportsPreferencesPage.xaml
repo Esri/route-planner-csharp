@@ -1,0 +1,123 @@
+﻿<pages:PageBase x:Class="ESRI.ArcLogistics.App.Pages.ReportsPreferencesPage"
+   x:ClassModifier="internal"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+   xmlns:pages="clr-namespace:ESRI.ArcLogistics.App.Pages"
+   xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+   Height="Auto">
+   <ScrollViewer VerticalScrollBarVisibility="Auto"
+      Margin="3,1,3,3"
+      HorizontalContentAlignment="Center"
+      VerticalContentAlignment="Top">
+
+      <Grid Name="mainGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="4,4,0,0">
+         <Grid.Resources>
+
+            <Style TargetType="{x:Type ToolTip}" x:Key="ErrorToolTipStyle">
+               <Setter Property="Background" Value="Orange"/>
+               <Setter Property="Content" Value="{StaticResource ReportsPreferencesPageRenameErrorToolTip}"/>
+            </Style>
+
+            <Style TargetType="{x:Type xcdg:DataRow}">
+               <Setter Property="Height" Value="{StaticResource XceedRowDefaultHeight}"/>
+            </Style>
+
+            <Style TargetType="{x:Type xcdg:DataCell}">
+               <EventSetter Event="GotKeyboardFocus" Handler="DataCellGotFocus"/>
+               <EventSetter Event="LostFocus" Handler="DataCellLostFocus"/>
+            </Style>
+
+            <xcdg:DataGridCollectionViewSource x:Key="reportsTable" AutoCreateItemProperties="False"
+               CommittingEdit="DataGridCollectionViewSource_CommittingEdit"
+               BeginningEdit="DataGridCollectionViewSource_BeginningEdit"
+               CancelingEdit="DataGridCollectionViewSource_CancelingEdit" />
+      </Grid.Resources>
+
+      <Grid.RowDefinitions>
+         <RowDefinition Height="Auto" />
+         <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="0.31*" />
+         <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <Label Content="{StaticResource ReportsPreferencesPageLabelReportTemplates}"
+         FontSize="{StaticResource MiddleFontSize}"
+         Foreground="#FFFDFDFD"
+         HorizontalAlignment="Left"
+         Margin="3,15,0,0"
+         Grid.Row="0"
+         Grid.Column="0" VerticalAlignment="Top"/>
+         <WrapPanel Grid.Row="0"
+            Grid.Column="1"
+            Orientation="Horizontal"
+            Margin="20,15,0,0">
+            <Button x:Name="buttonDeleteTemplate"
+               Content="{StaticResource ButtonHeaderDelete}"
+               Width="{StaticResource DefaultPageButtonWidth}"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               IsEnabled="False"
+               ToolTip="{StaticResource DeleteCommandDisabledTooltip}"
+               IsEnabledChanged="button_IsEnabledChanged"
+               Height="{StaticResource DefaultPageButtonHeight}"
+               Click="_DeleteTemplate_Click" 
+               Margin="{StaticResource PageButtonMargin}" />
+            <Button x:Name="buttonDuplicateTemplate"
+               Content="{StaticResource ReportsPreferencesPageButtonDuplicateTemplate}"
+               Width="{StaticResource DefaultPageButtonWidth}"
+               IsEnabledChanged="button_IsEnabledChanged"
+               ToolTip="{StaticResource DuplicateReportsDisabledTooltip}"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               IsEnabled="False"
+               Height="{StaticResource DefaultPageButtonHeight}"
+               Click="_DuplicateTemplate_Click" 
+               Margin="{StaticResource PageButtonMargin}" />
+            <Button x:Name="buttonEditTemplate"
+               Content="{StaticResource ButtonHeaderEdit}"
+               Width="{StaticResource DefaultPageButtonWidth}"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               IsEnabled="False"
+               IsEnabledChanged="button_IsEnabledChanged"
+               ToolTip="{StaticResource EditReportsButtonDisabledTooltip}"
+               Height="{StaticResource DefaultPageButtonHeight}"
+               Click="_EditTemplate_Click"
+               Margin="{StaticResource PageButtonMargin}" />
+            </WrapPanel>
+            <Grid VerticalAlignment="Stretch"
+               HorizontalAlignment="Stretch"
+               Grid.Row="1"
+               Grid.Column="1"
+               Grid.RowSpan="2"
+               Background="{x:Null}">
+               <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="*" MinHeight="100" MaxHeight="260" />
+               </Grid.RowDefinitions>
+               <app_controls:DataGridControlEx x:Name="xceedGridReports"
+                  HorizontalAlignment="Stretch"
+                  AutoCreateColumns="False"
+                  Height="265"
+                  Margin="20,6,12,4"
+                  FontSize="{StaticResource MiddleFontSize}"
+                  FontFamily="{StaticResource DefaultApplicationFont}"
+                  ItemsSource="{Binding Source={StaticResource reportsTable}}"
+                  SelectionMode="Single"
+                  IsEnabled="True"
+                  Grid.Row="1" >
+                  <xcdg:DataGridControl.View >
+                     <xcdg:TableView ColumnStretchMode="All"
+                        ShowRowSelectorPane="False"
+                        ShowFixedColumnSplitter="False"
+                        AllowColumnChooser="False"
+                        UseDefaultHeadersFooters="False" />
+                     </xcdg:DataGridControl.View>
+                  </app_controls:DataGridControlEx>
+         </Grid>
+      </Grid>
+   </ScrollViewer>
+</pages:PageBase>

@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ActiveReportsLayout Version="3.1" PrintWidth="14803.2" MaxPages="200" DocumentName="ARNet Document" ScriptLang="C#" MasterReport="0">
+  <StyleSheet>
+    <Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; " />
+    <Style Name="Heading1" Value="font-size: 16pt; font-weight: bold; " />
+    <Style Name="Heading2" Value="font-family: Times New Roman; font-size: 14pt; font-weight: bold; font-style: italic; " />
+    <Style Name="Heading3" Value="font-size: 13pt; font-weight: bold; " />
+  </StyleSheet>
+  <Sections>
+    <Section Type="ReportHeader" Name="ReportHeader" Height="870" BackColor="16777215">
+      <Control Type="AR.Label" Name="lblTitle" Left="0" Top="0" Width="4320" Height="540" Caption="Manager Summary" Style="text-decoration: none; color: Teal; ddo-char-set: 204; text-align: center; font-weight: bold; font-style: italic; font-size: 20.25pt; " />
+      <Control Type="AR.Label" Name="lblComment1" Left="0" Top="540" Width="1440" Height="270" Caption="Print Date/Time:" Style="ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="labelPrintDate" Left="1440" Top="540" Width="1440" Height="270" Caption="Print Date" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelPrintTime" Left="2880" Top="540" Width="1440" Height="270" Caption="Print Time" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Line" Name="line5" X1="0" Y1="540" X2="4320" Y2="540" LineColor="8421376" LineWeight="2" />
+    </Section>
+    <Section Type="PageHeader" Name="PageHeader" Height="749" BackStyle="1" BackColor="8421376" CanGrow="0">
+      <Control Type="AR.Label" Name="lblCost" Left="2340" Top="450" Width="1080" Height="270" Caption="Cost" Style="color: White; ddo-char-set: 204; text-align: right; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblCapacities" Left="4590" Top="450" Width="3600" Height="270" Caption="Capacities" Style="color: White; ddo-char-set: 204; text-align: right; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblMiles" Left="3510" Top="450" Width="990" Height="270" Caption="Km" Style="color: White; ddo-char-set: 204; text-align: right; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="labelCapacityUtilization" Left="10440" Top="0" Width="4320" Height="270" Caption="Capacity Utilization" Style="color: White; ddo-char-set: 204; text-align: center; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblOrdersVsHour" Left="8280" Top="450" Width="1080" Height="270" Caption="Orders/Hour" Style="color: White; ddo-char-set: 204; text-align: right; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblPerOrder" Left="2340" Top="0" Width="5850" Height="270" Caption="Per Order" Style="color: White; ddo-char-set: 204; text-align: center; font-style: normal; font-size: 9pt; vertical-align: middle; " />
+      <Control Type="AR.Line" Name="line3" X1="2340" Y1="360" X2="8190" Y2="360" LineColor="16777215" />
+      <Control Type="AR.Label" Name="lblOnTime" Left="9450" Top="450" Width="900" Height="270" Caption="% On time" Style="color: White; ddo-char-set: 204; text-align: right; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Line" Name="line4" X1="10440" Y1="360" X2="14760" Y2="360" LineColor="16777215" />
+      <Control Type="AR.Label" Name="lblCapacityUtilization" Left="11250" Top="450" Width="3510" Height="270" Caption="CapacitiesUtilization" Style="color: White; ddo-char-set: 204; text-align: right; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblTime" Left="10440" Top="450" Width="720" Height="270" Caption="Time" Style="color: White; ddo-char-set: 204; text-align: right; font-style: normal; font-size: 9pt; " />
+    </Section>
+    <Section Type="GroupHeader" Name="GroupHeader" Height="450" DataField="Schedule.ID" BackColor="16777215">
+      <Control Type="AR.Label" Name="lblSchedule" Left="90" Top="90" Width="900" Height="270" Caption="Schedule:" Style="color: Teal; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblScheduleDescription" DataField="=PlannedDate.ToShortDateString();" Left="990" Top="90" Width="990" Height="270" Caption="PlannedDate" Style="color: Teal; ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+    </Section>
+    <Section Type="Detail" Name="Detail" Height="344" BackColor="16777215" KeepTogether="1" CanGrow="0">
+      <Control Type="AR.Label" Name="labelVehicleName" DataField="VehicleName" Left="0" Top="0" Width="2250" Height="270" Caption="Vehicle Name" Style="color: Black; ddo-char-set: 204; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxCost" DataField="calcFieldCost" Left="2340" Top="0" Width="1080" Height="270" Text="Cost" OutputFormat="$#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxMiles" DataField="calcFieldKm" Left="3510" Top="0" Width="990" Height="270" Text="Km" OutputFormat="#,##0.0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxOrdersVsHour" DataField="calcFieldOrdersVsHour" Left="8280" Top="0" Width="1080" Height="270" Text="Orders/Hour" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxOnTime" DataField="calcFieldOnTime" Left="9450" Top="0" Width="900" Height="270" Text="On time" OutputFormat="0%" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxCapacities" Left="4590" Top="0" Width="3600" Height="270" Text="Capacities" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxCapacityUtilization" Left="11250" Top="0" Width="3510" Height="270" Text="CapacitiesUtilization" OutputFormat="0%" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxTime" DataField="calcFieldTime" Left="10440" Top="0" Width="720" Height="270" Text="Time" OutputFormat="0%" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+    </Section>
+    <Section Type="GroupFooter" Name="GroupFooter" Height="704" BackColor="16777215">
+      <Control Type="AR.Label" Name="lblScheduleSummary" Left="90" Top="90" Width="2160" Height="270" Caption="Schedule Summary" Style="color: Teal; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Line" Name="line2" X1="0" Y1="0" X2="14803.2" Y2="0" />
+      <Control Type="AR.Field" Name="textBoxSubTotalCost" Left="2340" Top="90" Width="1080" Height="270" Text="Cost" OutputFormat="$#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxSubTotalMiles" Left="3510" Top="90" Width="990" Height="270" Text="Km" OutputFormat="#,##0.0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxSubTotalOrdersVsHour" Left="8280" Top="90" Width="1080" Height="270" Text="Orders/Hour" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxSubTotalCapacities" Left="4590" Top="90" Width="3600" Height="270" Text="Capacities" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxSubTotalOnTime" DataField="calcFieldOnTime" Left="9450" Top="90" Width="900" Height="270" Text="On time" OutputFormat="0%" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxSubTotalTime" Left="10440" Top="90" Width="720" Height="270" Text="Time" OutputFormat="0%" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxSubTotalCapacityUtilization" Left="11250" Top="90" Width="3510" Height="270" Text="CapacitiesUtilization" OutputFormat="0%" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxSubTotalOrdersSchedule" DataField="TotalOrders" Visible="0" Left="90" Top="360" Width="1080" Height="270" Text="TotalOrders" OutputFormat="0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxSubTotalCostSchedule" DataField="TotalCost" Visible="0" Left="2340" Top="360" Width="1080" Height="270" Text="TotalCost" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxSubTotalMilesSchedule" DataField="TotalKM" Visible="0" Left="3510" Top="360" Width="990" Height="270" Text="TotalKM" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxSubTotalCapacitiesSchedule" Visible="0" Left="4590" Top="360" Width="3600" Height="270" Text="Capacities" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxSubTotalOrdersVsHourSchedule" DataField="calcFieldOrdersVsHour" Visible="0" Left="8280" Top="360" Width="1080" Height="270" Text="Orders/Hour" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxSubTotalViolationsSchedule" DataField="TotalViolations" Visible="0" Left="9450" Top="360" Width="900" Height="270" Text="Violations" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxSubTotalTimeSchedule" DataField="TotalTime" Visible="0" Left="10440" Top="360" Width="810" Height="270" Text="TotalTime" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxSubTotalCapacityUtilizationSchedule" Visible="0" Left="12420" Top="360" Width="2340" Height="270" Text="CapacitiesUtilization" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxSubWaitTimeSchedule" DataField="TotalWaitTime" Visible="0" Left="11430" Top="360" Width="900" Height="270" Text="WaitTime" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxSubTotalRunsSchedule" DataField="TotalRuns" Visible="0" Left="1350" Top="360" Width="900" Height="270" Text="TotalRuns" OutputFormat="0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+    </Section>
+    <Section Type="PageFooter" Name="PageFooter" Height="330" BackColor="16777215" CanGrow="0">
+      <Control Type="AR.ReportInfo" Name="reportInfo1" Left="1440" Top="0" Width="12060" Height="270" FormatString="{PageNumber} of {PageCount}" Style="text-align: center; " />
+    </Section>
+    <Section Type="ReportFooter" Name="ReportFooter" Height="675" BackColor="16777215">
+      <Control Type="AR.Label" Name="lblReportSummary" Left="90" Top="90" Width="2160" Height="270" Caption="Report Summary" Style="color: Red; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Line" Name="line1" X1="0" Y1="0" X2="14803.2" Y2="0" LineColor="8421376" LineWeight="2" />
+      <Control Type="AR.Field" Name="textBoxTotalOrdersReport" DataField="TotalOrders" Visible="0" Left="90" Top="360" Width="1080" Height="270" Text="TotalOrders" OutputFormat="0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalCostReport" DataField="TotalCost" Visible="0" Left="2340" Top="360" Width="1080" Height="270" Text="TotalCost" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalMilesReport" DataField="TotalKM" Visible="0" Left="3510" Top="360" Width="990" Height="270" Text="TotalKM" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalCapacitiesReport" Visible="0" Left="4590" Top="360" Width="3600" Height="270" Text="Capacities" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalOrdersVsHourReport" DataField="calcFieldOrdersVsHour" Visible="0" Left="8280" Top="360" Width="1080" Height="270" Text="Orders/Hour" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalViolationsReport" DataField="TotalViolations" Visible="0" Left="9450" Top="360" Width="900" Height="270" Text="Violations" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalTimeReport" DataField="TotalTime" Visible="0" Left="10440" Top="360" Width="810" Height="270" Text="TotalTime" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalWaitTimeReport" DataField="TotalWaitTime" Visible="0" Left="11430" Top="360" Width="900" Height="270" Text="WaitTime" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalCapacityUtilizationReport" Visible="0" Left="12420" Top="360" Width="2340" Height="270" Text="CapacitiesUtilization" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalCost" Left="2340" Top="90" Width="1080" Height="270" Text="Cost" OutputFormat="$#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxTotalMiles" Left="3510" Top="90" Width="990" Height="270" Text="Km" OutputFormat="#,##0.0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxTotalCapacities" Left="4590" Top="90" Width="3600" Height="270" Text="Capacities" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxTotalOrdersVsHour" Left="8280" Top="90" Width="1080" Height="270" Text="Orders/Hour" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxTotalOnTime" DataField="calcFieldOnTime" Left="9450" Top="90" Width="900" Height="270" Text="On time" OutputFormat="0%" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxTotalCapacityUtilization" Left="11250" Top="90" Width="3510" Height="270" Text="CapacitiesUtilization" OutputFormat="0%" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxTotalRunsReport" DataField="TotalRuns" Visible="0" Left="1350" Top="360" Width="900" Height="270" Text="TotalRuns" OutputFormat="0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalTime" DataField="calcFieldOnTime" Left="10440" Top="90" Width="720" Height="270" Text="TotalTime" OutputFormat="0%" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+    </Section>
+  </Sections>
+  <ReportComponentTray />
+  <DataSources>
+    <OleDbDataSource ConnectE="13IdEUWXLb8jDY6d7T6jJYmDRKY5Eee4itGMLIPDLT+VBQkrRemRcHciYcI1dvBprE9fQStE8tu+isu2CxpLq60nUFW0DfO+2JqbUlMrmZBzNYCg0lK/2VTwRb+N2Jid385Ewa4c8Mt+7KgVjOhLTA==" SQL="SELECT * FROM `Route` `Route` INNER JOIN `Schedule` &#xD;&#xA;`Schedule` ON `Route`.`ScheduleID`=`Schedule`.`ID` ORDER BY `Schedule`.`PlannedDate`, `Route`.`VehicleName`" />
+  </DataSources>
+  <CalculatedFields>
+    <Field Name="calcFieldOnTime" Formula="(0 == TotalOrders)? 0 : (1 - (float)TotalViolations/(float)TotalOrders)" FieldType="Float" DefaultValue="0" />
+    <Field Name="calcFieldOrdersVsHour" Formula="(0 == TotalTime)? 0 : (float)TotalOrders/(float)TotalTime" FieldType="Float" DefaultValue="0" />
+    <Field Name="calcFieldCost" Formula="(0 == TotalOrders)? 0 : (float)TotalCost/(float)TotalOrders" FieldType="Float" DefaultValue="0" />
+    <Field Name="calcFieldKm" Formula="(0 == TotalOrders)? 0 : (float)TotalKM/(float)TotalOrders" FieldType="Float" DefaultValue="0" />
+    <Field Name="calcFieldTime" Formula="(0 == TotalOrders)? 0 : (TimeUtilization/100)" FieldType="Float" DefaultValue="0" />
+  </CalculatedFields>
+  <Script><![CDATA[using System;
+using System.Data;
+using System.Data.OleDb;
+using System.Drawing;
+using System.Diagnostics;
+
+        private const float SPACE_SEPARATOR_WIDTH = 0.0625f;
+        private const string CAPACITIES_FORMAT_TOTAL = "Total{0}";
+        private const string CAPACITIES_FORMAT_UTILIZATION = "{0}Utilization";
+        private const string CAPACITIES_FORMAT_CAPACITY = "{0}Capacity";
+        private const string SELECT_STRING_SCHEMA = "SELECT FieldNames FROM `Schema` WHERE Type = \"Capacities\"";
+        private const string SELECT_STRING_SCHEDULE = "SELECT ID FROM `Schedule` ";
+        private const string FORMULA_FORMAT = "= (0 == TotalOrders)? 0 : (float){0}/(float)TotalOrders";
+        private const string FORMULA_FORMAT_PERCENT = "= (0 == TotalOrders)? 0 : (float){0}/((float)TotalOrders * 100)";
+
+        public class Helper
+        {
+            public Helper()
+            {
+            }
+
+            // NOTE: supported only Label and TextBox
+            public static void AddControls(string[] namesArray, string controlName, string fieldFormat,
+                                           ControlCollection controls)
+            {
+                AddControls(namesArray, controlName, fieldFormat, controls, string.Empty);
+            }
+
+            public static void AddControls(string[] namesArray, string controlName, string fieldFormat,
+                                           ControlCollection controls, string formulaFormat)
+            {
+                Debug.Assert(!string.IsNullOrEmpty(controlName));
+                Debug.Assert(!string.IsNullOrEmpty(fieldFormat));
+
+                int index = _FindCapacitiesControlIndex(controlName, controls);
+                Debug.Assert(-1 != index);
+
+                ARControl control = controls[index];
+
+                RectangleF rect = control.Bounds;
+                float newControlWidth = (rect.Width - SPACE_SEPARATOR_WIDTH * (namesArray.Length - 1)) / namesArray.Length;
+                PointF location = rect.Location;
+                SizeF size = new SizeF(newControlWidth, rect.Height);
+
+                controls.RemoveAt(index); // remove prototype
+
+                if (null == namesArray)
+                    return; // EXIT
+
+                bool isLabel = control is Label;
+                for (int i = 0; i < namesArray.Length; ++i)
+                {
+                    if (0 < i)
+                        location.X += SPACE_SEPARATOR_WIDTH + newControlWidth;
+                    RectangleF rectControl = new RectangleF(location, size);
+
+                    ARControl newControl = (isLabel) ?
+                                   _CreateLabel(control, rectControl, namesArray[i]) :
+                                   _CreateTextBox(control, rectControl, namesArray[i], fieldFormat, formulaFormat);
+
+                    controls.Insert(index + i, newControl);
+                }
+            }
+
+            private static int _FindCapacitiesControlIndex(string controlName,
+                                                           ControlCollection controls)
+            {
+                int index = -1;
+                for (int i = 0; i < controls.Count; ++i)
+                {
+                    if (controlName == controls[i].Name)
+                    {
+                        index = i;
+                        break; // founded
+                    }
+                }
+
+                Debug.Assert(-1 != index);
+                return index;
+            }
+
+            private static ARControl _CreateLabel(ARControl prototypeControl,
+                                                  RectangleF rectControl, string name)
+            {
+                Label prototypeCtrl = (Label)prototypeControl;
+                Label lb = new Label();
+                lb.Name = prototypeControl.Name + name;
+                lb.Bounds = rectControl;
+                lb.Text = name;
+                lb.ForeColor = prototypeCtrl.ForeColor;
+                lb.BackColor = prototypeCtrl.BackColor;
+                lb.Alignment = prototypeCtrl.Alignment;
+                lb.Visible = prototypeCtrl.Visible;
+                lb.Style = prototypeCtrl.Style;
+                lb.Font = prototypeCtrl.Font;
+                return lb;
+            }
+
+            private static ARControl _CreateTextBox(ARControl prototypeControl,
+                                                    RectangleF rectControl, string name,
+                                                    string fieldFormat, string formulaFormat)
+            {
+                TextBox prototypeCtrl = (TextBox)prototypeControl;
+                TextBox tb = new TextBox();
+                tb.Name = prototypeControl.Name + name;
+                tb.Bounds = rectControl;
+                tb.Text = name;
+                tb.ForeColor = prototypeCtrl.ForeColor;
+                tb.BackColor = prototypeCtrl.BackColor;
+                tb.Alignment = prototypeCtrl.Alignment;
+                tb.SummaryGroup = prototypeCtrl.SummaryGroup;
+                tb.SummaryRunning = prototypeCtrl.SummaryRunning;
+                tb.SummaryType = prototypeCtrl.SummaryType;
+                tb.OutputFormat = prototypeCtrl.OutputFormat;
+                string fieldName = string.Format(fieldFormat, name);
+                tb.DataField = (string.IsNullOrEmpty(formulaFormat)) ? fieldName : string.Format(formulaFormat, fieldName);
+                tb.Visible = prototypeCtrl.Visible;
+                tb.Style = prototypeCtrl.Style;
+                tb.Font = prototypeCtrl.Font;
+                return tb;
+            }
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////
+
+        private string[] _namesArray = null;
+
+        public void ActiveReport_DataInitialize()
+        {
+            Section groupFooter = rpt.Sections["GroupFooter"];
+            groupFooter.Visible = false;
+
+            // check - count of section more than 1
+            DataSources.OleDBDataSource ds = (DataSources.OleDBDataSource)rpt.DataSource;
+            using (OleDbConnection cnn = new OleDbConnection(ds.ConnectionString))
+            {
+                if (cnn.State == ConnectionState.Closed)
+                    cnn.Open();
+
+                using (OleDbCommand cmd = new OleDbCommand(SELECT_STRING_SCHEDULE, cnn))
+                {
+                    int rowCount = 0;
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ++rowCount;
+                            if (1 < rowCount)
+                            {
+                                groupFooter.Visible = true;
+                                break; // NOTE: result founded
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public void  ActiveReport_ReportStart()
+        {
+            // update report print time and date
+            ControlCollection reportHeaderControls = rpt.Sections["ReportHeader"].Controls;
+            ((Label)reportHeaderControls["labelPrintDate"]).Text = DateTime.Now.ToShortDateString();
+            ((Label)reportHeaderControls["labelPrintTime"]).Text = DateTime.Now.ToLongTimeString();
+
+            // read dynamic fields
+            DataSources.OleDBDataSource ds = (DataSources.OleDBDataSource)rpt.DataSource;
+            using (OleDbConnection cnn = new OleDbConnection(ds.ConnectionString))
+            {
+                if (cnn.State == System.Data.ConnectionState.Closed)
+                    cnn.Open();
+
+                using (OleDbCommand cmd = new OleDbCommand(SELECT_STRING_SCHEMA, cnn))
+                {
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        ControlCollection pageHeaderControls = rpt.Sections["PageHeader"].Controls;
+                        ControlCollection detailControls = rpt.Sections["Detail"].Controls;
+                        ControlCollection groupFooterControls = rpt.Sections["GroupFooter"].Controls;
+                        ControlCollection reportFooterControls = rpt.Sections["ReportFooter"].Controls;
+
+                        if (reader.Read())
+                        {   // NOTE: only one proper record present in table get fields list
+                            string names = reader["FieldNames"].ToString();
+                            _namesArray = names.Split(new char[] { ',' });
+                            Debug.Assert(0 < _namesArray.Length);
+
+                            Helper.AddControls(_namesArray, "lblCapacities", CAPACITIES_FORMAT_TOTAL, pageHeaderControls);
+                            Helper.AddControls(_namesArray, "lblCapacityUtilization", CAPACITIES_FORMAT_UTILIZATION, pageHeaderControls);
+                            Helper.AddControls(_namesArray, "textBoxCapacities", CAPACITIES_FORMAT_TOTAL, detailControls, FORMULA_FORMAT);
+                            Helper.AddControls(_namesArray, "textBoxCapacityUtilization", CAPACITIES_FORMAT_UTILIZATION, detailControls, FORMULA_FORMAT_PERCENT);
+                            Helper.AddControls(_namesArray, "textBoxSubTotalCapacities", CAPACITIES_FORMAT_TOTAL, groupFooterControls);
+                            Helper.AddControls(_namesArray, "textBoxSubTotalCapacitiesSchedule", CAPACITIES_FORMAT_TOTAL, groupFooterControls);
+                            Helper.AddControls(_namesArray, "textBoxSubTotalCapacityUtilization", CAPACITIES_FORMAT_CAPACITY, groupFooterControls);
+                            Helper.AddControls(_namesArray, "textBoxSubTotalCapacityUtilizationSchedule", CAPACITIES_FORMAT_CAPACITY, groupFooterControls);
+                            Helper.AddControls(_namesArray, "textBoxTotalCapacities", CAPACITIES_FORMAT_TOTAL, reportFooterControls);
+                            Helper.AddControls(_namesArray, "textBoxTotalCapacitiesReport", CAPACITIES_FORMAT_TOTAL, reportFooterControls);
+                            Helper.AddControls(_namesArray, "textBoxTotalCapacityUtilization", CAPACITIES_FORMAT_CAPACITY, reportFooterControls);
+                            Helper.AddControls(_namesArray, "textBoxTotalCapacityUtilizationReport", CAPACITIES_FORMAT_CAPACITY, reportFooterControls);
+                        }
+                        else
+                        {
+                            pageHeaderControls["lblCapacities"].Visible =
+                            pageHeaderControls["lblCapacityUtilization"].Visible =
+                            detailControls["textBoxCapacities"].Visible =
+                            detailControls["textBoxCapacityUtilization"].Visible =
+                            groupFooterControls["textBoxSubTotalCapacities"].Visible =
+                            groupFooterControls["textBoxSubTotalCapacitiesSchedule"].Visible =
+                            groupFooterControls["textBoxSubTotalCapacityUtilization"].Visible =
+                            groupFooterControls["textBoxSubTotalCapacityUtilizationSchedule"].Visible =
+                            reportFooterControls["textBoxTotalCapacities"].Visible =
+                            reportFooterControls["textBoxTotalCapacitiesReport"].Visible =
+                            reportFooterControls["textBoxTotalCapacityUtilization"].Visible =
+                            reportFooterControls["textBoxTotalCapacityUtilizationReport"].Visible = false;
+                        }
+                    }
+                }
+            }
+        }
+
+        public void ReportFooter_BeforePrint()
+        {
+            ControlCollection controls = rpt.Sections["ReportFooter"].Controls;
+
+            int totalOrderReport = Convert.ToInt32(((TextBox)controls["textBoxTotalOrdersReport"]).Text);
+
+            float totalCostReport = Convert.ToSingle(((TextBox)controls["textBoxTotalCostReport"]).Text);
+            float totalCostReportRes = (0 == totalOrderReport) ? 0 : totalCostReport / totalOrderReport;
+            TextBox textBoxTotalCost = (TextBox)controls["textBoxTotalCost"];
+            textBoxTotalCost.Text = totalCostReportRes.ToString(textBoxTotalCost.OutputFormat, System.Globalization.CultureInfo.CurrentCulture);
+
+            float totalMilesReport = Convert.ToSingle(((TextBox)controls["textBoxTotalMilesReport"]).Text);
+            float totalMilesReportRes = (0 == totalOrderReport) ? 0 : totalMilesReport / totalOrderReport;
+            TextBox textBoxTotalMiles = (TextBox)controls["textBoxTotalMiles"];
+            textBoxTotalMiles.Text = totalMilesReportRes.ToString(textBoxTotalMiles.OutputFormat, System.Globalization.CultureInfo.CurrentCulture);
+
+            float totalOrdersVsHourReport = Convert.ToSingle(((TextBox)controls["textBoxTotalOrdersVsHourReport"]).Text);
+            float totalOrdersVsHourReportRes = (0 == totalOrderReport) ? 0 : totalOrdersVsHourReport / totalOrderReport;
+            TextBox textBoxTotalOrdersVsHour = (TextBox)controls["textBoxTotalOrdersVsHour"];
+            textBoxTotalOrdersVsHour.Text = totalOrdersVsHourReportRes.ToString(textBoxTotalOrdersVsHour.OutputFormat, System.Globalization.CultureInfo.CurrentCulture);
+
+            float totalViolationsReport = Convert.ToSingle(((TextBox)controls["textBoxTotalViolationsReport"]).Text);
+            float totalOnTimeReportRes = (0 == totalOrderReport) ? 0 : (1 - totalViolationsReport / totalOrderReport);
+            TextBox textBoxTotalOnTime = (TextBox)controls["textBoxTotalOnTime"];
+            textBoxTotalOnTime.Text = totalOnTimeReportRes.ToString(textBoxTotalOnTime.OutputFormat, System.Globalization.CultureInfo.CurrentCulture);
+
+            float totalTimeReport = Convert.ToSingle(((TextBox)controls["textBoxTotalTimeReport"]).Text);
+            float totalWaitTimeReport = Convert.ToSingle(((TextBox)controls["textBoxTotalWaitTimeReport"]).Text);
+            float totalTotalTimeReportRes = (0 == totalTimeReport) ? 0 : ((totalTimeReport - totalWaitTimeReport) / totalTimeReport);
+            TextBox textBoxTotalTime = (TextBox)controls["textBoxTotalTime"];
+            textBoxTotalTime.Text = totalTotalTimeReportRes.ToString(textBoxTotalTime.OutputFormat, System.Globalization.CultureInfo.CurrentCulture);
+
+            if (null == _namesArray)
+                return;
+
+            for (int i = 0; i < _namesArray.Length; ++i)
+            {
+                float totalCapacityTotalReport = Convert.ToSingle(((TextBox)controls["textBoxTotalCapacitiesReport" + _namesArray[i]]).Text);
+                float totalCapacityReportRes = (0 == totalOrderReport) ? 0 : totalCapacityTotalReport / totalOrderReport;
+                TextBox textBoxTotalCapacities = (TextBox)controls["textBoxTotalCapacities" + _namesArray[i]];
+                textBoxTotalCapacities.Text = totalCapacityReportRes.ToString(textBoxTotalCapacities.OutputFormat, System.Globalization.CultureInfo.CurrentCulture);
+
+                int totalRunsReport = Convert.ToInt32(((TextBox)controls["textBoxTotalRunsReport"]).Text);
+                float capacityReport = Convert.ToSingle(((TextBox)controls["textBoxTotalCapacityUtilizationReport" + _namesArray[i]]).Text);
+                float totalCapacityReportUtilRes = ((0 == totalRunsReport) || (0 == capacityReport)) ? 0 : totalCapacityTotalReport / (capacityReport * totalRunsReport);
+                TextBox textBoxTotalCapacityUtilization = (TextBox)controls["textBoxTotalCapacityUtilization" + _namesArray[i]];
+                textBoxTotalCapacityUtilization.Text = totalCapacityReportUtilRes.ToString(textBoxTotalCapacityUtilization.OutputFormat, System.Globalization.CultureInfo.CurrentCulture);
+            }
+        }
+
+        public void GroupFooter_BeforePrint()
+        {
+            ControlCollection controls = rpt.Sections["GroupFooter"].Controls;
+
+            int totalOrderSchedule = Convert.ToInt32(((TextBox)controls["textBoxSubTotalOrdersSchedule"]).Text);
+
+            float totalCostSchedule = Convert.ToSingle(((TextBox)controls["textBoxSubTotalCostSchedule"]).Text);
+            float totalCostScheduleRes = (0 == totalOrderSchedule) ? 0 : totalCostSchedule / totalOrderSchedule;
+            TextBox textBoxSubTotalCost = (TextBox)controls["textBoxSubTotalCost"];
+            textBoxSubTotalCost.Text = totalCostScheduleRes.ToString(textBoxSubTotalCost.OutputFormat, System.Globalization.CultureInfo.CurrentCulture);
+
+            float totalMilesSchedule = Convert.ToSingle(((TextBox)controls["textBoxSubTotalMilesSchedule"]).Text);
+            float totalMilesScheduleRes = (0 == totalOrderSchedule) ? 0 : totalMilesSchedule / totalOrderSchedule;
+            TextBox textBoxSubTotalMiles = (TextBox)controls["textBoxSubTotalMiles"];
+            textBoxSubTotalMiles.Text = totalMilesScheduleRes.ToString(textBoxSubTotalMiles.OutputFormat, System.Globalization.CultureInfo.CurrentCulture);
+
+            float totalOrdersVsHourSchedule = Convert.ToSingle(((TextBox)controls["textBoxSubTotalOrdersVsHourSchedule"]).Text);
+            float totalOrdersVsHourScheduleRes = (0 == totalOrderSchedule) ? 0 : totalOrdersVsHourSchedule / totalOrderSchedule;
+            TextBox textBoxSubTotalOrdersVsHour = (TextBox)controls["textBoxSubTotalOrdersVsHour"];
+            textBoxSubTotalOrdersVsHour.Text = totalOrdersVsHourScheduleRes.ToString(textBoxSubTotalOrdersVsHour.OutputFormat, System.Globalization.CultureInfo.CurrentCulture);
+
+            float totalViolationsSchedule = Convert.ToSingle(((TextBox)controls["textBoxSubTotalViolationsSchedule"]).Text);
+            float totalOnTimeScheduleRes = (0 == totalOrderSchedule) ? 0 : (1 - totalViolationsSchedule / totalOrderSchedule);
+            TextBox textBoxSubTotalOnTime = (TextBox)controls["textBoxSubTotalOnTime"];
+            textBoxSubTotalOnTime.Text = totalOnTimeScheduleRes.ToString(textBoxSubTotalOnTime.OutputFormat, System.Globalization.CultureInfo.CurrentCulture);
+
+            float totalTimeSchedule = Convert.ToSingle(((TextBox)controls["textBoxSubTotalTimeSchedule"]).Text);
+            float totalWaitTimeSchedule = Convert.ToSingle(((TextBox)controls["textBoxSubWaitTimeSchedule"]).Text);
+            float totalTotalTimeScheduleRes = (0 == totalTimeSchedule) ? 0 : ((totalTimeSchedule - totalWaitTimeSchedule) / totalTimeSchedule);
+            TextBox textBoxSubTotalTime = (TextBox)controls["textBoxSubTotalTime"];
+            textBoxSubTotalTime.Text = totalTotalTimeScheduleRes.ToString(textBoxSubTotalTime.OutputFormat, System.Globalization.CultureInfo.CurrentCulture);
+
+            if (null == _namesArray)
+                return;
+
+            for (int i = 0; i < _namesArray.Length; ++i)
+            {
+                float totalCapacityTotalSchedule = Convert.ToSingle(((TextBox)controls["textBoxSubTotalCapacitiesSchedule" + _namesArray[i]]).Text);
+                float totalCapacityScheduleRes = (0 == totalOrderSchedule) ? 0 : totalCapacityTotalSchedule / totalOrderSchedule;
+                TextBox textBoxSubTotalCapacities = (TextBox)controls["textBoxSubTotalCapacities" + _namesArray[i]];
+                textBoxSubTotalCapacities.Text = totalCapacityScheduleRes.ToString(textBoxSubTotalCapacities.OutputFormat, System.Globalization.CultureInfo.CurrentCulture);
+
+                int totalRunsSchedule = Convert.ToInt32(((TextBox)controls["textBoxSubTotalRunsSchedule"]).Text);
+                float capacitySchedule = Convert.ToSingle(((TextBox)controls["textBoxSubTotalCapacityUtilizationSchedule" + _namesArray[i]]).Text);
+                float totalCapacityScheduleUtilRes = ((0 == totalRunsSchedule) || (0 == capacitySchedule)) ? 0 : totalCapacityTotalSchedule / (capacitySchedule * totalRunsSchedule);
+                TextBox textBoxSubTotalCapacityUtilization = (TextBox)controls["textBoxSubTotalCapacityUtilization" + _namesArray[i]];
+                textBoxSubTotalCapacityUtilization.Text = totalCapacityScheduleUtilRes.ToString(textBoxSubTotalCapacityUtilization.OutputFormat, System.Globalization.CultureInfo.CurrentCulture);
+            }
+        }]]></Script>
+  <PageSettings LeftMargin="720" RightMargin="720" TopMargin="720" BottomMargin="720" Orientation="2" />
+  <Parameters />
+</ActiveReportsLayout>

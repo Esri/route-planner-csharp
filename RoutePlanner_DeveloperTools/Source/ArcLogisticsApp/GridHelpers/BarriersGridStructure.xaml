@@ -1,0 +1,43 @@
+<ResourceDictionary
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib">
+
+    <coll:ArrayList x:Key="itemProperties">
+        <xcdg:DataGridItemProperty Name="Name" />
+        <xcdg:DataGridItemProperty Name="StartDate"/>
+        <xcdg:DataGridItemProperty Name="FinishDate" />
+        <xcdg:DataGridItemProperty Name="Geometry" SortComparer="{StaticResource toStringComparer}"/>
+        <xcdg:DataGridItemProperty Name="BarrierEffect" SortComparer="{StaticResource toStringComparer}"/>
+        <xcdg:DataGridItemProperty Name="Comment"/>
+    </coll:ArrayList>
+
+    <coll:ArrayList x:Key="columns">
+        <xcdg:Column FieldName="Name" Title="{DynamicResource BarrierNameColumnHeader}"/>
+        <xcdg:Column FieldName="StartDate" Title="{DynamicResource StartDateColumnHeader}"
+                     CellEditor="{DynamicResource DateTimeEditor}"
+                     CellContentTemplate="{DynamicResource DateTimeTemplate}"/>
+        <xcdg:Column FieldName="FinishDate" Title="{DynamicResource FinihDateColumnHeader}"
+                     CellEditor="{DynamicResource DateTimeEditor}"
+                     CellContentTemplate="{DynamicResource DateTimeTemplate}"/>
+        <xcdg:Column FieldName="Geometry"
+                     Title="{DynamicResource GeometryColumnHeader}"
+                     ReadOnly="True"
+                     CellContentTemplate="{DynamicResource geometryCellContentTemplate}"/>
+        <xcdg:Column FieldName="BarrierEffect"
+                     Title="{DynamicResource BarrierEffectColumnHeader}"
+                     CellContentTemplate="{DynamicResource BarrierEffectTemplate}"
+                     CellEditor="{DynamicResource BarrierEffectCellEditor}"/>
+        <xcdg:Column FieldName="Comment" Title="{DynamicResource CommentColumnHeader}"/>
+    </coll:ArrayList>
+
+    <DataTemplate x:Key="printHeader">
+        <Label Content="{DynamicResource BarriersPagePrintHeader}"
+               HorizontalAlignment="Center"
+               FontFamily="{DynamicResource DefaultApplicationFont}"
+               FontWeight="Bold"
+               FontSize="{DynamicResource LargeFontSize}"/>
+    </DataTemplate>
+
+</ResourceDictionary>

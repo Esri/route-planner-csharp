@@ -1,0 +1,105 @@
+﻿<pages:PageBase x:Class="ESRI.ArcLogistics.App.Pages.BarriersPage"
+                x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+    xmlns:pages="clr-namespace:ESRI.ArcLogistics.App.Pages"
+    xmlns:controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <Style TargetType="{x:Type xcdg:TableViewScrollViewer}">
+                <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+            </Style>
+
+            <xcdg:DataGridCollectionViewSource x:Key="barriersSource"
+                                               AutoCreateItemProperties="False"
+                                               CreatingNewItem="_DataGridCollectionViewSourceCreatingNewItem"
+                                               NewItemCreated="_DataGridCollectionViewSourceNewItemCreated"
+                                               CommittingNewItem="_DataGridCollectionViewSourceCommittingNewItem"
+                                               BeginningEdit="_DataGridCollectionViewSourceBeginningEdit"
+                                               EditBegun="_DataGridCollectionViewSourceEditBegun"
+                                               CommittingEdit="_DataGridCollectionViewSourceCommittingEdit"
+                                               EditCommitted="_DataGridCollectionViewSourceEditCommitted"
+                                               CancelingNewItem="_DataGridCollectionViewSourceCancelingNewItem"
+                                               CancelingEdit="_DataGridCollectionViewSourceCancelingEdit"
+                                               EditCanceled="_DataGridCollectionViewSourceEditCanceled"
+                                               NewItemCommitted="_DataGridCollectionViewSourceNewItemCommitted"
+                                               NewItemCanceled="_DataGridCollectionViewSourceNewItemCanceled"
+                                               />
+
+            <VisualBrush x:Key="textBrush"
+                Stretch="Uniform"
+                TileMode="None"
+                Viewport="10,0,165,25"
+                ViewportUnits="Absolute">
+                <VisualBrush.Visual>
+                    <StackPanel Background="#00FFFFFF">
+                        <TextBlock Width="Auto"
+                            Height="Auto"
+                            FontSize="12"
+                            Foreground="DarkGray"
+                            Text="{StaticResource BarriersPageInsertionHelpText}"/>
+                    </StackPanel>
+                </VisualBrush.Visual>
+            </VisualBrush>
+
+
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.5*" />
+        </Grid.RowDefinitions>
+
+        <app_controls:CommandButtonGroup
+            Grid.Row="1"
+            x:Name="commandButtonGroup"
+            Margin="{StaticResource FunctionalGridButtonsStackMargin}" />
+        <Border HorizontalAlignment="Stretch"
+                Margin="4,0,4,0"
+                Width="Auto"
+                Grid.Row="2"
+                BorderThickness="{StaticResource GridBorderThickness}"
+                BorderBrush="{StaticResource ApplicationBorder}"
+                SnapsToDevicePixels="True">
+            <!-- TODO: AutoCreateColumns="True" because in v 3.2 grid doesn't find default cell
+                       editors for null objects http://xceed.com/CS/forums/thread/22484.aspx-->
+            <app_controls:DataGridControlEx AutoCreateColumns="True"
+                ItemsSource="{Binding Source={StaticResource barriersSource}}"
+                IsEnabled="True"
+                x:Name="XceedGrid" >
+                <xcdg:DataGridControl.View>
+                    <xcdg:TableView ColumnStretchMode="Last">
+                        <xcdg:TableView.FixedHeaders>
+                            <DataTemplate>
+                                <xcdg:InsertionRow Style="{StaticResource insertionStyle}"
+                                    Initialized="_InsertionRowInitialized"/>
+                            </DataTemplate>
+                        </xcdg:TableView.FixedHeaders>
+                    </xcdg:TableView>
+                </xcdg:DataGridControl.View>
+            </app_controls:DataGridControlEx>
+        </Border>
+        <Grid Grid.Row="3">
+            <Border Name="MapBorder"
+                    Margin="4,4,4,4"
+                    SnapsToDevicePixels="True"
+                    BorderThickness="{StaticResource GridBorderThickness}"
+                    BorderBrush="{StaticResource ApplicationBorder}">
+                <controls:MapControl x:Name="mapCtrl"
+                    Map="{Binding Source={x:Static Application.Current},Path=Map}" />
+            </Border>
+        </Grid>
+        <GridSplitter HorizontalAlignment="Stretch"
+                      Margin="{StaticResource HorisontalGridSplitterMargin}"
+                      VerticalAlignment="Top"
+                      Height="{StaticResource PageSplitterHeight}"
+                      Grid.Row="3"
+                      Style="{StaticResource GridSplitterStyleMain}"
+                      Background="Transparent"/>
+    </Grid>
+</pages:PageBase>

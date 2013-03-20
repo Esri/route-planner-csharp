@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExportStructure>
+  <ExportPatterns>
+    <ExportPattern Type="Access">
+       <Tables>
+          <!-- Don't touch tables sequence -->
+          <Table Type="Schedules" >
+            <IgnorableFields />
+            <Indexes>
+              <Index Type="Primary" >
+                <Fields>
+                  <Field Name="ID" />
+                </Fields>
+              </Index>
+            </Indexes>
+          </Table>
+          <Table Type="Routes" >
+            <IgnorableFields />
+            <Indexes>
+              <Index Type="Primary" >
+                <Fields>
+                  <Field Name="ID" />
+                </Fields>
+              </Index>
+              <Index Type="Simple" >
+                <Fields>
+                  <Field Name="ScheduleID" />
+                </Fields>
+              </Index>
+            </Indexes>
+          </Table>
+          <Table Type="Stops" >
+            <IgnorableFields>
+              <Field Name="RouteName" />
+              <Field Name="DriverName" />
+              <Field Name="VehicleName" />
+            </IgnorableFields>
+            <Indexes>
+              <Index Type="Primary" >
+                <Fields>
+                  <Field Name="StopID" />
+                </Fields>
+              </Index>
+              <Index Type="Simple" >
+                <Fields>
+                   <Field Name="ScheduleID" />
+                </Fields>
+              </Index>
+              <Index Type="Multiple" >
+                <Fields>
+                   <Field Name="ScheduleID" />
+                   <Field Name="RouteID" />
+                   <Field Name="Sequence" />
+                </Fields>
+              </Index>
+              <Index Type="Multiple" >
+                <Fields>
+                  <Field Name="StopID" />
+                  <Field Name="RouteID" />
+                </Fields>
+              </Index>
+            </Indexes>
+          </Table>
+          <Table Type="Schema" >
+             <IgnorableFields />
+             <Indexes />
+          </Table>
+       </Tables>
+    </ExportPattern>
+    <ExportPattern Type="TextRoutes">
+      <Tables>
+        <Table Type="Routes">
+          <IgnorableFields>
+            <Field Name="OverviewMap" />
+          </IgnorableFields>
+          <Indexs />
+        </Table>
+      </Tables>
+    </ExportPattern>
+    <ExportPattern Type="TextStops">
+      <Tables>
+        <Table Type="Stops">
+          <IgnorableFields>
+            <Field Name="StopVicinityMap" />
+            <Field Name="Directions" />
+          </IgnorableFields>
+          <Indexs />
+        </Table>
+      </Tables>
+    </ExportPattern>
+    <ExportPattern Type="TextOrders">
+      <Tables>
+        <Table Type="Orders">
+          <IgnorableFields />
+          <Indexs />
+        </Table>
+      </Tables>
+    </ExportPattern>
+  </ExportPatterns>
+  <TableDefinitions>
+    <TableDefinition Type="Schedules" Name="Schedule">
+      <Fields>
+        <Field Name="ID" LongName="ExportFieldNameID" ShortName="ExportFieldNameID"
+               ADOType="Guid" />
+        <Field Name="PlannedDate" LongName="ExportFieldNameLongPlannedDate" ShortName="ExportFieldNameShortPlannedDate"
+               ADOType="Date" />
+      </Fields>
+    </TableDefinition>
+    <TableDefinition Type="Routes" Name="Route">
+      <Fields>
+        <Field Name="OverviewMap" LongName="ExportFieldNameOverviewMap" ShortName="ExportFieldNameOverviewMap" Description="ExportFieldDescriptionOverviewMap"
+               ADOType="LongVarBinary"
+               Default="false" Image ="true" />
+        <Field Name="ID" LongName="ExportFieldNameID" ShortName="ExportFieldNameID" Description="ExportFieldDescriptionRouteID"
+               ADOType="Guid" />
+        <Field Name="ScheduleID" LongName="ExportFieldNameScheduleID" ShortName="ExportFieldNameScheduleID" Description="ExportFieldDescriptionScheduleID"
+               ADOType="Guid" />
+        <Field Name="Name" LongName="ExportFieldNameName" ShortName="ExportFieldNameName" Description="ExportFieldDescriptionRouteName"
+               ADOType="WChar" Size="50" />
+        <Field Name="VehicleName" LongName="ExportFieldNameLongVehicleName" ShortName="ExportFieldNameShortVehicleName" Description="ExportFieldDescriptionVehicleName"
+               ADOType="WChar" Size="50" />
+        <Field Name="DriverName" LongName="ExportFieldNameDriverName" ShortName="ExportFieldNameDriverName" Description="ExportFieldDescriptionDriverName"
+               ADOType="WChar" Size="50" />
+        <Field Name="StartLocationName" LongName="ExportFieldNameLongStartLocationName" ShortName="ExportFieldNameShortStartLocationName" Description="ExportFieldDescriptionStartLocationName"
+               ADOType="WChar" Size="50" />
+        <Field Name="EndLocationName" LongName="ExportFieldNameLongEndLocationName" ShortName="ExportFieldNameShortEndLocationName" Description="ExportFieldDescriptionEndLocationName"
+               ADOType="WChar" Size="50" />
+        <Field Name="RenewalLocations" LongName="ExportFieldNameLongRenewalLocations" ShortName="ExportFieldNameShortRenewalLocations" Description="ExportFieldDescriptionRenewalLocations"
+               ADOType="LongVarWChar" Size="2000" />
+        <Field Name="{0}Capacity" LongName="ExportFieldNameLongCapacity" ShortName="ExportFieldNameShortCapacity" Description="ExportFieldDescriptionCapacity"
+               ADOType="Double" Precision="14" Scale="2"
+               RelationType="Capacities" />
+        <Field Name="StartTWDay" LongName="ExportFieldNameLongStartTWDay" ShortName="ExportFieldNameShortStartTWDay" Description="ExportFieldDescriptionStartTWDay"
+               ADOType="Integer" Precision="15" />
+        <Field Name="StartTWFrom" LongName="ExportFieldNameLongStartTWFrom" ShortName="ExportFieldNameShortStartTWFrom" Description="ExportFieldDescriptionStartTWFrom"
+               ADOType="Double" Precision="14" Scale="2" />
+        <Field Name="StartTWFromString" LongName="ExportFieldNameLongStartTWFromString" ShortName="ExportFieldNameShortTWFromString" Description="ExportFieldDescriptionStartTWFromString"
+               ADOType="WChar" Size="15" />
+        <Field Name="StartTWTo" LongName="ExportFieldNameLongStartTWTo" ShortName="ExportFieldNameShortStartTWTo" Description="ExportFieldDescriptionStartTWTo"
+               ADOType="Double" Precision="14" Scale="2" />
+        <Field Name="StartTWToString" LongName="ExportFieldNameLongStartTWToString" ShortName="ExportFieldNameShortStartTWToString" Description="ExportFieldDescriptionStartTWToString"
+               ADOType="WChar" Size="15" />
+        <Field Name="FixedCost" LongName="ExportFieldNameFixedCost" ShortName="ExportFieldNameFixedCost" Description="ExportFieldDescriptionFixedCost"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="CostPerMile" LongName="ExportFieldNameLongCostPerMile" ShortName="ExportFieldNameShortCostPerMile" Description="ExportFieldDescriptionCostPerMile"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="CostPerKM" LongName="ExportFieldNameLongCostPerKM" ShortName="ExportFieldNameShortCostPerKM" Description="ExportFieldDescriptionCostPerKM"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="CostPerHour" LongName="ExportFieldNameLongCostPerHour" ShortName="ExportFieldNameShortCostPerHour" Description="ExportFieldDescriptionCostPerHour"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="CostPerHourOT" LongName="ExportFieldNameLongCostPerHourOT" ShortName="ExportFieldNameShortCostPerHourOT" Description="ExportFieldDescriptionCostPerHourOT"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="TimeBeforeOT" LongName="ExportFieldNameLongTimeBeforeOT" ShortName="ExportFieldNameShortTimeBeforeOT" Description="ExportFieldDescriptionTimeBeforeOT"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="FuelType" LongName="ExportFieldNameFuelType" ShortName="ExportFieldNameFuelType" Description="ExportFieldDescriptionFuelType"
+               ADOType="WChar" Size="100" />
+        <Field Name="FuelEconomy" LongName="ExportFieldNameLongFuelEconomy" ShortName="ExportFieldNameShortFuelEconomy" Description="ExportFieldDescriptionFuelEconomy"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="CO2Emission" LongName="ExportFieldNameLongCO2Emission" ShortName="ExportFieldNameShortCO2Emission" Description="ExportFieldDescriptionCO2Emission"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="Breaks" LongName="ExportFieldNameBreaks" ShortName="ExportFieldNameShortBreaks" Description="ExportFieldDescriptionBreaks"
+               ADOType="WChar" Size="250" />
+        <Field Name="MaxOrders" LongName="ExportFieldNameMaxOrders" ShortName="ExportFieldNameMaxOrders" Description="ExportFieldDescriptionMaxOrders"
+               ADOType="Integer" Precision="15" />
+        <Field Name="MaxTotalDuration" LongName="ExportFieldNameLongMaxTotalDuration" ShortName="ExportFieldNameShortMaxTotalDuration" Description="ExportFieldDescriptionMaxTotalDuration"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="MaxTravelDuration" LongName="ExportFieldNameLongMaxTravelDuration" ShortName="ExportFieldNameShortMaxTravelDuration" Description="ExportFieldDescriptionMaxTravelDuration"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="MaxTravelMiles" LongName="ExportFieldNameLongMaxTravelMiles" ShortName="ExportFieldNameShortMaxTravelMiles" Description="ExportFieldDescriptionMaxTravelMiles"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="MaxTravelKM" LongName="ExportFieldNameLongMaxTravelKM" ShortName="ExportFieldNameShortMaxTravelKM" Description="ExportFieldDescriptionMaxTravelKM"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="VehicleSpecialties" LongName="ExportFieldNameLongVehicleSpecialties" ShortName="ExportFieldNameShortVehicleSpecialties" Description="ExportFieldDescriptionVehicleSpecialties"
+               ADOType="WChar" Size="200" />
+        <Field Name="DriverSpecialties" LongName="ExportFieldNameLongDriverSpecialties" ShortName="ExportFieldNameShortDriverSpecialties" Description="ExportFieldDescriptionDriverSpecialties"
+               ADOType="WChar" Size="200" />
+        <Field Name="Zones" LongName="ExportFieldNameZones" ShortName="ExportFieldNameZones" Description="ExportFieldDescriptionZones"
+               ADOType="WChar" Size="250" />
+        <Field Name="Comments" LongName="ExportFieldNameComments" ShortName="ExportFieldNameComments" Description="ExportFieldDescriptionComments"
+               ADOType="LongVarWChar" Size="2000" />
+        <Field Name="StartDate" LongName="ExportFieldNameStartDate" ShortName="ExportFieldNameStartDate" Description="ExportFieldDescriptionStartDate"
+               ADOType="Date" />
+        <Field Name="StartTime" LongName="ExportFieldNameStartTime" ShortName="ExportFieldNameStartTime" Description="ExportFieldDescriptionStartTime"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="StartTimeString" LongName="ExportFieldNameLongStartTimeString" ShortName="ExportFieldNameShortStartTimeString" Description="ExportFieldDescriptionStartTimeString"
+               ADOType="WChar" Size="30" />
+        <Field Name="EndDate" LongName="ExportFieldNameEndDate" ShortName="ExportFieldNameEndDate" Description="ExportFieldDescriptionEndDate"
+               ADOType="Date" />
+        <Field Name="EndTime" LongName="ExportFieldNameEndTime" ShortName="ExportFieldNameEndTime" Description="ExportFieldDescriptionEndTime"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="EndTimeString" LongName="ExportFieldNameLongEndTimeString" ShortName="ExportFieldNameShortEndTimeString" Description="ExportFieldDescriptionEndTimeString"
+               ADOType="WChar" Size="30" />
+        <Field Name="RouteTimeString" LongName="ExportFieldNameLongRouteTimeString" ShortName="ExportFieldNameShortRouteTimeString" Description="ExportFieldDescriptionRouteTimeString"
+               ADOType="WChar" Size="30" />
+        <Field Name="TotalStops" LongName="ExportFieldNameLongTotalStops" ShortName="ExportFieldNameShortTotalStops" Description="ExportFieldDescriptionTotalStops"
+               ADOType="Integer" Precision="15" />
+        <Field Name="TotalOrders" LongName="ExportFieldNameLongTotalOrders" ShortName="ExportFieldNameShortTotalOrders" Description="ExportFieldDescriptionTotalOrders"
+               ADOType="Integer" Precision="15" />
+        <Field Name="TotalServiceTime" LongName="ExportFieldNameLongTotalServiceTime" ShortName="ExportFieldNameShortTotalServiceTime" Description="ExportFieldDescriptionTotalServiceTime"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="TotalTravelTime" LongName="ExportFieldNameLongTotalTravelTime" ShortName="ExportFieldNameShortTotalTravelTime" Description="ExportFieldDescriptionTotalTravelTime"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="TotalWaitTime" LongName="ExportFieldNameLongTotalWaitTime" ShortName="ExportFieldNameShortTotalWaitTime" Description="ExportFieldDescriptionTotalWaitTime"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="TotalTime" LongName="ExportFieldNameLongTotalTime" ShortName="ExportFieldNameShortTotalTime" Description="ExportFieldDescriptionTotalTime"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="TotalOT" LongName="ExportFieldNameLongTotalOT" ShortName="ExportFieldNameShortTotalOT" Description="ExportFieldDescriptionTotalOT"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="TotalCost" LongName="ExportFieldNameLongTotalCost" ShortName="ExportFieldNameShortTotalCost" Description="ExportFieldDescriptionTotalCost"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="TotalMiles" LongName="ExportFieldNameLongTotalMiles" ShortName="ExportFieldNameShortTotalMiles" Description="ExportFieldDescriptionTotalMiles"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="TotalKM" LongName="ExportFieldNameLongTotalKM" ShortName="ExportFieldNameShortTotalKM" Description="ExportFieldDescriptionTotalKM"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="TotalMilesPerStop" LongName="ExportFieldNameLongTotalMilesPerStop" ShortName="ExportFieldNameShortTotalMilesPerStop" Description="ExportFieldDescriptionTotalMilesPerStop"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="TotalKMPerStop" LongName="ExportFieldNameLongTotalKMPerStop" ShortName="ExportFieldNameShortTotalKMPerStop" Description="ExportFieldDescriptionTotalKMPerStop"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="TotalCO2Emission" LongName="ExportFieldNameLongTotalCO2Emission" ShortName="ExportFieldNameShortTotalCO2Emission" Description="ExportFieldDescriptionTotalCO2Emission"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="TotalViolations" LongName="ExportFieldNameLongTotalViolations" ShortName="ExportFieldNameShortTotalViolations" Description="ExportFieldDescriptionTotalViolations"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="TotalViolationTime" LongName="ExportFieldNameLongTotalViolationTime" ShortName="ExportFieldNameShortTotalViolationTime" Description="ExportFieldDescriptionTotalViolationTime"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="TotalRuns" LongName="ExportFieldNameLongTotalRuns" ShortName="ExportFieldNameShortTotalRuns" Description="ExportFieldDescriptionTotalRuns"
+               ADOType="Integer" Precision="15" />
+        <Field Name="Total{0}" LongName="ExportFieldNameLongTotal" ShortName="ExportFieldNameShortTotal" Description="ExportFieldDescriptionTotal"
+               ADOType="Single" Precision="14" Scale="2"
+               RelationType="Capacities" />
+        <Field Name="TimeUtilization" LongName="ExportFieldNameLongTimeUtilization" ShortName="ExportFieldNameShortTimeUtilization" Description="ExportFieldDescriptionTimeUtilization"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="{0}Utilization" LongName="ExportFieldNameLongUtilization" ShortName="ExportFieldNameShortUtilization" Description="ExportFieldDescriptionUtilization"
+               ADOType="Single" Precision="14" Scale="2"
+               RelationType="Capacities" />
+      </Fields>
+    </TableDefinition>
+    <TableDefinition Type="Stops" Name="Stop">
+      <Fields>
+        <Field Name="StopVicinityMap" LongName="ExportFieldNameLongStopVicinityMap" ShortName="ExportFieldNameShortStopVicinityMap" Description="ExportFieldDescriptionStopVicinityMap"
+               ADOType="LongVarBinary"
+               RelationType="" Default="false" Image ="true"/>
+        <Field Name="Directions" LongName="ExportFieldNameDirections" ShortName="ExportFieldNameDirections" Description="ExportFieldDescriptionDirections"
+               ADOType="LongVarBinary"
+               RelationType="" Default="false" />
+        <Field Name="StopID" LongName="ExportFieldNameStopID" ShortName="ExportFieldNameStopID" Description="ExportFieldDescriptionStopID"
+               ADOType="Guid" />
+        <Field Name="ScheduleID" LongName="ExportFieldNameScheduleID" ShortName="ExportFieldNameScheduleID" Description="ExportFieldDescriptionScheduleID"
+               ADOType="Guid" />
+        <Field Name="RouteID" LongName="ExportFieldNameRouteID" ShortName="ExportFieldNameRouteID" Description="ExportFieldDescriptionRouteID"
+               ADOType="Guid" />
+        <Field Name="Name" LongName="ExportFieldNameName" ShortName="ExportFieldNameName" Description="ExportFieldDescriptionStopName"
+               ADOType="WChar" Size="50" />
+        <Field Name="RouteName" LongName="ExportFieldNameRouteName" ShortName="ExportFieldNameRouteName" Description="ExportFieldDescriptionRouteName"
+               ADOType="WChar" Size="50" />
+        <Field Name="VehicleName" LongName="ExportFieldNameLongVehicleName" ShortName="ExportFieldNameShortVehicleName" Description="ExportFieldDescriptionVehicleName"
+               ADOType="WChar" Size="50" />
+        <Field Name="DriverName" LongName="ExportFieldNameDriverName" ShortName="ExportFieldNameDriverName" Description="ExportFieldDescriptionDriverName"
+               ADOType="WChar" Size="50" />
+        <Field Name="AddressFields" LongName="ExportFieldNameLongAddressFields" ShortName="ExportFieldNameShortAddressFields"
+               ADOType="WChar" Size="100"
+               RelationType="Address"/>
+        <Field Name="FullAddress" LongName="ExportFieldNameLongFullAddress" ShortName="ExportFieldNameShortFullAddress" Description="ExportFieldDescriptionFullAddress"
+               ADOType="WChar" Size="200"/>
+        <Field Name="FullAddressShort" LongName="ExportFieldNameLongFullAddressShort" ShortName="ExportFieldNameShortFullAddressShort"
+               ADOType="WChar" Size="180"
+               Hidden="true" />
+        <Field Name="Confidence" LongName="ExportFieldNameConfidence" ShortName="ExportFieldNameConfidence" Description="ExportFieldDescriptionConfidence"
+               ADOType="WChar" Size="50" />
+        <Field Name="X" LongName="ExportFieldNameX" ShortName="ExportFieldNameX" Description="ExportFieldDescriptionX"
+               ADOType="Double" Precision="14" Scale="7" />
+        <Field Name="Y" LongName="ExportFieldNameY" ShortName="ExportFieldNameY" Description="ExportFieldDescriptionY"
+               ADOType="Double" Precision="14" Scale="7" />
+        <Field Name="OrderType" LongName="ExportFieldNameOrderType" ShortName="ExportFieldNameOrderType" Description="ExportFieldDescriptionOrderType"
+               ADOType="SmallInt" Precision="5" />
+        <Field Name="OrderTypeString" LongName="ExportFieldNameLongOrderTypeString" ShortName="ExportFieldNameShortOrderTypeString" Description="ExportFieldDescriptionOrderTypeString"
+               ADOType="WChar" Size="50" />
+        <Field Name="Priority" LongName="ExportFieldNamePriority" ShortName="ExportFieldNamePriority" Description="ExportFieldDescriptionPriority"
+               ADOType="SmallInt" Precision="5" />
+        <Field Name="PriorityString" LongName="ExportFieldNameLongPriorityString" ShortName="ExportFieldNameShortPriorityString" Description="ExportFieldDescriptionPriorityString"
+               ADOType="WChar" Size="50" />
+        <Field Name="TWDay" LongName="ExportFieldNameTWDay" ShortName="ExportFieldNameTWDay" Description="ExportFieldDescriptionTWDay"
+               ADOType="Integer" Precision="15" />
+        <Field Name="TWFrom" LongName="ExportFieldNameTWFrom" ShortName="ExportFieldNameTWFrom" Description="ExportFieldDescriptionTWFrom"
+               ADOType="Double" Precision="14" />
+        <Field Name="TWFromString" LongName="ExportFieldNameLongTWFromString" ShortName="ExportFieldNameShortTWFromString" Description="ExportFieldDescriptionTWFromString"
+               ADOType="WChar" Size="15" />
+        <Field Name="TWTo" LongName="ExportFieldNameTWTo" ShortName="ExportFieldNameTWTo" Description="ExportFieldDescriptionTWTo"
+               ADOType="Double" Precision="14" />
+        <Field Name="TWToString" LongName="ExportFieldNameLongTWToString" ShortName="ExportFieldNameShortTWToString" Description="ExportFieldDescriptionTWToString"
+               ADOType="WChar" Size="15" />
+        <Field Name="TWString" LongName="ExportFieldNameLongTWString" ShortName="ExportFieldNameShortTWString" Description="ExportFieldDescriptionTWString"
+               ADOType="WChar" Size="30" />
+        <Field Name="TW2Day" LongName="ExportFieldNameTW2Day" ShortName="ExportFieldNameTW2Day" Description="ExportFieldDescriptionTW2Day"
+               ADOType="Integer" Precision="15" />
+        <Field Name="TW2From" LongName="ExportFieldNameTW2From" ShortName="ExportFieldNameTW2From" Description="ExportFieldDescriptionTW2From"
+               ADOType="Double" Precision="14" />
+        <Field Name="TWFrom2String" LongName="ExportFieldNameLongTWFrom2String" ShortName="ExportFieldNameShortTWFrom2String" Description="ExportFieldDescriptionTWFrom2String"
+               ADOType="WChar" Size="15" />
+        <Field Name="TW2To" LongName="ExportFieldNameTW2To" ShortName="ExportFieldNameTW2To" Description="ExportFieldDescriptionTW2To"
+               ADOType="Double" Precision="14" Scale="2" />
+        <Field Name="TWTo2String" LongName="ExportFieldNameLongTWTo2String" ShortName="ExportFieldNameShortTWTo2String" Description="ExportFieldDescriptionTWTo2String"
+               ADOType="WChar" Size="15" />
+        <Field Name="TW2String" LongName="ExportFieldNameLongTW2String" ShortName="ExportFieldNameShortTW2String" Description="ExportFieldDescriptionTW2String"
+               ADOType="WChar" Size="30" />
+        <Field Name="MaxViolationTime" LongName="ExportFieldNameLongMaxViolationTime" ShortName="ExportFieldNameShortMaxViolationTime" Description="ExportFieldDescriptionMaxViolationTime"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="ServiceTime" LongName="ExportFieldNameLongServiceTime" ShortName="ExportFieldNameShortServiceTime" Description="ExportFieldDescriptionServiceTime"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="{0}" LongName="ExportFieldNameRelative" ShortName="ExportFieldNameRelative" Description="ExportFieldDescriptionRelativeCapacity"
+               ADOType="Double" Precision="14" Scale="2"
+               RelationType="Capacities" />
+        <Field Name="DriverSpecialties" LongName="ExportFieldNameLongDriverSpecialties" ShortName="ExportFieldNameShortDriverSpecialties" Description="ExportFieldDescriptionDriverSpecialties"
+               ADOType="WChar" Size="200" />
+        <Field Name="VehicleSpecialties" LongName="ExportFieldNameLongVehicleSpecialties" ShortName="ExportFieldNameShortVehicleSpecialties" Description="ExportFieldDescriptionVehicleSpecialties"
+               ADOType="WChar" Size="200" />
+        <Field Name="{0}" LongName="ExportFieldNameRelative" ShortName="ExportFieldNameRelative"
+               ADOType="WChar" Size="255"
+               RelationType="CustomOrderProperties" />
+        <Field Name="StopType" LongName="ExportFieldNameStopType" ShortName="ExportFieldNameStopType" Description="ExportFieldDescriptionStopType"
+               ADOType="SmallInt" Precision="5" />
+        <Field Name="StopTypeString" LongName="ExportFieldNameLongStopTypeString" ShortName="ExportFieldNameShortStopTypeString" Description="ExportFieldDescriptionStopTypeString"
+               ADOType="WChar" Size="50" />
+        <Field Name="StopTypeExString" LongName="ExportFieldNameLongStopTypeExString" ShortName="ExportFieldNameShortStopTypeExString"
+               ADOType="WChar" Size="50"
+               Hidden="true" />
+        <Field Name="StopNamePrefix" LongName="ExportFieldNameLongStopNamePrefix" ShortName="ExportFieldNameShortStopNamePrefix"
+               ADOType="WChar" Size="50"
+               Hidden="true" />
+        <Field Name="StopNamePostfix" LongName="ExportFieldNameLongStopNamePostfix" ShortName="ExportFieldNameShortStopNamePostfix"
+               ADOType="WChar" Size="50"
+               Hidden="true" />
+        <Field Name="Sequence" LongName="ExportFieldNameSequence" ShortName="ExportFieldNameSequence" Description="ExportFieldDescriptionSequence"
+               ADOType="Integer" Precision="15" />
+        <Field Name="OrderSequence" LongName="ExportFieldNameLongOrderSequence" ShortName="ExportFieldNameShortOrderSequence" Description="ExportFieldDescriptionOrderSequence"
+               ADOType="Integer" Precision="15" />
+        <Field Name="TravelTime" LongName="ExportFieldNameTravelTime" ShortName="ExportFieldNameTravelTime" Description="ExportFieldDescriptionTravelTime"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="WaitTime" LongName="ExportFieldNameWaitTime" ShortName="ExportFieldNameWaitTime" Description="ExportFieldDescriptionWaitTime"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="ArriveDate" LongName="ExportFieldNameLongArriveDate" ShortName="ExportFieldNameShortArriveDate" Description="ExportFieldDescriptionArriveDate"
+               ADOType="Date" />
+        <Field Name="ArriveTime" LongName="ExportFieldNameLongArriveTime" ShortName="ExportFieldNameShortArriveTime" Description="ExportFieldDescriptionArriveTime"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="ArriveTimeString" LongName="ExportFieldNameLongArriveTimeString" ShortName="ExportFieldNameShortArriveTimeString" Description="ExportFieldDescriptionArriveTimeString"
+               ADOType="WChar" Size="30" />
+        <Field Name="DistanceFromPrevious" LongName="ExportFieldNameLongDistanceFromPrevious" ShortName="ExportFieldNameShortDistanceFromPrevious" Description="ExportFieldDescriptionDistanceFromPrevious"
+               ADOType="Double" Precision="14" Scale="2" />
+        <Field Name="LoadAtID" LongName="ExportFieldNameLoadAtId" ShortName="ExportFieldNameLoadAtId" Description="ExportFieldDescriptionLoadAtId"
+               ADOType="Guid" />
+      </Fields>
+    </TableDefinition>
+    <TableDefinition Type="Orders" Name="Order">
+      <Fields>
+       <Field Name="OrderID" LongName="ExportFieldNameOrderID" ShortName="ExportFieldNameOrderID" Description="ExportFieldDescriptionOrderID"
+               ADOType="Guid" />
+       <Field Name="ScheduleID" LongName="ExportFieldNameScheduleID" ShortName="ExportFieldNameScheduleID" Description="ExportFieldDescriptionOrderScheduleID"
+               ADOType="Guid" />
+        <Field Name="Name" LongName="ExportFieldNameName" ShortName="ExportFieldNameName" Description="ExportFieldDescriptionOrderName"
+               ADOType="WChar" Size="50" />
+        <Field Name="AddressFields" LongName="ExportFieldNameLongAddressFields" ShortName="ExportFieldNameShortAddressFields"
+               ADOType="WChar" Size="100"
+               RelationType="Address"/>
+        <Field Name="FullAddress" LongName="ExportFieldNameLongFullAddress" ShortName="ExportFieldNameShortFullAddress" Description="ExportFieldDescriptionFullAddressOrder"
+               ADOType="WChar" Size="200"/>
+        <Field Name="FullAddressShort" LongName="ExportFieldNameLongFullAddressShort" ShortName="ExportFieldNameShortFullAddressShort"
+               ADOType="WChar" Size="180"
+               Hidden="true" />
+        <Field Name="Confidence" LongName="ExportFieldNameConfidence" ShortName="ExportFieldNameConfidence" Description="ExportFieldDescriptionConfidence"
+               ADOType="WChar" Size="50" />
+        <Field Name="X" LongName="ExportFieldNameX" ShortName="ExportFieldNameX" Description="ExportFieldDescriptionX"
+               ADOType="Double" Precision="14" Scale="7" />
+        <Field Name="Y" LongName="ExportFieldNameY" ShortName="ExportFieldNameY" Description="ExportFieldDescriptionY"
+               ADOType="Double" Precision="14" Scale="7" />
+        <Field Name="PlannedDate" LongName="ExportFieldNameLongPlannedDate" ShortName="ExportFieldNameShortPlannedDate" Description="ExportFieldDescriptionPlannedDate"
+                 ADOType="Date" />
+        <Field Name="OrderType" LongName="ExportFieldNameOrderType" ShortName="ExportFieldNameOrderType" Description="ExportFieldDescriptionOrderType"
+               ADOType="SmallInt" Precision="5" />
+        <Field Name="OrderTypeString" LongName="ExportFieldNameLongOrderTypeString" ShortName="ExportFieldNameShortOrderTypeString" Description="ExportFieldDescriptionOrderTypeString"
+               ADOType="WChar" Size="50" />
+        <Field Name="Priority" LongName="ExportFieldNamePriority" ShortName="ExportFieldNamePriority" Description="ExportFieldDescriptionPriority"
+               ADOType="SmallInt" Precision="5" />
+        <Field Name="PriorityString" LongName="ExportFieldNameLongPriorityString" ShortName="ExportFieldNameShortPriorityString" Description="ExportFieldDescriptionPriorityString"
+               ADOType="WChar" Size="50" />
+        <Field Name="TWFrom" LongName="ExportFieldNameTWFrom" ShortName="ExportFieldNameTWFrom" Description="ExportFieldDescriptionTWFrom"
+               ADOType="Double" Precision="14" />
+        <Field Name="TWFromString" LongName="ExportFieldNameLongTWFromString" ShortName="ExportFieldNameShortTWFromString" Description="ExportFieldDescriptionTWFromString"
+               ADOType="WChar" Size="15" />
+        <Field Name="TWDay" LongName="ExportFieldNameTWDay" ShortName="ExportFieldNameTWDay" Description="ExportFieldDescriptionTWDay"
+               ADOType="Integer" Precision="15" />
+        <Field Name="TWTo" LongName="ExportFieldNameTWTo" ShortName="ExportFieldNameTWTo" Description="ExportFieldDescriptionTWTo"
+               ADOType="Double" Precision="14" />
+        <Field Name="TWToString" LongName="ExportFieldNameLongTWToString" ShortName="ExportFieldNameShortTWToString" Description="ExportFieldDescriptionTWToString"
+               ADOType="WChar" Size="15" />
+        <Field Name="TWString" LongName="ExportFieldNameLongTWString" ShortName="ExportFieldNameShortTWString" Description="ExportFieldDescriptionTWString"
+               ADOType="WChar" Size="30" />
+        <Field Name="TW2Day" LongName="ExportFieldNameTW2Day" ShortName="ExportFieldNameTW2Day" Description="ExportFieldDescriptionTW2Day"
+               ADOType="Integer" Precision="15" />
+        <Field Name="TW2From" LongName="ExportFieldNameTW2From" ShortName="ExportFieldNameTW2From" Description="ExportFieldDescriptionTW2From"
+               ADOType="Double" Precision="14" />
+        <Field Name="TWFrom2String" LongName="ExportFieldNameLongTWFrom2String" ShortName="ExportFieldNameShortTWFrom2String" Description="ExportFieldDescriptionTWFrom2String"
+               ADOType="WChar" Size="15" />
+        <Field Name="TW2To" LongName="ExportFieldNameTW2To" ShortName="ExportFieldNameTW2To" Description="ExportFieldDescriptionTW2To"
+               ADOType="Double" Precision="14" Scale="2" />
+        <Field Name="TWTo2String" LongName="ExportFieldNameLongTWTo2String" ShortName="ExportFieldNameShortTWTo2String" Description="ExportFieldDescriptionTWTo2String"
+               ADOType="WChar" Size="15" />
+        <Field Name="TW2String" LongName="ExportFieldNameLongTW2String" ShortName="ExportFieldNameShortTW2String" Description="ExportFieldDescriptionTW2String"
+               ADOType="WChar" Size="30" />
+        <Field Name="MaxViolationTime" LongName="ExportFieldNameLongMaxViolationTime" ShortName="ExportFieldNameShortMaxViolationTime" Description="ExportFieldDescriptionMaxViolationTime"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="ServiceTime" LongName="ExportFieldNameLongServiceTime" ShortName="ExportFieldNameShortServiceTime" Description="ExportFieldDescriptionServiceTime"
+               ADOType="Single" Precision="14" Scale="2" />
+        <Field Name="{0}" LongName="ExportFieldNameRelative" ShortName="ExportFieldNameRelative" Description="ExportFieldDescriptionRelativeCapacity"
+               ADOType="Double" Precision="14" Scale="2"
+               RelationType="Capacities" />
+        <Field Name="DriverSpecialties" LongName="ExportFieldNameLongDriverSpecialties" ShortName="ExportFieldNameShortDriverSpecialties" Description="ExportFieldDescriptionDriverSpecialties"
+               ADOType="WChar" Size="200" />
+        <Field Name="VehicleSpecialties" LongName="ExportFieldNameLongVehicleSpecialties" ShortName="ExportFieldNameShortVehicleSpecialties" Description="ExportFieldDescriptionVehicleSpecialties"
+               ADOType="WChar" Size="200" />
+        <Field Name="{0}" LongName="ExportFieldNameRelative" ShortName="ExportFieldNameRelative"
+               ADOType="WChar" Size="255"
+               RelationType="CustomOrderProperties" />
+      </Fields>
+    </TableDefinition>
+    <TableDefinition Type="Schema" Name="Schema">
+      <Fields>
+        <Field Name="Type" LongName="ExportFieldNameType" ShortName="ExportFieldNameType"
+               ADOType="WChar" Size="32" />
+        <Field Name="FieldNames" LongName="ExportFieldNameFieldNames" ShortName="ExportFieldNameFieldNames"
+               ADOType="WChar" Size="255" />
+      </Fields>
+    </TableDefinition>
+  </TableDefinitions>
+  <HardFields>
+      <Field Name="StopVicinityMap" />
+  </HardFields>
+  <ReservedWords>
+    <!-- List of reserved words in Jet 4.0 (http://support.microsoft.com/kb/248738) -->
+    ABSOLUTE,ACTION,ADD,ADMINDB,ALL,ALLOCATE,ALPHANUMERIC,ALTER,AND,ANY,ARE,AS,ASC,ASSERTION,AT,
+    AUTHORIZATION,AUTOINCREMENT,AVG,
+
+    BAND,BEGIN,BETWEEN,BINARY,BIT,BIT_LENGTH,BNOT,BOR,BOTH,BXOR,BY,BYTE,
+
+    CASCADE,CASCADED,CASE,CAST,CATALOG,CHAR,CHARACTER,CHAR_LENGTH,CHARACTER_LENGTH,CHECK,CLOSE,
+    COALESCE,COLLATE,COLLATION,COLUMN,COMMIT,COMP,COMPRESSION,CONNECT,CONNECTION,CONSTRAINT,
+    CONSTRAINTS,CONTAINER,CONTINUE,CONVERT,CORRESPONDING,COUNT,COUNTER,CREATE,CREATEDB,CROSS,
+    CURRENCY,CURRENT,CURRENT_DATE,CURRENT_TIME,CURRENT_TIMESTAMP,CURRENT_USER,CURSOR,
+
+    DATABASE,DATE,DATETIME,DAY,DEALLOCATE,DEC,DECIMAL,DECLARE,DEFAULT,DEFERRABLE,DEFERRED,DELETE,
+    DESC,DESCRIBE,DESCRIPTOR,DIAGNOSTICS,DISALLOW,DISCONNECT,DISTINCT,DOMAIN,DOUBLE,DROP,
+
+    ELSE,END,END-EXEC,ESCAPE,EXCEPT,EXCEPTION,EXCLUSIVECONNECT,EXEC,EXECUTE,EXISTS,EXTERNAL,EXTRACT,
+
+    FALSE,FETCH,FIRST,FLOAT,FLOAT4,FLOAT8,FOR,FOREIGN,FOUND,FROM,FULL,
+
+    GENERAL,GET,GLOBAL,GO,GOTO,GRANT,GROUP,GUID,
+
+    HAVING,HOUR,
+
+    IDENTITY,IEEEDOUBLE,IEEESINGLE,IGNORE,IMAGE,IMMEDIATE,IN,INDEX,INDICATOR,INHERITABLE,INITIALLY,
+    INNER,INPUT,INSENSITIVE,INSERT,INT,INTEGER,INTEGER1,INTEGER2,INTEGER4,INTERSECT,INTERVAL,INTO,
+    IS,ISOLATION,
+
+    JOIN,
+
+    KEY,
+
+    LANGUAGE,LAST,LEADING,LEFT,LEVEL,LIKE,LOCAL,LOGICAL,LOGICAL1,LONG,LONGBINARY,LONGCHAR,LONGTEXT,
+    LOWER,
+
+    MATCH,MAX,MEMO,MIN,MINUTE,MODULE,MONEY,MONTH,
+
+    NAMES,NATIONAL,NATURAL,NCHAR,NEXT,NO,NOT,NOTE,NULL,NULLIF,NUMBER,NUMERIC,
+
+    OBJECT,OCTET_LENGTH,OF,OLEOBJECT,ON,ONLY,OPEN,OPTION,OR,ORDER,OUTER,OUTPUT,OVERLAPS,OWNERACCESS,
+
+    PAD,PARAMETERS,PARTIAL,PASSWORD,PERCENT,PIVOT,POSITION,PRECISION,PREPARE,PRESERVE,PRIMARY,PRIOR,
+    PRIVILEGES,PROC,PROCEDURE,PUBLIC,
+
+    READ,REAL,REFERENCES,RELATIVE,RESTRICT,REVOKE,RIGHT,ROLLBACK,ROWS,
+
+    SCHEMA,SCROLL,SECOND,SECTION,SELECT,SELECTSCHEMA,SELECTSECURITY,SESSION,SESSION_USER,SET,SHORT,
+    SINGLE,SIZE,SMALLINT,SOME,SPACE,SQL,SQLCODE,SQLERROR,SQLSTATE,STRING,SUBSTRING,SUM,SYSTEM_USER,
+
+    TABLE,TABLEID,TEMPORARY,TEXT,THEN,TIME,TIMESTAMP,TIMEZONE_HOUR,TIMEZONE_MINUTE,TO,TOP,TRAILING,
+    TRANSACTION,TRANSFORM,TRANSLATE,TRANSLATION,TRIM,TRUE,
+
+    UNION,UNIQUE,UNIQUEIDENTIFIER,UNKNOWN,UPDATE,UPDATEIDENTITY,UPDATEOWNER,UPDATESECURITY,UPPER,
+    USAGE,USER,USING,
+
+    VALUE,VALUES,VARBINARY,VARCHAR,VARYING,VIEW,
+
+    WHEN,WHENEVER,WHERE,WITH,WORK,WRITE,
+
+    YEAR,YESNO,
+
+    ZONE
+  </ReservedWords>
+</ExportStructure>

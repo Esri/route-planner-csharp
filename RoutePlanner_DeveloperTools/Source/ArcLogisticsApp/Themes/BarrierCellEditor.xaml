@@ -1,0 +1,64 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ESRI.ArcLogistics.App.Controls"
+                    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Luna"
+                    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid">
+
+    <Style TargetType="{x:Type local:BarrierCellEditor}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:BarrierCellEditor}">
+                    <Grid Margin="0,0,0,0" Focusable="False" Background="White" x:Name="PART_TopLevelGrid">
+                        <Border BorderBrush="{DynamicResource AquamarineSkinLightBlueColor}"
+                                x:Name="PART_Border"
+                                BorderThickness="1,1,1,1" Focusable="False">
+                            <Grid Margin="0,0,0,0"
+                                  Focusable="False"
+                                  Width="Auto"
+                                  MinWidth="50" VerticalAlignment="Stretch">
+                                <TextBlock TextTrimming="CharacterEllipsis"
+                                           x:Name="PART_CellLabel"
+                                           Height="22" Width="Auto"
+                                           Margin="0,0,21,0"
+                                           Focusable="False"
+                                           HorizontalAlignment="Left"
+                                           Padding="0"/>
+                                
+                                <ToggleButton x:Name="PART_OpenButton"
+                                              Width="Auto" Height="Auto"
+                                              Margin="0"
+                                              Focusable="False"
+                                              HorizontalAlignment="Stretch"
+                                              IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                              Style="{DynamicResource CellToggleButtonStyle}">
+                                    </ToggleButton>
+                            </Grid>
+                        </Border>
+                        
+                        <Popup x:Name="PART_PopupPanel"
+                               MinWidth="170"                               
+                               Placement="Absolute"
+                               Width="Auto"
+                               IsOpen="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
+                               AllowsTransparency="True"
+                               PopupAnimation="Slide"
+                               Margin="10,10,10,10">
+                            <Microsoft_Windows_Themes:SystemDropShadowChrome
+                                 CornerRadius="4" Color="{DynamicResource DropDownShadowColor}">
+                                <Border BorderThickness="1,1,1,1" 
+                                        Grid.Row="1" 
+                                        Margin="0,0,3,3" 
+                                        Style="{DynamicResource CellEditorBorderStyle}">
+                                    <local:BarrierEditor x:Name="PART_BarrierEditor"/>
+                                </Border>
+                            </Microsoft_Windows_Themes:SystemDropShadowChrome>
+                        </Popup>
+
+                        <TextBlock x:Name="PART_TextBox" Focusable="False" IsEnabled="False" 
+                                   IsManipulationEnabled="False" Visibility="Hidden"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

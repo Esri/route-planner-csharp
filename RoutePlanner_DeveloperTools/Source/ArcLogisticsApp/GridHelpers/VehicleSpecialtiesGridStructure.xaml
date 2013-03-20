@@ -1,0 +1,36 @@
+<ResourceDictionary
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:app="clr-namespace:ESRI.ArcLogistics.App;assembly=ESRI.ArcLogistics.App"
+xmlns:arcLogistics="clr-namespace:ESRI.ArcLogistics;assembly=ESRI.ArcLogisticsNG"
+xmlns:collections="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+xmlns:sys="clr-namespace:System;assembly=mscorlib"
+xmlns:domainObjects="clr-namespace:ESRI.ArcLogistics.DomainObjects;assembly=ESRI.ArcLogisticsNG"
+xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+xmlns:converters="clr-namespace:ESRI.ArcLogistics.App.Converters;assembly=ESRI.ArcLogistics.App"
+xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib">
+
+    <coll:ArrayList x:Key="itemProperties">
+        <xcdg:DataGridItemProperty Name="Name" />
+        <xcdg:DataGridItemProperty Name="Comment" />
+    </coll:ArrayList>
+
+    <coll:ArrayList x:Key="columns">
+        <xcdg:Column FieldName="Name" 
+                     Title="{DynamicResource VehicleSpecialtyColumnHeader}"/>
+        <xcdg:Column FieldName="Comment" 
+                     Title="{DynamicResource CommentColumnHeader}" 
+                     CellEditor="{DynamicResource DefaultStringEditor}"/>
+    </coll:ArrayList>
+
+    <!-- Page print configuration -->
+    <DataTemplate x:Key="printHeader">
+        <Label    
+                    Content="{DynamicResource VehicleSpecialtiesPagePrintHeader}"
+                    HorizontalAlignment="Center"
+                    FontFamily="{DynamicResource DefaultApplicationFont}"
+                    FontWeight="Bold"
+                    FontSize="{DynamicResource LargeFontSize}"/>
+    </DataTemplate>
+
+</ResourceDictionary>

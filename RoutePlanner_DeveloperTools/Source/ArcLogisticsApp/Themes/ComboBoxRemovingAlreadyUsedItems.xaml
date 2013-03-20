@@ -1,0 +1,140 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcLogistics.App.Controls" 
+                     xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Luna"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                    mc:Ignorable="d">
+
+    <Style TargetType="{x:Type local:ComboBoxRemovingAlreadyUsedItems}">
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorder}"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultApplicationFont}"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="ItemContainerStyle" Value="{DynamicResource ComboBoxItemStyle}"/>
+        <Setter Property="MaxDropDownHeight" Value="300"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ComboBoxRemovingAlreadyUsedItems}">
+                    <Grid x:Name="PART_TopLevelGrid" SnapsToDevicePixels="true" Focusable="False">
+                        <Border x:Name="Bd" 
+                                Focusable="False"
+                                Background="{TemplateBinding Background}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Padding="0" BorderBrush="{DynamicResource AquamarineSkinLightBlueColor}">
+                            <Grid Grid.IsSharedSizeScope="true" Focusable="False">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition SharedSizeGroup="ComboBoxButton" Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Margin="{TemplateBinding Padding}" 
+                                        x:Name="SelectedItemBorder" 
+                                        Focusable="False"
+                                        Grid.ColumnSpan="2"/>
+                                <ContentPresenter 
+                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                    Margin="0" 
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                    Grid.Column="1" 
+                                    Focusable="False"
+                                    Content="{TemplateBinding SelectionBoxItem}" 
+                                   />
+                                <Image Grid.Column="2" x:Name="CellErrorGlyph" 
+                                	Source="/ESRI.ArcLogistics.App;component/Resources/PNG_Icons/IncompleteB16.png"
+                                	Width="16"
+                                	Height="16"
+                                	Visibility="Collapsed"
+                                	VerticalAlignment="Center"
+                                	HorizontalAlignment="Center"                       
+                                	Stretch="None"
+                                	Focusable="False"
+                                	Margin="1,0,2,0"/>
+                                <ToggleButton Style="{DynamicResource ComboBoxTransparentButtonStyle}" 
+                                	Grid.ColumnSpan="4" 
+                                    x:Name="PART_OpenButton"
+                                	Width="Auto" 
+                                	Height="Auto" 
+                                	IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                	Focusable="False"/>
+                            </Grid>
+                        </Border>
+                        <Popup Focusable="false" 
+                               IsOpen="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" 
+                               Placement="Absolute" 
+                               PlacementTarget="{Binding ElementName=Bd}" 
+                               AllowsTransparency="True"
+                               PopupAnimation="Slide"
+                               Margin="0,0,0,0"
+                               x:Name="PART_PopupPanel">
+                            <Microsoft_Windows_Themes:SystemDropShadowChrome 
+                                MaxHeight="{TemplateBinding MaxDropDownHeight}" 
+                                MinWidth="{TemplateBinding ActualWidth}" 
+                                x:Name="Shdw" 
+                                Color="Transparent">
+                                <Border 
+                        x:Name="DropDownBorder"
+                		BorderThickness="1,1,1,1" Margin="0,0,3,3" BorderBrush="{DynamicResource ContentBorderColor}" Background="{DynamicResource LightBrush}">
+                                    <ScrollViewer SnapsToDevicePixels="True" Background="{DynamicResource LightBrush}" Width="Auto" Height="Auto" Margin="0,0,0,0" BorderBrush="{DynamicResource BorderCheckBoxInGridBrush}">
+                                        <StackPanel 
+                								IsItemsHost="True" 
+                								KeyboardNavigation.DirectionalNavigation="Contained" Margin="1,1,1,1" />
+                                    </ScrollViewer>
+                                </Border>
+                            </Microsoft_Windows_Themes:SystemDropShadowChrome>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="Validation.HasError" Value="true">
+                            <Setter TargetName="CellErrorGlyph" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+
+                        <!--<MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelectionBoxHighlighted" Value="true"/>
+                                <Condition Property="IsDropDownOpen" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                        </MultiTrigger>-->
+                        <Trigger Property="HasDropShadow" SourceName="PART_PopupPanel" Value="true">
+                            <Setter Property="Color" TargetName="Shdw" Value="{DynamicResource DropDownShadowColor}"/>
+                        </Trigger>
+                        <Trigger Property="HasItems" Value="false">
+                            <Setter Property="MinHeight" TargetName="DropDownBorder" Value="95"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                        </Trigger>
+                        <Trigger Property="IsGrouping" Value="true">
+                            <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="true">
+                <Setter Property="ToolTip"
+                        Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)[0].ErrorContent}"/>
+            </Trigger>
+            <!--<Trigger Property="IsEditable" Value="true">
+                    <Setter Property="IsTabStop" Value="false"/>
+                    <Setter Property="Padding" Value="0,1"/>
+                    <Setter Property="Template" Value="{StaticResource ComboBoxEditableTemplate}"/>
+                </Trigger>-->
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

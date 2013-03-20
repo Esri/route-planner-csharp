@@ -1,0 +1,205 @@
+<ResourceDictionary
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:app="clr-namespace:ESRI.ArcLogistics.App;assembly=ESRI.ArcLogistics.App"
+xmlns:arcLogistics="clr-namespace:ESRI.ArcLogistics;assembly=ESRI.ArcLogisticsNG"
+xmlns:sys="clr-namespace:System;assembly=mscorlib"
+xmlns:drawing="clr-namespace:System.Drawing;assembly=System.Drawing"
+xmlns:domainObjects="clr-namespace:ESRI.ArcLogistics.DomainObjects;assembly=ESRI.ArcLogisticsNG"
+xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib">
+
+    <coll:ArrayList x:Key="itemProperties">
+        <xcdg:DataGridItemProperty Name="IsLocked" ValuePath="IsLocked" DataType="{x:Type sys:Boolean}"/>
+        <xcdg:DataGridItemProperty Name="IsVisible" ValuePath="IsVisible" DataType="{x:Type sys:Boolean}"/>
+        <xcdg:DataGridItemProperty Name="Name" ValuePath="." DataType="{x:Type domainObjects:Route}" />
+        <xcdg:DataGridItemProperty Name="Vehicle" 
+                                   SortComparer="{StaticResource toStringComparer}"
+                                   ValuePath="Vehicle" 
+                                   DataType="{x:Type domainObjects:Vehicle}"/>
+        <xcdg:DataGridItemProperty Name="Driver" 
+                                   SortComparer="{StaticResource toStringComparer}"
+                                   ValuePath="Driver" 
+                                   DataType="{x:Type domainObjects:Driver}"/>
+        <xcdg:DataGridItemProperty Name="Color" ValuePath="Color" 
+                                   SortComparer="{StaticResource colorComparer}"
+                                   DataType="{x:Type drawing:Color}"/>
+        <xcdg:DataGridItemProperty Name="StartTimeWindow" 
+                                   ValuePath="StartTimeWindow" 
+                                   SortComparer="{StaticResource timeWindowComparer}"
+                                   DataType="{x:Type domainObjects:TimeWindow}"/>
+        <xcdg:DataGridItemProperty Name="Breaks"
+                                   SortComparer="{StaticResource breaksComparer}"/>
+        <xcdg:DataGridItemProperty Name="StartLocation" 
+                                   SortComparer="{StaticResource toStringComparer}"
+                                   ValuePath="StartLocation" 
+                                   DataType="{x:Type domainObjects:Location}"/>
+
+        <xcdg:DataGridItemProperty Name="TimeAtStart" 
+                                   ValuePath="TimeAtStart" 
+                                   DataType="{x:Type sys:Double}"/>
+        <xcdg:DataGridItemProperty Name="EndLocation" 
+                                   SortComparer="{StaticResource toStringComparer}"
+                                   ValuePath="EndLocation" 
+                                   DataType="{x:Type domainObjects:Location}"/>
+        <xcdg:DataGridItemProperty Name="TimeAtEnd" ValuePath="TimeAtEnd" DataType="{x:Type sys:Double}"/>
+
+        <xcdg:DataGridItemProperty Name="RenewalLocations"
+                                   SortComparer="{StaticResource toStringComparer}"
+                                   ValuePath="RenewalLocations" 
+                                   DataType="{app:GenericType TypeName='System.Collections.Generic.ICollection', TypeArguments='domainObjects:Location'}"/>
+        <xcdg:DataGridItemProperty Name="TimeAtRenewal" 
+                                   ValuePath="TimeAtRenewal" 
+                                   DataType="{x:Type sys:Double}"/>
+        <xcdg:DataGridItemProperty Name="MaxOrders" 
+                                   ValuePath="MaxOrders" 
+                                   DataType="{x:Type sys:Int32}"/>
+        <xcdg:DataGridItemProperty Name="MaxTravelDistance" 
+                                   ValuePath="MaxTravelDistance" 
+                                   DataType="{x:Type sys:Double}"/>
+        <xcdg:DataGridItemProperty Name="MaxTravelDuration" 
+                                   ValuePath="MaxTravelDuration" 
+                                   DataType="{x:Type sys:Double}"/>
+        <xcdg:DataGridItemProperty Name="MaxTotalDuration" 
+                                   ValuePath="MaxTotalDuration" 
+                                   DataType="{x:Type sys:Double}"/>
+
+        <xcdg:DataGridItemProperty Name="Zones" 
+                                   ValuePath="Zones" 
+                                   SortComparer="{StaticResource toStringComparer}"
+                                   DataType="{app:GenericType TypeName='System.Collections.Generic.ICollection', TypeArguments='domainObjects:Zone'}"/>
+        <xcdg:DataGridItemProperty Name="HardZones" 
+                                   DataType="{x:Type sys:Boolean}"/>
+        <xcdg:DataGridItemProperty Name="Comment" 
+                                   IsReadOnly="False" 
+                                   ValuePath="Comment" 
+                                   DataType="{x:Type sys:String}"/>
+
+        <xcdg:DataGridItemProperty Name="OrderCount" ValuePath="OrderCount" IsReadOnly="True" DataType="{x:Type sys:Int32}"/>
+        <xcdg:DataGridItemProperty Name="Cost" IsReadOnly="True" DataType="{x:Type sys:Double}"/>
+        <xcdg:DataGridItemProperty Name="TotalDistance" IsReadOnly="True" DataType="{x:Type sys:Double}"/>
+        <xcdg:DataGridItemProperty Name="Capacities" IsReadOnly="True"/>
+        <xcdg:DataGridItemProperty Name="Overtime" IsReadOnly="True" DataType="{x:Type sys:Double}"/>
+        <xcdg:DataGridItemProperty Name="ViolationTime" IsReadOnly="True" DataType="{x:Type sys:Double}"/>
+        <xcdg:DataGridItemProperty Name="TotalTime" IsReadOnly="True" DataType="{x:Type sys:Double}"/>
+        <xcdg:DataGridItemProperty Name="WaitTimeInPercentage" IsReadOnly="True" DataType="{x:Type sys:Double}"/>
+
+    </coll:ArrayList>
+
+    <coll:ArrayList x:Key="columns">
+        <xcdg:Column FieldName="IsLocked"
+                     Width="26"                     
+                     Title="{StaticResource LockedColumnHeader}"
+                     TitleTemplate="{StaticResource IsLockedIcon}"
+                     CellEditor="{StaticResource LockedCheckBoxEditor}"
+                     CellContentTemplate="{StaticResource LockedCheckBoxTemplate}"
+                     CellEditorDisplayConditions="MouseOverCell"/>
+        <xcdg:Column FieldName="IsVisible" ReadOnly="False"
+                     Width="26"                     
+                     Title="{StaticResource VisibleColumnHeader}"
+                     TitleTemplate="{StaticResource VisibilityIcon}"
+                     CellEditor="{StaticResource VisibilityCheckBoxEditor}"
+                     CellContentTemplate="{StaticResource VisibilityCheckBoxTemplate}"
+                     CellEditorDisplayConditions="MouseOverCell"/>
+        <xcdg:Column FieldName="Name" 
+                     Title="{StaticResource Routes}" 
+                     CellContentTemplate="{StaticResource routeNameContentTemplate}"
+                     CellEditor="{StaticResource RouteNameEditor}"/>
+        <xcdg:Column FieldName="Color" Title="{StaticResource ColorColumnHeader}" Width="60" CellContentTemplate="{StaticResource ColorCell}" CellEditor="{StaticResource ColorCellEditor}"/>
+        <xcdg:Column FieldName="OrderCount" Width="60" Title="{StaticResource OrderColumnHeader}" ReadOnly="True"/>
+        <xcdg:Column FieldName="Cost"
+                     Width="60"
+                     Title="{StaticResource CostColumnHeader}" 
+                     ReadOnly="True"
+                     CellContentTemplate="{StaticResource UnitCellContentTemplate}"/>
+        <xcdg:Column FieldName="TotalDistance"
+                     Width="60"
+                     Title="{StaticResource MilesColumnHeader}"
+                     ReadOnly="True"
+                     CellContentTemplate="{StaticResource UnitCellContentTemplate}" />
+        <xcdg:Column FieldName="Capacities" ReadOnly="True" Width="60"/>
+        <xcdg:Column FieldName="Vehicle" Title="{StaticResource VehicleColumnHeader}" CellContentTemplate="{StaticResource VehicleCell}" CellEditor="{StaticResource VehicleEditorWithoutAlreadyUsedVehicles}"/>
+        <xcdg:Column FieldName="Driver" Title="{StaticResource DriverColumnHeader}" CellContentTemplate="{StaticResource DriverCell}" CellEditor="{StaticResource DriverEditorWithoutAlreadyUsedDrivers}"/>
+        <xcdg:Column FieldName="Zones" Title="{StaticResource ZonesColumnHeader}" CellContentTemplate="{StaticResource ZonesCell}" CellEditor="{StaticResource ZonesEditor}"/>
+        <xcdg:Column FieldName="HardZones"
+                     Width="60"
+                     Title="{StaticResource HardZonesColumnHeader}" 
+                     CellEditor="{StaticResource DefaultCheckBoxEditor}"
+                     CellContentTemplate="{StaticResource DefaultCheckBoxTemplate}"
+                     CellEditorDisplayConditions="MouseOverCell"/>
+        <xcdg:Column FieldName="StartLocation" Title="{StaticResource StartLocationColumnHeader}" CellContentTemplate="{StaticResource LocationCell}" CellEditor="{StaticResource LocationEditor}"/>
+        <xcdg:Column FieldName="TimeAtStart"
+                     Width="60"
+                     Title="{StaticResource TimeatStartColumnHeader}" 
+                     CellContentTemplate="{StaticResource UnitCellContentTemplate}" 
+                     CellEditor="{StaticResource UnitEditorTemplate}"/>
+        <xcdg:Column FieldName="StartTimeWindow" Title="{StaticResource StartTimeWindowColumnHeader}" CellContentTemplate="{StaticResource TimeWindowCell}" CellEditor="{StaticResource RouteTimeWindowEditor}"/>
+        <xcdg:Column FieldName="EndLocation" Title="{StaticResource EndLocationColumnHeader}" CellContentTemplate="{StaticResource LocationCell}" CellEditor="{StaticResource LocationEditor}"/>
+        <xcdg:Column FieldName="TimeAtEnd"
+                     Width="60"
+                     Title="{StaticResource TimeAtEndColumnHeader}"
+                     CellContentTemplate="{StaticResource UnitCellContentTemplate}" 
+                     CellEditor="{StaticResource UnitEditorTemplate}"/>
+        <xcdg:Column FieldName="RenewalLocations" Title="{StaticResource RenewalLocationsColumnHeader}" CellContentTemplate="{StaticResource RenewalLocationsCell}" CellEditor="{StaticResource RenewalLocationsEditor}"/>
+        <xcdg:Column FieldName="TimeAtRenewal"
+                     Width="60"
+                     Title="{StaticResource TimeAtRenewalColumnHeader}"
+                     CellContentTemplate="{StaticResource UnitCellContentTemplate}" 
+                     CellEditor="{StaticResource UnitEditorTemplate}"/>
+        <xcdg:Column FieldName="MaxOrders" Width="60" Title="{StaticResource MaxOrdersColumnHeader}"
+                     CellContentTemplate="{StaticResource DefaultStringTemplate}"/>
+        <xcdg:Column FieldName="MaxTravelDistance"
+                     Width="60"
+                     Title="{StaticResource MaxTravelDistanceColumnHeader}"
+                     CellContentTemplate="{StaticResource UnitCellContentTemplate}" 
+                     CellEditor="{StaticResource UnitEditorTemplate}"/>
+        <xcdg:Column FieldName="MaxTravelDuration"
+                     Width="60"
+                     Title="{StaticResource MaxTravelDurationColumnHeader}"
+                     CellContentTemplate="{StaticResource UnitCellContentTemplate}" 
+                     CellEditor="{StaticResource UnitEditorTemplate}"/>
+        <xcdg:Column FieldName="MaxTotalDuration"
+                     Width="60"
+                     Title="{StaticResource MaxTotalDurationColumnHeader}"
+                     CellContentTemplate="{StaticResource UnitCellContentTemplate}" 
+                     CellEditor="{StaticResource UnitEditorTemplate}"/>
+        <xcdg:Column FieldName="Breaks"
+                     Title="{StaticResource BreakColumnHeader}"
+                     CellContentTemplate="{StaticResource BreakCell}"
+                     CellEditor="{StaticResource BreakEditor}"/>
+        <xcdg:Column FieldName="Comment" 
+                     Title="{StaticResource CommentColumnHeader}" 
+                     ReadOnly="False"/>
+
+        <!-- Read-only fields -->
+
+        <xcdg:Column FieldName="Overtime"
+                     Width="60"
+                     Title="{StaticResource OvertimeColumnHeader}"
+                     ReadOnly="True"
+                     CellContentTemplate="{StaticResource UnitCellContentTemplate}"/>
+        <xcdg:Column FieldName="ViolationTime"
+                     Width="60"
+                     Title="{StaticResource ViolationTimeColumnHeader}"
+                     ReadOnly="True"                     
+                     CellContentTemplate="{StaticResource UnitCellContentTemplate}"/>
+        <xcdg:Column FieldName="TotalTime"
+                     Width="60"
+                     Title="{StaticResource TimeColumnHeader}"
+                     ReadOnly="True"                     
+                     CellContentTemplate="{StaticResource UnitCellContentTemplate}"/>
+        <xcdg:Column FieldName="WaitTimeInPercentage" Width="60" ReadOnly="True" Title="{StaticResource WaitTimeColumnHeader}" CellContentTemplate="{StaticResource percentCellContentTemplate}"/>
+
+    </coll:ArrayList>
+
+    <!-- Page print configuration -->
+    <DataTemplate x:Key="printHeader">
+        <Label    
+                    Content="{StaticResource RoutesPagePrintHeader}"
+                    HorizontalAlignment="Center"
+                    FontFamily="{StaticResource DefaultApplicationFont}"
+                    FontWeight="Bold"
+                    FontSize="{StaticResource LargeFontSize}"/>
+    </DataTemplate>
+
+</ResourceDictionary>

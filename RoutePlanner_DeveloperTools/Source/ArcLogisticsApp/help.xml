@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Source Type="CHM" Path="help\RoutePlanner.chm" />
+  <Topics>
+    <Topic Name="Main" Key="006V00000002000000.htm" />
+    <Topic Name="Home\GettingStarted" Key="006V0000002Q000000.htm">
+      <QuickHelp>Resources to enhance your route planning experience.</QuickHelp>
+    </Topic>
+    <Topic Name="Home\Projects" Key="006V0000000P000000.htm">
+      <QuickHelp>Create, delete, and archive projects.</QuickHelp>
+    </Topic>
+    <Topic Name="Home\TutorialProject" Key="006v00000006000000.htm">
+	  <QuickHelp>Work through a Tutorial Project.</QuickHelp>
+    </Topic>
+    <Topic Name="Home\License" Key="006v00000039000000.htm">
+      <QuickHelp>Enterprise license setup</QuickHelp>
+    </Topic>
+    <Topic Name="Setup\FuelTypes" Key="006V0000000Z000000.htm">
+      <QuickHelp>Add, edit or delete the types and cost of fuel used in your fleet. These will be used in reports that estimate the fleet’s impact on the environment.</QuickHelp>
+    </Topic>
+    <Topic Name="Setup\Locations" Key="006V00000010000000.htm">
+      <QuickHelp>Add or edit the start, end or renewal locations for your vehicles. Enter the address or click on the location on the map. You need at least one location.</QuickHelp>
+    </Topic>
+    <Topic Name="Setup\Vehicles" Key="006V00000011000000.htm">
+      <QuickHelp>Add or edit information about each of the vehicles in your fleet. Include capacity and cost information for best results.</QuickHelp>
+    </Topic>
+    <Topic Name="Setup\Drivers" Key="006V00000012000000.htm">
+      <QuickHelp>Add or edit information about each of your drivers. Cost information will be used in creating an optimal schedule that minimizes costs.</QuickHelp>
+    </Topic>
+    <Topic Name="Setup\MobileDevices" Key="006V00000013000000.htm">
+      <QuickHelp>Add mobile devices for vehicle navigation and status updates. The SyncType is the method used to send the daily route to each device.  Transportation Analytics customers should use WMServer to send work to the feature service.  All other methods exist for legacy support.</QuickHelp>
+    </Topic>
+    <Topic Name="Setup\Specialties" Key="006V00000014000000.htm">
+      <QuickHelp>Optionally add or edit specific tools, capabilities, or skills needed for certain types of orders. Specialties will be used to match orders with appropriate vehicles and drivers.</QuickHelp>
+    </Topic>
+    <Topic Name="Setup\Barriers" Key="006V00000028000000.htm">
+      <QuickHelp>Barriers block streets and prohibit travel. Barriers can be flooded areas, closed bridges, construction or other areas to avoid.</QuickHelp>
+    </Topic>
+    <Topic Name="Setup\Breaks" Key="006v0000003q000000.htm">
+      <QuickHelp>Create rules that define how and when your drivers take breaks. Run the Breaks Wizard to choose the break type. Breaks can be set for specified time periods or based on work intervals.</QuickHelp>
+    </Topic>
+    <Topic Name="Setup\Zones" Key="006V00000015000000.htm">
+      <QuickHelp>Add or edit zones for your routes. Zones are defined on the map as preferred areas for the work of a vehicle or driver.</QuickHelp>
+    </Topic>
+    <Topic Name="Setup\DefaultRoutes" Key="006v0000000t000000.htm">
+      <QuickHelp>Default routes are the vehicle and driver combinations you will use along with information that defines the work day such as start and break times.</QuickHelp>
+    </Topic>
+    <Topic Name="Preferences\General" Key="006V00000024000000.htm">
+      <QuickHelp>Change preferences for the application start up page, project storage locations, and more.</QuickHelp>
+    </Topic>
+    <Topic Name="Preferences\MapDisplay" Key="006V00000024000000.htm">
+      <QuickHelp>Change preferences relating to the map display.  Choose which map tips to display, route shape, and more.</QuickHelp>
+    </Topic>
+    <Topic Name="Preferences\Reports" Key="006V00000024000000.htm">
+      <QuickHelp>Make minor formatting changes to report templates.</QuickHelp>
+    </Topic>
+    <Topic Name="Preferences\Routing" Key="006V00000024000000.htm">
+      <QuickHelp>Choose how to handle routing violations and vehicle restrictions applicable to your fleet.</QuickHelp>
+    </Topic>
+    <Topic Name="Schedule\OptimizeAndEdit" Key="006v0000001q000000.htm">
+      <QuickHelp>Add or import orders and then build, edit, and sequence routes.  Compare different route versions and view orders in Orders, Routes, Map, or Time views.</QuickHelp>
+    </Topic>
+    <Topic Name="Deployment\Reports" Key="006V00000021000000.htm">
+      <QuickHelp>Select the date of the schedule and type of report you would like to produce. You can select multiple routes and reports and generate separate reports for each route.</QuickHelp>
+    </Topic>
+    <Topic Name="Deployment\Export" Key="006V0000002N000000.htm">
+      <QuickHelp>Select the date of the schedule and the information that you want to export.</QuickHelp>
+    </Topic>
+  </Topics>
+</Help>

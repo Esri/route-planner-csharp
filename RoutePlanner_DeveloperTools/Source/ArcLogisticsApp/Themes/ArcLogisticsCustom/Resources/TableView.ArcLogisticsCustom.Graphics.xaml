@@ -1,0 +1,397 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ESRI.ArcLogistics.App"
+                    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+
+   <!-- =================================================================== -->
+   <!-- Glyphs                                                              -->
+   <!-- (Override some resources defined in the common resouces).           -->
+   <!-- =================================================================== -->
+
+    <DataTemplate x:Key="ascendingSortGlyph">
+        <Canvas Height="4"
+              Width="7">
+            <Path Opacity="1"
+               Data="M 3.59375,0.15625 C3.59375,0.15625 7,4 7,4 7,4 0,4 0,4 0,4 3.59375,0.15625 3.59375,0.15625 z">
+                <Path.Fill>
+                    <LinearGradientBrush
+                  StartPoint="0.285,-0.0406"
+                  EndPoint="0.476,0.869">
+                        <GradientStop Offset="0" 
+                                Color="#406274"/>
+                        <GradientStop Offset="0.972"
+                                Color="#C3E4F5" />
+                    </LinearGradientBrush>
+                </Path.Fill>
+            </Path>
+            <Path Opacity="1"
+               Data="M 0.5,3.5 C0.5,3.5 3.5,0.5 3.5,0.5 "
+               Stroke="#406274"
+               StrokeThickness="1" />
+        </Canvas>
+    </DataTemplate>
+
+    <DataTemplate x:Key="descendingSortGlyph">
+        <Canvas Height="4"
+              Width="7">
+            <Path Opacity="1"
+               Data="M 3.59375,4 C3.59375,4 7,0.15625 7,0.15625 7,0.15625 0,0.15625 0,0.15625 0,0.15625 3.59375,4 3.59375,4 z">
+                <Path.Fill>
+                    <LinearGradientBrush
+                  StartPoint="0,-0.040"
+                  EndPoint="0.669,-0.040">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStopCollection>
+                                <GradientStop Offset="0" 
+                                      Color="#3D6F89"/>
+                                <GradientStop 
+                           Offset="0.961"
+                           Color="#A6D8F3" />
+                            </GradientStopCollection>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+            </Path>
+            <Path Opacity="1"
+               Data="M 0.5,0.5 C0.5,0.5 3.5,3.5 3.5,3.5 "
+               Stroke="#406274"
+               StrokeThickness="1" />
+        </Canvas>
+    </DataTemplate>
+
+    <DataTemplate x:Key="collapseGroupGlyph">
+        <Grid Height="15"
+            Width="15">
+
+            <Ellipse x:Name="mouseOverEllipse"
+                  Stretch="Fill"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Fill="Transparent"/>
+
+            <Canvas>
+                <Path Data="M 7.46875,5.125 C7.46875,5.125 11,9 11,9 11,9 11,10 11,10 11,10 9,10 9,10 9,10 7.625,7.84375 7.625,7.84375 7.625,7.84375 6,10 6,10 6,10 4,10 4,10 4,10 4,9 4,9 4,9 7.46875,5.125 7.46875,5.125 z"
+                  Fill="#000262" />
+            </Canvas>
+        </Grid>
+
+        <DataTemplate.Triggers>
+
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent},Path=(ButtonBase.IsMouseOver)}" 
+                      Value="True">
+
+                <Setter TargetName="mouseOverEllipse"
+                    Property="Stroke"
+                    Value="#688DC4" />
+
+                <Setter TargetName="mouseOverEllipse"
+                    Property="Fill">
+
+                    <Setter.Value>
+                        <RadialGradientBrush Center="0.466,1"
+                                       GradientOrigin="0.466,1"
+                                       RadiusX="0.9875"
+                                       RadiusY="0.9875">
+                            <GradientStop Offset="0" 
+                                   Color="#CAF0E5"/>
+                            <GradientStop Offset="0.244"
+                                   Color="#B9E3E7" />
+                            <GradientStop Offset="0.3"
+                                   Color="#9ACEDE" />
+                            <GradientStop Offset="0.489"
+                                   Color="#5E97C3" />
+                            <GradientStop Offset="0.789" 
+                                   Color="#C5E1E6"/>
+                            <GradientStop Offset="0.983"
+                                   Color="#FFFFFF" />
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent},Path=(ButtonBase.IsPressed)}" 
+                      Value="True">
+
+                <Setter TargetName="mouseOverEllipse"
+                    Property="Fill">
+
+                    <Setter.Value>
+                        <RadialGradientBrush Center="0.467,1"
+                                       GradientOrigin="0.467,1"
+                                       RadiusX="0.9875"
+                                       RadiusY="0.9875">
+                            <GradientStop Offset="0" 
+                                   Color="#EAFFFF"/>
+                            <GradientStop Offset="0.161" 
+                                   Color="#FFFFFF"/>
+                            <GradientStop Offset="0.361" 
+                                   Color="#D1F7FC"/>
+                            <GradientStop Offset="0.538" 
+                                   Color="#B0DDEE"/>
+                            <GradientStop Offset="0.694"
+                                   Color="#D4EDF8" />
+                            <GradientStop Offset="0.994" 
+                                   Color="#FFFFFF"/>
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+
+            </DataTrigger>
+
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <DataTemplate x:Key="expandGroupGlyph">
+        <Grid Height="15"
+            Width="15">
+
+            <Ellipse x:Name="mouseOverEllipse"
+                  Stretch="Fill"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Fill="Transparent"/>
+
+            <Canvas>
+                <Path Data="M 7.46875,11 C7.46875,11 11,7.125 11,7.125 11,7.125 11,6.125 11,6.125 11,6.125 9,6.125 9,6.125 9,6.125 7.625,8.28125 7.625,8.28125 7.625,8.28125 6,6.125 6,6.125 6,6.125 4,6.125 4,6.125 4,6.125 4,7.125 4,7.125 4,7.125 7.46875,11 7.46875,11 z"
+                  Fill="#000262" />
+            </Canvas>
+        </Grid>
+
+        <DataTemplate.Triggers>
+
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent},Path=(ButtonBase.IsMouseOver)}" 
+                      Value="True">
+
+                <Setter TargetName="mouseOverEllipse"
+                    Property="Stroke"
+                    Value="#688DC4" />
+
+                <Setter TargetName="mouseOverEllipse"
+                    Property="Fill">
+
+                    <Setter.Value>
+                        <RadialGradientBrush Center="0.466,1"
+                                       GradientOrigin="0.466,1"
+                                       RadiusX="0.9875"
+                                       RadiusY="0.9875">
+                            <GradientStop Offset="0" 
+                                   Color="#CAF0E5"/>
+                            <GradientStop Offset="0.244"
+                                   Color="#B9E3E7" />
+                            <GradientStop Offset="0.3"
+                                   Color="#9ACEDE" />
+                            <GradientStop Offset="0.489"
+                                   Color="#5E97C3" />
+                            <GradientStop Offset="0.789" 
+                                   Color="#C5E1E6"/>
+                            <GradientStop Offset="0.983"
+                                   Color="#FFFFFF" />
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent},Path=(ButtonBase.IsPressed)}" 
+                      Value="True">
+
+                <Setter TargetName="mouseOverEllipse"
+                    Property="Fill">
+
+                    <Setter.Value>
+                        <RadialGradientBrush Center="0.467,1"
+                                       GradientOrigin="0.467,1"
+                                       RadiusX="0.9875"
+                                       RadiusY="0.9875">
+                            <GradientStop Offset="0" 
+                                   Color="#EAFFFF"/>
+                            <GradientStop Offset="0.161" 
+                                   Color="#FFFFFF"/>
+                            <GradientStop Offset="0.361" 
+                                   Color="#D1F7FC"/>
+                            <GradientStop Offset="0.538" 
+                                   Color="#B0DDEE"/>
+                            <GradientStop Offset="0.694"
+                                   Color="#D4EDF8" />
+                            <GradientStop Offset="0.994" 
+                                   Color="#FFFFFF"/>
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+
+            </DataTrigger>
+
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <!-- Glyph that is displayed in the RowSelector for a Row that is being edited. -->
+    <DataTemplate x:Key="editingRowGlyph">
+      <Canvas Width="16.000" Height="16.000">
+
+  <Canvas>
+
+  <!-- Layer 1/<Path> -->
+  <Path Data="F1 M 16.000,16.000 L 0.000,16.000 L 0.000,0.000 L 16.000,0.000 L 16.000,16.000 Z"/>
+
+  <!-- Layer 1/<Path> -->
+  <Path Opacity="0.2" Fill="#ff000000" Data="F1 M 14.828,2.878 L 14.121,2.171 C 13.730,1.781 13.098,1.781 12.707,2.171 L 3.768,11.141 L 2.000,15.000 L 3.944,14.146 L 3.935,14.137 L 5.891,13.264 L 14.828,4.292 C 15.219,3.902 15.219,3.269 14.828,2.878 Z"/>
+
+  <Canvas>
+
+  <!-- Layer 1/<Group>/<Path> -->
+  <Path Data="F1 M 14.828,3.292 C 15.219,2.902 15.219,2.269 14.828,1.878 L 14.121,1.171 C 13.730,0.781 13.098,0.781 12.707,1.171 L 11.998,1.878 L 14.121,4.001 L 14.828,3.292 Z">
+    <Path.Fill>
+      <LinearGradientBrush MappingMode="Absolute" StartPoint="349.289,182.920" EndPoint="352.291,182.920">
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Offset="0.00" Color="#fff58484"/>
+          <GradientStop Offset="0.15" Color="#fffaa6a6"/>
+          <GradientStop Offset="0.38" Color="#ffffc8c8"/>
+          <GradientStop Offset="0.48" Color="#fffaa7a7"/>
+          <GradientStop Offset="0.58" Color="#fff58686"/>
+          <GradientStop Offset="1.00" Color="#ff511a19"/>
+        </LinearGradientBrush.GradientStops>
+        <LinearGradientBrush.Transform>
+          <MatrixTransform Matrix="0.707,0.707,0.707,-0.707,-363.619,-116.467" />
+        </LinearGradientBrush.Transform>
+      </LinearGradientBrush>
+    </Path.Fill>
+  </Path>
+
+  <!-- Layer 1/<Group>/<Path> -->
+  <Path Data="F1 M 12.000,6.121 L 9.879,4.000 L 11.998,1.878 L 14.121,4.001 L 12.000,6.121 Z">
+    <Path.Fill>
+      <LinearGradientBrush MappingMode="Absolute" StartPoint="349.289,180.420" EndPoint="352.291,180.420">
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Offset="0.00" Color="#ff898989"/>
+          <GradientStop Offset="0.36" Color="#ffd3d3d3"/>
+          <GradientStop Offset="0.71" Color="#ff191919"/>
+          <GradientStop Offset="1.00" Color="#ff1d1e1e"/>
+        </LinearGradientBrush.GradientStops>
+        <LinearGradientBrush.Transform>
+          <MatrixTransform Matrix="0.707,0.707,0.707,-0.707,-363.619,-116.467" />
+        </LinearGradientBrush.Transform>
+      </LinearGradientBrush>
+    </Path.Fill>
+  </Path>
+
+  <!-- Layer 1/<Group>/<Path> -->
+  <Path Fill="#fff9ecae" Data="F1 M 10.559,4.679 L 9.879,4.000 L 3.768,10.141 L 4.448,10.820 L 10.559,4.679 Z"/>
+
+  <!-- Layer 1/<Group>/<Path> -->
+  <Path Fill="#ffefd677" Data="F1 M 5.210,11.582 C 6.998,9.795 9.553,7.208 11.320,5.441 L 10.559,4.679 L 4.448,10.820 L 5.210,11.582 Z"/>
+
+  <!-- Layer 1/<Group>/<Path> -->
+  <Path Fill="#ff79512a" Data="F1 M 11.320,5.441 C 9.553,7.208 6.998,9.795 5.210,11.582 L 5.891,12.264 L 12.000,6.121 L 11.320,5.441 Z"/>
+
+  <!-- Layer 1/<Group>/<Path> -->
+  <Path Data="F1 M 3.768,10.141 L 2.000,14.000 L 5.891,12.264 L 3.768,10.141 Z">
+    <Path.Fill>
+      <LinearGradientBrush MappingMode="Absolute" StartPoint="349.311,168.268" EndPoint="352.312,168.268">
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Offset="0.00" Color="#ffd8b064"/>
+          <GradientStop Offset="0.39" Color="#ffffeac3"/>
+          <GradientStop Offset="1.00" Color="#ff793900"/>
+        </LinearGradientBrush.GradientStops>
+        <LinearGradientBrush.Transform>
+          <MatrixTransform Matrix="0.707,0.707,0.707,-0.707,-363.619,-116.467" />
+        </LinearGradientBrush.Transform>
+      </LinearGradientBrush>
+    </Path.Fill>
+  </Path>
+
+  <!-- Layer 1/<Group>/<Path> -->
+  <Path Data="F1 M 3.944,13.146 L 2.884,12.086 L 2.000,14.000 L 3.944,13.146 Z">
+    <Path.Fill>
+      <LinearGradientBrush MappingMode="Absolute" StartPoint="354.746,148.171" EndPoint="356.246,148.171">
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Offset="0.00" Color="#ff4c4c4c"/>
+          <GradientStop Offset="1.00" Color="#ff000000"/>
+        </LinearGradientBrush.GradientStops>
+        <LinearGradientBrush.Transform>
+          <MatrixTransform Matrix="0.707,0.707,0.707,-0.707,-353.428,-133.283" />
+        </LinearGradientBrush.Transform>
+      </LinearGradientBrush>
+    </Path.Fill>
+  </Path>
+
+  </Canvas>
+</Canvas>
+  </Canvas>
+
+    </DataTemplate>
+
+    <!-- Glyph that is displayed in the RowSelector for a Row that has a validation error. -->
+    <DataTemplate x:Key="validationErrorGlyph">
+<Canvas Width="16.000" Height="16.000">
+
+  <Canvas>
+
+  <!-- Layer 1/<Path> -->
+  <Path Data="F1 M 16.000,16.000 L 0.000,16.000 L 0.000,0.000 L 16.000,0.000 L 16.000,16.000 Z"/>
+
+  <Canvas>
+
+  <!-- Layer 1/<Group>/<Path> -->
+  <Path Opacity="0.2" Fill="#ff000000" Data="F1 M 2.271,13.000 C 1.490,12.219 1.490,10.951 2.271,10.172 L 3.686,8.758 L 2.271,7.344 C 1.492,6.564 1.492,5.293 2.271,4.514 L 3.686,3.100 C 4.465,2.320 5.734,2.322 6.514,3.102 L 7.928,4.516 L 9.342,3.100 C 10.123,2.320 11.391,2.320 12.170,3.100 L 13.584,4.516 C 14.363,5.293 14.365,6.562 13.584,7.344 L 12.170,8.758 L 13.584,10.172 C 14.365,10.951 14.365,12.221 13.584,13.000 L 12.170,14.414 C 11.391,15.195 10.123,15.195 9.342,14.414 L 7.928,13.000 L 6.514,14.414 C 5.734,15.193 4.465,15.193 3.686,14.414 L 2.271,13.000 Z"/>
+
+  <!-- Layer 1/<Group>/<Path> -->
+  <Path Fill="#ffffd8d8" Data="F1 M 2.271,12.000 C 1.490,11.219 1.490,9.951 2.271,9.172 L 3.686,7.758 L 2.271,6.344 C 1.492,5.564 1.492,4.293 2.271,3.514 L 3.686,2.100 C 4.465,1.320 5.734,1.322 6.514,2.102 L 7.928,3.516 L 9.342,2.100 C 10.123,1.320 11.391,1.320 12.170,2.100 L 13.584,3.516 C 14.363,4.293 14.365,5.562 13.584,6.344 L 12.170,7.758 L 13.584,9.172 C 14.365,9.951 14.365,11.221 13.584,12.000 L 12.170,13.414 C 11.391,14.195 10.123,14.195 9.342,13.414 L 7.928,12.000 L 6.514,13.414 C 5.734,14.193 4.465,14.193 3.686,13.414 L 2.271,12.000 Z"/>
+
+  <!-- Layer 1/<Group>/<Path> -->
+  <Path Fill="#fffff4f4" Data="F1 M 12.877,9.879 L 10.756,7.758 L 12.877,5.637 C 13.268,5.246 13.270,4.613 12.877,4.223 L 11.463,2.807 C 11.072,2.416 10.439,2.416 10.049,2.807 L 7.928,4.930 L 5.807,2.809 C 5.416,2.416 4.783,2.418 4.393,2.809 L 2.977,4.223 C 2.586,4.613 2.588,5.244 2.979,5.637 L 5.100,7.758 L 2.979,9.879 C 2.588,10.270 2.588,10.902 2.979,11.293 L 4.393,12.707 C 4.783,13.098 5.416,13.098 5.807,12.707 L 7.928,10.586 L 10.049,12.707 C 10.439,13.098 11.072,13.098 11.463,12.707 L 12.877,11.293 C 13.268,10.902 13.268,10.270 12.877,9.879 Z"/>
+
+  <!-- Layer 1/<Group>/<Path> -->
+  <Path Fill="#ffc82727" Data="F1 M 5.100,12.000 L 3.686,10.586 L 10.756,3.514 L 12.170,4.930 L 5.100,12.000 Z"/>
+
+  <!-- Layer 1/<Group>/<Path> -->
+  <Path Fill="#ffc82727" Data="F1 M 3.686,4.930 L 5.100,3.516 L 12.170,10.586 L 10.756,12.000 L 3.686,4.930 Z"/>
+
+  </Canvas>
+
+  </Canvas>
+</Canvas>
+
+
+    </DataTemplate>
+
+    <!-- Glyph that is displayed in the RowSelector for the InsertionRow. -->
+    <DataTemplate x:Key="insertionRowGlyph">
+<Canvas Width="16.000" Height="16.000">
+
+  <Canvas>
+
+  <!-- Layer 1/<Path> -->
+  <Path Opacity="0.2" Fill="#ff000000" Data="F1 M 7.000,16.000 C 5.896,16.000 5.000,15.104 5.000,14.000 L 5.000,12.000 L 3.000,12.000 C 1.898,12.000 1.000,11.102 1.000,10.000 L 1.000,8.000 C 1.000,6.896 1.898,6.000 3.000,6.000 L 5.000,6.000 L 5.000,4.000 C 5.000,2.896 5.896,2.000 7.000,2.000 L 9.000,2.000 C 10.102,2.000 11.000,2.896 11.000,4.000 L 11.000,6.000 L 13.000,6.000 C 14.104,6.000 15.000,6.896 15.000,8.000 L 15.000,10.000 C 15.000,11.104 14.104,12.000 13.000,12.000 L 11.000,12.000 L 11.000,13.999 C 11.000,15.103 10.102,16.000 9.000,16.000 L 7.000,16.000 Z"/>
+
+  <!-- Layer 1/<Path> -->
+  <Path Data="F1 M 7.000,15.000 C 5.896,15.000 5.000,14.104 5.000,13.000 L 5.000,11.000 L 3.000,11.000 C 1.898,11.000 1.000,10.102 1.000,9.000 L 1.000,7.000 C 1.000,5.896 1.898,5.000 3.000,5.000 L 5.000,5.000 L 5.000,3.000 C 5.000,1.896 5.896,1.000 7.000,1.000 L 9.000,1.000 C 10.102,1.000 11.000,1.896 11.000,3.000 L 11.000,5.000 L 13.000,5.000 C 14.104,5.000 15.000,5.896 15.000,7.000 L 15.000,9.000 C 15.000,10.104 14.104,11.000 13.000,11.000 L 11.000,11.000 L 11.000,12.999 C 11.000,14.103 10.102,15.000 9.000,15.000 L 7.000,15.000 Z">
+    <Path.Fill>
+      <RadialGradientBrush MappingMode="Absolute" GradientOrigin="306.000,395.000" Center="306.000,395.000" RadiusX="7.000" RadiusY="7.000">
+        <RadialGradientBrush.GradientStops>
+          <GradientStop Offset="0.00" Color="#ffffffff"/>
+          <GradientStop Offset="1.00" Color="#ff90d1ff"/>
+        </RadialGradientBrush.GradientStops>
+        <RadialGradientBrush.Transform>
+          <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-298.000,403.000" />
+        </RadialGradientBrush.Transform>
+      </RadialGradientBrush>
+    </Path.Fill>
+  </Path>
+
+  <!-- Layer 1/<Path> -->
+  <Path Fill="#ffe0eef6" Data="F1 M 13.000,6.000 L 10.000,6.000 L 10.000,3.000 C 10.000,2.447 9.553,2.000 9.000,2.000 L 7.000,2.000 C 6.447,2.000 6.000,2.447 6.000,3.000 L 6.000,6.000 L 3.000,6.000 C 2.447,6.000 2.000,6.447 2.000,7.000 L 2.001,9.001 C 2.001,9.554 2.447,10.000 3.000,10.000 L 6.000,10.000 L 6.000,13.000 C 6.000,13.553 6.447,14.000 7.000,14.000 L 9.000,14.000 C 9.553,14.000 10.000,13.553 10.000,13.000 L 10.000,10.000 L 13.000,10.000 C 13.553,10.000 14.000,9.553 14.000,9.000 L 14.000,7.000 C 14.000,6.447 13.553,6.000 13.000,6.000 Z"/>
+
+  <!-- Layer 1/<Path> -->
+  <Path Fill="#ff005a8e" Data="F1 M 9.000,13.000 L 7.000,13.000 L 7.000,3.000 L 9.000,3.000 L 9.000,13.000 Z"/>
+
+  <!-- Layer 1/<Path> -->
+  <Path Fill="#ff005a8e" Data="F1 M 3.000,9.000 L 3.000,7.000 L 13.000,7.000 L 13.000,9.000 L 3.000,9.000 Z"/>
+
+  <!-- Layer 1/<Path> -->
+  <Path Data="F1 M 16.000,16.000 L 0.000,16.000 L 0.000,0.000 L 16.000,0.000 L 16.000,16.000 Z"/>
+
+  </Canvas>
+</Canvas>
+    </DataTemplate>
+
+
+</ResourceDictionary>

@@ -1,0 +1,94 @@
+﻿<Border x:Class="ESRI.ArcLogistics.App.Controls.ColorPicker"
+        x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Loaded="ColorPicker_Loaded"
+    Height="Auto" Width="210">
+    <Grid VerticalAlignment="Stretch"
+          x:Name="LayoutRoot"
+          Visibility="Visible"
+          HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical"
+                    x:Name="discreteColorPickerPanel" 
+                    Grid.Row="0"
+                    Margin="2,2,2,0">
+            <app_controls:DiscreteColorPicker 
+           ColorSelected="discreteColorPicker_ColorSelected"
+            x:Name="discreteColorPicker"
+            VerticalAlignment="Stretch"
+            Margin="0"
+            HorizontalAlignment="Stretch"
+            Width="Auto"
+            Height="Auto"
+            PropertyChanged="DiscreteColorPicker_PropertyChanged"/>
+            <Button Margin="0,2,0,0"
+				Content="{DynamicResource MoreColorsButtonHeader}" 
+				x:Name="MoreColorsButton"
+				HorizontalAlignment="Stretch" 
+                Click="MoreColorsButton_Click"
+				VerticalAlignment="Bottom" 
+                Height="{DynamicResource DefaultPageButtonHeight}"
+                Style="{DynamicResource PageButtonStyle}"/>
+            <Button Margin="0,2,0,0"
+				Content="{DynamicResource ClearButtonHeader}" 
+				x:Name="ClearCustomColorsButton"
+                Click="ClearCustomColorsButton_Click"
+				HorizontalAlignment="Stretch" 
+				VerticalAlignment="Bottom" 
+                Height="{DynamicResource DefaultPageButtonHeight}"
+                Style="{DynamicResource PageButtonStyle}"/>
+        </StackPanel>
+        <Border x:Name="gradientColorPickerPanel" 
+				Visibility="Visible" 
+				Width="Auto" Height="Auto" 
+				VerticalAlignment="Bottom"
+                    Margin="1,2,2,0"
+                    Grid.Row="2">
+            <StackPanel HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch">
+                <app_controls:GradientColorPicker
+                    x:Name="gradientColorPicker"
+                    HorizontalAlignment="Stretch"
+                    Width="Auto" 
+                    Height="120"
+                    PropertyChanged="gradientColorPicker_PropertyChanged"/>
+                <Button 
+        			Content="{DynamicResource LessColorsButtonHeader}"
+        			x:Name="LessColorsButton" 
+                    Click="LessColorsButton_Click"
+                    Width="Auto"
+                    HorizontalAlignment="Stretch"
+                    Margin="2,1,0,0"
+                    Height="{DynamicResource DefaultPageButtonHeight}"
+                    Style="{DynamicResource PageButtonStyle}"/>
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Stretch"
+                            HorizontalAlignment="Center"
+                            Margin="-3,2,0,2">
+                    <Button x:Name="OkButton"
+                            VerticalAlignment="Stretch"
+                            HorizontalAlignment="Left"
+                            Click="OkButton_Click"
+                            Content="{DynamicResource ButtonHeaderOk}"
+                            Width="101"
+                            Height="{DynamicResource DefaultPageButtonHeight}"
+                            Style="{DynamicResource PageButtonStyle}"/>
+                    <Button x:Name="CancelButton"
+                            VerticalAlignment="Stretch"
+                            HorizontalAlignment="Right"
+                            Click="CancelButton_Click"
+                            Margin="3,0,0,0"
+                            Content="{DynamicResource ButtonHeaderCancel}"
+                            Width="101"
+                            Height="{DynamicResource DefaultPageButtonHeight}"
+                            Style="{DynamicResource PageButtonStyle}"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Border>

@@ -1,0 +1,18 @@
+<ResourceDictionary
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib">
+
+    <coll:ArrayList x:Key="itemProperties">
+        <xcdg:DataGridItemProperty Name="IsChecked" />
+        <xcdg:DataGridItemProperty Name="Name" />
+    </coll:ArrayList>
+
+    <coll:ArrayList x:Key="columns">
+        <xcdg:Column FieldName="IsChecked" Title="{DynamicResource CheckedColumnHeader}" CellEditorDisplayConditions="Always"/>
+        <xcdg:Column FieldName="Name" 
+                     Title="{DynamicResource NameColumnHeader}" 
+                     ReadOnly="True"/>
+    </coll:ArrayList>
+</ResourceDictionary>

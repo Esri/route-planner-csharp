@@ -1,0 +1,116 @@
+﻿<Window x:Class="ArcLogisticsPlugIns.SendRoutesToNavigatorPage.MailAuthorisationDlg"
+        x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:res="clr-namespace:ArcLogisticsPlugIns.Properties"
+    ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" Visibility="Visible" 
+    AllowsTransparency="False" ShowActivated="False" 
+    WindowStyle="ToolWindow" SizeToContent="WidthAndHeight" MinWidth="380" MaxWidth="380"
+    Title="E-mail Password" 
+        Background="{DynamicResource BackgroundBaseColor}" 
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        Width="600" >
+    <Grid x:Name="LayoutRoot" Margin="0,0,0,0" Background="{DynamicResource TrasparentContentBackgroundColor}" 
+          HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="{DynamicResource ButtonsRowHeight}"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label 
+               Content="{x:Static res:Resources.TypePasswordLabelContent}"
+               FontSize="{DynamicResource MiddleFontSize}"
+               Foreground="#FFFDFDFD"
+               HorizontalAlignment="Left"
+               Grid.Column="0"
+               Margin="5,5,0,0"
+               Grid.ColumnSpan="2"/>
+        <Label 
+               Content="{x:Static res:Resources.ServerLabelContent}"
+               FontSize="{DynamicResource MiddleFontSize}" 
+               FontFamily="{DynamicResource DefaultApplicationFont}"
+               Foreground="{DynamicResource WhiteForegroundBrush}"
+               HorizontalAlignment="Left"
+               Grid.Row="1"
+               Margin="5,8,0,0"/>
+        <TextBox x:Name="Server"
+                 Height="26"                 
+                 FontFamily="{DynamicResource DefaultApplicationFont}"
+                 FontSize="{DynamicResource MiddleFontSize}" 
+                 Margin="0,10,10,0"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 IsReadOnly="True"/>
+        <Label 
+               Content="{x:Static res:Resources.UserNameLabelContent}"
+               FontSize="{DynamicResource MiddleFontSize}" 
+               FontFamily="{DynamicResource DefaultApplicationFont}"
+               Foreground="{DynamicResource WhiteForegroundBrush}"
+               HorizontalAlignment="Left"
+               Grid.Column="0"
+               Grid.Row="2"
+               Margin="5,10,0,0"/>
+        <TextBox x:Name="UserName"
+                 Grid.Column="1"
+                 Grid.Row="2"
+                 Height="26"
+                 FontSize="{DynamicResource MiddleFontSize}" 
+                 FontFamily="{DynamicResource DefaultApplicationFont}"
+                 Margin="0,12,10,0"
+                 IsReadOnly="True"/>
+        <Label 
+               Content="{x:Static res:Resources.PasswordLabelContent}"
+               FontSize="{DynamicResource MiddleFontSize}" 
+               FontFamily="{DynamicResource DefaultApplicationFont}"
+               Foreground="{DynamicResource WhiteForegroundBrush}"
+               HorizontalAlignment="Left"
+               Grid.Row="3"
+               Margin="5,10,0,0"/>
+        <PasswordBox x:Name="Password"
+                 Grid.Column="1"
+                 Grid.Row="3"
+                 Height="26"
+                 FontSize="{DynamicResource MiddleFontSize}" 
+                 FontFamily="{DynamicResource DefaultApplicationFont}"
+                 Margin="0,12,10,0"
+                 PasswordChar="*"/>
+        <CheckBox x:Name="RememberPassword"
+            Grid.Row="4"
+            Grid.Column="0"
+            Content="{x:Static res:Resources.RememberPasswordCheckBoxContent}"
+            Grid.ColumnSpan="2"
+            FontSize="{DynamicResource MiddleFontSize}" 
+            FontFamily="{DynamicResource DefaultApplicationFont}"
+            Margin="10,5,0,10"/>
+        <StackPanel x:Name="buttonsPanel"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Orientation="Horizontal" Height="Auto" Margin="4,4,8,4"
+                    HorizontalAlignment="Right" VerticalAlignment="Stretch">
+            <Button Name="OkButton"
+                    Content="{x:Static res:Resources.OkButtonCaption}"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center" 
+                    Width="{DynamicResource DefaultPageButtonWidth}" 
+                    Height="{DynamicResource DefaultPageButtonHeight}"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button Name="CloseButton"
+                    Content="{x:Static res:Resources.CloseButtonCaption}"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Width="{DynamicResource DefaultPageButtonWidth}"
+                    Height="{DynamicResource DefaultPageButtonHeight}"
+                    IsCancel="True"
+                    Click="CloseButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,92 @@
+<ControlTemplate
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    
+    xmlns:converter="clr-namespace:ESRI.ArcGIS.Client.ValueConverters;assembly=ESRI.ArcGIS.Client"
+    xmlns:converters="clr-namespace:ESRI.ArcLogistics.App.Converters;assembly=ESRI.ArcLogistics.App"
+    xmlns:esri="clr-namespace:ESRI.ArcGIS.Client;assembly=ESRI.ArcGIS.Client"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    <ControlTemplate.Resources>
+        <SolidColorBrush Color="#FF686767" x:Key="GrayColor" />
+        <SolidColorBrush Color="Black" x:Key="OrdersColor" />
+        <converters:ClusterSizeConverter x:Key="clusterSizeConverter"/>
+    </ControlTemplate.Resources>
+    <Canvas x:Name="Root" Cursor="Hand" esri:Clusterer.ClusterChildElements="FlareIDs">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="SelectionStates">
+                <VisualState x:Name="Selected">
+                    <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.Opacity)">
+                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                            <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                        </DoubleAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Unselected">
+                    <Storyboard>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Canvas.Resources>
+            <!--define converter for dictionaries so we can bind to the attributes on the graphic-->
+            <converter:DictionaryConverter x:Key="DictConvert" />
+            <SolidColorBrush Color="White" x:Key="WhiteColor" />
+            <sys:Double x:Key="strokeThickness">1</sys:Double>
+        </Canvas.Resources>
+
+        <Canvas Canvas.Left="0" Canvas.Top="-8" >
+            <Grid 
+                Width="{Binding Path=Attributes, Converter={StaticResource clusterSizeConverter}, Mode=OneWay}" 
+                Height="{Binding Path=Attributes, Converter={StaticResource clusterSizeConverter},Mode=OneWay}"  
+                Canvas.Left="-10" Canvas.Top="-2">
+                <Ellipse x:Name="ellipse" 
+                    Fill="{Binding Path=Attributes, Converter={StaticResource DictConvert}, ConverterParameter='Fill', Mode=OneWay}" 
+                    StrokeThickness="0"
+                    Stroke="{x:Null}"
+                    Margin="0"/>
+                <Ellipse x:Name="ellipse_Copy" 
+                	StrokeThickness="0" 
+                	Stroke="{x:Null}" Margin="2">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush GradientOrigin="0.485,0.494">
+                            <RadialGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.654" ScaleY="1.985"/>
+                                    <SkewTransform AngleX="0" AngleY="0" CenterX="0.5" CenterY="0.5"/>
+                                    <RotateTransform Angle="0" CenterX="0.5" CenterY="0.5"/>
+                                    <TranslateTransform X="0.317" Y="0.458"/>
+                                </TransformGroup>
+                            </RadialGradientBrush.RelativeTransform>
+                            <GradientStop Color="#66FFFFFF" Offset="0"/>
+                            <GradientStop Color="#00FFFFFF" Offset="0.987"/>
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                            Text="{Binding Path=Attributes, Converter={StaticResource DictConvert}, ConverterParameter='Count', Mode=OneWay}"
+                            FontSize="9" Margin="0" FontWeight="Bold" 
+                            Foreground="{StaticResource WhiteColor}" />
+                
+                <Ellipse Fill="{x:Null}" 
+                 Stroke="{DynamicResource SelectionColorBrush}" 
+                 Width="Auto" 
+                 Height="Auto" 
+                 RenderTransformOrigin="0.5,0.5" 
+                 Opacity="0" 
+                 x:Name="ellipse1" 
+                 StrokeThickness="3"
+                 Margin="0">
+                    <Ellipse.BitmapEffect>
+                        <DropShadowBitmapEffect Color="#FF4F5257" Direction="315" Opacity="100" ShadowDepth="1" Softness="0.2"/>
+                    </Ellipse.BitmapEffect>
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX="1.4" ScaleY="1.4"/>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+            </Grid>
+        </Canvas>
+    </Canvas>
+</ControlTemplate>

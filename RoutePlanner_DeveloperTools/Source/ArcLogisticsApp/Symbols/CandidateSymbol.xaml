@@ -1,0 +1,308 @@
+<ControlTemplate
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ControlTemplate.Resources>
+        <Storyboard x:Key="OnMouseEnter1">
+            <PointAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path"
+                Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)">
+                <SplinePointKeyFrame KeyTime="00:00:00" Value="0.5,0.5"/>
+                <SplinePointKeyFrame KeyTime="00:00:00.1000000" Value="0.5,1"/>
+            </PointAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="-1.2"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1.2"/>
+            </DoubleAnimationUsingKeyFrames>
+
+            <PointAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path_Glow"
+                Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)">
+                <SplinePointKeyFrame KeyTime="00:00:00" Value="0.5,0.5"/>
+                <SplinePointKeyFrame KeyTime="00:00:00.1000000" Value="0.5,1"/>
+            </PointAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path_Glow"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="-1.2"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path_Glow"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1.2"/>
+            </DoubleAnimationUsingKeyFrames>
+
+            <PointAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path_GlowShadow"
+                Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)">
+                <SplinePointKeyFrame KeyTime="00:00:00" Value="0.5,0.5"/>
+                <SplinePointKeyFrame KeyTime="00:00:00.1000000" Value="0.5,1"/>
+            </PointAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path_GlowShadow"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="-1.2"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path_GlowShadow"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1.2"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="OnMouseEnter_Copy1">
+            <PointAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path"
+                Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)">
+                <SplinePointKeyFrame KeyTime="00:00:00" Value="0.5,1"/>
+                <SplinePointKeyFrame KeyTime="00:00:00.1000000" Value="0.5,0.5"/>
+            </PointAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-1.2"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="-1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.2"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+
+            <PointAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path_Glow"
+                Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)">
+                <SplinePointKeyFrame KeyTime="00:00:00" Value="0.5,1"/>
+                <SplinePointKeyFrame KeyTime="00:00:00.1000000" Value="0.5,0.5"/>
+            </PointAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path_Glow"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-1.2"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="-1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path_Glow"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.2"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+
+            <PointAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path_GlowShadow"
+                Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)">
+                <SplinePointKeyFrame KeyTime="00:00:00" Value="0.5,1"/>
+                <SplinePointKeyFrame KeyTime="00:00:00.1000000" Value="0.5,0.5"/>
+            </PointAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path_GlowShadow"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-1.2"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="-1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames
+                BeginTime="00:00:00"
+                Storyboard.TargetName="path_GlowShadow"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.2"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </ControlTemplate.Resources>
+    <Grid Width="Auto" Focusable="False" Height="Auto" x:Name="grid" HorizontalAlignment="Stretch" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="SelectionStates">
+                <VisualState x:Name="Selected">
+                    <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="path_Glow" 
+                                               Storyboard.TargetProperty="(UIElement.Opacity)">
+                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                            <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="path_GlowShadow" 
+                                               Storyboard.TargetProperty="(UIElement.Opacity)">
+                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                            <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="path" 
+                                               Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)">
+                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="100"/>
+                            <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0"/>
+                        </DoubleAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Unselected">
+                    <Storyboard>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid>
+
+            <!-- Shadow Path for Symbol when glow effect turned On -->
+            <Path RenderTransformOrigin="0.5,0.5"
+                  HorizontalAlignment="Stretch"
+                  Margin="-1,-34,0,0" 
+                  VerticalAlignment="Top"
+                  Height="45" Fill="Black"
+                  Stretch="Fill"
+                  Stroke="Black"
+                  x:Name="path_GlowShadow"
+                  Opacity="0">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure IsClosed="True"
+                                    StartPoint="7.76075,0.25045884">
+                            <PolyBezierSegment Points="14.69825,0.62546448 15.601611,6.3484169
+                                               15.006647,8.3357559 13.98012,11.764635
+                                               12.647,12.294806 10.792,14.459006
+                                               9.2920001,16.209032 8.1787002,23.217292
+                                               7.870125,25.109832 7.870125,25.109832
+                                               7.76075,25.109335 7.76075,25.109335
+                                               7.4314849,23.24787 6.3342376,17.394471
+                                               4.6253334,14.70901 3.4586667,12.875649
+                                               1.1597767,11.651053 0.47602793,7.5792594
+                                               0.27184106,6.3633057 1.07325,0.62546448
+                                               7.76075,0.25045884"/>
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+                <Path.Effect>
+                    <BlurEffect Radius="10" />
+                </Path.Effect>
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1" ScaleY="1"/>
+                        <SkewTransform AngleX="0" AngleY="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform X="-8.002813833289105" Y="0"/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+
+            <!-- Glow effect Path for Symbol -->
+            <Path RenderTransformOrigin="0.5,0.5"
+                  HorizontalAlignment="Stretch"
+                  Margin="-5,-36,0,0"
+                  VerticalAlignment="Top"
+                  Height="55" Fill="#FF8CCAFF"
+                  Stretch="Fill"
+                  Stroke="#FF8CCAFF"
+                  x:Name="path_Glow"
+                  Opacity="0">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure IsClosed="True"
+                                    StartPoint="7.76075,0.25045884">
+                            <PolyBezierSegment Points="14.69825,0.62546448
+                                               15.601611,6.3484169 15.006647,8.3357559
+                                               13.98012,11.764635 12.647,12.294806
+                                               10.792,14.459006 9.2920001,16.209032
+                                               8.1787002,23.217292 7.870125,25.109832
+                                               7.870125,25.109832 7.76075,25.109335
+                                               7.76075,25.109335 7.4314849,23.24787
+                                               6.3342376,17.394471 4.6253334,14.70901
+                                               3.4586667,12.875649 1.1597767,11.651053
+                                               0.47602793,7.5792594 0.27184106,6.3633057
+                                               1.07325,0.62546448 7.76075,0.25045884"/>
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+                <Path.Effect>
+                    <BlurEffect Radius="10" />
+                </Path.Effect>
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1" ScaleY="1"/>
+                        <SkewTransform AngleX="0" AngleY="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform X="-8.002813833289105" Y="0"/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+
+            <Path RenderTransformOrigin="0.5,0.5"
+                  HorizontalAlignment="Stretch"
+                  Margin="-0.545,-30.237,3.405,0" 
+                  VerticalAlignment="Top"
+                  Height="30" Fill="#FFE88884"
+                  Stretch="Fill"
+                  Stroke="#FF606060"
+                  x:Name="path">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure IsClosed="True"
+                                    StartPoint="7.76075,0.25045884">
+                            <PolyBezierSegment Points="14.69825,0.62546448
+                                               15.601611,6.3484169 15.006647,8.3357559
+                                               13.98012,11.764635 12.647,12.294806
+                                               10.792,14.459006 9.2920001,16.209032
+                                               8.1787002,23.217292 7.870125,25.109832
+                                               7.870125,25.109832 7.76075,25.109335
+                                               7.76075,25.109335 7.4314849,23.24787
+                                               6.3342376,17.394471 4.6253334,14.70901
+                                               3.4586667,12.875649 1.1597767,11.651053
+                                               0.47602793,7.5792594 0.27184106,6.3633057
+                                               1.07325,0.62546448 7.76075,0.25045884"/>
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+                <Path.Effect>
+                    <DropShadowEffect Color="#FF111112"
+                                      Direction="215"
+                                      Opacity="100"
+                                      ShadowDepth="3" />
+                </Path.Effect>
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1" ScaleY="1"/>
+                        <SkewTransform AngleX="0" AngleY="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform X="-8.002813833289105" Y="0"/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+    </Grid>
+    <ControlTemplate.Triggers>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseEnter1}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseEnter_Copy1}"
+                             x:Name="OnMouseEnter_Copy1_BeginStoryboard"/>
+        </EventTrigger>
+    </ControlTemplate.Triggers>
+</ControlTemplate>

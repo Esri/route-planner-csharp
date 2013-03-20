@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ActiveReportsLayout Version="3.1" PrintWidth="10396.8" MaxPages="200" DocumentName="ARNet Document" ScriptLang="C#" MasterReport="0">
+  <StyleSheet>
+    <Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; ddo-char-set: 204; " />
+    <Style Name="Heading1" Value="font-size: 16pt; font-weight: bold; ddo-char-set: 204; " />
+    <Style Name="Heading2" Value="font-family: Times New Roman; font-size: 14pt; font-weight: bold; font-style: italic; ddo-char-set: 204; " />
+    <Style Name="Heading3" Value="font-size: 13pt; font-weight: bold; ddo-char-set: 204; " />
+  </StyleSheet>
+  <Sections>
+    <Section Type="Detail" Name="Detail" Height="2835" BackColor="16777215" KeepTogether="1" CanShrink="1">
+      <Control Type="AR.Subreport" Name="subReport1" Left="0" Top="0" Width="10368" Height="630.72" ReportName="subReport1" />
+      <Control Type="AR.Subreport" Name="subReport2" Left="0" Top="720" Width="10368" Height="630.72" ReportName="subReport1" />
+      <Control Type="AR.Subreport" Name="subReport3" Left="0" Top="1440" Width="10368" Height="630.72" ReportName="subReport1" />
+      <Control Type="AR.Subreport" Name="subReport4" Left="0" Top="2160" Width="10368" Height="630.72" ReportName="subReport1" />
+    </Section>
+  </Sections>
+  <ReportComponentTray />
+  <DataSources>
+    <OleDbDataSource ConnectE="13IdEUWXLb8jDY6d7T6jJYmDRKY5Eee4itGMLIPDLT+VBQkrRemRcHciYcI1dvBprE9fQStE8tu+isu2CxpLq60nUFW0DfO+2JqbUlMrmZBzNYCg0lK/2VTwRb+N2Jid385Ewa4c8Mt+7KgVjOhLTA==" SQL="SELECT Name FROM Route" />
+  </DataSources>
+  <Script><![CDATA[private const string SELECT_QUERY_FORMAT = "SELECT * FROM (`Route` `Route` INNER JOIN `Stop` `Stop` ON `Route`.`ID`=`Stop`.`RouteID`) INNER JOIN `Schedule` `Schedule` ON `Route`.`ScheduleID`=`Schedule`.`ID` WHERE `Route`.`Name`=\"{0}\" ORDER BY `Route`.`Name`, `Stop`.`Sequence`";
+
+public void Detail_Format()
+{
+           object routeName = rpt.Fields["Name"].Value;
+            string selectQuery = string.Format(SELECT_QUERY_FORMAT, routeName.ToString());
+
+            // update SQL qwery in all SubReports
+            ControlCollection controls = rpt.Sections["Detail"].Controls;
+            foreach (ARControl control in controls)
+            {
+                SubReport subReport = control as SubReport;
+                if (null != subReport)
+                {
+                    if (null == subReport.Report)
+                        subReport.Visible = false;
+                    else
+                        ((DataSources.OleDBDataSource)subReport.Report.DataSource).SQL = selectQuery;
+                }
+            }
+}]]></Script>
+  <PageSettings LeftMargin="720" RightMargin="720" TopMargin="720" BottomMargin="720" Orientation="1" />
+  <Parameters />
+</ActiveReportsLayout>

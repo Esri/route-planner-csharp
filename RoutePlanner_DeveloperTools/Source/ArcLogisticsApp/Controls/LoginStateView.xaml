@@ -1,0 +1,157 @@
+﻿<UserControl x:Class="ESRI.ArcLogistics.App.Controls.LoginStateView"
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:ESRI.ArcLogistics.App.Converters"
+    Height="Auto" Width="Auto">
+    <UserControl.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="visibilityConverter"/>
+    </UserControl.Resources>
+
+    <Grid
+        Width="Auto"
+        Height="Auto"
+        VerticalAlignment="Top"
+        Margin="0,16,0,0"
+        HorizontalAlignment="Stretch">
+        <Grid.Resources>
+            <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ScrollBar}"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition
+                Style="{DynamicResource LicenseInformationGridColumnStyle}"
+                x:Name="LicenseInfo"
+                />
+        </Grid.ColumnDefinitions>
+        <Label
+            Height="Auto"
+            Style="{DynamicResource LicenseViewLabelStyle}"
+            HorizontalAlignment="Left"
+            Margin="10,2,2,2"
+            VerticalAlignment="Top"
+            Width="Auto"
+            Padding="5,5,5,3"
+            Content="{DynamicResource UsernameString}"
+            Grid.Row="0"
+            Grid.Column="0" />
+        <TextBox
+            Margin="10,2,2,2"
+            HorizontalAlignment="Left"
+            Width="160"
+            Padding="1,1,1,1"
+            Grid.Row="0"
+            Grid.Column="1"
+            VerticalAlignment="Top"
+            Height="24"
+            VerticalContentAlignment="Center"
+            Text="{Binding Path=Username, UpdateSourceTrigger=PropertyChanged}"
+            x:Name="UsernameControl"
+            />
+        <Label 
+            Style="{DynamicResource LicenseViewLabelStyle}"
+            HorizontalAlignment="Left"
+            Margin="10,2,2,2"
+            Width="120"
+            Content="{DynamicResource PasswordString}"
+            Grid.Row="1"
+            Grid.Column="0"
+            VerticalAlignment="Top"
+            Padding="5,5,5,3" />
+        <PasswordBox 
+            Margin="10,2,2,2"
+            Height="24"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Width="160"
+            Padding="1,1,1,1"
+            IsEnabled="{Binding Path=CanEnterPassword}"
+            SnapsToDevicePixels="True"
+            VerticalContentAlignment="Center"
+            Grid.Row="1"
+            Grid.Column="1"
+            PasswordChanged="_LicensePasswordPasswordChanged"
+            />
+        <Grid
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Width="Auto"
+            Height="Auto"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <CheckBox
+                Margin="10,2,2,2"
+                HorizontalAlignment="Left"
+                Width="Auto"
+                Height="Auto"
+                VerticalAlignment="Center"
+                Content="{DynamicResource RememberMeString}"
+                Foreground="{DynamicResource LicensePageForegroundBrush}"
+                FontSize="{DynamicResource MiddleFontSize}"
+                Command="{Binding Path=RememberCredentialCommand}"
+                Grid.Row="0"
+                Grid.Column="1"
+                />
+            <Button
+                Height="{DynamicResource DefaultPageButtonHeight}"
+                Focusable="True"
+                Margin="14,2,2,2"
+                VerticalAlignment="Center"
+                Style="{DynamicResource PageButtonStyle}"
+                IsDefault="True"
+                HorizontalAlignment="Left"
+                Width="75"
+                Content="{DynamicResource LoginButtonString}"
+                Grid.Row="0"
+                Command="{Binding Path=LoginCommand}"
+                />
+        </Grid>
+        <TextBlock
+            Height="Auto"
+            Margin="10,2,0,0"
+            FontSize="{DynamicResource MiddleFontSize}"
+            VerticalAlignment="Top"
+            Grid.Row="3"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            Visibility="{Binding Path=HasCreateAccountCommand, Converter={StaticResource visibilityConverter}}">
+            <Hyperlink Command="{Binding Path=CreateAccountCommand}"
+                Focusable="{Binding Path=HasCreateAccountCommand}">
+                <TextBlock Text="{DynamicResource AccountLinkString}"/>
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock
+            Height="Auto"
+            Margin="10,2,0,0"
+            FontSize="{DynamicResource MiddleFontSize}"
+            VerticalAlignment="Top"
+            Grid.Row="4"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            Visibility="{Binding Path=HasRecoverCredentialsCommand, Converter={StaticResource visibilityConverter}}">
+            <Hyperlink Command="{Binding Path=RecoverCredentialsCommand}"
+                Focusable="{Binding Path=HasCreateAccountCommand}">
+                <TextBlock Text="{DynamicResource RecoverCredentialsLinkString}" />
+            </Hyperlink>
+        </TextBlock>
+    </Grid>
+</UserControl>

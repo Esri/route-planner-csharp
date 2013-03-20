@@ -1,0 +1,22 @@
+﻿<widgets:PageWidgetBase x:Class="ESRI.ArcLogistics.App.Widgets.ViewsWidget" x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:widgets="clr-namespace:ESRI.ArcLogistics.App.Widgets">
+    <Grid>
+        <Grid Margin="2,2,2,2" x:Name="LayoutRoot" Background="Transparent">
+
+            <StackPanel Orientation="Horizontal" Margin="4,4,4,4" Background="{x:Null}">
+                <StackPanel 
+                    x:Name="LeftViewsPanel" 
+                    Orientation="Vertical" 
+                    Margin="0,0,10,0">
+                </StackPanel>
+                <StackPanel 
+                    x:Name="RightViewsPanel" 
+                    Orientation="Vertical" 
+                    Margin="10,0,0,0">
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</widgets:PageWidgetBase>

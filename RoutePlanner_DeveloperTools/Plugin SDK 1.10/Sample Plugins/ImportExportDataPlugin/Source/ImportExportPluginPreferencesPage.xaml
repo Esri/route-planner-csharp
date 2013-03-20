@@ -1,0 +1,25 @@
+﻿<pages:PageBase x:Class="ImportExportDataPlugin.ImportExportPluginPreferencesPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:pages="clr-namespace:ESRI.ArcLogistics.App.Pages;assembly=ESRI.ArcLogistics.App"
+             xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls;assembly=ESRI.ArcLogistics.App"
+             mc:Ignorable="d" d:DesignHeight="283" d:DesignWidth="740">
+    <Grid DataContext="{Binding}" Width="736" HorizontalAlignment="Left" VerticalAlignment="Top" Height="282" >
+        <Label Content="Executable path" FontSize="14" Height="28" Margin="250,70,0,0" Name="label1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="125" Foreground="#FFFDFDFD" /> 
+        <TextBox Height="23" Margin="381,247,0,0" Name="Plugin_exportPath" VerticalAlignment="Top" HorizontalAlignment="Left" Width="246" TextChanged="Plugin_exportPath_TextChanged" DataContext="{Binding}" />
+        <Label Content="Program Name" FontSize="14"  Height="28" HorizontalAlignment="Left" Margin="250,8,0,0" Name="label2" VerticalAlignment="Top" Width="125" Foreground="#FFFDFDFD" />
+        <TextBox DataContext="{Binding}" Height="23" HorizontalAlignment="Right" Margin="0,175,109,0" Name="Plugin_exportName" VerticalAlignment="Top" Width="246" TextChanged="Plugin_exportName_TextChanged"  />
+        <Label Content="Executable path" FontSize="14" Foreground="#FFFDFDFD" Height="28" HorizontalAlignment="Left" Margin="250,243,0,0" Name="label3" VerticalAlignment="Top" Width="125" />
+        <TextBox DataContext="{Binding}" Height="23" Margin="381,74,0,0" Name="Plugin_importPath" VerticalAlignment="Top" TextChanged="Plugin_importPath_TextChanged" HorizontalAlignment="Left" Width="246" />
+        <Label Content="Program Name" FontSize="14" Foreground="#FFFDFDFD" Height="28" HorizontalAlignment="Left" Margin="250,171,0,0" Name="label4" VerticalAlignment="Top" Width="125" />
+        <TextBox DataContext="{Binding}" Height="23" HorizontalAlignment="Left" Margin="381,12,0,0" Name="Plugin_importName" VerticalAlignment="Top" Width="246" TextChanged="Plugin_importName_TextChanged" />
+        <Label Content="Import Orders:" FontSize="14" Foreground="#FFFDFDFD" Height="28" HorizontalAlignment="Left" Margin="12,7,0,0" Name="label5" VerticalAlignment="Top" Width="125" />
+        <Label Content="Export Routes, Stops and Orders:" FontSize="14" Foreground="#FFFDFDFD" Height="28" HorizontalAlignment="Left" Margin="12,170,0,0" Name="label6" VerticalAlignment="Top" Width="219" />
+        <Button x:Name="ImportBrowseButton" Content="Browse" Margin="628,74,0,0" Click="ImportBrowseButton_Click" HorizontalAlignment="Left" Width="68" Height="23" VerticalAlignment="Top" />
+        <Button x:Name="ExportBrowseButton" Content="Browse" Margin="628,247,0,0" Click="ExportBrowseButton_Click" HorizontalAlignment="Left" Width="68" Height="23" VerticalAlignment="Top" />
+        
+        
+    </Grid>
+</pages:PageBase>

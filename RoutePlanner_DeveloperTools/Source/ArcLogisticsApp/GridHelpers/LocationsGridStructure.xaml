@@ -1,0 +1,41 @@
+<ResourceDictionary
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:app="clr-namespace:ESRI.ArcLogistics.App;assembly=ESRI.ArcLogistics.App"
+xmlns:arcLogistics="clr-namespace:ESRI.ArcLogistics;assembly=ESRI.ArcLogisticsNG"
+xmlns:collections="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+xmlns:sys="clr-namespace:System;assembly=mscorlib"
+xmlns:domainObjects="clr-namespace:ESRI.ArcLogistics.DomainObjects;assembly=ESRI.ArcLogisticsNG"
+xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+xmlns:converters="clr-namespace:ESRI.ArcLogistics.App.Converters;assembly=ESRI.ArcLogistics.App"
+xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib">
+
+    <coll:ArrayList x:Key="itemProperties">
+        <xcdg:DataGridItemProperty Name="Name" />
+        <xcdg:DataGridItemProperty Name="AddressFields"/>
+        <xcdg:DataGridItemProperty Name="TimeWindow" SortComparer="{StaticResource timeWindowComparer}"/>
+        <xcdg:DataGridItemProperty Name="TimeWindow2" SortComparer="{StaticResource timeWindowComparer}"/>
+        <xcdg:DataGridItemProperty Name="Comment"/>
+        <xcdg:DataGridItemProperty Name="MatchMethod" IsReadOnly="True" SortComparer="{StaticResource toStringComparer}" ValuePath="Address.MatchMethod" DataType="{x:Type sys:String}"/>
+    </coll:ArrayList>
+
+    <coll:ArrayList x:Key="columns">
+        <xcdg:Column FieldName="Name" Title="{DynamicResource LocationNameColumnHeader}"/>
+        <xcdg:Column FieldName="AddressFields"/>
+        <xcdg:Column FieldName="TimeWindow" Title="{DynamicResource TimeWindowColumnHeader}" CellContentTemplate="{DynamicResource TimeWindowCell}" CellEditor="{DynamicResource TimeWindowEditor}"/>
+        <xcdg:Column FieldName="TimeWindow2" Title="{DynamicResource TimeWindow2ColumnHeader}" CellContentTemplate="{DynamicResource TimeWindowCell}" CellEditor="{DynamicResource TimeWindowEditor}"/>
+        <xcdg:Column FieldName="Comment" Title="{DynamicResource CommentColumnHeader}"/>
+        <xcdg:Column FieldName="MatchMethod" Title="{DynamicResource MatchMetodColumnHeader}"/>
+    </coll:ArrayList>
+
+    <!-- Page print configuration -->
+    <DataTemplate x:Key="printHeader">
+        <Label    
+                    Content="{DynamicResource LocationsPagePrintHeader}"
+                    HorizontalAlignment="Center"
+                    FontFamily="{DynamicResource DefaultApplicationFont}"
+                    FontWeight="Bold"
+                    FontSize="{DynamicResource LargeFontSize}"/>
+    </DataTemplate>
+
+</ResourceDictionary>

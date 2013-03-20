@@ -1,0 +1,17 @@
+﻿<Button x:Class="ESRI.ArcLogistics.App.Controls.OptionsCommandButton"
+        x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="Auto" Width="Auto" Margin="0,0,0,0" Click="RootButton_Click">
+        <Button.ContextMenu>
+            <ContextMenu 
+                    Foreground="{DynamicResource BlackForegroundBrush}"
+                    x:Name="OptionsMenu" 
+                    StaysOpen="True" 
+                    Opened="OptionsMenu_Opened"
+                Initialized="OptionsMenu_Initialized"
+                    PlacementTarget="{Binding this}"
+                    Placement="Bottom" >
+            </ContextMenu>
+        </Button.ContextMenu>
+</Button>

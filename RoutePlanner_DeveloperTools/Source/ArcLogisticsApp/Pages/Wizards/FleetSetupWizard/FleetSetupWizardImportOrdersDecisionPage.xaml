@@ -1,0 +1,96 @@
+<!-- // NOT USED: ARCLOGISTICS-1784 -->
+<wizardPages:WizardPageBase x:Class="ESRI.ArcLogistics.App.Pages.Wizards.FleetSetupWizardImportOrdersDecisionPage"
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="992" d:DesignHeight="784"
+    xmlns:wizardPages="clr-namespace:ESRI.ArcLogistics.App.Pages.Wizards">
+
+   <Grid x:Name="layoutRoot">
+       <Grid.Resources>
+       </Grid.Resources>
+
+       <Border Style="{StaticResource LicenseFormBorderStyle}"
+            Margin="{StaticResource FleetSetupWizardPageContentMargin}"
+            Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- Row 0 -->
+                <Label Content="{StaticResource FleetSetupWizardImportOrdersDecisionPageTitle}"
+                    FontSize="{StaticResource ExtraLargeFontSize}"
+                    FontFamily="{StaticResource DefaultApplicationFont}"
+                    Foreground="{StaticResource AquamarineSkinLightBlueColor}"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource FleetSetupWizardPageTitleMargin}"
+                    Grid.Row="0"
+                    x:Name="labelTitle" />
+
+                <!-- Row 1 -->
+                <Border BorderBrush="{StaticResource ApplicationBorder}"
+                    Grid.Row="1"
+                    SnapsToDevicePixels="True"
+                    BorderThickness="{StaticResource FleetSetupWizardSeparatorThickness}"
+                    Margin="{StaticResource FleetSetupWizardSeparatorMargin}" />
+
+                <!-- Row 2 -->
+                <TextBlock Text="{StaticResource FleetSetupWizardImportOrdersDecisionPageText}"
+                    TextAlignment="Justify"
+                    TextWrapping="Wrap"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"
+                    FontSize="{StaticResource LargeFontSize}"
+                    FontFamily="{StaticResource DefaultApplicationFont}"
+                    Margin="{StaticResource FleetSetupWizardPageTextMargin}"
+                    Grid.Row="2" />
+
+                <!-- Row 3 -->
+                <WrapPanel Margin="{StaticResource FunctionalGridButtonsStackMargin}"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Grid.Row="3" >
+                    <Button x:Name="buttonBack"
+                            Content="{StaticResource ButtonHeaderBack}"
+                            IsEnabled="True"
+                            Width="{StaticResource DefaultWizardPageButtonWidth}"
+                            Height="{StaticResource DefaultWizardPageButtonHeight}"
+                            FontSize="{StaticResource WizardButtonFontSize}"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource PageButtonStyle}"
+                            Margin="{StaticResource PageButtonMargin}"
+                            Click="buttonBack_Click" />
+                    <Button x:Name="buttonImportOrders"
+                            Content="{StaticResource ButtonHeaderImportOrders}"
+                            IsEnabled="True"
+                            Width="{StaticResource LargeWizardPageButtonWidth}"
+                            Height="{StaticResource DefaultWizardPageButtonHeight}"
+                            FontSize="{StaticResource WizardButtonFontSize}"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource PageButtonStyle}"
+                            Margin="{StaticResource PageButtonMargin}"
+                            Click="buttonImportOrders_Click" />
+                    <Button x:Name="buttonFinish"
+                            Content="{StaticResource ButtonHeaderFinish}"
+                            IsEnabled="True"
+                            Width="{StaticResource DefaultWizardPageButtonWidth}"
+                            Height="{StaticResource DefaultWizardPageButtonHeight}"
+                            FontSize="{StaticResource WizardButtonFontSize}"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource PageButtonStyle}"
+                            Margin="{StaticResource PageButtonMargin}"
+                            Click="buttonFinish_Click" />
+                </WrapPanel>
+
+            </Grid>
+        </Border>
+    </Grid>
+</wizardPages:WizardPageBase>

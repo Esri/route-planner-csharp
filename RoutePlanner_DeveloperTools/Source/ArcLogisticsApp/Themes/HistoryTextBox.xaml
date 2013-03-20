@@ -1,0 +1,42 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:ESRI.ArcLogistics.App.Converters"
+    xmlns:controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid">
+    
+    <converters:HistoryItemConverter x:Key="HistoryItemConverter"/>
+    
+    <DataTemplate x:Key="HistoryItemTemplate">
+        <controls:BindableTextBlock BindableInlines="{Binding Converter={StaticResource HistoryItemConverter}}"/> 
+    </DataTemplate>
+    
+    <Style TargetType="{x:Type controls:HistoryTextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:HistoryTextBox}">
+                    <Grid>
+                        <xcdg:AutoSelectTextBox Name="PART_TextBox"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Margin="0,-1,0,-1"
+                                Focusable="True" AutoSelectBehavior="Never" AutoMoveFocus="true">
+                        </xcdg:AutoSelectTextBox>
+                        <Popup Name="PART_PopupPanel" MinWidth="{Binding Path = ActualWidth, ElementName=PART_TextBox}" Width="Auto"
+                               PlacementTarget="{Binding ElementName=PART_TextBox}" Placement="Bottom" 
+                               StaysOpen="True" IsOpen="{TemplateBinding HasHistoryCandidates}" 
+                               MaxHeight="300"
+                               Focusable="False">
+                            <ListBox FontFamily="Comic Sans" Name="PART_Selector" ItemsSource="{TemplateBinding HistoryCandidates}" 
+                                     ItemTemplate="{StaticResource HistoryItemTemplate}"/>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasHistoryCandidates" Value="True">
+                            <Setter TargetName="PART_TextBox" Property="AutoMoveFocus" Value="false"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
