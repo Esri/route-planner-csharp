@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="ESRI.ArcLogistics.App.Controls.CircularProgressBar"
+             x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="Auto" Width="Auto"
+    Background="Transparent"
+    IsVisibleChanged="_VisibleChanged">
+    <Image x:Name="frame"
+        Width="24"
+        Height="24"
+        Loaded="_Loaded"
+        Unloaded="_Unloaded" />
+</UserControl>

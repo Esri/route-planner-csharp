@@ -1,0 +1,10 @@
+﻿<widgets:PageWidget x:Class="WidgetPluginTutorial.MyCustomWidge"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:widgets="clr-namespace:ESRI.ArcLogistics.App.Widgets;assembly=ESRI.ArcLogistics.App"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" >
+    <Grid>
+        <Label Content="Name:" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label1" VerticalAlignment="Top" />
+    </Grid>
+    </widgets:PageWidget>

@@ -1,0 +1,189 @@
+<Window x:Class="ESRI.ArcLogistics.App.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="RoutePlanner" Height="372" Width="531" WindowState="Maximized" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:app="clr-namespace:ESRI.ArcLogistics.App"
+    xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    mc:Ignorable="d" xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid" Background="#FFFDFDFD">
+    <Window.CommandBindings>
+        <CommandBinding
+            Command="app:ArcLogisticsCommands.ContinueWorking"
+            CanExecute="_ContinueWorkingCanExecute"
+            Executed="_ContinueWorkingExecuted"
+            />
+    </Window.CommandBindings>
+    
+    <Grid x:Name="MainLayout" Background="#FF000000" KeyDown="_KeyDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <ContentControl Foreground="{x:Null}"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Style="{DynamicResource BakgroundStyle}"
+                        Grid.RowSpan="2"/>
+        <Border Margin="{DynamicResource MainWindowFrameBorderMargin}"
+                Grid.Row="1"
+                SnapsToDevicePixels="True"
+                BorderThickness="{DynamicResource ApplicationBorderThickness}"
+                BorderBrush="{DynamicResource CategoryButtonCheckedBackground}">
+            <Grid x:Name="MainArea"
+                  Width="Auto"
+                  Height="Auto"
+                  SnapsToDevicePixels="True"
+                  Margin="{DynamicResource ApplicationBorderThickness}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MinWidth ="30"
+                                      MaxWidth="{DynamicResource DefaultNavigationPaneWidth}" 
+                                      Width="Auto"
+                                      x:Name="NavigationPaneContainer"/>
+                    <ColumnDefinition MinWidth="30" x:Name="FrameContainer"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1"
+                      SnapsToDevicePixels="True"
+                      x:Name="PageFrameGrid"
+                      Margin="0,0,0,0"
+                      Background="{DynamicResource TrasparentContentBackgroundColor}"
+                      VerticalAlignment="Stretch"
+                      HorizontalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="120"  MaxHeight="400" x:Name="messageWindowGrid"/>
+                        <RowDefinition Height="31" MinHeight="30" />
+                    </Grid.RowDefinitions>
+                    <Border SnapsToDevicePixels="True"
+                            Grid.Row="0"
+                            BorderBrush="{DynamicResource AquamarineSkinMainWindowBorder}"
+                            BorderThickness="0,1,1,0">
+                            <Frame x:Name="PageFrame"
+                                   Focusable="False"
+                                   VerticalAlignment="Stretch"
+                                   JournalOwnership="OwnsJournal"
+                                   SnapsToDevicePixels="True"
+                                   NavigationUIVisibility="Hidden"
+                                   Margin="0,0,0,0"
+                                   Opacity="1"
+                                   Background="{DynamicResource TrasparentContentBackgroundColor}"/>
+                    </Border>
+                    <Grid x:Name="lockedGridFrame"
+                     Margin="0,0,0,0"
+                     Background="{DynamicResource LockedPageBackground}"
+                     Grid.RowSpan="1"
+                     Visibility="Hidden"/>
+                    <app_controls:MessageWindow x:Name="messageWindow"
+                                 Grid.Row="1"
+                                 Margin="{DynamicResource MessageWindowMargin}"
+                                 BorderBrush="{DynamicResource AquamarineSkinMainWindowBorder}"
+                                 BorderThickness="0,0,1,0"
+                                 SnapsToDevicePixels="True"
+                                 Opacity="1"
+                                 VerticalAlignment="Stretch"
+                                 HorizontalAlignment="Stretch"
+                                 Background="{DynamicResource TrasparentContentBackgroundColor}" />
+                    <GridSplitter VerticalAlignment="Top"
+                               HorizontalAlignment="Stretch"
+                               Grid.Row="1"
+                               Height="1"
+                               Width="Auto"
+                               Background="{DynamicResource AquamarineSkinMainWindowBorder}"
+                               Focusable="False"
+                               SnapsToDevicePixels="True"
+                               DragDelta="mainHorizontalSplitter_DragDelta"
+                               x:Name="mainHorizontalSplitter" />
+                    <Border Grid.Row="2"
+                            SnapsToDevicePixels="True"
+                            BorderBrush="{DynamicResource AquamarineSkinMainWindowBorder}"
+                            BorderThickness="0,1,1,1"
+                            VerticalAlignment="Stretch"
+                            HorizontalAlignment="Stretch"
+                            Margin="0,0,0,-1"
+                            Width="Auto">
+                        <app_controls:StatusBar x:Name="statusBar"
+                            SnapsToDevicePixels="True"
+                            VerticalAlignment="Stretch"
+                            HorizontalAlignment="Stretch"
+                            Margin="0,0,0,0"/>
+                    </Border>
+                </Grid>
+
+                <app_controls:NavigationPane x:Name="navigationPane"
+                    Height="Auto"
+                    Width="Auto"
+                    Enabled="True"
+                    Grid.Column="0"
+                    MinWidth="30"
+                    MaxWidth="{DynamicResource DefaultNavigationPaneWidth}"
+                    BorderThickness="1,1,0,0"
+                    Margin="0,0,0,0"
+                    SnapsToDevicePixels="True"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"/>
+ 
+                <Grid x:Name="lockedNavigationPane"
+                     Margin="0,0,0,0"
+                     Background="{DynamicResource LockedPageBackground}"
+                     Grid.Column="0"
+                     Visibility="Hidden"/>
+                <GridSplitter Focusable="False"
+                              HorizontalAlignment="Left"
+                              Background="Transparent"
+                              SnapsToDevicePixels="True"
+                              x:Name="mainVerticalSplitter"
+                              Grid.Column="1"
+                              DragDelta="mainVerticalSplitter_DragDelta"
+                              Width="{DynamicResource DefaultSplitterWidth}"/>
+            </Grid>
+        </Border>
+
+        <Grid x:Name="Header" Grid.Row="0"
+              VerticalAlignment="Stretch"
+              Margin="0"
+              Background="{DynamicResource DarkApplicationBackgroundBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <app_controls:ScrollableContentControl x:Name="CategoriesButtons"
+                Grid.Column="0"
+                HorizontalAlignment="Stretch"
+                Width="Auto"
+                VerticalAlignment="Stretch"
+                Margin="20,5,20,-1" BorderBrush="#FF23B80B"/>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="{DynamicResource MainWindowActionsButtonsMargin}"
+                        Grid.Column="1"
+                        d:LayoutOverrides="Height"
+                        x:Name="Actions"
+                        HorizontalAlignment="Right" VerticalAlignment="Center" >
+                <Label Content="{DynamicResource PreferencesButtonString}"
+                       Width="Auto"
+                       Height="Auto"
+                       x:Name="preferences"
+                       Style="{DynamicResource LinkLabelStyle1}"/>
+                <Rectangle Fill="{DynamicResource WhiteForegroundBrush}"
+                       Width="1"
+                       Height="Auto"
+                       x:Name ="preferencesSeparator"
+                       Margin="{DynamicResource MainWindowDividingStriaMargin}"/>
+                <Label Content="{DynamicResource HelpButtonString}"
+                       Style="{DynamicResource LinkLabelStyle1}"
+                       x:Name="help"/>
+                <Rectangle Fill="{DynamicResource WhiteForegroundBrush}"
+                       Width="1"
+                       Height="Auto"
+                       x:Name="helpSeparator"
+                       Margin="{DynamicResource MainWindowDividingStriaMargin}"/>
+                <Label Content="{DynamicResource AboutButtonString}"
+                       Style="{DynamicResource LinkLabelStyle1}"
+                       x:Name="about"/>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,78 @@
+﻿<Window x:Class="ESRI.ArcLogistics.App.Dialogs.AboutDialog"
+        x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="430" Width="620" 
+        WindowStyle="SingleBorderWindow"
+        ResizeMode ="NoResize"
+        BorderThickness="0"
+        Title="{DynamicResource AboutButtonString}">
+    <Grid Background="{DynamicResource TrasparentContentBackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Row="0"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Width="48"
+                   Height="48"
+                   x:Name="image"
+                   Grid.Column="0"
+                   Margin="10"/>
+        <StackPanel Orientation="Vertical" 
+                    Grid.Column="1"
+                    Grid.RowSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="headerText"
+                           TextAlignment="Justify"
+                           VerticalAlignment="Stretch"
+                           HorizontalAlignment="Stretch"
+                           Margin="10" 
+                       Foreground="{DynamicResource WhiteForegroundBrush}"
+                       FontSize="{DynamicResource ExtraLargeFontSize}"
+                       Text="{DynamicResource ESRIHeader}"/>
+                <TextBlock x:Name="versionTextBlock"
+                           TextAlignment="Justify"
+                           VerticalAlignment="Stretch"
+                           HorizontalAlignment="Stretch"
+                           Margin="10" 
+                       Foreground="{DynamicResource WhiteForegroundBrush}"
+                       FontSize="{DynamicResource ExtraLargeFontSize}"
+                       Text=""/>
+            </StackPanel>
+            <TextBlock x:Name="ESRIInfoText"
+                       TextAlignment="Justify"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch"
+                       Margin="10" 
+                   Foreground="{DynamicResource WhiteForegroundBrush}"
+                   FontSize="{DynamicResource LargeFontSize}"
+                   Text="{DynamicResource ESRICopyrightInfo}"/>
+            <TextBlock x:Name="infoText"
+                       TextAlignment="Justify"
+                       TextWrapping="WrapWithOverflow"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch"
+                       Margin="10,10,20,10" 
+                   Foreground="{DynamicResource WhiteForegroundBrush}"
+                   FontSize="{DynamicResource MiddleFontSize}"
+                   Text="{DynamicResource Acknowledgements}"/>
+        </StackPanel>
+        <Button Name="closeButton"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center" 
+                    Width="{DynamicResource DefaultPageButtonWidth}" 
+                    Height="{DynamicResource DefaultPageButtonHeight}"
+                    Grid.Column="1"
+                    Margin="10"
+                    Content="{DynamicResource ButtonHeaderOk}"
+                    Click="closeButton_Click"
+                    Grid.Row="2"/>
+    </Grid>
+</Window>

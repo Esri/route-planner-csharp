@@ -1,0 +1,45 @@
+<ResourceDictionary
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:app="clr-namespace:ESRI.ArcLogistics.App;assembly=ESRI.ArcLogistics.App"
+xmlns:arcLogistics="clr-namespace:ESRI.ArcLogistics;assembly=ESRI.ArcLogisticsNG"
+xmlns:collections="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+xmlns:sys="clr-namespace:System;assembly=mscorlib"
+xmlns:domainObjects="clr-namespace:ESRI.ArcLogistics.DomainObjects;assembly=ESRI.ArcLogisticsNG"
+xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+xmlns:converters="clr-namespace:ESRI.ArcLogistics.App.Converters;assembly=ESRI.ArcLogistics.App"
+xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib">
+
+    <coll:ArrayList x:Key="itemProperties">
+        <xcdg:DataGridItemProperty Name="IsEnabled" />
+        <xcdg:DataGridItemProperty Name="Restriction" />
+        <xcdg:DataGridItemProperty Name="Parameters" />
+    </coll:ArrayList>
+
+    <coll:ArrayList x:Key="columns">
+        <xcdg:Column FieldName="IsEnabled"
+           Title=""
+           Width="22"
+           MinWidth="22"
+           MaxWidth="22"
+           CellEditorDisplayConditions="Always" />
+        <xcdg:Column FieldName="Restriction"
+           Title="{DynamicResource RestrictionColumnHeader}"
+           Width="*"
+           CellContentTemplate="{DynamicResource restrictionNameContentTemplate}"
+           ReadOnly="True" />
+        <xcdg:Column FieldName="RestrictionUsageParameter"
+           Title="{DynamicResource RestrictionUsageParameterColumnHeader}"
+           Width="150"
+           MinWidth="150"
+           MaxWidth="150" 
+           CellContentTemplate="{DynamicResource restrictionUsageContentTemplate}"
+           CellEditor="{DynamicResource restrictionUsageEditTemplate}"/>
+        <xcdg:Column FieldName="Parameters"
+           Width="100"
+           MinWidth="100"
+           MaxWidth="100"
+           CellContentTemplate="{DynamicResource restrictionParameterContentTemplate}" />
+    </coll:ArrayList>
+
+</ResourceDictionary>

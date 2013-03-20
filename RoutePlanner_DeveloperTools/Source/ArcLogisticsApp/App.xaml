@@ -1,0 +1,25 @@
+<Application x:Class="ESRI.ArcLogistics.App.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    StartupUri="MainWindow.xaml" 
+             xmlns:igDock="http://infragistics.com/DockManager" 
+             LoadCompleted="App_LoadCompleted" 
+             Startup="Application_Startup" 
+             Exit="App_Exit"
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ESRI.ArcLogistics.App;Component/Resources/LayoutSettings.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ESRI.ArcLogistics.App;Component/Resources/DataGridControlLayoutSettings.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ESRI.ArcLogistics.App;Component/Resources/XceedCellTemplates.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ESRI.ArcLogistics.App;Component/Resources/ImageBrushes.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ESRI.ArcLogistics.App;Component/Resources/DrawingBrushes.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ESRI.ArcLogistics.App;Component/Skins/BlackSkinColors.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ESRI.ArcLogistics.App;Component/Themes/CalendarStyles.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ESRI.ArcLogistics.App;Component/Themes/ThemeTemplates.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ESRI.ArcLogistics.App;Component/Themes/ApplicationGlyphs.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

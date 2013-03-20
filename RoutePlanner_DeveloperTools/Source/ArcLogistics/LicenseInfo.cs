@@ -1,0 +1,51 @@
+﻿using System;
+
+namespace ESRI.ArcLogistics
+{
+    /// <summary>
+    /// Provides license information
+    /// </summary>
+    public sealed class LicenseInfo
+    {
+        #region constructors
+        /// <summary>
+        /// Initializes a new instance of the LicenseInfo class.
+        /// </summary>
+        public LicenseInfo()
+            : this(null, null)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the LicenseInfo class.
+        /// </summary>
+        /// <param name="license">The reference to the license object.</param>
+        /// <param name="licenseValidationDate">The date/time of the license validation.</param>
+        public LicenseInfo(License license, DateTime? licenseValidationDate)
+        {
+            this.License = license;
+            this.LicenseValidationDate = licenseValidationDate;
+        }
+        #endregion
+
+        #region public properties
+        /// <summary>
+        /// Gets a reference to the license object.
+        /// </summary>
+        public License License
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// Gets date and time when the <see cref="P:License"/> was validated.
+        /// </summary>
+        public DateTime? LicenseValidationDate
+        {
+            get;
+            private set;
+        }
+        #endregion
+    }
+}

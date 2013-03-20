@@ -1,0 +1,1900 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InvalidProjectName" xml:space="preserve">
+    <value>Invalid project name.</value>
+  </data>
+  <data name="ProjectNameIsEmpty" xml:space="preserve">
+    <value>Project name is empty.</value>
+  </data>
+  <data name="NullParameter" xml:space="preserve">
+    <value>Parameter cannot be a null reference.</value>
+  </data>
+  <data name="ProjectCfgFilePathInvalid" xml:space="preserve">
+    <value>Project configuration file path is invalid.</value>
+  </data>
+  <data name="ProjectCfgIsInvalid" xml:space="preserve">
+    <value>Project configuration file is invalid.</value>
+  </data>
+  <data name="ProjectCfgNotFound" xml:space="preserve">
+    <value>Project configuration file not found.</value>
+  </data>
+  <data name="ProjectIsNotOpened" xml:space="preserve">
+    <value>Project is not opened.</value>
+  </data>
+  <data name="UnableToSaveProjectCfg" xml:space="preserve">
+    <value>Unable to save project configuration file.</value>
+  </data>
+  <data name="TimeWindowFormat" xml:space="preserve">
+    <value>{0} - {1}</value>
+  </data>
+  <data name="Wideopen" xml:space="preserve">
+    <value>Wideopen</value>
+  </data>
+  <data name="DefailtCapacityVolume" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="DefailtCapacityWeight" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="DefaultFuelTypeDiesel" xml:space="preserve">
+    <value>Diesel</value>
+  </data>
+  <data name="DefaultFuelTypeElectric" xml:space="preserve">
+    <value>Electric</value>
+  </data>
+  <data name="DefaultFuelTypeGas" xml:space="preserve">
+    <value>Gas</value>
+  </data>
+  <data name="CapacityInfoIsNull" xml:space="preserve">
+    <value>Capacity is null.</value>
+  </data>
+  <data name="CapacitiesInfoAlreadySet" xml:space="preserve">
+    <value>Capacities already set.</value>
+  </data>
+  <data name="LocatorNameNotFound" xml:space="preserve">
+    <value>FieldName {0} is not found in geocoding service</value>
+  </data>
+  <data name="DefaultGeocodingInfoIsNotSet" xml:space="preserve">
+    <value>Default geocoding info is not set.</value>
+  </data>
+  <data name="DefaultGeocodingInfoIsNotUnique" xml:space="preserve">
+    <value>Default geocoding info is not unique.</value>
+  </data>
+  <data name="LogFileCantBeSmall" xml:space="preserve">
+    <value>The log file size can't be less than 1 kb.</value>
+  </data>
+  <data name="GeocodingServiceIsUnavailableNow" xml:space="preserve">
+    <value>Geocoding service is unavailable now.</value>
+  </data>
+  <data name="ServerNameNotFound" xml:space="preserve">
+    <value>Server for current geocoding service not found.</value>
+  </data>
+  <data name="InvalidCapacityIndex" xml:space="preserve">
+    <value>Capacity index must be greater then or equal to 0.</value>
+  </data>
+  <data name="KMPL" xml:space="preserve">
+    <value>km/L</value>
+  </data>
+  <data name="L100Km" xml:space="preserve">
+    <value>L/100 km</value>
+  </data>
+  <data name="MPGImp" xml:space="preserve">
+    <value>MPG (Imp)</value>
+  </data>
+  <data name="MPGUS" xml:space="preserve">
+    <value>MPG</value>
+  </data>
+  <data name="BreakFormat" xml:space="preserve">
+    <value>{0} mins</value>
+  </data>
+  <data name="BreakIntervalFormat" xml:space="preserve">
+    <value>{0}, {1} hours</value>
+  </data>
+  <data name="DefaultOrderCustomPropertiesHomePhone" xml:space="preserve">
+    <value>Home Phone</value>
+  </data>
+  <data name="DefaultOrderCustomPropertiesOrderNumber" xml:space="preserve">
+    <value>Order Number</value>
+  </data>
+  <data name="OrderCustomPropertiesInfoIsNull" xml:space="preserve">
+    <value>Order Custom Properties Info is null</value>
+  </data>
+  <data name="OrderCustomPropertiesInfoAlreadySet" xml:space="preserve">
+    <value>Order custom properties info already set.</value>
+  </data>
+  <data name="InvalidCustomPropertyIndex" xml:space="preserve">
+    <value>Custom property index must be greater then or equal to 0.</value>
+  </data>
+  <data name="DomainPropertyNameName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="DomainPropertyNameComment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="DomainPropertyNameStartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="DomainPropertyNameFinishDate" xml:space="preserve">
+    <value>Finish Date</value>
+  </data>
+  <data name="DomainPropertyNamePlannedDate" xml:space="preserve">
+    <value>Planned Date</value>
+  </data>
+  <data name="DomainPropertyNameOrderType" xml:space="preserve">
+    <value>Order Type</value>
+  </data>
+  <data name="DomainPropertyNameOrderPriority" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="DomainPropertyNameServiceTime" xml:space="preserve">
+    <value>Service Time</value>
+  </data>
+  <data name="DomainPropertyNameCurbApproach" xml:space="preserve">
+    <value>Curb Approach</value>
+  </data>
+  <data name="DomainPropertyNameTimeWindow" xml:space="preserve">
+    <value>Time Window</value>
+  </data>
+  <data name="DomainPropertyNameTimeWindow2" xml:space="preserve">
+    <value>Time Window2</value>
+  </data>
+  <data name="DomainPropertyNameTimeWindowFrom" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="DomainPropertyNameTimeWindowTo" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="DomainPropertyNameTimeWindowDay" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="DomainPropertyNameX" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="DomainPropertyNameY" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="DomainPropertyNameVehicleSpecialties" xml:space="preserve">
+    <value>Vehicle Specialties</value>
+  </data>
+  <data name="DomainPropertyNameDriverSpecialties" xml:space="preserve">
+    <value>Driver Specialties</value>
+  </data>
+  <data name="DomainPropertyNameSpecialties" xml:space="preserve">
+    <value>Specialties</value>
+  </data>
+  <data name="DomainPropertyNameMaxViolationTime" xml:space="preserve">
+    <value>Max Violation Time</value>
+  </data>
+  <data name="DomainPropertyNameActiveSyncProfileName" xml:space="preserve">
+    <value>ActiveSync Profile Name</value>
+  </data>
+  <data name="DomainPropertyNameEmailAddress" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="DomainPropertyNameSyncFolder" xml:space="preserve">
+    <value>Sync Folder</value>
+  </data>
+  <data name="DomainPropertyNameSyncType" xml:space="preserve">
+    <value>Sync Type</value>
+  </data>
+  <data name="DomainPropertyNameFixedCost" xml:space="preserve">
+    <value>Fixed Cost</value>
+  </data>
+  <data name="DomainPropertyNamePerHourSalary" xml:space="preserve">
+    <value>Per Hour Salary</value>
+  </data>
+  <data name="DomainPropertyNamePerHourOTSalary" xml:space="preserve">
+    <value>Per Hour OT Salary</value>
+  </data>
+  <data name="DomainPropertyNameTimeBeforeOT" xml:space="preserve">
+    <value>Time Before OT</value>
+  </data>
+  <data name="DomainPropertyNameMobileDevice" xml:space="preserve">
+    <value>Mobile Device</value>
+  </data>
+  <data name="DomainPropertyNameFuelEconomy" xml:space="preserve">
+    <value>Fuel Economy</value>
+  </data>
+  <data name="DomainPropertyNameFuelType" xml:space="preserve">
+    <value>Fuel Type</value>
+  </data>
+  <data name="DomainPropertyNameVehicle" xml:space="preserve">
+    <value>Vehicle</value>
+  </data>
+  <data name="DomainPropertyNameDriver" xml:space="preserve">
+    <value>Driver</value>
+  </data>
+  <data name="DomainPropertyNameMaxOrders" xml:space="preserve">
+    <value>Max Orders</value>
+  </data>
+  <data name="DomainPropertyNameStartTimeWindow" xml:space="preserve">
+    <value>Start Time Window</value>
+  </data>
+  <data name="DomainPropertyNameLunch" xml:space="preserve">
+    <value>Break</value>
+  </data>
+  <data name="DomainPropertyNameMaxTravelDistance" xml:space="preserve">
+    <value>Max Travel Distance</value>
+  </data>
+  <data name="DomainPropertyNameMaxTravelDuration" xml:space="preserve">
+    <value>Max Travel Duration</value>
+  </data>
+  <data name="DomainPropertyNameMaxTotalDuration" xml:space="preserve">
+    <value>Max Total Duration</value>
+  </data>
+  <data name="DomainPropertyNameStartLocation" xml:space="preserve">
+    <value>Start Depot</value>
+  </data>
+  <data name="DomainPropertyNameTimeAtStart" xml:space="preserve">
+    <value>Time At Start</value>
+  </data>
+  <data name="DomainPropertyNameEndLocation" xml:space="preserve">
+    <value>End Depot</value>
+  </data>
+  <data name="DomainPropertyNameTimeAtEnd" xml:space="preserve">
+    <value>Time At End</value>
+  </data>
+  <data name="DomainPropertyNameRenewalLocations" xml:space="preserve">
+    <value>Renewal Depots</value>
+  </data>
+  <data name="DomainPropertyNameTimeAtRenewal" xml:space="preserve">
+    <value>Time At Renewal</value>
+  </data>
+  <data name="DomainPropertyNameColor" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="DomainPropertyNameZones" xml:space="preserve">
+    <value>Zones</value>
+  </data>
+  <data name="DomainPropertyNameDuration" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="DomainPropertyNameInterval" xml:space="preserve">
+    <value>Interval</value>
+  </data>
+  <data name="DomainPropertyBarrierEffect" xml:space="preserve">
+    <value>Barrier Type</value>
+  </data>
+  <data name="DomainPropertyNameBlockTravel" xml:space="preserve">
+    <value>Block Travel</value>
+  </data>
+  <data name="DomainPropertyNameDelayTime" xml:space="preserve">
+    <value>Delay Time</value>
+  </data>
+  <data name="DomainPropertyNameSpeedFactorInPercent" xml:space="preserve">
+    <value>Speed Factor In Percent</value>
+  </data>
+  <data name="ProjectNameCannotBeEmpty" xml:space="preserve">
+    <value>Project name cannot be empty</value>
+  </data>
+  <data name="ProjectNameIsAlreadyExists" xml:space="preserve">
+    <value>Project name is already exists</value>
+  </data>
+  <data name="ProjectNameIsNotCorrect" xml:space="preserve">
+    <value>Project name is not correct</value>
+  </data>
+  <data name="ProjectFilepathIsNotCorrect" xml:space="preserve">
+    <value>Project filepath is not correct</value>
+  </data>
+  <data name="WriteAccessDenied" xml:space="preserve">
+    <value>Write access denied</value>
+  </data>
+  <data name="Everyday" xml:space="preserve">
+    <value>everyday</value>
+  </data>
+  <data name="NoEffectiveDays" xml:space="preserve">
+    <value>No effective days</value>
+  </data>
+  <data name="EverydayDays" xml:space="preserve">
+    <value>Everyday</value>
+  </data>
+  <data name="DaysRangeFormat" xml:space="preserve">
+    <value>effective {0}</value>
+  </data>
+  <data name="DaysRangeSegmentFormat" xml:space="preserve">
+    <value>{0} until {1}</value>
+  </data>
+  <data name="SplitterAnd" xml:space="preserve">
+    <value> and </value>
+  </data>
+  <data name="DomainPropertyNameArriveTime" xml:space="preserve">
+    <value>Arrive Time</value>
+  </data>
+  <data name="DomainPropertyNameDistance" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="DomainPropertyNameIsLocked" xml:space="preserve">
+    <value>Is Locked</value>
+  </data>
+  <data name="DomainPropertyNameMapLocation" xml:space="preserve">
+    <value>Map Location</value>
+  </data>
+  <data name="DomainPropertyNameOrderSequenceNumber" xml:space="preserve">
+    <value>Order Sequence Number</value>
+  </data>
+  <data name="DomainPropertyNameSequenceNumber" xml:space="preserve">
+    <value>Sequence Number</value>
+  </data>
+  <data name="DomainPropertyNameTimeAtStop" xml:space="preserve">
+    <value>Time At Stop</value>
+  </data>
+  <data name="DomainPropertyNameTravelTime" xml:space="preserve">
+    <value>Travel Time</value>
+  </data>
+  <data name="DomainPropertyNameType" xml:space="preserve">
+    <value>Stop Type</value>
+  </data>
+  <data name="DomainPropertyNameWaitTime" xml:space="preserve">
+    <value>Wait Time</value>
+  </data>
+  <data name="ViolationBreakRequired" xml:space="preserve">
+    <value>Route BreakRequired violation.</value>
+  </data>
+  <data name="ViolationCapacities" xml:space="preserve">
+    <value>Route Capacities violation.</value>
+  </data>
+  <data name="ViolationHardTimeWindow" xml:space="preserve">
+    <value>Hard time window violation on an order, depot or break.</value>
+  </data>
+  <data name="ViolationMaxOrderCount" xml:space="preserve">
+    <value>Route MaxOrderCount violation.</value>
+  </data>
+  <data name="ViolationMaxTotalDistance" xml:space="preserve">
+    <value>Route MaxTotalDistance violation.</value>
+  </data>
+  <data name="ViolationMaxTotalTime" xml:space="preserve">
+    <value>Route MaxTotalTime violation.</value>
+  </data>
+  <data name="ViolationMaxTotalTravelTime" xml:space="preserve">
+    <value>Route MaxTotalTravelTime violation.</value>
+  </data>
+  <data name="ViolationOrderPairMaxTransitTime" xml:space="preserve">
+    <value>The order belongs to an order pair, and violates the pair’s MaxTransitTime constraint.</value>
+  </data>
+  <data name="ViolationOrderPairOther" xml:space="preserve">
+    <value>The order belongs to an order pair, and is unrouted because the other order has some violation.</value>
+  </data>
+  <data name="ViolationRenewalRequired" xml:space="preserve">
+    <value>Route RenewalRequired violation.</value>
+  </data>
+  <data name="ViolationSpecialties" xml:space="preserve">
+    <value>The specialties required by the order were not found on the target route(s).</value>
+  </data>
+  <data name="ViolationUnreachable" xml:space="preserve">
+    <value>There is negative travel time or distance between the order and some depot or other order.</value>
+  </data>
+  <data name="ViolationZone" xml:space="preserve">
+    <value>The order does not fall within a hard route zone.</value>
+  </data>
+  <data name="GeocodeOperationFailed" xml:space="preserve">
+    <value>Geocode operation failed.</value>
+  </data>
+  <data name="ViolationBreakRequired_Route_PIR" xml:space="preserve">
+    <value>The Break for the route has a null Sequence value, but it could not be inserted anywhere without introducing violations.</value>
+  </data>
+  <data name="ViolationCapacities_Order_PIR" xml:space="preserve">
+    <value>The order has a DeliveryQuantities value and/or a PickupQuantities value that exceeds the Capacities value of its pre-assigned route.</value>
+  </data>
+  <data name="ViolationCapacities_Route_PIR" xml:space="preserve">
+    <value>Route Capacities violation.</value>
+  </data>
+  <data name="ViolationHardTimeWindow_Route_EIR" xml:space="preserve">
+    <value>Hard time window violation on the start or end depot or break.</value>
+  </data>
+  <data name="ViolationHardTimeWindow_Route_PIR" xml:space="preserve">
+    <value>Hard time window violation on an order, depot or break pre-assigned to the route.</value>
+  </data>
+  <data name="ViolationMaxOrderCount_Route_PIR" xml:space="preserve">
+    <value>Route MaxOrderCount violation.</value>
+  </data>
+  <data name="ViolationMaxTotalDistance_Route_EIR" xml:space="preserve">
+    <value>The distance from the start depot to the end depot exceeds the route's MaxTotalDistance value.</value>
+  </data>
+  <data name="ViolationMaxTotalDistance_Route_PIR" xml:space="preserve">
+    <value>Route MaxTotalDistance violation.</value>
+  </data>
+  <data name="ViolationMaxTotalTime_Route_EIR" xml:space="preserve">
+    <value>The travel time from the start depot to the end depot, plus the service and wait times at both depots and break, exceeds the route's MaxTotalTime value.</value>
+  </data>
+  <data name="ViolationMaxTotalTime_Route_PIR" xml:space="preserve">
+    <value>Route MaxTotalTime violation.</value>
+  </data>
+  <data name="ViolationMaxTotalTravelTime_Route_EIR" xml:space="preserve">
+    <value>The travel time from the start depot to the end depot exceeds the route's MaxTotalTravelTime value.</value>
+  </data>
+  <data name="ViolationMaxTotalTravelTime_Route_PIR" xml:space="preserve">
+    <value>Route MaxTotalTravelTime violation.</value>
+  </data>
+  <data name="ViolationOrderPairMaxTransitTime_Route_PIR" xml:space="preserve">
+    <value>There is an order pair pre-assigned to the route, and the pair's MaxTransitTime constraint is violated.</value>
+  </data>
+  <data name="ViolationRenewalRequired_Route_PIR" xml:space="preserve">
+    <value>The RouteRenewals for the route have null Sequences value, and the pre-assignment has a capacity violation.  There is no feasible way to insert route renewals to correct the capacity violation.</value>
+  </data>
+  <data name="ViolationSpecialties_Order_PIR" xml:space="preserve">
+    <value>The order has a specialty incompatibility with its pre-assigned route.</value>
+  </data>
+  <data name="ViolationUnreachable_Order_PIR" xml:space="preserve">
+    <value>The order has negative travel time or distance from the preceding stop on its pre-assigned route.</value>
+  </data>
+  <data name="ViolationUnreachable_Route_EIR" xml:space="preserve">
+    <value>There is negative travel time or distance from the start depot to the end depot.</value>
+  </data>
+  <data name="ViolationUnreachable_Route_PIR" xml:space="preserve">
+    <value>There is negative travel time or distance between the depots and the orders pre-assigned to the route.</value>
+  </data>
+  <data name="ViolationZone_Order_PIR" xml:space="preserve">
+    <value>The order has a hard zone incompatibility with its pre-assigned route.</value>
+  </data>
+  <data name="ViolationNotLocated" xml:space="preserve">
+    <value>Not Found on the Network</value>
+  </data>
+  <data name="ViolationRestricted" xml:space="preserve">
+    <value>On a Restricted Street</value>
+  </data>
+  <data name="ViolationUngeocoded" xml:space="preserve">
+    <value>Ungeocoded</value>
+  </data>
+  <data name="ProfileNameCannotBeEmpty" xml:space="preserve">
+    <value>Profile name cannot be empty.</value>
+  </data>
+  <data name="ProfileFileNameCannotBeEmpty" xml:space="preserve">
+    <value>Profile file name cannot be empty.</value>
+  </data>
+  <data name="ProfileNameIsAlreadyExists" xml:space="preserve">
+    <value>Profile with this name is already exists.</value>
+  </data>
+  <data name="ExportTableNameStops" xml:space="preserve">
+    <value>Stops table</value>
+  </data>
+  <data name="ExportTableNameRoutes" xml:space="preserve">
+    <value>Routes table</value>
+  </data>
+  <data name="ExportTableNameSchedules" xml:space="preserve">
+    <value>Schedules table</value>
+  </data>
+  <data name="Break" xml:space="preserve">
+    <value>Break</value>
+  </data>
+  <data name="ExportFieldNameOverviewMap" xml:space="preserve">
+    <value>OverviewMap</value>
+  </data>
+  <data name="ExportFieldDescriptionOverviewMap" xml:space="preserve">
+    <value>A map image that shows the extent of the route.</value>
+  </data>
+  <data name="ExportFieldNameID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="ExportFieldDescriptionRouteID" xml:space="preserve">
+    <value>The unique route ID represented as a GUID.</value>
+  </data>
+  <data name="ExportFieldNameLongPlannedDate" xml:space="preserve">
+    <value>PlannedDate</value>
+  </data>
+  <data name="ExportFieldNameShortPlannedDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="ExportFieldDescriptionPlannedDate" xml:space="preserve">
+    <value>Planned date for this order.</value>
+  </data>
+  <data name="ExportFieldNameScheduleID" xml:space="preserve">
+    <value>ScheduleID</value>
+  </data>
+  <data name="ExportFieldDescriptionScheduleID" xml:space="preserve">
+    <value>Foreign key into the schedule where the route is used, represented as a GUID.</value>
+  </data>
+  <data name="ExportFieldNameName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ExportFieldNameRouteName" xml:space="preserve">
+    <value>RouteName</value>
+  </data>
+  <data name="ExportFieldDescriptionRouteName" xml:space="preserve">
+    <value>The Route name.</value>
+  </data>
+  <data name="ExportFieldNameLongVehicleName" xml:space="preserve">
+    <value>VehicleName</value>
+  </data>
+  <data name="ExportFieldNameShortVehicleName" xml:space="preserve">
+    <value>VehicName</value>
+  </data>
+  <data name="ExportFieldDescriptionVehicleName" xml:space="preserve">
+    <value>The Vehicle name.</value>
+  </data>
+  <data name="ExportFieldNameLongStartLocationName" xml:space="preserve">
+    <value>StartLocationName</value>
+  </data>
+  <data name="ExportFieldNameShortStartLocationName" xml:space="preserve">
+    <value>StartName</value>
+  </data>
+  <data name="ExportFieldDescriptionStartLocationName" xml:space="preserve">
+    <value>The Start Depot name.</value>
+  </data>
+  <data name="ExportFieldNameLongEndLocationName" xml:space="preserve">
+    <value>EndLocationName</value>
+  </data>
+  <data name="ExportFieldNameShortEndLocationName" xml:space="preserve">
+    <value>EndName</value>
+  </data>
+  <data name="ExportFieldDescriptionEndLocationName" xml:space="preserve">
+    <value>The End Depot name.</value>
+  </data>
+  <data name="ExportFieldNameLongRenewalLocations" xml:space="preserve">
+    <value>RenewalLocations</value>
+  </data>
+  <data name="ExportFieldNameShortRenewalLocations" xml:space="preserve">
+    <value>Renewals</value>
+  </data>
+  <data name="ExportFieldDescriptionRenewalLocations" xml:space="preserve">
+    <value>The Renewal Depot name list.</value>
+  </data>
+  <data name="ExportFieldNameDriverName" xml:space="preserve">
+    <value>DriverName</value>
+  </data>
+  <data name="ExportFieldDescriptionDriverName" xml:space="preserve">
+    <value>The Driver name.</value>
+  </data>
+  <data name="ExportFieldNameLongCapacity" xml:space="preserve">
+    <value>{0}Capacity</value>
+  </data>
+  <data name="ExportFieldNameShortCapacity" xml:space="preserve">
+    <value>{0}Cap</value>
+  </data>
+  <data name="ExportFieldDescriptionCapacity" xml:space="preserve">
+    <value>The maximum {0} for the route (in predefined units; may be {1} or {2} depending on your location).</value>
+    <comment>Used as format. Don't remove '(', ')', ';' - this string parsed for special cases.
+             Can be:
+             1. The maximum {0} for the route.
+             2. The maximum {0} for the route (in predefined units; {1}).
+             3. The maximum {0} for the route (in predefined units; may be {1} or {2} depending on your location).
+    </comment>
+  </data>
+  <data name="ExportFieldNameLongStartTWFrom" xml:space="preserve">
+    <value>StartTWFrom</value>
+  </data>
+  <data name="ExportFieldNameShortStartTWFrom" xml:space="preserve">
+    <value>StTWFrom</value>
+  </data>
+  <data name="ExportFieldDescriptionStartTWFrom" xml:space="preserve">
+    <value>Route start time window from time. Represented as minutes from 12:00 AM or 00:00.</value>
+  </data>
+  <data name="ExportFieldNameLongStartTWTo" xml:space="preserve">
+    <value>StartTWTo</value>
+  </data>
+  <data name="ExportFieldNameShortStartTWTo" xml:space="preserve">
+    <value>StTWTo</value>
+  </data>
+  <data name="ExportFieldDescriptionStartTWTo" xml:space="preserve">
+    <value>Route start time window to time. Represented as minutes from 12:00 AM or 00:00.</value>
+  </data>
+  <data name="ExportFieldNameLongStartTWFromString" xml:space="preserve">
+    <value>StartTWFromString</value>
+  </data>
+  <data name="ExportFieldNameShortTWFromString" xml:space="preserve">
+    <value>TWFromStr</value>
+  </data>
+  <data name="ExportFieldDescriptionStartTWFromString" xml:space="preserve">
+    <value>Route start time window from time.</value>
+  </data>
+  <data name="ExportFieldNameLongStartTWToString" xml:space="preserve">
+    <value>StartTWToString</value>
+  </data>
+  <data name="ExportFieldNameShortStartTWToString" xml:space="preserve">
+    <value>StTWToSt</value>
+  </data>
+  <data name="ExportFieldDescriptionStartTWToString" xml:space="preserve">
+    <value>Route start time window to time.</value>
+  </data>
+  <data name="ExportFieldNameFixedCost" xml:space="preserve">
+    <value>FixedCost</value>
+  </data>
+  <data name="ExportFieldDescriptionFixedCost" xml:space="preserve">
+    <value>A fixed cost associated with a route (such as a truck rental fee).</value>
+  </data>
+  <data name="ExportFieldNameLongCostPerMile" xml:space="preserve">
+    <value>CostPerMile</value>
+  </data>
+  <data name="ExportFieldNameShortCostPerMile" xml:space="preserve">
+    <value>CostPrMile</value>
+  </data>
+  <data name="ExportFieldDescriptionCostPerMile" xml:space="preserve">
+    <value>Cost of operating the route per mile. Based on distance driven, vehicle efficiency, and fuel cost.</value>
+  </data>
+  <data name="ExportFieldNameLongCostPerKM" xml:space="preserve">
+    <value>CostPerKM</value>
+  </data>
+  <data name="ExportFieldNameShortCostPerKM" xml:space="preserve">
+    <value>CostPrKM</value>
+  </data>
+  <data name="ExportFieldDescriptionCostPerKM" xml:space="preserve">
+    <value>Cost of operating the route per kilometer. Based on distance driven, vehicle efficiency, and fuel cost.</value>
+  </data>
+  <data name="ExportFieldNameLongCostPerHour" xml:space="preserve">
+    <value>CostPerHour</value>
+  </data>
+  <data name="ExportFieldNameShortCostPerHour" xml:space="preserve">
+    <value>CostPrHr</value>
+  </data>
+  <data name="ExportFieldDescriptionCostPerHour" xml:space="preserve">
+    <value>Cost of operating the route based on nonovertime driver salary.</value>
+  </data>
+  <data name="ExportFieldNameLongCostPerHourOT" xml:space="preserve">
+    <value>CostPerHourOT</value>
+  </data>
+  <data name="ExportFieldNameShortCostPerHourOT" xml:space="preserve">
+    <value>CostPrHrOT</value>
+  </data>
+  <data name="ExportFieldDescriptionCostPerHourOT" xml:space="preserve">
+    <value>Cost of operating the route based on overtime driver salary.</value>
+  </data>
+  <data name="ExportFieldNameLongTimeBeforeOT" xml:space="preserve">
+    <value>TimeBeforeOT</value>
+  </data>
+  <data name="ExportFieldNameShortTimeBeforeOT" xml:space="preserve">
+    <value>TimeBefOT</value>
+  </data>
+  <data name="ExportFieldDescriptionTimeBeforeOT" xml:space="preserve">
+    <value>Number of hours of route operation before overtime rates (cost) are applied.</value>
+  </data>
+  <data name="ExportFieldNameFuelType" xml:space="preserve">
+    <value>FuelType</value>
+  </data>
+  <data name="ExportFieldDescriptionFuelType" xml:space="preserve">
+    <value>The type of fuel consumed by your vehicle (example: gas or diesel).</value>
+  </data>
+  <data name="ExportFieldNameLongCO2Emission" xml:space="preserve">
+    <value>CO2Emission</value>
+  </data>
+  <data name="ExportFieldNameShortCO2Emission" xml:space="preserve">
+    <value>CO2Emiss</value>
+  </data>
+  <data name="ExportFieldDescriptionCO2Emission" xml:space="preserve">
+    <value>Weight of CO2 emitted per volumetric unit of fuel consumed (pounds per gallon or kilograms per liter).</value>
+  </data>
+  <data name="ExportFieldNameLongFuelEconomy" xml:space="preserve">
+    <value>FuelEconomy</value>
+  </data>
+  <data name="ExportFieldNameShortFuelEconomy" xml:space="preserve">
+    <value>FuelEconom</value>
+  </data>
+  <data name="ExportFieldDescriptionFuelEconomy" xml:space="preserve">
+    <value>The rate at which your vehicle consumes fuel for distance traveled (miles per gallon or liters per 100 km, depending on your location).</value>
+  </data>
+  <data name="ExportFieldNameLongBreakDuration" xml:space="preserve">
+    <value>BreakDuration</value>
+  </data>
+  <data name="ExportFieldNameShortBreaks" xml:space="preserve">
+    <value>Breaks</value>
+  </data>
+  <data name="ExportFieldNameMaxOrders" xml:space="preserve">
+    <value>MaxOrders</value>
+  </data>
+  <data name="ExportFieldDescriptionMaxOrders" xml:space="preserve">
+    <value>Maximum orders limit for the route.</value>
+  </data>
+  <data name="ExportFieldNameLongMaxTotalDuration" xml:space="preserve">
+    <value>MaxTotalDuration</value>
+  </data>
+  <data name="ExportFieldNameShortMaxTotalDuration" xml:space="preserve">
+    <value>MaxTotDr</value>
+  </data>
+  <data name="ExportFieldDescriptionMaxTotalDuration" xml:space="preserve">
+    <value>The maximum number of minutes a vehicle can operate on a route (start to finish).</value>
+  </data>
+  <data name="ExportFieldNameLongMaxTravelDuration" xml:space="preserve">
+    <value>MaxTravelDuration</value>
+  </data>
+  <data name="ExportFieldNameShortMaxTravelDuration" xml:space="preserve">
+    <value>MaxTraveDr</value>
+  </data>
+  <data name="ExportFieldDescriptionMaxTravelDuration" xml:space="preserve">
+    <value>The maximum travel time in minutes for a route (not including wait, breaks, or service time).</value>
+  </data>
+  <data name="ExportFieldNameLongMaxTravelMiles" xml:space="preserve">
+    <value>MaxTravelMiles</value>
+  </data>
+  <data name="ExportFieldNameShortMaxTravelMiles" xml:space="preserve">
+    <value>MaxTraveMl</value>
+  </data>
+  <data name="ExportFieldDescriptionMaxTravelMiles" xml:space="preserve">
+    <value>Maximum total driving distance in miles for a route.</value>
+  </data>
+  <data name="ExportFieldNameLongMaxTravelKM" xml:space="preserve">
+    <value>MaxTravelKM</value>
+  </data>
+  <data name="ExportFieldNameShortMaxTravelKM" xml:space="preserve">
+    <value>MaxTraveKM</value>
+  </data>
+  <data name="ExportFieldDescriptionMaxTravelKM" xml:space="preserve">
+    <value>Maximum total driving distance in kilometers for a route.</value>
+  </data>
+  <data name="ExportFieldNameLongVehicleSpecialties" xml:space="preserve">
+    <value>VehicleSpecialties</value>
+  </data>
+  <data name="ExportFieldNameShortVehicleSpecialties" xml:space="preserve">
+    <value>VehicleSpc</value>
+  </data>
+  <data name="ExportFieldDescriptionVehicleSpecialties" xml:space="preserve">
+    <value>A vehicle specific code(s) used to define what types of vehicles can service an order.</value>
+  </data>
+  <data name="ExportFieldNameLongDriverSpecialties" xml:space="preserve">
+    <value>DriverSpecialties</value>
+  </data>
+  <data name="ExportFieldNameShortDriverSpecialties" xml:space="preserve">
+    <value>DriverSpc</value>
+  </data>
+  <data name="ExportFieldDescriptionDriverSpecialties" xml:space="preserve">
+    <value>A driver specific code(s) used to define what types of drivers can service an order.</value>
+  </data>
+  <data name="ExportFieldNameZones" xml:space="preserve">
+    <value>Zones</value>
+  </data>
+  <data name="ExportFieldDescriptionZones" xml:space="preserve">
+    <value>An area(s) that is preferred and/or limits the orders a route can service. The reported value is the zone(s) name.</value>
+  </data>
+  <data name="ExportFieldNameComments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="ExportFieldDescriptionComments" xml:space="preserve">
+    <value>A field with user-defined comments.</value>
+  </data>
+  <data name="ExportFieldNameStartTime" xml:space="preserve">
+    <value>StartTime</value>
+  </data>
+  <data name="ExportFieldDescriptionStartTime" xml:space="preserve">
+    <value>Start time for the route. Usually the time when the vehicle goes into service at the beginning of the work day. Represented as minutes from the beginning of the calendar year.</value>
+  </data>
+  <data name="ExportFieldNameEndTime" xml:space="preserve">
+    <value>EndTime</value>
+  </data>
+  <data name="ExportFieldDescriptionEndTime" xml:space="preserve">
+    <value>End time for the route. Usually the time when the vehicle goes off service at the end of the work day. Represented as minutes from the beginning of the calendar year.</value>
+  </data>
+  <data name="ExportFieldNameLongStartTimeString" xml:space="preserve">
+    <value>StartTimeString</value>
+  </data>
+  <data name="ExportFieldNameShortStartTimeString" xml:space="preserve">
+    <value>StTimeStr</value>
+  </data>
+  <data name="ExportFieldDescriptionStartTimeString" xml:space="preserve">
+    <value>Date and time for the start of the route (for example, 8:00:00 AM). Usually the time when the vehicle goes into service at the beginning of the work day.</value>
+  </data>
+  <data name="ExportFieldNameLongEndTimeString" xml:space="preserve">
+    <value>EndTimeString</value>
+  </data>
+  <data name="ExportFieldNameShortEndTimeString" xml:space="preserve">
+    <value>EndTimeStr</value>
+  </data>
+  <data name="ExportFieldDescriptionEndTimeString" xml:space="preserve">
+    <value>Date and end time for the route (for example, 9:00:00 PM). Usually the time when the vehicle goes off service at the end of the work day.</value>
+  </data>
+  <data name="ExportFieldNameLongRouteTimeString" xml:space="preserve">
+    <value>RouteTimeString</value>
+  </data>
+  <data name="ExportFieldNameShortRouteTimeString" xml:space="preserve">
+    <value>RtTimeStr</value>
+  </data>
+  <data name="ExportFieldDescriptionRouteTimeString" xml:space="preserve">
+    <value>A combination of the StartTimeString and EndTimeString. For example, 8:00 AM - 9:00 PM.</value>
+  </data>
+  <data name="ExportFieldNameStartDate" xml:space="preserve">
+    <value>StartDate</value>
+  </data>
+  <data name="ExportFieldDescriptionStartDate" xml:space="preserve">
+    <value>Date for the start of the route (for example, 11/2/2009 ).</value>
+  </data>
+  <data name="ExportFieldNameEndDate" xml:space="preserve">
+    <value>EndDate</value>
+  </data>
+  <data name="ExportFieldDescriptionEndDate" xml:space="preserve">
+    <value>Date for the end of the route (for example, 11/2/2009), may be different from the start date if the routes go past 12:00 AM or 0:00 hours.</value>
+  </data>
+  <data name="ExportFieldNameLongTotalStops" xml:space="preserve">
+    <value>TotalStops</value>
+  </data>
+  <data name="ExportFieldNameShortTotalStops" xml:space="preserve">
+    <value>TotStops</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalStops" xml:space="preserve">
+    <value>Total number of stops for the route.</value>
+  </data>
+  <data name="ExportFieldNameLongTotalOrders" xml:space="preserve">
+    <value>TotalOrders</value>
+  </data>
+  <data name="ExportFieldNameShortTotalOrders" xml:space="preserve">
+    <value>TotOrders</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalOrders" xml:space="preserve">
+    <value>Total number of orders for the route.</value>
+  </data>
+  <data name="ExportFieldNameLongTotalServiceTime" xml:space="preserve">
+    <value>TotalServiceTime</value>
+  </data>
+  <data name="ExportFieldNameShortTotalServiceTime" xml:space="preserve">
+    <value>TotServTim</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalServiceTime" xml:space="preserve">
+    <value>Total time in minutes spent servicing orders for the route.</value>
+  </data>
+  <data name="ExportFieldNameLongTotalTravelTime" xml:space="preserve">
+    <value>TotalTravelTime</value>
+  </data>
+  <data name="ExportFieldNameShortTotalTravelTime" xml:space="preserve">
+    <value>TotTravTim</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalTravelTime" xml:space="preserve">
+    <value>Total time in minutes spent driving for the route.</value>
+  </data>
+  <data name="ExportFieldNameLongTotalWaitTime" xml:space="preserve">
+    <value>TotalWaitTime</value>
+  </data>
+  <data name="ExportFieldNameShortTotalWaitTime" xml:space="preserve">
+    <value>TotWaitTim</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalWaitTime" xml:space="preserve">
+    <value>Total time in minutes spent waiting to service an order.</value>
+  </data>
+  <data name="ExportFieldNameLongTotalTime" xml:space="preserve">
+    <value>TotalTime</value>
+  </data>
+  <data name="ExportFieldNameShortTotalTime" xml:space="preserve">
+    <value>TotTime</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalTime" xml:space="preserve">
+    <value>Total time in minutes from the start to the end of the route.</value>
+  </data>
+  <data name="ExportFieldNameLongTotalOT" xml:space="preserve">
+    <value>TotalOT</value>
+  </data>
+  <data name="ExportFieldNameShortTotalOT" xml:space="preserve">
+    <value>TotOT</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalOT" xml:space="preserve">
+    <value>Total overtime in minutes for the route.</value>
+  </data>
+  <data name="ExportFieldNameLongTotalCost" xml:space="preserve">
+    <value>TotalCost</value>
+  </data>
+  <data name="ExportFieldNameShortTotalCost" xml:space="preserve">
+    <value>TotCost</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalCost" xml:space="preserve">
+    <value>Total cost for the route (usually in local currency: dollars, euros).</value>
+  </data>
+  <data name="ExportFieldNameLongTotalMiles" xml:space="preserve">
+    <value>TotalMiles</value>
+  </data>
+  <data name="ExportFieldNameShortTotalMiles" xml:space="preserve">
+    <value>TotMiles</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalMiles" xml:space="preserve">
+    <value>Total driving miles for the route.</value>
+  </data>
+  <data name="ExportFieldNameLongTotalKM" xml:space="preserve">
+    <value>TotalKM</value>
+  </data>
+  <data name="ExportFieldNameShortTotalKM" xml:space="preserve">
+    <value>TotKM</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalKM" xml:space="preserve">
+    <value>Total driving kilometers for the route.</value>
+  </data>
+  <data name="ExportFieldNameLongTotalMilesPerStop" xml:space="preserve">
+    <value>TotalMilesPerStop</value>
+  </data>
+  <data name="ExportFieldNameShortTotalMilesPerStop" xml:space="preserve">
+    <value>TotMilsPSt</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalMilesPerStop" xml:space="preserve">
+    <value>Average distance in miles per stop.</value>
+  </data>
+  <data name="ExportFieldNameLongTotalKMPerStop" xml:space="preserve">
+    <value>TotalKMPerStop</value>
+  </data>
+  <data name="ExportFieldNameShortTotalKMPerStop" xml:space="preserve">
+    <value>TotKMPSt</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalKMPerStop" xml:space="preserve">
+    <value>Average distance in kilometers per stop.</value>
+  </data>
+  <data name="ExportFieldNameLongTotalCO2Emission" xml:space="preserve">
+    <value>TotalCO2Emission</value>
+  </data>
+  <data name="ExportFieldNameShortTotalCO2Emission" xml:space="preserve">
+    <value>TotalCO2Em</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalCO2Emission" xml:space="preserve">
+    <value>Total CO2 emissions, represented in pounds or kilograms.</value>
+  </data>
+  <data name="ExportFieldNameLongTotalViolations" xml:space="preserve">
+    <value>TotalViolations</value>
+  </data>
+  <data name="ExportFieldNameShortTotalViolations" xml:space="preserve">
+    <value>TotViols</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalViolations" xml:space="preserve">
+    <value>Total number of orders with a time window violation(s).</value>
+  </data>
+  <data name="ExportFieldNameLongTotalViolationTime" xml:space="preserve">
+    <value>TotalViolationTime</value>
+  </data>
+  <data name="ExportFieldNameShortTotalViolationTime" xml:space="preserve">
+    <value>TotViolTim</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalViolationTime" xml:space="preserve">
+    <value>Total time in minutes outside time windows for all violations.</value>
+  </data>
+  <data name="ExportFieldNameLongTotalRuns" xml:space="preserve">
+    <value>TotalRuns</value>
+  </data>
+  <data name="ExportFieldNameShortTotalRuns" xml:space="preserve">
+    <value>TotRuns</value>
+  </data>
+  <data name="ExportFieldDescriptionTotalRuns" xml:space="preserve">
+    <value>The number of renewal visits minus 1.</value>
+  </data>
+  <data name="ExportFieldNameLongTotal" xml:space="preserve">
+    <value>Total{0}</value>
+  </data>
+  <data name="ExportFieldNameShortTotal" xml:space="preserve">
+    <value>Tot{0}</value>
+  </data>
+  <data name="ExportFieldDescriptionTotal" xml:space="preserve">
+    <value>Total {0} of all goods in {1} or {2} for the route.</value>
+    <comment>Used as format. Don't remove "{1}" - this string parsed for special cases.
+         Can be:
+         1. Total {0} of all goods.
+         2. Total {0} of all goods in {1}.
+         3. Total {0} of all goods in {1} or {2} for the route.
+    </comment>
+  </data>
+  <data name="ExportFieldNameLongTimeUtilization" xml:space="preserve">
+    <value>TimeUtilization</value>
+  </data>
+  <data name="ExportFieldNameShortTimeUtilization" xml:space="preserve">
+    <value>Utilizatn</value>
+  </data>
+  <data name="ExportFieldDescriptionTimeUtilization" xml:space="preserve">
+    <value>Percent (%) of total time used for driving or servicing orders on the route (excludes wait time).</value>
+  </data>
+  <data name="ExportFieldNameLongUtilization" xml:space="preserve">
+    <value>{0}Utilization</value>
+  </data>
+  <data name="ExportFieldNameShortUtilization" xml:space="preserve">
+    <value>{0}Util</value>
+  </data>
+  <data name="ExportFieldDescriptionUtilization" xml:space="preserve">
+    <value>Percent (%) of available capacity ({0}) used on the route (100 * ({1}/{2})).</value>
+    <comment>Used as format.</comment>
+  </data>
+  <data name="ExportFieldNameLongStopVicinityMap" xml:space="preserve">
+    <value>StopVicinityMap</value>
+  </data>
+  <data name="ExportFieldNameShortStopVicinityMap" xml:space="preserve">
+    <value>StopVicyMap</value>
+  </data>
+  <data name="ExportFieldDescriptionStopVicinityMap" xml:space="preserve">
+    <value>A map image showing the location of the stop.</value>
+  </data>
+  <data name="ExportFieldNameDirections" xml:space="preserve">
+    <value>Directions</value>
+  </data>
+  <data name="ExportFieldDescriptionDirections" xml:space="preserve">
+    <value>The collection of driving directions to the stop.</value>
+  </data>
+  <data name="ExportFieldNameStopID" xml:space="preserve">
+    <value>StopID</value>
+  </data>
+  <data name="ExportFieldDescriptionStopID" xml:space="preserve">
+    <value>The unique stop ID represented as a GUID.</value>
+  </data>
+  <data name="ExportFieldNameRouteID" xml:space="preserve">
+    <value>RouteID</value>
+  </data>
+  <data name="ExportFieldDescriptionStopName" xml:space="preserve">
+    <value>The name of the order or location for the stop.</value>
+  </data>
+  <data name="ExportFieldNameLongAddressFields" xml:space="preserve">
+    <value>AddressFields</value>
+  </data>
+  <data name="ExportFieldNameShortAddressFields" xml:space="preserve">
+    <value>AddrFields</value>
+  </data>
+  <data name="ExportFieldNameLongFullAddress" xml:space="preserve">
+    <value>FullAddress</value>
+  </data>
+  <data name="ExportFieldNameShortFullAddress" xml:space="preserve">
+    <value>FullAddr</value>
+  </data>
+  <data name="ExportFieldDescriptionFullAddress" xml:space="preserve">
+    <value>The full address for the order or location for the stop.</value>
+  </data>
+  <data name="ExportFieldDescriptionFullAddressOrder" xml:space="preserve">
+    <value>The full address of the order that combines all the address fields.</value>
+  </data>
+  <data name="ExportFieldNameLongFullAddressShort" xml:space="preserve">
+    <value>FullAddressShort</value>
+  </data>
+  <data name="ExportFieldNameShortFullAddressShort" xml:space="preserve">
+    <value>FullAddrSh</value>
+  </data>
+  <data name="ExportFieldNameConfidence" xml:space="preserve">
+    <value>Confidence</value>
+  </data>
+  <data name="ExportFieldDescriptionConfidence" xml:space="preserve">
+    <value>Shows the geocoding match method used for finding the address.</value>
+  </data>
+  <data name="ExportFieldNameX" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="ExportFieldDescriptionX" xml:space="preserve">
+    <value>The X-coordinate, or longitude, for the address.</value>
+  </data>
+  <data name="ExportFieldNameY" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="ExportFieldDescriptionY" xml:space="preserve">
+    <value>The Y-coordinate, or latitude, for the address.</value>
+  </data>
+  <data name="ExportFieldNameLongCurbApproach" xml:space="preserve">
+    <value>CurbApproach</value>
+  </data>
+  <data name="ExportFieldNameShortCurbApproach" xml:space="preserve">
+    <value>CurbApp</value>
+  </data>
+  <data name="ExportFieldDescriptionCurbApproach" xml:space="preserve">
+    <value>Enumerator defining which side of the street a vehicle must approach the order and continue in that same direction. Possible values are 0 (Left), 1 (Right) or 2 (Both).</value>
+  </data>
+  <data name="ExportFieldNameLongCurbApproachString" xml:space="preserve">
+    <value>CurbApproachString</value>
+  </data>
+  <data name="ExportFieldNameShortCurbApproachString" xml:space="preserve">
+    <value>CurbAppStr</value>
+  </data>
+  <data name="ExportFieldDescriptionCurbApproachString" xml:space="preserve">
+    <value>Specifies from which side of the street a vehicle must approach the order and continue in that same direction. Possible values are Left, Right, or Both.</value>
+  </data>
+  <data name="ExportFieldNameOrderType" xml:space="preserve">
+    <value>OrderType</value>
+  </data>
+  <data name="ExportFieldDescriptionOrderType" xml:space="preserve">
+    <value>Enumerator defining the type of order. Possible values are 0 (Pickup) and 1 (Delivery).</value>
+  </data>
+  <data name="ExportFieldNameLongOrderTypeString" xml:space="preserve">
+    <value>OrderTypeString</value>
+  </data>
+  <data name="ExportFieldNameShortOrderTypeString" xml:space="preserve">
+    <value>OrderTypeS</value>
+  </data>
+  <data name="ExportFieldDescriptionOrderTypeString" xml:space="preserve">
+    <value>Specifies the type of order. Possible values are Pickup and Delivery.</value>
+  </data>
+  <data name="ExportFieldNamePriority" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="ExportFieldDescriptionPriority" xml:space="preserve">
+    <value>Enumerator defining the priority for an order. Possible values are 0 (High) and 1 (Normal).</value>
+  </data>
+  <data name="ExportFieldNameLongPriorityString" xml:space="preserve">
+    <value>PriorityString</value>
+  </data>
+  <data name="ExportFieldNameShortPriorityString" xml:space="preserve">
+    <value>PriorStr</value>
+  </data>
+  <data name="ExportFieldDescriptionPriorityString" xml:space="preserve">
+    <value>Specifies the priority for an order. Possible values are High and Normal.</value>
+  </data>
+  <data name="ExportFieldNameTWFrom" xml:space="preserve">
+    <value>TWFrom</value>
+  </data>
+  <data name="ExportFieldDescriptionTWFrom" xml:space="preserve">
+    <value>Order time window one from time. Represented as minutes from 12:00 AM or 00:00.</value>
+  </data>
+  <data name="ExportFieldNameTWTo" xml:space="preserve">
+    <value>TWTo</value>
+  </data>
+  <data name="ExportFieldDescriptionTWTo" xml:space="preserve">
+    <value>Order time window one to time. Represented as minutes from 12:00 AM or 00:00.</value>
+  </data>
+  <data name="ExportFieldNameTW2From" xml:space="preserve">
+    <value>TW2From</value>
+  </data>
+  <data name="ExportFieldDescriptionTW2From" xml:space="preserve">
+    <value>Order time window two from time. Represented as minutes from 12:00 AM or 00:00.</value>
+  </data>
+  <data name="ExportFieldNameTW2To" xml:space="preserve">
+    <value>TW2To</value>
+  </data>
+  <data name="ExportFieldDescriptionTW2To" xml:space="preserve">
+    <value>Order time window two to time. Represented as minutes from 12:00 AM or 00:00.</value>
+  </data>
+  <data name="ExportFieldNameLongTWFromString" xml:space="preserve">
+    <value>TWFromString</value>
+  </data>
+  <data name="ExportFieldDescriptionTWFromString" xml:space="preserve">
+    <value>Order time window one from time.</value>
+  </data>
+  <data name="ExportFieldNameLongTWToString" xml:space="preserve">
+    <value>TWToString</value>
+  </data>
+  <data name="ExportFieldNameShortTWToString" xml:space="preserve">
+    <value>TWToStr</value>
+  </data>
+  <data name="ExportFieldDescriptionTWToString" xml:space="preserve">
+    <value>Order time window one to time.</value>
+  </data>
+  <data name="ExportFieldNameLongTWFrom2String" xml:space="preserve">
+    <value>TW2FromString</value>
+  </data>
+  <data name="ExportFieldNameShortTWFrom2String" xml:space="preserve">
+    <value>TW2FromStr</value>
+  </data>
+  <data name="ExportFieldDescriptionTWFrom2String" xml:space="preserve">
+    <value>Order time window two from time.</value>
+  </data>
+  <data name="ExportFieldNameLongTWTo2String" xml:space="preserve">
+    <value>TW2ToString</value>
+  </data>
+  <data name="ExportFieldNameShortTWTo2String" xml:space="preserve">
+    <value>TW2ToStr</value>
+  </data>
+  <data name="ExportFieldDescriptionTWTo2String" xml:space="preserve">
+    <value>Order time window two to time.</value>
+  </data>
+  <data name="ExportFieldNameLongTWString" xml:space="preserve">
+    <value>TWString</value>
+  </data>
+  <data name="ExportFieldNameShortTWString" xml:space="preserve">
+    <value>TWStr</value>
+  </data>
+  <data name="ExportFieldDescriptionTWString" xml:space="preserve">
+    <value>Time window one represented as from and to times (example: 9:00 AM - 12:00 PM or wide open).</value>
+  </data>
+  <data name="ExportFieldNameLongTW2String" xml:space="preserve">
+    <value>TW2String</value>
+  </data>
+  <data name="ExportFieldNameShortTW2String" xml:space="preserve">
+    <value>TW2Str</value>
+  </data>
+  <data name="ExportFieldDescriptionTW2String" xml:space="preserve">
+    <value>Time window two represented as from and to times (example: 9:00 AM - 12:00 PM or wide open).</value>
+  </data>
+  <data name="ExportFieldNameLongMaxViolationTime" xml:space="preserve">
+    <value>MaxViolationTime</value>
+  </data>
+  <data name="ExportFieldNameShortMaxViolationTime" xml:space="preserve">
+    <value>MaxViolTim</value>
+  </data>
+  <data name="ExportFieldDescriptionMaxViolationTime" xml:space="preserve">
+    <value>Maximum number of minutes a route can miss a time window.</value>
+  </data>
+  <data name="ExportFieldNameLongServiceTime" xml:space="preserve">
+    <value>ServiceTime</value>
+  </data>
+  <data name="ExportFieldNameShortServiceTime" xml:space="preserve">
+    <value>ServTime</value>
+  </data>
+  <data name="ExportFieldDescriptionServiceTime" xml:space="preserve">
+    <value>The time in minutes that the route will stop at the order.</value>
+  </data>
+  <data name="ExportFieldNameRelative" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="ExportFieldDescriptionRelativeCapacity" xml:space="preserve">
+    <value>The {0} of the order (in predefined units; may be {1} or {2} depending on your location).</value>
+    <comment>Used as format. Don't remove '(', ';' - this string parsed for special cases.
+         Can be:
+         1. The {0} of the order.
+         2. The {0} of the order (in predefined units: may be {1}).
+         3. The {0} of the order (in predefined units: may be {1} or {2} depending on your location).
+    </comment>
+  </data>
+  <data name="ExportFieldNameStopType" xml:space="preserve">
+    <value>StopType</value>
+  </data>
+  <data name="ExportFieldDescriptionStopType" xml:space="preserve">
+    <value>Enumerator for defining the stop type. Possible values are 0 (Order), 1 (Location), and 2 (Lunch).</value>
+  </data>
+  <data name="ExportFieldNameLongStopTypeString" xml:space="preserve">
+    <value>StopTypeString</value>
+  </data>
+  <data name="ExportFieldNameShortStopTypeString" xml:space="preserve">
+    <value>StopTypeSt</value>
+  </data>
+  <data name="ExportFieldDescriptionStopTypeString" xml:space="preserve">
+    <value>Specifies the stop type. Possible values are Order, Location, and Lunch.</value>
+  </data>
+  <data name="ExportFieldNameLongStopTypeExString" xml:space="preserve">
+    <value>StopTypeExString</value>
+  </data>
+  <data name="ExportFieldNameShortStopTypeExString" xml:space="preserve">
+    <value>StopTypeEx</value>
+  </data>
+  <data name="ExportFieldNameLongStopNamePrefix" xml:space="preserve">
+    <value>StopNamePrefix</value>
+  </data>
+  <data name="ExportFieldNameShortStopNamePrefix" xml:space="preserve">
+    <value>StopNamePr</value>
+  </data>
+  <data name="ExportFieldNameLongStopNamePostfix" xml:space="preserve">
+    <value>StopNamePostfix</value>
+  </data>
+  <data name="ExportFieldNameShortStopNamePostfix" xml:space="preserve">
+    <value>StopNamePt</value>
+  </data>
+  <data name="ExportFieldNameSequence" xml:space="preserve">
+    <value>Sequence</value>
+  </data>
+  <data name="ExportFieldDescriptionSequence" xml:space="preserve">
+    <value>The stop number including start, orders, breaks, renewals, and the finish. A sequential number defining the order work as completed, the first stop of the day being 1, the second stop 2, and so on.</value>
+  </data>
+  <data name="ExportFieldNameLongOrderSequence" xml:space="preserve">
+    <value>OrderSequence</value>
+  </data>
+  <data name="ExportFieldNameShortOrderSequence" xml:space="preserve">
+    <value>OrderSeq</value>
+  </data>
+  <data name="ExportFieldDescriptionOrderSequence" xml:space="preserve">
+    <value>The order number, a sequential number defining the order work as completed, the first order of the day being 1, the second order 2, and so on. Order sequence does not include start, breaks, renewals, and the finish.</value>
+  </data>
+  <data name="ExportFieldNameTravelTime" xml:space="preserve">
+    <value>TravelTime</value>
+  </data>
+  <data name="ExportFieldDescriptionTravelTime" xml:space="preserve">
+    <value>The time in minutes to travel to an order from the previous stop.</value>
+  </data>
+  <data name="ExportFieldNameWaitTime" xml:space="preserve">
+    <value>WaitTime</value>
+  </data>
+  <data name="ExportFieldDescriptionWaitTime" xml:space="preserve">
+    <value>Total time in minutes spent waiting to service the order.</value>
+  </data>
+  <data name="ExportFieldNameLongArriveTime" xml:space="preserve">
+    <value>ArriveTime</value>
+  </data>
+  <data name="ExportFieldNameShortArriveTime" xml:space="preserve">
+    <value>ArrTime</value>
+  </data>
+  <data name="ExportFieldDescriptionArriveTime" xml:space="preserve">
+    <value>Arrival time for the stop, represented in minutes from the beginning of the calendar year.</value>
+  </data>
+  <data name="ExportFieldNameLongArriveTimeString" xml:space="preserve">
+    <value>ArriveTimeString</value>
+  </data>
+  <data name="ExportFieldNameShortArriveTimeString" xml:space="preserve">
+    <value>ArrTimeStr</value>
+  </data>
+  <data name="ExportFieldDescriptionArriveTimeString" xml:space="preserve">
+    <value>Date and arrival time for the stop (for example, 9:00:00 PM).</value>
+  </data>
+  <data name="ExportFieldNameLongArriveDate" xml:space="preserve">
+    <value>ArriveDate</value>
+  </data>
+  <data name="ExportFieldNameShortArriveDate" xml:space="preserve">
+    <value>ArrDate</value>
+  </data>
+  <data name="ExportFieldDescriptionArriveDate" xml:space="preserve">
+    <value>Arrival date for the stop (for example, 11/2/2009).</value>
+  </data>
+  <data name="ExportFieldNameLongDistanceFromPrevious" xml:space="preserve">
+    <value>DistanceFromPrevious</value>
+  </data>
+  <data name="ExportFieldNameShortDistanceFromPrevious" xml:space="preserve">
+    <value>DistFromPr</value>
+  </data>
+  <data name="ExportFieldDescriptionDistanceFromPrevious" xml:space="preserve">
+    <value>Distance in miles or kilometers to travel to an order from the previous stop.</value>
+  </data>
+  <data name="ExportFieldNameLoadAtId" xml:space="preserve">
+    <value>LoadAtID</value>
+  </data>
+  <data name="ExportFieldDescriptionLoadAtId" xml:space="preserve">
+    <value>ID referring to a stop on the current route where you loaded the supplies or goods for the current order.</value>
+  </data>
+  <data name="ExportFieldNameOrderID" xml:space="preserve">
+    <value>OrderID</value>
+  </data>
+  <data name="ExportFieldDescriptionOrderID" xml:space="preserve">
+    <value>The unique order ID represented as a GUID.</value>
+  </data>
+  <data name="ExportFieldDescriptionOrderScheduleID" xml:space="preserve">
+    <value>Foreign key into the schedule where the order is used, represented as a GUID.</value>
+  </data>
+  <data name="ExportFieldDescriptionOrderName" xml:space="preserve">
+    <value>The name of the order, generally the customer name.</value>
+  </data>
+  <data name="ExportFieldNameType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="ExportFieldNameNameFormat" xml:space="preserve">
+    <value>NameFormat</value>
+  </data>
+  <data name="ExportFieldNameFieldNames" xml:space="preserve">
+    <value>FieldNames</value>
+  </data>
+  <data name="DistanceInKilometresText" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="DistanceInMilesText" xml:space="preserve">
+    <value>miles</value>
+  </data>
+  <data name="DirectionsWordDrive" xml:space="preserve">
+    <value>drive</value>
+  </data>
+  <data name="FinishLocationString" xml:space="preserve">
+    <value>Finish ({0})</value>
+  </data>
+  <data name="RenewalLocationString" xml:space="preserve">
+    <value>Renewal ({0})</value>
+  </data>
+  <data name="StartLocationString" xml:space="preserve">
+    <value>Start ({0})</value>
+  </data>
+  <data name="PropertyNameNotExists" xml:space="preserve">
+    <value>Property with name "{0}" not exists.</value>
+  </data>
+  <data name="GRFTotalStringFormat" xml:space="preserve">
+    <value>Driving distance: {0}(s)  Driving time: {1}</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Hour</value>
+  </data>
+  <data name="Minute" xml:space="preserve">
+    <value>Minute</value>
+  </data>
+  <data name="UnitSymbolPound" xml:space="preserve">
+    <value>lb</value>
+  </data>
+  <data name="UnitSymbolPoundSupported" xml:space="preserve">
+    <value>pounds,lb,lbs,pound,lbm,libra</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolOunce" xml:space="preserve">
+    <value>oz</value>
+  </data>
+  <data name="UnitSymbolOunceSupported" xml:space="preserve">
+    <value>ounces,oz,once,uncia</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolKilogram" xml:space="preserve">
+    <value>kg</value>
+  </data>
+  <data name="UnitSymbolKilogramSupported" xml:space="preserve">
+    <value>kilograms,kg,kilogram,kilo,kilos</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolGramme" xml:space="preserve">
+    <value>g</value>
+  </data>
+  <data name="UnitSymbolGrammeSupported" xml:space="preserve">
+    <value>grammes,g,gram,gramme,grams</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolCubicInch" xml:space="preserve">
+    <value>cu in</value>
+  </data>
+  <data name="UnitSymbolCubicInchSupported" xml:space="preserve">
+    <value>cubic inches,cu in,cubic in,cu inches,cu inch,inches/-3,inch/-3,in/-3,inches^3,inch^3,in^3,inches3,inch3,in3,inches³,inch³,in³,ci,cui,cid</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolCubicFoot" xml:space="preserve">
+    <value>cu ft</value>
+  </data>
+  <data name="UnitSymbolCubicFootSupported" xml:space="preserve">
+    <value>cubic feet,cubic foot,cubic ft,cu ft,cu feet,cu foot,ft³,feet³,foot³,feet^3,foot^3,ft^3,feet3,foot3,ft3,feet/-3,foot/-3,ft/-3 ft</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolCubicYard" xml:space="preserve">
+    <value>cu yd</value>
+  </data>
+  <data name="UnitSymbolCubicYardSupported" xml:space="preserve">
+    <value>cubic yards,cu yd,cubic yard,cubic yds,cubic yd,cu yards,cu yard,cu yds,CYs,yards/-3,yard/-3,yds/-3,yd/-3,yards^3,yard^3,yds^3,yd^3,yards3,yard3,yds3,yd3,yards³,yard³,yds³,yd³</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolCubicMeter" xml:space="preserve">
+    <value>cu m</value>
+  </data>
+  <data name="UnitSymbolCubicMeterSupported" xml:space="preserve">
+    <value>cubic meters,cu m,cubic meter,m^3,m3,m³</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolQuart" xml:space="preserve">
+    <value>gt</value>
+  </data>
+  <data name="UnitSymbolQuartSupported" xml:space="preserve">
+    <value>quarts,gt,gts,quart</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolGallon" xml:space="preserve">
+    <value>gal</value>
+  </data>
+  <data name="UnitSymbolGallonSupported" xml:space="preserve">
+    <value>gallons,gal,gallon</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolLiter" xml:space="preserve">
+    <value>L</value>
+  </data>
+  <data name="UnitSymbolLiterSupported" xml:space="preserve">
+    <value>litres,L,liter,liters,litre</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolInch" xml:space="preserve">
+    <value>in</value>
+  </data>
+  <data name="UnitSymbolInchSupported" xml:space="preserve">
+    <value>inches,in,ins,inch</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolFoot" xml:space="preserve">
+    <value>ft</value>
+  </data>
+  <data name="UnitSymbolFootSupported" xml:space="preserve">
+    <value>feet,ft,fts,foot</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolYard" xml:space="preserve">
+    <value>yd</value>
+  </data>
+  <data name="UnitSymbolYardSupported" xml:space="preserve">
+    <value>yards,yd,yds,yard</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolMile" xml:space="preserve">
+    <value>mi</value>
+  </data>
+  <data name="UnitSymbolMileSupported" xml:space="preserve">
+    <value>miles,mi,mile</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolMilimeter" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="UnitSymbolMilimeterSupported" xml:space="preserve">
+    <value>millimeters,mm,milimeter,millimeter,milimeters</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolCentimeter" xml:space="preserve">
+    <value>c</value>
+  </data>
+  <data name="UnitSymbolCentimeterSupported" xml:space="preserve">
+    <value>centimeters,c,cm,centimeter,centimetre,centimeters,centimetres</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolDecimeter" xml:space="preserve">
+    <value>dm</value>
+  </data>
+  <data name="UnitSymbolDecimeterSupported" xml:space="preserve">
+    <value>decimeters,dm,decimeter,decimetre,decimeters,decimetres</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolMeter" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="UnitSymbolMeterSupported" xml:space="preserve">
+    <value>meters,m,metre,meter,metres,meters</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolKilometer" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="UnitSymbolKilometerSupported" xml:space="preserve">
+    <value>kilometers,km,kilometre,kilometer,kilometres</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolSecond" xml:space="preserve">
+    <value>sec</value>
+  </data>
+  <data name="UnitSymbolSecondSupported" xml:space="preserve">
+    <value>seconds,sec,s,second</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolMinute" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="UnitSymbolMinuteSupported" xml:space="preserve">
+    <value>minutes,m,min,mins,minute</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolHour" xml:space="preserve">
+    <value>h</value>
+  </data>
+  <data name="UnitSymbolHourSupported" xml:space="preserve">
+    <value>hours,h,hr,hrs,hour</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolDay" xml:space="preserve">
+    <value>d</value>
+  </data>
+  <data name="UnitSymbolDaySupported" xml:space="preserve">
+    <value>days,d,day</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolSquareFoot" xml:space="preserve">
+    <value>sq ft</value>
+  </data>
+  <data name="UnitSymbolSquareFootSupported" xml:space="preserve">
+    <value>square feet,sq ft,square foot</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolSquareMeter" xml:space="preserve">
+    <value>sq m</value>
+  </data>
+  <data name="UnitSymbolSquareMeterSupported" xml:space="preserve">
+    <value>square meters,sq m,square metre,square meter,square metres,m^2,m2,m²</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolCurrencySupported" xml:space="preserve">
+    <value>dollars,$,dollar</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolMilesPerGallon" xml:space="preserve">
+    <value>MPG</value>
+  </data>
+  <data name="UnitSymbolMilesPerGallonSupported" xml:space="preserve">
+    <value>miles per gallon,MPG</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolLitersPer100Kilometers" xml:space="preserve">
+    <value>L/100 km</value>
+  </data>
+  <data name="UnitSymbolLitersPer100KilometersSupported" xml:space="preserve">
+    <value>liters per 100 kilometers,L/100 km</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolCurrencyPerGallonSupported" xml:space="preserve">
+    <value>currency per gallon,$/G,dollar/G,dollars/G,$/Gal,dollar/Gal, dollars/Gal,$/Gallon,dollar/Gallon,dollars/Gallon</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolCurrencyPerLiterSupported" xml:space="preserve">
+    <value>currency per liter,$/L,dollar/L,dollars/L</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolPoundPerGallonSupported" xml:space="preserve">
+    <value>pound per gallon,lbs/gal,lb/gal,pound/galon,pounds/gallons,lbm/gal</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolKilogramPerLiterSupported" xml:space="preserve">
+    <value>kilogram per liter,kg/L,kilogram/liter,kilograms/liters,kilogram/litre,kilograms/litres,kilo/l,kilos/l,kilo/litre,kilos/litres</value>
+    <comment>Supported unit sumbols (separate by ','). Used in import. Full name must be first used in export field tooltips.</comment>
+  </data>
+  <data name="UnitSymbolPerFormat" xml:space="preserve">
+    <value>{0}/{1}</value>
+  </data>
+  <data name="UnitFormat" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="InvalidConversion" xml:space="preserve">
+    <value>Can't convert types.</value>
+  </data>
+  <data name="InvalidTableFieldName" xml:space="preserve">
+    <value>Name must be present in SupportedFields.</value>
+  </data>
+  <data name="ArchiveDescription" xml:space="preserve">
+    <value>The archive contains routes from {0} till {1}</value>
+  </data>
+  <data name="ArcGisRestErrorCodeFormat" xml:space="preserve">
+    <value>0x{0:X8}</value>
+  </data>
+  <data name="CurbApproachBothSupportedValues" xml:space="preserve">
+    <value>Either side,Either,Both side,Both</value>
+    <comment>Supported CurbApproach.Both values (separate by ','). Used in import.</comment>
+  </data>
+  <data name="CurbApproachLeftSupportedValues" xml:space="preserve">
+    <value>Left side,Left</value>
+    <comment>Supported CurbApproach.Left values (separate by ','). Used in import.</comment>
+  </data>
+  <data name="CurbApproachRightSupportedValues" xml:space="preserve">
+    <value>Right side,Right</value>
+    <comment>Supported CurbApproach.Right values (separate by ','). Used in import.</comment>
+  </data>
+  <data name="CurbApproachNoUTurnsSupportedValues" xml:space="preserve">
+    <value>No UTurns,No U-Turns,No U.Turns,No Turns</value>
+    <comment>Supported CurbApproach.NOUTurns values (separate by ','). Used in import.</comment>
+  </data>
+  <data name="SyncTypeActiveSyncSupportedValues" xml:space="preserve">
+    <value>ActiveSync</value>
+    <comment>Supported SyncType.ActiveSync values (separate by ','). Used in import.</comment>
+  </data>
+  <data name="SyncTypeEMailSupportedValues" xml:space="preserve">
+    <value>EMail,Mail</value>
+    <comment>Supported SyncType.EMail values (separate by ','). Used in import.</comment>
+  </data>
+  <data name="SyncTypeFolderSupportedValues" xml:space="preserve">
+    <value>Folder</value>
+    <comment>Supported SyncType.Folder values (separate by ','). Used in import.</comment>
+  </data>
+  <data name="SyncTypeNoneSupportedValues" xml:space="preserve">
+    <value>None</value>
+    <comment>Supported SyncType.None values (separate by ','). Used in import.</comment>
+  </data>
+  <data name="SyncTypeWMServerSupportedValues" xml:space="preserve">
+    <value>WMServer</value>
+    <comment>Supported SyncType.WMServer values (separate by ','). Used in import.</comment>
+  </data>
+  <data name="OrderPriorityHighSupportedValues" xml:space="preserve">
+    <value>High</value>
+    <comment>Supported OrderPriority.High values (separate by ','). Used in import.</comment>
+  </data>
+  <data name="OrderPriorityNormalSupportedValues" xml:space="preserve">
+    <value>Normal</value>
+    <comment>Supported OrderPriority.Normal values (separate by ','). Used in import.</comment>
+  </data>
+  <data name="OrderTypeDeliverySupportedValues" xml:space="preserve">
+    <value>Delivery</value>
+    <comment>Supported OrderType.Delivery values (separate by ','). Used in import.</comment>
+  </data>
+  <data name="OrderTypePickupSupportedValues" xml:space="preserve">
+    <value>Pickup</value>
+    <comment>Supported OrderType.Pickup values (separate by ','). Used in import.</comment>
+  </data>
+  <data name="StopNamePrefixStartLocation" xml:space="preserve">
+    <value>Start(</value>
+  </data>
+  <data name="StopNamePostfixStartLocation" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="StopNamePrefixFinishLocation" xml:space="preserve">
+    <value>Finish(</value>
+  </data>
+  <data name="StopNamePostfixFinishLocation" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="StopNamePrefixRenewalLocation" xml:space="preserve">
+    <value>Renewal(</value>
+  </data>
+  <data name="StopNamePostfixRenewalLocation" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="StopNamePrefixLunch" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StopNamePostfixLunch" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StopNamePrefixFormat" xml:space="preserve">
+    <value>{0:3}. </value>
+  </data>
+  <data name="StopNamePostfix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LocationNotFoundOnNetworkViolationMessage" xml:space="preserve">
+    <value>Location: {0} is located too far from the nearest road.</value>
+  </data>
+  <data name="ManuallyEditedXYFarFromNearestRoadResourceName" xml:space="preserve">
+    <value>Edited X/Y far from nearest road</value>
+  </data>
+  <data name="OrderNotFoundOnNetworkViolationMessage" xml:space="preserve">
+    <value>Order: {0} is located too far from the nearest road.</value>
+  </data>
+  <data name="BreaksFormat" xml:space="preserve">
+    <value>{0} Breaks</value>
+  </data>
+  <data name="TrackingServiceException_Error_Format" xml:space="preserve">
+    <value>
+Tracking error #{0}
+Code: {1}
+Description: {2}
+Details:</value>
+  </data>
+  <data name="BreaksIsEmpty" xml:space="preserve">
+    <value>No breaks</value>
+  </data>
+  <data name="TimeWindowBrakeFormat" xml:space="preserve">
+    <value>{0}, {1}</value>
+  </data>
+  <data name="NameOfFifth" xml:space="preserve">
+    <value>fifth</value>
+  </data>
+  <data name="NameOfFirst" xml:space="preserve">
+    <value>first</value>
+  </data>
+  <data name="NameOfFourth" xml:space="preserve">
+    <value>fourth</value>
+  </data>
+  <data name="NameOfSecond" xml:space="preserve">
+    <value>second</value>
+  </data>
+  <data name="NameOfThird" xml:space="preserve">
+    <value>third</value>
+  </data>
+  <data name="ExportFieldDescriptionBreaks" xml:space="preserve">
+    <value>Route's breaks.</value>
+  </data>
+  <data name="ExportFieldNameBreaks" xml:space="preserve">
+    <value>Breaks</value>
+  </data>
+  <data name="Barrier" xml:space="preserve">
+    <value>Barrier</value>
+  </data>
+  <data name="Driver" xml:space="preserve">
+    <value>Driver</value>
+  </data>
+  <data name="DriverSpecialty" xml:space="preserve">
+    <value>Driver specialty</value>
+  </data>
+  <data name="FuelType" xml:space="preserve">
+    <value>Fuel type</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Depot</value>
+  </data>
+  <data name="MobileDevice" xml:space="preserve">
+    <value>Mobile device</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="Route" xml:space="preserve">
+    <value>Route</value>
+  </data>
+  <data name="Vehicle" xml:space="preserve">
+    <value>Vehicle</value>
+  </data>
+  <data name="VehicleSpecialty" xml:space="preserve">
+    <value>Vehicle specialty</value>
+  </data>
+  <data name="Zone" xml:space="preserve">
+    <value>Zone</value>
+  </data>
+  <data name="Schedule" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="BreakDirectionName" xml:space="preserve">
+    <value>Break</value>
+    <comment>Attention. Changing or localizing this string affects parsing directions from server.Make sure that ArcGIS server returns directions data in correct language.</comment>
+  </data>
+  <data name="ServiceNameGeocode" xml:space="preserve">
+    <value>Geocoding</value>
+  </data>
+  <data name="ServiceNameMap" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="ServiceNameSome" xml:space="preserve">
+    <value>Some</value>
+  </data>
+  <data name="ExportFieldDescriptionStartTWDay" xml:space="preserve">
+    <value>Time window day (0 means current day and 1 means next day).</value>
+  </data>
+  <data name="ExportFieldDescriptionTW2Day" xml:space="preserve">
+    <value>Day of the second time window (0 means current day and 1 means next day).</value>
+  </data>
+  <data name="ExportFieldDescriptionTWDay" xml:space="preserve">
+    <value>Day of the first time window (0 means current day and 1 means next day).</value>
+  </data>
+  <data name="ExportFieldNameLongStartTWDay" xml:space="preserve">
+    <value>StartTWDay</value>
+  </data>
+  <data name="ExportFieldNameShortStartTWDay" xml:space="preserve">
+    <value>StTWDay</value>
+  </data>
+  <data name="ExportFieldNameTW2Day" xml:space="preserve">
+    <value>TW2Day</value>
+  </data>
+  <data name="ExportFieldNameTWDay" xml:space="preserve">
+    <value>TWDay</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+</root>

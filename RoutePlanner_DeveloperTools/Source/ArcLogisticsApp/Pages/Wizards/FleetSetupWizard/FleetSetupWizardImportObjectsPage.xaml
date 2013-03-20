@@ -1,0 +1,444 @@
+﻿<wizardPages:WizardPageBase x:Class="ESRI.ArcLogistics.App.Pages.Wizards.FleetSetupWizardImportObjectsPage"
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:enum="clr-namespace:ESRI.ArcLogistics.App.Import"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="992" d:DesignHeight="784"
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+    xmlns:wizardPages="clr-namespace:ESRI.ArcLogistics.App.Pages.Wizards"
+    xmlns:pages="clr-namespace:ESRI.ArcLogistics.App.Pages"
+    xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls">
+
+    <Grid x:Name="layoutRoot">
+        <Grid.Resources>
+
+            <pages:ImportProfileWrap x:Key="objectWrap"/>
+
+            <!-- Field Mapping table -->
+            <xcdg:DataGridCollectionViewSource x:Key="fieldMappingCollection"
+                AutoCreateItemProperties="False">
+                <xcdg:DataGridCollectionViewSource.ItemProperties>
+                    <xcdg:DataGridItemProperty Name="ObjectFieldName" />
+                    <xcdg:DataGridItemProperty Name="SourceFieldName" />
+                </xcdg:DataGridCollectionViewSource.ItemProperties>
+            </xcdg:DataGridCollectionViewSource>
+
+            <!-- Preview table -->
+            <xcdg:DataGridCollectionViewSource x:Key="importedObjectCollection"
+                AutoCreateItemProperties="False" />
+
+            <xcdg:CellEditor x:Key="FieldNameSourceEditor">
+                <xcdg:CellEditor.EditTemplate>
+                    <DataTemplate>
+                        <ComboBox Background="Transparent"
+                            SelectedItem="{xcdg:CellEditorBinding}"
+                            Style="{StaticResource ImportComboBoxStyle}"
+                            Height="{StaticResource XceedCustomEditorDefaultHeight}"
+                            VerticalAlignment="Top"
+                            VerticalContentAlignment="Top"
+                            BorderThickness="0"
+                            Loaded="comboBoxField_Loaded"
+                            DropDownClosed="comboBoxField_DropDownClosed" />
+                    </DataTemplate>
+                </xcdg:CellEditor.EditTemplate>
+            </xcdg:CellEditor>
+
+        </Grid.Resources>
+
+        <Border Style="{StaticResource LicenseFormBorderStyle}"
+            Margin="{StaticResource FleetSetupWizardPageContentMargin}"
+            Grid.Row="0">
+            <Grid >
+                <!-- Grid structure -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- Row 0 -->
+                <Label Content="{StaticResource ImportObjectsTitleFormat}"
+                    x:Name="labelTitle"
+                    FontSize="{StaticResource ExtraLargeFontSize}"
+                    FontFamily="{StaticResource DefaultApplicationFont}"
+                    Foreground="{StaticResource AquamarineSkinLightBlueColor}"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource FleetSetupWizardPageTitleMargin}"
+                    Grid.Row="0" />
+
+                <!-- Row 1 -->
+                <Border BorderBrush="{StaticResource ApplicationBorder}"
+                    Grid.Row="1"
+                    BorderThickness="{StaticResource FleetSetupWizardSeparatorThickness}"
+                    SnapsToDevicePixels="True"
+                    Margin="{StaticResource FleetSetupWizardSeparatorMargin}" />
+
+                <!-- Row 2 -->
+                <Label Content="{StaticResource ImportProfilesEditPageChooseSourceLabelFormat}"
+                    x:Name="sourceHint"
+                    FontSize="{StaticResource LargeFontSize}"
+                    FontFamily="{StaticResource DefaultApplicationFont}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="6,8,10,10"
+                    Grid.Row="2" />
+
+                <!-- Row 3 -->
+                <Grid Grid.Row="3" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Row 0 -->
+                    <Border HorizontalAlignment="Stretch"
+                        Margin="{StaticResource FunctionalGridButtonsStackMargin}"
+                        Width="Auto"
+                        Grid.Row="0" >
+
+                        <!-- Data Source (File) grid -->
+                        <Grid x:Name="ctrlDataSource"
+                            VerticalAlignment="Stretch"
+                            HorizontalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            <!-- Row 0 -->
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <RadioButton x:Name="radiobuttonFile"
+                                    Content="{StaticResource ImportProfilesEditPageSourceRadioButtonFile}"
+                                    HorizontalAlignment="Left"
+                                    FontSize="{StaticResource MiddleFontSize}"
+                                    Foreground="{StaticResource BlackForegroundBrush}"
+                                    Margin="6,4,4,4"
+                                    Checked="radioButton_Checked" />
+                                <RadioButton x:Name="radiobuttonProvider"
+                                    Content="{StaticResource ImportProfilesEditPageSourceRadioButtonProvider}"
+                                    Foreground="{StaticResource BlackForegroundBrush}"
+                                    HorizontalAlignment="Left"
+                                    FontSize="{StaticResource MiddleFontSize}"
+                                    Margin="6,4,4,4"
+                                    Checked="radioButton_Checked" />
+                            </StackPanel>
+
+                            <!-- Row 1 -->
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" MinWidth="120"/>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <!-- Row 0 -->
+                                <Label x:Name="labelSource"
+                                    Content="{StaticResource ProfilesEditPageSourceLabelFilePath}"
+                                    HorizontalAlignment="Left"
+                                    FontSize="{StaticResource MiddleFontSize}"
+                                    Margin="4,6,4,0"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Foreground="{StaticResource BlackForegroundBrush}"/>
+                                <!-- Row 0 Column 1 -->
+                                <Grid Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <!-- Column 0 -->
+                                    <Grid Grid.Column="0" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <!-- Row 0 -->
+                                        <TextBox x:Name="linkSource"
+                                            HorizontalAlignment="Stretch"
+                                            FontSize="{StaticResource MiddleFontSize}"
+                                            Margin="6,6,0,4"
+                                            Height="{StaticResource DefaultPageButtonHeight}"
+                                            Style="{StaticResource textBoxInErrorStyle}"
+                                            Grid.Row="0"
+                                            TextChanged="linkSource_TextChanged" >
+                                            <TextBox.Text>
+                                                <Binding Path="SourceLink"
+                                                    Source="{StaticResource objectWrap}"
+                                                    UpdateSourceTrigger="PropertyChanged">
+                                                    <Binding.ValidationRules>
+                                                        <pages:ProfileSourceLinkValidationRule />
+                                                    </Binding.ValidationRules>
+                                                </Binding>
+                                            </TextBox.Text>
+                                        </TextBox>
+                                        <!-- Row 1 -->
+                                        <Label x:Name="linkHint"
+                                            Content="{StaticResource ImportProfilesEditPageToolTipFilePath}"
+                                            HorizontalAlignment="Left"
+                                            FontSize="{StaticResource SmallFontSize}"
+                                            Foreground="{StaticResource BlackForegroundBrush}"
+                                            Grid.Row="1" />
+                                    </Grid>
+                                    <!-- Column 1 -->
+                                    <Button x:Name="buttonSource"
+                                        Content="{StaticResource ProfilesEditPageSourceButtonBrowse}"
+                                        Width="{StaticResource DefaultPageButtonWidth}"
+                                        Style="{StaticResource PageButtonStyle}"
+                                        Height="{StaticResource DefaultPageButtonHeight}"
+                                        Margin="6,6,6,0"
+                                        VerticalAlignment="Top"
+                                        Grid.Column="1"
+                                        Click="buttonBrowse_Click" />
+                                </Grid>
+                                <!-- Row 1 Column 0 -->
+                                <Label x:Name="labelTable"
+                                    Content="{StaticResource ImportProfilesEditPageSourceLabelTable}"
+                                    HorizontalAlignment="Left"
+                                    Foreground="{StaticResource BlackForegroundBrush}"
+                                    FontSize="{StaticResource MiddleFontSize}"
+                                    Margin="4,6,4,0"
+                                    Visibility="Hidden"
+                                    Grid.Row="1"
+                                    Grid.Column="0" />
+                                <!-- Row 1 Column 1 -->
+                                <Grid Grid.Row="1" Grid.Column="1" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <!-- Row 0 -->
+                                    <ComboBox x:Name="comboboxTable"
+                                        HorizontalAlignment="Left"
+                                        FontSize="{StaticResource MiddleFontSize}"
+                                        Visibility="Hidden"
+                                        IsEditable="False"
+                                        Margin="6,6,4,0"
+                                        Height="{StaticResource DefaultPageButtonHeight}"
+                                        Width="150"
+                                        Grid.Row="0"
+                                        SelectionChanged="comboBoxTable_SelectionChanged" />
+                                    <!-- Row 1 -->
+                                    <Label x:Name="tableHint"
+                                        Content="{StaticResource ImportProfilesEditPageToolTipTable}"
+                                        HorizontalAlignment="Left"
+                                        FontSize="{StaticResource SmallFontSize}"
+                                        Foreground="{StaticResource BlackForegroundBrush}"
+                                        Grid.Row="1" />
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+                    <!-- Row 1 -->
+                    <Border HorizontalAlignment="Stretch"
+                        Margin="{StaticResource FunctionalGridButtonsStackMargin}"
+                        Width="Auto"
+                        Grid.Row="1" >
+
+                        <!-- Field Mapping grid -->
+                        <Grid x:Name="ctrlFieldMapping"
+                            VerticalAlignment="Stretch"
+                            HorizontalAlignment="Stretch"
+                            Margin="0,0,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="{StaticResource XceedImportPreviewHeight}"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Row 0 -->
+                            <Label Content="{StaticResource ImportProfilesEditPageFieldMappingLabel}"
+                                HorizontalAlignment="Left"
+                                Foreground="{StaticResource BlackForegroundBrush}"
+                                FontSize="{StaticResource LargeFontSize}"
+                                Padding="2,2,2,2"
+                                Margin="6,6,4,6"
+                                VerticalAlignment="Center"
+                                Height="{StaticResource DefaultPageButtonHeight}"
+                                Grid.Row="0" />
+
+                            <!-- Row 1 -->
+                            <Border HorizontalAlignment="Stretch"
+                                Margin="{StaticResource PageContentMargin}"
+                                VerticalAlignment="Stretch"
+                                Grid.Row="1" >
+                                <app_controls:DataGridControlEx
+                                    VerticalAlignment="Stretch"
+                                    HorizontalAlignment="Stretch"
+                                    Margin="0"
+                                    ItemsSource="{Binding Source={StaticResource fieldMappingCollection}}"
+                                    SelectionMode="Single"
+                                    IsEnabled="True"
+                                    CellEditorDisplayConditions="Always"
+                                    x:Name="xceedGrid">
+                                    <xcdg:DataGridControl.View>
+                                        <xcdg:TableView ColumnStretchMode="All"
+                                            ShowRowSelectorPane="False"/>
+                                    </xcdg:DataGridControl.View>
+                                    <xcdg:DataGridControl.Columns>
+                                        <xcdg:Column FieldName="ObjectFieldName" ReadOnly="True" />
+                                        <xcdg:Column FieldName="SourceFieldName" CellEditor="{StaticResource FieldNameSourceEditor}" />
+                                    </xcdg:DataGridControl.Columns>
+                                </app_controls:DataGridControlEx>
+                            </Border>
+
+                            <!-- Row 2 -->
+                            <Label Content="{StaticResource ImportProfilesEditPagePreviewLabel}"
+                                HorizontalAlignment="Left"
+                                Foreground="{StaticResource BlackForegroundBrush}"
+                                FontSize="{StaticResource LargeFontSize}"
+                                Padding="2,2,2,2"
+                                Margin="6,6,4,6"
+                                VerticalAlignment="Center"
+                                Height="{StaticResource DefaultPageButtonHeight}"
+                                Grid.Row="2" />
+
+                            <!-- Row 3 -->
+                            <Border HorizontalAlignment="Stretch"
+                                Margin="{StaticResource PageContentMargin}"
+                                VerticalAlignment="Stretch"
+                                Grid.Row="3" >
+                                <app_controls:DataGridControlEx
+                                    VerticalAlignment="Stretch"
+                                    HorizontalAlignment="Stretch"
+                                    Margin="0"
+                                    ItemsSource="{Binding Source={StaticResource importedObjectCollection}}"
+                                    SelectionMode="Single"
+                                    IsEnabled="True"
+                                    ReadOnly="True"
+                                    CellEditorDisplayConditions="None"
+                                    x:Name="xceedGridPreview">
+                                    <xcdg:DataGridControl.View>
+                                        <xcdg:TableView ColumnStretchMode="All"
+                                            ShowRowSelectorPane="False"/>
+                                    </xcdg:DataGridControl.View>
+                                </app_controls:DataGridControlEx>
+                            </Border>
+
+                            <Grid Margin="{StaticResource PageContentMargin}"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                Background="{StaticResource LockedPageBackground}"
+                                Grid.RowSpan="1"
+                                Grid.Row="3"
+                                Visibility="Hidden"
+                                x:Name="lockedGridFrame" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Content ="{StaticResource ImportStatusFileIsEmpty}"
+                                     Foreground="{StaticResource BlackForegroundBrush}"
+                                     FontSize="{StaticResource LargeFontSize}"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"
+                                     x:Name="lockedLabel"
+                                     Grid.Row="0" />
+                            </Grid>
+                        </Grid>
+                                                
+                    </Border>
+                </Grid>
+
+                <!-- Row 4 -->
+                <Grid Margin="8,4,3,4"
+                    HorizontalAlignment="Stretch"
+                    Height="Auto"
+                    Grid.Row="4" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Column 0 -->
+                    <WrapPanel Grid.Column="0" Orientation="Vertical">
+                        <Label Content="{StaticResource ProfilesEditPageRequiredFieldTooltip}"
+                            FontSize="{StaticResource SmallFontSize}"
+                            Foreground="{StaticResource BlackForegroundBrush}"
+                            FontFamily="{StaticResource DefaultApplicationFont}"
+                            FontStyle="Italic"
+                            Margin="3,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center" />
+                        <Label x:Name="specialTooltip"
+                            Content="{StaticResource ProfilesEditPageRequiredFieldTooltip2}"
+                            FontSize="{StaticResource SmallFontSize}"
+                            Foreground="{StaticResource BlackForegroundBrush}"
+                            FontFamily="{StaticResource DefaultApplicationFont}"
+                            Visibility="Collapsed"
+                            FontStyle="Italic"
+                            Margin="3,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center" />
+                    </WrapPanel>
+                    <!-- Column 1 -->
+                    <Button x:Name="buttonBack"
+                        Grid.Column="1"
+                        Content="{StaticResource ButtonHeaderBack}"
+                        IsEnabled="True"
+                        Width="{StaticResource DefaultWizardPageButtonWidth}"
+                        Height="{StaticResource DefaultWizardPageButtonHeight}"
+                        FontSize="{StaticResource WizardButtonFontSize}"
+                        Style="{StaticResource PageButtonStyle}"
+                        Margin="{StaticResource FleetSetupWizardButtonMargin}"
+                        Visibility="Collapsed"
+                        VerticalAlignment="Bottom"
+                        Click="buttonBack_Click" />
+                    <!-- Column 2 -->
+                    <Button x:Name="buttonOk"
+                        Grid.Column="2"
+                        Content="{StaticResource ButtonHeaderOk}"
+                        IsEnabled="True"
+                        Width="{StaticResource DefaultWizardPageButtonWidth}"
+                        Height="{StaticResource DefaultWizardPageButtonHeight}"
+                        FontSize="{StaticResource WizardButtonFontSize}"
+                        Style="{StaticResource PageButtonStyle}"
+                        Margin="{StaticResource FleetSetupWizardButtonMargin}"
+                        VerticalAlignment="Bottom"
+                        Click="buttonOk_Click"
+                        IsEnabledChanged="buttonOk_IsEnabledChanged" />
+                    <!-- Column 3 -->
+                    <Button x:Name="buttonNext"
+                        Grid.Column="3"
+                        Content="{StaticResource ButtonHeaderNext}"
+                        IsEnabled="True"
+                        Width="{StaticResource DefaultWizardPageButtonWidth}"
+                        Height="{StaticResource DefaultWizardPageButtonHeight}"
+                        FontSize="{StaticResource WizardButtonFontSize}"
+                        Style="{StaticResource PageButtonStyle}"
+                        VerticalAlignment="Bottom"
+                        Margin="{StaticResource FleetSetupWizardButtonMargin}"
+                        Click="buttonNext_Click" />
+                    <!-- Column 4 -->
+                    <Button x:Name="buttonCancel"
+                        Grid.Column="4"
+                        Content="{StaticResource ButtonHeaderCancel}"
+                        IsEnabled="True"
+                        Width="{StaticResource DefaultWizardPageButtonWidth}"
+                        Height="{StaticResource DefaultWizardPageButtonHeight}"
+                        FontSize="{StaticResource WizardButtonFontSize}"
+                        Style="{StaticResource PageButtonStyle}"
+                        Margin="{StaticResource FleetSetupWizardButtonLastMargin}"
+                        VerticalAlignment="Bottom"
+                        Click="buttonCancel_Click" />
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</wizardPages:WizardPageBase>

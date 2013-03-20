@@ -1,0 +1,42 @@
+﻿<pages:PageBase x:Class="ESRI.ArcLogistics.App.Pages.OptimizeAndEditPage"
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:app="clr-namespace:ESRI.ArcLogistics.App"
+    xmlns:pages="clr-namespace:ESRI.ArcLogistics.App.Pages"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+    xmlns:controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    xmlns:esri="clr-namespace:ESRI.ArcGIS.Client;assembly=ESRI.ArcGIS.Client" 
+    xmlns:esriGeometry="clr-namespace:ESRI.ArcGIS.Client.Geometry;assembly=ESRI.ArcGIS.Client"
+    xmlns:esriWidgets="clr-namespace:ESRI.ArcGIS.Client.Toolkit;assembly=ESRI.ArcGIS.Client.Toolkit"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <StackPanel Orientation="Horizontal"
+                        x:Key="statusStack"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        Height="30">
+                <Viewbox Width="25"
+                    Height="25"
+                    Margin="10,1,0,0">
+                    <controls:CircularProgressBar />
+                </Viewbox>
+                <Label Content="..."
+                    Style="{StaticResource SelectionPageStatusLabelStyle}"
+                    Margin="2,2,6,2"/>
+                <controls:CommandButton
+                    Height="{StaticResource DefaultPageButtonHeight}"
+                    Width="{StaticResource DefaultPageButtonWidth}"
+                    Style="{StaticResource StatusBarButtonStyle}"
+                    Margin="2,2,0,2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Content="{StaticResource CancelRoutingOperationCmdTitle}"/>
+            </StackPanel>
+        </Grid.Resources>
+
+        <controls:DockManager x:Name="DockManager1"
+            Margin="{StaticResource CenteredContentMargin}" />
+    </Grid>
+</pages:PageBase>

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="ESRI.ArcLogistics.App.Controls.BarrierPopupEditor"
+             x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ESRI.ArcLogistics.App.Controls"
+             MinHeight="100"
+             MinWidth="170"
+    >
+    <Border x:Name="Border"
+            CornerRadius="2,2,2,2"
+            Background="White"
+            BorderBrush="{DynamicResource SolidBorderBrush}"
+            BorderThickness="2">
+        <StackPanel Orientation="Vertical" Margin="4,4,0,0">
+            <local:BarrierEditor x:Name="BarrierEditor"/>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Margin="4,4,4,4">
+                <Button Content="{DynamicResource ButtonHeaderOk}"
+                        HorizontalAlignment="Right"
+                        Style="{DynamicResource PageButtonStyle}"
+                        Click="_OkButtonClick"></Button>
+                <Button Content="{DynamicResource ButtonHeaderCancel}"
+                        HorizontalAlignment="Right"
+                        Style="{DynamicResource PageButtonStyle}"
+                        Click="_CancelButtonClick"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

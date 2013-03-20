@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Error_CreateDataObjectFailed" xml:space="preserve">
+    <value>Failed to create data object.</value>
+  </data>
+  <data name="Error_DataObjectExistsInCollection" xml:space="preserve">
+    <value>Data object already exists in the collection.</value>
+  </data>
+  <data name="Error_DbFileExists" xml:space="preserve">
+    <value>Database file with the specified path already exists.</value>
+  </data>
+  <data name="Error_DatabaseUpdate" xml:space="preserve">
+    <value>Failed to update database.</value>
+  </data>
+  <data name="Error_EntityDetached" xml:space="preserve">
+    <value>Data object is not attached to data a object context.</value>
+  </data>
+  <data name="Error_GetCacheFailed" xml:space="preserve">
+    <value>Failed to get the data object cache.</value>
+  </data>
+  <data name="Error_GetGeocodeServicesConfigFailed" xml:space="preserve">
+    <value>Failed to get the geocoding services configuration.</value>
+  </data>
+  <data name="Error_GetKeyFailed" xml:space="preserve">
+    <value>Failed to get the data object id value.</value>
+  </data>
+  <data name="Error_GetMapServicesConfigFailed" xml:space="preserve">
+    <value>Failed to get the map services configuration.</value>
+  </data>
+  <data name="Error_GetProjectVersionFailed" xml:space="preserve">
+    <value>Failed to retrieve the project version.</value>
+  </data>
+  <data name="Error_GetServersConfigFailed" xml:space="preserve">
+    <value>Failed to get the server configuration.</value>
+  </data>
+  <data name="Error_GetUpgradeScriptFailed" xml:space="preserve">
+    <value>Failed to get the upgrade script for required the database scheme version.</value>
+  </data>
+  <data name="Error_GetWrapDataObjectFailed" xml:space="preserve">
+    <value>Failed to get the wrapping data object.</value>
+  </data>
+  <data name="Error_InvalidCapacity" xml:space="preserve">
+    <value>{0} capacity value must be greater than or equal to zero.</value>
+  </data>
+  <data name="Error_InvalidCustomProperty" xml:space="preserve">
+    <value>{0} custom property value must be greater than or equal to zero.</value>
+  </data>
+  <data name="Error_InvalidMaxViolationTime" xml:space="preserve">
+    <value>Max Violation Time must be greater than or equal to zero and less than or equal to 1 year.</value>
+  </data>
+  <data name="Error_InvalidDataObjectInstance" xml:space="preserve">
+    <value>Invalid data object instance.</value>
+  </data>
+  <data name="Error_InvalidEMail" xml:space="preserve">
+    <value>Email Address is invalid.</value>
+  </data>
+  <data name="Error_InvalidFolderPath" xml:space="preserve">
+    <value>Sync Folder path is invalid.</value>
+  </data>
+  <data name="Error_InvalidFuelEconomyMetric" xml:space="preserve">
+    <value>Cost per kilometer (Fuel Price * Fuel Economy * 100 / 1.609344) must be greater than or equal to zero and less than or equal to {0}.</value>
+  </data>
+  <data name="Error_InvalidFuelEconomyUS" xml:space="preserve">
+    <value>Cost per mile (Fuel Price / Fuel Economy) must be greater than or equal to zero and less than or equal to {0}.</value>
+  </data>
+  <data name="Error_InvalidFuelEconomyValue" xml:space="preserve">
+    <value>Fuel Economy must be greater than zero.</value>
+  </data>
+  <data name="Error_InvalidFuelType" xml:space="preserve">
+    <value>Fuel Type must be selected.</value>
+  </data>
+  <data name="Error_InvalidGeometryZone" xml:space="preserve">
+    <value>Zone shape is incomplete.</value>
+  </data>
+  <data name="Error_InvalidGeometryBarrier" xml:space="preserve">
+    <value>Barrier shape is incomplete.</value>
+  </data>
+  <data name="Error_InvalidBarrierEffect" xml:space="preserve">
+    <value>Barrier Effect is not set.</value>
+  </data>
+  <data name="Error_InvalidFixedCost" xml:space="preserve">
+    <value>Fixed Cost must be greater than or equal to zero and less than or equal to {5}.</value>
+  </data>
+  <data name="Error_InvalidPerHourSalary" xml:space="preserve">
+    <value>Per Hour Salary must be greater than zero and less than or equal to {5}.</value>
+  </data>
+  <data name="Error_InvalidPerHourOTSalary" xml:space="preserve">
+    <value>Per Hour OT Salary must be greater than or equal to zero and less than or equal to {5}.</value>
+  </data>
+  <data name="Error_InvalidPerHourOTSalary2" xml:space="preserve">
+    <value>Per Hour OT Salary must be greater than or equal to Per Hour Salary.</value>
+  </data>
+  <data name="Error_InvalidTimeBeforeOT" xml:space="preserve">
+    <value>Time Before OT must be greater than or equal to zero and less than or equal to 1 year.</value>
+  </data>
+  <data name="Error_NoDeletionFieldName" xml:space="preserve">
+    <value>Deletion field name is not set.</value>
+  </data>
+  <data name="Error_NoEntityKeyName" xml:space="preserve">
+    <value>Entity key name is not set.</value>
+  </data>
+  <data name="Error_OrderCustomPropTooLong" xml:space="preserve">
+    <value>Unable to create new project. Total length of order custom properties is too long.</value>
+  </data>
+  <data name="Error_ReadOnlyCollectionChange" xml:space="preserve">
+    <value>Read-only collection cannot be modified.</value>
+  </data>
+  <data name="Error_UnsupportedHttpBinding" xml:space="preserve">
+    <value>Unsupported HTTP binding type.</value>
+  </data>
+  <data name="Error_UnsupportedSchemeVersion" xml:space="preserve">
+    <value>Project is not compatible with this version of Route Planner.</value>
+  </data>
+  <data name="Error_InvalidFuelPrice" xml:space="preserve">
+    <value>Price must be greater than or equal to zero.</value>
+  </data>
+  <data name="Error_InvalidCo2Emission" xml:space="preserve">
+    <value>CO2 emission value must be greater than or equal to zero.</value>
+  </data>
+  <data name="Error_InvalidMaxOrder" xml:space="preserve">
+    <value>Max Orders must be greater than zero and less than or equal to one thousand.</value>
+  </data>
+  <data name="Error_InvalidMaxTravelDistance" xml:space="preserve">
+    <value>Max Travel Distance must be greater than or equal to zero and less than or equal to {0}.</value>
+  </data>
+  <data name="Error_RenewalLocationsErrorFormat" xml:space="preserve">
+    <value>Renewal Depot '{0}' has errors.</value>
+  </data>
+  <data name="Error_RenewalLocationsIsDeletedErrorFormat" xml:space="preserve">
+    <value>Renewal Depot '{0}' is deleted.</value>
+  </data>
+  <data name="Error_ZonesErrorFormat" xml:space="preserve">
+    <value>Zone '{0}' has errors.</value>
+  </data>
+  <data name="Error_InvalidMaxTravelDuration" xml:space="preserve">
+    <value>Max Travel Duration must be greater than or equal to zero and less than or equal to 1 year.</value>
+  </data>
+  <data name="Error_InvalidMaxTravelDuration2" xml:space="preserve">
+    <value>Max Travel Duration must be less than or equal to Max Total Duration.</value>
+  </data>
+  <data name="Error_InvalidMaxTotalDuration" xml:space="preserve">
+    <value>Max Total Duration must be greater than or equal to zero and less than or equal to 1 year.</value>
+  </data>
+  <data name="Error_InvalidTimeAtStart" xml:space="preserve">
+    <value>Time At Start must be greater than or equal to zero and less than or equal to 1 year.</value>
+  </data>
+  <data name="Error_InvalidTimeAtEnd" xml:space="preserve">
+    <value>Time At End must be greater than or equal to zero and less than or equal to 1 year.</value>
+  </data>
+  <data name="Error_InvalidTimeAtRenewal" xml:space="preserve">
+    <value>Time At Renewal must be greater than or equal to zero and less than or equal to 1 year.</value>
+  </data>
+  <data name="Error_InvalidServiceTime" xml:space="preserve">
+    <value>Service Time must be greater than or equal to zero and less than or equal to 1 year.</value>
+  </data>
+  <data name="Error_RouteStartTWCannotWideopen" xml:space="preserve">
+    <value>Start Time Window cannot be wideopen.</value>
+  </data>
+  <data name="Error_RouteStartAfterLocClose" xml:space="preserve">
+    <value>Earliest start time must occur before the Start Depot's close time.</value>
+  </data>
+  <data name="Error_RouteStopBeforeLocOpen" xml:space="preserve">
+    <value>Latest start time must occur after the Start Depot's open time.</value>
+  </data>
+  <data name="Error_GetAttributeByKeyFailed" xml:space="preserve">
+    <value>Failed to get attribute by the specified key value.</value>
+  </data>
+  <data name="Error_GetRouteServicesConfigFailed" xml:space="preserve">
+    <value>Failed to get the routing services configuration.</value>
+  </data>
+  <data name="Error_InvalidDepotsNum" xml:space="preserve">
+    <value>Routing request must contain at least 1 depot.</value>
+  </data>
+  <data name="Error_InvalidGPFeatureMapping" xml:space="preserve">
+    <value>Failed to correlate output GP feature to data object.</value>
+  </data>
+  <data name="Error_InvalidJsonResponseString" xml:space="preserve">
+    <value>Invalid JSON response string.</value>
+  </data>
+  <data name="Error_InvalidRoutesNum" xml:space="preserve">
+    <value>Routing request must contain at least 1 route.</value>
+  </data>
+  <data name="Error_InvalidRoutingConfig" xml:space="preserve">
+    <value>Invalid routing configuration.</value>
+  </data>
+  <data name="Error_InvalidVrpRequest" xml:space="preserve">
+    <value>Invalid Routing request.</value>
+  </data>
+  <data name="Error_SubmitJobFailed" xml:space="preserve">
+    <value>Failed to submit job.</value>
+  </data>
+  <data name="Error_InvalidResultJobResponse" xml:space="preserve">
+    <value>Routing response contains invalid data.</value>
+  </data>
+  <data name="Error_OrderTWOverlapped" xml:space="preserve">
+    <value>Time Windows must not overlap.</value>
+  </data>
+  <data name="Error_OrderTW1LaterTW2" xml:space="preserve">
+    <value>Time Window 2 must occur later than Time Window.</value>
+  </data>
+  <data name="Error_OrderNotGeocoded" xml:space="preserve">
+    <value>Order must be geocoded.</value>
+  </data>
+  <data name="Error_LocationNotGeocoded" xml:space="preserve">
+    <value>Depot must be geocoded.</value>
+  </data>
+  <data name="Error_OrderNotFoundOnNetworkViolationMessage" xml:space="preserve">
+    <value>Order is located too far from the nearest road.</value>
+  </data>
+  <data name="Error_LocationNotFoundOnNetworkViolationMessage" xml:space="preserve">
+    <value>Depot is located too far from the nearest road.</value>
+  </data>
+  <data name="Error_PolylineDeserializationFailed" xml:space="preserve">
+    <value>Failed to deserialize polyline object.</value>
+  </data>
+  <data name="Error_UnsupportedGPGeometryObject" xml:space="preserve">
+    <value>Failed to deserialize geometry object: unsupported object type.</value>
+  </data>
+  <data name="Error_InvalidScheduleData" xml:space="preserve">
+    <value>Routing operation cannot be executed since some input data objects are invalid.</value>
+  </data>
+  <data name="Error_ProjectIsNotSet" xml:space="preserve">
+    <value>Current project is not set.</value>
+  </data>
+  <data name="Error_AttrToObjectIdConvertFailed" xml:space="preserve">
+    <value>Failed to convert attribute to object id.</value>
+  </data>
+  <data name="Error_OrderRemovalFailed" xml:space="preserve">
+    <value>Failed to remove order since it has associated stop objects.</value>
+  </data>
+  <data name="Error_RouteRemovalFailed" xml:space="preserve">
+    <value>Failed to remove route since it has associated route result objects.</value>
+  </data>
+  <data name="Error_InvalidDateTime" xml:space="preserve">
+    <value>Invalid date value.</value>
+  </data>
+  <data name="Error_StartDateLaterFinishDate" xml:space="preserve">
+    <value>Finish Date must be the same or later than Start Date.</value>
+  </data>
+  <data name="Error_FromDateLaterToDate" xml:space="preserve">
+    <value>To date must be the same or later than the From date.</value>
+  </data>
+  <data name="Error_DataObjectRejectedByFilter" xml:space="preserve">
+    <value>Data object does not conform to collection's filtration clause.</value>
+  </data>
+  <data name="Error_DataObjectRemovalFailed" xml:space="preserve">
+    <value>Data object cannot be removed.</value>
+  </data>
+  <data name="Error_UnsupportedAssocObject" xml:space="preserve">
+    <value>Unsupported associated object value.</value>
+  </data>
+  <data name="Error_UnknownViolationType" xml:space="preserve">
+    <value>Unknown violation type.</value>
+  </data>
+  <data name="Error_InvalidFuelConsumptionValue" xml:space="preserve">
+    <value>Invalid vehicle FuelConsumption value.</value>
+  </data>
+  <data name="Error_InternalRouteError" xml:space="preserve">
+    <value>Internal route operation error.</value>
+  </data>
+  <data name="Error_InvalidOrdersToAssignCount" xml:space="preserve">
+    <value>There must be at least one order to assign.</value>
+  </data>
+  <data name="Error_InvalidRoutesToSequenceCount" xml:space="preserve">
+    <value>There must be at least one unlocked route to sequence.</value>
+  </data>
+  <data name="Error_InvalidRouteToSequence" xml:space="preserve">
+    <value>Route (id={0}) cannot be sequenced since it does not belong to processing schedule.</value>
+  </data>
+  <data name="Error_InvalidTargetRouteDate" xml:space="preserve">
+    <value>Route (id={0}) plannedDate differs from the schedule's one.</value>
+  </data>
+  <data name="Error_InvalidTargetRoutesCount" xml:space="preserve">
+    <value>There must be one target route.</value>
+  </data>
+  <data name="Error_InvalidTargetSequence" xml:space="preserve">
+    <value>Invalid target sequence value.</value>
+  </data>
+  <data name="Error_InvalidUnlockedOrdersToAssignCount" xml:space="preserve">
+    <value>There must be at least one unlocked order to assign.</value>
+  </data>
+  <data name="Error_InvalidUnlockedTargetRoutesCount" xml:space="preserve">
+    <value>There must be at least one unlocked target route.</value>
+  </data>
+  <data name="Error_ConfigSchemeLoadFailed" xml:space="preserve">
+    <value>Failed to load configuration scheme (id={0}).</value>
+  </data>
+  <data name="Error_AbsentFieldsInTable" xml:space="preserve">
+    <value>No fields found in table '{0}' to export.</value>
+  </data>
+  <data name="Error_NotSelectedDaysOfWeek" xml:space="preserve">
+    <value>At least one day of week must be set.</value>
+  </data>
+  <data name="Error_ServiceInitCancelled" xml:space="preserve">
+    <value>User cancelled service initialization.</value>
+  </data>
+  <data name="Error_ServiceInitFailed" xml:space="preserve">
+    <value>Failed to initialize service.</value>
+  </data>
+  <data name="Error_CompactGeometryConversion" xml:space="preserve">
+    <value>Failed to convert compact geometry.</value>
+  </data>
+  <data name="Error_InvalidDirectionsNumber" xml:space="preserve">
+    <value>Invalid directions number.</value>
+  </data>
+  <data name="Error_NoDirectionsForRoute" xml:space="preserve">
+    <value>Failed to get directions for route (id={0}).</value>
+  </data>
+  <data name="Error_InvalidRefObjMobileDevice" xml:space="preserve">
+    <value>Mobile Device has errors.</value>
+  </data>
+  <data name="Error_InvalidRefObjFuelType" xml:space="preserve">
+    <value>Fuel Type has errors.</value>
+  </data>
+  <data name="Error_InvalidRefObjDriver" xml:space="preserve">
+    <value>Driver has errors.</value>
+  </data>
+  <data name="Error_InvalidRefObjVehicle" xml:space="preserve">
+    <value>Vehicle has errors.</value>
+  </data>
+  <data name="Error_InvalidRefObjStartLocation" xml:space="preserve">
+    <value>Start Depot has errors.</value>
+  </data>
+  <data name="Error_InvalidRefObjStartLocationIsDeleted" xml:space="preserve">
+    <value>Start Depot is deleted.</value>
+  </data>
+  <data name="Error_InvalidRefObjEndLocation" xml:space="preserve">
+    <value>End Depot has errors.</value>
+  </data>
+  <data name="Error_InvalidRefObjEndLocationIsDeleted" xml:space="preserve">
+    <value>End Depot is deleted.</value>
+  </data>
+  <data name="Error_NotSetReferenceObjectDriver" xml:space="preserve">
+    <value>Driver must be selected.</value>
+  </data>
+  <data name="Error_InvalidRefObjDriverIsDeleted" xml:space="preserve">
+    <value>Driver is deleted.</value>
+  </data>
+  <data name="Error_NotSetReferenceObjectVehicle" xml:space="preserve">
+    <value>Vehicle must be selected.</value>
+  </data>
+  <data name="Error_InvalidRefObjVehicleIsDeleted" xml:space="preserve">
+    <value>Vehicle is deleted.</value>
+  </data>
+  <data name="Error_NotSetReferenceObjectLocations" xml:space="preserve">
+    <value>Either Start or End Depot must be selected.</value>
+  </data>
+  <data name="Error_InvalidRoutesNumber" xml:space="preserve">
+    <value>Invalid number of routes.</value>
+  </data>
+  <data name="Error_RoutesBelongToDifSchedules" xml:space="preserve">
+    <value>Not all routes belong to the same schedule.</value>
+  </data>
+  <data name="Error_ScheduleDateNotSet" xml:space="preserve">
+    <value>Schedule date is not set.</value>
+  </data>
+  <data name="Error_ScheduleNotSet" xml:space="preserve">
+    <value>Schedule is not set.</value>
+  </data>
+  <data name="Error_LocationIsUngeocoded" xml:space="preserve">
+    <value>Depot (id={0}) is not geocoded.</value>
+  </data>
+  <data name="Error_OrderIsUngeocoded" xml:space="preserve">
+    <value>Order (id={0}) is not geocoded.</value>
+  </data>
+  <data name="Error_UnsupportedAttrUsageType" xml:space="preserve">
+    <value>Unsupported network attribute usage type.</value>
+  </data>
+  <data name="Error_AttrParametersFormat" xml:space="preserve">
+    <value>Failed to format attribute parameters.</value>
+  </data>
+  <data name="Error_DbFileSharingViolation" xml:space="preserve">
+    <value>Failed to open database since the file is in use.</value>
+  </data>
+  <data name="Error_LicenseServiceCommunication" xml:space="preserve">
+    <value>Error communicating with licensing service.</value>
+  </data>
+  <data name="Error_LoginFailed" xml:space="preserve">
+    <value>Incorrect user name or password.</value>
+  </data>
+  <data name="Error_NoAllowedUserRole" xml:space="preserve">
+    <value>No allowed user role found.</value>
+  </data>
+  <data name="Error_MaxRoutesPermission" xml:space="preserve">
+    <value>Your license allows a maximum of {0} route(s) and you have {1} route(s) for this schedule.</value>
+  </data>
+  <data name="Error_BuildStopPathFailed" xml:space="preserve">
+    <value>Failed to build path for stop.</value>
+  </data>
+  <data name="Error_RouteContainsInvalidDriver" xml:space="preserve">
+    <value>Driver is already in use for other route(s) for the day during the same time window.</value>
+  </data>
+  <data name="Error_RouteContainsInvalidVehicle" xml:space="preserve">
+    <value>Vehicle is already in use for other route(s) for the day during the same time window.</value>
+  </data>
+  <data name="Error_RouteServiceInit" xml:space="preserve">
+    <value>Failed to initialize Route service.</value>
+  </data>
+  <data name="Error_VRPServiceInit" xml:space="preserve">
+    <value>Failed to initialize Routing service.</value>
+  </data>
+  <data name="Error_SubmitJob" xml:space="preserve">
+    <value>The server is not responding, please resubmitt your work, if this problem persists please contact ESRI support.</value>
+  </data>
+  <data name="Error_InvalidSettings" xml:space="preserve">
+    <value>Settings are not valid.</value>
+  </data>
+  <data name="Error_UserCancel" xml:space="preserve">
+    <value>Operation cancelled by user.</value>
+  </data>
+  <data name="Error_InvalidCredentials" xml:space="preserve">
+    <value>Invalid user name or password.</value>
+  </data>
+  <data name="Error_ServerInUnavailableState" xml:space="preserve">
+    <value>Server "{0}" is in unavailable state. Check your connection or configuration file.</value>
+  </data>
+  <data name="Error_ServerUnauthorized" xml:space="preserve">
+    <value>Authentication failed to {0}. Please try re-entering your username and password.</value>
+  </data>
+  <data name="Error_ServerUnavailable" xml:space="preserve">
+    <value>Route Planner cannot connect to {0}. Please check your network connection.</value>
+  </data>
+  <data name="Error_TokenAuthNotSupported" xml:space="preserve">
+    <value>Server does not support token-based authentication.</value>
+  </data>
+  <data name="Error_InvalidLicenseData" xml:space="preserve">
+    <value>Cannot get valid license data.</value>
+  </data>
+  <data name="Error_LicenseComponentNotFound" xml:space="preserve">
+    <value>Sorry but you are not licensed to run the application. Contact your vendor.</value>
+  </data>
+  <data name="Error_LicenseComponentNotSet" xml:space="preserve">
+    <value>License component is not set.</value>
+  </data>
+  <data name="Error_InvalidLicenserSignature" xml:space="preserve">
+    <value>License component must be signed by ESRI.</value>
+  </data>
+  <data name="Error_LicenseNotActivated" xml:space="preserve">
+    <value>License is not activated.</value>
+  </data>
+  <data name="Error_GetDirections" xml:space="preserve">
+    <value>Failed to get driving directions.</value>
+  </data>
+  <data name="Error_ArcgisRestError" xml:space="preserve">
+    <value>{0} Server returned: {1}</value>
+  </data>
+  <data name="Error_GetJobParameter" xml:space="preserve">
+    <value>Failed to retrieve a GP parameter value for job {0}.</value>
+  </data>
+  <data name="Error_InvalidArcgisRestResponse" xml:space="preserve">
+    <value>&lt;No error information returned in the REST response&gt;</value>
+  </data>
+  <data name="Error_InvalidActiveSyncProfileName" xml:space="preserve">
+    <value>Active Sync Profile Name is not set.</value>
+  </data>
+  <data name="Error_InvalidNetworkAttr" xml:space="preserve">
+    <value>Invalid network attribute/parameter name.</value>
+  </data>
+  <data name="Error_InvalidNetworkAttr2" xml:space="preserve">
+    <value>Invalid network attribute: {0}, {1}</value>
+  </data>
+  <data name="Error_InvalidRestrictionName" xml:space="preserve">
+    <value>Invalid restriction name: {0}</value>
+  </data>
+  <data name="Error_InvalidNetworkParamType" xml:space="preserve">
+    <value>Inconsistent type of network parameter value.</value>
+  </data>
+  <data name="Error_RestrictionIsNotEditable" xml:space="preserve">
+    <value>Restriction cannot be edited.</value>
+  </data>
+  <data name="Error_GenDBArchiveName" xml:space="preserve">
+    <value>Failed to generate the archive database name.</value>
+  </data>
+  <data name="Error_MaxOrdersPermission" xml:space="preserve">
+    <value>Your license allows a maximum of {0} order(s) and you have {1} order(s) for this day.</value>
+  </data>
+  <data name="Error_ArgumentMustBeOfType" xml:space="preserve">
+    <value>Argument must be of type {0}.</value>
+  </data>
+  <data name="Error_CannotRetrieveServiceUrl" xml:space="preserve">
+    <value>{0} service url retrieval failed with error code '{1}'.</value>
+  </data>
+  <data name="Error_ServerTemporaryUnavailable" xml:space="preserve">
+    <value>{0} server is busy now. Please retry your request later.</value>
+  </data>
+  <data name="Error_LicenseIsExpired" xml:space="preserve">
+    <value>License is expired.</value>
+  </data>
+  <data name="Error_ArcgisRestUnspecifiedError" xml:space="preserve">
+    <value>{0} Server returned unspecified error with code {1}.</value>
+  </data>
+  <data name="Error_GrfExporterNoBreakStopLocation" xml:space="preserve">
+    <value>Failed to export route to GRF because break stop have no location.</value>
+  </data>
+  <data name="Error_GrfExporterNoLocationForStop" xml:space="preserve">
+    <value>Failed to export route to GRF because some stops have no location.</value>
+  </data>
+  <data name="Error_ThreadingExecutionFailed" xml:space="preserve">
+    <value>Failed to execute one or more parallel tasks.</value>
+  </data>
+  <data name="Error_ThreadingNullInnerException" xml:space="preserve">
+    <value>One or more of inner exceptions is a null reference.</value>
+  </data>
+  <data name="Error_CycleInPropertyDependencies" xml:space="preserve">
+    <value>Dependecies for property '{0}' contains a cycle '{1}'.</value>
+  </data>
+  <data name="Error_RoutingMissingBreakStop" xml:space="preserve">
+    <value>Failed to generate route because stop where break has occured is missing.</value>
+  </data>
+  <data name="Error_NoDefaultsCapacities" xml:space="preserve">
+    <value>Defaults Capacities info is absent.</value>
+  </data>
+  <data name="Error_NoDefaultsDriver" xml:space="preserve">
+    <value>Defaults Driver info is absent.</value>
+  </data>
+  <data name="Error_NoDefaultsFuelTypes" xml:space="preserve">
+    <value>Defaults Fuel Types info is absent.</value>
+  </data>
+  <data name="Error_NoDefaultsLocation" xml:space="preserve">
+    <value>Defaults Location info is absent.</value>
+  </data>
+  <data name="Error_NoDefaultsOrder" xml:space="preserve">
+    <value>Defaults Order info is absent.</value>
+  </data>
+  <data name="Error_NoDefaultsOrderCustomProperties" xml:space="preserve">
+    <value>Defaults Order Custom Properies info is absent.</value>
+  </data>
+  <data name="Error_NoDefaultsRoute" xml:space="preserve">
+    <value>Defaults Route info is absent.</value>
+  </data>
+  <data name="Error_NoDefaultsVehicle" xml:space="preserve">
+    <value>Defaults Vehicle info is absent.</value>
+  </data>
+  <data name="Error_DuplicateName" xml:space="preserve">
+    <value>{0} "{1}" already exists. Please enter another name.</value>
+  </data>
+  <data name="Error_NullName" xml:space="preserve">
+    <value>Please enter a name for the {0}. This is a required field.</value>
+  </data>
+  <data name="Error_RouteIsScheduled" xml:space="preserve">
+    <value>This route belong to schedule, it's owner collection cant be set explicity.</value>
+  </data>
+  <data name="Error_StopNameReadOnly" xml:space="preserve">
+    <value>Stop's "Name"property is read-only.</value>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value>Error_RouteIsScheduled</value>
+  </data>
+  <data name="Error_UnsupportedExpressionTypeFormat" xml:space="preserve">
+    <value>Expression nodes of type '{0}' are not supported.</value>
+  </data>
+  <data name="Error_HostNameIsEmpty" xml:space="preserve">
+    <value>The host URI should not be empty.</value>
+  </data>
+  <data name="Error_DefaultRouteContainsInvalidDriver" xml:space="preserve">
+    <value>Driver is already in use for other route(s). Please check that routes with the same driver have different dates or times.</value>
+  </data>
+  <data name="Error_DefaultRouteContainsInvalidVehicle" xml:space="preserve">
+    <value>Vehicle is already in use for other route(s). Please check that routes with the same vehicle have different dates or times.</value>
+  </data>
+  <data name="Error_ScheduledRouteContainsInvalidDriver" xml:space="preserve">
+    <value>Driver is already in use for other route(s) for the day during the same time window.</value>
+  </data>
+  <data name="Error_InvalidBreaksTypes" xml:space="preserve">
+    <value>All the routes must have the same type of breaks (either time window based or max work time or max travel time).</value>
+  </data>
+  <data name="Error_ScheduledRouteContainsInvalidVehicle" xml:space="preserve">
+    <value>Vehicle is already in use for other route(s) for the day during the same time window.</value>
+  </data>
+  <data name="Error_StartExportTwice" xml:space="preserve">
+    <value>Only one export operation per moment supported.</value>
+  </data>
+  <data name="Error_InvalidBarrierEffectDelayTime" xml:space="preserve">
+    <value>Delay time must be greater than or equal to zero and less than or equal to 1 year.</value>
+  </data>
+  <data name="Error_InvalidSlowdown" xml:space="preserve">
+    <value>Slowdown % must be greater than or equal to {0}% and less than {1}%. If you need {2}% slowdown select Block Travel.</value>
+  </data>
+  <data name="Error_InvalidSpeedUp" xml:space="preserve">
+    <value>Speed up % must be greater than or equal to {0}% and less than or equal to {1}%.</value>
+  </data>
+  <data name="Error_UnsupportedAttrUnits" xml:space="preserve">
+    <value>Unsupported network attribute units.</value>
+  </data>
+  <data name="Warning_BarriersNotSupported" xml:space="preserve">
+    <value>Line/Shape barriers are not supported now and have been skipped.</value>
+  </data>
+  <data name="Error_BreaksHaveDifferentTypes" xml:space="preserve">
+    <value>All the breaks must have the same type.</value>
+  </data>
+  <data name="Error_InvalidBreakDuration" xml:space="preserve">
+    <value>{0} break duration must be greater than zero and less than or equal to 1 year.</value>
+  </data>
+  <data name="Error_InvalidBreakInterval" xml:space="preserve">
+    <value>{0} break 'After' value must be greater than zero and less than or equal to 1 year.</value>
+  </data>
+  <data name="Error_TimeIntervalsAreEqual" xml:space="preserve">
+    <value>{0} break can't have same "Break After" value as {1} break.</value>
+  </data>
+  <data name="Error_TimeIntervalsPlusDurationExceed" xml:space="preserve">
+    <value>{0} break and {1} break will overlap.</value>
+  </data>
+  <data name="Error_TimeWindowOverlap" xml:space="preserve">
+    <value>{0} break time window must not overlap the time window of {1} break.</value>
+  </data>
+  <data name="Error_TimeWindowPlusDurationOverlap" xml:space="preserve">
+    <value>{0} break time window plus duration must not overlap the time window of {1} break.</value>
+  </data>
+  <data name="Warning_UTurnPolicyNotSupported" xml:space="preserve">
+    <value>U-turn policy "at dead ends and intersections" is not supported now and it has been replaced with "at dead ends".</value>
+  </data>
+  <data name="Error_InvalidBreakGPFeatureCount" xml:space="preserve">
+    <value>Break GPFeature count is incorrect.</value>
+  </data>
+  <data name="Warning_DelayPointBarriersNotSupported" xml:space="preserve">
+    <value>Delay point barriers are not supported now and have been skipped.</value>
+  </data>
+  <data name="Error_ArgumentsNullException" xml:space="preserve">
+    <value>Either start or finish date must be not null.</value>
+  </data>
+  <data name="Error_VRP_StartLocationCannotBeVisited" xml:space="preserve">
+    <value>Start depot cannot be visited. Try to change route start time window or start depot time window.</value>
+  </data>
+  <data name="Error_VRP_TheBreakAndAllAfterItCannotBeVisited" xml:space="preserve">
+    <value>Breaks starting from {0} cannot be visited. Try to increase route max total duration or decrease breaks duration.</value>
+  </data>
+  <data name="Error_VRP_StartLocationCannotBeServiced" xml:space="preserve">
+    <value>Start depot cannot be serviced. Try to decrease route time at start or increase start depot time window.</value>
+  </data>
+  <data name="Error_VRP_LastBreakCannotBeVisited" xml:space="preserve">
+    <value>Last break cannot be visited. Try to increase route max total duration or decrease break duration.</value>
+  </data>
+  <data name="Error_VRP_AllBreaksCannotBeVisited" xml:space="preserve">
+    <value>All route's breaks cannot be visited. Try to change start time window or increase max total duration.</value>
+  </data>
+  <data name="Error_TimeWindowFromParameter" xml:space="preserve">
+    <value>Length of time window 'From' time span should be less than 24 hours.</value>
+  </data>
+  <data name="Error_TimeWindowParameters" xml:space="preserve">
+    <value>Invalid parameter(s) of Time Window.</value>
+  </data>
+  <data name="Error_VRP_BreakCannotBeVisited" xml:space="preserve">
+    <value>Route's break cannot be visited. Try to change start time window or increase max total duration.</value>
+  </data>
+  <data name="Error_VRP_FinishLocationCannotBeServiced" xml:space="preserve">
+    <value>End depot cannot be serviced. Try to decrease route time at end or increase end depot time window.</value>
+  </data>
+  <data name="Error_VRP_FinishLocationCannotBeVisited" xml:space="preserve">
+    <value>End depot cannot be visited. Try to increase route max total duration or change End depot time window.</value>
+  </data>
+  <data name="Error_VRP_MaxTotalDurationIsSmall" xml:space="preserve">
+    <value>Route max total duration is less or equal then time, which route will spend at start and end locations.</value>
+  </data>
+  <data name="Error_TimeWindowToParameter" xml:space="preserve">
+    <value>Length of time window 'To' time span should be less than 24 hours.</value>
+  </data>
+  <data name="Error_ReservedCustomOrderPropertyName" xml:space="preserve">
+    <value>{0} name '{1}' is reserved. Please select another name.</value>
+  </data>
+  <data name="Error_WrongConfigFormat" xml:space="preserve">
+    <value>Wrong configuration file format.</value>
+  </data>
+  <data name="Error_GetDiscoveryServiceConfigFailed" xml:space="preserve">
+    <value>Failed to get the discovery service configuration.</value>
+  </data>
+  <data name="Error_InvalidRegionInformation" xml:space="preserve">
+    <value>Invalid region information.</value>
+  </data>
+  <data name="Error_InvalidPointParameterFormat" xml:space="preserve">
+    <value>Point parameter string '{0}' should contain two and only two point coordinates.</value>
+  </data>
+  <data name="Error_InvalidTrackingConfig" xml:space="preserve">
+    <value>Invalid tracking configuration.</value>
+  </data>
+  <data name="Error_UnspecifiedTrackingServiceError" xml:space="preserve">
+    <value>Received unknown error from the Tracking Service.</value>
+  </data>
+  <data name="Error_InvalidTSDevicesIds" xml:space="preserve">
+    <value>Invalid mobile device IDs number in tracking service response.</value>
+  </data>
+  <data name="Error_FeatureLayerCannotApplyEdits" xml:space="preserve">
+    <value>Failed to apply edits to the \"{0}\" layer.</value>
+  </data>
+  <data name="Error_FeatureServiceUnknownLayerName" xml:space="preserve">
+    <value>The specified feature layer name cannot be found in the feature service.</value>
+  </data>
+  <data name="Erorr_GetJobResult" xml:space="preserve">
+    <value>Failed to get status for job {0}.</value>
+  </data>
+  <data name="Error_RoutesDeployment" xml:space="preserve">
+    <value>Routes cannot be deployed since they do not contain required tracking information.</value>
+  </data>
+  <data name="Error_InvalidTSVehicleIds" xml:space="preserve">
+    <value>Invalid vehicle IDs number in tracking service response.</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Warning_NoTrackingConfig" xml:space="preserve">
+    <value>Tracking configuration settings wasn't speicified.</value>
+  </data>
+  <data name="Error_MobileDeviceNameIsTooLong" xml:space="preserve">
+    <value>Mobile device name is too long.</value>
+  </data>
+</root>

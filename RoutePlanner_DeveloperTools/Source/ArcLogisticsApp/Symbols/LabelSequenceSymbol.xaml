@@ -1,0 +1,120 @@
+<ControlTemplate
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:sys="clr-namespace:System;assembly=mscorlib"
+       xmlns:converters="clr-namespace:ESRI.ArcLogistics.App.Converters;assembly=ESRI.ArcLogistics.App"
+       xmlns:esriConverters="clr-namespace:ESRI.ArcGIS.Client.ValueConverters;assembly=ESRI.ArcGIS.Client"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    <ControlTemplate.Resources>
+        
+        <converters:OrderViolatedPropertyConverter x:Key="isViolatedConverter"/>
+        <converters:MapSymbolLockedColorConverter x:Key="mapSymbolLockedColorConverter"/>
+        
+        <sys:Double x:Key="SymbolDisplacement">-15</sys:Double>
+        
+        <TextBlock SnapsToDevicePixels="True" FontSize="12" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" x:Key="contentText" Text="!" />
+        <esriConverters:DictionaryConverter x:Key="SequenceNumberConverter"/>
+
+        <Storyboard x:Key="OnMouseEnter1">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="innerBorder" Storyboard.TargetProperty="(Border.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1.2"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="innerBorder" Storyboard.TargetProperty="(Border.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1.2"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="OnMouseLeave">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="innerBorder" Storyboard.TargetProperty="(Border.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.2"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="innerBorder" Storyboard.TargetProperty="(Border.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.2"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </ControlTemplate.Resources>
+
+
+    <Grid Focusable="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" Width="30" Height="30">
+        <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="SelectionStates">
+                <VisualState x:Name="Selected">
+                    <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="outerBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
+                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                            <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                        </DoubleAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Unselected">
+                    <Storyboard>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RenderTransform>
+            <TranslateTransform X="{StaticResource SymbolDisplacement}" Y="{StaticResource SymbolDisplacement}"/>
+        </Grid.RenderTransform>
+       
+        <Border x:Name="innerBorder" 
+                Background="White" 
+                CornerRadius="1,1,1,1" 
+                BorderThickness="2,2,2,2" 
+                BorderBrush="{Binding Path=Attributes, Converter={StaticResource mapSymbolLockedColorConverter}, ConverterParameter='IsLocked', Mode=OneWay}" 
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                Width="18" 
+                Height="20" >
+                <Border.BitmapEffect>
+                    <DropShadowBitmapEffect Color="#FF4F5257" Direction="315" Opacity="100" ShadowDepth="1" Softness="0.2"/>
+                </Border.BitmapEffect>
+                <Border.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </TransformGroup>
+                </Border.LayoutTransform>
+            <Grid>
+                <TextBlock Text="{Binding Path=Attributes, Converter={StaticResource SequenceNumberConverter}, ConverterParameter='SequenceNumber', Mode=OneWay}" FontFamily="{DynamicResource DefaultApplicationFont}" FontSize="12"
+                                  SnapsToDevicePixels="True" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1,1,1,1"/>
+                <!-- Violation indicator -->
+                <TextBlock Text="{Binding Path=Attributes, Converter={StaticResource SequenceNumberConverter}, ConverterParameter='SequenceNumber', Mode=OneWay}" FontFamily="{DynamicResource DefaultApplicationFont}" FontSize="12"
+                                  SnapsToDevicePixels="True" 
+                           Foreground="Red"
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center" 
+                           Margin="1,1,1,1"
+                           Visibility="{Binding Path=Attributes, Converter={StaticResource isViolatedConverter}, ConverterParameter='IsViolated', Mode=OneWay}"
+                           />
+            </Grid>
+            </Border>
+        <Border x:Name="outerBorder" CornerRadius="2,2,2,2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="26" Height="28" BorderBrush="{DynamicResource SelectionColorBrush}" BorderThickness="3,3,3,3" Opacity="0">
+            <Border.BitmapEffect>
+                <DropShadowBitmapEffect Color="#FF4F5257" Direction="315" Opacity="100" ShadowDepth="3" Softness="0.2"/>
+            </Border.BitmapEffect>
+        </Border>
+    </Grid>
+
+    <ControlTemplate.Triggers>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseEnter1}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseLeave}"/>
+        </EventTrigger>
+
+        <EventTrigger RoutedEvent="DragDrop.DragEnter">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseEnter1}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="DragDrop.DragLeave">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseLeave}"/>
+        </EventTrigger>
+
+        <Trigger Property="IsEnabled" Value="false">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+        </Trigger>
+    </ControlTemplate.Triggers>
+</ControlTemplate>

@@ -1,0 +1,162 @@
+<ControlTemplate
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:converters="clr-namespace:ESRI.ArcLogistics.App.Converters;assembly=ESRI.ArcLogistics.App"
+       xmlns:esriConverters="clr-namespace:ESRI.ArcGIS.Client.ValueConverters;assembly=ESRI.ArcGIS.Client"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    <ControlTemplate.Resources>
+
+        <esriConverters:DictionaryConverter x:Key="Converter" />
+        <converters:OrderViolatedPropertyConverter x:Key="IsViolatedConverter"/>
+        <converters:MapSymbolLockedColorConverter x:Key="mapSymbolLockedColorConverter"/>
+        
+        <Storyboard x:Key="MouseEnter">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.8"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.8"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MouseLeave">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.8"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.8"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        
+    </ControlTemplate.Resources>
+    <Grid HorizontalAlignment="Center" 
+          VerticalAlignment="Center" 
+          RenderTransformOrigin="0.5,0.5" 
+          Focusable="False"
+          Width="{Binding Path=Attributes, Converter={StaticResource Converter}, ConverterParameter='FullSize', Mode=OneWay}"  
+          Height="{Binding Path=Attributes, Converter={StaticResource Converter}, ConverterParameter='FullSize', Mode=OneWay}" 
+          Background="{x:Null}">
+        <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="SelectionStates">
+                <VisualState x:Name="Selected">
+                    <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.Opacity)">
+                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                            <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                        </DoubleAnimationUsingKeyFrames>
+                     </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Unselected">
+                    <Storyboard>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                <TranslateTransform 
+                        X="{Binding Path=Attributes, Converter={StaticResource Converter}, ConverterParameter='OffsetX', Mode=OneWay}"  
+                        Y="{Binding Path=Attributes, Converter={StaticResource Converter}, ConverterParameter='OffsetY', Mode=OneWay}" />
+            </TransformGroup>
+        </Grid.RenderTransform> 
+
+        <Grid Margin="1" Width="Auto" 
+              Height="Auto" 
+              RenderTransformOrigin="0.5,0.5" 
+              x:Name="ellipse">
+            <Grid.RenderTransform>
+                    <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+                               </Grid.RenderTransform>
+            <Ellipse Opacity="0.2" Margin="0,0,0,0" Fill="#FF000000" Stroke="{x:Null}"/>
+            <Ellipse Margin="0,-1,0,1" Stroke="{x:Null}">
+                <Ellipse.Fill>
+                    <LinearGradientBrush EndPoint="0.892,0.925" StartPoint="0.125,0.092">
+                        <GradientStop Color="#FF1C1B1B" Offset="1"/>
+                        <GradientStop Color="#FFB2B2B2" Offset="0"/>
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse Margin="1,0,1,2" 
+                     Fill="{Binding Path=Attributes, Converter={StaticResource mapSymbolLockedColorConverter}, ConverterParameter='IsLocked', Mode=OneWay}" 
+                     Stroke="{x:Null}">
+                <Ellipse.BitmapEffect>
+                    <BitmapEffectGroup>
+                        <DropShadowBitmapEffect Color="#FF4F5257" Direction="315" Opacity="100" ShadowDepth="3" Softness="0.2"/>
+                    </BitmapEffectGroup>
+                </Ellipse.BitmapEffect>
+                <Ellipse.RenderTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Margin="2,1,2,3" Stroke="{x:Null}">
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <RadialGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="3.064" ScaleY="3.064"/>
+                                <SkewTransform AngleX="0" AngleY="0" CenterX="0.5" CenterY="0.5"/>
+                                <RotateTransform Angle="0" CenterX="0.5" CenterY="0.5"/>
+                                <TranslateTransform X="0.79" Y="0.968"/>
+                            </TransformGroup>
+                        </RadialGradientBrush.RelativeTransform>
+                        <GradientStop Color="#00F9F2F2" Offset="1"/>
+                        <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Grid>
+
+        <Ellipse Fill="{x:Null}" 
+                 Stroke="{DynamicResource SelectionColorBrush}" 
+                 Width="Auto" 
+                 Height="Auto" 
+                 RenderTransformOrigin="0.5,0.5" 
+                 Opacity="0" 
+                 x:Name="ellipse1" 
+                 StrokeThickness="3"
+                 Margin="0">
+            <Ellipse.BitmapEffect>
+                <DropShadowBitmapEffect Color="#FF4F5257" Direction="315" Opacity="100" ShadowDepth="1" Softness="0.2"/>
+            </Ellipse.BitmapEffect>
+            <Ellipse.RenderTransform>
+                <ScaleTransform ScaleX="1" ScaleY="1"/>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        
+        <!-- Violation indicator -->
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center"
+            Margin="1,0,1,1"
+            Width="8" 
+            Height="8"
+            Visibility="{Binding Path=Attributes, Converter={StaticResource IsViolatedConverter}, ConverterParameter='IsViolated', Mode=OneWay}">
+            <Ellipse Fill="#FFA91111" 
+                     Stroke="#FFA91111"
+                     Visibility="{Binding Path=Attributes, Converter={StaticResource IsViolatedConverter}, ConverterParameter='IsViolated', Mode=OneWay}"/>
+          
+        </Grid>
+
+    </Grid>
+    
+    <ControlTemplate.Triggers>
+
+        <EventTrigger RoutedEvent="Mouse.MouseEnter">
+            <BeginStoryboard Storyboard="{StaticResource MouseEnter}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave">
+            <BeginStoryboard Storyboard="{StaticResource MouseLeave}"/>
+        </EventTrigger>
+
+        <EventTrigger RoutedEvent="DragDrop.DragEnter">
+            <BeginStoryboard Storyboard="{StaticResource MouseEnter}"/>
+        </EventTrigger>
+        
+        <EventTrigger RoutedEvent="DragDrop.DragLeave">
+            <BeginStoryboard Storyboard="{StaticResource MouseLeave}"/>
+        </EventTrigger>
+
+    </ControlTemplate.Triggers>
+</ControlTemplate>

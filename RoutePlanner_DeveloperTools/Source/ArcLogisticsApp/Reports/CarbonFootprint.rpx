@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ActiveReportsLayout Version="3.1" PrintWidth="10108.8" MaxPages="200" DocumentName="ARNet Document" ScriptLang="C#" MasterReport="0">
+  <StyleSheet>
+    <Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; ddo-char-set: 204; " />
+    <Style Name="Heading1" Value="font-size: 16pt; font-weight: bold; ddo-char-set: 204; " />
+    <Style Name="Heading2" Value="font-family: Times New Roman; font-size: 14pt; font-weight: bold; font-style: italic; ddo-char-set: 204; " />
+    <Style Name="Heading3" Value="font-size: 13pt; font-weight: bold; ddo-char-set: 204; " />
+  </StyleSheet>
+  <Sections>
+    <Section Type="ReportHeader" Name="ReportHeader" Height="1005" BackColor="16777215">
+      <Control Type="AR.Label" Name="lblTitle" Left="0" Top="0" Width="4320" Height="540" Caption="Carbon Footprint" Style="ddo-char-set: 204; color: Teal; text-decoration: none; text-align: center; font-weight: bold; font-style: italic; font-size: 20.25pt; " />
+      <Control Type="AR.Line" Name="line3" X1="270" Y1="540" X2="4230" Y2="540" LineColor="8421376" LineWeight="2" />
+      <Control Type="AR.Label" Name="labelPrintDate" Left="1890" Top="630" Width="1170" Height="270" Caption="Print Date" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="lblComment1" Left="450" Top="630" Width="1440" Height="270" Caption="Print Date/Time:" Style="ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="labelPrintTime" Left="3060" Top="630" Width="990" Height="270" Caption="Print Time" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+    </Section>
+    <Section Type="PageHeader" Name="PageHeader" Height="434" BackStyle="1" BackColor="8421376" CanGrow="0">
+      <Control Type="AR.Label" Name="label2" Left="0" Top="90" Width="1440" Height="270" Caption="Route" Style="color: White; ddo-char-set: 204; text-align: left; font-weight: bold; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="label3" Left="1530" Top="90" Width="2250" Height="270" Caption="Vehicle" Style="color: White; ddo-char-set: 204; text-align: left; font-weight: bold; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="label4" Left="3870" Top="90" Width="1440" Height="270" Caption="Fuel Type" Style="color: White; ddo-char-set: 204; text-align: left; font-weight: bold; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="label5" Left="5400" Top="90" Width="810" Height="270" Caption="MPG" Style="color: White; ddo-char-set: 204; text-align: right; font-weight: bold; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="label6" Left="6300" Top="90" Width="1260" Height="270" Caption="Miles" Style="color: White; ddo-char-set: 204; text-align: right; font-weight: bold; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="label7" Left="7650" Top="90" Width="1260" Height="270" Caption="Cost" Style="color: White; ddo-char-set: 204; text-align: right; font-weight: bold; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="label8" Left="9000" Top="90" Width="1080" Height="270" Caption="Lbs of CO2" Style="color: White; ddo-char-set: 204; text-align: right; font-weight: bold; font-style: normal; font-size: 9pt; " />
+    </Section>
+    <Section Type="GroupHeader" Name="GroupHeader" Height="434" DataField="Schedule.ID" BackColor="16777215">
+      <Control Type="AR.Field" Name="lblScheduleDescription1" DataField="=PlannedDate.ToShortDateString();" Left="990" Top="90" Width="990" Height="270" Text="PlannedDate" OutputFormat="" CanGrow="0" Style="color: Teal; ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="label1" Left="90" Top="90" Width="900" Height="270" Caption="Schedule:" Style="color: Teal; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+    </Section>
+    <Section Type="Detail" Name="Detail" Height="330" BackColor="16777215" KeepTogether="1" CanGrow="0">
+      <Control Type="AR.Label" Name="lblFuelType" DataField="FuelType" Left="3870" Top="0" Width="1440" Height="270" Caption="FuelTypeName" Style="color: Black; ddo-char-set: 204; text-align: left; font-weight: normal; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxMiles" DataField="TotalMiles" Left="6300" Top="0" Width="1260" Height="270" Text="Miles" OutputFormat="#,##0.0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxMPG" DataField="FuelEconomy" Left="5400" Top="0" Width="810" Height="270" Text="MPG" OutputFormat="#,##0.0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxCost" DataField="TotalCost" Left="7650" Top="0" Width="1260" Height="270" Text="Cost" OutputFormat="$#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxCO2" DataField="TotalCO2Emission" Left="9000" Top="0" Width="1080" Height="270" Text="CO2" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="lblRouteName" DataField="Name" Left="0" Top="0" Width="1440" Height="270" Caption="RouteName" Style="color: Black; ddo-char-set: 204; text-align: left; font-weight: normal; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="lblVehicleName" DataField="VehicleName" Left="1530" Top="0" Width="2250" Height="270" Caption="VehicleName" Style="color: Black; ddo-char-set: 204; text-align: left; font-weight: normal; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+    </Section>
+    <Section Type="GroupFooter" Name="GroupFooter" Height="450" BackColor="16777215">
+      <Control Type="AR.Label" Name="lblTotal" Left="90" Top="90" Width="2700" Height="270" Caption="Schedule Summary" Style="color: Teal; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Field" Name="textBoxTotalCost" DataField="TotalCost" Left="7650" Top="90" Width="1260" Height="270" Text="TotalCost" OutputFormat="$#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxTotalMiles" DataField="TotalMiles" Left="6300" Top="90" Width="1260" Height="270" Text="TotalMiles" OutputFormat="#,##0.0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxTotalMPG" DataField="FuelEconomy" Left="5130" Top="90" Width="1080" Height="270" Text="TotalMPG" OutputFormat="#,##0.0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Field" Name="textBoxTotalCO2" DataField="TotalCO2Emission" Left="9000" Top="90" Width="1080" Height="270" Text="CO2" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="3" SummaryRunning="1" SummaryGroup="GroupHeader" />
+      <Control Type="AR.Line" Name="line1" X1="0" Y1="0" X2="10094.4" Y2="0" />
+    </Section>
+    <Section Type="PageFooter" Name="PageFooter" Height="330" BackColor="16777215">
+      <Control Type="AR.ReportInfo" Name="reportInfo1" Left="1440" Top="0" Width="7200" Height="270" FormatString="{PageNumber} of {PageCount}" Style="text-align: center; " />
+    </Section>
+    <Section Type="ReportFooter" Name="ReportFooter" Height="375" BackColor="16777215">
+      <Control Type="AR.Label" Name="lblReportSummary" Left="90" Top="90" Width="2700" Height="270" Caption="Report Summary" Style="color: Red; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Field" Name="textBoxTotalCostReport" DataField="TotalCost" Left="7650" Top="90" Width="1260" Height="270" Text="TotalCost" OutputFormat="$#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalMilesReport" DataField="TotalMiles" Left="6300" Top="90" Width="1260" Height="270" Text="TotalMiles" OutputFormat="#,##0.0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalMPGReport" DataField="FuelEconomy" Left="5130" Top="90" Width="1080" Height="270" Text="TotalMPG" OutputFormat="#,##0.0" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBoxTotalCO2Report" DataField="TotalCO2Emission" Left="9000" Top="90" Width="1080" Height="270" Text="CO2" OutputFormat="#,##0.00" CanGrow="0" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Line" Name="line4" X1="0" Y1="0" X2="10094.4" Y2="0" LineColor="8421376" LineWeight="2" />
+    </Section>
+  </Sections>
+  <ReportComponentTray />
+  <DataSources>
+    <OleDbDataSource ConnectE="13IdEUWXLb8jDY6d7T6jJYmDRKY5Eee4itGMLIPDLT+VBQkrRemRcHciYcI1dvBprE9fQStE8tu+isu2CxpLq60nUFW0DfO+2JqbUlMrmZBzNYCg0lK/2VTwRb+N2Jid385Ewa4c8Mt+7KgVjOhLTA==" SQL="SELECT * FROM `Route` `Route` INNER JOIN `Schedule` &#xD;&#xA;`Schedule` ON `Route`.`ScheduleID`=`Schedule`.`ID` ORDER BY `Schedule`.`PlannedDate`, `Route`.`Name`" />
+  </DataSources>
+  <Script><![CDATA[//private int  _rowNumber = 0;
+private const string SELECT_STRING_SCHEDULE = "SELECT ID FROM `Schedule` ";
+
+public void ActiveReport_ReportStart()
+{
+      ((Label)rpt.Sections["ReportHeader"].Controls["labelPrintDate"]).Text = DateTime.Now.ToShortDateString();
+      ((Label)rpt.Sections["ReportHeader"].Controls["labelPrintTime"]).Text = DateTime.Now.ToShortTimeString();
+ }
+ 
+ /*public void Detail_Format()
+{
+       if (_rowNumber % 2 == 0)
+           rpt.Sections["Detail"].BackColor = Color.LightYellow;
+       else
+           rpt.Sections["Detail"].BackColor = Color.Transparent;
+       ++_rowNumber;
+}*/
+
+public void ActiveReport_DataInitialize()
+{
+           rpt.Sections["GroupFooter"].Visible =  false;
+
+           System.Data.OleDb.OleDbConnection cnn = null;
+           System.Data.OleDb.OleDbDataReader reader = null;
+           try
+            {
+                DataDynamics.ActiveReports.DataSources.OleDBDataSource ds = (DataDynamics.ActiveReports.DataSources.OleDBDataSource)rpt.DataSource;
+
+                cnn = new System.Data.OleDb.OleDbConnection(ds.ConnectionString);
+                System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(SELECT_STRING_SCHEDULE, cnn);
+
+                if (cnn.State == System.Data.ConnectionState.Closed)
+                    cnn.Open();
+
+               int rowCount = 0;
+                reader = cmd.ExecuteReader();
+                while(reader.Read())
+                {
+                   ++rowCount;
+                   if (1 < rowCount)
+                   {
+                      rpt.Sections["GroupFooter"].Visible =  true;
+                      break;
+                   }
+                }
+            }
+            finally
+            {
+                if (null != reader)
+                   reader.Close();
+                if (null != cnn)
+                   cnn.Close();
+            }
+}]]></Script>
+  <PageSettings LeftMargin="720" RightMargin="720" TopMargin="720" BottomMargin="720" Orientation="1" />
+  <Parameters />
+</ActiveReportsLayout>

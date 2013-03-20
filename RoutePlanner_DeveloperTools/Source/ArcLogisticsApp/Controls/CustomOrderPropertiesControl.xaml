@@ -1,0 +1,93 @@
+﻿    <UserControl x:Class="ESRI.ArcLogistics.App.Controls.CustomOrderPropertiesControl"
+        x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+        xmlns:xceedControls="clr-namespace:Xceed.Wpf.Controls;assembly=Xceed.Wpf.Controls"
+        xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+        mc:Ignorable="d"
+        Height="Auto" Width="Auto">
+    <Grid x:Name="LayoutRoot" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="4,4,0,0">
+        <Grid.Resources>
+            <xcdg:DataGridCollectionViewSource x:Key="CustomOrderPropertiesDataGridColectionViewSource"
+                AutoCreateItemProperties="False"
+                CreatingNewItem="_DataGridCollectionViewSourceCreatingNewItem" 
+                NewItemCreated="_DataGridCollectionViewSourceNewItemCreated"
+                EditCommitted="_DataGridCollectionViewSourceEditCommitted"
+                CommittingNewItem="_DataGridCollectionViewSourceCommittingNewItem"
+                CancelingNewItem="_DataGridCollectionViewSourceCancelingNewItem"
+                NewItemCommitted="_DataGridCollectionViewSourceNewItemCommitted"
+                BeginningEdit="_DataGridCollectionViewSourceBeginningEdit"
+                CommittingEdit="_DataGridCollectionViewSourceCommittingEdit"/>
+
+            <VisualBrush x:Key="textBrush" Stretch="Uniform" TileMode="None" Viewport="10,0,180,25" ViewportUnits="Absolute">
+                <VisualBrush.Visual>
+                    <StackPanel Background="#00FFFFFF">
+                        <TextBlock Width="Auto" Height="Auto" FontSize="12" Foreground="DarkGray" Text="{DynamicResource CustomOrderPropertiesInsertionHelpText}"/>
+                    </StackPanel>
+                </VisualBrush.Visual>
+            </VisualBrush>
+
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Row 0 -->
+        <Button x:Name="_buttonDelete"
+            Grid.Row="0"
+            Grid.Column="0"
+            Content="{DynamicResource ButtonHeaderDelete}"
+            Width="{DynamicResource DefaultPageButtonWidth}"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            IsEnabled="False"
+            ToolTip="{DynamicResource DeleteCommandDisabledTooltip}"
+            IsEnabledChanged="_ButtonDeleteIsEnabledChanged"
+            Height="{DynamicResource DefaultPageButtonHeight}"
+            Click="_ButtonDeleteClick"
+            Margin="{DynamicResource PageButtonMargin}" />
+        
+        <!-- Row 1 -->
+        <app_controls:DataGridControlEx x:Name="_customOrderPropertiesXceedGrid"
+            IsEnabled="True"
+            Grid.Row="1"
+            Grid.Column="0"
+            Height="200"
+            MinHeight="100"
+            MaxHeight="300"
+            Margin="2,4,8,12"
+            FontSize="{DynamicResource MiddleFontSize}"
+            FontFamily="{DynamicResource DefaultApplicationFont}"
+            Grid.ColumnSpan="1"
+            HorizontalAlignment="Stretch"
+            ItemsSource="{Binding Source={StaticResource CustomOrderPropertiesDataGridColectionViewSource}}">
+            
+            <app_controls:DataGridControlEx.View>
+                <xcdg:TableView
+                    FixedColumnCount="1"
+                    ColumnStretchMode="Last"
+                    ShowFixedColumnSplitter="False">
+                    <xcdg:TableView.FixedHeaders>
+                        <DataTemplate>
+                            <xcdg:InsertionRow Initialized="_InsertionRowInitialized" Style="{StaticResource insertionStyle}"/>
+                        </DataTemplate>
+                    </xcdg:TableView.FixedHeaders>
+                </xcdg:TableView>
+            </app_controls:DataGridControlEx.View>
+        </app_controls:DataGridControlEx>
+        <Grid x:Name="_lockedGrid"
+            Margin="2,4,8,12"
+            Background="{DynamicResource LockedPageBackground}"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"/>
+    </Grid>
+</UserControl>

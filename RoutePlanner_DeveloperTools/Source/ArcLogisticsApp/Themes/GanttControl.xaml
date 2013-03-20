@@ -1,0 +1,162 @@
+﻿<ResourceDictionary
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:local="clr-namespace:ESRI.ArcLogistics.App.Controls" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+
+    <!-- Gantt control template. -->
+    <Style TargetType="{x:Type local:GanttControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:GanttControl}">
+                    <!-- Top-level grid. -->
+                    <Border BorderBrush="{DynamicResource ApplicationBorder}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid Background="White">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="24"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" MinWidth="10" MaxWidth="350"/>
+                                <ColumnDefinition Width="*" MinWidth="100"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Label with "Routes" text. -->
+                            <Border BorderBrush="{DynamicResource ApplicationBorder}"
+                                    BorderThickness="0,0,0,1"
+                                     Grid.Row="0"
+                                     Grid.Column="0">
+                                <Label FontSize="{DynamicResource MiddleFontSize}"
+                                   Foreground="{DynamicResource GanttCaptionBrush}"
+                                   Padding="2,2,2,2"
+                                   Content="{DynamicResource GanttItemsCaption}" 
+                                   x:Name="PART_HeaderLabel"
+                                   Width="Auto"
+                                   Height="Auto"/>
+                            </Border>
+                            <!-- List box with Gantt item Names -->
+                            <ScrollViewer VerticalScrollBarVisibility="Hidden"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          Grid.Column="0"
+                                          Grid.Row="1"
+                                          x:Name="PART_GanttItemsListScroller">
+                                <ListBox 
+                                      BorderThickness="0"
+                                      BorderBrush="{DynamicResource ApplicationBorder}"
+                                      AllowDrop="True"
+                                      VerticalContentAlignment="Stretch"
+                                      HorizontalAlignment="Stretch"
+                                      Margin="-2,-1,-2,0"
+                                      Padding="0"
+                                      x:Name="PART_GanttItemsList"
+                                      VerticalAlignment="Stretch"
+                                      ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                      MinWidth="10"
+                                      SelectionMode="Extended"
+                                      AlternationCount="2"
+                                      ItemContainerStyle="{DynamicResource GanttControlNamelistItemStyle}"/>
+                            </ScrollViewer>
+                            <!-- Vertical grid splitter. -->
+                            <GridSplitter
+                                Width="3"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                Background="Transparent"
+                                Focusable="False"/>
+
+                            <!-- Scroll viewer with Timeline. -->
+
+                            <Border BorderBrush="{DynamicResource ApplicationBorder}"
+                                    BorderThickness="1,0,0,1"
+                                    Margin="0,0,0,0"
+                                    Grid.Row="0"
+                                    Grid.Column="1">
+                                <ScrollViewer Background="{DynamicResource GanttHeaderBrush}"
+                                     MinWidth="100"
+                                     Margin="0"
+                                     BorderThickness="0"
+                                     BorderBrush="{DynamicResource ApplicationBorder}"
+                                     HorizontalAlignment="Stretch"
+                                     VerticalAlignment="Top"
+                                     x:Name="PART_TimeLabelsScroller"
+                                     SnapsToDevicePixels="True"
+                                     IsEnabled="False"
+                                     Height="24"
+                                     VerticalScrollBarVisibility="Hidden"
+                                     HorizontalScrollBarVisibility="Hidden">
+                                    <local:GanttTimeLinePanel
+                                        Width="Auto"
+                                        Height="24"
+                                        Margin="0,0,0,0"
+                                        SnapsToDevicePixels="True"
+                                        x:Name="PART_TimeLinePanel"
+                                        ScrollViewer.CanContentScroll="False" />
+                                </ScrollViewer>
+                            </Border>
+
+                            <!-- Scroll viewer with gantt item elements. -->
+                            <Border BorderBrush="{DynamicResource ApplicationBorder}"
+                                    BorderThickness="1,0,0,0"
+                                     Grid.Row="1"
+                                     Grid.Column="1">
+                                <ScrollViewer MinWidth="100"
+                                      Margin="0,0,0,0"
+                                      BorderThickness="1"
+                                      BorderBrush="{DynamicResource ApplicationBorder}"
+                                      x:Name="PART_GanttScroller"
+                                      VerticalScrollBarVisibility="Auto"
+                                      HorizontalScrollBarVisibility="Auto"
+                                      VerticalAlignment="Stretch"
+                                      HorizontalAlignment="Stretch"
+                                      SnapsToDevicePixels="True">
+                                        <Grid VerticalAlignment="Stretch"
+                                              x:Name="PART_GanttItemElementsContainerGrid"
+                                              HorizontalAlignment="Stretch"
+                                              Width="Auto" 
+                                              MinWidth="100"
+                                              Height="Auto" 
+                                              Background="White">
+                                        <ListBox 
+                                              BorderThickness="0"
+                                              BorderBrush="{DynamicResource ApplicationBorder}"
+                                              AllowDrop="True"
+                                              VerticalContentAlignment="Stretch"
+                                              HorizontalAlignment="Stretch"
+                                              Margin="-2,-1,-2,0"
+                                              Padding="0"
+                                              x:Name="PART_GanttAlternateRowPanel"
+                                              VerticalAlignment="Stretch"
+                                              ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                              MinWidth="10"
+                                              SelectionMode="Extended"
+                                              AlternationCount="2"
+                                              ItemContainerStyle="{DynamicResource GanttControlAlternateRowItemStyle}"/>
+                                        <local:GanttTimeRangesPanel x:Name="PART_TimeRangesPanel"
+                                                Background="Transparent"
+                                                AllowDrop="{TemplateBinding AllowDrop}"
+                                                Margin="0,0,0,0"
+                                                SnapsToDevicePixels="True" />
+                                        <local:GanttItemElementsContainer 
+                                                VerticalAlignment="Stretch"
+                                                HorizontalAlignment="Stretch"
+                                                x:Name="PART_GanttItemElementsContainer"/>
+										<local:GanttGlyphPanel
+                                                VerticalAlignment="Stretch"
+                                                HorizontalAlignment="Stretch"
+                                                SnapsToDevicePixels="True"
+                                                x:Name="PART_GanttGlyphPanel"/>
+                                    </Grid>
+                                </ScrollViewer>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

@@ -1,0 +1,100 @@
+<ResourceDictionary
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:app="clr-namespace:ESRI.ArcLogistics.App;assembly=ESRI.ArcLogistics.App"
+xmlns:arcLogistics="clr-namespace:ESRI.ArcLogistics;assembly=ESRI.ArcLogisticsNG"
+xmlns:sys="clr-namespace:System;assembly=mscorlib"
+xmlns:domainObjects="clr-namespace:ESRI.ArcLogistics.DomainObjects;assembly=ESRI.ArcLogisticsNG"
+xmlns:validation="clr-namespace:ESRI.ArcLogistics.App.Validators;assembly=ESRI.ArcLogistics.App"
+xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib">
+
+    <coll:ArrayList x:Key="itemProperties">
+        <xcdg:DataGridItemProperty Name="Name" />
+        <xcdg:DataGridItemProperty Name="StartTimeWindow" SortComparer="{StaticResource timeWindowComparer}"/>
+        <xcdg:DataGridItemProperty Name="Vehicle" />
+        <xcdg:DataGridItemProperty Name="Driver" />
+        <xcdg:DataGridItemProperty Name="Days" SortComparer="{StaticResource toStringComparer}"/>
+        <xcdg:DataGridItemProperty Name="Breaks"
+                                   SortComparer="{StaticResource breaksComparer}"/>
+        <xcdg:DataGridItemProperty Name="StartLocation" />
+        <xcdg:DataGridItemProperty Name="TimeAtStart" />
+        <xcdg:DataGridItemProperty Name="EndLocation" />
+        <xcdg:DataGridItemProperty Name="TimeAtEnd" />
+        <xcdg:DataGridItemProperty Name="RenewalLocations" 
+                                   SortComparer="{StaticResource toStringComparer}"
+                                   DataType="{app:GenericType TypeName='System.Collections.Generic.ICollection', TypeArguments='domainObjects:Location'}"/>
+        <xcdg:DataGridItemProperty Name="TimeAtRenewal" />
+        <xcdg:DataGridItemProperty Name="MaxOrders" DataType="{x:Type sys:Int32}" />
+        <xcdg:DataGridItemProperty Name="MaxTravelDistance" />
+        <xcdg:DataGridItemProperty Name="MaxTravelDuration" />
+        <xcdg:DataGridItemProperty Name="MaxTotalDuration" />
+        <xcdg:DataGridItemProperty Name="Color" SortComparer="{StaticResource colorComparer}"/>
+        <xcdg:DataGridItemProperty Name="Zones" 
+                                   SortComparer="{StaticResource toStringComparer}"
+                                   DataType="{app:GenericType TypeName='System.Collections.Generic.ICollection', TypeArguments='domainObjects:Zone'}"/>
+        <xcdg:DataGridItemProperty Name="HardZones" DataType="{x:Type sys:Boolean}"/>
+        <xcdg:DataGridItemProperty Name="Comment" DataType="{x:Type sys:String}"/>
+    </coll:ArrayList>
+
+    <coll:ArrayList x:Key="columns">
+        <xcdg:Column FieldName="Name" Title="{DynamicResource RouteNameColumnHeader}"/>
+        <xcdg:Column FieldName="StartTimeWindow" Title="{DynamicResource StartTimeWindowColumnHeader}" CellContentTemplate="{DynamicResource TimeWindowCell}" CellEditor="{DynamicResource RouteTimeWindowEditor}"/>
+        <xcdg:Column FieldName="Vehicle" Title="{DynamicResource VehicleColumnHeader}" CellContentTemplate="{DynamicResource VehicleCell}" CellEditor="{DynamicResource VehicleEditor}"/>
+        <xcdg:Column FieldName="Driver" Title="{DynamicResource DriverColumnHeader}" CellContentTemplate="{DynamicResource DriverCell}" CellEditor="{DynamicResource DriverEditor}"/>
+        <xcdg:Column FieldName="Days" Title="{DynamicResource DaysColumnHeader}" 
+                     CellEditor="{DynamicResource DaysCellEditor}"
+                     CellContentTemplate="{DynamicResource DefaultStringTemplate}"/>
+        <xcdg:Column FieldName="Breaks"
+                     Title="{DynamicResource BreakColumnHeader}"
+                     CellContentTemplate="{DynamicResource BreakCell}"
+                     CellEditor="{DynamicResource BreakEditor}"/>
+        <xcdg:Column FieldName="StartLocation" Title="{DynamicResource StartLocationColumnHeader}" CellContentTemplate="{DynamicResource LocationCell}" CellEditor="{DynamicResource LocationEditor}"/>
+        <xcdg:Column FieldName="TimeAtStart" 
+                     Title="{DynamicResource TimeatStartColumnHeader}" 
+                     CellContentTemplate="{DynamicResource UnitCellContentTemplate}"
+                     CellEditor="{DynamicResource UnitEditorTemplate}"/>
+        <xcdg:Column FieldName="EndLocation" Title="{DynamicResource EndLocationColumnHeader}" CellContentTemplate="{DynamicResource LocationCell}" CellEditor="{DynamicResource LocationEditor}"/>
+        <xcdg:Column FieldName="TimeAtEnd" 
+                     Title="{DynamicResource TimeAtEndColumnHeader}"
+                     CellContentTemplate="{DynamicResource UnitCellContentTemplate}" 
+                     CellEditor="{DynamicResource UnitEditorTemplate}"/>
+        <xcdg:Column FieldName="RenewalLocations" Title="{DynamicResource RenewalLocationsColumnHeader}" CellContentTemplate="{DynamicResource RenewalLocationsCell}" CellEditor="{DynamicResource RenewalLocationsEditor}"/>
+        <xcdg:Column FieldName="TimeAtRenewal" 
+                     Title="{DynamicResource TimeAtRenewalColumnHeader}"
+                     CellContentTemplate="{DynamicResource UnitCellContentTemplate}" 
+                     CellEditor="{DynamicResource UnitEditorTemplate}"/>
+        <xcdg:Column FieldName="MaxOrders" Title="{DynamicResource MaxOrdersColumnHeader}"
+                     CellContentTemplate="{DynamicResource DefaultStringTemplate}"/>
+        <xcdg:Column FieldName="MaxTravelDistance"
+                     Title="{DynamicResource MaxTravelDistanceColumnHeader}"
+                     CellContentTemplate="{DynamicResource UnitCellContentTemplate}" 
+                     CellEditor="{DynamicResource UnitEditorTemplate}"/>
+        <xcdg:Column FieldName="MaxTravelDuration" 
+                     Title="{DynamicResource MaxTravelDurationColumnHeader}"
+                     CellContentTemplate="{DynamicResource UnitCellContentTemplate}" 
+                     CellEditor="{DynamicResource UnitEditorTemplate}"/>
+        <xcdg:Column FieldName="MaxTotalDuration" 
+                     Title="{DynamicResource MaxTotalDurationColumnHeader}" 
+                     CellContentTemplate="{DynamicResource UnitCellContentTemplate}" 
+                     CellEditor="{DynamicResource UnitEditorTemplate}"/>
+        <xcdg:Column FieldName="Color" Title="{DynamicResource ColorColumnHeader}" Width="50" CellContentTemplate="{DynamicResource ColorCell}" CellEditor="{DynamicResource ColorCellEditor}"/>
+        <xcdg:Column FieldName="Zones" Title="{DynamicResource ZonesColumnHeader}" CellContentTemplate="{DynamicResource ZonesCell}" CellEditor="{DynamicResource ZonesEditor}"/>
+        <xcdg:Column FieldName="HardZones" Title="{DynamicResource HardZonesColumnHeader}"
+                     CellEditor="{DynamicResource DefaultCheckBoxEditor}"
+                     CellContentTemplate="{DynamicResource DefaultCheckBoxTemplate}"
+                     CellEditorDisplayConditions="MouseOverCell"/>
+        <xcdg:Column FieldName="Comment" Title="{DynamicResource CommentColumnHeader}"/>
+    </coll:ArrayList>
+
+    <!-- Page print configuration -->
+    <DataTemplate x:Key="printHeader">
+        <Label    
+                    Content="{DynamicResource DefaultRoutesPagePrintHeader}"
+                    HorizontalAlignment="Center"
+                    FontFamily="{DynamicResource DefaultApplicationFont}"
+                    FontWeight="Bold"
+                    FontSize="{DynamicResource LargeFontSize}"/>
+    </DataTemplate>
+
+</ResourceDictionary>

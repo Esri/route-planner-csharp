@@ -1,0 +1,20 @@
+ArcLogistics Plugin SDK Release Notes
+
+
+
+************
+May 06, 2011
+SDK Version 1.10
+
+All Samples and Tutorials have been updated for compliance with the updated version of ArcLogistics (Version 10.0.195.0)
+
+Major changes:
+
+1. Sample plugin projects now reference Dot Net 4.0
+2. Removed references to Breaks, since ArcLogistics has a new Breaks model
+3. Removed references to Curb Approach, since Orders no longer use Curb Approach property
+
+
+Note: The API Manual and OMDs have NOT been updated yet. 
+
+************

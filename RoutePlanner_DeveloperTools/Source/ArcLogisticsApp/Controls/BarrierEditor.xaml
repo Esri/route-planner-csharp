@@ -1,0 +1,124 @@
+﻿<UserControl x:Class="ESRI.ArcLogistics.App.Controls.BarrierEditor"
+             x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:xceedControls="clr-namespace:Xceed.Wpf.Controls;assembly=Xceed.Wpf.Controls">
+    <Border x:Name="Border"
+            CornerRadius="2,2,2,2"
+            Background="White"
+            BorderThickness="0">
+        <StackPanel Orientation="Vertical" Margin="4,4,0,8">
+                <RadioButton x:Name="BlockTravelButton"
+                             GroupName="BarrierEffect"
+                             Content="{DynamicResource BlockTravelString}"
+                             FontSize="{DynamicResource MiddleFontSize}"
+                             FontFamily="{DynamicResource DefaultApplicationFont}"
+                             Margin="4,4,4,8"
+                             Click="_RadioButtonClick"/>
+            <StackPanel x:Name="DelayPanel"
+                        Orientation="Horizontal"
+                        Margin="4,0,4,0">
+                <RadioButton x:Name="DelayButton"
+                             GroupName="BarrierEffect"
+                             Content="{DynamicResource DelayForString}"
+                             VerticalAlignment="Center"
+                             FontSize="{DynamicResource MiddleFontSize}"
+                             FontFamily="{DynamicResource DefaultApplicationFont}"
+                             Click="_RadioButtonClick"/>
+                <xceedControls:NumericTextBox x:Name="textBoxDelay"
+                                              FontSize="{DynamicResource MiddleFontSize}"
+                                              FontFamily="{DynamicResource DefaultApplicationFont}"
+                                              Height="{DynamicResource DefaultTextBoxHeight}"
+                                              NumberStyles="Number"                                              
+                                              ValueDataType="{x:Type sys:Double}"
+                                              Value="{Binding Path=BarrierEffect.DelayTime}"
+                                              AutoSelectBehavior="OnFocus"
+                                              Width="25"
+                                              NullValue="0"
+                                              VerticalAlignment="Top"
+                                              Margin="4,0,0,0"
+                                              MinWidth="50"
+                                              TextChanged="_NumericTextBoxTextChanged"/>
+                <TextBlock Text="{DynamicResource MinsString}"
+                           VerticalAlignment="Center"
+                           FontSize="{DynamicResource MiddleFontSize}"
+                           FontFamily="{DynamicResource DefaultApplicationFont}"
+                           Margin="4,0,0,0"/>
+            </StackPanel>
+            <Grid Margin="4,0,4,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+            
+                <RadioButton x:Name="SpeedUpButton"
+                             Grid.Column="0"
+                             GroupName="BarrierEffect"
+                             Content="{DynamicResource SpeedUpString}"
+                             VerticalAlignment="Center"
+                             FontSize="{DynamicResource MiddleFontSize}"
+                             FontFamily="{DynamicResource DefaultApplicationFont}"
+                             Click="_RadioButtonClick"/>
+                <xceedControls:NumericTextBox x:Name="textBoxSpeedUp"
+                                              Grid.Column="1"
+                                              FontSize="{DynamicResource MiddleFontSize}"
+                                              FontFamily="{DynamicResource DefaultApplicationFont}"
+                                              Height="{DynamicResource DefaultTextBoxHeight}"
+                                              MinWidth="50"
+                                              NumberStyles="Number"
+                                              AutoSelectBehavior="OnFocus"
+                                              Width="25"
+                                              NullValue="0"
+                                              VerticalAlignment="Top"
+                                              Margin="4,0,0,0"
+                                              TextChanged="_NumericTextBoxTextChanged"/>
+                <TextBlock x:Name="TextSpeedupPercent"
+                           Text="{DynamicResource PercentString}"
+                           Grid.Column="2"
+                           VerticalAlignment="Center"
+                           FontSize="{DynamicResource MiddleFontSize}"
+                           FontFamily="{DynamicResource DefaultApplicationFont}"
+                           Margin="4,0,0,0"/>
+
+                <RadioButton x:Name="SlowdownButton"
+                             Margin="0,4,0,0"
+                             Grid.Row="1"
+                             Grid.Column="0"
+                             GroupName="BarrierEffect"
+                             Content="{DynamicResource SlowdownString}"
+                             VerticalAlignment="Center"
+                             FontSize="{DynamicResource MiddleFontSize}"
+                             FontFamily="{DynamicResource DefaultApplicationFont}"
+                             Click="_RadioButtonClick"/>
+                <xceedControls:NumericTextBox x:Name="textBoxSlowdown"
+                                              Grid.Row="1"
+                                              Grid.Column="1"
+                                              FontSize="{DynamicResource MiddleFontSize}"
+                                              FontFamily="{DynamicResource DefaultApplicationFont}"
+                                              Height="{DynamicResource DefaultTextBoxHeight}"
+                                              MinWidth="50"
+                                              NumberStyles="Number"
+                                              AutoSelectBehavior="OnFocus"
+                                              Width="25"
+                                              NullValue="0"
+                                              VerticalAlignment="Top"
+                                              Margin="4,4,0,0"
+                                              TextChanged="_NumericTextBoxTextChanged"/>
+                <TextBlock x:Name="TextSlowdownPercent"
+                           Text="{DynamicResource PercentString}"
+                           Grid.Row="1"
+                           Grid.Column="2"
+                           VerticalAlignment="Center"
+                           FontSize="{DynamicResource MiddleFontSize}"
+                           FontFamily="{DynamicResource DefaultApplicationFont}"
+                           Margin="4,4,0,0"/>
+            </Grid>
+        </StackPanel>
+    </Border>
+</UserControl>

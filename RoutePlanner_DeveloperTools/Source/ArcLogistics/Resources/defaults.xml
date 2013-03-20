@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DefaultConfiguration>
+  <CapacitiesConfiguration>
+    <Capacity Name="Weight" DisplayUnitUS="Pound" DisplayUnitMetric="Kilogram" />
+    <Capacity Name="Volume" DisplayUnitUS="CubicFoot" DisplayUnitMetric="CubicMeter" />
+  </CapacitiesConfiguration>
+  <FuelTypesConfiguration>
+    <FuelType Name="Gas" Price="3.91" Co2Emission="19.4" />
+    <FuelType Name="Diesel" Price="4.13" Co2Emission="22.2" />
+  </FuelTypesConfiguration>
+  <Locations>
+    <CurbApproach>Both</CurbApproach>
+    <TimeWindow IsWideopen="true" />
+  </Locations>
+  <Orders>
+    <Type>Delivery</Type>
+    <Priority>Normal</Priority>
+    <CurbApproach>Both</CurbApproach>
+    <ServiceTime>5</ServiceTime>
+    <TimeWindow IsWideopen="true" />
+    <TimeWindow2 IsWideopen="true" />
+  </Orders>
+  <Routes>
+    <StartTimeWindow IsWideopen="false" From="07:00" To="08:00" />
+    <BreakDuration>30</BreakDuration>
+    <BreakTimeWindow IsWideopen="false" From="12:00" To="13:00" />
+    <TimeAtStart>0</TimeAtStart>
+    <TimeAtEnd>0</TimeAtEnd>
+    <TimeAtRenewal>0</TimeAtRenewal>
+    <MaxOrder>25</MaxOrder>
+    <MaxTravelDistance>200</MaxTravelDistance>
+    <MaxTravelDuration>720</MaxTravelDuration>
+    <MaxTotalDuration>720</MaxTotalDuration>
+  </Routes>
+  <Vehicles>
+    <FuelEconomy>12</FuelEconomy>
+    <Capacities>
+      <Capacity Name="Weight" Value="2000" />
+      <Capacity Name="Volume" Value="100" />
+    </Capacities>
+  </Vehicles>
+  <Drivers>
+    <PerHour>16</PerHour>
+    <PerHourOT>24</PerHourOT>
+    <TimeBeforeOT>480</TimeBeforeOT>
+  </Drivers>
+  <CustomOrderProperties>
+    <Property Name="Order Number" Type="Text" MaxLength="15" Description="User-defined order number." OrderPairKey="false" />
+        <Property Name="Home Phone" Type="Text" MaxLength="20" Description="Home phone number for the order contact." OrderPairKey="false" />
+        <Property Name="Description" Type="Text" MaxLength="25" Description="User-defined field for describing the order." OrderPairKey="false" />
+        <Property Name="Comment" Type="Text" MaxLength="35" Description="User-defined field for order comments." OrderPairKey="false" />
+  </CustomOrderProperties>
+</DefaultConfiguration>

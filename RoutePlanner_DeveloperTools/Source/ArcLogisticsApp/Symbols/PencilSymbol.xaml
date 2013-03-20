@@ -1,0 +1,115 @@
+<ControlTemplate
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+
+  
+    <Grid Focusable="False" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24" Height="24" RenderTransformOrigin="0.5,0.5" Background="Transparent">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                <SkewTransform AngleX="0" AngleY="0"/>
+                <RotateTransform Angle="0"/>
+                <TranslateTransform X="-2" Y="-22"/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Canvas Width="24.000" Height="24.000">
+
+            <Canvas>
+
+                <!-- Layer 1/<Path> -->
+                <Path Data="F1 M 24.000,24.000 L 0.000,24.000 L 0.000,0.000 L 24.000,0.000 L 24.000,24.000 Z"/>
+
+                <!-- Layer 1/<Path> -->
+                <Path Opacity="0.2" Fill="#ff000000" Data="F1 M 22.630,4.802 L 21.216,3.388 C 20.824,2.997 20.222,2.968 19.831,3.358 L 16.266,6.923 L 3.350,19.840 L 1.219,22.975 L 6.178,22.668 L 19.094,9.751 L 21.215,7.630 L 22.630,6.216 C 22.783,6.063 22.889,5.839 22.921,5.640 L 22.921,5.319 C 22.887,5.120 22.783,4.956 22.630,4.802 Z"/>
+
+                <Canvas>
+
+                    <!-- Layer 1/<Group>/<Path> -->
+                    <Path Data="F1 M 19.094,7.937 L 16.266,5.108 L 18.387,2.987 L 21.215,5.815 L 19.094,7.937 Z">
+                        <Path.Fill>
+                            <LinearGradientBrush MappingMode="Absolute" StartPoint="344.332,194.260" EndPoint="348.331,194.260">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Offset="0.00" Color="#ff898989"/>
+                                    <GradientStop Offset="0.36" Color="#ffd3d3d3"/>
+                                    <GradientStop Offset="0.71" Color="#ff191919"/>
+                                    <GradientStop Offset="1.00" Color="#ff1d1e1e"/>
+                                </LinearGradientBrush.GradientStops>
+                                <LinearGradientBrush.Transform>
+                                    <MatrixTransform Matrix="0.707,0.707,0.707,-0.707,-363.512,-102.067" />
+                                </LinearGradientBrush.Transform>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+
+                    <Canvas>
+
+                        <!-- Layer 1/<Group>/<Group>/<Path> -->
+                        <Path Data="F1 M 3.350,18.025 L 1.229,22.975 L 6.178,20.854 L 3.350,18.025 Z">
+                            <Path.Fill>
+                                <LinearGradientBrush MappingMode="Absolute" StartPoint="344.332,171.994" EndPoint="348.332,171.994">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Offset="0.00" Color="#ffd8b064"/>
+                                        <GradientStop Offset="0.39" Color="#ffffeac3"/>
+                                        <GradientStop Offset="1.00" Color="#ff793900"/>
+                                    </LinearGradientBrush.GradientStops>
+                                    <LinearGradientBrush.Transform>
+                                        <MatrixTransform Matrix="0.707,0.707,0.707,-0.707,-363.512,-102.067" />
+                                    </LinearGradientBrush.Transform>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+
+                        <!-- Layer 1/<Group>/<Group>/<Path> -->
+                        <Path Data="F1 M 2.306,20.461 L 1.229,22.975 L 3.742,21.898 L 2.306,20.461 Z">
+                            <Path.Fill>
+                                <LinearGradientBrush MappingMode="Absolute" StartPoint="295.442,272.387" EndPoint="297.475,272.387">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Offset="0.00" Color="#ff4c4c4c"/>
+                                        <GradientStop Offset="1.00" Color="#ff000000"/>
+                                    </LinearGradientBrush.GradientStops>
+                                    <LinearGradientBrush.Transform>
+                                        <MatrixTransform Matrix="0.707,0.707,0.707,-0.707,-400.104,5.057" />
+                                    </LinearGradientBrush.Transform>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+
+                        <!-- Layer 1/<Group>/<Group>/<Path> -->
+                        <Path Data="F1 M 22.921,3.505 C 22.887,3.306 22.783,3.142 22.630,2.987 L 21.216,1.573 C 20.824,1.183 20.222,1.153 19.831,1.544 L 18.387,2.987 L 21.215,5.815 L 22.630,4.401 C 22.783,4.249 22.889,4.024 22.921,3.825 L 22.921,3.505 Z">
+                            <Path.Fill>
+                                <LinearGradientBrush MappingMode="Absolute" StartPoint="317.342,415.473" EndPoint="320.171,412.644">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Offset="0.00" Color="#fff58484"/>
+                                        <GradientStop Offset="0.15" Color="#fffaa6a6"/>
+                                        <GradientStop Offset="0.38" Color="#ffffc8c8"/>
+                                        <GradientStop Offset="0.48" Color="#fffaa7a7"/>
+                                        <GradientStop Offset="0.58" Color="#fff58686"/>
+                                        <GradientStop Offset="1.00" Color="#ff511a19"/>
+                                    </LinearGradientBrush.GradientStops>
+                                    <LinearGradientBrush.Transform>
+                                        <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,-297.895,417.399" />
+                                    </LinearGradientBrush.Transform>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+
+                    </Canvas>
+
+                    <!-- Layer 1/<Group>/<Path> -->
+                    <Path Fill="#fff9ecae" Data="F1 M 4.057,18.732 L 3.350,18.025 L 16.266,5.108 L 16.973,5.815 L 4.057,18.732 Z"/>
+
+                    <!-- Layer 1/<Group>/<Path> -->
+                    <Path Fill="#ffefd677" Data="F1 M 5.471,20.146 L 4.057,18.732 L 16.973,5.815 L 18.387,7.229 L 5.471,20.146 Z"/>
+
+                    <!-- Layer 1/<Group>/<Path> -->
+                    <Path Fill="#ff79512a" Data="F1 M 6.178,20.854 L 5.471,20.146 L 18.387,7.229 L 19.094,7.937 L 6.178,20.854 Z"/>
+
+                </Canvas>
+
+            </Canvas>
+        </Canvas>
+
+    </Grid>
+
+</ControlTemplate>

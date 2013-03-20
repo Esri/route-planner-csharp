@@ -1,0 +1,88 @@
+﻿<Grid x:Class="ESRI.ArcLogistics.App.Pages.SpecialtiesPanelBase"
+      x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+    Height="Auto" Width="Auto" SnapsToDevicePixels="True">
+    <!-- Top-level grid with name "LayoutRoot" is required -->
+    <Grid x:Name="LayoutRoot" >
+        <Grid.Resources>
+            <!-- Secialties grid source (required) -->
+            <xcdg:DataGridCollectionViewSource x:Key="specialtiesSource"
+                                               AutoCreateItemProperties="False"
+                                               
+                                               BeginningEdit="DataGridCollectionViewSource_BeginningEdit"
+                                               EditBegun="DataGridCollectionViewSource_EditBegun"
+                                               CommittingEdit="DataGridCollectionViewSource_CommittingEdit"
+                                               EditCommitted="DataGridCollectionViewSource_EditCommitted"
+                                               EditCanceled="DataGridCollectionViewSource_EditCanceled"
+                                               CreatingNewItem="DataGridCollectionViewSource_CreatingNewItem"
+                                               NewItemCreated="DataGridCollectionViewSource_NewItemCreated"
+                                               CommittingNewItem="DataGridCollectionViewSource_CommittingNewItem"
+                                               NewItemCommitted="DataGridCollectionViewSource_NewItemCommitted"
+                                               CancelingNewItem="DataGridCollectionViewSource_CancelingNewItem"
+                                               NewItemCanceled="DataGridCollectionViewSource_NewItemCanceled"
+                                               CancelingEdit="DataGridCollectionViewSource_CancelingEdit"
+                                               />
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Command buttons group (required) -->
+        <!--<StackPanel Margin="{DynamicResource FunctionalGridButtonsStackMargin}" Orientation="Horizontal" Grid.Row="0">-->
+
+        <Label HorizontalAlignment="Left" 
+               Margin="2,0,0,0" 
+               Width="Auto" 
+               Height="Auto"
+               x:Name="headerLabel"
+               FontSize="{StaticResource LargeFontSize}"
+               FontFamily="{StaticResource DefaultApplicationFont}"
+               Foreground="{StaticResource LockedPageLabelForeground}" 
+               VerticalAlignment="Center" 
+               Grid.Row="0" Grid.Column="0"/>
+        <app_controls:CommandButtonGroup Grid.Row="1"
+                                             Margin="{StaticResource FunctionalGridButtonsStackMargin}"
+                                             x:Name="commandButtonsGroup" Grid.Column="0"/>
+        <!--</StackPanel>-->
+        <!-- Panel's grid (required) -->
+        <Border HorizontalAlignment="Stretch" 
+                Width="Auto" 
+                Grid.Row="2" 
+                SnapsToDevicePixels="True"
+                BorderThickness="{StaticResource GridBorderThickness}" 
+                BorderBrush="{StaticResource ApplicationBorder}" 
+                Grid.ColumnSpan="2"
+                Margin="4,0,4,4">
+
+            <!-- TODO: AutoCreateColumns="True" because in v 3.2 grid doesn't find default cell editors for null objects
+            http://xceed.com/CS/forums/thread/22484.aspx-->
+            <app_controls:DataGridControlEx x:Name="XceedGrid"
+                                        AutoCreateColumns="True"
+                                        ItemsSource="{Binding Source={StaticResource specialtiesSource}}"
+                                        Grid.Row="1"
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch">
+                <xcdg:DataGridControl.View>
+                    <xcdg:TableView
+                                    ColumnStretchMode="Last">
+                        <xcdg:TableView.FixedHeaders>
+                            <DataTemplate>
+                                <xcdg:InsertionRow Style="{StaticResource insertionStyle}" Loaded="InsertionRow_Loaded"/>
+                            </DataTemplate>
+                        </xcdg:TableView.FixedHeaders>
+                    </xcdg:TableView>
+                </xcdg:DataGridControl.View>
+            </app_controls:DataGridControlEx>
+        </Border>
+    </Grid>
+</Grid>

@@ -1,0 +1,4156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ReportPreviewTopLevelSaveDone" xml:space="preserve">
+    <value>All the reports were succesfully saved.</value>
+  </data>
+  <data name="DriverColumnHeader" xml:space="preserve">
+    <value>Driver</value>
+  </data>
+  <data name="ImportAliasesPropertyMobileDevice" xml:space="preserve">
+    <value>Mobile Device</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="Break" xml:space="preserve">
+    <value>Break</value>
+  </data>
+  <data name="OrdersPageCaption" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="PreferencesButtonString" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="ResourceCenterButtonTitle" xml:space="preserve">
+    <value>Visit the Resource Center for support.</value>
+  </data>
+  <data name="UnableToSelectRoutesAndOrdersMessage" xml:space="preserve">
+    <value>Unable to select both routes and orders (stops) at the same time.</value>
+  </data>
+  <data name="DeploymentCategoryCaption" xml:space="preserve">
+    <value>Deployment</value>
+  </data>
+  <data name="TimeIntervalBreakMinutesLabel" xml:space="preserve">
+    <value> minutes break after</value>
+  </data>
+  <data name="ImportAliasesPropertyOrderType" xml:space="preserve">
+    <value>Order Type</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="MobileDeviceAssignedToVehicle" xml:space="preserve">
+    <value>Mobile Device '{0}' is assigned to 1 or more Vehicles. Please unassign before deleting or those Vehicles will become invalid.</value>
+  </data>
+  <data name="ReportPreviewPreviewFailFormat" xml:space="preserve">
+    <value>Unable to preview report '{0}'.</value>
+  </data>
+  <data name="CancelRoutingOperationCmdToolTip" xml:space="preserve">
+    <value>Cancel current routing operation</value>
+  </data>
+  <data name="UpdateLicenseLinkText" xml:space="preserve">
+    <value>To upgrade or renew your license, please click here.</value>
+  </data>
+  <data name="ClearButtonHeader" xml:space="preserve">
+    <value>Clear Custom Colors</value>
+  </data>
+  <data name="ReportsSaveDescription" xml:space="preserve">
+    <value>Select folder to reports saving:</value>
+  </data>
+  <data name="ButtonHeaderIgnore" xml:space="preserve">
+    <value>Ignore</value>
+  </data>
+  <data name="OvertimeColumnHeader" xml:space="preserve">
+    <value>Overtime</value>
+  </data>
+  <data name="RouteAffectsRoutingPropertyChangedMessage" xml:space="preserve">
+    <value>Route {0} may no longer be valid based on your change and will need to be rebuilt to accommodate the change.</value>
+  </data>
+  <data name="ImportVehiclesCommandTitle" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="BuildSucceeded" xml:space="preserve">
+    <value>Build Routes succeeded.</value>
+  </data>
+  <data name="ValueValidationRuleText" xml:space="preserve">
+    <value>Same value already exist.</value>
+  </data>
+  <data name="MaxTotalDistanceAnyRoutesViolationMessage" xml:space="preserve">
+    <value>{0} could not be moved to any route. Max Travel Distance exceeded.</value>
+  </data>
+  <data name="ProxyAuthenticationRequiredTitle" xml:space="preserve">
+    <value>Proxy Authentication Required</value>
+  </data>
+  <data name="GeneralPreferences_ProxyUseAuthentication" xml:space="preserve">
+    <value>Enable proxy authentication</value>
+  </data>
+  <data name="VehiclesPageInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Vehicle</value>
+  </data>
+  <data name="ImportAliasesPropertyVehicle" xml:space="preserve">
+    <value>Vehicle</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ImportAliasesFuelType" xml:space="preserve">
+    <value>FuelType,Fuel Type,Type</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="RoutesGridCaptionMaxTravelDistance" xml:space="preserve">
+    <value>Max Travel Distance</value>
+  </data>
+  <data name="PreferencePanelLinkText" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="UpgradeAccountButtonString" xml:space="preserve">
+    <value>Upgrade Account</value>
+  </data>
+  <data name="ShapeBarrierLabel" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="ServiceResponseTimeout" xml:space="preserve">
+    <value>Route Planner cannot get response from {0} service for a long time, please try again later.</value>
+  </data>
+  <data name="FleetSetupWizardRoutesPageWorkTimeLabel" xml:space="preserve">
+    <value>Start Time Window:</value>
+  </data>
+  <data name="TimeColumnHeader" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="ActiveReportsStatusSelectionFormat" xml:space="preserve">
+    <value>Current Selection: {0}</value>
+  </data>
+  <data name="Zones" xml:space="preserve">
+    <value>Zones</value>
+  </data>
+  <data name="ReportsUserInvalidWarning" xml:space="preserve">
+    <value>Some user reports could not be loaded and have been reverted to default configuration.</value>
+  </data>
+  <data name="Breaks" xml:space="preserve">
+    <value>Breaks</value>
+  </data>
+  <data name="ServiceTemporaryUnavailable" xml:space="preserve">
+    <value>{0} service is temporarily unavailable, please try again later.</value>
+  </data>
+  <data name="ImportProcessCanceledQuestion" xml:space="preserve">
+    <value>Do you really want to cancel the import process?</value>
+  </data>
+  <data name="DriverSpecialtiesHeader" xml:space="preserve">
+    <value>Driver Specialties</value>
+  </data>
+  <data name="EditingInProcessExceptionMessage" xml:space="preserve">
+    <value>Unable to change the selection while editing is in progress.</value>
+  </data>
+  <data name="ExportSolveOperationDetected" xml:space="preserve">
+    <value>Please wait until building routes on this date completes and try again.</value>
+  </data>
+  <data name="VehiclesGridCommentCaption" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="VehicleAssignedToFutureRoute" xml:space="preserve">
+    <value>Vehicle '{0}' is assigned to 1 or more Routes for today or future dates. Please unassign before deleting or those Routes will become invalid.</value>
+  </data>
+  <data name="Routes" xml:space="preserve">
+    <value>Routes</value>
+  </data>
+  <data name="BackNavigationButtonTooltip" xml:space="preserve">
+    <value>Back to {0} page</value>
+  </data>
+  <data name="VehicleSpecialitiesRouteViolationMessage" xml:space="preserve">
+    <value>Route: {0} has an infeasible order preassignment. Vehicle specialties discrepancy with orders: {1}.</value>
+  </data>
+  <data name="ImportAliasesX" xml:space="preserve">
+    <value>X,LON,LONG,Longitude</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ImportAliasesFixedCost" xml:space="preserve">
+    <value>Fixed Cost,FixedCost,Cost,Fixed Salary,FixedSalary,Salary</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="BlackSkinButton" xml:space="preserve">
+    <value>Black Skin</value>
+  </data>
+  <data name="ArchiveMessageRoutingOperationsInProgress" xml:space="preserve">
+    <value>Can't archive the current project while routing operations are in progress.</value>
+  </data>
+  <data name="BuildRoutes" xml:space="preserve">
+    <value>Building routes...</value>
+  </data>
+  <data name="ImportProcessStatisticImported" xml:space="preserve">
+    <value>imported</value>
+  </data>
+  <data name="MapDisplayPreferencesPageStraightLines" xml:space="preserve">
+    <value>Straight lines</value>
+  </data>
+  <data name="LicenseNotesHeader" xml:space="preserve">
+    <value>Licensing Route Planner</value>
+  </data>
+  <data name="ImportAliasesFuelEconomy" xml:space="preserve">
+    <value>Fuel Economy,FuelEconomy,FuelEconom,Econom,Economy,Fuel Consumption,FuelConsumption,FuelConsum,Fuel,Consum,Consumption</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="SetupCategoryCaption" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="ImportProfileInvalidTableName" xml:space="preserve">
+    <value>Table name no longer exists.</value>
+  </data>
+  <data name="MonthsOldString" xml:space="preserve">
+    <value>month(s) old</value>
+  </data>
+  <data name="LogCopied" xml:space="preserve">
+    <value>{0} successfully written to Desktop.</value>
+  </data>
+  <data name="OrderSuccessfullyAssignedToRoute" xml:space="preserve">
+    <value>{0} moved to {1}.</value>
+  </data>
+  <data name="DeletingFailedCommonMessage" xml:space="preserve">
+    <value>Failed to delete order(s). They cannot be unassigned from '{0}' schedule. Please fix the issues and try again.</value>
+  </data>
+  <data name="ConstraintsCheckerDriverSpecRouteMessageFmt" xml:space="preserve">
+    <value>Driver specialties discrepancy. Driver: {0} doesn't have the required specialties for order: {1}. Missing specialties: {2}.</value>
+  </data>
+  <data name="LoginToServerString" xml:space="preserve">
+    <value>Login to {0}</value>
+  </data>
+  <data name="ReRunBreaksWizardCommandEnabledTooltip" xml:space="preserve">
+    <value>Re-run wizard in which you could select breaks type</value>
+  </data>
+  <data name="OrderMovingOperationCompletedText" xml:space="preserve">
+    <value>'{0}' moved to {1}.</value>
+  </data>
+  <data name="FuelGridPriceCaption" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="BarriersTypeExceptionMessage" xml:space="preserve">
+    <value>All items must be Barriers.</value>
+  </data>
+  <data name="VehicleGridFuelConsumptionCaption" xml:space="preserve">
+    <value>Fuel Economy</value>
+  </data>
+  <data name="ImportProfilesEditPageChooseSourceLabelFormat" xml:space="preserve">
+    <value>Choose a file to import {0} from below.</value>
+  </data>
+  <data name="ImportProfileInvalidFieldMapping" xml:space="preserve">
+    <value>Invalid field mapping.</value>
+  </data>
+  <data name="MaxTotalTravelTimeAnyRoutesViolationMessage" xml:space="preserve">
+    <value>{0} could not be moved to any route. Max Travel Duration exceeded.</value>
+  </data>
+  <data name="ImportProfilesEditPageFieldMappingLabel" xml:space="preserve">
+    <value>Match the field names in your files to the field names that Route Planner uses.</value>
+  </data>
+  <data name="SubscriptionExpirationDate" xml:space="preserve">
+    <value>Subscription expiration date: </value>
+  </data>
+  <data name="FleetSetupWizardOrdersPageText2" xml:space="preserve">
+    <value>Please note that you must either locate all orders or delete ones which cannot be located before you can proceed.</value>
+  </data>
+  <data name="MapDisplayPreferencesPageLabelTips" xml:space="preserve">
+    <value>Tips:</value>
+  </data>
+  <data name="ShowReportsCommandTitle" xml:space="preserve">
+    <value>Preview / Print / Save Reports</value>
+  </data>
+  <data name="ImportLabelImporting" xml:space="preserve">
+    <value>Importing {0}...</value>
+  </data>
+  <data name="DataSourceNotFoundFormat" xml:space="preserve">
+    <value>Data source '{0}' doesn't exist.</value>
+  </data>
+  <data name="WorkTimeText" xml:space="preserve">
+    <value>This break is similiar to Max travel time based breaks, but allows you to set breaks after the driver works a specific amount of time. This includes both drive time and time servicing orders.
+Example:  A driver must take a 30 minute break after travelling and servicing orders for 6 hours.</value>
+  </data>
+  <data name="FleetSetupWizardCandidatesFoundSubPageText3" xml:space="preserve">
+    <value>To update your {0} with the provided address, select the appropriate address and click "Update"</value>
+  </data>
+  <data name="ImportAliasesPropertyRenewalDepots" xml:space="preserve">
+    <value>Renewal Depots</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="DeletingOrdersStatus" xml:space="preserve">
+    <value>Deleting orders...</value>
+  </data>
+  <data name="NameValidationRuleDriverText" xml:space="preserve">
+    <value>A driver with the same name already exists</value>
+  </data>
+  <data name="OrderUnassigningCompleteSuccessfulMessage" xml:space="preserve">
+    <value>'{0}' moved to Unassigned Orders from '{1}' schedule.</value>
+  </data>
+  <data name="ExportProfilesEditPageTypeRoutes" xml:space="preserve">
+    <value>Routes</value>
+  </data>
+  <data name="DefaultProjectName" xml:space="preserve">
+    <value>Default Project</value>
+  </data>
+  <data name="CancelRoutingOperationCmdTitle" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="SpecialtiesColumnHeader" xml:space="preserve">
+    <value>Specialties</value>
+  </data>
+  <data name="GeneralPreferences_ProxySettingsTitle" xml:space="preserve">
+    <value>Proxy:</value>
+  </data>
+  <data name="ImportCommandsTooltipTextFormat" xml:space="preserve">
+    <value>To import {0} from a file, set up an import profile on the Import Profiles action panel on the Setup tab.</value>
+  </data>
+  <data name="ManageCategoryCaption" xml:space="preserve">
+    <value>Manage</value>
+  </data>
+  <data name="ReportPreviewSaveDialogTitle" xml:space="preserve">
+    <value>Save Reports</value>
+  </data>
+  <data name="MapDisplayPreferencesPageLabelOrderTips" xml:space="preserve">
+    <value>Order Map Tips:</value>
+  </data>
+  <data name="ImportAliasesMaxTravelDuration" xml:space="preserve">
+    <value>Max Travel Duration,Max TravelDuration,Max. Travel Duration,Max. TravelDuration,Max.TravelDuration,MaxTravelDuration,Travel Duration,TravelDuration,TravelDurat,Travel Durat</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ActiveReportsStatusNoSelection" xml:space="preserve">
+    <value>No Selection</value>
+  </data>
+  <data name="ButtonHeaderFinish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="ProxyAuthError" xml:space="preserve">
+    <value>Proxy server is used in your network and it requires authentication. Please check Internet Explorer proxy settings.</value>
+  </data>
+  <data name="VehicleNameColumnHeader" xml:space="preserve">
+    <value>Vehicle Name</value>
+  </data>
+  <data name="InvalidStopScheduleExceptionMessage" xml:space="preserve">
+    <value>All stops must belong to the same schedule.</value>
+  </data>
+  <data name="CommitingScheduleVersionStatus" xml:space="preserve">
+    <value>Commiting changes...</value>
+  </data>
+  <data name="LocatorColumnCaption" xml:space="preserve">
+    <value>Match Method</value>
+  </data>
+  <data name="EmptyMaxTotalDistanceViolationMessage" xml:space="preserve">
+    <value>Distance from the start depot to the finish depot for Route: {0} exceeds Max Travel Distance.</value>
+  </data>
+  <data name="TasksWidgetCaption" xml:space="preserve">
+    <value>Tasks</value>
+  </data>
+  <data name="VehicleSpecialtiesHeader" xml:space="preserve">
+    <value>Vehicle Specialties</value>
+  </data>
+  <data name="BreakRequiredRouteOrderViolationMessage" xml:space="preserve">
+    <value>Order: {1} cannot be routed since there is no place on the route: {0} where it is possible to insert break without introducing violations.</value>
+  </data>
+  <data name="FleetSetupWizardRoutesPageMaxOrdersLabel" xml:space="preserve">
+    <value>Max Orders per vehicle:</value>
+  </data>
+  <data name="RematchAddressCommandDisabledTooltip" xml:space="preserve">
+    <value>Please select a depot or order which is incorrectly or not located on the map</value>
+  </data>
+  <data name="ImportProcessStatisticFailed" xml:space="preserve">
+    <value>failed</value>
+  </data>
+  <data name="ImportSHPFileInvalidMessage" xml:space="preserve">
+    <value>Unable to load file, please check to make sure it is valid.</value>
+  </data>
+  <data name="BreakMaxTravelTimeAnyRoutesViolationMessage" xml:space="preserve">
+    <value>{0} could not be moved to any route. A break can't be started within its limited travel time. Increasing this limit may help.</value>
+  </data>
+  <data name="MakeUTurnsAtDeadEnds" xml:space="preserve">
+    <value>Vehicles can make U-Turns at Dead Ends</value>
+  </data>
+  <data name="MapDisplayPreferencesPageOrderSequenceLabelingOff" xml:space="preserve">
+    <value>Order sequence labeling off</value>
+  </data>
+  <data name="ImportZonesCommandTitle" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="ParameterColumnHeaderFormat" xml:space="preserve">
+    <value>Value{0}</value>
+  </data>
+  <data name="DescriptionColumnHeader" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="MapDisplayPreferencesZonesCheckboxLabel" xml:space="preserve">
+    <value>Show zones</value>
+  </data>
+  <data name="GenerateLogButton" xml:space="preserve">
+    <value>Error Log</value>
+  </data>
+  <data name="ZonesTypeExceptionMessage" xml:space="preserve">
+    <value>All items must be Zones.</value>
+  </data>
+  <data name="CreatingScheduleVersionStatus" xml:space="preserve">
+    <value>Creating schedule version...</value>
+  </data>
+  <data name="ArchiveProjectCommandDisabledTooltipProjectAbsent" xml:space="preserve">
+    <value>Please select a project to archive</value>
+  </data>
+  <data name="ImportLocations" xml:space="preserve">
+    <value>Depots</value>
+  </data>
+  <data name="ImportProfileInvalidSHPTypePoint" xml:space="preserve">
+    <value>Importing from shape files with geometries other than points is not supported for selected type of objects.</value>
+  </data>
+  <data name="LocationsGridTimeWindowCaption" xml:space="preserve">
+    <value>Time Window</value>
+  </data>
+  <data name="MaxTotalDistanceSingleRouteViolationMessage" xml:space="preserve">
+    <value>{1} could not be moved to {0}. Max Travel Distance exceeded.</value>
+  </data>
+  <data name="NoUTurnsWarningText" xml:space="preserve">
+    <value>Unchecking all 3 above options may result in unreachable orders on dead end and cul de sac streets.</value>
+  </data>
+  <data name="ImportOders" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="NameValidationRuleZoneText" xml:space="preserve">
+    <value>A zone with the same name already exists</value>
+  </data>
+  <data name="FixedCostColumnHeader" xml:space="preserve">
+    <value>Fixed Cost</value>
+  </data>
+  <data name="ExportTableHaveEmptyFieldsList" xml:space="preserve">
+    <value>Table '{0}' missing export fields.</value>
+  </data>
+  <data name="DriversTimeBeforeOTCaption" xml:space="preserve">
+    <value>Time Before OT</value>
+  </data>
+  <data name="ReportsPreferencesPageButtonDuplicateTemplate" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="BarrierEffectColumnHeader" xml:space="preserve">
+    <value>Effect</value>
+  </data>
+  <data name="DefaultRoutesPageInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Route</value>
+  </data>
+  <data name="StartDateColumnHeader" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="TimeWindowBreakMinutesLabel" xml:space="preserve">
+    <value> minutes break</value>
+  </data>
+  <data name="RoutesWillArchivedString" xml:space="preserve">
+    <value>Routes will be archived to a new project.</value>
+  </data>
+  <data name="ApplyLocationTooltip" xml:space="preserve">
+    <value>Apply selected map pin for depot.</value>
+  </data>
+  <data name="NameValidationRuleVehicleText" xml:space="preserve">
+    <value>A vehicle with the same name already exists</value>
+  </data>
+  <data name="ProjectsFolderString" xml:space="preserve">
+    <value>Projects Folder Path:</value>
+  </data>
+  <data name="ZonesLayerName" xml:space="preserve">
+    <value>Zones</value>
+  </data>
+  <data name="FleetSetupWizardInAddressFmt" xml:space="preserve">
+    <value> in {0}</value>
+  </data>
+  <data name="MobileDevicesGridSyncFolderCaption" xml:space="preserve">
+    <value>Sync Folder</value>
+  </data>
+  <data name="BarriersPageCaption" xml:space="preserve">
+    <value>Barriers</value>
+  </data>
+  <data name="ImportAliasesPropertyMaxTotalDuration" xml:space="preserve">
+    <value>Max Total Duration</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ImportAliasesPropertyComment" xml:space="preserve">
+    <value>Comment</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="AccountLinkString" xml:space="preserve">
+    <value>Don't Have an Account Yet?</value>
+  </data>
+  <data name="ButtonHeaderFind" xml:space="preserve">
+    <value>Find</value>
+  </data>
+  <data name="BestOtherRouteString" xml:space="preserve">
+    <value>best other route</value>
+  </data>
+  <data name="RoutingPreferencesPageButtonCheckConstraint" xml:space="preserve">
+    <value>Check constraints before routing operations</value>
+  </data>
+  <data name="MaxTotalTravelTimeRouteViolationMessage" xml:space="preserve">
+    <value>Route: {0} has an infeasible order preassignment. Max Travel Duration exceeded.</value>
+  </data>
+  <data name="FleetSetupWizardFinishPageTitleRoute" xml:space="preserve">
+    <value>Congratulations, You're Ready To Route!</value>
+  </data>
+  <data name="ReportsFolderString" xml:space="preserve">
+    <value>Folder path:</value>
+  </data>
+  <data name="LicenseSubscriptionNotes" xml:space="preserve">
+    <value>&lt;FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Style="{DynamicResource LicenseViewFlowDocumentStyle}"&gt; &lt;Paragraph&gt; In &lt;Run x:Name="LicenseDaysLeft"&gt;{0}&lt;/Run&gt; days, your &lt;Run x:Name="LicenseVehicleCount"&gt;{0}&lt;/Run&gt; vehicles subscription will expire. You can click the "Upgrade Account" button to renew or start a new subscription. &lt;/Paragraph&gt; &lt;Paragraph&gt; If you don't start or renew, Route Planner will revert to single vehicle routing mode and you'll be limited to routing a single vehicle. &lt;/Paragraph&gt; &lt;/FlowDocument&gt;</value>
+  </data>
+  <data name="TestConnectionSuccessMessageText" xml:space="preserve">
+    <value>Test connection succeeded.</value>
+  </data>
+  <data name="FleetSetupWizardIntroductionText" xml:space="preserve">
+    <value>
+Before you can work with Route Planner, we'll need some information about your fleet. This short wizard will set up a new project with your basic fleet details. You can add or edit details later.
+
+Step 1: Enter Start, End and Renewal depots.
+
+Step 2: Enter route information including vehicles, drivers and some constraints.
+
+Step 3: Optionally, import orders from a file or database.
+    </value>
+  </data>
+  <data name="SequenceRoutesCommandTitle" xml:space="preserve">
+    <value>Sequence</value>
+  </data>
+  <data name="RoutingPreferencesPageTextNoRestrictions" xml:space="preserve">
+    <value>No restrictions available.</value>
+  </data>
+  <data name="MaxOrdersCountSingleRouteViolationMessage" xml:space="preserve">
+    <value>{1} could not be moved to {0}. Max Order Count exceeded.</value>
+  </data>
+  <data name="ImportAliasesType" xml:space="preserve">
+    <value>Type</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="BreaksPageInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Break</value>
+  </data>
+  <data name="MobileDevices" xml:space="preserve">
+    <value>Mobile Devices</value>
+  </data>
+  <data name="IncompletePageTooltip" xml:space="preserve">
+    <value>Action panel is incomplete</value>
+  </data>
+  <data name="ViolatedTimeWindowColumnHeader" xml:space="preserve">
+    <value>Violated Time Window</value>
+  </data>
+  <data name="SaveReportButtonEnabledTooltip" xml:space="preserve">
+    <value>Save the selected report</value>
+  </data>
+  <data name="DefaultRoute" xml:space="preserve">
+    <value>Default Route</value>
+  </data>
+  <data name="NotAllRoutesWasUpdatedMessage" xml:space="preserve">
+    <value>Some Default Routes on schedule tab were updated. Days which already have orders assigned to Default Routes were not updated: </value>
+  </data>
+  <data name="FleetSetupWizardMatchFoundSubPageText2" xml:space="preserve">
+    <value>You may want to switch to satellite view from "Map Layers" in the upper left corner of the map.</value>
+  </data>
+  <data name="FleetSetupWizardLocationPageText1" xml:space="preserve">
+    <value>Enter a depot where your vehicles start and finish their work.</value>
+  </data>
+  <data name="AllOtherValues" xml:space="preserve">
+    <value>&lt;All other values&gt;</value>
+  </data>
+  <data name="FleetSetupWizardLocationPageText3" xml:space="preserve">
+    <value>After entering the each depot click "Locate" and follow the instructions on the right.</value>
+  </data>
+  <data name="BreakMaxCumulWorkTimeAnyRoutesViolationMessage" xml:space="preserve">
+    <value>{0} could not be moved to any route. A break can't be started within its limited work time. Increasing this limit may help.</value>
+  </data>
+  <data name="CapacityRouteViolationMessage" xml:space="preserve">
+    <value>Route: {0} has an infeasible order preassignment. {1} capacity exceeded.</value>
+  </data>
+  <data name="InvalidMapLayerURL" xml:space="preserve">
+    <value>Invalid map layer URL.</value>
+  </data>
+  <data name="RoutesGridCaptionTimeAtEnd" xml:space="preserve">
+    <value>Time at End</value>
+  </data>
+  <data name="RoutingPreferencesPageUTurnSettingsHeader" xml:space="preserve">
+    <value>U-turn policy:</value>
+  </data>
+  <data name="ImportProcessStatusGeoded" xml:space="preserve">
+    <value>geocoded</value>
+  </data>
+  <data name="ZoneByPointTooltipText" xml:space="preserve">
+    <value>Zone By Point</value>
+  </data>
+  <data name="FleetSetupWizardOrdersPageTitle" xml:space="preserve">
+    <value>Orders Imported, But Some Could Not Be Located</value>
+  </data>
+  <data name="Drivers" xml:space="preserve">
+    <value>Drivers</value>
+  </data>
+  <data name="ExportProfileVFileNameInvalid" xml:space="preserve">
+    <value>File name is invalid.</value>
+  </data>
+  <data name="MessageWindowTypesNameInfo" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="EditReportsButtonEnabledTooltip" xml:space="preserve">
+    <value>Save the selected report</value>
+  </data>
+  <data name="ImportProfileInvalidSHPTypeZone" xml:space="preserve">
+    <value>Importing from shape files with geometries other than points or polygons is not supported for selected type of objects.</value>
+  </data>
+  <data name="MobileDevicesTypeExceptionMessage" xml:space="preserve">
+    <value>All items must be Mobile Devices.</value>
+  </data>
+  <data name="ZoomedToText" xml:space="preserve">
+    <value>We've zoomed to</value>
+  </data>
+  <data name="ReportCancelledMessage" xml:space="preserve">
+    <value>Building Reports Cancelled.</value>
+  </data>
+  <data name="ButtonHeaderYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="RenewalRequiredAnyRouteViolationMessage" xml:space="preserve">
+    <value>Order: {0} cannot be routed since routes have capacity constraint violation and there is no place on it where it is possible to insert renewal depot which would fix this violation.</value>
+  </data>
+  <data name="Route" xml:space="preserve">
+    <value>Route</value>
+  </data>
+  <data name="DockedWinowMenuItem" xml:space="preserve">
+    <value>Docked window</value>
+  </data>
+  <data name="TimeIntervalBreakWorkingLabel" xml:space="preserve">
+    <value> working at most </value>
+  </data>
+  <data name="EndLocationColumnHeader" xml:space="preserve">
+    <value>End Depot</value>
+  </data>
+  <data name="PrintReportButtonEnabledTooltip" xml:space="preserve">
+    <value>Print the selected report</value>
+  </data>
+  <data name="NewVersionButtonHeader" xml:space="preserve">
+    <value>New Version</value>
+  </data>
+  <data name="DeletingDialogTextOne" xml:space="preserve">
+    <value>Are you sure you want to delete the '{0}' {1}?</value>
+  </data>
+  <data name="OptimizeAndEditPageCaption" xml:space="preserve">
+    <value>Optimize and Edit</value>
+  </data>
+  <data name="ProfileDisableButtonTooltip" xml:space="preserve">
+    <value>Please fill in all required fields.</value>
+  </data>
+  <data name="CustomOrderProperty" xml:space="preserve">
+    <value>Order Property</value>
+  </data>
+  <data name="DeleteOrdersError" xml:space="preserve">
+    <value>Failed to delete orders:</value>
+  </data>
+  <data name="FailedFormatRESTURL" xml:space="preserve">
+    <value>Failed to format REST URL for the service.</value>
+  </data>
+  <data name="LockedOrdersDuringDeleteMessage" xml:space="preserve">
+    <value>Unable to delete orders since some of them are locked. Please unlock them and try again.</value>
+  </data>
+  <data name="ManageOrdersCommandTitle" xml:space="preserve">
+    <value>Manage Orders</value>
+  </data>
+  <data name="UnableCreateProjectMessage" xml:space="preserve">
+    <value>Unable to create a new project. Please ensure you have permission to write to the projects folder.</value>
+  </data>
+  <data name="RecoverCredentialsLinkString" xml:space="preserve">
+    <value>Forgot your Login or password?</value>
+  </data>
+  <data name="ImportAliasesEmailAddress" xml:space="preserve">
+    <value>Email Address,EmailAddress,Email</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="HomeButtonString" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="AlwaysAskBeforeApplyingRoutes" xml:space="preserve">
+    <value>Always ask before applying default routes changes to current and future days</value>
+  </data>
+  <data name="RoutesGridCaptionMaxOrders" xml:space="preserve">
+    <value>Max Orders</value>
+  </data>
+  <data name="WrongFieldCountInLocatorInfo" xml:space="preserve">
+    <value>Wrong field count in locator {0} info.</value>
+  </data>
+  <data name="MobileDevicesPageInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Mobile Device</value>
+  </data>
+  <data name="Object" xml:space="preserve">
+    <value>Object</value>
+  </data>
+  <data name="NameValidationRuleLocationText" xml:space="preserve">
+    <value>A depot with the same name already exists</value>
+  </data>
+  <data name="CellTimeWindowTo" xml:space="preserve">
+    <value>To:</value>
+  </data>
+  <data name="ScheduleCategoryCaption" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="ExportProfilesEditPageTypeOrders" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="DriversText" xml:space="preserve">
+    <value>Drivers</value>
+  </data>
+  <data name="ImportAliasesStartDepot" xml:space="preserve">
+    <value>Start Location,StartLocation,Start Loc,StartLoc,Start Depot,StartDepot,Start Dep,StartDep</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="MaxTotalTravelTimeSingleRouteViolationMessage" xml:space="preserve">
+    <value>{1} could not be moved to {0}. Max Travel Duration exceeded.</value>
+  </data>
+  <data name="ImportDefaultRoutes" xml:space="preserve">
+    <value>Default Routes</value>
+  </data>
+  <data name="ZoneNameColumnHeader" xml:space="preserve">
+    <value>Zone Name</value>
+  </data>
+  <data name="AllOrdersRoutedText" xml:space="preserve">
+    <value>All orders on {0} routed.</value>
+  </data>
+  <data name="FleetSetupWizardMatchFoundFmt" xml:space="preserve">
+    <value>{0} was found{1}</value>
+  </data>
+  <data name="ImportPropertyNamePrefixedFormat" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="MapLayersWidgetCaption" xml:space="preserve">
+    <value>Map Layers</value>
+  </data>
+  <data name="FuelTypes" xml:space="preserve">
+    <value>Fuel types</value>
+  </data>
+  <data name="DuplicateCommandTitle" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="TimeWindowText" xml:space="preserve">
+    <value>With time window based breaks, you can set break length and time periods they must fall within.
+Example: 30 minute lunch break between 12 noon - 1 PM with a 15 minute break between 3PM - 5PM.</value>
+  </data>
+  <data name="GenerateRouteShapesCompletedText" xml:space="preserve">
+    <value>Route shapes building succeeded on {0}.</value>
+  </data>
+  <data name="LicenseExpiredMessage" xml:space="preserve">
+    <value>Your Route Planner subscription has expired. Please visit the Route Planner {0} to renew.</value>
+  </data>
+  <data name="ButtonHeaderLocate" xml:space="preserve">
+    <value>Locate</value>
+  </data>
+  <data name="ManageBarriersCommandTitle" xml:space="preserve">
+    <value>Manage Barriers</value>
+  </data>
+  <data name="TravelTimeText" xml:space="preserve">
+    <value>You can set breaks so that your drivers can only drive a specific amount of time before they must take a break.
+Example: A driver must take a 30 minute break after driving 4 hours.</value>
+  </data>
+  <data name="TimeWindowColumnHeader" xml:space="preserve">
+    <value>Time Window</value>
+  </data>
+  <data name="ReportPreviewReasonOutOfMemory" xml:space="preserve">
+    <value>There is no free RAM to process it. Please close some report preview windows if any and try again.</value>
+  </data>
+  <data name="ZonesRouteViolationMessage" xml:space="preserve">
+    <value>Route: {0} has an infeasible order preassignment. Orders: {1} are not in any of the route's zones.</value>
+  </data>
+  <data name="WriteAccessDenied" xml:space="preserve">
+    <value>Project folder write access denied.</value>
+  </data>
+  <data name="ApplyRoutesString" xml:space="preserve">
+    <value>Ask On Default Routes Changes:</value>
+  </data>
+  <data name="TitorialProjectButtonTitle" xml:space="preserve">
+    <value>Work through a Tutorial Project.</value>
+  </data>
+  <data name="VehicleSpecialitiesAnyViolationMessage" xml:space="preserve">
+    <value>Vehicle specialties discrepancy. None of the vehicles has the required specialties for order: {0}.</value>
+  </data>
+  <data name="DriverSpecialty" xml:space="preserve">
+    <value>Driver Specialty</value>
+  </data>
+  <data name="ImportDrivers" xml:space="preserve">
+    <value>Drivers</value>
+  </data>
+  <data name="CommentColumnHeader" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="UnhandledExceptionMessage" xml:space="preserve">
+    <value>Route Planner has encountered an unexpected error.
+
+Click OK to close the application or Cancel to continue working.
+
+Error details:
+Source: {0}
+Method: {1}
+Message: {2}
+    </value>
+  </data>
+  <data name="RangeCaption" xml:space="preserve">
+    <value>Dates</value>
+  </data>
+  <data name="SequenceRoutesCommandEnabledTooltip" xml:space="preserve">
+    <value>Recalculates the optimal order of stops for the selected route</value>
+  </data>
+  <data name="SolverErrorText" xml:space="preserve">
+    <value>Routing failed for {0} schedule on {1}. 
+See Messages for details.
+    </value>
+  </data>
+  <data name="SolveValidationPropertyInvalidFormat" xml:space="preserve">
+    <value>{0} has errors.</value>
+  </data>
+  <data name="ImportAliasesTimeWindowStart" xml:space="preserve">
+    <value>TimeWindow1Start,Time Window1 Start,FromTime1Str,FrTime1Str,TW1_Start,TimeWindowStart,Time Window Start,FromTimeStr,FrTimeStr,TW_Start,TW_From,TW From,TWFrom,Time Window From,TimeWindow From,TimeWindow Start</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ExportProfilesEditPageOrderLabel" xml:space="preserve">
+    <value>Order:</value>
+  </data>
+  <data name="RoutesGridCaptionDriver" xml:space="preserve">
+    <value>Driver</value>
+  </data>
+  <data name="UnreachableViolationMessage" xml:space="preserve">
+    <value>Order: {0} cannot be routed since there is no way to reach it.</value>
+  </data>
+  <data name="ZoneAssignmentTooltipText" xml:space="preserve">
+    <value>Assigned to</value>
+  </data>
+  <data name="ImportProfileNotSupportedSHPType" xml:space="preserve">
+    <value>Importing from shape files is not supported for selected type of objects.</value>
+  </data>
+  <data name="SelectedGridWithoutCollectionSizeStatusPattern" xml:space="preserve">
+    <value>{0} {1}(s) selected</value>
+  </data>
+  <data name="ImportProcessStatusRecordFailed" xml:space="preserve">
+    <value>Unable to create {0} from record number {1}.</value>
+  </data>
+  <data name="RenewalLocationsColumnHeader" xml:space="preserve">
+    <value>Renewal Depot</value>
+  </data>
+  <data name="Barrier" xml:space="preserve">
+    <value>Barrier</value>
+  </data>
+  <data name="ImportProfile" xml:space="preserve">
+    <value>Import Profile</value>
+  </data>
+  <data name="PerHourSalaryColumnHeader" xml:space="preserve">
+    <value>Per Hour Salary</value>
+  </data>
+  <data name="RoutingPreferencesPageLabelTextRestrictions" xml:space="preserve">
+    <value>Restrictions:</value>
+  </data>
+  <data name="FleetSetupWizardLocationPageText2" xml:space="preserve">
+    <value>If you have more than one depot please enter one following the other.</value>
+  </data>
+  <data name="ReportStartMessage" xml:space="preserve">
+    <value>Building reports...</value>
+  </data>
+  <data name="ImportDriverSpecialtiesCommandTitle" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="ImportStatusInvalidData" xml:space="preserve">
+    <value>Table contains invalid data, please select another table.</value>
+  </data>
+  <data name="ImportAliasesPropertyStartTimeWindowFinish" xml:space="preserve">
+    <value>Start Time Window Finish</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ImportProfilesEditPageFieldMapping" xml:space="preserve">
+    <value>Field Mapping</value>
+  </data>
+  <data name="MapDisplayPreferencesPageCategories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="FuelGridNameCaption" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="RoutingPreferencesPageArriveDepartDelayHeader" xml:space="preserve">
+    <value>Arrive/Depart delay:</value>
+  </data>
+  <data name="NoSelectedGridStatusFormat" xml:space="preserve">
+    <value>{0} Route(s), {1} Order(s).</value>
+  </data>
+  <data name="LicenseErrorMissingFreeLicenseCredentials" xml:space="preserve">
+    <value>Single Vehicle Mode License credentials are absent.</value>
+  </data>
+  <data name="ImportAliasesPropertyTimeWindow2StartDay" xml:space="preserve">
+    <value>Time Window2 Start Day</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ImportAliasesPropertyFuelType" xml:space="preserve">
+    <value>Fuel Type</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="MovingOrdersStartSuccessfulMessage" xml:space="preserve">
+    <value>Moving order(s) ({0}/{1} Unassigning order(s) from '{2}' schedule)...</value>
+  </data>
+  <data name="ReportTemplateEmptyName" xml:space="preserve">
+    <value>Template name is required.</value>
+  </data>
+  <data name="ImportAliasesPropertyColor" xml:space="preserve">
+    <value>Color</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ExportProfilesPageCaption" xml:space="preserve">
+    <value>Export Profiles</value>
+  </data>
+  <data name="DefaultRoutes" xml:space="preserve">
+    <value>Default Routes</value>
+  </data>
+  <data name="ViewsWidgetCaption" xml:space="preserve">
+    <value>Views</value>
+  </data>
+  <data name="UpgradeButtonTitle" xml:space="preserve">
+    <value>Upgrade or change your subscription.</value>
+  </data>
+  <data name="AlreadyBuildingRoutesMessage" xml:space="preserve">
+    <value>Route Planner is already building routes for {0}, please wait for this process to finish. You can still edit previously built routes for other days.</value>
+  </data>
+  <data name="ImportProcessStatisticAdded" xml:space="preserve">
+    <value>added</value>
+  </data>
+  <data name="ArchiveProjectCommandTitle" xml:space="preserve">
+    <value>Archive</value>
+  </data>
+  <data name="LicenseExpiredNotesHeader" xml:space="preserve">
+    <value>License Expired</value>
+  </data>
+  <data name="HideMenuItem" xml:space="preserve">
+    <value>Hide</value>
+  </data>
+  <data name="LicenseWrongCredentialsNotes" xml:space="preserve">
+    <value>&lt;FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Style="{DynamicResource LicenseViewFlowDocumentStyle}"&gt; &lt;Paragraph&gt; Ensure that you have entered your user name and password correctly. Please note that they are case-sensitive. &lt;/Paragraph&gt; &lt;Section x:Name="LicenseRecoverCredentials"&gt; &lt;Paragraph&gt; If you've forgotten your login or password information, please &lt;Hyperlink x:Name="LicenseRecoverCredentialsLink"&gt;click here&lt;/Hyperlink&gt;. &lt;/Paragraph&gt; &lt;/Section&gt; &lt;/FlowDocument&gt;</value>
+  </data>
+  <data name="GenerateRouteShapes" xml:space="preserve">
+    <value>Building route shapes...</value>
+  </data>
+  <data name="ImportAliasesTimeWindow2Finish" xml:space="preserve">
+    <value>Time Window2 Finish,TimeWindow2Finish,ToTime2Str,ToTime2Str,TW_End_2,TW2_End,TW2 End,TW2End,TW2_To,TW2 To,TW2To,Time Window2 To,TimeWindow2 To,TimeWindow2 Finish</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ProfilesEditPageGeneralDescription" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="ApplicationFailDialogTitle" xml:space="preserve">
+    <value>Route Planner cannot be started</value>
+  </data>
+  <data name="ManuallyEditedXY" xml:space="preserve">
+    <value>Edited X/Y</value>
+  </data>
+  <data name="ImportCommandEnabledTooltip" xml:space="preserve">
+    <value>Imports data from a file or database according to rules defined in an import profile</value>
+  </data>
+  <data name="RoutingPreferencesPageCaption" xml:space="preserve">
+    <value>Routing</value>
+  </data>
+  <data name="RememberMeString" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="LoadingProjectStep" xml:space="preserve">
+    <value>Loading Project...</value>
+  </data>
+  <data name="ImportAliasesPlannedDate" xml:space="preserve">
+    <value>PlannedDate,Planned Date,Date</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="TimeAtEndColumnHeader" xml:space="preserve">
+    <value>Time At End</value>
+  </data>
+  <data name="PathWarningString" xml:space="preserve">
+    <value>Restart application after changing a path to take effect</value>
+  </data>
+  <data name="ManageSpecialtiesDevicesCommandTitle" xml:space="preserve">
+    <value>Manage Specialties</value>
+  </data>
+  <data name="CreateReportsCommandTitle" xml:space="preserve">
+    <value>Build Reports</value>
+  </data>
+  <data name="FleetSetupWizardFinishPageText3" xml:space="preserve">
+    <value>All of your orders have been imported and successfully located. Click 'Build Routes' to create an optimized routing schedule for the day.</value>
+  </data>
+  <data name="AssignToBestRouteCommandDisabledTooltip" xml:space="preserve">
+    <value>Select an order you'd like to assign</value>
+  </data>
+  <data name="FleetSetupWizardRoutesPageHoursLabel" xml:space="preserve">
+    <value>hrs.</value>
+  </data>
+  <data name="ReportPreviewMultiSaveMessage" xml:space="preserve">
+    <value>Don't enter name here. Application will use the report names for file names.</value>
+  </data>
+  <data name="RenewalRequiredRouteOrderViolationMessage" xml:space="preserve">
+    <value>Order: {1} cannot be routed since route: {0} has capacity constraint violation and there is no place on it where it is possible to insert renewal depot which would fix this violation.</value>
+  </data>
+  <data name="PreviewReportButtonDisabledTooltip" xml:space="preserve">
+    <value>Please select a report</value>
+  </data>
+  <data name="MobileDevicesGridEmailCaption" xml:space="preserve">
+    <value>E-mail address</value>
+  </data>
+  <data name="MoreColorsButtonHeader" xml:space="preserve">
+    <value>More Colors</value>
+  </data>
+  <data name="ActiveSyncProfileNameColumnHeader" xml:space="preserve">
+    <value>Active Sync Profile Name</value>
+  </data>
+  <data name="ReportsPageCaption" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="DeleteReportsButtonEnabledTooltip" xml:space="preserve">
+    <value>Deletes the selected report</value>
+  </data>
+  <data name="TrialTechSupportTimeRangeTitle" xml:space="preserve">
+    <value>6 a.m. to 5 p.m. (PST), Monday-Friday</value>
+  </data>
+  <data name="LocationNotFoundOnNetworkViolationMessage" xml:space="preserve">
+    <value>Depot: {0} is located too far from the nearest road.</value>
+  </data>
+  <data name="ServerNeedCredentialsError" xml:space="preserve">
+    <value>{0} requires a login. Check for errors in the services.xml file. 'Authentication' attribute for {0} must be 'yes' or 'useApplicationLicenseCredentials'.</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="ImportAliasesPropertyY" xml:space="preserve">
+    <value>Y</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ImportAliasesOrderType" xml:space="preserve">
+    <value>Order Type,OrderType,Type</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="DriverSpecialties" xml:space="preserve">
+    <value>Driver Specialties</value>
+  </data>
+  <data name="UnassignOrdersCommandEnabledTooltip" xml:space="preserve">
+    <value>Unassigns all selected orders</value>
+  </data>
+  <data name="OrderMovingOperationFailedText" xml:space="preserve">
+    <value>'{0}' could not be moved to {1}.</value>
+  </data>
+  <data name="MessageWindowTypesNameWarning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="BuildRoutesSnapshotNameFormat" xml:space="preserve">
+    <value>Build Routes {0} {1}</value>
+  </data>
+  <data name="CreateProfilesCommandEnabledTooltip" xml:space="preserve">
+    <value>Create Export Profiles</value>
+  </data>
+  <data name="ImportAliasesPropertyMaxTravelDuration" xml:space="preserve">
+    <value>Max Travel Duration</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="RoutesText" xml:space="preserve">
+    <value>Routes</value>
+  </data>
+  <data name="MapDisplayPreferencesPageLabelStopTips" xml:space="preserve">
+    <value>Stop Map Tips:</value>
+  </data>
+  <data name="RoutesGridCaptionBreaks" xml:space="preserve">
+    <value>Break</value>
+  </data>
+  <data name="ImportAliasesDriver" xml:space="preserve">
+    <value>Driver</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="LocationsPageCaption" xml:space="preserve">
+    <value>Depots</value>
+  </data>
+  <data name="SpeedUpString" xml:space="preserve">
+    <value>Speed up </value>
+  </data>
+  <data name="ImportsUserInvalidWarning" xml:space="preserve">
+    <value>Some import settings could not be loaded and have been reverted to default configuration.</value>
+  </data>
+  <data name="BreakMaxCumulWorkTimeSingleRouteViolationMessage" xml:space="preserve">
+    <value>{1} could not be moved to {0}. A break can't be started within its limited work time. Increasing this limit may help.</value>
+  </data>
+  <data name="FuelPageCaption" xml:space="preserve">
+    <value>Fuel Types</value>
+  </data>
+  <data name="MakeUTurnsAtIntersections" xml:space="preserve">
+    <value>Vehicles can make U-Turns at intersections</value>
+  </data>
+  <data name="BreakMaxTravelTimeRouteViolationMessage" xml:space="preserve">
+    <value>Cannot add breaks to Route: {0}. There is no place where it is possible to insert the break(s) without introducing violations.</value>
+  </data>
+  <data name="ApplyChanges" xml:space="preserve">
+    <value>Automatically apply changes</value>
+  </data>
+  <data name="MaxTotalTimeAnyRoutesViolationMessage" xml:space="preserve">
+    <value>{0} could not be moved to any route. Max Total Duration exceeded.</value>
+  </data>
+  <data name="SyncFolderColumnHeader" xml:space="preserve">
+    <value>Sync Folder</value>
+  </data>
+  <data name="OrderSubmittingForMovingOperation" xml:space="preserve">
+    <value>Moving '{0}' to {1}.</value>
+  </data>
+  <data name="OrderTypeDelivery" xml:space="preserve">
+    <value>Delivery</value>
+  </data>
+  <data name="ProjectNameValidationRuleDuplicateNameError" xml:space="preserve">
+    <value>Project with the same name already exists.</value>
+  </data>
+  <data name="EmptyBreaksMaxTravelTimeViolationMessage" xml:space="preserve">
+    <value>Travel time limits for some of your breaks are not sufficient for route: {0}. Try to increase these values for the route breaks.</value>
+  </data>
+  <data name="ImportAliasesName" xml:space="preserve">
+    <value>Name,Description,Desc,Descr</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="LocationCurbApproachCaption" xml:space="preserve">
+    <value>Curb Approach</value>
+  </data>
+  <data name="ImportAliasesPropertyTimeWindowStartDay" xml:space="preserve">
+    <value>Time Window Start Day</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="NameValidationRuleDriverSpecialtyText" xml:space="preserve">
+    <value>A driver specialty the with same name already exists</value>
+  </data>
+  <data name="BarrierByPolygonTooltipText" xml:space="preserve">
+    <value>Create Barrier</value>
+  </data>
+  <data name="MaxTotalTimeRouteViolationMessage" xml:space="preserve">
+    <value>Route: {0} has an infeasible order preassignment. Max Total Duration exceeded.</value>
+  </data>
+  <data name="ImportProfilesEditPageSourceRadioButtonFile" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="OrderPropertiesString" xml:space="preserve">
+    <value>Order Properties:</value>
+  </data>
+  <data name="EmptyMaxTotalTimeViolationMessage" xml:space="preserve">
+    <value>Time required for Route: {0} exceeds Max Total Duration.</value>
+  </data>
+  <data name="ImportAliasesPropertyEmailAddress" xml:space="preserve">
+    <value>Email Address</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ExportProfilesEditPageTypeStops" xml:space="preserve">
+    <value>Stops</value>
+  </data>
+  <data name="DeleteButtonHeader" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="LicenseSubscriptionPage" xml:space="preserve">
+    <value>subscription page</value>
+  </data>
+  <data name="ReportsPageLabelSelectRoutes" xml:space="preserve">
+    <value>Select Routes:</value>
+  </data>
+  <data name="SublocatorInfoIsAbsent" xml:space="preserve">
+    <value>Sublocator {0} info is absent.</value>
+  </data>
+  <data name="ImportAliasesSyncFolder" xml:space="preserve">
+    <value>Sync Folder,SyncFolder,Folder</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ZonesColumnHeader" xml:space="preserve">
+    <value>Zones</value>
+  </data>
+  <data name="ConstraintsCannotBeMetText" xml:space="preserve">
+    <value>All orders cannot be routed (see Messages for details). Would you like to route as many orders as possible?</value>
+  </data>
+  <data name="ExportProfilesEditPageTypeShedule" xml:space="preserve">
+    <value>Routes and Stops</value>
+  </data>
+  <data name="CellTimeWindowFrom" xml:space="preserve">
+    <value>From:</value>
+  </data>
+  <data name="FindButtonHeader" xml:space="preserve">
+    <value>Find</value>
+  </data>
+  <data name="OrdersDeletedSuccessfullyString" xml:space="preserve">
+    <value>{0} order(s) deleted on {1}.</value>
+  </data>
+  <data name="ViolationRouteStringFormat" xml:space="preserve">
+    <value>'{0}' route</value>
+  </data>
+  <data name="ConstraintsCheckerCapacitiesRouteMessageFmt" xml:space="preserve">
+    <value>You have exceeded the maximum {0}. You are trying to route order(s) with total {0} = {1} and vehicle: {2} has only {3} available. The shortfall is {4}.</value>
+  </data>
+  <data name="FleetSetupWizardCandidatesNotFoundFmt" xml:space="preserve">
+    <value>{0} could not be found{1}</value>
+  </data>
+  <data name="EditCommandDisabledTooltip" xml:space="preserve">
+    <value>Please select an item to edit</value>
+  </data>
+  <data name="ListViewTitle" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="ImportAliasesVehicle" xml:space="preserve">
+    <value>Vehicle,Veh</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ViewTypeExceptionMessage" xml:space="preserve">
+    <value>View of such type doesn't exist.</value>
+  </data>
+  <data name="ImportProcessCanceled" xml:space="preserve">
+    <value>{0} Import Cancelled.</value>
+  </data>
+  <data name="TimeIntervalBreakDrivingLabel" xml:space="preserve">
+    <value> driving at most </value>
+  </data>
+  <data name="ImportAliasesPropertyZones" xml:space="preserve">
+    <value>Zones</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="SomeMapLayersCannotBeLoaded" xml:space="preserve">
+    <value>Some map layers cannot be loaded.</value>
+  </data>
+  <data name="ZonesSingleRouteViolationMessage" xml:space="preserve">
+    <value>{1} could not be moved to {0}. The route has a hard zone.</value>
+  </data>
+  <data name="DeploymentTabDisabledTooltip" xml:space="preserve">
+    <value>Please enter required information in the Setup tab and then build routes in the Schedule tab before proceeding to Deployment tab</value>
+  </data>
+  <data name="BreakRequiredRouteViolationMessage" xml:space="preserve">
+    <value>Cannot add breaks to Route: {0}. There is no place where it is possible to insert the break(s) without introducing violations.</value>
+  </data>
+  <data name="UpdateOrderTooltip" xml:space="preserve">
+    <value>Apply provided address and location on the map for selected order.</value>
+  </data>
+  <data name="ImportAliasesPropertyOrderNumber" xml:space="preserve">
+    <value>Order Number</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="TimeViewTitle" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="FleetSetupWizardOrdersPageText4" xml:space="preserve">
+    <value>If you make edits to the address, press the "Locate" button to try again.</value>
+  </data>
+  <data name="SolveValidationOperationInvalid" xml:space="preserve">
+    <value>Some items have errors. These need to be fixed before proceeding with any routing operation.</value>
+  </data>
+  <data name="FindViewDeleteButtonHeader" xml:space="preserve">
+    <value>Find</value>
+  </data>
+  <data name="CommandTypeCannotBeFound" xml:space="preserve">
+    <value>Command type cannot be found: {0}</value>
+  </data>
+  <data name="ButtonHeaderAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="ReportsPageButtonContentSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="FindOrderTextLabel" xml:space="preserve">
+    <value>Find Order with Text:</value>
+  </data>
+  <data name="MobileDeviceColumnHeader" xml:space="preserve">
+    <value>Mobile Device</value>
+  </data>
+  <data name="ImportProcessStatisticValid" xml:space="preserve">
+    <value>valid</value>
+  </data>
+  <data name="ReportSuccessedMessage" xml:space="preserve">
+    <value>Building reports succeeded.</value>
+  </data>
+  <data name="MapDisplayPreferencesPageQuantities" xml:space="preserve">
+    <value>Quantities</value>
+  </data>
+  <data name="PriorityColumnHeader" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="ReportsPreferencesPageCaption" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="Driver" xml:space="preserve">
+    <value>Driver</value>
+  </data>
+  <data name="ImportAliasesPropertyX" xml:space="preserve">
+    <value>X</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ListOfLockedOrdersMessage" xml:space="preserve">
+    <value>Orders: {0} are locked or assigned to locked routes on '{1}' schedule.</value>
+  </data>
+  <data name="SequenceColumnHeader" xml:space="preserve">
+    <value>Sequence</value>
+  </data>
+  <data name="Barriers" xml:space="preserve">
+    <value>Barriers</value>
+  </data>
+  <data name="RoutesUpdatedSuccessfullMessage" xml:space="preserve">
+    <value>Default Routes on schedule tab were updated.</value>
+  </data>
+  <data name="ViolationTimeColumnHeader" xml:space="preserve">
+    <value>Violation Time</value>
+  </data>
+  <data name="AddRoutesFromDefault" xml:space="preserve">
+    <value>Use Selected Routes</value>
+  </data>
+  <data name="ButtonHeaderAbort" xml:space="preserve">
+    <value>Abort</value>
+  </data>
+  <data name="ProfilesEditPageSourceLabelFilePath" xml:space="preserve">
+    <value>File path: *</value>
+  </data>
+  <data name="NameValidationRuleVehicleSpecialtyText" xml:space="preserve">
+    <value>A vehicle specialty with the same name already exists</value>
+  </data>
+  <data name="MapDisplayPreferencesPageLabelOrderSymbology" xml:space="preserve">
+    <value>Order symbology:</value>
+  </data>
+  <data name="DriverSpecialitiesListViolationMessage" xml:space="preserve">
+    <value>Driver specialties discrepancy. Drivers: {0} don't have the required specialties for order: {1}.</value>
+  </data>
+  <data name="InitializingApplicationStatus" xml:space="preserve">
+    <value>Initializing...</value>
+  </data>
+  <data name="ImportProfilesEditPageSourceLabelTable" xml:space="preserve">
+    <value>Table: *</value>
+  </data>
+  <data name="RematchAddressCommandEnabledTooltip" xml:space="preserve">
+    <value>Attempts to find a match for depots or orders which are unlocated or incorrectly located on the map</value>
+  </data>
+  <data name="ActiveReportsViewTitle" xml:space="preserve">
+    <value>ActiveReports for .NET 3.0 Custom Preview</value>
+  </data>
+  <data name="ImportAliasesPropertyTimeWindowFinish" xml:space="preserve">
+    <value>Time Window Finish</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="WaitTimeColumnHeader" xml:space="preserve">
+    <value>Wait Time</value>
+  </data>
+  <data name="InProgressOperations" xml:space="preserve">
+    <value>Route edit operations are in progress. By closing Route Planner now these edits will be lost. Click OK to close Route Planner or click Cancel.</value>
+  </data>
+  <data name="SyncTypeActiveSync" xml:space="preserve">
+    <value>Active Sync</value>
+  </data>
+  <data name="BreaksPageCaption" xml:space="preserve">
+    <value>Breaks</value>
+  </data>
+  <data name="ExportCommandEnabledTooltip" xml:space="preserve">
+    <value>Export files based selected Export Profile</value>
+  </data>
+  <data name="NotAllOrdersRoutedText" xml:space="preserve">
+    <value>{0} of {1} orders on {2} routed.</value>
+  </data>
+  <data name="DriverSpecialtyNameCaption" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="RunAutoString" xml:space="preserve">
+    <value>Run auto archiving every</value>
+  </data>
+  <data name="LicenseErrorTitle" xml:space="preserve">
+    <value>License error</value>
+  </data>
+  <data name="TimeWindowBreakAndLabel" xml:space="preserve">
+    <value> and </value>
+  </data>
+  <data name="ProjectInProgressOperations" xml:space="preserve">
+    <value>Failed to close current project since some routing operations are in progress.</value>
+  </data>
+  <data name="ReportPreviewSaveFailFormat" xml:space="preserve">
+    <value>Unable to save report '{0}' to '{1}'.</value>
+  </data>
+  <data name="ChangeSkinString" xml:space="preserve">
+    <value>Change skin:</value>
+  </data>
+  <data name="NameValidationRuleRouteText" xml:space="preserve">
+    <value>A route with the same name already exists</value>
+  </data>
+  <data name="GettingStartedPageCaption" xml:space="preserve">
+    <value>Getting Started</value>
+  </data>
+  <data name="ImportVehicleSpecialties" xml:space="preserve">
+    <value>Vehicle Specialties</value>
+  </data>
+  <data name="WorkTimeRadioButtonContent" xml:space="preserve">
+    <value>Max work time before break</value>
+  </data>
+  <data name="DefaultBusyStatus" xml:space="preserve">
+    <value>Working...</value>
+  </data>
+  <data name="CommitButtonHeader" xml:space="preserve">
+    <value>Commit to Current</value>
+  </data>
+  <data name="ButtonHeaderBuildRoutes" xml:space="preserve">
+    <value>Build Routes</value>
+  </data>
+  <data name="MapDisplayPreferencesPageLabelSymbolizeBy" xml:space="preserve">
+    <value>Symbolize By:</value>
+  </data>
+  <data name="BlueSkinButton" xml:space="preserve">
+    <value>Blue Skin</value>
+  </data>
+  <data name="ImportAliasesPropertyVehicleSpecialties" xml:space="preserve">
+    <value>Vehicle Specialties</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ReportsPreferencesPageLabelReportTemplates" xml:space="preserve">
+    <value>Report Templates:</value>
+  </data>
+  <data name="DeleteReportsButtonDisabledTooltip" xml:space="preserve">
+    <value>Please select an item</value>
+  </data>
+  <data name="PrintReportButtonDisabledTooltip" xml:space="preserve">
+    <value>Please select a report</value>
+  </data>
+  <data name="ImportProfilesEditPagePreviewLabel" xml:space="preserve">
+    <value>Import Preview</value>
+  </data>
+  <data name="PreviewPrintSaveCommandEnabledTooltip" xml:space="preserve">
+    <value>View, print, or save reports created in the current session</value>
+  </data>
+  <data name="UnhandledExceptionMsgBoxTitle" xml:space="preserve">
+    <value>Unexpected error</value>
+  </data>
+  <data name="LocationAssignedToDefaultRoute" xml:space="preserve">
+    <value>Depot '{0}' is assigned to 1 or more Default Routes. Please unassign before deleting or those Default Routes will become invalid.</value>
+  </data>
+  <data name="LicenseSubscriptionNotesHeader" xml:space="preserve">
+    <value>{0} days left in Your Subscription</value>
+  </data>
+  <data name="ExportProfilesPagePrintHeader" xml:space="preserve">
+    <value>Export Propfiles Table</value>
+  </data>
+  <data name="LoginWindowCaption" xml:space="preserve">
+    <value>Login to {0}</value>
+  </data>
+  <data name="ServerObjectTerminated" xml:space="preserve">
+    <value>Cannot solve route because server connection has failed or timed out. Please try again.</value>
+  </data>
+  <data name="NoViolationsText" xml:space="preserve">
+    <value>No violations found</value>
+  </data>
+  <data name="FinihDateColumnHeader" xml:space="preserve">
+    <value>Finish Date</value>
+  </data>
+  <data name="ButtonHeaderDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="BreakRequiredSingleRouteViolationMessage" xml:space="preserve">
+    <value>Order: {1} cannot be routed since there is no place on the route: {0} where it is possible to insert the break(s) without introducing violations.</value>
+  </data>
+  <data name="VehicleSpecialtiesPageInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Vehicle specialty</value>
+  </data>
+  <data name="ItemCopyLongName" xml:space="preserve">
+    <value>Copy ({0}) of {1}</value>
+  </data>
+  <data name="FailedDatabaseConnection" xml:space="preserve">
+    <value>Failed to create a database connection. {0}</value>
+  </data>
+  <data name="MapDisplayPreferencesPageLabelStemTime" xml:space="preserve">
+    <value>Stem time:</value>
+  </data>
+  <data name="InvalidMapLayerType" xml:space="preserve">
+    <value>Invalid map layer type.</value>
+  </data>
+  <data name="ImportAliasesPriority" xml:space="preserve">
+    <value>Priority,Prior</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ButtonHeaderImport" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="GenerateRouteShapesCancelledText" xml:space="preserve">
+    <value>Route shapes building on {0} was cancelled.</value>
+  </data>
+  <data name="EditReportsButtonDisabledTooltip" xml:space="preserve">
+    <value>Please select a report</value>
+  </data>
+  <data name="BestOtherRouteOption" xml:space="preserve">
+    <value>Best Other Route</value>
+  </data>
+  <data name="DriversFixedCaption" xml:space="preserve">
+    <value>Fixed Cost</value>
+  </data>
+  <data name="FleetSetupWizardImportOrdersDecisionPageTitle" xml:space="preserve">
+    <value>Would You Like To Import Some Orders?</value>
+  </data>
+  <data name="MobileDevicesPageCaption" xml:space="preserve">
+    <value>Mobile Devices</value>
+  </data>
+  <data name="ImportAliasesTimeBeforeOT" xml:space="preserve">
+    <value>Time Before OT,TimeBeforeOT,Time BeforeOT,Before OT,BeforeOT,Time,TimeOT,Time OT</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ImportAliasesPropertyCustomerNumber" xml:space="preserve">
+    <value>Customer Number</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="FleetSetupWizardFinishPageText1" xml:space="preserve">
+    <value>See the Setup tab, Preferences panel or Help files for additional options and information.</value>
+  </data>
+  <data name="ProjectNameIsEmpty" xml:space="preserve">
+    <value>Project name is empty</value>
+  </data>
+  <data name="AskOnDeleteString" xml:space="preserve">
+    <value>Ask On Delete:</value>
+  </data>
+  <data name="DriversPageCaption" xml:space="preserve">
+    <value>Drivers</value>
+  </data>
+  <data name="DurationColumnHeader" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="ArchiveMessageProcessStatusFormat" xml:space="preserve">
+    <value>Archiving routes from '{0}'...</value>
+  </data>
+  <data name="BuildRoutesCommandDisabledTooltip" xml:space="preserve">
+    <value>To build routes, first set up your fleet and import some orders</value>
+  </data>
+  <data name="GeneralPreferences_ProxyManualSettings" xml:space="preserve">
+    <value>Use manual proxy configuration</value>
+  </data>
+  <data name="AssignOrders" xml:space="preserve">
+    <value>Moving orders...</value>
+  </data>
+  <data name="DaysColumnHeader" xml:space="preserve">
+    <value>Days</value>
+  </data>
+  <data name="DriverNameHeader" xml:space="preserve">
+    <value>Driver Name</value>
+  </data>
+  <data name="SwitchUserButtonString" xml:space="preserve">
+    <value>Switch User</value>
+  </data>
+  <data name="LockedColumnHeader" xml:space="preserve">
+    <value>Locked</value>
+  </data>
+  <data name="StartLocationColumnHeader" xml:space="preserve">
+    <value>Start Depot</value>
+  </data>
+  <data name="StopOnOrderSide" xml:space="preserve">
+    <value>Vehicles must stop on same side of the street as the order</value>
+  </data>
+  <data name="MessageButtonTooltip" xml:space="preserve">
+    <value>Click to see warning, error, and status messages</value>
+  </data>
+  <data name="ImportAliasesPerHourSalary" xml:space="preserve">
+    <value>Per Hour Salary,PerHourSalary,PerHour Salary,Per HourSalary,HourSalary,Hour Salary</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ZonesPageCaption" xml:space="preserve">
+    <value>Zones</value>
+  </data>
+  <data name="MaxTotalDurationColumnHeader" xml:space="preserve">
+    <value>Max Total Duration</value>
+  </data>
+  <data name="ProfileInvalidState" xml:space="preserve">
+    <value>Not all required fields are filled.</value>
+  </data>
+  <data name="CustomOrderProperties" xml:space="preserve">
+    <value>Order Properties</value>
+  </data>
+  <data name="ReRunBreaksWizardCommandDisabledTooltip" xml:space="preserve">
+    <value>Cannot start wizard while editing is in progress</value>
+  </data>
+  <data name="CurrentScheduleName" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="ProjectFolderInaccessible" xml:space="preserve">
+    <value>Projects folder {0} is inaccessible.</value>
+  </data>
+  <data name="OptionWithQuotes" xml:space="preserve">
+    <value>'{0}'</value>
+  </data>
+  <data name="UsernameString" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="VehicleSpecialtiesTypeExceptionMessage" xml:space="preserve">
+    <value>All items must be Vehicle Specialties.</value>
+  </data>
+  <data name="AlwaysAskBeforeApplying" xml:space="preserve">
+    <value>Always ask before applying breaks changes to default routes</value>
+  </data>
+  <data name="ImportAliasesPropertyPriority" xml:space="preserve">
+    <value>Priority</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ZoneByPolygonTooltipText" xml:space="preserve">
+    <value>Create zone area</value>
+  </data>
+  <data name="ImportAliasesTimeWindowStartDay" xml:space="preserve">
+    <value>TimeWindow1StartDay,Time Window1 Start Day,TW1Day,TW1StartDay,TW1 StartDay,TW1 Start Day,TimeWindowStartDay,Time Window Start Day,TWDay,TimeWindow StartDay,TimeWindow Start Day,TW Start Day,TW StartDay,TW_StartDay,TWStartDay</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ReRunBreaksWizardCommandTtile" xml:space="preserve">
+    <value>Re-run Breaks Wizard</value>
+  </data>
+  <data name="ImportProcessStatusRecordValueSkiped" xml:space="preserve">
+    <value>Record number {0} with Name = '{1}' cannot be imported because '{2}' Data Source Field contains invalid value ('{3}').</value>
+  </data>
+  <data name="ImportAliasesSpecialties" xml:space="preserve">
+    <value>Specialties,Specialtie,Speciality,Spec</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="DuplicateOrdersCommandTitle" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="ImportAliasesVehicleSpecialties" xml:space="preserve">
+    <value>Specialties,Specialtie,Speciality,VehicleSpecialties,Vehicle Specialties,Vehicle Specialty,VehicleSpecialty,VehSpecialties</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="LocationsTypeExceptionMessage" xml:space="preserve">
+    <value>All items must be Locations.</value>
+  </data>
+  <data name="OrderColumnHeader" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="ProxyAuthenticationDlgText" xml:space="preserve">
+    <value>The proxy {0}:{1} is requesting a username and password.</value>
+  </data>
+  <data name="TimeBeforeOTColumnHeader" xml:space="preserve">
+    <value>Time Before OT</value>
+  </data>
+  <data name="LayerFailed" xml:space="preserve">
+    <value>Layer '{0}' is unavailable.</value>
+  </data>
+  <data name="LockedOrdersDuringMoveMessage" xml:space="preserve">
+    <value>Unable to move orders since some of them are locked or assigned to locked routes. Please unlock them and try again.</value>
+  </data>
+  <data name="ImportProcessStarted" xml:space="preserve">
+    <value>{0} Import Started.</value>
+  </data>
+  <data name="TechSupportTimeRangeTitle" xml:space="preserve">
+    <value>5 a.m. to 5 p.m. (PST), Monday-Friday</value>
+  </data>
+  <data name="PreferencesCategoryCaption" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="ExportProfile" xml:space="preserve">
+    <value>Export Profile</value>
+  </data>
+  <data name="InvalidStopDateExceptionMessage" xml:space="preserve">
+    <value>All stops and orders must be assigned to the same date.</value>
+  </data>
+  <data name="VehicleSpecialties" xml:space="preserve">
+    <value>Vehicle Specialties</value>
+  </data>
+  <data name="MinValueColumnHeader" xml:space="preserve">
+    <value>Min Value</value>
+  </data>
+  <data name="ReportPreviewSaveDoneFormat" xml:space="preserve">
+    <value>Report '{0}' was successfully saved to '{1}'.</value>
+  </data>
+  <data name="ReportsPageButtonContentPrint" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="ImportStatusFileIsEmpty" xml:space="preserve">
+    <value>Import file is empty.</value>
+  </data>
+  <data name="DeleteRoutesCommandTitle" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ImportProcessStatusRecordOutMapExtendFormat" xml:space="preserve">
+    <value>{0} is outside the area of your project's geographic extent. Please check the order attributes including X/Y and address information.</value>
+  </data>
+  <data name="ValueColumnHeader" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="ManageFuelCommandTitle" xml:space="preserve">
+    <value>Manage Fuel</value>
+  </data>
+  <data name="BarriersLayerName" xml:space="preserve">
+    <value>Barriers</value>
+  </data>
+  <data name="ImportAliasesMaxViolationTime" xml:space="preserve">
+    <value>Max Violation Time,MaxViolationTime,Max. Violation Time,MaxViolTim,Max.Violation Time</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="TimeWindowStartColumnHeader" xml:space="preserve">
+    <value>Time Window Start</value>
+  </data>
+  <data name="RouteDropBeforeStopMenuItemHeaderFormatStr" xml:space="preserve">
+    <value>Drop on route {0}, before {1}.</value>
+  </data>
+  <data name="TimeWindowEndColumnHeader" xml:space="preserve">
+    <value>Time Window End</value>
+  </data>
+  <data name="DefaultsUpdateError" xml:space="preserve">
+    <value>Failed to update defaults settings.</value>
+  </data>
+  <data name="ReportPreviewSaveDialogTitleFormat" xml:space="preserve">
+    <value>Save '{0}' report</value>
+  </data>
+  <data name="GenerateDirectionsCommandTitle" xml:space="preserve">
+    <value>Build Directions</value>
+  </data>
+  <data name="StartupPageString" xml:space="preserve">
+    <value>Startup:</value>
+  </data>
+  <data name="DeleteCommandEnabledTooltip" xml:space="preserve">
+    <value>Deletes the selected item(s)</value>
+  </data>
+  <data name="PlannedDateColumnHeader" xml:space="preserve">
+    <value>Planned Date</value>
+  </data>
+  <data name="DontApplyChanges" xml:space="preserve">
+    <value>Do not apply changes</value>
+  </data>
+  <data name="ImportZones" xml:space="preserve">
+    <value>Zones</value>
+  </data>
+  <data name="SwitchUserCommandEnabledTooltip" xml:space="preserve">
+    <value>Allows you log in with a different account</value>
+  </data>
+  <data name="Zone" xml:space="preserve">
+    <value>Zone</value>
+  </data>
+  <data name="ImportAliasesPropertyArriveTime" xml:space="preserve">
+    <value>Arrive Time</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="GenerateLogDescription" xml:space="preserve">
+    <value>Generate log file and copy to Desktop</value>
+  </data>
+  <data name="FleetSetupWizardCandidatesFoundSubPageText2" xml:space="preserve">
+    <value>If you do not see an appropriate address use the pin tool on the map to place the {0}.</value>
+  </data>
+  <data name="ReportsPreferencesPageRenameErrorToolTip" xml:space="preserve">
+    <value>You can not rename predefined report template.</value>
+  </data>
+  <data name="NotValidRangeText" xml:space="preserve">
+    <value>Max value less than Min value.</value>
+  </data>
+  <data name="DriversPagePrintHeader" xml:space="preserve">
+    <value>Drivers Table</value>
+  </data>
+  <data name="ReportsPageLabelStep2" xml:space="preserve">
+    <value>Preview / Print / Save Reports</value>
+  </data>
+  <data name="DeleteOrdersCommandTitle" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ConstraintsCheckerMaxOrderCntRoutesMessageFmt" xml:space="preserve">
+    <value>You have exceeded the maximum orders. You are trying to route {0} orders and all routes have a maximum of {1}.</value>
+  </data>
+  <data name="PolygonZoneGeometry" xml:space="preserve">
+    <value>Polygon</value>
+  </data>
+  <data name="AssignToOtherRouteCommandDisabledTooltip" xml:space="preserve">
+    <value>Select an order you'd like to assign</value>
+  </data>
+  <data name="AboutButtonString" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="SymbolColumnHeader" xml:space="preserve">
+    <value>Symbol</value>
+  </data>
+  <data name="ImportProcessStatusUngeoded" xml:space="preserve">
+    <value>ungeocoded</value>
+  </data>
+  <data name="ReportTemplateNotUniqueName" xml:space="preserve">
+    <value>A report template with the same name already exists.</value>
+  </data>
+  <data name="ExportMessageFormatFailed" xml:space="preserve">
+    <value>Export of {0} to '{1}' failed.</value>
+  </data>
+  <data name="ImportObjectsTitleFormat" xml:space="preserve">
+    <value>Import {0}</value>
+  </data>
+  <data name="ActiveReportsContents" xml:space="preserve">
+    <value>Contents</value>
+  </data>
+  <data name="MobileDeviceAssignedToDriver" xml:space="preserve">
+    <value>Mobile Device '{0}' is assigned to 1 or more Driver. Please unassign before deleting or those Driver will become invalid.</value>
+  </data>
+  <data name="ImportSourceMatchMethod" xml:space="preserve">
+    <value>Imported X/Y</value>
+  </data>
+  <data name="ExportProfilesEditPageRouteLabel" xml:space="preserve">
+    <value>Route:</value>
+  </data>
+  <data name="SelectedGridStatusPattern" xml:space="preserve">
+    <value>{0} {1}(s) of {2} selected</value>
+  </data>
+  <data name="ManageRoutesCommandTitle" xml:space="preserve">
+    <value>Manage Routes</value>
+  </data>
+  <data name="ArchiveRoutesString" xml:space="preserve">
+    <value>Archive routes that are more than</value>
+  </data>
+  <data name="OrdersSubmittingForRoutingText" xml:space="preserve">
+    <value>{0} order(s) on {1} submitted for routing.</value>
+  </data>
+  <data name="MaxTravelDurationColumnHeader" xml:space="preserve">
+    <value>Max Travel Duration</value>
+  </data>
+  <data name="NameColumnHeader" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="DriversSpecialtiesCaption" xml:space="preserve">
+    <value>Specialties</value>
+  </data>
+  <data name="AssignToBestRouteCommandEnabledTooltip" xml:space="preserve">
+    <value>Assigns order to the route resulting in the lowest cost while meeting all constraints</value>
+  </data>
+  <data name="LocationsPageInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Depot</value>
+  </data>
+  <data name="ContactingServersStep" xml:space="preserve">
+    <value>Contacting ArcGIS Online Servers...</value>
+  </data>
+  <data name="NextNavigationButtonTooltip" xml:space="preserve">
+    <value>Forward to {0} page</value>
+  </data>
+  <data name="MessageWindowTypesNameError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ImportProcessFailed" xml:space="preserve">
+    <value>{0} Import Failed.</value>
+  </data>
+  <data name="RouteDropMenuItemHeaderFormatStr" xml:space="preserve">
+    <value>Drop on route {0}.</value>
+  </data>
+  <data name="VehicleSpecialitiesListViolationMessage" xml:space="preserve">
+    <value>Vehicle specialties discrepancy. Vehicles: {0} don't have the required specialties for order: {1}.</value>
+  </data>
+  <data name="SequenceCommandCompletedText" xml:space="preserve">
+    <value>{0} route(s) on {1} sequenced.</value>
+  </data>
+  <data name="VehicleSpecialitiesSingleViolationMessage" xml:space="preserve">
+    <value>Vehicle specialties discrepancy. Vehicle: {0} doesn't have the required specialties for order: {1}.</value>
+  </data>
+  <data name="ImportProfilesEditPageSourceRadioButtonProvider" xml:space="preserve">
+    <value>OLE DB Provider (database)</value>
+  </data>
+  <data name="DriverAssignedToFutureRoute" xml:space="preserve">
+    <value>Driver '{0}' is assigned to 1 or more Routes for today or future dates. Please unassign before deleting or those Routes will become invalid.</value>
+  </data>
+  <data name="ManuallyEditedXYFarFromNearestRoad" xml:space="preserve">
+    <value>Edited X/Y far from nearest road</value>
+  </data>
+  <data name="FleetSetupWizardBuildRoutesDisabledUntilOrdersNotLocatedText" xml:space="preserve">
+    <value>Please locate or delete orders in the table above to proceed</value>
+  </data>
+  <data name="DuplicateRoutesCommandTitle" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="MakeUTurnsAtStops" xml:space="preserve">
+    <value>Vehicles can make U-Turns at stops</value>
+  </data>
+  <data name="ImportAliasesArriveTime" xml:space="preserve">
+    <value>ArriveTime,Arrive Time,ArrTime</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="SyncTypeFolder" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="ManageVehiclesCommandTitle" xml:space="preserve">
+    <value>Manage Vehicles</value>
+  </data>
+  <data name="UnreachableRouteViolationMessage" xml:space="preserve">
+    <value>Route: {0} has an infeasible order preassignment. There is no way to reach orders: {1}.</value>
+  </data>
+  <data name="ReportTemplateLongName" xml:space="preserve">
+    <value>Template name is too long.</value>
+  </data>
+  <data name="UpdateCustomOprderPropertiesMessageRoutingOperationsInProgress" xml:space="preserve">
+    <value>Can't update custom order properties for the current project while a routing operation is in progress.</value>
+  </data>
+  <data name="DeletingDialogTitleFormat" xml:space="preserve">
+    <value>Delete {0}(s)</value>
+  </data>
+  <data name="BreakMaxTravelTimeSingleRouteViolationMessage" xml:space="preserve">
+    <value>{1} could not be moved to {0}. A break can't be started within its limited travel time. Increasing this limit may help.</value>
+  </data>
+  <data name="ImportAliasesPerHourOTSalary" xml:space="preserve">
+    <value>Per Hour OT Salary,PerHourOTSalary,Per Hour OTSalary,PerHour OTSalary,PerHour OT Salary,Hour OT Salary,Hour OTSalary,HourOTSalary,OT Salary,OTSalary</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ButtonHeaderBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="MapDisplayPreferencesBarriersCheckboxLabel" xml:space="preserve">
+    <value>Show barriers</value>
+  </data>
+  <data name="InitializingServicesStep" xml:space="preserve">
+    <value>Initializing Services...</value>
+  </data>
+  <data name="PriceColumnHeader" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="ManageFleetMonitoringCommandTitle" xml:space="preserve">
+    <value>Manage Fleet Monitoring</value>
+  </data>
+  <data name="FindLocationAddressByPointTooltipText" xml:space="preserve">
+    <value>Use this pushpin tool to place the selected depot on the map.</value>
+  </data>
+  <data name="PatternCaption" xml:space="preserve">
+    <value>Days</value>
+  </data>
+  <data name="ReportFailedMessage" xml:space="preserve">
+    <value>Building reports failed.</value>
+  </data>
+  <data name="PerHourOTSalaryColumnHeader" xml:space="preserve">
+    <value>Per Hour OT Salary</value>
+  </data>
+  <data name="GeneralPreferences_ProxyProtocolHttps" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="FleetSetupWizardFinishPageTitle" xml:space="preserve">
+    <value>Congratulations, Your Fleet is Set Up!</value>
+  </data>
+  <data name="DefaultRoutesPagePrintHeader" xml:space="preserve">
+    <value>Default Routes Table</value>
+  </data>
+  <data name="ImportOrdersCommandEnabledTooltip" xml:space="preserve">
+    <value>Imports orders from a table or file</value>
+  </data>
+  <data name="ButtonHeaderRetry" xml:space="preserve">
+    <value>Retry</value>
+  </data>
+  <data name="NoLocationValidationError" xml:space="preserve">
+    <value>At least one depot must be geocoded.</value>
+  </data>
+  <data name="StopsPagePrintHeader" xml:space="preserve">
+    <value>Stops Table</value>
+  </data>
+  <data name="DriverSpecialtiesColumnHeader" xml:space="preserve">
+    <value>Driver Specialties</value>
+  </data>
+  <data name="ImportAliasesPropertyTimeAtEnd" xml:space="preserve">
+    <value>Time At End</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ArchivingSettingsString" xml:space="preserve">
+    <value>Archiving Settings:</value>
+  </data>
+  <data name="DriversMobileDeviceCaption" xml:space="preserve">
+    <value>Mobile Device</value>
+  </data>
+  <data name="SilentUpdatesString" xml:space="preserve">
+    <value>Silent update</value>
+  </data>
+  <data name="ReportServiceFailedMessage" xml:space="preserve">
+    <value>Building reports failed because {0} service is unavailable.</value>
+  </data>
+  <data name="WarningMessageBoxTitle" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="GeneralPreferences_ProxyProtocolHttp" xml:space="preserve">
+    <value>HTTP:</value>
+  </data>
+  <data name="BreakColumnHeader" xml:space="preserve">
+    <value>Break</value>
+  </data>
+  <data name="BarriersPagePrintHeader" xml:space="preserve">
+    <value>Barriers Table</value>
+  </data>
+  <data name="ImportAliasesPropertyStartTimeWindowStart" xml:space="preserve">
+    <value>Start Time Window Start</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ImportAliasesMaxOrders" xml:space="preserve">
+    <value>Max Orders,MaxOrders,Max.Orders,Orders</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="FailedLoginMessage" xml:space="preserve">
+    <value>Username or password is incorrect. Please try again.</value>
+  </data>
+  <data name="ArriveTimeColumnHeader" xml:space="preserve">
+    <value>Arrive Time</value>
+  </data>
+  <data name="ExportProfilesEditPageFormat" xml:space="preserve">
+    <value>Format:</value>
+  </data>
+  <data name="ButtonHeaderAnotherLocation" xml:space="preserve">
+    <value>Enter Another Depot</value>
+  </data>
+  <data name="FuelTypeAssignedToVehicle" xml:space="preserve">
+    <value>Fuel Type '{0}' is assigned to 1 or more Vehicles. Please unassign before deleting or those Vehicles will become invalid.</value>
+  </data>
+  <data name="LoadingScheduleStatus" xml:space="preserve">
+    <value>Loading schedule...</value>
+  </data>
+  <data name="ReportsPageButtonGenerate" xml:space="preserve">
+    <value>Build Reports</value>
+  </data>
+  <data name="AddRoutesIsSelectedCaption" xml:space="preserve">
+    <value>Selected</value>
+  </data>
+  <data name="BreaksSetupWizardPageTitle" xml:space="preserve">
+    <value>Breaks</value>
+  </data>
+  <data name="ExportProfileInvalidType" xml:space="preserve">
+    <value>Unsupported export type.</value>
+  </data>
+  <data name="ServiceNameRouting" xml:space="preserve">
+    <value>Routing</value>
+  </data>
+  <data name="LoadingCommandsStep" xml:space="preserve">
+    <value>Loading Commands...</value>
+  </data>
+  <data name="TroubleshootingHeader" xml:space="preserve">
+    <value>Troubleshooting</value>
+  </data>
+  <data name="StartCaption" xml:space="preserve">
+    <value>From:</value>
+  </data>
+  <data name="DefaultsInvalidWarning" xml:space="preserve">
+    <value>Some user settings could not be loaded and have reverted to default configuration.</value>
+  </data>
+  <data name="MapDisplayPreferencesPageCaption" xml:space="preserve">
+    <value>Map Display</value>
+  </data>
+  <data name="CalendarWidgetCaption" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="GenerateLogString" xml:space="preserve">
+    <value>Generate error log:</value>
+  </data>
+  <data name="PreviewPrintSaveCommandDisabledTooltip" xml:space="preserve">
+    <value>Build at least one report to preview, print, or save</value>
+  </data>
+  <data name="UnaEditCurrentProjectNameTooltip" xml:space="preserve">
+    <value>You can not rename current project</value>
+  </data>
+  <data name="RoutesTypeExceptionMessage" xml:space="preserve">
+    <value>All items must be Routes.</value>
+  </data>
+  <data name="ImportAliasesStartTimeWindowStart" xml:space="preserve">
+    <value>Start Time Window Start,FromStartTimeStr,FrStartTimeStr,TimeWindowStart,Time Window Start,FromTimeStr,FrTimeStr,TW_Start,TimeWindow Start,StartTimeWindow Start,StartTimeWindow From</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ImportAliasesPropertyMaxTravelDistance" xml:space="preserve">
+    <value>Max Travel Distance</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="Locations" xml:space="preserve">
+    <value>Depots</value>
+  </data>
+  <data name="MaxOrdersCountAnyRoutesViolationMessage" xml:space="preserve">
+    <value>{0} could not be moved to any route. Max Order Count exceeded.</value>
+  </data>
+  <data name="FleetSetupWizardIntroductionPageTitle" xml:space="preserve">
+    <value>Fleet Setup Wizard</value>
+  </data>
+  <data name="GeneralPreferences_ProxyPort" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="ExportNotFoundScheduleMessageFormat" xml:space="preserve">
+    <value>No Schedule for selected dates ({0} - {1}).</value>
+  </data>
+  <data name="TasksExpanderCaption" xml:space="preserve">
+    <value>Tasks</value>
+  </data>
+  <data name="EndCaption" xml:space="preserve">
+    <value>To:</value>
+  </data>
+  <data name="GenerateDirectionsCompletedText" xml:space="preserve">
+    <value>Directions succeeded.</value>
+  </data>
+  <data name="ImportProfilesEditPageToolTipConnectionString" xml:space="preserve">
+    <value>Enter OLE DB connection string to your data source.</value>
+  </data>
+  <data name="UnableOpenProject" xml:space="preserve">
+    <value>Unable to open project.</value>
+  </data>
+  <data name="MovingFailedCommonMessage" xml:space="preserve">
+    <value>Failed to move order(s). They cannot be unassigned from '{0}' schedule. Please fix the issues and try again.</value>
+  </data>
+  <data name="DefaultLocationNameFmt" xml:space="preserve">
+    <value>Depot {0}</value>
+  </data>
+  <data name="OrderPriorityNormal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="FleetSetupWizardRoutesPageText1" xml:space="preserve">
+    <value>This is the required information Route Planner needs to create some default routes. After you finish this wizard, you can change or enter additional details on the Setup tab.</value>
+  </data>
+  <data name="ImportProcessStatisticUpdated" xml:space="preserve">
+    <value>updated</value>
+  </data>
+  <data name="RouteNumberIsMoreThanLicenseAllow" xml:space="preserve">
+    <value>Your schedule contains {0} routes, but you are only licensed for {1}.</value>
+  </data>
+  <data name="OrderNotFoundOnNetworkViolationMessage" xml:space="preserve">
+    <value>Order: {0} is located too far from the nearest road.</value>
+  </data>
+  <data name="LockedPageLabelText" xml:space="preserve">
+    <value>
+        Routing...
+    </value>
+  </data>
+  <data name="StartTimeWindowColumnHeader" xml:space="preserve">
+    <value>Start Time Window</value>
+  </data>
+  <data name="SelectBreakTypeMessage" xml:space="preserve">
+    <value>Please select the type of breaks you'd like to use for your drivers. Up to 5 breaks may be set.</value>
+  </data>
+  <data name="RoutesGridCaptionMaxTotalDuration" xml:space="preserve">
+    <value>Max Total Duration</value>
+  </data>
+  <data name="DriversPerHourOTCaption" xml:space="preserve">
+    <value>Per Hour OT</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Depot</value>
+  </data>
+  <data name="MaxValueColumnHeader" xml:space="preserve">
+    <value>Max Value</value>
+  </data>
+  <data name="MapDisplayPreferencesPageButtonDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ImportMobileDevices" xml:space="preserve">
+    <value>Mobile Devices</value>
+  </data>
+  <data name="ImportAliasesPropertyTimeAtStart" xml:space="preserve">
+    <value>Time At Start</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="UpdateString" xml:space="preserve">
+    <value>Update:</value>
+  </data>
+  <data name="TimeWindow2ColumnHeader" xml:space="preserve">
+    <value>Time Window2</value>
+  </data>
+  <data name="DefaultColumnHeader" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="MapDisplayPreferencesPageShowAutomaticallyZoom" xml:space="preserve">
+    <value>Automatically zoom to selected items</value>
+  </data>
+  <data name="EmptyHardTimeWindowViolationMessage" xml:space="preserve">
+    <value>Time Window(s) for the start depot, the finish depot, or break(s) cannot be accommodated by Route: {0}.</value>
+  </data>
+  <data name="LocatorIsNotComposite" xml:space="preserve">
+    <value>Locator is not composite. Remove &lt;internallocators&gt; section from services.xml.</value>
+  </data>
+  <data name="ExportPageCaption" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="ExportProfilesEditPageGeneralType" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="ApplyOrderTooltip" xml:space="preserve">
+    <value>Apply location on the map for selected order.</value>
+  </data>
+  <data name="ImportAliasesPropertyTimeBeforeOT" xml:space="preserve">
+    <value>Time Before OT</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ReportsPageLabelStep1" xml:space="preserve">
+    <value>Create / Edit Reports</value>
+  </data>
+  <data name="ExportProfileValueIsEmpty" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="ProjectsPageCaption" xml:space="preserve">
+    <value>Projects</value>
+  </data>
+  <data name="RouteLocationsVirtualWarningButton" xml:space="preserve">
+    <value>Warn user if Start or End depot is specified but not both</value>
+  </data>
+  <data name="ImportProcessStatusUpdated" xml:space="preserve">
+    <value>was updated.</value>
+  </data>
+  <data name="ReportPreviewSaveFailSimpleFormat" xml:space="preserve">
+    <value>Unable to save report '{0}'.</value>
+  </data>
+  <data name="LicenseExpirationWarning" xml:space="preserve">
+    <value>Your Route Planner subscription will expire in {0} day(s).</value>
+  </data>
+  <data name="VehicleSpecialty" xml:space="preserve">
+    <value>Vehicle Specialty</value>
+  </data>
+  <data name="ViolationLocationStringFormat" xml:space="preserve">
+    <value>'{0}' depot</value>
+  </data>
+  <data name="RoutesGridCaptionColor" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="ImportAliasesOrderNumber" xml:space="preserve">
+    <value>Order Number,OrderNumber,OrderNum,Number</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ReportsPreferencesPageButtonChangePicture" xml:space="preserve">
+    <value>Change Picture</value>
+  </data>
+  <data name="ExportProfilesEditPageStopLabel" xml:space="preserve">
+    <value>Stop:</value>
+  </data>
+  <data name="MinsString" xml:space="preserve">
+    <value>minutes</value>
+  </data>
+  <data name="GeneralPreferencesPageCaption" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="FailedDatabaseReqData" xml:space="preserve">
+    <value>Failed to connect to the database. {0}</value>
+  </data>
+  <data name="ManageMobileDevicesCommandTitle" xml:space="preserve">
+    <value>Manage Mobile Devices</value>
+  </data>
+  <data name="CapacityListVehicleViolationMessage" xml:space="preserve">
+    <value>{0} capacity exceeded. Vehicles: {1} don't have enough capacity for order: {2}.</value>
+  </data>
+  <data name="ProjectsGridDescriptionCaption" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ZonesPageInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Zone</value>
+  </data>
+  <data name="ImportAliasesZones" xml:space="preserve">
+    <value>Zones,Zone,ZonesList,Zones List</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ImportProcessStatisticFormat" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="ImportAliasesTimeWindowFinish" xml:space="preserve">
+    <value>TimeWindow1Finish,Time Window1 Finish,ToTime1Str,TW1_End,TimeWindowFinish,Time Window Finish,ToTimeStr,TW_End,TW_To,TW To,TWTo,Time Window To,TimeWindow To,TimeWindow Finish</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="MessageDetailsHelpLinkCaption" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="ReportTemplate" xml:space="preserve">
+    <value>Report Template</value>
+  </data>
+  <data name="ImportAliasesPropertyPerHourSalary" xml:space="preserve">
+    <value>Per Hour Salary</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="LocationsGridNameCaption" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="DefaultRoutesApplyingDialogTitle" xml:space="preserve">
+    <value>Apply changes to all routes</value>
+  </data>
+  <data name="BuildRoutesCommandEnabledTooltip" xml:space="preserve">
+    <value>Assigns all orders to available routes resulting in the lowest cost while meeting all constraints</value>
+  </data>
+  <data name="ConstraintsCheckerHeadMessageFmt" xml:space="preserve">
+    <value>All orders cannot be routed on {0}.</value>
+  </data>
+  <data name="RoutesGridCaptionStartTimeWindow" xml:space="preserve">
+    <value>Start Time Window</value>
+  </data>
+  <data name="ExportMessageFormatSucceded" xml:space="preserve">
+    <value>Export of {0} to '{1}' successfully completed.</value>
+  </data>
+  <data name="Co2EmissionColumnHeader" xml:space="preserve">
+    <value>CO2 Emission</value>
+  </data>
+  <data name="AllOrdersMovingOperationCompletedText" xml:space="preserve">
+    <value>{0} orders moved to {1}.</value>
+  </data>
+  <data name="ImportProfilesEditPageToolTipFilePathShape" xml:space="preserve">
+    <value>Location of the file to import (Shapefile).</value>
+  </data>
+  <data name="CustomOrderPropertiesUpdateError" xml:space="preserve">
+    <value>Failed to update custom order properties for current project.</value>
+  </data>
+  <data name="ButtonHeaderCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ReportsType" xml:space="preserve">
+    <value>Save as type:</value>
+  </data>
+  <data name="ReportsPageButtonCheckRoutes" xml:space="preserve">
+    <value>Check All</value>
+  </data>
+  <data name="RoutesGridCaptionTimeAtRenewal" xml:space="preserve">
+    <value>Time at Renewal</value>
+  </data>
+  <data name="ReportPreviewPrintFailFormat" xml:space="preserve">
+    <value>Unable to send report '{0}' for printing.</value>
+  </data>
+  <data name="BarrierAvailableTooltipText" xml:space="preserve">
+    <value>Available</value>
+  </data>
+  <data name="MaxTotalTimeSingleRouteViolationMessage" xml:space="preserve">
+    <value>{1} could not be moved to {0}. Max Total Duration exceeded.</value>
+  </data>
+  <data name="SearchLabel" xml:space="preserve">
+    <value>Search:</value>
+  </data>
+  <data name="RenewalString" xml:space="preserve">
+    <value>Renewal</value>
+  </data>
+  <data name="ImportAliasesPropertyName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ProjecstGridNameCaption" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="RoutesPageInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Route</value>
+  </data>
+  <data name="ReportEnforceSplittedText" xml:space="preserve">
+    <value>(always build separate report for each route)</value>
+  </data>
+  <data name="LocationsPagePrintHeader" xml:space="preserve">
+    <value>Depots Table</value>
+  </data>
+  <data name="ConstraintsCheckerVehicleSpecRouteMessageFmt" xml:space="preserve">
+    <value>Vehicle specialties discrepancy. Vehicle: {0} doesn't have the required specialties for order: {1}. Missing specialties: {2}.</value>
+  </data>
+  <data name="LicenseWrongCredentialsNotesHeader" xml:space="preserve">
+    <value>Login Unsuccessful</value>
+  </data>
+  <data name="HelpSystemFileNotFound" xml:space="preserve">
+    <value>Help could not be started because the help file was not found.</value>
+  </data>
+  <data name="ServiceTimeColumnHeader" xml:space="preserve">
+    <value>Service Time</value>
+  </data>
+  <data name="ImportProfilesEditPageToolTipTable" xml:space="preserve">
+    <value>Select an existing table in the database.</value>
+  </data>
+  <data name="BuildReportsCommandEnabledTooltip" xml:space="preserve">
+    <value>Creates reports for selected days, routes, and templates</value>
+  </data>
+  <data name="DefaultRoutesApplyingDialogText" xml:space="preserve">
+    <value>Would you like to apply these changes to Default Routes for the current and all future days? Any edits already made in the Schedule tab will be overwritten.</value>
+  </data>
+  <data name="CapacitySingleVehicleViolationMessage" xml:space="preserve">
+    <value>{0} capacity exceeded. Vehicle: {1} doesn't have enough capacity for order: {2}.</value>
+  </data>
+  <data name="PointZoneGeometry" xml:space="preserve">
+    <value>Point</value>
+  </data>
+  <data name="DeleteOrdersErrorDetails" xml:space="preserve">
+    <value>The following orders are routed in another version of schedule for the day:{0}.</value>
+  </data>
+  <data name="VehiclesGridMobileDevicesCaption" xml:space="preserve">
+    <value>Mobile Device</value>
+  </data>
+  <data name="MobileDevicesPagePrintHeader" xml:space="preserve">
+    <value>Mobile Devices Table</value>
+  </data>
+  <data name="ImportAliasesDriverSpecialties" xml:space="preserve">
+    <value>DriverSpecialties,Driver Specialties,DriverSpecialty,Driver Specialty,Drv Specialty, DrvSpecialty</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ServiceAuthError" xml:space="preserve">
+    <value>{0} service is unavailable. You are not authorized to work with {1}. Please try reconnecting on the</value>
+  </data>
+  <data name="LoggedToServerString" xml:space="preserve">
+    <value>You are logged in to {0}</value>
+  </data>
+  <data name="SpecialtiesCellText" xml:space="preserve">
+    <value>({0})</value>
+  </data>
+  <data name="MapDisplayPreferencesPageLabelAutoZoom" xml:space="preserve">
+    <value>Auto Zoom:</value>
+  </data>
+  <data name="FuelTypeColumnHeader" xml:space="preserve">
+    <value>Fuel Type</value>
+  </data>
+  <data name="LoadingProjectStatus" xml:space="preserve">
+    <value>Project loading...</value>
+  </data>
+  <data name="SetupPanelValidationError" xml:space="preserve">
+    <value>Some items have errors. These need to be fixed before leaving current Action Panel:</value>
+  </data>
+  <data name="MapDisplayPreferencesPageFollowStreets" xml:space="preserve">
+    <value>Follow streets</value>
+  </data>
+  <data name="Stops" xml:space="preserve">
+    <value>Stops</value>
+  </data>
+  <data name="NextStepsWidgetCaption" xml:space="preserve">
+    <value>Next Steps</value>
+  </data>
+  <data name="Error_InvalidRoutesNum" xml:space="preserve">
+    <value>Routing request must contain at least 1 route.</value>
+  </data>
+  <data name="ImportAliasesPropertyTimeWindow2Finish" xml:space="preserve">
+    <value>Time Window2 Finish</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="BreaksTypeExceptionMessage" xml:space="preserve">
+    <value>All items must be Breaks.</value>
+  </data>
+  <data name="RoutingOperationsFailedMessage" xml:space="preserve">
+    <value>Routing failed for {0}.</value>
+  </data>
+  <data name="ZonesPagePrintHeader" xml:space="preserve">
+    <value>Zones Table</value>
+  </data>
+  <data name="FleetSetupWizardString" xml:space="preserve">
+    <value>Fleet Setup Wizard:</value>
+  </data>
+  <data name="BestRouteOption" xml:space="preserve">
+    <value>Best Route</value>
+  </data>
+  <data name="LoginButtonString" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="RoutesGridCaptionVehicle" xml:space="preserve">
+    <value>Vehicle</value>
+  </data>
+  <data name="ImportAliasesPropertySyncType" xml:space="preserve">
+    <value>Sync Type</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="SupportTitle" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="LunchString" xml:space="preserve">
+    <value>Break</value>
+  </data>
+  <data name="DefaultRoutesPageCaption" xml:space="preserve">
+    <value>Default Routes</value>
+  </data>
+  <data name="ImportAliasesMobileDevice" xml:space="preserve">
+    <value>Mobile Device,MobileDevice,Mobile,Device</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="MapDisplayPageCategoryInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Category</value>
+  </data>
+  <data name="LocationAssignedToFutureRoute" xml:space="preserve">
+    <value>Depot '{0}' is assigned to 1 or more Routes for today or future dates. Please unassign before deleting or those Routes will become invalid.</value>
+  </data>
+  <data name="Vehicle" xml:space="preserve">
+    <value>Vehicle</value>
+  </data>
+  <data name="ImportAliasesPropertyType" xml:space="preserve">
+    <value>Type</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="FuelEconomyColumnHeader" xml:space="preserve">
+    <value>Fuel Economy</value>
+  </data>
+  <data name="MaxTravelDistanceColumnHeader" xml:space="preserve">
+    <value>Max Travel Distance</value>
+  </data>
+  <data name="ImportAliasesPropertyMaxViolationTime" xml:space="preserve">
+    <value>Max Violation Time</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="OrderTypePickup" xml:space="preserve">
+    <value>Pickup</value>
+  </data>
+  <data name="ImportAliasesTimeWindow2StartDay" xml:space="preserve">
+    <value>Time Window2 Start Day,TimeWindow2StartDay,TW2Day</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ImportLocationsCommandTitle" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="EmptyListViewMessageText" xml:space="preserve">
+    <value>Route '{0}' is not available in this schedule.</value>
+  </data>
+  <data name="FleetSetupWizardFinishPageText2" xml:space="preserve">
+    <value>
+Your fleet is set up but you didn't import any orders and you won't yet be able to build routes.
+
+Import orders on the Schedule tab or enter them manually.
+
+Then click the Build Routes task to route.
+    </value>
+  </data>
+  <data name="StatusBarMessageButtonHeader" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="TimeWindowBreakInsertLabel" xml:space="preserve">
+    <value>Insert </value>
+  </data>
+  <data name="DeviceNameColumnHeader" xml:space="preserve">
+    <value>Device Name</value>
+  </data>
+  <data name="CurrentArcLogisticsSubscriptionString" xml:space="preserve">
+    <value>Current Route Planner subscription: </value>
+  </data>
+  <data name="BlockTravelString" xml:space="preserve">
+    <value>Block Travel</value>
+  </data>
+  <data name="ApplyBreaksString" xml:space="preserve">
+    <value>Apply Breaks To Default Routes:</value>
+  </data>
+  <data name="AlItemsMustBeSameTypeMessage" xml:space="preserve">
+    <value>All items must be either routes or orders and stops.</value>
+  </data>
+  <data name="ServerAuthError" xml:space="preserve">
+    <value>Login for {0} failed. Please try re-entering your username and password.</value>
+  </data>
+  <data name="MobileDevicesGridNameCaption" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ImportProfilesGridCaptionObjectField" xml:space="preserve">
+    <value>Route Planner Field</value>
+  </data>
+  <data name="ImportProfilesEditPageSourceLabelConnectionString" xml:space="preserve">
+    <value>Connection string: *</value>
+  </data>
+  <data name="ImportAliasesEndDepot" xml:space="preserve">
+    <value>End Location,EndLocation,End Loc,EndLoc,End Depot,EndDepot,End Dep,EndDep</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ImportMobileDevicesCommandTitle" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="ImportAliasesTimeAtStart" xml:space="preserve">
+    <value>Time At Start,Time AtStart,TimeAtStart</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="DeletingDialogCheckBoxText" xml:space="preserve">
+    <value>Don't display this message again</value>
+  </data>
+  <data name="EmptyUnreachableViolationMessage" xml:space="preserve">
+    <value>There is no way to get from the start depot to the end depot for route: {0}.</value>
+  </data>
+  <data name="PrintButtonHeader" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="ProfilesEditPageRequiredFieldTooltip" xml:space="preserve">
+    <value>* Required field</value>
+  </data>
+  <data name="ImportAliasesPropertyFixedCost" xml:space="preserve">
+    <value>Fixed Cost</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="CurbApproachBoth" xml:space="preserve">
+    <value>Either side</value>
+  </data>
+  <data name="ArchiveMessageProcessDoneFromat" xml:space="preserve">
+    <value>Old routes from '{0}' were successfully moved to the '{1}' archive project.</value>
+  </data>
+  <data name="ImportAliasesPropertyStartDepot" xml:space="preserve">
+    <value>Start Depot</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="RoutingPreferencesPageLabelText" xml:space="preserve">
+    <value>Route solve warnings:</value>
+  </data>
+  <data name="ProfilesEditPageRequiredFieldTooltip2" xml:space="preserve">
+    <value>** If not used, orders will import for next business day</value>
+  </data>
+  <data name="VirtualLocationDialogCheckBoxText" xml:space="preserve">
+    <value>Don't ask me again</value>
+  </data>
+  <data name="BarriersPageInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Barrier</value>
+  </data>
+  <data name="ReportNameFormatDateRange" xml:space="preserve">
+    <value>{0} {1} - {2}</value>
+  </data>
+  <data name="ImportAliasesY" xml:space="preserve">
+    <value>Y,LAT,Latitude</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="TrialForSupportTitle" xml:space="preserve">
+    <value>for support</value>
+  </data>
+  <data name="GeneralPreferences_ProxyUsername" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="GettingStartedTitle" xml:space="preserve">
+    <value>Getting Started</value>
+  </data>
+  <data name="UpdateLocationTooltip" xml:space="preserve">
+    <value>Apply provided address and selected map pin for depot.</value>
+  </data>
+  <data name="InvalidLogin" xml:space="preserve">
+    <value>Incorrect user name or password.</value>
+  </data>
+  <data name="ServiceConnectionError" xml:space="preserve">
+    <value>{0} service is unavailable. Please restart Route Planner or try again.</value>
+  </data>
+  <data name="MessageColumnHeader" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="MapDisplayPreferencesZonesLabel" xml:space="preserve">
+    <value>Zones:</value>
+  </data>
+  <data name="DelayForString" xml:space="preserve">
+    <value>Delay for</value>
+  </data>
+  <data name="ConstraintsCannotBeMetCheckBoxText" xml:space="preserve">
+    <value>Always route as many orders as possible</value>
+  </data>
+  <data name="LocationNameColumnHeader" xml:space="preserve">
+    <value>Depot Name</value>
+  </data>
+  <data name="DriverSpecialitiesRouteViolationMessage" xml:space="preserve">
+    <value>Route: {0} has an infeasible order preassignment. Driver specialties discrepancy with orders: {1}.</value>
+  </data>
+  <data name="RoutingPreferencesPageMins" xml:space="preserve">
+    <value>mins</value>
+  </data>
+  <data name="VehicleSpecialtiesColumnHeader" xml:space="preserve">
+    <value>Vehicle Specialties</value>
+  </data>
+  <data name="ButtonHeaderOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="HelpButtonString" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="LicenseExpiredNotes" xml:space="preserve">
+    <value>&lt;FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Style="{DynamicResource LicenseViewFlowDocumentStyle}"&gt; &lt;Paragraph&gt; Sorry, your &lt;Run x:Name="LicenseVehicleCount"&gt;{0} vehicle&lt;/Run&gt; subscription has expired. Click "Upgrade Account" to start or renew or use single vehicle mode indefinitely. &lt;/Paragraph&gt; &lt;/FlowDocument&gt;</value>
+  </data>
+  <data name="NextStepsExpanderCaption" xml:space="preserve">
+    <value>Next Steps</value>
+  </data>
+  <data name="ExportProfilesEditPageFields" xml:space="preserve">
+    <value>Fields</value>
+  </data>
+  <data name="ImportAliasesPropertyPerHourOTSalary" xml:space="preserve">
+    <value>Per Hour OT Salary</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="MaxViolationMinText" xml:space="preserve">
+    <value>min</value>
+  </data>
+  <data name="ImportProcessStatisticTotals" xml:space="preserve">
+    <value>Results:</value>
+  </data>
+  <data name="ImportAliasesPropertyDriverSpecialties" xml:space="preserve">
+    <value>Driver Specialties</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ConstraintsCheckerVehicleSpecRoutesMessageFmt" xml:space="preserve">
+    <value>Vehicle specialties discrepancy. None of the vehicles has the required specialties for order: {0}. Missing specialties: {1}.</value>
+  </data>
+  <data name="FolderButtonBrowse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="FleetSetupWizardRoutesPageTitle" xml:space="preserve">
+    <value>Enter Some Information About Your Routes</value>
+  </data>
+  <data name="CustomOrderPropertiesMaxLengthViolationMessage" xml:space="preserve">
+    <value>You added too many custom properties. Please remove some of them.</value>
+  </data>
+  <data name="ImportAliasesCustomerNumber" xml:space="preserve">
+    <value>CustomerNumber,Customer Number,CustNum</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="MoveOrdersCommandTitle" xml:space="preserve">
+    <value>Move Orders</value>
+  </data>
+  <data name="PasswordString" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="DeletingDialogTitle" xml:space="preserve">
+    <value>Confirm Delete</value>
+  </data>
+  <data name="VehiclesPagePrintHeader" xml:space="preserve">
+    <value>Vehicles Table</value>
+  </data>
+  <data name="UnableOpenAlreadyOpenedProject" xml:space="preserve">
+    <value>Unable to open project. It is already opened in another Route Planner session.</value>
+  </data>
+  <data name="DriversPerHourCaption" xml:space="preserve">
+    <value>Per Hour</value>
+  </data>
+  <data name="ReportPreviewPrintDoneFormat" xml:space="preserve">
+    <value>Report '{0}' was successfully sent for printing.</value>
+  </data>
+  <data name="AssignToOtherRouteCommandEnabledTooltip" xml:space="preserve">
+    <value>Assigns order to the next best route</value>
+  </data>
+  <data name="SlowdownString" xml:space="preserve">
+    <value>Slowdown </value>
+  </data>
+  <data name="BreakMaxCumulWorkTimeRouteViolationMessage" xml:space="preserve">
+    <value>Cannot add breaks to Route: {0}. There is no place where it is possible to insert the break(s) without introducing violations.</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="ProjectFolderInaccessibleDetail" xml:space="preserve">
+    <value> Please check that the folder does exist and you have necessary permissions. Then restart the application. You may also change the path to the projects folder on the {0} action panel.</value>
+  </data>
+  <data name="DropOnDateCmdSuccessText" xml:space="preserve">
+    <value>{0} order(s) moved from {1} to {2}.</value>
+  </data>
+  <data name="ApplicationInitFault" xml:space="preserve">
+    <value>An error occured during startup. Route Planner will be closed. 
+
+Error details: {0}</value>
+  </data>
+  <data name="NameValidationRuleFuelTypeText" xml:space="preserve">
+    <value>A fuel type with the same name already exists</value>
+  </data>
+  <data name="ZonesAnyRoutesViolationMessage" xml:space="preserve">
+    <value>{0} could not be moved to some routes due to hard zone(s).</value>
+  </data>
+  <data name="TimeAtRenewalColumnHeader" xml:space="preserve">
+    <value>Time At Renewal</value>
+  </data>
+  <data name="SizeColumnHeader" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="CancellingOperation" xml:space="preserve">
+    <value>Canceling...</value>
+  </data>
+  <data name="ReportsPageButtonUncheckRoutes" xml:space="preserve">
+    <value>Uncheck All</value>
+  </data>
+  <data name="RoutesGridCaptionStartLocation" xml:space="preserve">
+    <value>Start Depot</value>
+  </data>
+  <data name="FuelPageInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Fuel Type</value>
+  </data>
+  <data name="MapDisplayPreferencesPageButtonReset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="VehicleSpecialtyDescriptionCaption" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ImportProcessStatusRecordOutMapExtendGeocodedFormat" xml:space="preserve">
+    <value>Could not locate {0} {1} using X/Y attributes. {2} was located using address information instead.</value>
+  </data>
+  <data name="ProjectsPageInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Project</value>
+  </data>
+  <data name="FleetSetupWizardRoutesPageText0" xml:space="preserve">
+    <value>Your routes are displayed below. Edit names or values now to reflect your fleet attributes.</value>
+  </data>
+  <data name="ProfilesEditPageGeneral" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="FleetSetupWizardButton" xml:space="preserve">
+    <value>Show fleet wizard when I create new projects</value>
+  </data>
+  <data name="DriversTypeExceptionMessage" xml:space="preserve">
+    <value>All items must be Drivers.</value>
+  </data>
+  <data name="RoutesGridCaptionTimeAtStart" xml:space="preserve">
+    <value>Time at Start</value>
+  </data>
+  <data name="SyncTypeColumnHeader" xml:space="preserve">
+    <value>Sync Type</value>
+  </data>
+  <data name="UnassignedOrdersTitle" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="ZoneAssignedToDefaultRoute" xml:space="preserve">
+    <value>Zone '{0}' is assigned to 1 or more Default Routes. Please unassign before deleting or those Default Routes will become invalid.</value>
+  </data>
+  <data name="BreaksApplyingDialogTitle" xml:space="preserve">
+    <value>Apply changes to default routes</value>
+  </data>
+  <data name="ButtonHeaderDeleteVehicles" xml:space="preserve">
+    <value>Delete Vehicles</value>
+  </data>
+  <data name="FleetSetupWizardOrdersPageText1" xml:space="preserve">
+    <value>Route Planner will help you place these orders so you can build routes to them.</value>
+  </data>
+  <data name="LastSavedPageString" xml:space="preserve">
+    <value>Where I left off when the application was closed</value>
+  </data>
+  <data name="ImportAliasesPropertyTimeWindowStart" xml:space="preserve">
+    <value>Time Window Start</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="LicencePanelText" xml:space="preserve">
+    <value>licence panel</value>
+  </data>
+  <data name="VehicleSpecialtiesPagePrintHeader" xml:space="preserve">
+    <value>Vehicle Specialties Table</value>
+  </data>
+  <data name="HardZonesColumnHeader" xml:space="preserve">
+    <value>Hard Zones</value>
+  </data>
+  <data name="LessColorsButtonHeader" xml:space="preserve">
+    <value>Less Colors</value>
+  </data>
+  <data name="ImportDriversCommandTitle" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="DriverSpecialtyColumnHeader" xml:space="preserve">
+    <value>Driver Specialty</value>
+  </data>
+  <data name="CurbApproachFormat" xml:space="preserve">
+    <value>{0} side</value>
+  </data>
+  <data name="ReportPreviewTopLevelPreviewFail" xml:space="preserve">
+    <value>Unable to preview some reports.</value>
+  </data>
+  <data name="MapDisplayPreferencesPageLabelDefaultLayoutReset" xml:space="preserve">
+    <value>Default layout reset:</value>
+  </data>
+  <data name="CreatingObject" xml:space="preserve">
+    <value>New {0} is being created, press 'Enter' to commit changes.</value>
+  </data>
+  <data name="MatchMetodColumnHeader" xml:space="preserve">
+    <value>Match Method</value>
+  </data>
+  <data name="DuplicateCommandDisabledTooltip" xml:space="preserve">
+    <value>Please select an item you'd like to duplicate</value>
+  </data>
+  <data name="CityStateLocatorTitle" xml:space="preserve">
+    <value>City: </value>
+  </data>
+  <data name="QuickHelpLinkCaption" xml:space="preserve">
+    <value>More Info.</value>
+  </data>
+  <data name="TrialCallNumberTitle" xml:space="preserve">
+    <value>1-800-447-9778 ext. 1-5090</value>
+  </data>
+  <data name="InvalidRoutesScheduleExceptionMessage" xml:space="preserve">
+    <value>All routes must be assigned to a schedule.</value>
+  </data>
+  <data name="DriverAssignedToDefaultRoute" xml:space="preserve">
+    <value>Driver '{0}' is assigned to 1 or more Default Routes. Please unassign before deleting or those Default Routes will become invalid.</value>
+  </data>
+  <data name="ManageProjectsCommandTitle" xml:space="preserve">
+    <value>Manage Projects</value>
+  </data>
+  <data name="FleetSetupWizardMatchFoundSubPageText3" xml:space="preserve">
+    <value>If the depot is correct and you have no additional depot to enter select next.</value>
+  </data>
+  <data name="ImportDefaultRoutesCommandTitle" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="ImportAliasesPropertyFuelEconomy" xml:space="preserve">
+    <value>Fuel Economy</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ArchiveProjectCommandDisabledTooltipArchived" xml:space="preserve">
+    <value>Currently selected project is already an archived project</value>
+  </data>
+  <data name="RenewalRequiredRouteViolationMessage" xml:space="preserve">
+    <value>Route: {0} has an infeasible order preassignment. There is a capacity constraint violation and there is no place on the route where it is possible to insert renewal depot which would fix this violation.</value>
+  </data>
+  <data name="ImportAliasesPropertyTimeAtRenewal" xml:space="preserve">
+    <value>Time At Renewal</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="MapDisplayPreferencesPageResetDescription" xml:space="preserve">
+    <value>Reset Schedule tab to default layout.</value>
+  </data>
+  <data name="ErrorExecutingRouteCommandString" xml:space="preserve">
+    <value>Error executing route command:</value>
+  </data>
+  <data name="ExportCommandDisabledTooltip" xml:space="preserve">
+    <value>Select a day and Export Profile</value>
+  </data>
+  <data name="CustomOrderPropertiesInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Property</value>
+  </data>
+  <data name="ListViewLabelText" xml:space="preserve">
+    <value>
+        Routes not built for the current date.
+Click "Build Routes" to build them.
+    </value>
+  </data>
+  <data name="VehicleFixedCaption" xml:space="preserve">
+    <value>Fixed Cost</value>
+  </data>
+  <data name="ServerNotNeedCredentialsError" xml:space="preserve">
+    <value>{0} doesn't require a login. Check for errors in the services.xml file. 'Authentication' attribute for {0} must be 'no'.</value>
+  </data>
+  <data name="RestrictionColumnHeader" xml:space="preserve">
+    <value>Restriction</value>
+  </data>
+  <data name="RestrictionUsageParameterColumnHeader" xml:space="preserve">
+    <value>Preference</value>
+  </data>
+  <data name="ReportColumnHeader" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="FleetSetupWizardCandidatesNotFoundSubPageText3" xml:space="preserve">
+    <value>The pin tool can be activated from the upper right corner of the map.</value>
+  </data>
+  <data name="BarrierByPolylineTooltipText" xml:space="preserve">
+    <value>Create Barrier</value>
+  </data>
+  <data name="ManageDefaultRoutesCommandTitle" xml:space="preserve">
+    <value>Manage Default Routes</value>
+  </data>
+  <data name="DriversPageInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Driver</value>
+  </data>
+  <data name="StatWorkingButtonTitle" xml:space="preserve">
+    <value>Click the Setup Tab to start working now.</value>
+  </data>
+  <data name="FleetSetupWizardRoutesPageVehiclesNumberLabel" xml:space="preserve">
+    <value>Number of Vehicles:</value>
+  </data>
+  <data name="UnassigningFailedMessage" xml:space="preserve">
+    <value>Unable to unassign order(s) on {0} from '{1}' schedule.</value>
+  </data>
+  <data name="Acknowledgements" xml:space="preserve">
+    <value>GENERAL ACKNOWLEDGEMENTS
+Portions of this work are: The Software is Copyright © 1995 - 2010 Xceed Software Inc., all rights reserved. The Software is protected by Canadian and United States copyright laws, international treaties and all other applicable national or international laws.
+        
+OPEN SOURCE ACKNOWLEDGEMENTS
+WPF Toolkit Copyright © 2009 Microsoft Corporation. All rights reserved. Enterprise Library 4.1 Copyright © 2009 Microsoft Corporation. All rights reserved.
+    
+LIST OF OPEN SOURCE COMPONENTS
+WPF Docking Library - The Code Project Code Project Open License (CPOL) 1.2 
+WPF Toolkit - Microsoft Public License (Ms - PL)
+Microsoft Enterprise Library 4.1 - Microsoft Public License (Ms - PL)</value>
+  </data>
+  <data name="DuplicateCommandEnabledTooltip" xml:space="preserve">
+    <value>Creates an identical copy of the selected item</value>
+  </data>
+  <data name="GeneralPreferences_ProxySameSettings" xml:space="preserve">
+    <value>Use the same proxy settings for all protocols</value>
+  </data>
+  <data name="VisibleColumnHeader" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="CostColumnHeader" xml:space="preserve">
+    <value>Cost</value>
+  </data>
+  <data name="ImportAliasesMaxTotalDuration" xml:space="preserve">
+    <value>Max Total Duration,Max TotalDuration,Max. Total Duration,Max. TotalDuration,Max.TotalDuration,MaxTotalDuration,Total Duration,TotalDuration,TotalDurat,Total Durat</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="SequenceRoutesCommandDisabledTooltip" xml:space="preserve">
+    <value>Select a route which already has orders assigned to it</value>
+  </data>
+  <data name="SheduleTimeWindowFrom" xml:space="preserve">
+    <value>From:</value>
+  </data>
+  <data name="UnassignOrders" xml:space="preserve">
+    <value>Unassigning orders...</value>
+  </data>
+  <data name="GeometryColumnHeader" xml:space="preserve">
+    <value>Shape</value>
+  </data>
+  <data name="ProfilesEditPageGeneralName" xml:space="preserve">
+    <value>Name: *</value>
+  </data>
+  <data name="CallTechSupportTitle" xml:space="preserve">
+    <value>Call tech support at</value>
+  </data>
+  <data name="ImportAliasesPropertyMaxTimeOnVehicle" xml:space="preserve">
+    <value>Max Time On Vehicle</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="DefaultProjectDescription" xml:space="preserve">
+    <value>Default Project</value>
+  </data>
+  <data name="FleetSetupWizardFinishPageText0" xml:space="preserve">
+    <value>You've set up your fleet with the basic required details and are ready to work with Route Planner</value>
+  </data>
+  <data name="ButtonHeaderNext" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="HomeCategoryCaption" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="ImportBarriers" xml:space="preserve">
+    <value>Barriers</value>
+  </data>
+  <data name="ZoneAssignedToFutureRoute" xml:space="preserve">
+    <value>Zone '{0}' is assigned to 1 or more Routes for today or future dates. Please unassign before deleting or those Routes will become invalid.</value>
+  </data>
+  <data name="SomeMapLayersFailed" xml:space="preserve">
+    <value>Some map layers cannot be loaded. Please check your network connection and restart the application.</value>
+  </data>
+  <data name="ImportAliasesPropertyMaxOrders" xml:space="preserve">
+    <value>Max Orders</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ImportProfileValueIsEmpty" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="MapDisplayPreferencesPageLabelRouteShapeTips" xml:space="preserve">
+    <value>Route shape:</value>
+  </data>
+  <data name="NameValidationRuleNullNameText" xml:space="preserve">
+    <value>Name is required.</value>
+  </data>
+  <data name="MapDisplayPreferencesPageLabelOrderProperty" xml:space="preserve">
+    <value>Order Field:</value>
+  </data>
+  <data name="ImportAliasesPropertyActiveSyncProfileName" xml:space="preserve">
+    <value>ActiveSync Profile Name</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="SequenceRoutes" xml:space="preserve">
+    <value>Sequencing routes...</value>
+  </data>
+  <data name="NotValidValueText" xml:space="preserve">
+    <value>Value is invalid.</value>
+  </data>
+  <data name="NameValidationRuleMobileDeviceText" xml:space="preserve">
+    <value>A mobile device with the same name already exists</value>
+  </data>
+  <data name="VideoTutorialButtonTitle" xml:space="preserve">
+    <value>View a Video Tutorial.</value>
+  </data>
+  <data name="MobileDevicesGridActiveSyncCaption" xml:space="preserve">
+    <value>Active Sync</value>
+  </data>
+  <data name="NavigationTreeLoadingError" xml:space="preserve">
+    <value>Unable to load application navigation tree.</value>
+  </data>
+  <data name="ImportAliasesColor" xml:space="preserve">
+    <value>Color,clr,RGB,Colors</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ExportProfilesEditPageToolTipFilePath" xml:space="preserve">
+    <value>Location of the file to export.</value>
+  </data>
+  <data name="ImportProfilesPageCaption" xml:space="preserve">
+    <value>Import Profiles</value>
+  </data>
+  <data name="MoreAboutArcLogisticsTitle" xml:space="preserve">
+    <value>More About Route Planner</value>
+  </data>
+  <data name="ReportsPageButtonContentPreview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="SaveReportButtonDisabledTooltip" xml:space="preserve">
+    <value>Please select a report</value>
+  </data>
+  <data name="ImportProfilesEditPageSourceButtonBuild" xml:space="preserve">
+    <value>Build...</value>
+  </data>
+  <data name="ReportNameFormatSingleDaySeparate" xml:space="preserve">
+    <value>{0} on {1} for {2}</value>
+  </data>
+  <data name="MapDisplayPageQuantityInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Quantity</value>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>Route Planner</value>
+  </data>
+  <data name="DeletingRoutesStatus" xml:space="preserve">
+    <value>Deleting routes...</value>
+  </data>
+  <data name="UnassignAllCommandDisabledTooltip" xml:space="preserve">
+    <value>Select Routes or a specific route in List View dropdown to unassign orders</value>
+  </data>
+  <data name="VirtualLocationDialogText" xml:space="preserve">
+    <value>You've entered only a Start or End depot but not both. Click 'OK' to proceed with these settings or 'Cancel' to make changes.</value>
+  </data>
+  <data name="UnassignAllCommandEnabledTooltip" xml:space="preserve">
+    <value>Unassigns all orders from selected route for selected day. If Routes is selected in the List View dropdown menu, all orders for all routes will be unassigned for selected day</value>
+  </data>
+  <data name="ImportDriverSpecialties" xml:space="preserve">
+    <value>Driver Specialties</value>
+  </data>
+  <data name="VehiclesGridFuelTypeCaption" xml:space="preserve">
+    <value>Fuel Type</value>
+  </data>
+  <data name="ReportsPageLabelChooseTemplate" xml:space="preserve">
+    <value>Choose Report Templates:</value>
+  </data>
+  <data name="TimeIntervalBreakHoursLabel" xml:space="preserve">
+    <value> hours</value>
+  </data>
+  <data name="GanttItemsCaption" xml:space="preserve">
+    <value>Routes</value>
+  </data>
+  <data name="ExportStartMessage" xml:space="preserve">
+    <value>Exporting Schedule(s)...</value>
+  </data>
+  <data name="SpecialtyAssignedToVehicleOrDriver" xml:space="preserve">
+    <value>Vehicle/Driver specialty '{0}' is assigned to 1 or more Vehicles/Drivers. Please unassign before deleting or those Vehicles/Drivers will become invalid.</value>
+  </data>
+  <data name="AuthenticationFailedString" xml:space="preserve">
+    <value>Login failed. Ensure that you have entered your user name and password correctly. Please note they are case-sensitive.</value>
+  </data>
+  <data name="NewItemNameFormat" xml:space="preserve">
+    <value>New {0}</value>
+  </data>
+  <data name="FindOrderAddressByPointTooltipText" xml:space="preserve">
+    <value>Use this pushpin tool to place the location on the map for selected order.</value>
+  </data>
+  <data name="SyncTypeNone" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ShowQuickHelpButton" xml:space="preserve">
+    <value>Show Quick Help</value>
+  </data>
+  <data name="MaxOrdersCountListRoutesViolationMessage" xml:space="preserve">
+    <value>{1} could not be moved to routes {0}. Max Order Count exceeded.</value>
+  </data>
+  <data name="SameDayRoutingPageCaption" xml:space="preserve">
+    <value>Same Day Routing</value>
+  </data>
+  <data name="VehicleColumnHeader" xml:space="preserve">
+    <value>Vehicle</value>
+  </data>
+  <data name="OpenLastProjectFailedMessage" xml:space="preserve">
+    <value>Project {0} cannot be opened. Please create a new project or select an existing on the Projects panel.</value>
+  </data>
+  <data name="ImportProfileNotFound" xml:space="preserve">
+    <value>File not found.</value>
+  </data>
+  <data name="FindOrdersViewTitle" xml:space="preserve">
+    <value>Find</value>
+  </data>
+  <data name="CantWriteToProjectConfiguration" xml:space="preserve">
+    <value>Unable to write to project configuration file. Please check permissions and network connections. Changes may be lost if you shut down now.</value>
+  </data>
+  <data name="ImportStatusRequiredFieldEmpty" xml:space="preserve">
+    <value>Please match all required field names.</value>
+  </data>
+  <data name="AutoCheckUpdatesString" xml:space="preserve">
+    <value>Automatically check for updates</value>
+  </data>
+  <data name="HardTimeWindowOrderViolationMessage" xml:space="preserve">
+    <value>Either time window(s) for Order: {0} or start/end depot time window or break time window cannot be met.</value>
+  </data>
+  <data name="FleetSetupWizardCandidatesNotFoundSubPageText2" xml:space="preserve">
+    <value>To fix this issue you will need to correct the address or use the pin tool to manually place the address.</value>
+  </data>
+  <data name="CloseMenuItem" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="NotLoadedProjectErrorMessage" xml:space="preserve">
+    <value>Please select a project on the Projects panel to proceed.</value>
+  </data>
+  <data name="CapacityAnyVehiclesViolationMessage" xml:space="preserve">
+    <value>{0} capacity exceeded. None of the vehicles has enough capacity for order: {1}.</value>
+  </data>
+  <data name="ProfilesEditPageSourceButtonBrowse" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="ActiveReportsTitle" xml:space="preserve">
+    <value>Data Dynamics ActiveReports 3.0 Report Designer</value>
+  </data>
+  <data name="BreaksApplyingDialogCheckbox" xml:space="preserve">
+    <value>Remember my choice and don't ask me again</value>
+  </data>
+  <data name="PreparingUIStep" xml:space="preserve">
+    <value>Preparing User Interface...</value>
+  </data>
+  <data name="ManageReportsCommandTitle" xml:space="preserve">
+    <value>Manage Reports</value>
+  </data>
+  <data name="ArchiveProjectCommandEnabledTooltip" xml:space="preserve">
+    <value>Creates a new archive project according to Archiving settings in General preferences</value>
+  </data>
+  <data name="FleetSetupWizardCandidatesNotFoundButZoomedFmt" xml:space="preserve">
+    <value>{0} couldn't be located, we've zoomed to </value>
+  </data>
+  <data name="FleetSetupWizardOrdersPageText3" xml:space="preserve">
+    <value>Click on any order in the table to begin.</value>
+  </data>
+  <data name="DefaultFuelTypeName" xml:space="preserve">
+    <value>Gas</value>
+  </data>
+  <data name="InvalidStopsExceptionMessage" xml:space="preserve">
+    <value>All stops must be valid.</value>
+  </data>
+  <data name="TrialCallTechSupportTitle" xml:space="preserve">
+    <value>Trial users call</value>
+  </data>
+  <data name="ConstraintsCannotBeMetTitle" xml:space="preserve">
+    <value>Constraints cannot be met</value>
+  </data>
+  <data name="CurrentColumnHeader" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="DropOnDateCmdErrorText" xml:space="preserve">
+    <value>Some orders are assigned to schedule(s). Unassign them from all schedule versions before moving to another day.</value>
+  </data>
+  <data name="ReportNameFormatSingleDay" xml:space="preserve">
+    <value>{0} on {1}</value>
+  </data>
+  <data name="AlreadyBuildingRoutesTooltip" xml:space="preserve">
+    <value>Route Planner is already building routes for another day, please wait for this process to finish.</value>
+  </data>
+  <data name="SpecialtyAssignedToOrder" xml:space="preserve">
+    <value>Vehicle/Driver specialty '{0}' is assigned to 1 or more Orders. Please unassign before deleting or those Orders will become invalid.</value>
+  </data>
+  <data name="ImportAliasesPropertySpecialties" xml:space="preserve">
+    <value>Specialties</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="CurbApproachNoUTurns" xml:space="preserve">
+    <value>No U-Turns</value>
+  </data>
+  <data name="PointBarrierLabel" xml:space="preserve">
+    <value>Point</value>
+  </data>
+  <data name="ImportAliasesPropertySyncFolder" xml:space="preserve">
+    <value>Sync Folder</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ServerUseLicenseCredentialsError2" xml:space="preserve">
+    <value>{0} requires a login but the application license does not. Check for errors in the services.xml file. 'Authentication' attribute for {0} must be 'yes'.</value>
+  </data>
+  <data name="TimeWindowRadioButtonContent" xml:space="preserve">
+    <value>Time window based breaks</value>
+  </data>
+  <data name="ButtonHeaderImportOrders" xml:space="preserve">
+    <value>Import Orders</value>
+  </data>
+  <data name="AddAnotherLocationText" xml:space="preserve">
+    <value>Add another Depot</value>
+  </data>
+  <data name="InportProfilesPagePrintHeader" xml:space="preserve">
+    <value>Import Propfiles Table</value>
+  </data>
+  <data name="DriverSpecialtiesTypeExceptionMessage" xml:space="preserve">
+    <value>All items must be Driver Specialties.</value>
+  </data>
+  <data name="DeleteCommandDisabledTooltip" xml:space="preserve">
+    <value>Please select an item you'd like to delete</value>
+  </data>
+  <data name="BreaksPagePrintHeader" xml:space="preserve">
+    <value>Breaks Table</value>
+  </data>
+  <data name="StopTypeColumnHeader" xml:space="preserve">
+    <value>Stop Type</value>
+  </data>
+  <data name="ImportAliasesSyncType" xml:space="preserve">
+    <value>Sync Type,SyncType</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ESRIHeader" xml:space="preserve">
+    <value>Route Planner</value>
+  </data>
+  <data name="ImportProfileInvalidSHPType" xml:space="preserve">
+    <value>Invalid shape file type.</value>
+  </data>
+  <data name="OrderRestrictedStreetViolationMessage" xml:space="preserve">
+    <value>Order: {0} is located on a street that is not reachable by vehicle.</value>
+  </data>
+  <data name="HardTimeWindowRouteViolationMessage" xml:space="preserve">
+    <value>Route: {0} has an infeasible order preassignment. Either time window(s) for orders or start/end depot time window or break time window cannot be met.</value>
+  </data>
+  <data name="ImportAliasesPropertyDriver" xml:space="preserve">
+    <value>Driver</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="OrderIsNotGeocodedFormat" xml:space="preserve">
+    <value>Order {0} must be geocoded.</value>
+  </data>
+  <data name="DeleteCommandTitle" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="MapDisplayPreferencesPageOrderSequenceLabelingOn" xml:space="preserve">
+    <value>Order sequence labeling on</value>
+  </data>
+  <data name="TimeatStartColumnHeader" xml:space="preserve">
+    <value>Time At Start</value>
+  </data>
+  <data name="VehicleGridNameCaption" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ServiceNameGeocoding" xml:space="preserve">
+    <value>Geocoding</value>
+  </data>
+  <data name="ReportTemplateInvalidName" xml:space="preserve">
+    <value>Template name should contain only letters and digits.</value>
+  </data>
+  <data name="TimeWindowBreakBetweenLabel" xml:space="preserve">
+    <value>between </value>
+  </data>
+  <data name="ZoneGeometryValidationErrorString" xml:space="preserve">
+    <value>Shape not specified</value>
+  </data>
+  <data name="ImportProfileInvalidFieldMapping3" xml:space="preserve">
+    <value>Not all required fields ({0}) are mapped.</value>
+  </data>
+  <data name="SymbologyValueAlreadyExist" xml:space="preserve">
+    <value>Value already exists.</value>
+  </data>
+  <data name="ActivatingLicenseStep" xml:space="preserve">
+    <value>Activating License...</value>
+  </data>
+  <data name="MaxOrdersColumnHeader" xml:space="preserve">
+    <value>Max Orders</value>
+  </data>
+  <data name="RouteNameColumnHeader" xml:space="preserve">
+    <value>Route Name</value>
+  </data>
+  <data name="ImportVehicles" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
+  <data name="ImportProcessStatisticRead" xml:space="preserve">
+    <value>read</value>
+  </data>
+  <data name="ImportAliasesRenewalDepots" xml:space="preserve">
+    <value>Renewal Locations,RenewalLocations,Renewal,Renewal Locs,RenewalLocs,Locations,Locs,Renewal Depots,RenewalDepots,Renewal Deps,RenewalDeps,Depots,Deps</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="VehicleSpecialtyNameCaption" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="BreaksApplyingDialogText" xml:space="preserve">
+    <value>Would you like to apply breaks changes to all default routes?</value>
+  </data>
+  <data name="SolverInternalErrorText" xml:space="preserve">
+    <value>Routing failed for {0} schedule on {1}.
+        </value>
+  </data>
+  <data name="AccountNotSubscribed" xml:space="preserve">
+    <value>You don't have an Route Planner subscription associated with your account. Please visit the Route Planner {0} to start a trial or purchase a subscription.</value>
+  </data>
+  <data name="NoOrdersCellText" xml:space="preserve">
+    <value>(no orders)</value>
+  </data>
+  <data name="BarrierNameColumnHeader" xml:space="preserve">
+    <value>Barrier Name</value>
+  </data>
+  <data name="DockedViewTooltip" xml:space="preserve">
+    <value>Click here and drag to undock window</value>
+  </data>
+  <data name="ImportProfileInvalidSHPTypeBarrier" xml:space="preserve">
+    <value>Importing from shape files with geometries other than points or polygons or polyline is not supported for selected type of objects.</value>
+  </data>
+  <data name="CreateLicenseCommandTitle" xml:space="preserve">
+    <value>Create License</value>
+  </data>
+  <data name="UnassignOrdersCommandDisabledTooltip" xml:space="preserve">
+    <value>Select one or more orders to unassign</value>
+  </data>
+  <data name="ScheduleVersionsViewTitle" xml:space="preserve">
+    <value>Versions</value>
+  </data>
+  <data name="AllCaption" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="RestrictionParameterNull" xml:space="preserve">
+    <value>&lt;null&gt;</value>
+  </data>
+  <data name="TestConnectionFailedMessageTextFormat" xml:space="preserve">
+    <value>Unable to setup connection with the database. {0}</value>
+  </data>
+  <data name="FleetSetupWizardUsePushpinText" xml:space="preserve">
+    <value>Correct the address or use the pushpin tool to locate the address on map.</value>
+  </data>
+  <data name="NoAppropriateCandidateFound" xml:space="preserve">
+    <value>{0} could not be located</value>
+  </data>
+  <data name="FleetSetupWizardCandidatesNotFoundSubPageText1" xml:space="preserve">
+    <value>The {0} was not found, this is typically for one of two reasons; errors in the address, or an out of date map.</value>
+  </data>
+  <data name="BreakRequiredAnyRouteViolationMessage" xml:space="preserve">
+    <value>Order: {0} cannot be routed since there is no place on routes where it is possible to insert the break(s) without introducing violations.</value>
+  </data>
+  <data name="EmptyMaxTotalTravelTimeViolationMessage" xml:space="preserve">
+    <value>Time required to travel from the start depot to the finish depot for Route: {0} exceeds Max Travel Duration.</value>
+  </data>
+  <data name="BarrierEffectStringFmt" xml:space="preserve">
+    <value>{0} {1} {2}</value>
+  </data>
+  <data name="AngleColumnHeader" xml:space="preserve">
+    <value>Angle</value>
+  </data>
+  <data name="ArcLogisticsLicenseServiceUnavailableText" xml:space="preserve">
+    <value>Route Planner License Service is unavailable. Check your network connection and restart the application.</value>
+  </data>
+  <data name="ImportAliasesComment" xml:space="preserve">
+    <value>Comment,Comments,Comm</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="OrderPriorityHigh" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="QuickHelpWidgetCaption" xml:space="preserve">
+    <value>Quick Help</value>
+  </data>
+  <data name="ImportProcessStatusSkiped" xml:space="preserve">
+    <value>{0} with the name '{1}' is already imported. Record number {2} skipped.</value>
+  </data>
+  <data name="MaxViolationTimeColumnHeader" xml:space="preserve">
+    <value>Max Violation Time</value>
+  </data>
+  <data name="MapViewTitle" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="ImportAliasesTimeWindow2Start" xml:space="preserve">
+    <value>TimeWindow2Start,Time Window2 Start,FromTime2Str,FrTime2Str,TW_Start_2,TW2_Start,TW2 Start,TW2Start,TW2_From,TW2 From,TW2From,Time Window2 From,TimeWindow2 From,TimeWindow2 Start</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="FleetSetupWizardCandidatesFoundFmt" xml:space="preserve">
+    <value>Potential matches for {0} are displayed below</value>
+  </data>
+  <data name="ConstraintsCheckerMaxOrderCntRouteMessageFmt" xml:space="preserve">
+    <value>You have exceeded the maximum orders. You are trying to route {0} orders and route: {1} has a maximum of {2}.</value>
+  </data>
+  <data name="FleetSetupWizardMatchFoundSubPageText1" xml:space="preserve">
+    <value>The {0} should accurately represent the street entrance, to move the {0} double click on the {0} and drag to the desired position.</value>
+  </data>
+  <data name="ReportPreviewTopLevelPrintFail" xml:space="preserve">
+    <value>Unable to send some reports for printing.</value>
+  </data>
+  <data name="FinishString" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="GenerateDirectionsStartText" xml:space="preserve">
+    <value>Building directions on {0}.</value>
+  </data>
+  <data name="DuplicateReportsButtonEnabledTooltip" xml:space="preserve">
+    <value>Print the selected report</value>
+  </data>
+  <data name="OrderCannotBeRoutedFormat" xml:space="preserve">
+    <value>All orders cannot be routed on {0}.</value>
+  </data>
+  <data name="ManageLocationsCommandTitle" xml:space="preserve">
+    <value>Manage Depots</value>
+  </data>
+  <data name="AddLocationText" xml:space="preserve">
+    <value>Add Depot</value>
+  </data>
+  <data name="ReportPreviewPrintingAborted" xml:space="preserve">
+    <value>Printing has been aborted.</value>
+  </data>
+  <data name="UndockedViewTooltip" xml:space="preserve">
+    <value>Click here and drag to an arrow to dock window</value>
+  </data>
+  <data name="ImportProfilesEditPageToolTipFilePath" xml:space="preserve">
+    <value>Location of the file to import (Excel, Access, Text and dBASE).</value>
+  </data>
+  <data name="LicensePageCaption" xml:space="preserve">
+    <value>License</value>
+  </data>
+  <data name="GeneralPreferences_ProxyHost" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="RangeIntersectsText" xml:space="preserve">
+    <value>Current range overlaps with {0} - {1}.</value>
+  </data>
+  <data name="ProfilesEditPageOnTimeTitleFormat" xml:space="preserve">
+    <value>Default {0}</value>
+  </data>
+  <data name="FleetSetupWizardIntroductionPageCheckBoxCaption" xml:space="preserve">
+    <value>Don't automatically show the wizard again</value>
+  </data>
+  <data name="VehiclesGridSpecialtiesCaption" xml:space="preserve">
+    <value>Specialties</value>
+  </data>
+  <data name="VehiclesPageCaption" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
+  <data name="SyncTypeEmail" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="LocationRestrictedStreetViolationMessage" xml:space="preserve">
+    <value>Depot: {0} is located on a street that is not reachable by vehicle.</value>
+  </data>
+  <data name="OrdersUnassigningCompleteSuccessfulMessage" xml:space="preserve">
+    <value>{0} orders moved to Unassigned Orders from '{1}' schedule.</value>
+  </data>
+  <data name="RouteLocationsString" xml:space="preserve">
+    <value>Route Depots:</value>
+  </data>
+  <data name="DraggingOrdersWithDifferentDaysProhibited" xml:space="preserve">
+    <value>You can drag orders that belong to the same day only.</value>
+  </data>
+  <data name="RoutesPageCaption" xml:space="preserve">
+    <value>Routes</value>
+  </data>
+  <data name="ImportAliasesPropertyTimeWindow2Start" xml:space="preserve">
+    <value>Time Window2 Start</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="BuildReportsCommandDisabledTooltip" xml:space="preserve">
+    <value>Select at least one day, route, and template to build reports</value>
+  </data>
+  <data name="UnassignedOrdersPageInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Order</value>
+  </data>
+  <data name="ImportAliasesStartTimeWindowFinish" xml:space="preserve">
+    <value>StartTimeWindowFinish,Start Time Window Finish,ToStartTimeStr,TW_End,TimeWindowFinish,Time Window Finish,ToTimeStr,TimeWindow Finish,StartTimeWindow Finish,StartTimeWindow To</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="SingleVehicleModeButtonString" xml:space="preserve">
+    <value>Single Vehicle Mode</value>
+  </data>
+  <data name="ButtonHeaderNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="FuelType" xml:space="preserve">
+    <value>Fuel type</value>
+  </data>
+  <data name="MapDisplayPreferencesBarriersLabel" xml:space="preserve">
+    <value>Barriers:</value>
+  </data>
+  <data name="LayerNotAuthorized" xml:space="preserve">
+    <value>Layer {0} is unavailable. You are not authorized to work with {1}. Please try reconnecting on the </value>
+  </data>
+  <data name="WhatNewPageCaption" xml:space="preserve">
+    <value>What's New</value>
+  </data>
+  <data name="VehicleAssignedToDefaultRoute" xml:space="preserve">
+    <value>Vehicle '{0}' is assigned to 1 or more Default Routes. Please unassign before deleting or those Default Routes will become invalid.</value>
+  </data>
+  <data name="ServerConnectionError" xml:space="preserve">
+    <value>Route Planner cannot connect to {0}. Please check your network connection.</value>
+  </data>
+  <data name="OrdersMovingOperationCompletedText" xml:space="preserve">
+    <value>{0} of {1} orders moved to {2}.</value>
+  </data>
+  <data name="DuplicateReportsDisabledTooltip" xml:space="preserve">
+    <value>Please select a report</value>
+  </data>
+  <data name="ServiceNameMap" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="UnassignedOrdersOption" xml:space="preserve">
+    <value>Unassigned Orders</value>
+  </data>
+  <data name="ImportProfilesGridCaptionSourceField" xml:space="preserve">
+    <value>Data Source Field</value>
+  </data>
+  <data name="FloatingWinowMenuItem" xml:space="preserve">
+    <value>Floating window</value>
+  </data>
+  <data name="LineBarrierLabel" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="DriverSpecialtiesPageInsertionHelpText" xml:space="preserve">
+    <value>Click here to add a new Driver specialty</value>
+  </data>
+  <data name="ReviewAccountInformationCommandTitle" xml:space="preserve">
+    <value>Review Account Information</value>
+  </data>
+  <data name="ContinueWorkingButtonString" xml:space="preserve">
+    <value>Continue Working Now</value>
+  </data>
+  <data name="QuickHelpString" xml:space="preserve">
+    <value>Quick Help:</value>
+  </data>
+  <data name="RoutingPreferencesPageButtonAlwaysRoute" xml:space="preserve">
+    <value>Always route as many orders as possible</value>
+  </data>
+  <data name="SpecialtiesPageCaption" xml:space="preserve">
+    <value>Specialties</value>
+  </data>
+  <data name="CurbApproachColumnHeader" xml:space="preserve">
+    <value>Curb Approach</value>
+  </data>
+  <data name="DeletingDialogTextSome" xml:space="preserve">
+    <value>Are you sure you want to delete the selected {0}?</value>
+  </data>
+  <data name="ImportAliasesMaxTravelDistance" xml:space="preserve">
+    <value>Max Travel Distance,Max TravelDistance,Max. Travel Distance,Max. TravelDistance,Max.TravelDistance,MaxTravelDistance,Travel Distance,TravelDistance,TravelDist,Travel Dist,Distance</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="BestRouteString" xml:space="preserve">
+    <value>best route</value>
+  </data>
+  <data name="PercentString" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="TimeIntervalColumnHeader" xml:space="preserve">
+    <value>Break After</value>
+  </data>
+  <data name="FuelPagePrintHeader" xml:space="preserve">
+    <value>Fuel Types Table</value>
+  </data>
+  <data name="ColorColumnHeader" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="ItemCopyShortName" xml:space="preserve">
+    <value>Copy of {0}</value>
+  </data>
+  <data name="VirtualLocationDialogTitleFmt" xml:space="preserve">
+    <value>{0} Warning</value>
+  </data>
+  <data name="ImportBarriersCommandTitle" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="ImportAliasesTimeAtRenewal" xml:space="preserve">
+    <value>Time At Renewal,Time AtRenewal,TimeAtRenewal</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="UnableLoadNotUniqueCustomPage" xml:space="preserve">
+    <value>Unable to load '{0}' action panel from '{1}'. Application already has the action panel with the same name.</value>
+  </data>
+  <data name="FleetSetupWizardImportOrdersDecisionPageText" xml:space="preserve">
+    <value>
+If you have orders stored in a spreadsheet, text file, or database, you can import them now by clicking the Import Orders button. You'll then be able to build routes for these orders.
+
+If you don't have any orders to import, you can add them manually after completing the wizard.
+    </value>
+  </data>
+  <data name="ArchiveMessageNothingArchiveFormat" xml:space="preserve">
+    <value>There is nothing to archive in the '{0}' project.</value>
+  </data>
+  <data name="TravelTimeRadioButtonContent" xml:space="preserve">
+    <value>Max travel time before break</value>
+  </data>
+  <data name="ReviewOrUpgradeAccountCommandTitle" xml:space="preserve">
+    <value>Review or Upgrade Account</value>
+  </data>
+  <data name="WhatsNewCommandTitle" xml:space="preserve">
+    <value>What's New</value>
+  </data>
+  <data name="GeocodeCommandTitle" xml:space="preserve">
+    <value>Rematch Address</value>
+  </data>
+  <data name="ImportProcessStatisticSkipped" xml:space="preserve">
+    <value>skipped</value>
+  </data>
+  <data name="LicenseNoSubscriptionNotes" xml:space="preserve">
+    <value>&lt;FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Style="{DynamicResource LicenseViewFlowDocumentStyle}"&gt; &lt;Paragraph&gt; You don't have an Route Planner subscription associated with your account. &lt;/Paragraph&gt; &lt;Section x:Name="LicensePurchaseSubscription"&gt; &lt;Paragraph&gt; Please visit the &lt;Hyperlink x:Name="LicensePurchaseSubscriptionLink"&gt;Route Planner subscription page&lt;/Hyperlink&gt; to start a trial or purchase a subscription. &lt;/Paragraph&gt; &lt;/Section&gt; &lt;/FlowDocument&gt;</value>
+  </data>
+  <data name="ReportsPreferencesPageLabelReportLogoImage" xml:space="preserve">
+    <value>Report Logo Image:</value>
+  </data>
+  <data name="Vehicles" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
+  <data name="ButtonHeaderEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="PreviewReportButtonEnabledTooltip" xml:space="preserve">
+    <value>Preview the selected report</value>
+  </data>
+  <data name="GenerateRouteShapesStartText" xml:space="preserve">
+    <value>Routes on {0} submitted for shape building.</value>
+  </data>
+  <data name="MobileDevice" xml:space="preserve">
+    <value>Mobile Device</value>
+  </data>
+  <data name="BuildRoutesCommandTitle" xml:space="preserve">
+    <value>Build Routes</value>
+  </data>
+  <data name="ImportOrdersCommandDisabledTooltip" xml:space="preserve">
+    <value>Cannot start import while editing is in progress</value>
+  </data>
+  <data name="CancelButtonString" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ImportProcessDone" xml:space="preserve">
+    <value>{0} Import Succeeded.</value>
+  </data>
+  <data name="MilesColumnHeader" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="SelectExistingProjectMessage" xml:space="preserve">
+    <value>Please select an existing project.</value>
+  </data>
+  <data name="CheckedColumnHeader" xml:space="preserve">
+    <value>Checked</value>
+  </data>
+  <data name="DistanceColumnHeader" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="ServerIsUnavailableString" xml:space="preserve">
+    <value>{0} is unavailable.</value>
+  </data>
+  <data name="ReportsPreferencesPageRadioButtonNoLogo" xml:space="preserve">
+    <value>No Logo</value>
+  </data>
+  <data name="ReportsPageCheckBoxSeparateReports" xml:space="preserve">
+    <value>Build separate report for each route</value>
+  </data>
+  <data name="ImportProfilesEditPageToolTipFilePathAll" xml:space="preserve">
+    <value>Location of the file to import (Excel, Access, Text, dBASE and Shapefile).</value>
+  </data>
+  <data name="EmailAddressColumnHeader" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="ImportAliasesPropertyPlannedDate" xml:space="preserve">
+    <value>Planned Date</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="ButtonHeaderUpdate" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="ImportAliasesServiceTime" xml:space="preserve">
+    <value>ServiceTime,Service Time,ServiceTim,ServTime</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="MobileDevicesGridSyncTypeCaption" xml:space="preserve">
+    <value>Sync Type</value>
+  </data>
+  <data name="CategoryNotExist" xml:space="preserve">
+    <value>Category doesn't exist.</value>
+  </data>
+  <data name="DriverSpecialitiesAnyViolationMessage" xml:space="preserve">
+    <value>Driver specialties discrepancy. None of the drivers has the required specialties for order: {0}.</value>
+  </data>
+  <data name="ManageDriversCommandTitle" xml:space="preserve">
+    <value>Manage Drivers</value>
+  </data>
+  <data name="ImportAliasesMaxTimeOnVehicle" xml:space="preserve">
+    <value>MaxTimeOnVehicle,Max. Time on Vehicle,MaxTimeVeh,Max.Time on Vehicle</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="AllwaysAskBeforeDeletingButton" xml:space="preserve">
+    <value>Always ask before deleting</value>
+  </data>
+  <data name="UnknownMapLayerType" xml:space="preserve">
+    <value>Unknown map layer type.</value>
+  </data>
+  <data name="ImportProcessStatusRecordSkiped" xml:space="preserve">
+    <value>Record number {0} skipped because required field 'Name' is empty.</value>
+  </data>
+  <data name="FleetSetupWizardCandidatesFoundSubPageText1" xml:space="preserve">
+    <value>Select the correct address from the list, verify the {0} on the map and click "OK"</value>
+  </data>
+  <data name="DefauGridStatusPattern" xml:space="preserve">
+    <value>{0} {1}(s)</value>
+  </data>
+  <data name="PlugInsString" xml:space="preserve">
+    <value>Plug-ins:</value>
+  </data>
+  <data name="LayerUnavailable" xml:space="preserve">
+    <value>Layer {0} is unavailable. Please check your network connection.</value>
+  </data>
+  <data name="MaximumNumberOfRoutes" xml:space="preserve">
+    <value>Maximum number of routes: </value>
+  </data>
+  <data name="ImportProfileInvalidDataSourceFormat" xml:space="preserve">
+    <value>Only shape files are supported as data source for selected type of objects.</value>
+  </data>
+  <data name="PlugInsFolderString" xml:space="preserve">
+    <value>Plug-ins Folder Path:</value>
+  </data>
+  <data name="Error_InvalidOrdersNum" xml:space="preserve">
+    <value>Routing request must contain at least 1 order.</value>
+  </data>
+  <data name="ButtonHeaderAddVehicles" xml:space="preserve">
+    <value>Add Vehicles</value>
+  </data>
+  <data name="MonthsString" xml:space="preserve">
+    <value>month(s)</value>
+  </data>
+  <data name="AllOrdersMovingOperationFailedText" xml:space="preserve">
+    <value>All {0} orders could not be moved to {1}.</value>
+  </data>
+  <data name="CantWriteToDB" xml:space="preserve">
+    <value>Unable to write to project database. Please check permissions and network connections. Changes may be lost if you shut down now.</value>
+  </data>
+  <data name="ESRICopyrightInfo" xml:space="preserve">
+    <value>???</value>
+  </data>
+  <data name="RenewalRequiredSingleRouteViolationMessage" xml:space="preserve">
+    <value>Order: {1} cannot be routed since route: {0} has a capacity constraint violation and there is no place on it where it is possible to insert a renewal deopt which would fix this violation.</value>
+  </data>
+  <data name="ConstraintsCheckerCapacitiesRoutesMessageFmt" xml:space="preserve">
+    <value>You have exceeded the maximum {0}. You are trying to route order(s) with total {0} = {1} and all of the vehicles have only {2} available. The shortfall is {3}.</value>
+  </data>
+  <data name="ScheduleTabDisabledTooltip" xml:space="preserve">
+    <value>Please enter the required information marked with a red exclamation point in the Setup tab before proceeding to Schedule tab</value>
+  </data>
+  <data name="UnassignedOrdersPagePrintHeader" xml:space="preserve">
+    <value>Unassigned Orders Table</value>
+  </data>
+  <data name="EditCommandEnabledTooltip" xml:space="preserve">
+    <value>Edits the selected item</value>
+  </data>
+  <data name="ArchiveMessageProcessFailedFromat" xml:space="preserve">
+    <value>Failed to archive routes from '{0}'.</value>
+  </data>
+  <data name="CallNumberTitle" xml:space="preserve">
+    <value>1-888-377-4575</value>
+  </data>
+  <data name="ArchivingSettingsFormatString" xml:space="preserve">
+    <value>Archiving Settings For '{0}':</value>
+  </data>
+  <data name="OrdersSubmittingForMovingOperation" xml:space="preserve">
+    <value>Moving {0} orders to {1}.</value>
+  </data>
+  <data name="ManageSameDayRoutingCommandTitle" xml:space="preserve">
+    <value>Manage Same Day Routing</value>
+  </data>
+  <data name="ZipLocatorTitle" xml:space="preserve">
+    <value>Zip code: </value>
+  </data>
+  <data name="FleetSetupWizardLocationPageTitle" xml:space="preserve">
+    <value>Enter Some Information About Your Depots</value>
+  </data>
+  <data name="DeletingOrdersStartSuccessfulMessage" xml:space="preserve">
+    <value>Deleting order(s) ({0}/{1} Unassigning order(s) from '{2}' schedule)...</value>
+  </data>
+  <data name="MapDisplayPreferencesPageLeadingStemTime" xml:space="preserve">
+    <value>Show leading stem time</value>
+  </data>
+  <data name="ProjectsGridCurrentCaption" xml:space="preserve">
+    <value>Current project</value>
+  </data>
+  <data name="FleetSetupWizardRoutesPageMaxWorkTimeLabel" xml:space="preserve">
+    <value>Max Work Time:</value>
+  </data>
+  <data name="ReportServiceConnectionError" xml:space="preserve">
+    <value>Route Planner cannot get response from the {0} service, please try again later.</value>
+  </data>
+  <data name="MaxOrdersCountRouteViolationMessage" xml:space="preserve">
+    <value>Route: {0} has an infeasible order preassignment. Max Order Count exceeded.</value>
+  </data>
+  <data name="ReportsPreferencesPageTextNoLogo" xml:space="preserve">
+    <value>Click "Change Picture" and browse to your logo</value>
+  </data>
+  <data name="ServerUseLicenseCredentialsError" xml:space="preserve">
+    <value>Login for {0} failed. Your login is not authorized for this server.</value>
+  </data>
+  <data name="RoutesSubmittingForSequencingText" xml:space="preserve">
+    <value>{0} route(s) on {1} submitted for sequencing.</value>
+  </data>
+  <data name="ChangePictureButtonTooltip" xml:space="preserve">
+    <value>Select a logo or image to be displayed on your reports</value>
+  </data>
+  <data name="MapDisplayPreferencesPageLabelOrderSequenceLabeling" xml:space="preserve">
+    <value>Order sequence labeling:</value>
+  </data>
+  <data name="GenerateDirectionsCancelledText" xml:space="preserve">
+    <value>Directions was cancelled.</value>
+  </data>
+  <data name="ReportPreviewTopLevelPrintDone" xml:space="preserve">
+    <value>All the reports were succesfully sent for printing.</value>
+  </data>
+  <data name="UserConfigInvalidWarning" xml:space="preserve">
+    <value>Some custom settings could not be loaded and have reverted to default configuration.</value>
+  </data>
+  <data name="LocationsGridCommentCaption" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="RoutesGridCaptionRenewalLocations" xml:space="preserve">
+    <value>Renewal depots</value>
+  </data>
+  <data name="ClonedScheduleNameFormat" xml:space="preserve">
+    <value>Edited {0}</value>
+  </data>
+  <data name="FullArriveTimeCellText" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="GeneralPreferences_ProxyPassword" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="ReportPreviewTopLevelSaveFail" xml:space="preserve">
+    <value>Unable to save some reports.</value>
+  </data>
+  <data name="ImportAliasesTimeAtEnd" xml:space="preserve">
+    <value>Time At End,Time AtEnd,TimeAtEnd</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="RoutesGridCaptionMaxTravelDuration" xml:space="preserve">
+    <value>Max Travel Duration</value>
+  </data>
+  <data name="VehicleSpecialtyColumnHeader" xml:space="preserve">
+    <value>Vehicle Specialty</value>
+  </data>
+  <data name="ServicesUserInvalidWarning" xml:space="preserve">
+    <value>Some services settings could not be loaded and have reverted to default configuration.</value>
+  </data>
+  <data name="ImportAliasesPropertyEndDepot" xml:space="preserve">
+    <value>End Depot</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="TypeColumnHeader" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="RoutesOperationCancelledText" xml:space="preserve">
+    <value>Routing operation on {0} was cancelled.</value>
+  </data>
+  <data name="LogFileCantBeEmpty" xml:space="preserve">
+    <value>Log file name can't be empty in settings.xml.</value>
+  </data>
+  <data name="LicenseNoSubscriptionNotesHeader" xml:space="preserve">
+    <value>No Subscription</value>
+  </data>
+  <data name="ImportVehicleSpecialtiesCommandTitle" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="RoutesPagePrintHeader" xml:space="preserve">
+    <value>Routes Table</value>
+  </data>
+  <data name="UseRouteColorColumnHeader" xml:space="preserve">
+    <value>Use Route Color</value>
+  </data>
+  <data name="RoutesGridCaptionName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="UnassigningAllStatus" xml:space="preserve">
+    <value>Unassigning all...</value>
+  </data>
+  <data name="SheduleTimeWindowTo" xml:space="preserve">
+    <value>To:</value>
+  </data>
+  <data name="ImportOrdersCommandTitle" xml:space="preserve">
+    <value>Import Orders</value>
+  </data>
+  <data name="RoutesGridCaptionEndLocation" xml:space="preserve">
+    <value>End Depot</value>
+  </data>
+  <data name="ArcLogisticsServicesLoginHeader" xml:space="preserve">
+    <value>Login to Route Planner Services using your account</value>
+  </data>
+  <data name="DriverSpecialtyDescriptionCaption" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DriverSpecialitiesSingleViolationMessage" xml:space="preserve">
+    <value>Driver specialties discrepancy. Driver: {0} doesn't have the required specialties for order: {1}.</value>
+  </data>
+  <data name="ProjectsString" xml:space="preserve">
+    <value>Projects:</value>
+  </data>
+  <data name="ExportPageButtonExport" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="ConstraintsCheckerDriverSpecRoutesMessageFmt" xml:space="preserve">
+    <value>Driver specialties discrepancy. None of the drivers has the required specialties for order: {0}. Missing specialties: {1}.</value>
+  </data>
+  <data name="ViolationOrderStringFormat" xml:space="preserve">
+    <value>'{0}' order</value>
+  </data>
+  <data name="ImportAliasesPropertyServiceTime" xml:space="preserve">
+    <value>Service Time</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="DriverSpecialtiesPagePrintHeader" xml:space="preserve">
+    <value>Driver Specialties Table</value>
+  </data>
+  <data name="DriversNameCaption" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="StartString" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="ProjectNameValidationRuleIncorrectNameError" xml:space="preserve">
+    <value>Project name is incorrect.</value>
+  </data>
+  <data name="ManageZonesCommandTitle" xml:space="preserve">
+    <value>Manage Zones</value>
+  </data>
+  <data name="BarrierByPointTooltipText" xml:space="preserve">
+    <value>Create Barrier</value>
+  </data>
+  <data name="LicenseError" xml:space="preserve">
+    <value>Failed to activate license.</value>
+  </data>
+  <data name="FuelsTypeExceptionMessage" xml:space="preserve">
+    <value>All items must be Fuel Types.</value>
+  </data>
+  <data name="ClonedScheduleNameFormatWithoutNumber" xml:space="preserve">
+    <value>Edited</value>
+  </data>
+  <data name="MaxTotalDistanceRouteViolationMessage" xml:space="preserve">
+    <value>Route: {0} has an infeasible order preassignment. Max Total Distance exceeded.</value>
+  </data>
+  <data name="ExportUserInvalidWarning" xml:space="preserve">
+    <value>Some export settings could not be loaded and have been reverted to default configuration.</value>
+  </data>
+  <data name="MapDisplayPreferencesPageTrailingStemTime" xml:space="preserve">
+    <value>Show trailing stem time</value>
+  </data>
+  <data name="GenerateDirections" xml:space="preserve">
+    <value>Building directions...</value>
+  </data>
+  <data name="EditingObject" xml:space="preserve">
+    <value>'{0}' {1} is being edited, press 'Enter' to commit changes.</value>
+  </data>
+  <data name="ImportAliasesActiveSyncProfileName" xml:space="preserve">
+    <value>ActiveSyncProfileName,ActiveSyncProfile,ActiveSync Profile,ProfileName,Profile Name</value>
+    <comment>Import field aliases. Must be separated by ','.</comment>
+  </data>
+  <data name="SearchRangeAnyDay" xml:space="preserve">
+    <value>Any Day</value>
+  </data>
+  <data name="SearchRangeLastMonth" xml:space="preserve">
+    <value>Last Month</value>
+  </data>
+  <data name="SearchRangeLastWeek" xml:space="preserve">
+    <value>Last Week</value>
+  </data>
+  <data name="SearchRangeSpecifiedTimeRange" xml:space="preserve">
+    <value>Specified Time Range</value>
+  </data>
+  <data name="SearchRangeThisMonth" xml:space="preserve">
+    <value>This Month</value>
+  </data>
+  <data name="SearchRangeThisWeek" xml:space="preserve">
+    <value>This Week</value>
+  </data>
+  <data name="SearchRangeToday" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="SearchRangeYesterday" xml:space="preserve">
+    <value>Yesterday</value>
+  </data>
+  <data name="SomeServiceUriError" xml:space="preserve">
+    <value>Route Planner cannot connect to services due to incorrect URL settings. Please, fix error and restart Route Planner to try again.</value>
+  </data>
+  <data name="CellTimeWindowDay2" xml:space="preserve">
+    <value>on the next day</value>
+  </data>
+  <data name="CellTimeWindowWideopen" xml:space="preserve">
+    <value>Wideopen</value>
+  </data>
+  <data name="TimeWindowDayColumnHeader" xml:space="preserve">
+    <value>Time Window Day 2</value>
+  </data>
+  <data name="Error_RemoteConfigIsUnaccessible" xml:space="preserve">
+    <value>There were some problems with loading configuration. Possible reasons are: wrong URL of remote configuration file, bad network connection, problems with the remote server, wrong proxy server configuration. If proxy settings has changed - please change it in UI and restart application.</value>
+  </data>
+  <data name="AvoidHighUsageParameterLabel" xml:space="preserve">
+    <value>Avoid: High</value>
+  </data>
+  <data name="AvoidLowUsageParameterLabel" xml:space="preserve">
+    <value>Avoid: Low</value>
+  </data>
+  <data name="AvoidMediumUsageParameterLabel" xml:space="preserve">
+    <value>Avoid: Medium</value>
+  </data>
+  <data name="PrefererHighUsageParameterLabel" xml:space="preserve">
+    <value>Prefer: High</value>
+  </data>
+  <data name="PrefererLowUsageParameterLabel" xml:space="preserve">
+    <value>Prefer: Low</value>
+  </data>
+  <data name="PrefererMediumUsageParameterLabel" xml:space="preserve">
+    <value>Prefer: Medium</value>
+  </data>
+  <data name="ProhibitedUsageParameterLabel" xml:space="preserve">
+    <value>Prohibited</value>
+  </data>
+  <data name="ServiceNameTracking" xml:space="preserve">
+    <value>Tracking</value>
+  </data>
+  <data name="AllMobileDevicesShouldBePresentWithTrackingType" xml:space="preserve">
+    <value>Not all routes were sent to the tracking server. Some of them don't have mobile device assigned or mobile devices have different sync type.</value>
+  </data>
+  <data name="AllRoutesSent" xml:space="preserve">
+    <value>All routes sent.</value>
+  </data>
+  <data name="FailedToSendRoutes" xml:space="preserve">
+    <value>Failed to send routes.</value>
+  </data>
+  <data name="MobileDevicesShouldHaveUniqueIDs" xml:space="preserve">
+    <value>Mobile devices with "Tracking Server" sync type should have unique Tracking IDs.</value>
+  </data>
+  <data name="SendRoutesCommandDisabledTooltip" xml:space="preserve">
+    <value>Some other operation is in progress or there are no routes to be sent for current day</value>
+  </data>
+  <data name="SendRoutesCommandEnabledTooltip" xml:space="preserve">
+    <value>Sends routes to the workflow management server</value>
+  </data>
+  <data name="SendRoutesCommandStatus" xml:space="preserve">
+    <value>Sending routes...</value>
+  </data>
+  <data name="SendRoutesCommandTitle" xml:space="preserve">
+    <value>Send Routes</value>
+  </data>
+  <data name="WMServer" xml:space="preserve">
+    <value>WMServer</value>
+  </data>
+  <data name="DevicesAdditionStatus" xml:space="preserve">
+    <value>Adding to the server...</value>
+  </data>
+  <data name="DevicesDeletionStatus" xml:space="preserve">
+    <value>Deleting from server...</value>
+  </data>
+  <data name="DevicesUpdateStatus" xml:space="preserve">
+    <value>Updating at the server...</value>
+  </data>
+  <data name="OverwriteFeatureServiceRoutesMessageBoxCaption" xml:space="preserve">
+    <value>Send routes</value>
+  </data>
+  <data name="OverwriteFeatureServiceRoutesMessageBoxText" xml:space="preserve">
+    <value>All existing work for today will be erased from mobile and dashboard applications and replaced with these updated routes.  Would you like to proceed?</value>
+  </data>
+  <data name="NothingWasSent" xml:space="preserve">
+    <value>No routes sent. There is nothing to update on feature service.</value>
+  </data>
+  <data name="Error_WrongOrUnknownProjection" xml:space="preserve">
+    <value>Shape file has wrong or unknown spatial reference. The coordinate system of the shapefile must be Geographic/WGS 1984</value>
+  </data>
+</root>

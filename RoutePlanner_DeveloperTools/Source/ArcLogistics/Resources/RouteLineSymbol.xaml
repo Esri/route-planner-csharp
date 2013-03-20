@@ -1,0 +1,25 @@
+<ControlTemplate
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:esriConverters="clr-namespace:ESRI.ArcGIS.Client.ValueConverters;assembly=ESRI.ArcGIS.Client"
+         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    
+    <ControlTemplate.Resources>
+        <esriConverters:DictionaryConverter x:Key="converter"/>
+    </ControlTemplate.Resources>
+    <Grid Focusable="False">
+        
+        <Path x:Name="Element" 
+              StrokeDashCap="Round" 
+              StrokeLineJoin="Round" 
+              StrokeDashOffset="0"                                                     
+              StrokeThickness="5"
+              Data="{Binding Path=Attributes, Converter={StaticResource converter}, ConverterParameter='Geometry', Mode=OneWay}" 
+              Stroke="{Binding Path=Attributes, Converter={StaticResource converter}, ConverterParameter='Fill', Mode=OneWay}">
+            <Path.BitmapEffect>
+                <DropShadowBitmapEffect Color="#FF4F5257" Direction="315" Opacity="100" ShadowDepth="3" Softness="0.2"/>
+            </Path.BitmapEffect>
+        </Path>
+
+    </Grid>
+</ControlTemplate>

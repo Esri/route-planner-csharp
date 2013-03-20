@@ -1,0 +1,145 @@
+﻿<pages:PageBase x:Class="ESRI.ArcLogistics.App.Pages.BreaksPage"
+      x:ClassModifier="internal"
+      xmlns ="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:local="clr-namespace:ESRI.ArcLogistics.App.Pages"
+      xmlns:app="clr-namespace:ESRI.ArcLogistics.App"
+      xmlns:collections="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:pages="clr-namespace:ESRI.ArcLogistics.App.Pages"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:data="clr-namespace:ESRI.ArcLogistics.Data;assembly=ESRI.ArcLogisticsNG"
+      xmlns:domainObjects="clr-namespace:ESRI.ArcLogistics.DomainObjects;assembly=ESRI.ArcLogisticsNG"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+      xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+      xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" d:DesignWidth="544" d:DesignHeight="432" >
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <xcdg:DataGridCollectionViewSource x:Key="TimeWindowBreaksCollection"
+                                               AutoCreateItemProperties="False"
+                                               NewItemCreated="_DataGridCollectionViewSourceNewItemCreated"
+                                               CreatingNewItem="_DataGridCollectionViewSourceCreatingNewItem"
+                                               BeginningEdit="_DataGridCollectionViewSourceBeginningEdit"
+                                               CommittingEdit="_DataGridCollectionViewSourceCommittingEdit"
+                                               CancelingEdit="_DataGridCollectionViewSourceCancelingEdit"
+                                               EditCommitted="_DataGridCollectionViewSourceEditCommitted"
+                                               EditBegun="_DataGridCollectionViewSourceEditBegun"
+                                               CommittingNewItem="_DataGridCollectionViewSourceCommittingNewItem"
+                                               NewItemCommitted="_DataGridCollectionViewSourceNewItemCommited"
+                                               CancelingNewItem="_DataGridCollectionViewSourceCancelingNewItem"
+                                               NewItemCanceled="_DataGridCollectionViewSourceNewItemCanceled"/>
+            <xcdg:DataGridCollectionViewSource x:Key="DriveTimeBreaksCollection"
+                                               AutoCreateItemProperties="False"
+                                               NewItemCreated="_DataGridCollectionViewSourceNewItemCreated"
+                                               CreatingNewItem="_DataGridCollectionViewSourceCreatingNewItem"
+                                               BeginningEdit="_DataGridCollectionViewSourceBeginningEdit"
+                                               CommittingEdit="_DataGridCollectionViewSourceCommittingEdit"
+                                               CancelingEdit="_DataGridCollectionViewSourceCancelingEdit"
+                                               EditCommitted="_DataGridCollectionViewSourceEditCommitted"
+                                               EditBegun="_DataGridCollectionViewSourceEditBegun"
+                                               CommittingNewItem="_DataGridCollectionViewSourceCommittingNewItem"
+                                               NewItemCommitted="_DataGridCollectionViewSourceNewItemCommited"
+                                               CancelingNewItem="_DataGridCollectionViewSourceCancelingNewItem"
+                                               NewItemCanceled="_DataGridCollectionViewSourceNewItemCanceled"/>
+            <xcdg:DataGridCollectionViewSource x:Key="WorkTimeBreaksCollection"
+                                               AutoCreateItemProperties="False"
+                                               NewItemCreated="_DataGridCollectionViewSourceNewItemCreated"
+                                               CreatingNewItem="_DataGridCollectionViewSourceCreatingNewItem"
+                                               BeginningEdit="_DataGridCollectionViewSourceBeginningEdit"
+                                               CommittingEdit="_DataGridCollectionViewSourceCommittingEdit"
+                                               CancelingEdit="_DataGridCollectionViewSourceCancelingEdit"
+                                               EditCommitted="_DataGridCollectionViewSourceEditCommitted"
+                                               EditBegun="_DataGridCollectionViewSourceEditBegun"
+                                               CommittingNewItem="_DataGridCollectionViewSourceCommittingNewItem"
+                                               NewItemCommitted="_DataGridCollectionViewSourceNewItemCommited"
+                                               CancelingNewItem="_DataGridCollectionViewSourceCancelingNewItem"
+                                               NewItemCanceled="_DataGridCollectionViewSourceNewItemCanceled"/>
+            
+            <VisualBrush x:Key="textBrush" Stretch="Uniform" TileMode="None" Viewport="10,0,160,25" ViewportUnits="Absolute">
+                <VisualBrush.Visual>
+                    <TextBlock Width="Auto" Height="Auto" FontSize="12" Foreground="DarkGray" Text="{StaticResource BreaksPageInsertionHelpText}"/>
+                </VisualBrush.Visual>
+            </VisualBrush>
+
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <app_controls:CommandButtonGroup Margin="{StaticResource FunctionalGridButtonsStackMargin}"
+                                             x:Name="commandButtonGroup"
+                                             Grid.Row="1"/>
+
+        <Border HorizontalAlignment="Stretch" 
+                Margin="{StaticResource PageContentMargin}" 
+                Width="Auto" 
+                Grid.Row="2" 
+                BorderThickness="{StaticResource GridBorderThickness}" 
+                BorderBrush="{StaticResource ApplicationBorder}"
+                SnapsToDevicePixels="True" >
+            <app_controls:DataGridControlEx
+                    ItemsSource="{Binding Source={StaticResource TimeWindowBreaksCollection}}"
+                    IsEnabled="True"
+                    x:Name="TimeWindowGrid">
+                <xcdg:DataGridControl.View>
+                    <xcdg:TableView
+                                        ColumnStretchMode="Last">
+                        <xcdg:TableView.FixedHeaders>
+                            <DataTemplate>
+                                <xcdg:InsertionRow Style="{StaticResource insertionStyle}"/>
+                            </DataTemplate>
+                        </xcdg:TableView.FixedHeaders>
+                    </xcdg:TableView>
+                </xcdg:DataGridControl.View>
+            </app_controls:DataGridControlEx>
+        </Border>
+        <Border HorizontalAlignment="Stretch" 
+                Margin="{StaticResource PageContentMargin}" 
+                Width="Auto" 
+                Grid.Row="2" 
+                BorderThickness="{StaticResource GridBorderThickness}" 
+                BorderBrush="{StaticResource ApplicationBorder}"
+                SnapsToDevicePixels="True" >
+            <app_controls:DataGridControlEx
+                    ItemsSource="{Binding Source={StaticResource WorkTimeBreaksCollection}}"
+                    IsEnabled="True"
+                    x:Name="WorkTimeGrid">
+                <xcdg:DataGridControl.View>
+                    <xcdg:TableView
+                                        ColumnStretchMode="Last">
+                        <xcdg:TableView.FixedHeaders>
+                            <DataTemplate>
+                                <xcdg:InsertionRow Style="{StaticResource insertionStyle}"/>
+                            </DataTemplate>
+                        </xcdg:TableView.FixedHeaders>
+                    </xcdg:TableView>
+                </xcdg:DataGridControl.View>
+            </app_controls:DataGridControlEx>
+        </Border>
+        <Border HorizontalAlignment="Stretch" 
+                Margin="{StaticResource PageContentMargin}" 
+                Width="Auto" 
+                Grid.Row="2" 
+                BorderThickness="{StaticResource GridBorderThickness}" 
+                BorderBrush="{StaticResource ApplicationBorder}"
+                SnapsToDevicePixels="True" >
+        <app_controls:DataGridControlEx
+                    ItemsSource="{Binding Source={StaticResource DriveTimeBreaksCollection}}"
+                    IsEnabled="True"
+                    x:Name="DriveTimeGrid">
+                    <xcdg:DataGridControl.View>
+                        <xcdg:TableView
+                                        ColumnStretchMode="Last">
+                            <xcdg:TableView.FixedHeaders>
+                                <DataTemplate>
+                                    <xcdg:InsertionRow Style="{StaticResource insertionStyle}"/>
+                                </DataTemplate>
+                            </xcdg:TableView.FixedHeaders>
+                        </xcdg:TableView>
+                    </xcdg:DataGridControl.View>
+                </app_controls:DataGridControlEx>
+        </Border>
+    </Grid>
+</pages:PageBase>

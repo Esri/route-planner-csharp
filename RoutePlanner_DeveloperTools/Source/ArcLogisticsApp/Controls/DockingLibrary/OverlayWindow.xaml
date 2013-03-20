@@ -1,0 +1,336 @@
+﻿<Window x:Class="ESRI.ArcLogistics.App.Controls.OverlayWindow"
+        x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DockingLibrary"
+        Height="300"
+        Width="300"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        ShowInTaskbar="False">
+    <Grid>
+        <DockPanel Name="panelDrag" SnapsToDevicePixels="True" >
+
+            <Button Name="btnDockLeft"
+                    DockPanel.Dock="Left"
+                    Width="48" Height="48"
+                    Margin="2,0,0,0"
+                    Template="{DynamicResource GlassButton}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center">
+                <Button.Content>
+                    <Grid Width="22.707" Height="40">
+                        <Path Stretch="Fill" Stroke="#FF106F9B" Margin="-10,0,0,0" Data="M22.500477,43.625 L10.186386,22.654241 22.62598,0.5 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" HorizontalAlignment="Center" Width="22" Height="40" Opacity="0.7">
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#CC0185AB" Offset="1"/>
+                                    <GradientStop Color="#CC71C6EE" Offset="0"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path Stretch="Fill" Stroke="{x:Null}" Margin="-3.486,1.771,6.186,19.506" Data="M10.186386,22.654241 L22.630645,0.2262764 22.533461,22.649329 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" Opacity="0.7">
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.501,1" StartPoint="0.499,0">
+                                    <GradientStop Color="#99FFFFFF" Offset="0"/>
+                                    <GradientStop Color="#33FFFFFF" Offset="0.92"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Name="btnDockRight"
+                    DockPanel.Dock="Right"
+                    Width="48" Height="48"
+                    Margin="0,0,2,0"
+                    Template="{DynamicResource GlassButton}"
+                    RenderTransformOrigin="0,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <SkewTransform AngleX="0" AngleY="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform X="0" Y="0"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Content>
+                    <Grid Width="22.707" Height="40" RenderTransformOrigin="0.5,0.5">
+                        <Grid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1" ScaleY="1"/>
+                                <SkewTransform AngleX="0" AngleY="0"/>
+                                <RotateTransform Angle="0"/>
+                                <TranslateTransform X="0" Y="0"/>
+                            </TransformGroup>
+                        </Grid.RenderTransform>
+                        <Path Stretch="Fill" Stroke="#FF106F9B" Margin="-10,0,0,0" Data="M22.500477,43.625 L10.186386,22.654241 22.62598,0.5 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" HorizontalAlignment="Center" Width="22" Height="40" Opacity="0.7">
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#CC0185AB" Offset="1"/>
+                                    <GradientStop Color="#CC71C6EE" Offset="0"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path Stretch="Fill" Stroke="{x:Null}" Margin="-3.486,1.771,6.186,19.506" Data="M10.186386,22.654241 L22.630645,0.2262764 22.533461,22.649329 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" Opacity="0.7">
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.501,1" StartPoint="0.499,0">
+                                    <GradientStop Color="#99FFFFFF" Offset="0"/>
+                                    <GradientStop Color="#33FFFFFF" Offset="0.92"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Name="btnDockBottom"
+                    DockPanel.Dock="Bottom"
+                    Width="48"
+                    Height="48"
+                    Margin="0,0,0,2"
+                    Template="{DynamicResource GlassButton}"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center"
+                    Background="{x:Null}">
+                <Button.Content>
+                    <Grid Width="22.707" Height="40" RenderTransformOrigin="0.5,0.5">
+                        <Grid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                <SkewTransform AngleX="0" AngleY="0"/>
+                                <RotateTransform Angle="270"/>
+                                <TranslateTransform X="0" Y="0"/>
+                            </TransformGroup>
+                        </Grid.RenderTransform>
+                        <Path Stretch="Fill" Stroke="#FF106F9B" Margin="-10,0,0,0" Data="M22.500477,43.625 L10.186386,22.654241 22.62598,0.5 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" HorizontalAlignment="Center" Width="22" Height="40" Opacity="0.7">
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#CC0185AB" Offset="1"/>
+                                    <GradientStop Color="#CC71C6EE" Offset="0"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path Stretch="Fill" Stroke="{x:Null}" Margin="-3.486,1.771,6.186,19.506" Data="M10.186386,22.654241 L22.630645,0.2262764 22.533461,22.649329 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" Opacity="0.7">
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.501,1" StartPoint="0.499,0">
+                                    <GradientStop Color="#99FFFFFF" Offset="0"/>
+                                    <GradientStop Color="#33FFFFFF" Offset="0.92"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Name="btnDockTop"
+                    VerticalAlignment="Top"
+                    Width="48"
+                    Height="48"
+                    Template="{DynamicResource GlassButton}"
+                    Margin="0,2,0,0"
+                    HorizontalAlignment="Center">
+                <Button.Content>
+                    <Grid Width="22.707" Height="40" RenderTransformOrigin="0.5,0.5">
+                        <Grid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                <SkewTransform AngleX="0" AngleY="0"/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform X="0" Y="0"/>
+                            </TransformGroup>
+                        </Grid.RenderTransform>
+                        <Path Stretch="Fill" Stroke="#FF106F9B" Margin="-10,0,0,0" Data="M22.500477,43.625 L10.186386,22.654241 22.62598,0.5 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" HorizontalAlignment="Center" Width="22" Height="40" Opacity="0.7">
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#CC0185AB" Offset="1"/>
+                                    <GradientStop Color="#CC71C6EE" Offset="0"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path Stretch="Fill" Stroke="{x:Null}" Margin="-3.486,1.771,6.186,19.506" Data="M10.186386,22.654241 L22.630645,0.2262764 22.533461,22.649329 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" Opacity="0.7">
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.501,1" StartPoint="0.499,0">
+                                    <GradientStop Color="#99FFFFFF" Offset="0"/>
+                                    <GradientStop Color="#33FFFFFF" Offset="0.92"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Grid>
+                </Button.Content>
+            </Button>
+            
+        </DockPanel>
+
+        <Canvas SnapsToDevicePixels="True">
+            <Grid Name="gridPaneRelativeDockingOptions"
+                  Visibility="Collapsed"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  Width="156" 
+                  Height="156" SnapsToDevicePixels="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="52"/>
+                    <ColumnDefinition Width="52"/>
+                    <ColumnDefinition Width="52"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="52"/>
+                    <RowDefinition Height="52"/>
+                    <RowDefinition Height="52"/>
+                </Grid.RowDefinitions>
+
+                <Button Name="btnDockPaneTop"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Width="48"
+                        Height="48"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Template="{DynamicResource GlassButton}"
+                        Margin="1,1,1,1"
+                        >
+                    <Button.Content>
+                        <Grid Width="22.707" Height="40" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="90"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <Path Stretch="Fill" Stroke="#FF106F9B" Margin="-10,0,0,0" Data="M22.500477,43.625 L10.186386,22.654241 22.62598,0.5 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" HorizontalAlignment="Center" Width="22" Height="40" Opacity="0.7">
+                                <Path.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#CC0185AB" Offset="1"/>
+                                        <GradientStop Color="#CC71C6EE" Offset="0"/>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Stretch="Fill" Stroke="{x:Null}" Margin="-3.486,1.771,6.186,19.506" Data="M10.186386,22.654241 L22.630645,0.2262764 22.533461,22.649329 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" Opacity="0.7">
+                                <Path.Fill>
+                                    <LinearGradientBrush EndPoint="0.501,1" StartPoint="0.499,0">
+                                        <GradientStop Color="#99FFFFFF" Offset="0"/>
+                                        <GradientStop Color="#33FFFFFF" Offset="0.92"/>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+
+                <Button Name="btnDockPaneRight"
+                        Grid.Column="2"
+                        Grid.Row="1"
+                        Width="48"
+                        Height="48"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Template="{DynamicResource GlassButton}" Margin="1,1,1,1">
+                    <Button.Content>
+                        <Grid Width="22.707" Height="40" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1" ScaleY="1"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <Path Stretch="Fill" Stroke="#FF106F9B" Margin="-10,0,0,0" Data="M22.500477,43.625 L10.186386,22.654241 22.62598,0.5 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" HorizontalAlignment="Center" Width="22" Height="40" Opacity="0.7">
+                                <Path.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#CC0185AB" Offset="1"/>
+                                        <GradientStop Color="#CC71C6EE" Offset="0"/>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Stretch="Fill" Stroke="{x:Null}" Margin="-3.486,1.771,6.186,19.506" Data="M10.186386,22.654241 L22.630645,0.2262764 22.533461,22.649329 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" Opacity="0.7">
+                                <Path.Fill>
+                                    <LinearGradientBrush EndPoint="0.501,1" StartPoint="0.499,0">
+                                        <GradientStop Color="#99FFFFFF" Offset="0"/>
+                                        <GradientStop Color="#33FFFFFF" Offset="0.92"/>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+
+                <Button Name="btnDockPaneBottom"
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        Width="48"
+                        Height="48"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Template="{DynamicResource GlassButton}" Margin="1,1,1,1"
+                        >
+                    <Button.Content>
+                        <Grid Width="22.707" Height="40" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="270"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <Path Stretch="Fill" Stroke="#FF106F9B" Margin="-10,0,0,0" Data="M22.500477,43.625 L10.186386,22.654241 22.62598,0.5 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" HorizontalAlignment="Center" Width="22" Height="40" Opacity="0.7">
+                                <Path.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#CC0185AB" Offset="1"/>
+                                        <GradientStop Color="#CC71C6EE" Offset="0"/>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Stretch="Fill" Stroke="{x:Null}" Margin="-3.486,1.771,6.186,19.506" Data="M10.186386,22.654241 L22.630645,0.2262764 22.533461,22.649329 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" Opacity="0.7">
+                                <Path.Fill>
+                                    <LinearGradientBrush EndPoint="0.501,1" StartPoint="0.499,0">
+                                        <GradientStop Color="#99FFFFFF" Offset="0"/>
+                                        <GradientStop Color="#33FFFFFF" Offset="0.92"/>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+
+                <Button Name="btnDockPaneLeft"
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Width="48"
+                        Height="48"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Template="{DynamicResource GlassButton}" Margin="1,1,1,1"
+                        >
+                    <Button.Content>
+                        <Grid Width="22.707" Height="40">
+                            <Path Stretch="Fill" Stroke="#FF106F9B" Margin="-10,0,0,0" Data="M22.500477,43.625 L10.186386,22.654241 22.62598,0.5 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" HorizontalAlignment="Center" Width="22" Height="40" Opacity="0.7">
+                                <Path.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#CC0185AB" Offset="1"/>
+                                        <GradientStop Color="#CC71C6EE" Offset="0"/>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Stretch="Fill" Stroke="{x:Null}" Margin="-3.486,1.771,6.186,19.506" Data="M10.186386,22.654241 L22.630645,0.2262764 22.533461,22.649329 z" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="0" StrokeThickness="0.5" Opacity="0.7">
+                                <Path.Fill>
+                                    <LinearGradientBrush EndPoint="0.501,1" StartPoint="0.499,0">
+                                        <GradientStop Color="#99FFFFFF" Offset="0"/>
+                                        <GradientStop Color="#33FFFFFF" Offset="0.92"/>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+            </Grid>
+        </Canvas>
+    </Grid>
+</Window>

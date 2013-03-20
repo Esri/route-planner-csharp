@@ -1,0 +1,8 @@
+﻿<widgets:PageWidgetBase x:Class="ESRI.ArcLogistics.App.Widgets.TasksWidget" x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:widgets="clr-namespace:ESRI.ArcLogistics.App.Widgets">
+    <Grid>
+        <StackPanel x:Name="TasksStack" Background="Transparent" Margin="{DynamicResource WidgetMargin}"/>
+    </Grid>
+</widgets:PageWidgetBase>

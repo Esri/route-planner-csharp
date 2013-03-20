@@ -1,0 +1,82 @@
+﻿<Window x:Class="ESRI.ArcLogistics.App.Dialogs.AuthenticationDlg"
+             x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="ToolWindow"
+    ResizeMode="NoResize"
+    MinHeight="200" Height="200" Width="400" Background="#FFFFFFFF" Loaded="Window_Loaded">
+    <Grid x:Name="LayoutRoot" Background="{DynamicResource TrasparentContentBackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="captionTextBlock" 
+                   Margin="14,4,8,4" 
+                   FontSize="{DynamicResource MiddleFontSize}"
+                   Foreground="{DynamicResource WhiteForegroundBrush}"
+                   Grid.Row="0"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Stretch" 
+                   HorizontalAlignment="Stretch"/>
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" 
+                   Grid.Row="0" 
+                   Margin="8,4,8,4"
+                   Content="{DynamicResource UsernameString}" 
+                   FontSize="{DynamicResource MiddleFontSize}" 
+                   Foreground="{DynamicResource WhiteForegroundBrush}"/>
+            <TextBox x:Name="usernameTextBox" 
+                     Margin="8,4,8,4"
+                     Grid.Row="0"
+                     TextChanged="usernameTextBox_TextChanged"
+                     Grid.Column="1" 
+                     FontSize="{DynamicResource MiddleFontSize}"/>
+            <Label Grid.Column="0" 
+                   Grid.Row="1" 
+                   Margin="8,4,8,4"
+                   Content="{DynamicResource PasswordString}" 
+                   FontSize="{DynamicResource MiddleFontSize}" 
+                   Foreground="{DynamicResource WhiteForegroundBrush}"/>
+            <PasswordBox x:Name="passwordBox" 
+                     Margin="8,4,8,4"
+                     Grid.Row="1"
+                     IsEnabled="False"
+                     PasswordChanged="passwordBox_PasswordChanged"
+                     Grid.Column="1" 
+                     FontSize="{DynamicResource MiddleFontSize}"/>
+        </Grid>
+            <CheckBox x:Name="rememberMeCheckBox" 
+                      Content="{DynamicResource RememberMeString}" 
+                      HorizontalAlignment="Left" 
+                      FontSize="{DynamicResource MiddleFontSize}"
+                      IsEnabled="{Binding ElementName = okButton, Path = IsEnabled}"
+                      Margin="12,4,8,4"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="4,4,8,4">
+            <Button x:Name="okButton"
+                    IsEnabled="False"
+                    Content="{DynamicResource ButtonHeaderOk}"
+                    Click="okButton_Click"
+                    Width="{DynamicResource DefaultPageButtonWidth}" 
+                    Height="{DynamicResource DefaultPageButtonHeight}" Margin="0,0,4,0"/>
+            <Button x:Name="cancelButton" Content="{DynamicResource CancelButtonString}" 
+                    Click="cancelButton_Click"
+                    Width="{DynamicResource DefaultPageButtonWidth}" 
+                    Height="{DynamicResource DefaultPageButtonHeight}" Margin="0,0,0,0"/>
+        </StackPanel>
+               
+    </Grid>
+</Window>

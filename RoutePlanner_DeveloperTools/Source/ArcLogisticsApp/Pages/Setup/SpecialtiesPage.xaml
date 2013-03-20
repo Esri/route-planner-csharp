@@ -1,0 +1,47 @@
+﻿<pages:PageBase
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:pages="clr-namespace:ESRI.ArcLogistics.App.Pages"
+    xmlns:app="clr-namespace:ESRI.ArcLogistics.App"
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+    x:Class="ESRI.ArcLogistics.App.Pages.SpecialtiesPage"
+    xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignHeight="391.7" d:DesignWidth="393.54">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+
+        <pages:VehicleSpecialtiesPanel Grid.Row="0" Margin="0" x:Name="vehicleSpecialties">
+            <pages:VehicleSpecialtiesPanel.Resources>
+                <VisualBrush x:Key="textBrush" Stretch="Uniform" TileMode="None" Viewport="10,0,220,25" ViewportUnits="Absolute">
+                    <VisualBrush.Visual>
+                        <TextBlock Width="Auto" Height="Auto" FontSize="12" Foreground="DarkGray" Text="{StaticResource VehicleSpecialtiesPageInsertionHelpText}"/>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </pages:VehicleSpecialtiesPanel.Resources>
+        </pages:VehicleSpecialtiesPanel>
+
+        <GridSplitter Focusable="False" HorizontalAlignment="Stretch" 
+                      Margin="4,0,4,0" 
+                      VerticalAlignment="Top" 
+                      Height="2" 
+                      Background="{StaticResource ApplicationBorder}"
+                      Grid.Row="1" Style="{StaticResource GridSplitterStyleMain}" 
+                      SnapsToDevicePixels="True"
+                      />
+        
+        <pages:DriverSpecialtiesPanel Grid.Row="1" x:Name="driverSpecialties" Margin="0">
+            <pages:DriverSpecialtiesPanel.Resources>
+                <VisualBrush x:Key="textBrush" Stretch="Uniform" TileMode="None" Viewport="10,0,220,25" ViewportUnits="Absolute">
+                    <VisualBrush.Visual>
+                        <TextBlock Width="Auto" Height="Auto" FontSize="12" Foreground="DarkGray" Text="{StaticResource DriverSpecialtiesPageInsertionHelpText}"/>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </pages:DriverSpecialtiesPanel.Resources>
+        </pages:DriverSpecialtiesPanel>
+        
+    </Grid>
+</pages:PageBase>

@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="ESRI.ArcLogistics.App.Controls.StatusBar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    Height="Auto" Width="Auto"
+    VerticalAlignment="Stretch"
+    HorizontalAlignment="Stretch"
+    FocusVisualStyle="{x:Null}"
+    Background="{DynamicResource StatusBarBackground}">
+    <Grid Width="Auto"
+        HorizontalAlignment="Stretch"
+        Background="{DynamicResource DarkApplicationBackgroundBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Border VerticalAlignment="Stretch"
+            Grid.Column="0">
+            <ContentControl x:Name="StatusContentControl"
+                Margin="0,0,0,0"
+                Width="Auto"
+                Height="Auto"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Stretch" />
+        </Border>
+        <!-- NOTE: workingStatus must be after StatusContentControl (in this case in visual three it view over) -->
+        <local:BusyDecorator x:Name="workingStatus"
+            IsBusyIndicatorShowing ="True"
+            Grid.Column="0"
+            VerticalAlignment="Center" />
+        <ToggleButton x:Name="ButtonMessages"
+            Grid.Column="1"
+            Content="{DynamicResource StatusBarMessageButtonHeader}"
+            IsEnabled="True"
+            Visibility="Visible"
+            Width="{DynamicResource DefaultPageButtonWidth}"
+            Height="{DynamicResource DefaultPageButtonHeight}"
+            ToolTip="{DynamicResource MessageButtonTooltip}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Margin="4,2,2,2"
+            Style="{DynamicResource MessagesButtonStyle}"
+            Click="ButtonMessage_Click" />
+    </Grid>
+</UserControl>

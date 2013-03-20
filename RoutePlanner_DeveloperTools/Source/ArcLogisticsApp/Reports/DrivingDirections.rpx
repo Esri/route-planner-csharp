@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ActiveReportsLayout Version="3.1" PrintWidth="10396.8" MaxPages="200" DocumentName="ARNet Document" ScriptLang="C#" MasterReport="0">
+  <StyleSheet>
+    <Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; ddo-char-set: 204; " />
+    <Style Name="Heading1" Value="font-size: 16pt; font-weight: bold; ddo-char-set: 204; " />
+    <Style Name="Heading2" Value="font-family: Times New Roman; font-size: 14pt; font-weight: bold; font-style: italic; ddo-char-set: 204; " />
+    <Style Name="Heading3" Value="font-size: 13pt; font-weight: bold; ddo-char-set: 204; " />
+  </StyleSheet>
+  <Sections>
+    <Section Type="GroupHeader" Name="groupHeader" Height="450" DataField="Route.ID" RepeatStyle="1" BackColor="16777215">
+      <Control Type="AR.Line" Name="line1" X1="0" Y1="0" X2="10350" Y2="0" LineColor="8085505" LineWeight="2" />
+      <Control Type="AR.Label" Name="lblRouteName" DataField="Route.Name" Left="0" Top="90" Width="1710" Height="270" Caption="RouteName" Style="color: #01607B; ddo-char-set: 204; text-align: left; font-weight: bold; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelDriver" DataField="DriverName" Left="1800" Top="90" Width="4050" Height="270" Caption="Driver Name" Style="color: #01607B; ddo-char-set: 204; font-weight: bold; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelVechicle" DataField="VehicleName" Left="5940" Top="90" Width="3330" Height="270" Caption="Vehicle Name" Style="color: #01607B; ddo-char-set: 204; font-weight: bold; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="lblScheduleDescription" Left="9360" Top="90" Width="990" Height="270" Caption="PlannedDate" Style="color: #01607B; ddo-char-set: 204; text-align: right; font-weight: bold; font-size: 9pt; white-space: nowrap; " />
+    </Section>
+    <Section Type="Detail" Name="Detail" Height="720" BackColor="16777215" KeepTogether="1">
+      <Control Type="AR.Label" Name="labelBackgroundDetail" Left="0" Top="0" Width="10612.8" Height="270.72" Caption="" Style="color: Black; ddo-char-set: 204; font-weight: bold; font-style: normal; background-color: #01607B; font-size: 9pt; " />
+      <Control Type="AR.Field" Name="labelAddressDetail" DataField="FullAddressShort" Left="3420" Top="0" Width="5940" Height="270" Text="FullAddress" CanGrow="0" CanShrink="1" Style="color: White; ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: inherit; " />
+      <Control Type="AR.Label" Name="labelStopName" DataField="= StopNamePrefix + Stop.Name + StopNamePostfix;" Left="0" Top="0" Width="3330" Height="270" Caption="StopName" Style="ddo-char-set: 1; color: White; text-decoration: none; font-weight: bold; font-style: normal; font-size: 9pt; white-space: inherit; " />
+      <Control Type="AR.Label" Name="labelArriveTimeDetail" DataField="ArriveTimeString" Left="9450" Top="0" Width="935.9999" Height="270.72" Caption="ArriveTimeString" Style="color: White; ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: inherit; " />
+      <Control Type="AR.Label" Name="labelDirections" Visible="0" Left="0" Top="270" Width="10368" Height="450.72" Caption="labelDirections" Style="font-size: 9.75pt; vertical-align: middle; " />
+    </Section>
+    <Section Type="GroupFooter" Name="groupFooter" Height="0" BackColor="16777215" NewPage="2" KeepTogether="1" />
+  </Sections>
+  <ReportComponentTray />
+  <DataSources>
+    <OleDbDataSource ConnectE="13IdEUWXLb8jDY6d7T6jJYmDRKY5Eee4itGMLIPDLT+VBQkrRemRcHciYcI1dvBprE9fQStE8tu+isu2CxpLq60nUFW0DfO+2JqbUlMrmZBzNYCg0lK/2VTwRb+N2Jid385Ewa4c8Mt+7KgVjOhLTA==" SQL="SELECT * FROM (`Route` `Route` INNER JOIN `Stop` `Stop` ON `Route`.`ID`=`Stop`.`RouteID`) INNER JOIN `Schedule` `Schedule` ON `Route`.`ScheduleID`=`Schedule`.`ID` ORDER BY `Route`.`Name`, `Stop`.`Sequence`" />
+  </DataSources>
+  <Script>
+                              <![CDATA[using System.Data;
+using System.Data.OleDb;
+using System.Drawing;
+using System.Diagnostics;
+using System.Collections.Generic;
+
+        private const string SELECT_STRING_DIRECTIONS = "SELECT Directions FROM `Stop`";
+        private const float SPACE_SEPARATOR_Y = 0f;
+        private const float SPACE_SEPARATOR_SECTION_Y = 0.0625f;
+        private const float SPACE_SEPARATOR_WIDTH_PAIR = -0.0125f;
+        private const string DYNAMIC_LABEL_NAME_FORAMT = "lblDynamicRPT{0}";
+        private const float SPACE_FACTOR_CONTROL_LONG = 0.85f;
+        private const float SPACE_FACTOR_CONTROL_SHORT = 1.0f - SPACE_FACTOR_CONTROL_LONG;
+        private const string DIRECTIONS_SEPARATOR = "\r\n";
+        private const string DIRECTION_SEPARATOR = ", drive";
+        private const string MESSAGE_PART_DRIVE_FORMAT = "Drive {0}";
+
+        private static Color ROW_COLOR = Color.FromArgb(200, 218, 236);
+
+        private struct Direction
+        {
+            public Direction(string text, string length)
+            {
+                Text = text;
+                Length = length;
+            }
+
+            public readonly string Text;
+            public readonly string Length;
+        }
+
+        private sealed class Helper
+        {
+            public static void AddControls(int controlCount, ARControl control,
+                                           ControlCollection controls)
+            {
+                RectangleF contentRect = control.Bounds;
+                float lineWidth = contentRect.Width - SPACE_SEPARATOR_WIDTH_PAIR;
+
+                float width = lineWidth * SPACE_FACTOR_CONTROL_LONG;
+                PointF longLocation = new PointF(contentRect.Left, contentRect.Top);
+                SizeF longSize = new SizeF(width, contentRect.Height);
+
+                width = lineWidth * SPACE_FACTOR_CONTROL_SHORT;
+                PointF shortLocation = new PointF(contentRect.Right - width, contentRect.Top);
+                // set short after long controls
+                SizeF shortSize = new SizeF(width, contentRect.Height);
+
+                if (null != controls)
+                    controls.Remove(control); // remove prototype
+
+                float offsetY = contentRect.Height + SPACE_SEPARATOR_Y;
+
+                int insertIndex = 0;
+                for (int i = 0; i < controlCount; ++i)
+                {
+                    Color bgcolor = Color.Empty;
+                    if (0 < (i % 2))
+                        bgcolor = ROW_COLOR;
+
+                    // insert long control
+                    RectangleF longBoundbox = new RectangleF(longLocation, longSize);
+                    ARControl longLabel = _CreateLabel(control, longBoundbox, insertIndex.ToString(), bgcolor);
+                    controls.Insert(insertIndex, longLabel);
+                    ++insertIndex;
+                    longLocation.Y += offsetY;
+
+                    // insert short control
+                    RectangleF shortBoundbox = new RectangleF(shortLocation, shortSize);
+                    ARControl shortLabel = _CreateLabel(control, shortBoundbox, insertIndex.ToString(), bgcolor);
+                    controls.Insert(insertIndex, shortLabel);
+                    ++insertIndex;
+                    shortLocation.Y += offsetY;
+               }
+            }
+
+            public static void UpdateControls(ICollection<Direction> directions,
+                                              int maxDirectionCount,
+                                              ControlCollection controls)
+            {
+                Debug.Assert(maxDirectionCount * 2 < controls.Count); // one direction - two direction controls
+
+                // update visibility
+                for (int index = 0; index < maxDirectionCount * 2; ++index)
+                    controls[index].Visible = false;
+
+                // update content
+                int currentControlIndex = -1;
+                foreach (Direction direction in directions)
+                {
+                    _UpdateControl(controls[++currentControlIndex], direction.Text);
+                    _UpdateControl(controls[++currentControlIndex], direction.Length);
+                }
+            }
+
+            private static void _UpdateControl(ARControl control, string text)
+            {
+                ((Label)control).Text = text;
+                control.Visible = true;
+            }
+
+            private static ARControl _CreateLabel(ARControl prototypeControl,
+                                                  RectangleF rectControl,
+                                                  string name,
+                                                  Color bgcolor)
+            {
+                Label prototypeCtrl = (Label)prototypeControl;
+                Label lb = new Label();
+                lb.Name = string.Format(DYNAMIC_LABEL_NAME_FORAMT, name);
+                lb.Style = prototypeCtrl.Style;
+                lb.Bounds = rectControl;
+                lb.ForeColor = prototypeCtrl.ForeColor;
+                lb.BackColor = (bgcolor.IsEmpty)? prototypeCtrl.BackColor : bgcolor;
+                lb.Alignment = prototypeCtrl.Alignment;
+                lb.Visible = prototypeCtrl.Visible;
+                lb.Font = prototypeCtrl.Font;
+                return lb;
+            }
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private int _maxDirectionCount = 0;
+        private bool _isInitialized = false;
+        private bool  _isDateInited = false;
+
+        public void ActiveReport_ReportStart()
+        {
+             if (_isInitialized)
+                return; // only once
+                
+              _isDateInited = false;
+                
+            // get max directions count
+
+            // read all directions from source
+            DataSources.OleDBDataSource ds = (DataSources.OleDBDataSource)rpt.DataSource;
+            using (OleDbConnection cnn = new OleDbConnection(ds.ConnectionString))
+            {
+                if (cnn.State == ConnectionState.Closed)
+                    cnn.Open();
+
+                using (OleDbCommand cmd = new OleDbCommand(SELECT_STRING_DIRECTIONS, cnn))
+                {
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        string[] directionsSeperators = new string[] { DIRECTIONS_SEPARATOR };
+
+                       int directionsPos = reader.GetOrdinal("Directions");
+                        while (reader.Read())
+                        {   // parse directions
+                            if (reader.IsDBNull(directionsPos))
+                                continue; // skip empty
+
+                            byte[] bytes = (byte[])reader["Directions"];
+                            System.Text.UnicodeEncoding enc = new System.Text.UnicodeEncoding();
+                            string directionsText = enc.GetString(bytes);
+
+                            string[] directions = directionsText.Split(directionsSeperators, StringSplitOptions.RemoveEmptyEntries);
+                            _maxDirectionCount = Math.Max(_maxDirectionCount, directions.Length);
+                        }
+                    }
+                }
+            }
+
+            // add max labels to all directions
+            ControlCollection detailControls = rpt.Sections["Detail"].Controls;
+            ARControl ctrlContent = detailControls["labelDirections"];
+            Helper.AddControls(_maxDirectionCount, ctrlContent, detailControls);
+
+            _isInitialized = true;
+        }
+
+        public void Detail_Format()
+        {
+            // parse directions
+            List<Direction> directionList = new List<Direction>();
+
+            FieldCollection fields = rpt.Fields;
+            if (null != fields["Directions"])
+            {
+                object value = fields["Directions"].Value;
+                if (null != value)
+                {
+                    // convert blob to long string
+                    byte[] bytes = (byte[])value;
+                    System.Text.UnicodeEncoding enc = new System.Text.UnicodeEncoding();
+                    string directionsText = enc.GetString(bytes);
+
+                    // split directions
+                    string[] directionsSeperators = new string[] { DIRECTIONS_SEPARATOR };
+                    string[] directions = directionsText.Split(directionsSeperators, StringSplitOptions.RemoveEmptyEntries);
+                    if (0 < directions.Length)
+                    {
+                        foreach (string direction in directions)
+                        {   // split direction to parts
+                            string[] directionSeperators = new string[] { DIRECTION_SEPARATOR };
+                            string[] parts = direction.Split(directionSeperators, StringSplitOptions.RemoveEmptyEntries);
+                            Debug.Assert((0 < parts.Length) && (parts.Length <= 2));
+
+                            string part1 = string.Empty;
+                            if (parts.Length == 2)
+                            {
+                                string part1Text = parts[1].Trim();
+                                if (part1Text.StartsWith("0.") || part1Text.StartsWith("< 0."))
+                                {
+                                    part1Text = part1Text.Replace("0.", ".");
+                                }
+                                
+                                part1 = string.Format(MESSAGE_PART_DRIVE_FORMAT, part1Text);
+                            }
+
+                            directionList.Add(new Direction(parts[0], part1));
+                        }
+                    }
+                }
+            }
+
+            // update dynamic controls
+            Section detailSection = rpt.Sections["Detail"];
+            ControlCollection detailControls = detailSection.Controls;
+            Helper.UpdateControls(directionList.AsReadOnly(), _maxDirectionCount, detailControls);
+
+            // resize detail section
+            float newHeight = SPACE_SEPARATOR_SECTION_Y * 4;
+            if (0 < directionList.Count)
+            {
+                int lastUsedControlIndex = directionList.Count * 2 - 1;
+                newHeight = detailSection.Controls[lastUsedControlIndex].Bounds.Bottom + SPACE_SEPARATOR_SECTION_Y;
+            }
+            detailSection.Height = newHeight;
+        }
+
+        public void ActiveReport_PageStart()
+        {
+                 // NOTE: Workarround for last record if it printed on separataly page - data can't read.
+                if (_isDateInited)
+                       return;
+  
+                Section detailSection = rpt.Sections["groupHeader"];
+                ControlCollection detailControls = detailSection.Controls;
+                ARControl ctrlContent = detailControls["lblScheduleDescription"];
+                ((Label)ctrlContent).Text = ((DateTime)rpt.Fields["PlannedDate"].Value).ToShortDateString();
+     
+               _isDateInited = true;
+       }]]></Script>
+  <PageSettings LeftMargin="720" RightMargin="720" TopMargin="720" BottomMargin="720" Orientation="1" />
+  <Parameters />
+</ActiveReportsLayout>

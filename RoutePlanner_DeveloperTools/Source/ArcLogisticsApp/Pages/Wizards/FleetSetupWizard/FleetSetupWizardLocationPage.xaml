@@ -1,0 +1,285 @@
+﻿<wizardPages:WizardPageBase x:Class="ESRI.ArcLogistics.App.Pages.Wizards.FleetSetupWizardLocationPage"
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="clr-namespace:ESRI.ArcLogistics.App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+    xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    xmlns:converters="clr-namespace:ESRI.ArcLogistics.App.Converters"
+    xmlns:wizardPages="clr-namespace:ESRI.ArcLogistics.App.Pages.Wizards">
+
+    <Grid Name="LayoutRoot">
+        <Grid.Resources>
+            <xcdg:DataGridCollectionViewSource x:Key="DataGridSource"
+                                               AutoCreateItemProperties="False"
+                                               BeginningEdit="_BeginningEdit"
+                                               CommittingEdit="_CommittingEdit"
+                                               CancelingEdit="_CancelingEdit"
+                                               EditCommitted="_EditCommitted"
+                                               EditCanceled="_EditCanceled"
+                                               />
+ 
+            <VisualBrush x:Key="AddLocationBrush" Stretch="None" TileMode="None" Viewport="4,-3,79,25" ViewportUnits="Absolute" AlignmentY="Center">
+                <VisualBrush.Visual>
+                    <StackPanel Background="#00FFFFFF" VerticalAlignment="Center">
+                        <TextBlock Width="Auto"
+                                   Height="Auto"
+                                   FontSize="{StaticResource MiddleFontSize}"
+                                   VerticalAlignment="Center"
+                                   Foreground="DarkGray"
+                                   Text="{StaticResource AddLocationText}"/>
+                    </StackPanel>
+                </VisualBrush.Visual>
+            </VisualBrush>
+
+            <VisualBrush x:Key="AddAnotherLocationBrush" Stretch="None" TileMode="None" Viewport="3,-3,133,25" ViewportUnits="Absolute" AlignmentY="Center">
+                <VisualBrush.Visual>
+                    <StackPanel Background="#00FFFFFF" VerticalAlignment="Center">
+                        <TextBlock Width="Auto"
+                                   Height="Auto"
+                                   FontSize="{StaticResource MiddleFontSize}"
+                                   VerticalAlignment="Center"
+                                   Foreground="DarkGray"
+                                   Text="{StaticResource AddAnotherLocationText}"/>
+                    </StackPanel>
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Resources>
+
+        <Border Style="{StaticResource LicenseFormBorderStyle}"
+                Margin="{StaticResource FleetSetupWizardPageContentMargin}"
+                >
+            <Grid Name="ContentGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Row 0 -->
+                <Label Content="{StaticResource FleetSetupWizardLocationPageTitle}"
+                       FontSize="{StaticResource ExtraLargeFontSize}"
+                       FontFamily="{StaticResource DefaultApplicationFont}"
+                       Foreground="{StaticResource AquamarineSkinLightBlueColor}"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="{StaticResource FleetSetupWizardPageTitleMargin}"
+                       Grid.Row="0"
+                       Grid.ColumnSpan="2"/>
+
+                <!-- Row 1 -->
+                <Border BorderBrush="{StaticResource ApplicationBorder}"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        SnapsToDevicePixels="True"
+                        BorderThickness="{StaticResource FleetSetupWizardSeparatorThickness}"
+                        Margin="{StaticResource FleetSetupWizardSeparatorMargin}" />
+
+                <!-- Row 2 -->
+                <StackPanel Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Grid.Row="2"
+                            >
+                    <TextBlock Text="{StaticResource FleetSetupWizardLocationPageText1}"
+                           TextAlignment="Justify"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Stretch"
+                           HorizontalAlignment="Left"
+                           FontSize="{StaticResource LargeFontSize}"
+                           FontFamily="{StaticResource DefaultApplicationFont}"
+                           Margin="{StaticResource FleetSetupWizardPageTextMargin}"
+                           />
+                    <TextBlock Text="{StaticResource FleetSetupWizardLocationPageText2}"
+                           TextAlignment="Justify"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Stretch"
+                           HorizontalAlignment="Left"
+                           FontSize="{StaticResource LargeFontSize}"
+                           FontFamily="{StaticResource DefaultApplicationFont}"
+                           Margin="{StaticResource FleetSetupWizardPageTextMargin}"
+                           />
+                    <TextBlock Text="{StaticResource FleetSetupWizardLocationPageText3}"
+                           TextAlignment="Justify"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Stretch"
+                           HorizontalAlignment="Left"
+                           FontSize="{StaticResource LargeFontSize}"
+                           FontFamily="{StaticResource DefaultApplicationFont}"
+                           Margin="{StaticResource FleetSetupWizardPageTextMargin}"
+                           />
+                </StackPanel>
+
+                <!-- Row 3 -->
+                <Grid Margin="0"
+                      Grid.ColumnSpan="2"
+                      Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Border HorizontalAlignment="Stretch" 
+                            Margin="8,4,4,4" 
+                            Width="Auto" 
+                            Grid.Column="0" 
+                            BorderThickness="1" 
+                            BorderBrush="{StaticResource ApplicationBorder}" SnapsToDevicePixels="True">
+                        <app_controls:DataGridControlEx x:Name="DataGridControl"
+                                                    Margin="0"
+                                                    AutoCreateColumns="True"
+                                                    ItemsSource="{Binding Source={StaticResource DataGridSource}}"
+                                                    IsEnabled="True"
+                                                    SelectionChanged="_SelectionChanged"
+                                                    SelectionMode="Single">
+                            <xcdg:DataGridControl.View>
+                                <xcdg:TableView ColumnStretchMode="Last">
+                                </xcdg:TableView>
+                            </xcdg:DataGridControl.View>
+                        </app_controls:DataGridControlEx>
+                    </Border>
+                    <StackPanel Orientation="Horizontal"
+                                Name="ButtonsPanel"
+                                Grid.Column="1"
+                                Visibility="Hidden">
+                        <Button x:Name="ButtonLocate"
+                            Content="{StaticResource ButtonHeaderLocate}"
+                            IsEnabled="True"
+                            Width="{StaticResource DefaultWizardPageButtonWidth}"
+                            Height="{StaticResource XceedRowDefaultHeight}"
+                            FontSize="{StaticResource WizardButtonFontSize}"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Style="{StaticResource PageButtonStyle}"
+                            Margin="4,4,0,0"
+                            Click="_ButtonLocateClick"/>
+                        <Button x:Name="ButtonDelete"
+                            Content="{StaticResource ButtonHeaderDelete}"
+                            IsEnabled="True"
+                            Width="{StaticResource DefaultWizardPageButtonWidth}"
+                            Height="{StaticResource XceedRowDefaultHeight}"
+                            FontSize="{StaticResource WizardButtonFontSize}"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Margin="4,4,4,0"
+                            Style="{StaticResource PageButtonStyle}"
+                            Click="_ButtonDeleteClick"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Row 4 -->
+                <TextBlock Grid.Row="4"
+                           Grid.ColumnSpan="2"
+                           Name="GeocodeResultText"
+                           TextAlignment="Justify"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Stretch"
+                           HorizontalAlignment="Left"
+                           FontWeight="Bold"
+                           FontSize="{StaticResource LargeFontSize}"
+                           FontFamily="{StaticResource DefaultApplicationFont}"
+                           Margin="{StaticResource FleetSetupWizardPageTextMargin}"
+                           />
+
+                <!-- Row 5 -->
+                <Grid Grid.Row="5"
+                      Grid.ColumnSpan="2"
+                      Name="controlsGrid"
+                      Margin="0,0,4,0"
+                      VerticalAlignment="Stretch"
+                      HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" MinWidth ="100"/>
+                        <ColumnDefinition Width="0.6*" MinWidth="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0"
+                            Margin="8,4,0,4"
+                            BorderThickness="1,1,1,1"
+                            BorderBrush="{StaticResource ApplicationBorder}"
+                            SnapsToDevicePixels="True">
+                        <app_controls:MapControl x:Name="mapCtrl"
+                                             Map="{Binding Path=Map, Source={x:Static Application.Current}}"
+                                             Width="Auto"
+                                             Height="Auto"
+                                             HorizontalAlignment="Stretch"
+                                             />
+                    </Border>
+                    <app_controls:CandidateSelectControl Grid.Column="1"
+                                                     x:Name="candidateSelect"
+                                                     Margin="0,3,0,3"
+                                                     SnapsToDevicePixels="True"
+                                                     BorderThickness="1"
+                                                     VerticalAlignment="Stretch"
+                                                     HorizontalAlignment="Stretch"
+                                                     Visibility="Collapsed"
+                                                     Foreground="Black"
+                                                     />
+                    <GridSplitter Grid.Column="1"
+                                  HorizontalAlignment="Left"
+                                  Margin="-4,0,0,0"
+                                  VerticalAlignment="Stretch"
+                                  Background="Transparent"
+                                  Width="{StaticResource DefaultSplitterWidth}"
+                                  Visibility="Collapsed"
+                                  Name="splitter"
+                                  />
+                </Grid>
+
+                <Grid Name="GeocodeHelperPanel"
+                      Grid.Row="5"
+                      Grid.Column="1">
+                </Grid>
+
+                <!-- Row 6 -->
+                <WrapPanel Margin="8,4,8,4"
+                           Orientation="Horizontal"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Bottom"
+                           Grid.ColumnSpan="2"
+                           Grid.Row="6">
+                    <Button x:Name="buttonBack"
+                            Content="{StaticResource ButtonHeaderBack}"
+                            IsEnabled="True"
+                            Width="{StaticResource DefaultWizardPageButtonWidth}"
+                            Height="{StaticResource DefaultWizardPageButtonHeight}"
+                            FontSize="{StaticResource WizardButtonFontSize}"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource PageButtonStyle}"
+                            Margin="{StaticResource FleetSetupWizardButtonMargin}"
+                            Click="_ButtonBackClick" />
+                    <Button x:Name="ButtonNext"
+                            Content="{StaticResource ButtonHeaderNext}"
+                            IsEnabled="True"
+                            Width="{StaticResource DefaultWizardPageButtonWidth}"
+                            Height="{StaticResource DefaultWizardPageButtonHeight}"
+                            FontSize="{StaticResource WizardButtonFontSize}"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource PageButtonStyle}"
+                            Margin="{StaticResource FleetSetupWizardButtonMargin}"
+                            Click="_ButtonNextClick" />
+                    <Button x:Name="buttonCancel"
+                            Content="{StaticResource ButtonHeaderCancel}"
+                            IsEnabled="True"
+                            Width="{StaticResource DefaultWizardPageButtonWidth}"
+                            Height="{StaticResource DefaultWizardPageButtonHeight}"
+                            FontSize="{StaticResource WizardButtonFontSize}"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource PageButtonStyle}"
+                            Margin="{StaticResource FleetSetupWizardButtonMargin}"
+                            Click="_ButtonCancelClick" />
+                </WrapPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</wizardPages:WizardPageBase>

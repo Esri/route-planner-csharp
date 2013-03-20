@@ -1,0 +1,81 @@
+﻿<Popup x:Class="ESRI.ArcLogistics.App.Controls.Callout"
+        x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:app="clr-namespace:ESRI.ArcLogistics.App.Controls"
+        IsOpen="False"
+        AllowsTransparency="True" x:Name="Hint">
+    <Popup.Resources>
+        <!-- Storyboards for animated open/close.-->
+        <Storyboard x:Key="HideStoryboard">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.5"/>
+        </Storyboard>
+        <Storyboard x:Key="ShowStoryboard">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.5"/>
+        </Storyboard>
+        <Storyboard x:Key="OpenStoryboard">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5"/>
+        </Storyboard>
+        <Storyboard x:Key="CloseStoryboard">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.5"/>
+        </Storyboard>
+
+        <SolidColorBrush x:Key="CalloutStrokeColor" Color="Black"/>
+        <SolidColorBrush x:Key="CalloutFillColor" Color="#3D92AD"/>
+        <sys:Double x:Key="CalloutStrokeThickness">1</sys:Double>
+
+        <!-- Callout dimentions.-->
+        <sys:Double x:Key="PointerHorizontalOffset">18</sys:Double>
+        <sys:Double x:Key="PointerWidth">35</sys:Double>
+        <sys:Double x:Key="PointerHeight">15</sys:Double>
+
+        <!-- Stack panels margins.-->
+        <sys:Double x:Key="StackPanelsMargin">-1.6</sys:Double>
+        <Thickness x:Key="TopStackPanelMargin" Bottom="{StaticResource StackPanelsMargin}"/>
+        <Thickness x:Key="BottomStackPanelMargin" Top="{StaticResource StackPanelsMargin}"/>
+
+    </Popup.Resources>
+
+    <StackPanel Name="stackPanel" Margin="0 0 5 5" Opacity="0">
+
+        <!-- Stack panel with upper pointer.-->
+        <StackPanel Panel.ZIndex="5" Name="TopStackPanel" Margin="{StaticResource TopStackPanelMargin}">
+            <Polyline Points="0,0" Name="TopPointer"
+                StrokeThickness="{StaticResource CalloutStrokeThickness}"
+                Stroke="{StaticResource CalloutStrokeColor}"
+                Fill="{StaticResource CalloutFillColor}" />
+        </StackPanel>
+
+        <Grid MaxWidth="300" Name="grid" MinWidth="150">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Rectangel with rounded corners.-->
+            <Rectangle RadiusX="20" RadiusY="15" Name="rectangel"
+                       StrokeThickness="{StaticResource CalloutStrokeThickness}"
+                       Stroke="{StaticResource CalloutStrokeColor}" 
+                       Fill="{StaticResource CalloutFillColor}">
+            </Rectangle>
+
+            <!--Textblock with error's text.-->
+            <TextBlock Name="myLabel" Margin="8" Foreground="White" 
+                Text="{Binding}" FontSize="{DynamicResource MiddleFontSize}"
+                FontFamily="{DynamicResource DefaultApplicationFont}" TextWrapping="Wrap" />
+        </Grid>
+
+        <!-- Stack panel with bottom pointer.-->
+        <StackPanel Name="BottomStackPanel"  Panel.ZIndex="5" Margin="{StaticResource BottomStackPanelMargin}" >
+            <Polyline x:Name="BottomPointer" Points="0,0" 
+                StrokeThickness="{StaticResource CalloutStrokeThickness}"
+                Stroke="{StaticResource CalloutStrokeColor}"
+                Fill="{StaticResource CalloutFillColor}" />
+        </StackPanel>
+
+        <!-- Callout shadow effect.-->
+        <StackPanel.Effect>
+            <DropShadowEffect BlurRadius="5" Direction="300" Opacity="0.5" ShadowDepth="5"/>
+        </StackPanel.Effect>
+    </StackPanel>
+</Popup>
