@@ -1,0 +1,90 @@
+﻿<pages:PageBase x:Class="ArcLogisticsPlugIns.SendRoutesToNavigatorPage.SendRoutesPage"
+    xmlns:pages="clr-namespace:ESRI.ArcLogistics.App.Pages;assembly=ESRI.ArcLogistics.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="clr-namespace:ESRI.ArcLogistics.App"
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+    xmlns:res="clr-namespace:ArcLogisticsPlugIns.Properties"
+    xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib">
+    <Page.Resources>
+        <ImageBrush x:Key="SendRoutesBrush" Stretch="None" ImageSource="/ArcLogisticsPlugIns;Component/SendRoutesToNavigatorPage/SendRoutesToNavigator24.png"/>
+    </Page.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <Style TargetType="{x:Type xcdg:TableViewScrollViewer}">
+                <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+            </Style>
+            <DataTemplate x:Key="CheckBoxCellTemplate">
+                <Grid Background="Transparent">
+                    <CheckBox IsChecked="{xcdg:CellEditorBinding}"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Margin="0"
+                    Click="Checked_Click" />
+                </Grid>
+            </DataTemplate>
+            <xcdg:DataGridCollectionViewSource x:Key="SendRoutesTable" AutoCreateItemProperties="False" />
+            <xcdg:CellEditor x:Key="CheckBoxCellEditor" EditTemplate="{StaticResource CheckBoxCellTemplate}"/>
+            
+            <Style TargetType="{x:Type xcdg:DataRow}">
+                <Setter Property="Height"  Value="{DynamicResource XceedRowDefaultHeight}"/>
+            </Style>
+            
+            <Style TargetType="{x:Type xcdg:ColumnManagerCell}">
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+            </Style>
+
+            <coll:ArrayList x:Key="itemProperties">
+                <xcdg:DataGridItemProperty Name="IsChecked"/>
+                <xcdg:DataGridItemProperty Name="RouteName" IsReadOnly="True"/>
+                <xcdg:DataGridItemProperty Name="SendMethod" IsReadOnly="True"/>
+            </coll:ArrayList>
+
+            <coll:ArrayList x:Key="columns">
+                <xcdg:Column FieldName="IsChecked" Title="" CellEditorDisplayConditions="Always" Width="25"/>
+                <xcdg:Column FieldName="RouteName" ReadOnly="True" Title="{x:Static res:Resources.RouteNameColumnTitle}"/>
+                <xcdg:Column FieldName="SendMethod" ReadOnly="True" 
+                             Title="{x:Static res:Resources.SendMethodColumnTitle}"/>
+            </coll:ArrayList>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button x:Name="SendButton"
+                Click="SendButton_Click"
+                Grid.Row="0" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Stretch"  
+                Width="{DynamicResource LargePageButtonWidth}" 
+                Height="{DynamicResource DefaultPageButtonHeight}" 
+                Content="{x:Static res:Resources.SendButtonCaption}"
+                ToolTip="{DynamicResource SendRoutesCommandEnabledTooltip}"
+                IsEnabledChanged="SendButton_IsEnabledChanged"
+                Margin="4,4,0,4"/>
+        <Border HorizontalAlignment="Stretch" 
+                Margin="{DynamicResource PageContentMargin}" 
+                Width="Auto" 
+                Grid.Row="1" 
+                SnapsToDevicePixels="True"
+                BorderThickness="{DynamicResource GridBorderThickness}" 
+                BorderBrush="{DynamicResource ApplicationBorder}">
+            <xcdg:DataGridControl x:Name="SendRoutesGrid" 
+                BorderThickness="{DynamicResource NullBorderThickness}" 
+                IsEnabled="True"
+                FontSize="{DynamicResource MiddleFontSize}" 
+                FontFamily="{DynamicResource DefaultApplicationFont}"
+                Loaded="XceedGridRoutes_Loaded"
+                Initialized="SendRoutesGrid_Initialized"
+                AutoCreateColumns="False"
+                ItemsSource="{Binding Source={StaticResource SendRoutesTable}}">
+                <xcdg:DataGridControl.View>
+                    <xcdg:TableView ShowRowSelectorPane="False" ColumnStretchMode="Last">
+                    </xcdg:TableView>
+                </xcdg:DataGridControl.View>
+            </xcdg:DataGridControl>
+        </Border>
+    </Grid>
+</pages:PageBase>

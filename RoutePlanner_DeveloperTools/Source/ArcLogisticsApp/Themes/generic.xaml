@@ -1,0 +1,30 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/ArcLogisticsCustom/TableView.ArcLogisticsCustom.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/ArcLogisticsCustom/TableflowView.ArcLogisticsCustom.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/HistoryTextBox.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/DaysEditor.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/RouteNameSelector.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/GridColorPicker.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/ComboboxBasedEditor.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/ComboBoxWithNullRow.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/ComboBoxRemovingAlreadyUsedItems.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/RelationObjectCollectionEditor.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/FolderEditor.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/UnitTextBox.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/UnitTextBoxEditor.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/CellTimeWindowEditor.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/BreakEditor.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/DiscreteColorPicker.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/GradientColorPicker.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/ExpanderControl.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/GanttControl.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/NavigationPane.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/ScrollableContentControl.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/MapLayersWidget.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/ToolComboButton.xaml"/>
+        <ResourceDictionary Source="ESRI.ArcLogistics.App;;;component\Themes/BarrierCellEditor.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

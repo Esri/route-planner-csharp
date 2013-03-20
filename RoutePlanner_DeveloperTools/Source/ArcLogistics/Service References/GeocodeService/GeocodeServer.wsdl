@@ -1,0 +1,1502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:e="http://www.esri.com/schemas/ArcGIS/10.0" targetNamespace="http://www.esri.com/schemas/ArcGIS/10.0" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns="http://www.esri.com/schemas/ArcGIS/10.0" targetNamespace="http://www.esri.com/schemas/ArcGIS/10.0">
+      <xs:element name="GetLocatorProperties">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="GetLocatorPropertiesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Props" type="e:PropertySet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDefaultInputFieldMapping">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="GetDefaultInputFieldMappingResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="DefaultMapping" type="e:PropertySet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetResultFields">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PropMods" type="e:PropertySet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetResultFieldsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultFieldsInfo" type="e:Fields" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetStandardizedIntersectionFields">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="GetStandardizedIntersectionFieldsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="StandardizedFieldsInfo" type="e:Fields" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetStandardizedFields">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="GetStandardizedFieldsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="StandardizedFieldsInfo" type="e:Fields" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetIntersectionCandidateFields">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PropMods" type="e:PropertySet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetIntersectionCandidateFieldsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CandidateIntersectionFieldsInfo" type="e:Fields" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCandidateFields">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PropMods" type="e:PropertySet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCandidateFieldsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CandidateFieldsInfo" type="e:Fields" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetAddressFields">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="GetAddressFieldsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="FieldsInfo" type="e:Fields" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FindAddressCandidates">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Address" type="e:PropertySet" />
+            <xs:element name="PropMods" type="e:PropertySet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FindAddressCandidatesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Results" type="e:RecordSet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="StandardizeAddress">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Address" type="e:PropertySet" />
+            <xs:element name="PropMods" type="e:PropertySet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="StandardizeAddressResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="StandardizedAddress" type="e:PropertySet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GeocodeAddresses">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AddressTable" type="e:RecordSet" />
+            <xs:element name="AddressFieldMapping" type="e:PropertySet" />
+            <xs:element name="PropMods" type="e:PropertySet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GeocodeAddressesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultTable" type="e:RecordSet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GeocodeAddress">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Address" type="e:PropertySet" />
+            <xs:element name="PropMods" type="e:PropertySet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GeocodeAddressResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Result" type="e:PropertySet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReverseGeocode">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Location" type="e:Point" />
+            <xs:element name="ReturnIntersection" type="xs:boolean" />
+            <xs:element name="PropMods" type="e:PropertySet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReverseGeocodeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ReverseResult" type="e:PropertySet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSingleLineAddressField">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="GetSingleLineAddressFieldResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="SingleLineAddressField" type="e:Field" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FindAddressCandidates2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Address" type="e:PropertySet" />
+            <xs:element name="PropMods" type="e:PropertySet" />
+            <xs:element name="strOutFields" type="xs:string" />
+            <xs:element name="QueryResultOptions" type="e:QueryResultOptions" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FindAddressCandidates2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Result" type="e:QueryResult" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReverseGeocode2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Location" type="e:Point" />
+            <xs:element name="ReturnIntersection" type="xs:boolean" />
+            <xs:element name="PropMods" type="e:PropertySet" />
+            <xs:element name="QueryResultOptions" type="e:QueryResultOptions" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReverseGeocode2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ReverseResult" type="e:QueryResult" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:simpleType name="esriQueryResultFormat">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="esriQueryResultRecordSetAsObject" />
+          <xs:enumeration value="esriQueryResultJsonAsMime" />
+          <xs:enumeration value="esriQueryResultJsonAsURL" />
+          <xs:enumeration value="esriQueryResultAmfAsMime" />
+          <xs:enumeration value="esriQueryResultAmfAsURL" />
+          <xs:enumeration value="esriQueryResultKMLAsMime" />
+          <xs:enumeration value="esriQueryResultKMLAsURL" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="QueryResultOptions">
+        <xs:annotation>
+          <xs:documentation>Query Result Options</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Format" type="e:esriQueryResultFormat">
+            <xs:annotation>
+              <xs:documentation>The query result format.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FormatProperties" type="e:PropertySet">
+            <xs:annotation>
+              <xs:documentation>Format properties specific to result format.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GeoTransformation" type="e:GeoTransformation">
+            <xs:annotation>
+              <xs:documentation>Geographic Transformation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryResult">
+        <xs:annotation>
+          <xs:documentation>Query Result</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MimeData" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation>Binary data representing the generated result in the requested format.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="URL" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL of the generated query result in the requested format.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Object" type="xs:anyType">
+            <xs:annotation>
+              <xs:documentation>The Object representing generated query result in the requested format.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PropertySetProperty">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Key" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPropertySetProperty">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertySetProperty" type="e:PropertySetProperty" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PropertySet">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="PropertyArray" type="e:ArrayOfPropertySetProperty" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="esriGeometryType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="esriGeometryPoint" />
+          <xs:enumeration value="esriGeometryMultipoint" />
+          <xs:enumeration value="esriGeometryPolyline" />
+          <xs:enumeration value="esriGeometryPolygon" />
+          <xs:enumeration value="esriGeometryMultiPatch" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="GeoTransformation">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="WKT" type="xs:string" />
+          <xs:element minOccurs="0" name="WKID" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SpatialReference" abstract="true">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="WKT" type="xs:string" />
+          <xs:element minOccurs="0" name="XOrigin" type="xs:double" />
+          <xs:element minOccurs="0" name="YOrigin" type="xs:double" />
+          <xs:element minOccurs="0" name="XYScale" type="xs:double" />
+          <xs:element minOccurs="0" name="ZOrigin" type="xs:double" />
+          <xs:element minOccurs="0" name="ZScale" type="xs:double" />
+          <xs:element minOccurs="0" name="MOrigin" type="xs:double" />
+          <xs:element minOccurs="0" name="MScale" type="xs:double" />
+          <xs:element minOccurs="0" name="XYTolerance" type="xs:double" />
+          <xs:element minOccurs="0" name="ZTolerance" type="xs:double" />
+          <xs:element minOccurs="0" name="MTolerance" type="xs:double" />
+          <xs:element minOccurs="0" name="HighPrecision" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LeftLongitude" type="xs:double" />
+          <xs:element minOccurs="0" name="WKID" type="xs:int" />
+          <xs:element minOccurs="0" name="VCSWKID" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProjectedCoordinateSystem">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:SpatialReference" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="GeographicCoordinateSystem">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:SpatialReference" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="UnknownCoordinateSystem">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:SpatialReference" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Geometry">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:complexType>
+      <xs:complexType name="Curve" abstract="true">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Geometry" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Segment" abstract="true">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Curve">
+            <xs:sequence>
+              <xs:element name="FromPoint" type="e:Point" />
+              <xs:element name="ToPoint" type="e:Point" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Polycurve" abstract="true">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Curve" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Envelope" abstract="true">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Geometry" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="EnvelopeN">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Envelope">
+            <xs:sequence>
+              <xs:element name="XMin" type="xs:double" />
+              <xs:element name="YMin" type="xs:double" />
+              <xs:element name="XMax" type="xs:double" />
+              <xs:element name="YMax" type="xs:double" />
+              <xs:element minOccurs="0" name="ZMin" type="xs:double" />
+              <xs:element minOccurs="0" name="ZMax" type="xs:double" />
+              <xs:element minOccurs="0" name="MMin" type="xs:double" />
+              <xs:element minOccurs="0" name="MMax" type="xs:double" />
+              <xs:element minOccurs="0" name="SpatialReference" type="e:SpatialReference" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="EnvelopeB">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Envelope">
+            <xs:sequence>
+              <xs:element name="Bytes" type="xs:base64Binary" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Point" abstract="true">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Geometry" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="PointN">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Point">
+            <xs:sequence>
+              <xs:element name="X" type="xs:double" />
+              <xs:element name="Y" type="xs:double" />
+              <xs:element minOccurs="0" name="M" type="xs:double" />
+              <xs:element minOccurs="0" name="Z" type="xs:double" />
+              <xs:element minOccurs="0" name="ID" type="xs:int" />
+              <xs:element minOccurs="0" name="SpatialReference" type="e:SpatialReference" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="PointB">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Point">
+            <xs:sequence>
+              <xs:element name="Bytes" type="xs:base64Binary" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Multipoint" abstract="true">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Geometry" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="MultipointB">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Multipoint">
+            <xs:sequence>
+              <xs:element name="Bytes" type="xs:base64Binary" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="MultipointN">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Multipoint">
+            <xs:sequence>
+              <xs:element name="HasID" type="xs:boolean" />
+              <xs:element name="HasZ" type="xs:boolean" />
+              <xs:element name="HasM" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Extent" type="e:Envelope" />
+              <xs:element minOccurs="0" name="PointArray" type="e:ArrayOfPoint" />
+              <xs:element minOccurs="0" name="SpatialReference" type="e:SpatialReference" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Line">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Segment" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="EllipticArc">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Segment">
+            <xs:sequence>
+              <xs:element name="EllipseStd" type="xs:boolean" />
+              <xs:element name="CenterPoint" type="e:Point" />
+              <xs:element name="Rotation" type="xs:double" />
+              <xs:element name="MinorMajorRatio" type="xs:double" />
+              <xs:element name="IsCounterClockwise" type="xs:boolean" />
+              <xs:element name="IsMinor" type="xs:boolean" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="CircularArc">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Segment">
+            <xs:sequence>
+              <xs:element name="CenterPoint" type="e:Point" />
+              <xs:element minOccurs="0" name="FromAngle" type="xs:double" />
+              <xs:element minOccurs="0" name="ToAngle" type="xs:double" />
+              <xs:element name="IsCounterClockwise" type="xs:boolean" />
+              <xs:element name="IsMinor" type="xs:boolean" />
+              <xs:element name="IsLine" type="xs:boolean" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="BezierCurve">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Segment">
+            <xs:sequence>
+              <xs:element name="Degree" type="xs:int" />
+              <xs:element name="ControlPointArray" type="e:ArrayOfPoint" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Path">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Curve">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="PointArray" type="e:ArrayOfPoint" />
+              <xs:element minOccurs="0" name="SegmentArray" type="e:ArrayOfSegment" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Ring">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Path" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Polygon" abstract="true">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Polycurve" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="PolygonN">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Polygon">
+            <xs:sequence>
+              <xs:element name="HasID" type="xs:boolean" />
+              <xs:element name="HasZ" type="xs:boolean" />
+              <xs:element name="HasM" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Extent" type="e:Envelope" />
+              <xs:element name="RingArray" type="e:ArrayOfRing" />
+              <xs:element minOccurs="0" name="SpatialReference" type="e:SpatialReference" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="PolygonB">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Polygon">
+            <xs:sequence>
+              <xs:element name="Bytes" type="xs:base64Binary" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Polyline" abstract="true">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Polycurve" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="PolylineN">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Polyline">
+            <xs:sequence>
+              <xs:element name="HasID" type="xs:boolean" />
+              <xs:element name="HasZ" type="xs:boolean" />
+              <xs:element name="HasM" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Extent" type="e:Envelope" />
+              <xs:element name="PathArray" type="e:ArrayOfPath" />
+              <xs:element minOccurs="0" name="SpatialReference" type="e:SpatialReference" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="PolylineB">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Polyline">
+            <xs:sequence>
+              <xs:element name="Bytes" type="xs:base64Binary" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPoint">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Point" type="e:Point" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPath">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Path" type="e:Path" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfRing">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Ring" type="e:Ring" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfSegment">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Segment" type="e:Segment" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MultiPatch" abstract="true">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Geometry" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="MultiPatchB">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:MultiPatch">
+            <xs:sequence>
+              <xs:element name="Bytes" type="xs:base64Binary" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="MultiPatchN">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:MultiPatch">
+            <xs:sequence>
+              <xs:element name="HasID" type="xs:boolean" />
+              <xs:element name="HasZ" type="xs:boolean" />
+              <xs:element name="HasM" type="xs:boolean" />
+              <xs:element name="Extent" type="e:Envelope" />
+              <xs:element name="SurfacePatchArray" type="e:ArrayOfSurfacePatch" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfSurfacePatch">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SurfacePatch" type="e:Geometry" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TriangleFan">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Geometry">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="PointArray" type="e:ArrayOfPoint" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TriangleStrip">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Geometry">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="PointArray" type="e:ArrayOfPoint" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:simpleType name="esriFieldType">
+        <xs:annotation>
+          <xs:documentation>Field Types.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="esriFieldTypeInteger">
+            <xs:annotation>
+              <xs:documentation>Long Integer.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriFieldTypeSmallInteger">
+            <xs:annotation>
+              <xs:documentation>Integer.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriFieldTypeDouble">
+            <xs:annotation>
+              <xs:documentation>Double-precision floating-point number.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriFieldTypeSingle">
+            <xs:annotation>
+              <xs:documentation>Single-precision floating-point number.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriFieldTypeString">
+            <xs:annotation>
+              <xs:documentation>Character string.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriFieldTypeDate">
+            <xs:annotation>
+              <xs:documentation>Date.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriFieldTypeGeometry">
+            <xs:annotation>
+              <xs:documentation>Geometry.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriFieldTypeOID">
+            <xs:annotation>
+              <xs:documentation>Long Integer representing an object identifier.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriFieldTypeBlob">
+            <xs:annotation>
+              <xs:documentation>Binary Large Object.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriFieldTypeGlobalID">
+            <xs:annotation>
+              <xs:documentation>ESRI Global ID.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriFieldTypeRaster">
+            <xs:annotation>
+              <xs:documentation>Raster.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriFieldTypeGUID">
+            <xs:annotation>
+              <xs:documentation>Globally Unique Identifier.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriFieldTypeXML">
+            <xs:annotation>
+              <xs:documentation>XML Document</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="GeometryDef">
+        <xs:annotation>
+          <xs:documentation>ESRI Geometry Definition Object.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="AvgNumPoints" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>Estimated average number of points per feature.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="GeometryType" type="e:esriGeometryType">
+            <xs:annotation>
+              <xs:documentation>The enumerated geometry type.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="HasM" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Indicates if the feature class has measure (M) values.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="HasZ" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Indicates if the featureClass has Z values.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SpatialReference" type="e:SpatialReference">
+            <xs:annotation>
+              <xs:documentation>The spatial reference for the dataset.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GridSize0" type="xs:double" />
+          <xs:element minOccurs="0" name="GridSize1" type="xs:double" />
+          <xs:element minOccurs="0" name="GridSize2" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="esriMergePolicyType">
+        <xs:annotation>
+          <xs:documentation>Merge policy types.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="esriMPTSumValues">
+            <xs:annotation>
+              <xs:documentation>Sum the values merge policy.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriMPTAreaWeighted">
+            <xs:annotation>
+              <xs:documentation>Area weighted merge policy.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriMPTDefaultValue">
+            <xs:annotation>
+              <xs:documentation>Default value merge policy.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="esriSplitPolicyType">
+        <xs:annotation>
+          <xs:documentation>Split policy types.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="esriSPTGeometryRatio">
+            <xs:annotation>
+              <xs:documentation>Geometry-ratioed split policy.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriSPTDuplicate">
+            <xs:annotation>
+              <xs:documentation>Duplicate split policy.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="esriSPTDefaultValue">
+            <xs:annotation>
+              <xs:documentation>Default value split policy.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="Domain" abstract="true">
+        <xs:annotation>
+          <xs:documentation>
+        Domain Properties control and their merge split policies control.
+      </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="DomainName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+            The ID of the domain.
+          </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FieldType" type="e:esriFieldType">
+            <xs:annotation>
+              <xs:documentation>The field type of the field.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="MergePolicy" type="e:esriMergePolicyType">
+            <xs:annotation>
+              <xs:documentation>The merge policy.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SplitPolicy" type="e:esriSplitPolicyType">
+            <xs:annotation>
+              <xs:documentation>The split policy.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Description" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The description of the domain.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Owner" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The owner of the domain.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Field">
+        <xs:annotation>
+          <xs:documentation>ESRI Field Object.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The name of the field.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Type" type="e:esriFieldType">
+            <xs:annotation>
+              <xs:documentation>The type of the field.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="IsNullable" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Indicates if the field can contain null values.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Length" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>The maximum length, in bytes, for values described by the field.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Precision" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>The precision for field values.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Scale" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>The scale for field values.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Required" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Indicates if the field is required.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="true" name="Editable" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Indicates if the field is editable.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DomainFixed" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Indicates if the field's domain is fixed.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GeometryDef" type="e:GeometryDef">
+            <xs:annotation>
+              <xs:documentation>The geometry definition for the field if IsGeometry is TRUE.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AliasName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The alias name of the field.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ModelName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The model name of the field.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DefaultValue" type="xs:anyType">
+            <xs:annotation>
+              <xs:documentation>The default value of the field.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Domain" type="e:Domain">
+            <xs:annotation>
+              <xs:documentation>The default domain of the field.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="RasterDef" type="e:RasterDef">
+            <xs:annotation>
+              <xs:documentation>The raster column definition.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfField">
+        <xs:annotation>
+          <xs:documentation>ESRI FieldArray object.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Field" type="e:Field" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Fields">
+        <xs:annotation>
+          <xs:documentation>ESRI Fields Object.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="FieldArray" type="e:ArrayOfField" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfValue">
+        <xs:annotation>
+          <xs:documentation>ESRI Value Array Object.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Value" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Record">
+        <xs:annotation>
+          <xs:documentation>ESRI Record Object.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Values" type="e:ArrayOfValue" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfRecord">
+        <xs:annotation>
+          <xs:documentation>ESRI RecordArray object.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Record" type="e:Record" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RecordSet">
+        <xs:annotation>
+          <xs:documentation>ESRI RecordSet Object.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Fields" type="e:Fields">
+            <xs:annotation>
+              <xs:documentation>returns the fields for the recordset</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Records" type="e:ArrayOfRecord" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RangeDomain">
+        <xs:annotation>
+          <xs:documentation>ESRI Range Domain object.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Domain">
+            <xs:sequence>
+              <xs:element name="MaxValue" type="xs:anyType">
+                <xs:annotation>
+                  <xs:documentation>The maximum value for the associated attribute.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="MinValue" type="xs:anyType">
+                <xs:annotation>
+                  <xs:documentation>The minimum value for the associated attribute.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="CodedValue">
+        <xs:annotation>
+          <xs:documentation>
+        ESRI Attribute set constraint object.
+      </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string" />
+          <xs:element name="Code" type="xs:anyType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfCodedValue">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CodedValue" type="e:CodedValue" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CodedValueDomain">
+        <xs:annotation>
+          <xs:documentation>ESRI Attribute set constraint object.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:Domain">
+            <xs:sequence>
+              <xs:element name="CodedValues" type="e:ArrayOfCodedValue" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="BitMaskCodedValueDomain">
+        <xs:annotation>
+          <xs:documentation>ESRI Attribute bitmask constraint object.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="e:CodedValueDomain" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="RasterDef">
+        <xs:annotation>
+          <xs:documentation>Raster Column Definition Class.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The raster column description.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsByRef" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+            Indicates if the Raster column value is to be managed by GeoDatabase.
+          </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SpatialReference" type="e:SpatialReference">
+            <xs:annotation>
+              <xs:documentation>The SpatialReference of the raster.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsByFunction" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+            Indicates if the Raster column value is of type function raster dataset.
+          </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="GeocodeAddressesIn">
+    <part name="parameters" element="e:GeocodeAddresses" />
+  </message>
+  <message name="GeocodeAddressesOut">
+    <part name="parameters" element="e:GeocodeAddressesResponse" />
+  </message>
+  <message name="ReverseGeocode2In">
+    <part name="parameters" element="e:ReverseGeocode2" />
+  </message>
+  <message name="ReverseGeocode2Out">
+    <part name="parameters" element="e:ReverseGeocode2Response" />
+  </message>
+  <message name="GetResultFieldsIn">
+    <part name="parameters" element="e:GetResultFields" />
+  </message>
+  <message name="GetResultFieldsOut">
+    <part name="parameters" element="e:GetResultFieldsResponse" />
+  </message>
+  <message name="GetAddressFieldsIn">
+    <part name="parameters" element="e:GetAddressFields" />
+  </message>
+  <message name="GetAddressFieldsOut">
+    <part name="parameters" element="e:GetAddressFieldsResponse" />
+  </message>
+  <message name="ReverseGeocodeIn">
+    <part name="parameters" element="e:ReverseGeocode" />
+  </message>
+  <message name="ReverseGeocodeOut">
+    <part name="parameters" element="e:ReverseGeocodeResponse" />
+  </message>
+  <message name="GetDefaultInputFieldMappingIn">
+    <part name="parameters" element="e:GetDefaultInputFieldMapping" />
+  </message>
+  <message name="GetDefaultInputFieldMappingOut">
+    <part name="parameters" element="e:GetDefaultInputFieldMappingResponse" />
+  </message>
+  <message name="GetCandidateFieldsIn">
+    <part name="parameters" element="e:GetCandidateFields" />
+  </message>
+  <message name="GetCandidateFieldsOut">
+    <part name="parameters" element="e:GetCandidateFieldsResponse" />
+  </message>
+  <message name="GetIntersectionCandidateFieldsIn">
+    <part name="parameters" element="e:GetIntersectionCandidateFields" />
+  </message>
+  <message name="GetIntersectionCandidateFieldsOut">
+    <part name="parameters" element="e:GetIntersectionCandidateFieldsResponse" />
+  </message>
+  <message name="FindAddressCandidatesIn">
+    <part name="parameters" element="e:FindAddressCandidates" />
+  </message>
+  <message name="FindAddressCandidatesOut">
+    <part name="parameters" element="e:FindAddressCandidatesResponse" />
+  </message>
+  <message name="GetSingleLineAddressFieldIn">
+    <part name="parameters" element="e:GetSingleLineAddressField" />
+  </message>
+  <message name="GetSingleLineAddressFieldOut">
+    <part name="parameters" element="e:GetSingleLineAddressFieldResponse" />
+  </message>
+  <message name="FindAddressCandidates2In">
+    <part name="parameters" element="e:FindAddressCandidates2" />
+  </message>
+  <message name="FindAddressCandidates2Out">
+    <part name="parameters" element="e:FindAddressCandidates2Response" />
+  </message>
+  <message name="StandardizeAddressIn">
+    <part name="parameters" element="e:StandardizeAddress" />
+  </message>
+  <message name="StandardizeAddressOut">
+    <part name="parameters" element="e:StandardizeAddressResponse" />
+  </message>
+  <message name="GetLocatorPropertiesIn">
+    <part name="parameters" element="e:GetLocatorProperties" />
+  </message>
+  <message name="GetLocatorPropertiesOut">
+    <part name="parameters" element="e:GetLocatorPropertiesResponse" />
+  </message>
+  <message name="GeocodeAddressIn">
+    <part name="parameters" element="e:GeocodeAddress" />
+  </message>
+  <message name="GeocodeAddressOut">
+    <part name="parameters" element="e:GeocodeAddressResponse" />
+  </message>
+  <message name="GetStandardizedIntersectionFieldsIn">
+    <part name="parameters" element="e:GetStandardizedIntersectionFields" />
+  </message>
+  <message name="GetStandardizedIntersectionFieldsOut">
+    <part name="parameters" element="e:GetStandardizedIntersectionFieldsResponse" />
+  </message>
+  <message name="GetStandardizedFieldsIn">
+    <part name="parameters" element="e:GetStandardizedFields" />
+  </message>
+  <message name="GetStandardizedFieldsOut">
+    <part name="parameters" element="e:GetStandardizedFieldsResponse" />
+  </message>
+  <portType name="GeocodeServerPort">
+    <documentation>
+    </documentation>
+    <operation name="GeocodeAddresses">
+      <input message="e:GeocodeAddressesIn" />
+      <output message="e:GeocodeAddressesOut" />
+    </operation>
+    <operation name="ReverseGeocode2">
+      <input message="e:ReverseGeocode2In" />
+      <output message="e:ReverseGeocode2Out" />
+    </operation>
+    <operation name="GetResultFields">
+      <input message="e:GetResultFieldsIn" />
+      <output message="e:GetResultFieldsOut" />
+    </operation>
+    <operation name="GetAddressFields">
+      <input message="e:GetAddressFieldsIn" />
+      <output message="e:GetAddressFieldsOut" />
+    </operation>
+    <operation name="ReverseGeocode">
+      <input message="e:ReverseGeocodeIn" />
+      <output message="e:ReverseGeocodeOut" />
+    </operation>
+    <operation name="GetDefaultInputFieldMapping">
+      <input message="e:GetDefaultInputFieldMappingIn" />
+      <output message="e:GetDefaultInputFieldMappingOut" />
+    </operation>
+    <operation name="GetCandidateFields">
+      <input message="e:GetCandidateFieldsIn" />
+      <output message="e:GetCandidateFieldsOut" />
+    </operation>
+    <operation name="GetIntersectionCandidateFields">
+      <input message="e:GetIntersectionCandidateFieldsIn" />
+      <output message="e:GetIntersectionCandidateFieldsOut" />
+    </operation>
+    <operation name="FindAddressCandidates">
+      <input message="e:FindAddressCandidatesIn" />
+      <output message="e:FindAddressCandidatesOut" />
+    </operation>
+    <operation name="GetSingleLineAddressField">
+      <input message="e:GetSingleLineAddressFieldIn" />
+      <output message="e:GetSingleLineAddressFieldOut" />
+    </operation>
+    <operation name="FindAddressCandidates2">
+      <input message="e:FindAddressCandidates2In" />
+      <output message="e:FindAddressCandidates2Out" />
+    </operation>
+    <operation name="StandardizeAddress">
+      <input message="e:StandardizeAddressIn" />
+      <output message="e:StandardizeAddressOut" />
+    </operation>
+    <operation name="GetLocatorProperties">
+      <input message="e:GetLocatorPropertiesIn" />
+      <output message="e:GetLocatorPropertiesOut" />
+    </operation>
+    <operation name="GeocodeAddress">
+      <input message="e:GeocodeAddressIn" />
+      <output message="e:GeocodeAddressOut" />
+    </operation>
+    <operation name="GetStandardizedIntersectionFields">
+      <input message="e:GetStandardizedIntersectionFieldsIn" />
+      <output message="e:GetStandardizedIntersectionFieldsOut" />
+    </operation>
+    <operation name="GetStandardizedFields">
+      <input message="e:GetStandardizedFieldsIn" />
+      <output message="e:GetStandardizedFieldsOut" />
+    </operation>
+  </portType>
+  <binding name="GeocodeServerBinding" type="e:GeocodeServerPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GeocodeAddresses">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ReverseGeocode2">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetResultFields">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetAddressFields">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ReverseGeocode">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetDefaultInputFieldMapping">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetCandidateFields">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetIntersectionCandidateFields">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="FindAddressCandidates">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetSingleLineAddressField">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="FindAddressCandidates2">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="StandardizeAddress">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetLocatorProperties">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GeocodeAddress">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetStandardizedIntersectionFields">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetStandardizedFields">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="TA_Address_NA_10_GeocodeServer">
+    <port name="GeocodeServerPort" binding="e:GeocodeServerBinding">
+      <soap:address location="http://10.49.5.70/ArcGIS/services/Locators/TA_Address_NA_10/GeocodeServer" />
+    </port>
+  </service>
+</definitions>

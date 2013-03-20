@@ -1,0 +1,593 @@
+﻿<pages:PageBase x:Class="ESRI.ArcLogistics.App.Pages.GeneralPreferencesPage"
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:pages="clr-namespace:ESRI.ArcLogistics.App.Pages"
+    xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    xmlns:app_properties="clr-namespace:ESRI.ArcLogistics.App.Properties"
+    xmlns:xceedControls="clr-namespace:Xceed.Wpf.Controls;assembly=Xceed.Wpf.Controls"
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+    xmlns:converters="clr-namespace:ESRI.ArcLogistics.App.Converters"
+    Height="Auto">
+    <Page.Resources>
+        <converters:BooleanNegativeConverter x:Key="booleanNegativeConverter"/>
+
+        <Thickness x:Key="LabelMargin" Left="2" />
+        
+        <Thickness x:Key="TextBlockMargin" Left="7"/>
+        
+        <Thickness x:Key="NotFirstCheckBoxMargin" Top="5" />
+        <Thickness x:Key="NotFirstRadioButtonMargin" Top="5" />
+        
+        <Thickness x:Key="StackPanelMargin" Top="10" />
+        
+        <Thickness x:Key="BorderMargin" Top="10" Bottom="10" Right="3"/>
+
+        <Thickness x:Key="BorderThickness" Bottom="2"/>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="{StaticResource MiddleFontSize}"/>
+            <Setter Property="FontFamily" Value="{StaticResource DefaultApplicationFont}"/>
+            <Setter Property="Foreground" Value="#FFFDFDFD"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="{StaticResource LabelMargin}"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource DefaultTextBlockStyle}">
+            <Setter Property="FontSize" Value="{StaticResource MiddleFontSize}"/>
+            <Setter Property="FontFamily" Value="{StaticResource DefaultApplicationFont}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Foreground" Value="#FFFDFDFD"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="{StaticResource TextBlockMargin}"/>
+        </Style>
+
+        <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource DefaultCheckBoxStyle}">
+            <Setter Property="FontSize" Value="{StaticResource MiddleFontSize}"/>
+            <Setter Property="FontFamily" Value="{StaticResource DefaultApplicationFont}"/>
+            <Setter Property="Foreground" Value="#FFFAF8F8"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource DefaultRadioButtonStyle}">
+            <Setter Property="FontSize" Value="{StaticResource MiddleFontSize}"/>
+            <Setter Property="FontFamily" Value="{StaticResource DefaultApplicationFont}"/>
+            <Setter Property="Foreground" Value="#FFFAF8F8"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+
+        <Style TargetType="{x:Type StackPanel}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Orientation" Value="Vertical"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource PageButtonStyle}">
+            <Setter Property="Height" Value="{StaticResource DefaultPageButtonHeight}"/>
+            <Setter Property="Width" Value="{StaticResource DefaultPageButtonWidth}"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource defaultTextBoxStyle}">
+            <Setter Property="FontSize" Value="{StaticResource MiddleFontSize}"/>
+            <Setter Property="FontFamily" Value="{StaticResource DefaultApplicationFont}"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="0,2,0,0"/>
+            <Setter Property="Height" Value="{StaticResource DefaultTextBoxHeight}"/>
+        </Style>
+
+        <Style TargetType="{x:Type Border}">
+            <Setter Property="BorderBrush" Value="{StaticResource ApplicationBorder}"/>
+            <Setter Property="BorderThickness" Value="{StaticResource BorderThickness}"/>
+            <Setter Property="Margin" Value="{StaticResource BorderMargin}"/>
+            <Setter Property="Grid.ColumnSpan" Value="2"/>
+        </Style>
+
+        <Style x:Key="PreferencesSectionControlStyle" TargetType="{x:Type HeaderedContentControl}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.3*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Border
+                                Grid.Row="0"
+                                Grid.ColumnSpan="2"
+                                BorderBrush="{StaticResource ApplicationBorder}" 
+                                BorderThickness="0,0,0,2"
+                                Margin="{StaticResource BorderMargin}"/>
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Content="{TemplateBinding Header}"
+                                Style="{StaticResource PreferencesTitleLabelStyle}"
+                                Margin="{StaticResource LabelMargin}"
+                                />
+
+                            <ContentControl
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="{StaticResource StackPanelMargin}"
+                                Content="{TemplateBinding Content}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+        Margin="3,0,3,0"
+        HorizontalContentAlignment="Center"
+        VerticalContentAlignment="Top">
+        <Grid x:Name="LayoutRoot" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="4,0,0,5">
+            <Grid.Resources>
+               <x:Array x:Key="OrderPropertiesList" x:Name="AllOrderPropertiesList" Type="sys:String"/>               
+            </Grid.Resources>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Row 2 -->
+            <Label 
+                Content="{StaticResource OrderPropertiesString}"
+                Grid.Row="2"
+                Grid.Column="0"
+                />
+
+            <app_controls:CustomOrderPropertiesControl x:Name="_customOrderPropertiesControl"
+                             IsEnabled="True"
+                             Grid.Row="2"
+                             Grid.Column="1"
+                             MinHeight="100"
+                             Grid.ColumnSpan="1"
+                             HorizontalAlignment="Stretch">
+            </app_controls:CustomOrderPropertiesControl>
+
+            <!-- Row 3 -->
+            <Border 
+                Grid.Row="3"
+                />
+
+            <!-- Row 4 -->
+            <Label 
+                Content="{StaticResource GenerateLogString}"
+                Grid.Row="4"
+                Grid.Column="0"/>
+            
+            <StackPanel 
+                Orientation="Horizontal"
+                Grid.Column="1"
+                Grid.Row="4"
+                >
+                    <Button x:Name="LogButton"
+                        Content="{StaticResource GenerateLogButton}"
+                        Click="_LogButtonClick" />
+                    <Label 
+                        Margin="0 "
+                        Content="{StaticResource GenerateLogDescription}"
+                        />
+                </StackPanel>
+
+            <!-- Row 5 -->
+            <Border 
+                Grid.Row="5"
+                />
+            
+            <!-- Row 6 -->
+            <Label 
+                x:Name="label"
+                Content="{StaticResource QuickHelpString}"
+                Grid.Row="6"
+                Grid.Column="0"
+                />
+
+            <DockPanel 
+                Height="{Binding ElementName=label, Path=Height}"
+                Grid.Row="6"
+                Grid.Column="1"
+                >
+                <CheckBox 
+                   x:Name="ShowQuickHelpButton"
+                   Content="{StaticResource ShowQuickHelpButton}"
+                   IsChecked="True"
+                    />
+            </DockPanel>
+            
+            <HeaderedContentControl
+                x:Name="ProxySettings"
+                Grid.Row="7"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource PreferencesSectionControlStyle}"
+                Header="{StaticResource GeneralPreferences_ProxySettingsTitle}">
+                <app_controls:ProxySettingsEditor />
+            </HeaderedContentControl>
+
+            <Border 
+                Grid.Row="8"
+                />
+
+            <Label 
+                Content="{StaticResource ProjectsString}"
+                Grid.Row="9"
+                Grid.Column="0"/>
+
+            <Grid VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Grid.Row="9"
+                Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="90" />
+                </Grid.ColumnDefinitions>
+                <Label 
+                    Content="{StaticResource ProjectsFolderString}"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="0,0,0,0"/>
+                <TextBox 
+                    x:Name="ProjectsPathEdit"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Height="{StaticResource DefaultTextBoxHeight}" />
+                <Button 
+                    x:Name="ProjectsFolderButton"
+                    Content="{StaticResource FolderButtonBrowse}"
+                    HorizontalAlignment="Right"
+                    Margin="0,2,10,0"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Click="_ProjectsFolderButtonClick" />
+                <Label 
+                    Content="{StaticResource PathWarningString}"
+                    FontSize="{StaticResource SmallFontSize}"
+                    Foreground="LightGray"
+                    Margin="-4,0,0,0"
+                    VerticalAlignment="Top"
+                    Grid.Row="1"
+                    Grid.Column="1"/>
+            </Grid>
+
+            <Border 
+                Grid.Row="10"
+                />
+
+            <Label 
+                Content="{StaticResource PlugInsString}"
+                Grid.Row="11"
+                Grid.Column="0"/>
+
+            <Grid VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Grid.Row="11"
+                Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="90" />
+                </Grid.ColumnDefinitions>
+                <Label 
+                    Content="{StaticResource PlugInsFolderString}"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="0,0,0,0"/>
+                <TextBox 
+                    x:Name="PlugInsPathEdit"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Height="{StaticResource DefaultTextBoxHeight}" />
+                <Button 
+                    x:Name="PlugInsFolderButton"
+                    Content="{StaticResource FolderButtonBrowse}"
+                    HorizontalAlignment="Right"
+                    Margin="0,2,10,0"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Click="_PlugInsFolderButtonClick" />
+                <Label 
+                    Content="{StaticResource PathWarningString}"
+                    FontSize="{StaticResource SmallFontSize}"
+                    Height="Auto"
+                    Foreground="LightGray"
+                    Margin="-4,0,0,0"
+                    VerticalAlignment="Top"
+                    Grid.Row="1"
+                    Grid.Column="1"/>
+            </Grid>
+
+            <Border 
+                Grid.Row="12"
+                />
+
+            <Label 
+                Content="{StaticResource UpdateString}"
+                Grid.Row="13"
+                Grid.Column="0"/>
+
+            <StackPanel 
+                Grid.Row="13"
+                Grid.Column="1"
+                >
+                <CheckBox 
+                    x:Name="automaticUpdate"
+                    Content="{StaticResource AutoCheckUpdatesString}"
+                    IsChecked="True" 
+                    />
+                <CheckBox 
+                    x:Name="silentUpdate"
+                    Margin="{StaticResource NotFirstCheckBoxMargin}"
+                    Content="{StaticResource SilentUpdatesString}"
+                    />
+            </StackPanel>
+
+            <Border 
+                Grid.Row="14"
+                />
+
+            <Label 
+                Content="{StaticResource AskOnDeleteString}"
+                Grid.Row="15"
+                Grid.Column="0"/>
+
+            <DockPanel 
+                Grid.Row="15"
+                Grid.Column="1"
+                >
+                <CheckBox 
+                    x:Name="AllwaysAskBeforeDeletingButton"
+                    Content="{StaticResource AllwaysAskBeforeDeletingButton}"
+                    IsChecked="True"
+                    />
+            </DockPanel>
+
+            <Border 
+                Grid.Row="16"
+                />
+
+            <TextBlock 
+                Text="{StaticResource ApplyBreaksString}"
+                Grid.Row="17"
+                Grid.Column="0"
+                />
+
+            <StackPanel 
+                Grid.Row="17"
+                Grid.Column="1"
+                >
+                <RadioButton 
+                    GroupName="breaksRadioButtons" 
+                    x:Name="IsAlwaysAksAboutApplyingBreaks"
+                    Content="{StaticResource AlwaysAskBeforeApplying}"
+                    Click="_AlwaysAskAboutApplyingBreaksClick"/>
+                <RadioButton 
+                    GroupName="breaksRadioButtons" 
+                    x:Name="ApplyBreaks"
+                    Content="{StaticResource ApplyChanges}"
+                    Margin="{StaticResource NotFirstRadioButtonMargin}"
+                    Click="_ApplyBreaksToRoutesClick"/>
+                <RadioButton 
+                    GroupName="breaksRadioButtons"  
+                    x:Name="DontApplyBreaks"
+                    Content="{StaticResource DontApplyChanges}"
+                    Margin="{StaticResource NotFirstRadioButtonMargin}"
+                    Click="_ApplyBreaksToRoutesClick"/>
+            </StackPanel>
+            
+            <Border 
+                Grid.Row="18"
+                />
+
+            <TextBlock 
+                Text="{StaticResource ApplyRoutesString}"
+                Grid.Row="19"
+                Grid.Column="0"
+                />
+
+            <StackPanel 
+                Grid.Row="19"
+                Grid.Column="1"
+                >
+                <RadioButton 
+                    GroupName="routesRadioButtons" 
+                    x:Name="AlwaysAskAboutApplyingRoutes"
+                    Content="{StaticResource AlwaysAskBeforeApplyingRoutes}"
+                    Click="_AlwaysAskAboutApplyingRoutesClick"/>
+                <RadioButton 
+                    GroupName="routesRadioButtons" 
+                    x:Name="ApplyDefaultRoutesToScheduledRoutes"
+                    Margin="{StaticResource NotFirstRadioButtonMargin}"
+                    Click="_ApplyDefaultRoutesToScheduledRoutesClick"
+                    Content="{StaticResource ApplyChanges}"/>
+                <RadioButton 
+                    GroupName="routesRadioButtons"
+                    x:Name="DontApplyDefaultRoutesToScheduledRoutes"
+                    Margin="{StaticResource NotFirstRadioButtonMargin}"
+                    Content="{StaticResource DontApplyChanges}"
+                    Click="_ApplyDefaultRoutesToScheduledRoutesClick"/>
+
+            </StackPanel>
+            
+            <Border 
+                Grid.Row="20"
+                />
+
+            <TextBlock 
+                x:Name="textArchivingSettings"
+                Text="{StaticResource ArchivingSettingsFormatString}"
+                Grid.Row="21"
+                Grid.Column="0"
+                />
+
+            <StackPanel 
+                x:Name="stackPanelArchivingSettings"
+                Grid.Row="21"
+                Grid.Column="1"
+                >
+                <StackPanel 
+                    Margin="0"
+                    Orientation="Horizontal">
+                        <CheckBox x:Name="checkBoxRunAuto"
+                            Content="{StaticResource RunAutoString}"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Width="Auto"
+                            Height="Auto"
+                            Margin="0,2,0,0" />
+                        <xceedControls:NumericTextBox x:Name="textBoxPeriod"
+                            FontSize="{StaticResource MiddleFontSize}"
+                            FontFamily="{StaticResource DefaultApplicationFont}"
+                            Height="{StaticResource DefaultTextBoxHeight}"
+                            MaxLength="2"
+                            BeepOnError="True"
+                            ValueDataType="{x:Type sys:UInt16}"
+                            NumberStyles="Number"
+                            NullValue="1"
+                            MinValue="1"
+                            MaxValue="99"
+                            AutoSelectBehavior="OnFocus"
+                            Width="25"
+                            VerticalAlignment="Top"
+                            Margin="4,-1,0,0" />
+                        <Label x:Name="labelMonths"
+                            Content="{StaticResource MonthsString}"
+                            FontSize="{StaticResource MiddleFontSize}"
+                            FontFamily="{StaticResource DefaultApplicationFont}"
+                            Foreground="#FFFDFDFD"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"
+                            Margin="4,-2,0,0" />
+                </StackPanel>
+                <StackPanel 
+                    Orientation="Horizontal"
+                    Margin="0" >
+                        <Label 
+                            Margin="0"
+                            Content="{StaticResource ArchiveRoutesString}"
+                            VerticalAlignment="Top"/>
+                        <xceedControls:NumericTextBox x:Name="textBoxTimeDomain"
+                            Value="2"
+                            FontSize="{StaticResource MiddleFontSize}"
+                            FontFamily="{StaticResource DefaultApplicationFont}"
+                            Height="{StaticResource DefaultTextBoxHeight}"
+                            MaxLength="2"
+                            BeepOnError="True"
+                            ValueDataType="{x:Type sys:UInt16}"
+                            NumberStyles="Number"
+                            NullValue="1"
+                            MinValue="2"
+                            MaxValue="99"
+                            AutoSelectBehavior="OnFocus"
+                            Width="25"
+                            VerticalAlignment="Top"
+                            Margin="4,-1,0,0" />
+                        <Label 
+                            Content="{StaticResource MonthsOldString}"
+                            VerticalAlignment="Top"
+                            Margin="4,0,0,0" />
+                </StackPanel>
+                <Label 
+                    Margin="0"
+                    Content="{StaticResource RoutesWillArchivedString}"
+                    VerticalAlignment="Top"/>
+            </StackPanel>
+
+            <Border 
+                Grid.Row="22"
+                />
+
+            <Label 
+                Content="{StaticResource FleetSetupWizardString}"
+                Grid.Row="23"
+                Grid.Column="0"/>
+
+            <DockPanel 
+                Grid.Row="23"
+                Grid.Column="1"
+                >
+                <CheckBox 
+                    x:Name="FleetSetupWizardButton"
+                    Content="{StaticResource FleetSetupWizardButton}"
+                    IsChecked="True"
+                    />
+            </DockPanel>
+
+            <Border
+                Grid.Row="24"
+                />
+
+            <Label 
+                Content="{StaticResource RouteLocationsString}"
+                Grid.Row="25"
+                Grid.Column="0"/>
+
+            <DockPanel 
+                Grid.Row="25"
+                Grid.Column="1"
+                >
+                <CheckBox 
+                    x:Name="RouteLocationsVirtualWarningButton"
+                    Content="{StaticResource RouteLocationsVirtualWarningButton}"
+                    IsChecked="True"
+                    />
+            </DockPanel>
+        </Grid>
+    </ScrollViewer>
+</pages:PageBase>
+

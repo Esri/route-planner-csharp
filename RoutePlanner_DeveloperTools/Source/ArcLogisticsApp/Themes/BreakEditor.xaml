@@ -1,0 +1,121 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcLogistics.App.Controls" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+    xmlns:xceedControls="clr-namespace:Xceed.Wpf.Controls;assembly=Xceed.Wpf.Controls"
+    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Luna"
+    mc:Ignorable="d">
+
+    <ControlTemplate TargetType="{x:Type ListView}" x:Key="ListViewTemplate">
+        <ItemsPresenter />
+    </ControlTemplate>
+    
+    <local:BreakEditorTemplateSelector x:Key="myDataTemplateSelector"/>
+    
+    <Style TargetType="{x:Type local:BreakEditor}">
+     
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:BreakEditor}">
+                    <Grid Margin="0,0,0,0" Focusable="False" x:Name="PART_TopLevelGrid">
+                        <Border BorderBrush="{DynamicResource AquamarineSkinLightBlueColor}" 
+                                Focusable="False"
+                                BorderThickness="1,1,1,1">
+                            <Grid Margin="0,0,0,0" 
+                                  x:Name="PART_CellGrid" 
+                                  Background="Transparent" 
+                                  Width="Auto" 
+                                  Grid.Row="1" 
+                                  MinWidth="50" 
+                                  Focusable="False"
+                                  VerticalAlignment="Top">
+                                <TextBlock 
+                                    TextTrimming="CharacterEllipsis" 
+                                    x:Name="PART_CellLabel" 
+                                    Height="22" Width="Auto" 
+                                    Margin="0,0,21,0" 
+                                    Focusable="False"
+                                    HorizontalAlignment="Left"
+                                    Padding="0"/>
+                                <!-- Note : property IsChecked sets by binding to IsDropDownOpen property of combo box -->
+                                <!-- Toggle button should have a name "PART_OpenButton" -->
+                                <ToggleButton x:Name="PART_OpenButton" 
+                                              Width="Auto" 
+                                              Height="Auto" 
+                                              Margin="0" 
+                                              Focusable="False"
+                                              VerticalAlignment="Stretch"
+                                              HorizontalAlignment="Stretch" 
+                                              IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                              Style="{DynamicResource CellToggleButtonStyle}"/>
+                            </Grid>
+                        </Border>
+                        <!-- Note : property IsOpen sets by binding to corresponding property of combo box 
+                        Width="{Binding Path=ActualWidth, ElementName = PART_TopLevelGrid}"
+                        -->
+                        <Popup x:Name="PART_PopupPanel" 
+                               MinWidth="170" 
+                               Width="Auto"
+                               Placement="Absolute"
+                               IsOpen="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" 
+                               AllowsTransparency="True"
+                               PopupAnimation="Slide"
+                               Opacity="0"
+                               Margin="0,0,0,0">
+                            <Microsoft_Windows_Themes:SystemDropShadowChrome 
+                                 CornerRadius="4" Color="{DynamicResource DropDownShadowColor}">
+                                <Border BorderThickness="1,1,1,1" 
+                                        Grid.Row="1" 
+                                        Margin="0,0,3,3" 
+                                        Style="{DynamicResource CellEditorBorderStyle}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="7"/>
+                                            <RowDefinition />
+                                            <RowDefinition Height="7"/>
+                                        </Grid.RowDefinitions>
+                                        
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="5"/>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition Width="5" />
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <StackPanel Grid.Row="1" Grid.Column="1">
+
+                                            <ListView x:Name="PART_List" Template="{StaticResource ListViewTemplate}">
+                                                <ListView.View>
+                                                    <GridView>
+                                                        <GridViewColumn x:Name="PART_BreakEditorColumn"
+                                                                        CellTemplateSelector="{StaticResource myDataTemplateSelector}">
+                                                        </GridViewColumn>
+
+                                                        <GridViewColumn >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <local:DeleteBreakButton DataContext="{Binding}" />
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+
+                                            <TextBlock  HorizontalAlignment="Center" >
+                                                <Hyperlink x:Name="PART_Ref">Add Break</Hyperlink>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Microsoft_Windows_Themes:SystemDropShadowChrome>
+                        </Popup>
+                    </Grid>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

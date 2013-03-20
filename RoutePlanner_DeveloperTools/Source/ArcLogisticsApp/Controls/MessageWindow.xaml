@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="ESRI.ArcLogistics.App.Controls.MessageWindow"
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+    xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    xmlns:converters="clr-namespace:ESRI.ArcLogistics.App.Converters"
+    xmlns:grid_helpers="clr-namespace:ESRI.ArcLogistics.App.GridHelpers"
+    Height="Auto" Width="Auto">
+   <Grid x:Name="layoutRoot" HorizontalAlignment="Stretch" Margin="4">
+      <Grid.Resources>
+         <Style TargetType="{x:Type xcdg:DataRow}">
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="MinHeight" Value="{DynamicResource XceedRowDefaultHeight}"/>
+         </Style>
+
+         <converters:MessageDescriptionConverter x:Key="MessageDescriptionConverter"/>
+
+         <DataTemplate x:Key="descriptionCellTemplate">
+            <app_controls:BindableTextBlock TextWrapping="Wrap" BindableInlines="{Binding Converter={StaticResource MessageDescriptionConverter}}"/>
+         </DataTemplate>
+
+         <xcdg:DataGridCollectionViewSource x:Key="messageTable"
+            AutoCreateItemProperties="False"
+            AutoFilterMode="And"
+            DistinctValuesConstraint="Filtered"
+            DefaultCalculateDistinctValues="False" >
+            <!-- Define the detail data for the master grid. In this case, we will use the custom detail description
+                 that retrieves a list of the employees that report to the "master" employee. -->
+            <xcdg:DataGridCollectionViewSource.DetailDescriptions>
+               <grid_helpers:MessageWindowDetailDescription AutoCreateItemProperties="False">
+                  <!-- Like the master-level collection view, the item properties that are defined here represent
+                       the columns that will appear in the resulting details. -->
+                  <grid_helpers:MessageWindowDetailDescription.ItemProperties>
+                     <xcdg:DataGridItemProperty Name="Type" />
+                     <xcdg:DataGridItemProperty Name="Description" />
+                  </grid_helpers:MessageWindowDetailDescription.ItemProperties>
+               </grid_helpers:MessageWindowDetailDescription>
+            </xcdg:DataGridCollectionViewSource.DetailDescriptions>
+         </xcdg:DataGridCollectionViewSource>
+         
+         <!--The detail configuration not visible when empty-->
+         <xcdg:DetailConfiguration x:Key="messageDetailConfiguration"
+            RelationName="SubMessage"
+            Title=""
+            AutoCreateDetailConfigurations="False"
+            UseDefaultHeadersFooters="False"
+            AllowDetailToggle="False"
+            IsDeleteCommandEnabled="False">
+            <xcdg:DetailConfiguration.Headers>
+               <DataTemplate>
+                  <xcdg:ColumnManagerRow x:Name="columnManagerRow" Visibility="Collapsed" />
+                  <DataTemplate.Triggers>
+                     <DataTrigger Binding="{Binding ElementName=columnManagerRow, Path=(xcdg:DataGridControl.DataGridContext).Items.Count}" Value="0" >
+                        <Setter TargetName="columnManagerRow"
+                           Property="Visibility"
+                           Value="Collapsed" />
+                     </DataTrigger>
+                  </DataTemplate.Triggers>
+               </DataTemplate>
+            </xcdg:DetailConfiguration.Headers>
+            <xcdg:DetailConfiguration.Columns>
+               <xcdg:Column FieldName="Type"
+                  Width="60"
+                  CellContentTemplate="{DynamicResource MessageWindowCellTemplate}"
+                  AutoFilterControlStyle="{DynamicResource tableViewXceedDataGridTheme1AutoFilterControlStyle}" />
+              <xcdg:Column FieldName="Description"
+                  CellContentTemplate="{StaticResource descriptionCellTemplate}" />
+            </xcdg:DetailConfiguration.Columns>
+         </xcdg:DetailConfiguration>
+      </Grid.Resources>
+
+      <Grid.RowDefinitions>
+         <RowDefinition Height="0"/>
+         <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+        <Border HorizontalAlignment="Stretch" 
+                Margin="0" 
+                Width="Auto" 
+                Grid.Row="1" 
+                BorderThickness="{DynamicResource GridBorderThickness}" 
+                BorderBrush="{DynamicResource ApplicationBorder}"
+                SnapsToDevicePixels="True">
+            <xcdg:DataGridControl
+         VerticalAlignment="Stretch"
+         HorizontalAlignment="Stretch"
+         AutoCreateColumns="False"
+         Margin="0,0,0,0"
+         EditTriggers="SingleClick"
+         FontSize="{DynamicResource MiddleFontSize}" 
+         FontFamily="{DynamicResource DefaultApplicationFont}"
+         ItemsSource="{Binding Source={StaticResource messageTable}}"
+         CellEditorDisplayConditions="Always"
+         AutoCreateDetailConfigurations="False"
+         SnapsToDevicePixels="True"
+         Opacity="1"
+         x:Name="xceedGrid">
+                <xcdg:DataGridControl.View >
+                    <xcdg:TableView 
+                        ShowRowSelectorPane="False"
+               AllowColumnChooser="False" />
+                </xcdg:DataGridControl.View>
+            </xcdg:DataGridControl>
+        </Border>
+    </Grid>
+</UserControl>

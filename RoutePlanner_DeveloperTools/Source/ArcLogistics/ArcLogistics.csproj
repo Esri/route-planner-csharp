@@ -1,0 +1,956 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20B53CFD-FAA4-454E-8AD2-85A7208EC9E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ESRI.ArcLogistics</RootNamespace>
+    <AssemblyName>ESRI.ArcLogisticsNG</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\ArcLogistics.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>http://localhost/ESRI.ArcLogisticsNG/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>..\..\bin\Debug\ESRI.ArcLogisticsNG.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>..\..\bin\Release\ESRI.ArcLogisticsNG.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.Client, Version=2.2.0.525, Culture=neutral, PublicKeyToken=29c6dd6e8553d944, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\ESRI.ArcGIS.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ADOX, Version=2.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\Interop.ADOX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Dependences\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\Microsoft.Practices.EnterpriseLibrary.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.Controls, Version=3.0.8576.14450, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\Xceed.Wpf.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.0.8576.14450, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\SolutionVersionInfo.cs">
+      <Link>Properties\SolutionVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AgsMapLayer.cs" />
+    <Compile Include="Archiving\ProjectArchivingConfig.cs" />
+    <Compile Include="Archiving\ProjectArchivingSettings.cs" />
+    <Compile Include="AuthenticationException.cs" />
+    <Compile Include="BackgroundWorkCancelTracker.cs" />
+    <Compile Include="BreaksHelpers\BreaksConfig.cs" />
+    <Compile Include="BreaksHelpers\BreaksHelper.cs" />
+    <Compile Include="BreaksHelpers\BreaksSettings.cs" />
+    <Compile Include="CapacityInfo.cs" />
+    <Compile Include="CollectionHelper.cs" />
+    <Compile Include="ComHelper.cs" />
+    <Compile Include="CommonHelpers.cs" />
+    <Compile Include="CommunicationException.cs" />
+    <Compile Include="Data\DataModel\DataModel.Views.cs" />
+    <Compile Include="Data\DataModel\IDataObject.cs" />
+    <Compile Include="Data\DataObjectCollectionsComparer.cs" />
+    <Compile Include="Data\DeletionCheckingService.cs" />
+    <Compile Include="Data\IDeletionCheckingService.cs" />
+    <Compile Include="Data\OwnerCollection.cs" />
+    <Compile Include="DomainObjects\OrderPropertyInfo.cs" />
+    <Compile Include="DomainObjects\TimeIntervalBreaks.cs" />
+    <Compile Include="DomainObjects\TimeWindowBreak.cs" />
+    <Compile Include="DomainObjects\Utility\IRoutesCollectionOwner.cs" />
+    <Compile Include="DomainObjects\Utility\RouteAssociationTracker.cs" />
+    <Compile Include="DomainObjects\Utility\RoutesCollectionOwner.cs" />
+    <Compile Include="DomainObjects\Utility\TimeWindowExtensions.cs" />
+    <Compile Include="DomainObjects\Validation\BreakTypesValidator.cs" />
+    <Compile Include="DomainObjects\Validation\BreakTypesValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\BarrierEffect.cs" />
+    <Compile Include="DomainObjects\Validation\BarrierEffectValidator.cs" />
+    <Compile Include="DomainObjects\Validation\BarrierEffectValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\DeletedObjectValidator.cs" />
+    <Compile Include="DomainObjects\Validation\DeletedObjectValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\DurationValidator.cs" />
+    <Compile Include="DomainObjects\Validation\DurationValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\FreeRouteAssetValidator.cs" />
+    <Compile Include="DomainObjects\Validation\FreeRouteAssetValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\RouteEmptyStateValidator.cs" />
+    <Compile Include="DomainObjects\Validation\RouteEmptyStateValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\RouteLocationValidator.cs" />
+    <Compile Include="DomainObjects\Validation\RouteLocationValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\RouteRefObjectValidator.cs" />
+    <Compile Include="DomainObjects\Validation\RouteRefObjectValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\TimeIntervalValidator.cs" />
+    <Compile Include="DomainObjects\Validation\TimeIntervaValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\TimeRange.cs" />
+    <Compile Include="DomainObjects\Validation\TimeWindowValidator.cs" />
+    <Compile Include="DomainObjects\Validation\TimeWindowValidatorAttribute.cs" />
+    <Compile Include="Export\ExportOptions.cs" />
+    <Compile Include="Export\Internal\ExportValidator.cs" />
+    <Compile Include="Geocoding\ArcGiscomGeocoder.cs" />
+    <Compile Include="Geocoding\GeocoderBase.cs" />
+    <Compile Include="Geocoding\WorldGeocoder.cs" />
+    <Compile Include="Geometry\CompactGeometryStringWorker.cs" />
+    <Compile Include="Geometry\CoordinateReader.cs" />
+    <Compile Include="GRFExportResult.cs" />
+    <Compile Include="IGenericStorage.cs" />
+    <Compile Include="IMessageReporter.cs" />
+    <Compile Include="IProjectSaveExceptionHandler.cs" />
+    <Compile Include="CustomEnumParser.cs" />
+    <Compile Include="DataFolder.cs" />
+    <Compile Include="Data\BarrierManager.cs" />
+    <Compile Include="Data\ConfigDataSerializer.cs" />
+    <Compile Include="Data\ContextEvents.cs" />
+    <Compile Include="Data\DatabaseArchiver.cs" />
+    <Compile Include="Data\DataModel\EntityObjects.cs" />
+    <Compile Include="Data\DataObjectManager.cs" />
+    <Compile Include="Data\DataObjectOwnerCollection.cs" />
+    <Compile Include="Data\DataObjectValidationHelper.cs" />
+    <Compile Include="Data\GenericDataObjectManager.cs" />
+    <Compile Include="Data\IDataObjectCollection.cs" />
+    <Compile Include="Data\OrderManager.cs" />
+    <Compile Include="DefaultsConfiguration.cs" />
+    <Compile Include="DomainObjects\Validation\DuplicateNameValidator.cs" />
+    <Compile Include="DomainObjects\Validation\DuplicateNameValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\NameNotNullValidator.cs" />
+    <Compile Include="DomainObjects\Validation\NameNotNullValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\BreaksValidator.cs" />
+    <Compile Include="DomainObjects\Validation\BreaksValidatorAttribute.cs" />
+    <Compile Include="DriversDefaults.cs" />
+    <Compile Include="Geocoding\ActualGeocodingInfo.cs" />
+    <Compile Include="Geocoding\ILocationValidator.cs" />
+    <Compile Include="Geocoding\LocationValidator.cs" />
+    <Compile Include="Geocoding\SublocatorType.cs" />
+    <Compile Include="ILicenseExpirationChecker.cs" />
+    <Compile Include="IServiceExceptionHandler.cs" />
+    <Compile Include="LicenseExpirationChecker.cs" />
+    <Compile Include="LicenseInfo.cs" />
+    <Compile Include="LocationsDefaults.cs" />
+    <Compile Include="OrdersDefaults.cs" />
+    <Compile Include="RoutesDefaults.cs" />
+    <Compile Include="Routing\AsyncSolveStartingEventArgs.cs" />
+    <Compile Include="Routing\AsyncSolveTask.cs" />
+    <Compile Include="Routing\BarriersConverter.cs" />
+    <Compile Include="Routing\BreaksConverter.cs" />
+    <Compile Include="Routing\ConstantVrpRequestAnalyzer.cs" />
+    <Compile Include="Routing\CurbApproachConverter.cs" />
+    <Compile Include="Routing\DelegateAsyncSolveTask.cs" />
+    <Compile Include="Routing\DirectionEx.cs" />
+    <Compile Include="Routing\DiscoveryRequestBuilder.cs" />
+    <Compile Include="Routing\IAsyncSolveTask.cs" />
+    <Compile Include="Routing\IRestServiceContextProvider.cs" />
+    <Compile Include="Routing\ISolveOperation.cs" />
+    <Compile Include="Routing\IVrpRequestAnalyzer.cs" />
+    <Compile Include="Routing\Json\DiscoveryServiceInfoResponse.cs" />
+    <Compile Include="Routing\Json\DiscoveryServiceResponse.cs" />
+    <Compile Include="Routing\Json\SubmitDiscoveryRequest.cs" />
+    <Compile Include="Routing\Json\VrpResultsResponse.cs" />
+    <Compile Include="Routing\NAStopType.cs" />
+    <Compile Include="Routing\NullRestServiceContextProvider.cs" />
+    <Compile Include="Routing\RequestBase.cs" />
+    <Compile Include="Routing\RequestBuildingHelper.cs" />
+    <Compile Include="Routing\RestServiceContext.cs" />
+    <Compile Include="Routing\RestServiceContextProvider.cs" />
+    <Compile Include="Routing\RouteExporter.cs" />
+    <Compile Include="Routing\SimpleVrpRequestAnalyzer.cs" />
+    <Compile Include="Routing\SolveOperationAsyncSolveTask.cs" />
+    <Compile Include="Routing\SolveOperationResult.cs" />
+    <Compile Include="Routing\SolveTaskResult.cs" />
+    <Compile Include="Routing\StopInfo.cs" />
+    <Compile Include="Service References\CatalogService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GeocodeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GPService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MapService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NAService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AggregateWebProxy.cs" />
+    <Compile Include="Services\DiscoveryClient.cs" />
+    <Compile Include="Services\DiscoveryService.cs" />
+    <Compile Include="Services\DiscoveryServiceFactory.cs" />
+    <Compile Include="Services\DiscoveryServiceStub.cs" />
+    <Compile Include="Services\ArcGisWebContentTypeMapper.cs" />
+    <Compile Include="Services\AsyncOperationCompletedEventArgs.cs" />
+    <Compile Include="Services\Geocoding\FindAddressCandidateResponse.cs" />
+    <Compile Include="Services\Geocoding\FindAddressCandidatesReponse.cs" />
+    <Compile Include="Services\Geocoding\GeocodingQueryStringConverter.cs" />
+    <Compile Include="Services\Geocoding\GeocodingServiceClient.cs" />
+    <Compile Include="Services\Geocoding\GeocodingServiceWebHttpBehavior.cs" />
+    <Compile Include="Services\Geocoding\IGeocodingService.cs" />
+    <Compile Include="Services\Geocoding\IGeocodingServiceClient.cs" />
+    <Compile Include="Services\Geocoding\ReverseGeocodingResponse.cs" />
+    <Compile Include="Services\HostNameValidator.cs" />
+    <Compile Include="Services\ICertificateValidationSettings.cs" />
+    <Compile Include="Services\IDiscoveryService.cs" />
+    <Compile Include="Services\IHostNameValidator.cs" />
+    <Compile Include="Services\IProxyConfigurationService.cs" />
+    <Compile Include="Services\ISolveServiceValidator.cs" />
+    <Compile Include="Services\IWcfClientConnection.cs" />
+    <Compile Include="Services\ProxyAuthenticationErrorHandler.cs" />
+    <Compile Include="Services\ProxyConfigurationService.cs" />
+    <Compile Include="Services\ProxyProtocolSettings.cs" />
+    <Compile Include="Services\ProxySettings.cs" />
+    <Compile Include="Data\RelatedRouteCollection.cs" />
+    <Compile Include="Data\RouteCollection.cs" />
+    <Compile Include="Data\RouteCollWrapper.cs" />
+    <Compile Include="Data\ScheduleManager.cs" />
+    <Compile Include="Data\SortedDataObjectCollection.cs" />
+    <Compile Include="DefaultsConfig.cs" />
+    <Compile Include="DistCalc.cs" />
+    <Compile Include="DomainObjects\Attributes\AffectsRoutingPropertyAttribute.cs" />
+    <Compile Include="DomainObjects\Attributes\DomainPropertyAttribute.cs" />
+    <Compile Include="DomainObjects\Attributes\UnitPropertyAttribute.cs" />
+    <Compile Include="DomainObjects\Barrier.cs" />
+    <Compile Include="DomainObjects\Days.cs" />
+    <Compile Include="DomainObjects\Validation\BarrierFinishDateValidator.cs" />
+    <Compile Include="DomainObjects\Validation\BarrierFinishDateValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\DataTimeNullableValidator.cs" />
+    <Compile Include="DomainObjects\Validation\DataTimeNullableValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\FuelEconomyValidator.cs" />
+    <Compile Include="DomainObjects\Validation\FuelEconomyValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\LocationsValidator.cs" />
+    <Compile Include="DomainObjects\Validation\LocationsValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\MobileDevicePropertyValidator.cs" />
+    <Compile Include="DomainObjects\Validation\MobileDevicePropertyValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\ObjectFarFromRoadValidator.cs" />
+    <Compile Include="DomainObjects\Validation\ObjectFarFromRoadValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\OrderCustomPropertyValidator.cs" />
+    <Compile Include="DomainObjects\Validation\OrderCustomPropertyValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\TimeWindow2Validator.cs" />
+    <Compile Include="DomainObjects\Validation\TimeWindow2ValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\GeocodableValidator.cs" />
+    <Compile Include="DomainObjects\Validation\GeocodableValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Address.cs" />
+    <Compile Include="DomainObjects\Break.cs" />
+    <Compile Include="DomainObjects\Breaks.cs" />
+    <Compile Include="DomainObjects\Capacities.cs" />
+    <Compile Include="CapacitiesInfo.cs" />
+    <Compile Include="Defaults.cs" />
+    <Compile Include="DomainObjects\Order.cs" />
+    <Compile Include="DomainObjects\OrderCustomProperties.cs" />
+    <Compile Include="DomainObjects\Schedule.cs" />
+    <Compile Include="DomainObjects\Stop.cs" />
+    <Compile Include="DomainObjects\Validation\CapacityValidator.cs" />
+    <Compile Include="DomainObjects\Validation\CapacityValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\DaysValidator.cs" />
+    <Compile Include="DomainObjects\Validation\DaysValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\RangeValidatorExt.cs" />
+    <Compile Include="DomainObjects\Validation\RangeValidatorExtAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\RefObjectValidator.cs" />
+    <Compile Include="DomainObjects\Validation\RefObjectValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Validation\RouteTimeWindowValidator.cs" />
+    <Compile Include="DomainObjects\Validation\RouteTimeWindowValidatorAttribute.cs" />
+    <Compile Include="Data\ContextHelper.cs" />
+    <Compile Include="Data\DatabaseEngine.cs" />
+    <Compile Include="Data\DatabaseHelper.cs" />
+    <Compile Include="Data\DatabaseOpener.cs" />
+    <Compile Include="Data\DataException.cs" />
+    <Compile Include="Data\DataModel\DataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataObject.cs" />
+    <Compile Include="Data\DataObjectCollection.cs" />
+    <Compile Include="Data\DataService.cs" />
+    <Compile Include="Data\RelationObjectCollection.cs" />
+    <Compile Include="Data\DataObjectContext.cs" />
+    <Compile Include="Data\DataObjectFactory.cs" />
+    <Compile Include="Data\DataObjectHelper.cs" />
+    <Compile Include="Data\DataObjectInt.cs" />
+    <Compile Include="Data\BaseDataService.cs" />
+    <Compile Include="Data\EntityCollWrapper.cs" />
+    <Compile Include="Data\EntityRefWrapper.cs" />
+    <Compile Include="Data\SchemeVersion.cs" />
+    <Compile Include="Data\SpecFields.cs" />
+    <Compile Include="Data\SqlFormatHelper.cs" />
+    <Compile Include="Data\Validation\FieldValueAccess.cs" />
+    <Compile Include="Data\Validation\MethodValueAccess.cs" />
+    <Compile Include="Data\Validation\PropertyValidationProxy.cs" />
+    <Compile Include="Data\Validation\PropertyValueAccess.cs" />
+    <Compile Include="Data\Validation\ReflectionMemberValueAccessBuilder.cs" />
+    <Compile Include="DomainObjects\Driver.cs" />
+    <Compile Include="DomainObjects\DriverSpecialty.cs" />
+    <Compile Include="DomainObjects\FuelType.cs" />
+    <Compile Include="DomainObjects\Location.cs" />
+    <Compile Include="DomainObjects\MobileDevice.cs" />
+    <Compile Include="DomainObjects\Route.cs" />
+    <Compile Include="DomainObjects\TimeWindow.cs" />
+    <Compile Include="DomainObjects\Validation\ZonesValidator.cs" />
+    <Compile Include="DomainObjects\Validation\ZonesValidatorAttribute.cs" />
+    <Compile Include="DomainObjects\Vehicle.cs" />
+    <Compile Include="DomainObjects\VehicleSpecialty.cs" />
+    <Compile Include="DomainObjects\Zone.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Export\Exporter.cs" />
+    <Compile Include="Export\Internal\AccessExporter.cs" />
+    <Compile Include="Export\Internal\ExportDataKeeper.cs" />
+    <Compile Include="Export\Internal\ExportFile.cs" />
+    <Compile Include="Export\Internal\ExportStructureReader.cs" />
+    <Compile Include="Export\Profile.cs" />
+    <Compile Include="Export\Internal\TableDefinition.cs" />
+    <Compile Include="Export\Internal\TextExporter.cs" />
+    <Compile Include="Export\ITableDefinition.cs" />
+    <Compile Include="FuelTypeInfo.cs" />
+    <Compile Include="FuelTypesInfo.cs" />
+    <Compile Include="Geocoding\AddressCandidate.cs" />
+    <Compile Include="Geocoding\AddressField.cs" />
+    <Compile Include="Geocoding\GeocodeException.cs" />
+    <Compile Include="Geocoding\Geocoder.cs" />
+    <Compile Include="Geocoding\IGeocodable.cs" />
+    <Compile Include="Geocoding\IGeocoder.cs" />
+    <Compile Include="Geometry\CompactGeometryConverter.cs" />
+    <Compile Include="Geometry\GeometryConst.cs" />
+    <Compile Include="Geometry\Point.cs" />
+    <Compile Include="Geometry\Poly.cs" />
+    <Compile Include="Geometry\Rect.cs" />
+    <Compile Include="FileHelpers.cs" />
+    <Compile Include="GRFExporter.cs" />
+    <Compile Include="ILicenseCacheStorage.cs" />
+    <Compile Include="ILicenser.cs" />
+    <Compile Include="IProgressIndicator.cs" />
+    <Compile Include="IProgressReporter.cs" />
+    <Compile Include="IProject.cs" />
+    <Compile Include="IProjectProperties.cs" />
+    <Compile Include="License.cs" />
+    <Compile Include="LicenseCache.cs" />
+    <Compile Include="LicenseCacheEntry.cs" />
+    <Compile Include="LicenseException.cs" />
+    <Compile Include="Licenser.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="MapImageExporter.cs" />
+    <Compile Include="MapLayer.cs" />
+    <Compile Include="OrderCustomProperiesInfo.cs" />
+    <Compile Include="OrderCustomProperty.cs" />
+    <Compile Include="ProgressIndicator.cs" />
+    <Compile Include="ProgressReporter.cs" />
+    <Compile Include="ProjectCatalog.cs" />
+    <Compile Include="ProjectConfiguration.cs" />
+    <Compile Include="ProjectFactory.cs" />
+    <Compile Include="ProjectProperties.cs" />
+    <Compile Include="Properties\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Project.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Routing\AssignOrdersOperation.cs" />
+    <Compile Include="Routing\AssignOrdersOperationHelper.cs" />
+    <Compile Include="Routing\AssignOrdersStep2.cs" />
+    <Compile Include="Routing\AssignOrdersReqBuilder.cs" />
+    <Compile Include="Routing\AsyncOperationManager.cs" />
+    <Compile Include="Routing\AttrDictionary.cs" />
+    <Compile Include="Routing\AttrDictionaryExtensions.cs" />
+    <Compile Include="Routing\BackgroundWorkCancelTracker.cs" />
+    <Compile Include="Routing\BuildRoutesOperation.cs" />
+    <Compile Include="Routing\BuildRoutesParameters.cs" />
+    <Compile Include="Routing\BuildRoutesReqBuilder.cs" />
+    <Compile Include="Routing\DirectionsHelper.cs" />
+    <Compile Include="ICancelTracker.cs" />
+    <Compile Include="Routing\IRestRequestContext.cs" />
+    <Compile Include="Routing\IVrpRestService.cs" />
+    <Compile Include="Routing\Json\GPRouteResult.cs" />
+    <Compile Include="Routing\RequestContext.cs" />
+    <Compile Include="Routing\VrpRestServiceFactory.cs" />
+    <Compile Include="Service References\LoadBalanceService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AgsServerConnection.cs" />
+    <Compile Include="Services\IAgsServerAuthenticator.cs" />
+    <Compile Include="Services\RestServiceClient.cs" />
+    <Compile Include="Services\ServiceOptions.cs" />
+    <Compile Include="Services\SolveServiceValidator.cs" />
+    <Compile Include="Services\WcfClientConnectionPool.cs" />
+    <Compile Include="Services\ServiceURL.cs" />
+    <Compile Include="Threading\ITaskRunner.cs" />
+    <Compile Include="Threading\ParallelTaskRunner.cs" />
+    <Compile Include="Tracking\DriverStatus.cs" />
+    <Compile Include="Tracking\IRoutesAborter.cs" />
+    <Compile Include="Tracking\IRoutesSender.cs" />
+    <Compile Include="Tracking\ISynchronizationService.cs" />
+    <Compile Include="Tracking\ITracker.cs" />
+    <Compile Include="Tracking\ITrackingService.cs" />
+    <Compile Include="Tracking\SynchronizationService.cs" />
+    <Compile Include="Tracking\Tracker.cs" />
+    <Compile Include="Tracking\TrackerProvider.cs" />
+    <Compile Include="Tracking\TrackingException.cs" />
+    <Compile Include="Tracking\TrackingHelper.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\BarrierBase.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\DataRecordBase.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\DeletionStatus.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\Device.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\Event.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\LineBarrier.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\PointBarrier.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\PointBarrierType.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\PolygonBarrier.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\PolygonBarrierType.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\Route.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\Setting.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\Stop.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\StopStatus.cs" />
+    <Compile Include="Tracking\TrackingService\DataModel\StopType.cs" />
+    <Compile Include="Tracking\TrackingService\FeatureLayer.cs" />
+    <Compile Include="Tracking\TrackingService\FeatureLayerEx.cs" />
+    <Compile Include="Tracking\TrackingService\FeatureRecordMapper.cs" />
+    <Compile Include="Tracking\TrackingService\FeatureService.cs" />
+    <Compile Include="Tracking\TrackingService\FeatureServiceRequestSender.cs" />
+    <Compile Include="Tracking\TrackingService\GeometryReturningPolicy.cs" />
+    <Compile Include="Tracking\TrackingService\IFeatureLayer.cs" />
+    <Compile Include="Tracking\TrackingService\IFeatureService.cs" />
+    <Compile Include="Tracking\TrackingService\IFeatureServiceRequestSender.cs" />
+    <Compile Include="Tracking\TrackingService\ISerializer.cs" />
+    <Compile Include="Tracking\TrackingService\JsonSerializer.cs" />
+    <Compile Include="Tracking\TrackingService\Json\ApplyEditsError.cs" />
+    <Compile Include="Tracking\TrackingService\Json\ApplyEditsResponse.cs" />
+    <Compile Include="Tracking\TrackingService\Json\ApplyEditsResult.cs" />
+    <Compile Include="Tracking\TrackingService\Json\AttributeInfo.cs" />
+    <Compile Include="Tracking\TrackingService\Json\ParameterInfo.cs" />
+    <Compile Include="Tracking\TrackingService\Json\FeatureRecordData.cs" />
+    <Compile Include="Tracking\TrackingService\Json\FeatureRecordSetLayer.cs" />
+    <Compile Include="Tracking\TrackingService\Json\LayerDescription.cs" />
+    <Compile Include="Tracking\TrackingService\Json\LayerReference.cs" />
+    <Compile Include="Tracking\TrackingService\Json\NameValuePair.cs" />
+    <Compile Include="Tracking\TrackingService\Json\ObjectIDsResponse.cs" />
+    <Compile Include="Tracking\TrackingService\Json\RestrictionAttributeInfo.cs" />
+    <Compile Include="Tracking\TrackingService\Json\RouteSettings.cs" />
+    <Compile Include="Tracking\TrackingService\Json\ServiceInfo.cs" />
+    <Compile Include="Tracking\TrackingService\Requests\ApplyEditsRequest.cs" />
+    <Compile Include="Tracking\TrackingService\Requests\QueryRequest.cs" />
+    <Compile Include="Tracking\TrackingService\Requests\RequestBase.cs" />
+    <Compile Include="Tracking\TrackingService\TrackingServiceClient.cs" />
+    <Compile Include="Tracking\TrackingService\TrackingServiceError.cs" />
+    <Compile Include="Tracking\TrackingService\TrackingServiceException.cs" />
+    <Compile Include="Tracking\TrackingSettings.cs" />
+    <Compile Include="Utility\ComponentModel\CycleDetector.cs" />
+    <Compile Include="Utility\ComponentModel\NotifyPropertyChangedBase.cs" />
+    <Compile Include="Utility\ComponentModel\PropertyDependenciesCycleException.cs" />
+    <Compile Include="Utility\ComponentModel\PropertyDependsOnAttribute.cs" />
+    <Compile Include="Utility\CoreEx\CodeContract.cs" />
+    <Compile Include="Utility\DelegateDisposable.cs" />
+    <Compile Include="Utility\CompositeDisposable.cs" />
+    <Compile Include="Utility\CoreEx\ActionEx.cs" />
+    <Compile Include="Utility\CoreEx\Functional.cs" />
+    <Compile Include="Utility\EnumerableEx.cs" />
+    <Compile Include="Utility\EnumHelpers.cs" />
+    <Compile Include="Utility\IInvokationWrapper.cs" />
+    <Compile Include="Utility\Indexed.cs" />
+    <Compile Include="Utility\InvokationWrapper.cs" />
+    <Compile Include="Services\IRoutingServiceUrlProvider.cs" />
+    <Compile Include="Routing\IVrpSolver.cs" />
+    <Compile Include="Routing\Json\BatchRouteSolveRequest.cs" />
+    <Compile Include="Routing\Json\BatchRouteSolveResponse.cs" />
+    <Compile Include="Routing\Json\GeometryHolder.cs" />
+    <Compile Include="Routing\Json\GPAttribute.cs" />
+    <Compile Include="Routing\Json\GPDate.cs" />
+    <Compile Include="Routing\Json\GPObjectHelper.cs" />
+    <Compile Include="Routing\Json\GPObjectInt.cs" />
+    <Compile Include="Routing\Json\GPResponse.cs" />
+    <Compile Include="Routing\Json\GPObjects.cs" />
+    <Compile Include="Routing\Json\JsonProcHelper.cs" />
+    <Compile Include="Routing\Json\JsonSerializeHelper.cs" />
+    <Compile Include="Routing\Json\RouteObjects.cs" />
+    <Compile Include="Routing\Json\RouteSolveRequest.cs" />
+    <Compile Include="Routing\Json\SubmitVrpJobRequest.cs" />
+    <Compile Include="Routing\NAConst.cs" />
+    <Compile Include="Routing\RestException.cs" />
+    <Compile Include="Routing\RouteRequestBuilder.cs" />
+    <Compile Include="Routing\NetworkDescription.cs" />
+    <Compile Include="Routing\QueryParameterAttribute.cs" />
+    <Compile Include="Routing\RestHelper.cs" />
+    <Compile Include="Routing\RestRouteService.cs" />
+    <Compile Include="Routing\RestService.cs" />
+    <Compile Include="Services\RoutingServiceClientBase.cs" />
+    <Compile Include="Services\RoutingServiceUrlProvider.cs" />
+    <Compile Include="Routing\SolveErrorParser.cs" />
+    <Compile Include="Routing\VrpSolver.cs" />
+    <Compile Include="Routing\RouteException.cs" />
+    <Compile Include="Routing\GenDirectionsOperation.cs" />
+    <Compile Include="Routing\VrpRequestBuilder.cs" />
+    <Compile Include="Routing\VrpResultConverter.cs" />
+    <Compile Include="Routing\RestVrpService.cs" />
+    <Compile Include="Routing\SequenceRoutesOperation.cs" />
+    <Compile Include="Routing\SequenceRoutesReqBuilder.cs" />
+    <Compile Include="Routing\SolveHelper.cs" />
+    <Compile Include="Routing\SolveEvents.cs" />
+    <Compile Include="Routing\SolveResult.cs" />
+    <Compile Include="Routing\SolverSettings.cs" />
+    <Compile Include="Routing\UnassignOrdersOperation.cs" />
+    <Compile Include="Routing\Violation.cs" />
+    <Compile Include="Routing\VrpOperation.cs" />
+    <Compile Include="Security\StringProcessor.cs" />
+    <Compile Include="Services\AgsConst.cs" />
+    <Compile Include="Services\AgsHelper.cs" />
+    <Compile Include="Services\AgsServer.cs" />
+    <Compile Include="Services\AgsServerConnectionParameters.cs" />
+    <Compile Include="Services\GeocodeServiceClient.cs" />
+    <Compile Include="Services\GPServiceClient.cs" />
+    <Compile Include="Services\MapInfoWrap.cs" />
+    <Compile Include="Services\MapServiceClient.cs" />
+    <Compile Include="Services\NAServiceClient.cs" />
+    <Compile Include="Services\RoutingServiceUrlProviderExtensions.cs" />
+    <Compile Include="Services\ServersInfoWrap.cs" />
+    <Compile Include="Services\ServiceCatalog.cs" />
+    <Compile Include="Services\ServiceConfig.cs" />
+    <Compile Include="Services\ServiceHelper.cs" />
+    <Compile Include="Services\ServiceClientWrap.cs" />
+    <Compile Include="Services\SimpleRoutingServiceUrlProvider.cs" />
+    <Compile Include="Services\SolveInfoWrap.cs" />
+    <Compile Include="Services\UserServiceConfig.cs" />
+    <Compile Include="SettingsException.cs" />
+    <Compile Include="SolverConst.cs" />
+    <Compile Include="Utility\KeyValuePair.cs" />
+    <Compile Include="Utility\ListAlgorithms.cs" />
+    <Compile Include="Utility\Nothing.cs" />
+    <Compile Include="Utility\NullableDateTimeExtensions.cs" />
+    <Compile Include="Utility\NullableEx.cs" />
+    <Compile Include="Utility\Reflection\CustomAttributeProviderExtensions.cs" />
+    <Compile Include="Utility\Reflection\PropertyInfoExtensions.cs" />
+    <Compile Include="Utility\Reflection\TypeInfoProvider.cs" />
+    <Compile Include="Utility\ResourceLoader.cs" />
+    <Compile Include="Utility\RetriableInvokationWrapper.cs" />
+    <Compile Include="Utility\ScheduleRoutesEventAggregator.cs" />
+    <Compile Include="Utility\UriHelper.cs" />
+    <Compile Include="VehiclesDefaults.cs" />
+    <Compile Include="WebMercatorUtil.cs" />
+    <Compile Include="SymbolControl.cs" />
+    <Compile Include="SymbolControlContext.cs" />
+    <Compile Include="UnitConvertor.cs" />
+    <Compile Include="UnitConvertors.cs" />
+    <Compile Include="UnitEnum.cs" />
+    <Compile Include="UnitFormatter.cs" />
+    <Compile Include="UserBreakException.cs" />
+    <Compile Include="WebHelper.cs" />
+    <Compile Include="WorkspaceHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Data\DataModel\DataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Class Diagram.cd" />
+    <EmbeddedResource Include="Resources\aldb_create.sql" />
+    <EmbeddedResource Include="Data\DataModel\DataModel.csdl" />
+    <EmbeddedResource Include="Data\DataModel\DataModel.msl" />
+    <EmbeddedResource Include="Data\DataModel\DataModel.ssdl" />
+    <None Include="Service References\CatalogService\ESRI.ArcLogistics.CatalogService.esriArcGISVersion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CatalogService\ESRI.ArcLogistics.CatalogService.esriServiceCatalogMessageFormat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CatalogService\ESRI.ArcLogistics.CatalogService.ServiceDescription.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CatalogService\services.wsdl" />
+    <None Include="Service References\GPService\ESRI.ArcLogistics.GPService.Envelope.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GPService\ESRI.ArcLogistics.GPService.esriExecutionType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GPService\ESRI.ArcLogistics.GPService.esriJobStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GPService\ESRI.ArcLogistics.GPService.GDSData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GPService\ESRI.ArcLogistics.GPService.GPResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GPService\ESRI.ArcLogistics.GPService.GPResultOptions.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GPService\ESRI.ArcLogistics.GPService.GPToolInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GPService\ESRI.ArcLogistics.GPService.GPValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GPService\ESRI.ArcLogistics.GPService.JobMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GPService\ESRI.ArcLogistics.GPService.PropertySet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GPService\GPServer.wsdl" />
+    <None Include="Service References\NAService\ESRI.ArcLogistics.NAService.NAServerNetworkDescription.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NAService\ESRI.ArcLogistics.NAService.NAServerSolverParams.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NAService\ESRI.ArcLogistics.NAService.NAServerSolverResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NAService\NAServer.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CatalogService\" />
+    <WCFMetadataStorage Include="Service References\GeocodeService\" />
+    <WCFMetadataStorage Include="Service References\GPService\" />
+    <WCFMetadataStorage Include="Service References\LoadBalanceService\" />
+    <WCFMetadataStorage Include="Service References\MapService\" />
+    <WCFMetadataStorage Include="Service References\NAService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ExportStructure.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.CacheControlInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.CacheDescriptionInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.esriImageReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.FIDSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.ImageResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.MapImage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.MapServerFindResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.MapServerHyperlink.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.MapServerIdentifyResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.MapServerInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.MapServerLegendInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.Multipoint.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.PropertySet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.QueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.RecordSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.SQLSyntaxInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.TileCacheInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\ESRI.ArcLogistics.MapService.TileImageInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapService\MapServer.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\ArcLogistics.snk">
+      <Link>ArcLogistics.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\LabelSequenceSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LocationSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\RouteLineSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\aldb_clean.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\aldb_archive.sql" />
+    <None Include="Service References\LoadBalanceService\LoadBalance.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoadBalanceService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoadBalanceService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoadBalanceService\ESRI.ArcLogistics.LoadBalanceService.LoadBalanceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LoadBalanceService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\defaults.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\aldb_upgrade_1_0.sql" />
+    <None Include="Service References\GeocodeService\GeocodeServer.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GeocodeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GeocodeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GeocodeService\ESRI.ArcLogistics.GeocodeService.Field.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeocodeService\ESRI.ArcLogistics.GeocodeService.Fields.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeocodeService\ESRI.ArcLogistics.GeocodeService.PropertySet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeocodeService\ESRI.ArcLogistics.GeocodeService.QueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeocodeService\ESRI.ArcLogistics.GeocodeService.RecordSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeocodeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\aldb_upgrade_1_01.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CatalogService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CatalogService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CatalogService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\aldb_copy_default_routes_for_schedule.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\aldb_update_renewal_locations.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\aldb_upgrade_1_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\aldb_create_schedule.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NAService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NAService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NAService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GPService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GPService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GPService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"%25windir%25\Microsoft.NET\Framework\v4.0.30319\EdmGen.exe" /nologo /language:CSharp /mode:ViewGeneration "/inssdl:$(TargetDir)Data\DataModel\DataModel.ssdl" "/incsdl:$(TargetDir)Data\DataModel\DataModel.csdl" "/inmsl:$(TargetDir)Data\DataModel\DataModel.msl" "/outviews:$(ProjectDir)Data\DataModel\DataModel.Views.cs"
+XCOPY "$(TargetDir)Data\DataModel\DataModel.csdl" "$(ProjectDir)Data\DataModel\" /R /Y
+XCOPY "$(TargetDir)Data\DataModel\DataModel.ssdl" "$(ProjectDir)Data\DataModel\" /R /Y
+XCOPY "$(TargetDir)Data\DataModel\DataModel.msl" "$(ProjectDir)Data\DataModel\" /R /Y
+</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

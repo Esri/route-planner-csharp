@@ -1,0 +1,76 @@
+﻿<app_controls:DockableContent x:Class="ESRI.ArcLogistics.App.Pages.ScheduleVersionsView"
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+    xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    Title="{StaticResource ScheduleVersionsViewTitle}">
+    <Grid x:Name="LayoutRoot" Background="{StaticResource ContentBackgroundColor}"
+          KeyDown="_HandleKeyDown">
+        <Grid.Resources>
+
+            <xcdg:DataGridCollectionViewSource x:Key="scheduleVersionsCollection" 
+                                               AutoCreateItemProperties="False"
+                                               CommittingEdit="_DataGridCommittingEdit" 
+                                               BeginningEdit="_DataGridBeginningEdit" 
+                                               CancelingEdit="_DataGridCancelingEdit"/>
+        </Grid.Resources>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <WrapPanel Margin="{StaticResource ViewButtonsStackMargin}"
+                   x:Name="ButtonsWrapPanel"
+                    Orientation="Horizontal" 
+                    Grid.Row="0" >
+            <Button x:Name="NewVersionButton" 
+                    IsEnabled="True" 
+                    Margin="{StaticResource PageButtonMargin}"
+                    Content="{StaticResource NewVersionButtonHeader}" 
+                    HorizontalAlignment="Left" 
+                    Height="{StaticResource DefaultPageButtonHeight}"
+                    Style="{StaticResource PageButtonStyle}"
+                    Click="_NewVersionButtonClick"/>
+            <Button x:Name="CommitToCurrentButton" 
+                    IsEnabled="False" 
+                    Content="{StaticResource CommitButtonHeader}" 
+                    HorizontalAlignment="Left" 
+                    Margin="{StaticResource PageButtonMargin}"
+                    Height="{StaticResource DefaultPageButtonHeight}"
+                    Style="{StaticResource PageButtonStyle}"
+                    Click="_CommitToCurrentButtonClick"/>
+            <Button x:Name="DeleteButton" 
+                    IsEnabled="False" 
+                    Content="{StaticResource DeleteButtonHeader}" 
+                    HorizontalAlignment="Left" 
+                    Margin="{StaticResource PageButtonMargin}"
+                    Height="{StaticResource DefaultPageButtonHeight}"
+                    Style="{StaticResource PageButtonStyle}"
+                    Click="_DeleteButtonClick"/>
+        </WrapPanel>
+        <Border HorizontalAlignment="Stretch" 
+                Margin="{StaticResource ViewContentMargin}" 
+                Width="Auto" 
+                Grid.Row="2" 
+                BorderThickness="{StaticResource GridBorderThickness}" 
+                BorderBrush="{StaticResource ApplicationBorder}">
+            
+            <app_controls:DataGridControlEx 
+                                  Initialized="_DataGridControlInitialized"
+                                  ItemsSource="{Binding Source={StaticResource scheduleVersionsCollection}}"
+                                  IsEnabled="True" 
+                                  x:Name="XceedGrid" 
+                                  EditTriggers="ClickOnCurrentCell"
+                                  SelectionMode="Single">
+                <xcdg:DataGridControl.View>
+                    <xcdg:TableView ColumnStretchMode="Last" 
+                                     ShowRowSelectorPane="False"/>
+                </xcdg:DataGridControl.View>
+            </app_controls:DataGridControlEx>
+        </Border>
+        <Grid x:Name="lockedGrid" Grid.RowSpan="2" Margin="0,0,0,0" 
+              Background="{StaticResource LockedPageBackground}" 
+              Visibility="Hidden"/>
+    </Grid>
+</app_controls:DockableContent>

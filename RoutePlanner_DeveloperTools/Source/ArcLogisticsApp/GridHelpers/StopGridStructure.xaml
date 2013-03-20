@@ -1,0 +1,113 @@
+<ResourceDictionary
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:app="clr-namespace:ESRI.ArcLogistics.App;assembly=ESRI.ArcLogistics.App"
+xmlns:arcLogistics="clr-namespace:ESRI.ArcLogistics;assembly=ESRI.ArcLogisticsNG"
+xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+xmlns:collections="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+xmlns:sys="clr-namespace:System;assembly=mscorlib"
+xmlns:domainObjects="clr-namespace:ESRI.ArcLogistics.DomainObjects;assembly=ESRI.ArcLogisticsNG"
+xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib">
+
+
+    <coll:ArrayList x:Key="itemProperties">
+        <xcdg:DataGridItemProperty Name="Type" ValuePath="." 
+                                   IsReadOnly="True" 
+                                   DataType="{x:Type domainObjects:Stop}"/>
+        <xcdg:DataGridItemProperty Name="IsLocked" 
+                                   ValuePath="IsLocked" 
+                                   IsReadOnly="False" 
+                                   DataType="{x:Type sys:Boolean}"/>
+        <xcdg:DataGridItemProperty Name="SequenceNumber" 
+                                   ValuePath="." 
+                                   IsReadOnly="True" 
+                                   DataType="{x:Type domainObjects:Stop}"/>
+        <xcdg:DataGridItemProperty Name="Name" 
+                                   IsReadOnly="True" 
+                                   ValuePath="Name" 
+                                   DataType="{x:Type sys:String}"/>
+        <xcdg:DataGridItemProperty Name="ArriveTime" 
+                                   IsReadOnly="True" 
+                                   DataType="{x:Type sys:DateTime}"/>
+        <xcdg:DataGridItemProperty Name="AddressFields" 
+                                   ValuePath="AssociatedObject." 
+                                   IsReadOnly="True"/>
+        <xcdg:DataGridItemProperty Name="TimeAtStop" 
+                                   IsReadOnly="True" 
+                                   DataType="{x:Type sys:Double}"/>
+        <xcdg:DataGridItemProperty Name="TimeWindow" 
+                                   IsReadOnly="True" 
+                                   ValuePath="AssociatedObject.TimeWindow" 
+                                   SortComparer="{StaticResource timeWindowComparer}"
+                                   DataType="{x:Type domainObjects:TimeWindow}"/>
+        <xcdg:DataGridItemProperty Name="TimeWindow2" 
+                                   IsReadOnly="True" 
+                                   ValuePath="AssociatedObject.TimeWindow2" 
+                                   SortComparer="{StaticResource timeWindowComparer}"
+                                   DataType="{x:Type domainObjects:TimeWindow}"/>
+        <xcdg:DataGridItemProperty Name="Priority" 
+                                   IsReadOnly="True" 
+                                   ValuePath="AssociatedObject.Priority" 
+                                   SortComparer="{StaticResource toStringComparer}"
+                                   DataType="{x:Type arcLogistics:OrderPriority}"/>
+        <xcdg:DataGridItemProperty Name="VehicleSpecialties" 
+                                   ValuePath="AssociatedObject.VehicleSpecialties" 
+                                   SortComparer="{StaticResource toStringComparer}"
+                                   DataType="{app:GenericType TypeName='System.Collections.Generic.ICollection', TypeArguments='domainObjects:VehicleSpecialty'}"/>
+        <xcdg:DataGridItemProperty Name="DriverSpecialties" 
+                                   ValuePath="AssociatedObject.DriverSpecialties" 
+                                   SortComparer="{StaticResource toStringComparer}"
+                                   DataType="{app:GenericType TypeName='System.Collections.Generic.ICollection', TypeArguments='domainObjects:DriverSpecialty'}"/>
+        <xcdg:DataGridItemProperty Name="Capacities" 
+                                   ValuePath="AssociatedObject." 
+                                   IsReadOnly="True"/>
+        <xcdg:DataGridItemProperty Name="CustomOrderProperties" 
+                                   ValuePath="AssociatedObject." 
+                                   IsReadOnly="True"/>
+    </coll:ArrayList>
+
+    <coll:ArrayList x:Key="columns">
+        <xcdg:Column FieldName="IsLocked" ReadOnly="False" 
+                     Title="{StaticResource LockedColumnHeader}"
+                     TitleTemplate="{StaticResource IsLockedIcon}"
+                     Width="26" 
+                     CellContentTemplate="{StaticResource LockedCheckBoxTemplate}"
+                     CellEditor="{StaticResource LockedCheckBoxEditor}" 
+                     CellEditorDisplayConditions="Always"/>
+        <xcdg:Column FieldName="Type" 
+                     Title="{StaticResource StopTypeColumnHeader}"
+                     TitleTemplate="{StaticResource StopTypeHeaderGlyph}"
+                     ReadOnly="True"
+                     Width="26"
+                     CellContentTemplate="{StaticResource StopTypeCellTemplate}"/>
+        <xcdg:Column FieldName="SequenceNumber" ReadOnly="True" Width="60" CellContentTemplate="{StaticResource SequenceNumberTemplate}" Title="{StaticResource SequenceColumnHeader}"/>
+        <xcdg:Column FieldName="Name" ReadOnly="True" 
+                     Title="{StaticResource NameColumnHeader}"/>
+        <xcdg:Column FieldName="ArriveTime" Width="60" ReadOnly="True" Title="{StaticResource ArriveTimeColumnHeader}" CellContentTemplate="{StaticResource arriveTimeCellContentTemplate}"/>
+        <xcdg:Column FieldName="AddressFields" ReadOnly="True"/>
+        <xcdg:Column FieldName="TimeAtStop" 
+                     ReadOnly="True"
+                     Width="60"
+                     Title="{StaticResource ServiceTimeColumnHeader}"
+                     CellContentTemplate="{StaticResource UnitCellContentTemplate}"/>
+        <xcdg:Column FieldName="Capacities" ReadOnly="True" Width="60"/>
+        <xcdg:Column FieldName="TimeWindow" ReadOnly="True" Title="{StaticResource TimeWindowColumnHeader}" CellContentTemplate="{StaticResource TimeWindowCell}"/>
+        <xcdg:Column FieldName="TimeWindow2" ReadOnly="True" Title="{StaticResource TimeWindow2ColumnHeader}" CellContentTemplate="{StaticResource TimeWindowCell}"/>
+        <xcdg:Column FieldName="Priority" Width="60" ReadOnly="True" Title="{StaticResource PriorityColumnHeader}"/>
+        <xcdg:Column FieldName="VehicleSpecialties" ReadOnly="True" Title="{StaticResource VehicleSpecialtiesColumnHeader}" CellContentTemplate="{StaticResource VehicleSpecialtiesCell}"/>
+        <xcdg:Column FieldName="DriverSpecialties" ReadOnly="True" Title="{StaticResource DriverSpecialtiesColumnHeader}" CellContentTemplate="{StaticResource DriverSpecialtiesCell}"/>
+        <xcdg:Column FieldName="CustomOrderProperties" ReadOnly="True"/>
+    </coll:ArrayList>
+
+    <!-- Page print configuration -->
+    <DataTemplate x:Key="printHeader">
+        <Label    
+                    Content="{StaticResource StopsPagePrintHeader}"
+                    HorizontalAlignment="Center"
+                    FontFamily="{StaticResource DefaultApplicationFont}"
+                    FontWeight="Bold"
+                    FontSize="{StaticResource LargeFontSize}"/>
+    </DataTemplate>
+
+</ResourceDictionary>

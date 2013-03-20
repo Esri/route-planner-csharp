@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <map>
+	<!-- Reference map services here, ArcGIS Online maps are referenced by default -->
+    <service type="ArcGISCached" server="server.arcgisonline.com" basemap="true" visible="true">
+      <name>Streets</name>
+      <title>StreetMap World 2D</title>
+      <soapurl>https://server.arcgisonline.com/arcgis/services/World_Street_Map/MapServer</soapurl>
+      <opacity>1</opacity>
+    </service>
+    <service type="ArcGISCached" server="server.arcgisonline.com" basemap="true" visible="false">
+      <name>Satellite</name>
+      <title>Imagery World 2D</title>
+      <soapurl>https://server.arcgisonline.com/arcgis/services/World_Imagery/MapServer</soapurl>
+      <opacity>1</opacity>
+    </service>
+    <service type="ArcGISDynamic" server="TA Dev" basemap="false" visible="true">
+      <!-- Reference traffic service here. -->
+	  <name>Traffic</name>
+      <title>Traffic</title>
+      <soapurl>http://tadev.arcgisonline.com/arcgis/services/Traffic/MapServer</soapurl>
+      <opacity>1</opacity>
+    </service>
+    <!--service type="ArcGISDynamic" server="Sampletraffic.arcgis.com" basemap="false" visible="true">
+      
+	  <name>Traffic Incidents</name>
+      <title>Traffic Incidents</title>
+      <soapurl>http://traffic.arcgis.com/arcgis/services/Premium/NorthAmericaTrafficIncidents/MapServer</soapurl>
+      <opacity>1</opacity>
+    </service-->
+    <startup-extent xmin="-140.15" ymax="56.63" xmax="-58.5" ymin="22.78" />
+    <import-check-extent xmin="-180.0" xmax="180" ymin="-90" ymax="90" />
+  </map>
+  <geocoding>
+    <service type="WorldGeocoder" server="tasks.arcgis.com" current="true">
+      <title>New World Locator service.</title>
+      <resturl>http://tasks.arcgis.com/ArcGIS/rest/services/WorldLocator</resturl>
+      <usesinglelineinput>true</usesinglelineinput>
+      <minimumcandidatescore>40</minimumcandidatescore>
+      <minimummatchscore>80</minimummatchscore>
+    </service>
+  </geocoding>
+  <solve>
+    <vrp>
+	<!-- Reference asynchronous VRP service here, this is used for building routes with multiple vehicles and orders -->
+      <service server="TA Dev">
+        <title>VRP Service</title>
+        <resturl>https://tadev.arcgisonline.com/arcgis/rest/services/VehicleRoutingProblem/GPServer</resturl>
+        <soapurl>https://tadev.arcgisonline.com/arcgis/services/VehicleRoutingProblem/GPServer</soapurl>
+        <toolname>Solve Vehicle Routing Problem</toolname>
+      </service>
+    </vrp>
+    <syncvrp>
+	<!-- Reference synchronous VRP service here, this is used for moving just a few orders.  It is faster but not suitable for larger solves -->
+      <service server="TA Dev">
+        <title>Synchronous VRP Service</title>
+        <resturl>https://tadev.arcgisonline.com/arcgis/rest/services/VehicleRoutingProblemSync/GPServer</resturl>
+        <soapurl>https://tadev.arcgisonline.com/arcgis/services/VehicleRoutingProblemSync/GPServer</soapurl>
+        <toolname>Solve Vehicle Routing Problem</toolname>
+      </service>
+    </syncvrp>
+    <routing>
+	<!-- Reference Route service here, this is used for calculating routes in Route Planner, Navigator, and Dashboard sample apps -->
+      <service server="TA Dev">
+        <title>Route Service</title>
+        <resturl>https://tadev.arcgisonline.com/arcgis/rest/services/Route/NAServer</resturl>
+		<soapurl>https://tadev.arcgisonline.com/arcgis/services/Route/MapServer/NAServer</soapurl>
+        <layername>Route_NorthAmerica</layername>
+      </service>
+    </routing>
+    <solversettings>
+      <maxordercountforsyncvrp>150</maxordercountforsyncvrp>
+      <maxroutecountforsyncvrp>3</maxroutecountforsyncvrp>
+      <uturnatintersections>true</uturnatintersections>
+      <uturnatdeadends>true</uturnatdeadends>
+      <uturnatstops>true</uturnatstops>
+      <stoponorderside>true</stoponorderside>
+      <driveonrightsideoftheroad></driveonrightsideoftheroad>
+      <usesyncronousvrp>true</usesyncronousvrp>
+      <usedynamicpoints>true</usedynamicpoints>
+      <twpreference>Medium</twpreference>
+      <savenalayer>false</savenalayer>
+      <excluderestrictedstreets>true</excluderestrictedstreets>
+      <arrivedepartdelay>0</arrivedepartdelay>
+      <restrictions>  <!-- See Route Planner install/configuration topics to enable/disable routing restrictions -->
+        <restriction name="Oneway" turnedon="true" editable="false" description="One way road enforcement, leave on!"/>
+        <restriction name="Driving an Automobile" turnedon="true" editable="true" description="Check on and set to Prohibited to avoid roads prohibited for automobiles."/>
+        <restriction name="Driving a Bus" turnedon="false" editable="false" description="Avoid roads prohibited to busses"/>
+        <restriction name="Driving a Taxi" turnedon="false" editable="false" description="Avoid roads prohibited to taxis"/>
+        <restriction name="Walking" turnedon="false" editable="false" description="Avoid roads prohibited to pedestrians"/>
+		<restriction name="Riding a Motorcycle" turnedon="false" editable="false" description="Avoid roads prohibited to motorcycles"/>
+        <restriction name="Driving a Truck" turnedon="false" editable="true" description="Check on and set to Prohibited to avoid roads prohibited for trucks."/>
+        <restriction name="Driving a Delivery Vehicle" turnedon="false" editable="true" description="Check on and set to Prohibited to avoid roads prohibited for delivery vehicles."/>
+        <restriction name="Driving an Emergency Vehicle" turnedon="false" editable="true" description="Check on and set to Prohibited to avoid roads prohibited for emergency vehicles."/>
+        <restriction name="Through Traffic Prohibited" turnedon="false" editable="true" description="Soft Restriction: Choose Avoid (Low, Medium, or High) for how strongly you wish to avoid roads which prohibit through traffic."/>
+        <restriction name="Avoid Unpaved Roads" turnedon="false" editable="false" description="Avoid unpaved roads."/>
+        <restriction name="Avoid Toll Roads" turnedon="false" editable="true" description="Soft Restriction: Choose Avoid (Low, Medium, or High) for how strongly you wish to avoid toll roads."/>
+        <restriction name="Avoid Limited Access Roads" turnedon="false" editable="true" description="Soft Restriction: Choose either Prefer or Avoid (Low, Medium, High) for how strongly you wish to prefer or avoid Interstate highways."/>
+        <restriction name="Avoid Ferries" turnedon="false" editable="true" description="Soft Restriction: Choose Avoid (Low, Medium, or High) for how strongly you wish to avoid ferries."/>
+        <restriction name="Avoid Private Roads" turnedon="false" editable="false" description="Avoid private roads."/>
+        <restriction name="Avoid Gates" turnedon="false" editable="false" description="Avoid gated communities."/>
+        <restriction name="National STAA Preferred Route" turnedon="false" editable="false" description="Prefer STAA routes."/>
+        <restriction name="National STAA and State Truck Designated Preferred Routes" turnedon="false" editable="false" description="Prefer STAA and state truck routes."/>
+        <restriction name="National STAA and State Truck Designated and Locally Preferred Routes" turnedon="false" editable="true" description="Soft Restriction: Choose Prefer (Low, Medium, or High) for how strongly you wish to prefer STAA, state, and local truck routes."/>
+        <restriction name="Use Preferred Truck Routes" turnedon="false" editable="true" description="Prefer designated truck routes."/>
+		<restriction name="Use Preferred Hazmat Routes" turnedon="false" editable="true" description="Prefer designated HazMat routes."/>
+		<restriction name="Avoid Express Lanes" turnedon="false" editable="true" description="Avoid express lanes."/>
+		<restriction name="Avoid Carpool Roads" turnedon="false" editable="true" description="Avoid carpool roads."/>
+		<restriction name="HazMat: NRHM Preferred Route" turnedon="false" editable="false" description="Prefer NHRM routes."/>
+        <restriction name="HazMat: Explosives Preferred Route" turnedon="false" editable="false" description="Check on to prefer routes for transporting explosives"/>
+        <restriction name="HazMat: Poisonous Inhalation Hazard Preferred Route" turnedon="false" editable="false" description="Check on to prefer roads for poisonous materials."/>
+        <restriction name="HazMat: Medical Waste Materials Preferred Route" turnedon="false" editable="false" description="Check on to prefer roads for medical waste."/>
+        <restriction name="HazMat: Radioactive Materials Preferred Route" turnedon="false" editable="false" description="Check on to prefer roads for radioactive material transport"/>
+        <restriction name="HazMat: General Hazardous Materials Preferred Route" turnedon="false" editable="false" description="Check on to prefer roads for HazMat transport."/>
+        <restriction name="Tall Vehicles Preferred Route" turnedon="false" editable="false" description="Check on to prefer routes for tall vehicles."/>
+        <restriction name="HazMat: Explosives Restricted" turnedon="false" editable="false" description="Check on to avoid routes where explosives are restricted"/>
+        <restriction name="HazMat: Gas Restricted" turnedon="false" editable="false" description="Check on to avoid roads where transporting gas is restricted."/>
+        <restriction name="HazMat: Flammable Goods Restricted" turnedon="false" editable="false" description="Check on to avoid roads where transporting flammable materials is prohibited."/>
+        <restriction name="HazMat: Flammable solid/Combustible Restricted" turnedon="false" editable="false" description="Check on to avoid roads where transporting solid/combustible flammables is prohibited."/>
+        <restriction name="HazMat: Organic Goods Restricted" turnedon="false" editable="false" description="Check on to avoid roads where transporting hazard organic materials is prohibited."/>
+        <restriction name="HazMat: Poison Goods Restricted" turnedon="false" editable="false" description="Check on to avoid roads for poisonous materials."/>
+        <restriction name="HazMat: Radioactive Goods Restricted" turnedon="false" editable="false" description="Check on to avoid routes where radioactive materials are restricted."/>
+        <restriction name="HazMat: Corrosive Goods Restricted" turnedon="false" editable="false" description="Check on to avoid roads where transporting corrosive materials is prohibited."/>
+        <restriction name="HazMat: Other Hazardous Materials Restricted" turnedon="false" editable="false" description="Check on to avoid routes where other hazardous goods are restricted."/>
+        <restriction name="HazMat: Any Hazardous Materials Restricted" turnedon="false" editable="false" description="Check on to avoid routes where any hazardous goods are restricted."/>
+        <restriction name="HazMat: Poisonous Inhalation Hazard Restricted" turnedon="false" editable="false" description="Check on to avoid roads where poisonous materials are prohibited."/>
+        <restriction name="HazMat: Goods Harmful to Water Restricted" turnedon="false" editable="false" description="Check on to avoid roads where goods harmful to water are restricted."/>
+        <restriction name="HazMat: Explosive and Flammable Restricted" turnedon="false" editable="false" description="Check on to avoid roads where explosive and flammable materials are restricted."/>
+        <restriction name="Height Restriction" turnedon="false" editable="true" description="Check on, set to Prohibited, and enter the height of your vehicle(s). Specify in feet."/>
+        <restriction name="Weight Restriction" turnedon="false" editable="true" description="Check on, set to Prohibited, and enter the weight of your vehicle(s). Specify in tons."/>
+        <restriction name="Weight per Axle Restriction" turnedon="false" editable="false" description="Avoid roads where the vehicle weight per axle exceeds the parameter specified in feet."/>
+        <restriction name="Length Restriction" turnedon="false" editable="true" description="Check on, set to Prohibited, and enter the length of your vehicle(s). Specify in feet."/>
+        <restriction name="Width Restriction" turnedon="false" editable="true" description="Check on, set to Prohibited, and enter the width of your vehicle(s). Specify in feet."/>
+		<restriction name="Semi or Tractor with One or More Trailers Prohibited" turnedon="false" editable="true" description="Check on to avoid roads where semi or tractors with trailers are prohibited."/>
+        <restriction name="Truck with Trailers Restriction" turnedon="false" editable="true" description="Check on to avoid roads where trucks with trailers are prohibited."/>
+		<restriction name="Axle Count Restriction" turnedon="false" editable="false" description="Check on, set to Prohibited, and enter the number of axles."/>
+		<restriction name="Any Hazmat Prohibited" turnedon="false" editable="true" description="Check on to avoid roads where Hazmat transport is prohibited."/>
+		<restriction name="Single Axle Vehicles Prohibited" turnedon="false" editable="false" description=""/>
+		<restriction name="Tandem Axle Vehicles Prohibited" turnedon="false" editable="false" description=""/>
+		<restriction name="Roads Under Construction Prohibited" turnedon="false" editable="false" description=""/>
+		<restriction name="Trailers: Truck with One or More Trailers Restricted" turnedon="false" editable="false" description="Avoid routes where specified number of trailers is restricted."/>
+        <restriction name="Trailers: Truck with Two or More Trailers Restricted" turnedon="false" editable="false" description="Avoid routes where specified number of trailers is restricted."/>
+        <restriction name="Trailers: Truck with Three or More Trailers Restricted" turnedon="false" editable="false" description="Avoid routes where specified number of trailers is restricted."/>
+        <restriction name="Trailers: Semi or Tractor with One or More Trailers Restricted" turnedon="false" editable="false" description="Avoid routes where specified number of trailers is restricted."/>
+        <restriction name="Axles: Two or More Axles Restricted" turnedon="false" editable="false" description="Avoid routes where specified number of axles is restricted."/>
+        <restriction name="Axles: Three or More Axles Restricted" turnedon="false" editable="false" description="Avoid routes where specified number of axles is restricted."/>
+        <restriction name="Axles: Four or More Axles Restricted" turnedon="false" editable="false" description="Avoid routes where specified number of axles is restricted."/>
+        <restriction name="Axles: Five or More Axles Restricted" turnedon="false" editable="false" description="Avoid routes where specified number of axles is restricted."/>
+        <restriction name="Axles: Six or More Axles Restricted" turnedon="false" editable="false" description="Avoid routes where specified number of axles is restricted."/>
+        <restriction name="Kingpin to Rear Axle Length Restriction" turnedon="false" editable="false" description="Avoid roads where the length exceeds the parameter specified in feet."/>
+      </restrictions>
+      <attributeparams>
+        <param attrname="Time" paramname="Speed class 1" value="75" />
+        <param attrname="Time" paramname="Speed class 2" value="65" />
+        <param attrname="Time" paramname="Speed class 3" value="55" />
+        <param attrname="Time" paramname="Speed class 4" value="45" />
+        <param attrname="Time" paramname="Speed class 5" value="40" />
+        <param attrname="Time" paramname="Speed class 6" value="35" />
+        <param attrname="Time" paramname="Speed class 7" value="30" />
+        <param attrname="Time" paramname="Speed class 8" value="25" />
+        <param attrname="Time" paramname="Speed class 9" value="20" />
+        <param attrname="Time" paramname="Speed class 10" value="15" />
+        <param attrname="Time" paramname="Speed class 11" value="10" />
+        <param attrname="Time" paramname="Speed class 12" value="5" />
+        <param attrname="Time" paramname="Speed class 13" value="3" />		
+        <param attrname="Time" paramname="OtherRoads" value="5" />
+        <param attrname="Tall Vehicles Preferred Route" paramname="Vehicle Height (feet)" value="0" />
+        <param attrname="Height Restriction" paramname="Vehicle Height (feet)" value="0" />
+        <param attrname="Weight Restriction" paramname="Vehicle Weight (tons)" value="0" />
+        <param attrname="Weight Per Axle Restriction" paramname="Vehicle Weight per Axle (tons)" value="0" />
+        <param attrname="Length Restriction" paramname="Vehicle Length (feet)" value="0" />
+        <param attrname="Width Restriction" paramname="Vehicle Width (feet)" value="0" />
+        <param attrname="Kingpin to Rear Axle Length Restriction" paramname="Vehicle Kingpin to Rear Axle Length (feet)" value="0" />
+      </attributeparams>
+  </solversettings>
+  </solve>
+  <tracking>
+    <trackingservice server="TA Dev">
+	<!-- Reference Workforce management feature service here. -->
+      <resturl>https://tadev.arcgisonline.com/arcgis/rest/services/WorkforceManagement</resturl>
+    </trackingservice>
+	<trackingsettings>
+      <BreakTolerance>30</BreakTolerance>
+    </trackingsettings>
+  </tracking>
+  <servers>
+    <!-- Reference Mapping server, ArcGIS Online is referenced by default -->
+    <server name="server.arcgisonline.com" title="ArcGIS Online mapping" description="The server is used for drawing map layers." help="" authentication="no">
+      <url>https://server.arcgisonline.com/arcgis/services</url>
+    </server>
+    <!-- Reference server where VRP, Route, & traffic services are hosted here -->
+	<server name="TA Dev" title="TA routing" description="The server is used for routing operations." help="" authentication="yes">
+      <url>https://tadev.arcgisonline.com/arcgis/services</url>
+    </server>
+    <!-- Reference server where geocode services are hosted here -->
+	<server name="tasks.arcgisonline.com" title="ArcGIS Online geocoding" description="The server is used for finding addresses." help="" authentication="no">
+      <url>https://tasks.arcgisonline.com/ArcGIS/services</url>
+    </server>
+  </servers>
+</services>

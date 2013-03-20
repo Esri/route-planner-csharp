@@ -1,0 +1,71 @@
+﻿<pages:PageBase x:Class="ESRI.ArcLogistics.App.Pages.MobileDevicesPage"
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="clr-namespace:ESRI.ArcLogistics.App"
+    xmlns:local="clr-namespace:ESRI.ArcLogistics.App.Pages"
+    xmlns:pages="clr-namespace:ESRI.ArcLogistics.App.Pages"
+    xmlns:arcLogistics="clr-namespace:ESRI.ArcLogistics;assembly=ESRI.ArcLogisticsNG"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+    xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <xcdg:DataGridCollectionViewSource x:Key="mdCollection"
+                                               AutoCreateItemProperties="False"
+                                               CreatingNewItem="DataGridCollectionViewSource_CreatingNewItem"
+                                               NewItemCreated="DataGridCollectionViewSource_NewItemCreated"
+                                               CommittingNewItem="DataGridCollectionViewSource_CommittingNewItem"
+                                               BeginningEdit="DataGridCollectionViewSource_BeginningEdit"
+                                               EditBegun="DataGridCollectionViewSource_EditBegun"
+                                               CommittingEdit="DataGridCollectionViewSource_CommittingEdit"
+                                               EditCommitted="DataGridCollectionViewSource_EditCommitted"
+                                               CancelingNewItem="DataGridCollectionViewSource_CancelingNewItem"
+                                               CancelingEdit="DataGridCollectionViewSource_CancelingEdit"
+                                               EditCanceled="DataGridCollectionViewSource_EditCanceled"
+                                               NewItemCommitted="DataGridCollectionViewSource_NewItemCommitted"
+                                               NewItemCanceled="DataGridCollectionViewSource_NewItemCanceled"
+                                               />
+
+
+            <VisualBrush x:Key="textBrush" Stretch="Uniform" TileMode="None" Viewport="10,0,200,25" ViewportUnits="Absolute">
+                <VisualBrush.Visual>
+                    <TextBlock Width="Auto" Height="Auto" FontSize="12" Foreground="DarkGray" Text="{StaticResource MobileDevicesPageInsertionHelpText}"/>
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <app_controls:CommandButtonGroup x:Name="commandButtonGroup" 
+                                             Grid.Row="1"
+                                             Margin="{StaticResource FunctionalGridButtonsStackMargin}"/>
+
+        <Border HorizontalAlignment="Stretch" 
+               Margin="{StaticResource PageContentMargin}" 
+               Width="Auto" 
+               BorderThickness="{StaticResource GridBorderThickness}" 
+               Grid.Row="2" 
+               BorderBrush="{StaticResource ApplicationBorder}"
+               SnapsToDevicePixels="True">
+            <app_controls:DataGridControlEx
+                                  ItemsSource="{Binding Source={StaticResource mdCollection}}"
+                                  IsEnabled="True" 
+                                  x:Name="XceedGrid" >
+                <xcdg:DataGridControl.View>
+                    <xcdg:TableView>
+                        <xcdg:TableView.FixedHeaders>
+                            <DataTemplate>
+                                <xcdg:InsertionRow Style="{StaticResource insertionStyle}" Initialized="InsertionRow_Initialized"/>
+                            </DataTemplate>
+                        </xcdg:TableView.FixedHeaders>
+                    </xcdg:TableView>
+                </xcdg:DataGridControl.View>
+            </app_controls:DataGridControlEx>
+        </Border>
+    </Grid>
+</pages:PageBase>

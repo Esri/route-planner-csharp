@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Reports>
+  <Templates>
+    <Report Name="Dispatcher Summary" Context="Schedule" RPXFilePath="Reports\DispatcherSummary.rpx" />
+    <Report Name="Manager Summary" Context="Schedule" RPXFilePath="Reports\ManagerSummary.rpx" />
+    <Report Name="Carbon Footprint" Context="Schedule" RPXFilePath="Reports\CarbonFootprint.rpx" />
+    <Report Name="Load Report" Context="Route" RPXFilePath="Reports\LoadReport.rpx" />
+    <Report Name="Predicted Violations Report" Context="Route" RPXFilePath="Reports\PredictedViolations.rpx" />
+    <Report Name="Driver Report" Context="Route" RPXFilePath="Reports\DriverReport.rpx">
+      <SubReports>
+        <SubReport Name="Overview Map" RPXFilePath="Reports\RouteManifestOverviewMap.rpx" />
+        <SubReport Name="Destination Maps" RPXFilePath="Reports\RouteManifestWithDestinationMaps.rpx" GroupID="RouteManifest" />
+        <SubReport Name="Route Manifest" RPXFilePath="Reports\RouteManifest.rpx" Default="true" GroupID="RouteManifest" Visible="false" />
+        <SubReport Name="Driving Directions" RPXFilePath="Reports\DrivingDirections.rpx" />
+      </SubReports>
+    </Report>
+  </Templates>
+</Reports>

@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+    <!-- Home tab pages brushes -->
+    <ImageBrush x:Key="ProjectsBrush" Stretch="None"  ImageSource="PNG_Icons\Project24.png"/>
+    <ImageBrush x:Key="GettingStartedBrush" Stretch="None" ImageSource="PNG_Icons\GettingStarted24.png"/>
+    <ImageBrush x:Key="LicenseBrush" Stretch="None" ImageSource="PNG_Icons\License24.png"/>
+    
+    <!-- Setup tab pages brushes -->
+    <ImageBrush x:Key="FuelBrush" Stretch="None" ImageSource="PNG_Icons\FuelType24.png"/>
+    <ImageBrush x:Key="BarriersBrush" Stretch="None" ImageSource="PNG_Icons\Barriers24.png"/>
+    <ImageBrush x:Key="DefaultRoutesBrush" Stretch="None" ImageSource="PNG_Icons\DefaultRoutes24.png"/>
+    <ImageBrush x:Key="DriversBrush" Stretch="None" ImageSource="PNG_Icons\Drivers24.png"/>
+    <ImageBrush x:Key="BreaksBrush" Stretch="None" ImageSource="PNG_Icons\Breaks24.png"/>
+    <ImageBrush x:Key="LocationsBrush" Stretch="None" ImageSource="PNG_Icons\Locations24.png"/>
+    <ImageBrush x:Key="MobileDevicesBrush" Stretch="None" ImageSource="PNG_Icons\MobileDevices24.png"/>
+    <ImageBrush x:Key="SpecialtiesBrush" Stretch="None" ImageSource="PNG_Icons\Specialities24.png"/>
+    <ImageBrush x:Key="VehiclesBrush" Stretch="None" ImageSource="PNG_Icons\Vehicles24.png"/>
+    <ImageBrush x:Key="ZonesBrush" Stretch="None" ImageSource="PNG_Icons\Zones24.png"/>
+    <ImageBrush x:Key="ExportProfilesBrush" Stretch="None" ImageSource="PNG_Icons\ExportProfiles24.png"/>
+    <ImageBrush x:Key="ImportProfilesBrush" Stretch="None" ImageSource="PNG_Icons\ImportProfile24.png"/>
+    <ImageBrush x:Key="DefaultBrush" Stretch="None" ImageSource="PNG_Icons\ArcLogisticsPlugIn24.png"/>
+
+    <!-- Schedule tab pages brushes -->
+    <ImageBrush x:Key="OptimizeAndEditBrush" Stretch="None" ImageSource="PNG_Icons\Schedule24.png"/>
+    
+    <!-- Deployment tab pages brushes -->
+    <ImageBrush x:Key="ReportsBrush" Stretch="None" ImageSource="PNG_Icons\Reports24.png"/>
+    
+    <!-- Preferences and help pages brushes -->
+    <ImageBrush x:Key="HelpBrush" Stretch="None" ImageSource="PNG_Icons\Help24.png"/>
+    <ImageBrush x:Key="PreferencesBrush" Stretch="None" ImageSource="PNG_Icons\Preferences24.png"/>
+    <ImageBrush x:Key="MapDisplayPreferencesBrush" Stretch="None" ImageSource="PNG_Icons\MapDisplaySettings24.png"/>
+    <ImageBrush x:Key="ReportsPreferencesBrush" Stretch="None" ImageSource="PNG_Icons\ReportsSettings24.png"/>
+    <ImageBrush x:Key="RoutingPreferencesBrush" Stretch="None" ImageSource="PNG_Icons\RoutingSettings24.png"/>
+
+    <!-- Other brushes -->
+    <ImageBrush x:Key="IncompletePageBrush" Stretch="None" ImageSource="PNG_Icons\IncompleteA16.png"/>
+    <ImageBrush x:Key="IsLockedGridColumnBrush" Stretch="Uniform" ImageSource="PNG_Icons\LockedStatus16.png"/>
+    <ImageBrush x:Key="IsVisibleGridColumnBrush" Stretch="Uniform" ImageSource="PNG_Icons\VisibleStatus16.png"/>
+    <ImageBrush x:Key="IsViolatedOrderBrush" Stretch="None" AlignmentX="Center" AlignmentY="Center" ImageSource="PNG_Icons\ViolatedLocationStopStatus16.png"/>
+    
+    <!-- Time view brushes -->
+    <ImageBrush x:Key="VehicleIconBrush" Stretch="Uniform" ImageSource="PNG_Icons\lorry.png"/>
+    
+</ResourceDictionary>

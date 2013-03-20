@@ -1,0 +1,1571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <UICulture>en-US</UICulture>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AF47D408-04B3-41C3-83DC-3E8F2B456F4B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ESRI.ArcLogistics.App</RootNamespace>
+    <AssemblyName>ESRI.ArcLogistics.App</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ApplicationIcon>Resources\ALR.ico</ApplicationIcon>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkSubset>Full</TargetFrameworkSubset>
+    <ManifestCertificateThumbprint>948997DF532995290F3756A47F8E9BCA8AD0FDC1</ManifestCertificateThumbprint>
+    <ManifestKeyFile>ArcLogisticsApp_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <PublishUrl>\\alexei2\AL94\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://alexei2/AL94/</InstallUrl>
+    <SupportUrl>http://www.esri.com</SupportUrl>
+    <ProductName>ArcLogistics</ProductName>
+    <PublisherName>ESRI</PublisherName>
+    <SuiteName>ArcLogistics</SuiteName>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>9.4.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiveReports.Design3, Version=5.2.1236.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="ActiveReports.HtmlExport, Version=5.2.1236.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="ActiveReports.PdfExport, Version=5.2.1236.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="ActiveReports.RtfExport, Version=5.2.1236.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="ActiveReports.TextExport, Version=5.2.1236.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="ActiveReports.TiffExport, Version=5.2.1236.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="ActiveReports.Viewer3">
+      <Name>ActiveReports.Viewer3</Name>
+      <HintPath>..\..\..\..\Program Files\Common Files\Data Dynamics\ActiveReports for .NET 3.0\ActiveReports.Viewer3.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\activereports for .net 3.0</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ActiveReports.XlsExport, Version=5.2.1236.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="ActiveReports3">
+      <Name>ActiveReports3</Name>
+      <HintPath>..\..\..\..\Program Files\Common Files\Data Dynamics\ActiveReports for .NET 3.0\ActiveReports3.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\activereports for .net 3.0</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\adodb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DataDynamics.ActiveReports.ToolBoxClassLib, Version=1.0.2578.21502, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\DataDynamics.ActiveReports.ToolBoxClassLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client, Version=1.0.0.248, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\ESRI.ArcGIS.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Toolkit, Version=1.0.0.248, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\ESRI.ArcGIS.Client.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ShapefileReader, Version=1.1.0.36, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\ESRI.ShapefileReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.SqlServer, Version=1.1.0.36, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\ESRI.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Luna" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.31016.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\WPFToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Controls, Version=3.1.9257.9450, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\Xceed.Wpf.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.1.9257.9450, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependences\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Resource Include="Resources\PNG_Icons\ProcessAnimation\ProgressA24.png" />
+    <Resource Include="Resources\PNG_Icons\ProcessAnimation\ProgressB24.png" />
+    <Resource Include="Resources\PNG_Icons\ProcessAnimation\ProgressC24.png" />
+    <Resource Include="Resources\PNG_Icons\ProcessAnimation\ProgressD24.png" />
+    <Resource Include="Resources\PNG_Icons\ProcessAnimation\ProgressE24.png" />
+    <Resource Include="Resources\PNG_Icons\ProcessAnimation\ProgressF24.png" />
+    <Resource Include="Resources\PNG_Icons\ProcessAnimation\ProgressG24.png" />
+    <Resource Include="Resources\PNG_Icons\ProcessAnimation\ProgressH24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Controls\CandidateSelectControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Symbols\CandidateSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbols\LocationSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Page Include="Controls\ColorPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CommandButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CommandButtonGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <EmbeddedResource Include="GridHelpers\VehiclesGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\LocationsGridStructure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild</Generator>
+    </EmbeddedResource>
+    <Page Include="Controls\DockingLibrary\DockablePane.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DockingLibrary\DockingGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DockingLibrary\DockManager.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DockingLibrary\DocumentPane.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DockingLibrary\FloatingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DockingLibrary\OverlayWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\MapControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <EmbeddedResource Include="GridHelpers\StopGridStructure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\RouteResultsGridStructure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild</Generator>
+    </EmbeddedResource>
+    <Page Include="Controls\MessageWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\OptionsCommandButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StatusBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <EmbeddedResource Include="GridHelpers\FuelGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\DriversGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\MobileDevicesGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\ProjectsGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\SpecialtiesGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\BarriersGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\ZonesGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\ImportProfileShowGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Page Include="Dialogs\FindOrdersDlg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <EmbeddedResource Include="GridHelpers\FindOrdersGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\DefaultRoutesGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\NamedPropertyGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\ScheduleVersionsGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\SelectPropertiesGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\UnassignedOrdersGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\ReportGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\CategorySymbologyGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\MessageWindowGridStructure.xaml">
+      <Generator>MSBuild</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Page Include="Dialogs\RoutingConstraintWarningDlg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BaseSubPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Deployment\ExportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Deployment\ReportsSubPages\ReportsCreatePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Deployment\ReportsSubPages\ReportsPreviewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Home\LicensePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Home\ProjectsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Home\GettingStartedPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PreferencesSubPages\PlugInsSettingsPreferencesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PreferencesSubPages\ReportsPreferencesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PreferencesSubPages\RoutingPreferencesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Schedule\OptimizeAndEditPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Setup\ExportProfilesSubPages\ExportProfilesEditPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Setup\ExportProfilesSubPages\ExportProfilesShowPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Setup\ImportProfilesSubPages\ImportProfilesEditPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Setup\ImportProfilesSubPages\ImportProfilesShowPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PreferencesSubPages\MapDisplayPreferencesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PreferencesSubPages\GeneralPreferencesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Schedule\ScheduleViews\ScheduleVersionsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Schedule\ScheduleViews\ListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Schedule\ScheduleViews\MapView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Schedule\ScheduleViews\TimeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Setup\BarriersPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Setup\FuelPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Setup\DefaultRoutesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Setup\DriversPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Setup\LocationsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Setup\MobileDevicesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Setup\SpecialtiesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Setup\SpecialtiesPanels\SpecialtiesPanelBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Setup\VehiclesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Setup\ZonesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DrawingBrushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ImageBrushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\XceedCellTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Strings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\LayoutSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Services\LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\BlackSkin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\BlueSkin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <EmbeddedResource Include="Symbols\CustomOrderSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbols\RouteLineSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Page Include="Skins\BlackSkinColors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <EmbeddedResource Include="Symbols\LabelSequenceSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbols\ZoneSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbols\BarrierSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbols\PencilSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbols\ZonePolygonSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbols\EditingMarkerSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbols\ClusterSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="Symbols\DiamondSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Symbols\SquareSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Symbols\StarSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Symbols\TriangleSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Page Include="Themes\ApplicationGlyphs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ArcLogisticsCustom\Resources\ArcLogisticsCustom.Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ArcLogisticsCustom\Resources\Common.Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ArcLogisticsCustom\Resources\TableView.ArcLogisticsCustom.Graphics.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ArcLogisticsCustom\Resources\TableView.GridElementTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ArcLogisticsCustom\TableView.ArcLogisticsCustom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\BreakEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\CellTimeWindowEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ComboBoxRemovingAlreadyUsedItems.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ComboboxBasedEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ComboBoxWithNullRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DiscreteColorPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ExpanderControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\FolderEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GanttControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GradientColorPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GridColorPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\HistoryTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DaysEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\MapLayersWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\NavigationPane.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\RelationObjectCollectionEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\RouteNameSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ScrollableContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ThemeTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\UnitTextBoxEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\UnitTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Widgets\CalendarWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Widgets\ReportsWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Widgets\ViewsWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Widgets\QuickHelpWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Widgets\TasksWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\AddressByPointCmd.cs" />
+    <Compile Include="Commands\AssignToRoutesCmd.cs" />
+    <Compile Include="Commands\CancelRoutingOperationCmd.cs" />
+    <Compile Include="Commands\CommandPlugInAttribute.cs" />
+    <Compile Include="Commands\DropOrdersOnDateCmd.cs" />
+    <Compile Include="Commands\PlugInsSettingsPreferencesCmd.cs" />
+    <Compile Include="Commands\UnassignAllCmd.cs" />
+    <Compile Include="Commands\DeleteDriverSpecialties.cs" />
+    <Compile Include="Commands\DuplicateDriverSpecialties.cs" />
+    <Compile Include="Commands\DuplicateVehicleSpecialties.cs" />
+    <Compile Include="Commands\DeleteDefaultRoutes.cs" />
+    <Compile Include="Commands\DuplicateDefaultRoutes.cs" />
+    <Compile Include="Commands\DeleteBarriers.cs" />
+    <Compile Include="Commands\DuplicateBarriers.cs" />
+    <Compile Include="Commands\DeleteZones.cs" />
+    <Compile Include="Commands\DuplicateZones.cs" />
+    <Compile Include="Commands\DeleteMobileDevices.cs" />
+    <Compile Include="Commands\DuplicateMobileDevices.cs" />
+    <Compile Include="Commands\DeleteDrivers.cs" />
+    <Compile Include="Commands\DuplicateDrivers.cs" />
+    <Compile Include="Commands\DeleteVehicles.cs" />
+    <Compile Include="Commands\DuplicateVehicles.cs" />
+    <Compile Include="Commands\DeleteFuelTypes.cs" />
+    <Compile Include="Commands\DuplicateLocations.cs" />
+    <Compile Include="Commands\DeleteLocations.cs" />
+    <Compile Include="Commands\DuplicateCommandBase.cs" />
+    <Compile Include="Commands\DeleteCommandBase.cs" />
+    <Compile Include="Commands\DeleteOrdersCmd.cs" />
+    <Compile Include="Commands\DeleteRoutesCmd.cs" />
+    <Compile Include="Commands\DeleteVehicleSpecialties.cs" />
+    <Compile Include="Commands\DropOrdersCmd.cs" />
+    <Compile Include="Commands\DuplicateOrdersCmd.cs" />
+    <Compile Include="Commands\DuplicateRoutesCmd.cs" />
+    <Compile Include="Commands\HelpLinkCmd.cs" />
+    <Compile Include="Commands\ImportCmds.cs" />
+    <Compile Include="Commands\NavigationCmd.cs" />
+    <Compile Include="Commands\OrdersCommandBase.cs" />
+    <Compile Include="Commands\ReportsCmdBase.cs" />
+    <Compile Include="Commands\ReportsPreferencesCmd.cs" />
+    <Compile Include="Commands\RoutesCommandBase.cs" />
+    <Compile Include="Commands\RoutingCmdHelpers\RoutingCmdHelpers.cs" />
+    <Compile Include="Commands\RoutingPreferencesCmd.cs" />
+    <Compile Include="Commands\UnassignRoutesCmd.cs" />
+    <Compile Include="Commands\FindOrdersCmd.cs" />
+    <Compile Include="Commands\ISupportOptions.cs" />
+    <Compile Include="Commands\MapDisplayPreferencesCmd.cs" />
+    <Compile Include="Commands\RoutingCommandBase.cs" />
+    <Compile Include="Commands\SequenceRoutesCmd.cs" />
+    <Compile Include="Commands\RoutingCmdHelpers\ViolationMessageBuilder.cs" />
+    <Compile Include="Commands\RoutingCmdHelpers\ConstraintViolationsChecker.cs" />
+    <Compile Include="Commands\RoutingCmdHelpers\ViolationsHelper.cs" />
+    <Compile Include="CommonHelpers.cs" />
+    <Compile Include="Controls\ArcLogisticsCalendar.cs" />
+    <Compile Include="Controls\BindableTextBlock.cs" />
+    <Compile Include="Controls\BreakEditor.cs" />
+    <Compile Include="Controls\CellTimeWindowEditor.cs" />
+    <Compile Include="Controls\ColorPicker.xaml.cs">
+      <DependentUpon>ColorPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ComboBoxBasedEditor.cs" />
+    <Compile Include="Controls\ComboBoxRemovingAlreadyUsedItems.cs" />
+    <Compile Include="Controls\ComboBoxWithNullRow.cs" />
+    <Compile Include="Controls\DataObjectNameComparer.cs" />
+    <Compile Include="Controls\DiscreteColorPicker.cs" />
+    <Compile Include="Controls\DockingLibrary\DockableContent.cs" />
+    <Compile Include="Controls\DockingLibrary\DockablePane.xaml.cs">
+      <DependentUpon>DockablePane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DockingLibrary\DockablePaneGroup.cs" />
+    <Compile Include="Controls\DockingLibrary\DockingGrid.xaml.cs">
+      <DependentUpon>DockingGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DockingLibrary\DockManager.xaml.cs">
+      <DependentUpon>DockManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DockingLibrary\DocumentPane.xaml.cs">
+      <DependentUpon>DocumentPane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DockingLibrary\DragPaneServices.cs" />
+    <Compile Include="Controls\DockingLibrary\FloatingWindow.xaml.cs">
+      <DependentUpon>FloatingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DockingLibrary\FloatingWindowHostedPane.cs" />
+    <Compile Include="Controls\DockingLibrary\IDropSurface.cs" />
+    <Compile Include="Controls\DockingLibrary\ILayoutSerializable.cs" />
+    <Compile Include="Controls\DockingLibrary\OverlayDockablePane.cs" />
+    <Compile Include="Controls\DockingLibrary\OverlayWindow.xaml.cs">
+      <DependentUpon>OverlayWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DockingLibrary\Pane.cs" />
+    <Compile Include="Controls\ExpanderControl.cs" />
+    <Compile Include="Controls\FolderEditor.cs">
+    </Compile>
+    <Compile Include="Controls\GanttControl.cs" />
+    <Compile Include="Controls\GanttItem.cs" />
+    <Compile Include="Controls\GanttItemsContainer.cs" />
+    <Compile Include="Controls\GradientColorPicker.cs" />
+    <Compile Include="Controls\IGanttItem.cs" />
+    <Compile Include="Controls\IGanttItemData.cs" />
+    <Compile Include="Controls\MapLayersWidget.cs" />
+    <Compile Include="Controls\MessageWindow.xaml.cs">
+      <DependentUpon>MessageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NavigationPane.cs" />
+    <Compile Include="Controls\NavigationPanePage.cs" />
+    <Compile Include="Controls\RelationObjectCollectionEditorBase.cs" />
+    <Compile Include="Controls\RelationObjectCollectionEditors.cs" />
+    <Compile Include="Controls\RelationObjectStringCollectionEditor.cs" />
+    <Compile Include="Controls\ScrollableContentControl.cs" />
+    <Compile Include="Controls\StopGanttItemData.cs" />
+    <Compile Include="Controls\GridColorPicker.cs" />
+    <Compile Include="Controls\HistoryTextBox.cs" />
+    <Compile Include="Controls\MapControl.xaml.cs">
+      <DependentUpon>MapControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OptionsCommandButton.xaml.cs">
+      <DependentUpon>OptionsCommandButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DaysEditor.cs" />
+    <Compile Include="Controls\RouteNameSelector.cs" />
+    <Compile Include="Controls\StatusBar.xaml.cs">
+      <DependentUpon>StatusBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TimeLineCollectionBuilder.cs" />
+    <Compile Include="Controls\TimeTextBox.cs" />
+    <Compile Include="Controls\UnitTextBox.cs" />
+    <Compile Include="Controls\UnitTextBoxEditor.cs" />
+    <Compile Include="Converters\ClusterSizeConverter.cs" />
+    <Compile Include="Converters\ComboBoxRouteNameConverter.cs" />
+    <Compile Include="Converters\ArriveTimeConverter.cs" />
+    <Compile Include="Converters\RowTooltipConverter.cs" />
+    <Compile Include="Converters\MessageWindowTextConverter.cs" />
+    <Compile Include="Converters\ObjectWithSpecialtiesComboBoxNameConverter.cs" />
+    <Compile Include="Converters\RouteNameConverter.cs" />
+    <Compile Include="Converters\DataContextToBooleanConverter.cs" />
+    <Compile Include="Converters\RoutedCalendarDayConverter.cs" />
+    <Compile Include="Converters\ZoneGeometryConverter.cs" />
+    <Compile Include="Converters\LockedColorConverter.cs" />
+    <Compile Include="Converters\MapSymbolLockedColorConverter.cs" />
+    <Compile Include="Converters\MessageDescriptionConverter.cs" />
+    <Compile Include="Converters\OrderViolatedPropertyConverter.cs" />
+    <Compile Include="Converters\StopTypeConverter.cs" />
+    <Compile Include="Converters\QuantityConverter.cs" />
+    <Compile Include="Converters\GanttTooltipConverter.cs" />
+    <Compile Include="Converters\MessageWindowImageConverter.cs" />
+    <Compile Include="Converters\SymbolConverter.cs" />
+    <Compile Include="Converters\SymbolsConverter.cs" />
+    <Compile Include="Converters\ViolationObjectConverter.cs" />
+    <Compile Include="GridHelpers\MessageWindowTextDataWrapper.cs" />
+    <Compile Include="GridHelpers\StatusBuilder.cs" />
+    <Compile Include="IExtension.cs" />
+    <Compile Include="ISettingsPlugIn.cs" />
+    <Compile Include="LicenseManager.cs" />
+    <Compile Include="Mapping\AGSCachedLayer.cs" />
+    <Compile Include="Mapping\AGSDynamicLayer.cs" />
+    <Compile Include="Mapping\AGSLayer.cs" />
+    <Compile Include="Mapping\AGSLayerFactory.cs" />
+    <Compile Include="Mapping\GeometryConst.cs" />
+    <Compile Include="Mapping\GeometryHelper.cs" />
+    <Compile Include="Mapping\MapDisplayConfig.cs" />
+    <Compile Include="Mapping\TipGenerator.cs" />
+    <Compile Include="Converters\FloatingValueStringConverter.cs" />
+    <Compile Include="Converters\HistoryItemConverter.cs" />
+    <Compile Include="Converters\ZeroNumbersCleaner .cs" />
+    <Compile Include="DataFolder.cs" />
+    <Compile Include="DataObjectHelper.cs" />
+    <Compile Include="Dialogs\EndUserDesignerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\FindOrdersDlg.xaml.cs">
+      <DependentUpon>FindOrdersDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RoutingConstraintWarningDlg.xaml.cs">
+      <DependentUpon>RoutingConstraintWarningDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DragAndDrop\DragAndDropHelper.cs" />
+    <Compile Include="GraphicObjects\BarrierGraphicObject.cs" />
+    <Compile Include="GraphicObjects\CandidateGraphicObject.cs" />
+    <Compile Include="GraphicObjects\DataGraphicObject.cs" />
+    <Compile Include="GraphicObjects\FrameGraphicObject.cs" />
+    <Compile Include="Converters\PercentConverter.cs" />
+    <Compile Include="GraphicObjects\ClusterGraphicObject.cs" />
+    <Compile Include="GraphicObjects\OrderGraphicObject.cs" />
+    <Compile Include="GraphicObjects\RouteGraphicObject.cs" />
+    <Compile Include="GraphicObjects\StopGraphicObject.cs" />
+    <Compile Include="GraphicObjects\EditMarkerGraphicObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GraphicObjects\IVisibleGraphic.cs" />
+    <Compile Include="GraphicObjects\ZoneGraphicObject.cs" />
+    <Compile Include="GridHelpers\CreationTimeComparer.cs" />
+    <Compile Include="GridHelpers\MessageWindowDataWrapper.cs" />
+    <Compile Include="GridHelpers\MessageWindowDetailDescription.cs" />
+    <Compile Include="GridHelpers\NamedPropertyDataWrapper.cs" />
+    <Compile Include="GridHelpers\ReportDataWrapper.cs" />
+    <Compile Include="GridHelpers\SelectPropertiesWrapper.cs" />
+    <Compile Include="GridHelpers\GridLayoutLoader.cs" />
+    <Compile Include="GridHelpers\GridStructureInitializer.cs" />
+    <Compile Include="GridHelpers\ImportProfileEditFieldMapping.cs" />
+    <Compile Include="Help\HelpFile.cs" />
+    <Compile Include="Help\HelpTopic.cs" />
+    <Compile Include="Help\HelpTopics.cs" />
+    <Compile Include="HistoryService.cs" />
+    <Compile Include="IMessenger.cs" />
+    <Compile Include="Import\ImportDefinitions.cs" />
+    <Compile Include="Import\Importer.cs" />
+    <Compile Include="Import\ImportHelper.cs" />
+    <Compile Include="Import\SHPProvider.cs" />
+    <Compile Include="IUIManager.cs" />
+    <Compile Include="Mapping\MapTips.cs" />
+    <Compile Include="Mapping\Clustering.cs" />
+    <Compile Include="Mapping\MapHelpers.cs" />
+    <Compile Include="Mapping\MapDisplay.cs" />
+    <Compile Include="Mapping\MapTools.cs" />
+    <Compile Include="Mapping\TipProperty.cs" />
+    <Compile Include="MessageDetail.cs" />
+    <Compile Include="MultiCollectionBinding.cs" />
+    <Compile Include="GraphicObjects\LocationGraphicObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MultiCollectionBindingEx.cs" />
+    <Compile Include="Mapping\ALClusterer.cs" />
+    <Compile Include="Mapping\ObjectLayer.cs" />
+    <Compile Include="OrderSymbology\OrderCategory.cs" />
+    <Compile Include="Controls\SymbolBox.cs" />
+    <Compile Include="OrderSymbology\OrderQuantity.cs" />
+    <Compile Include="OrderSymbology\SymbologyConfig.cs" />
+    <Compile Include="OrderSymbology\SymbologyContext.cs" />
+    <Compile Include="OrderSymbology\SymbologyManager.cs" />
+    <Compile Include="OrderSymbology\SymbologyRecord.cs" />
+    <Compile Include="PageCategories\DeploymentCategory.cs" />
+    <Compile Include="PageCategories\ScheduleCategory.cs" />
+    <Compile Include="PageCategories\SetupCategory.cs" />
+    <Compile Include="PageCategories\HomeCategory.cs" />
+    <Compile Include="PageCategoryItem.cs" />
+    <Compile Include="Pages\PagePlugInAttribute.cs" />
+    <Compile Include="Pages\Deployment\ExportPage.xaml.cs">
+      <DependentUpon>ExportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Deployment\ReportsPage.cs" />
+    <Compile Include="Pages\Deployment\ReportsSubPages\ReportsCreatePage.xaml.cs">
+      <DependentUpon>ReportsCreatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Home\GettingStartedPage.xaml.cs">
+      <DependentUpon>GettingStartedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ISupportSelection.cs" />
+    <Compile Include="Pages\PagesPaths.cs" />
+    <Compile Include="Pages\PreferencesSubPages\PlugInsSettingsPreferencesPage.xaml.cs">
+      <DependentUpon>PlugInsSettingsPreferencesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PreferencesSubPages\ReportsPreferencesPage.xaml.cs">
+      <DependentUpon>ReportsPreferencesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PreferencesSubPages\RoutingPreferencesPage.xaml.cs">
+      <DependentUpon>RoutingPreferencesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Schedule\ScheduleHelpers\IListViewContextHandler.cs" />
+    <Compile Include="Pages\Schedule\ScheduleHelpers\ISupportDataObjectEditing.cs" />
+    <Compile Include="Pages\Schedule\OptimizeAndEditPage.xaml.cs">
+      <DependentUpon>OptimizeAndEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Schedule\ScheduleHelpers\OrderListViewContextHandler.cs" />
+    <Compile Include="Pages\Schedule\ScheduleHelpers\RouteListViewContextHandler.cs" />
+    <Compile Include="Pages\Schedule\ScheduleHelpers\StopListViewContextHandler.cs" />
+    <Compile Include="Pages\Setup\ExportProfilesPage.cs" />
+    <Compile Include="Pages\Setup\ExportProfilesSubPages\ExportProfilesEditPage.xaml.cs">
+      <DependentUpon>ExportProfilesEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setup\ExportProfilesSubPages\ExportProfilesShowPage.xaml.cs">
+      <DependentUpon>ExportProfilesShowPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setup\ExportProfilesSubPages\Validators\ExportProfilesValidators.cs" />
+    <Compile Include="Pages\Setup\ImportProfilesPage.cs" />
+    <Compile Include="Pages\Setup\ImportProfilesSubPages\ImportProfilesEditPage.xaml.cs">
+      <DependentUpon>ImportProfilesEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setup\ImportProfilesSubPages\ImportProfilesShowPage.xaml.cs">
+      <DependentUpon>ImportProfilesShowPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setup\ImportProfilesSubPages\Validators\ImportProfilesValidators.cs" />
+    <Compile Include="Pages\PreferencesSubPages\MapDisplayPreferencesPage.xaml.cs">
+      <DependentUpon>MapDisplayPreferencesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegionsPage.cs" />
+    <Compile Include="Pages\Schedule\ScheduleViews\ScheduleVersionsView.xaml.cs">
+      <DependentUpon>ScheduleVersionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Schedule\ScheduleViews\ListView.xaml.cs">
+      <DependentUpon>ListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Schedule\ScheduleViews\MapView.xaml.cs">
+      <DependentUpon>MapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Schedule\ScheduleViews\TimeView.xaml.cs">
+      <DependentUpon>TimeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setup\SpecialtiesPanels\DriverSpecialtiesPanel.cs" />
+    <Compile Include="Pages\Setup\SpecialtiesPanels\SpecialtiesPanelBase.xaml.cs">
+      <DependentUpon>SpecialtiesPanelBase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setup\SpecialtiesPanels\VehicleSpecialtiesPanel.cs" />
+    <Compile Include="Reports\ReportsGenerator.cs" />
+    <Compile Include="Reports\ReportsFile.cs" />
+    <Compile Include="Commands\RoutingCmdHelpers\RoutingSolveValidator.cs" />
+    <Compile Include="DayStatusesManager.cs" />
+    <Compile Include="ScheduleHelper.cs" />
+    <Compile Include="SpecialInsertionRow\RouteInsertionCell.cs" />
+    <Compile Include="SpecialInsertionRow\RouteInsertionRow.cs" />
+    <Compile Include="Symbols\BarrierSymbol.cs" />
+    <Compile Include="Symbols\ClusterSymbol.cs" />
+    <Compile Include="Symbols\EditingMarkerSymbol.cs" />
+    <Compile Include="Symbols\PencilSymbol.cs" />
+    <Compile Include="Symbols\ZonePolygonSymbol.cs" />
+    <Compile Include="Symbols\ZoneSymbol.cs" />
+    <Compile Include="Symbols\LabelSequenceSymbol.cs" />
+    <Compile Include="Symbols\RouteLineSymbol.cs" />
+    <Compile Include="Symbols\CustomOrderSymbol.cs" />
+    <Compile Include="Symbols\TemplateMarkerSymbol.cs" />
+    <Compile Include="TimeHelpers.cs" />
+    <Compile Include="Tools\BarrierPointTool.cs" />
+    <Compile Include="Tools\IMapTool.cs" />
+    <Compile Include="Tools\AddressByPointTool.cs" />
+    <Compile Include="Controls\CandidateSelectControl.xaml.cs">
+      <DependentUpon>CandidateSelectControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\CategoryNames.cs" />
+    <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="Commands\CommandConfig.cs" />
+    <Compile Include="Commands\CommandManager.cs" />
+    <Compile Include="Commands\BuildRoutesCmd.cs" />
+    <Compile Include="Commands\GeneralPreferencesCmd.cs" />
+    <Compile Include="Commands\GeocodeCmd.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\NavigateToPageCmd.cs" />
+    <Compile Include="Commands\PreferencesCmdBase.cs" />
+    <Compile Include="Commands\WhatsNewCmd.cs" />
+    <Compile Include="Controls\CommandButton.xaml.cs">
+      <DependentUpon>CommandButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CommandButtonGroup.xaml.cs">
+      <DependentUpon>CommandButtonGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataGridControlEx.cs" />
+    <Compile Include="Converters\AddressConverter.cs" />
+    <Compile Include="Converters\ColorConverter.cs" />
+    <Compile Include="Converters\CurbApproachConverter.cs" />
+    <Compile Include="Converters\LocatorNameConverter.cs" />
+    <Compile Include="ArcLogisticsCustomTheme.cs" />
+    <Compile Include="GridHelpers\ImportProfileDataWrapper.cs" />
+    <Compile Include="Import\DataSourceOpener.cs" />
+    <Compile Include="Import\DBProvider.cs" />
+    <Compile Include="Import\IDataProvider.cs" />
+    <Compile Include="Import\ImportFile.cs" />
+    <Compile Include="Import\ImportProfile.cs" />
+    <Compile Include="Import\ImportSettings.cs" />
+    <Compile Include="Pages\BaseSubPage.xaml.cs">
+      <DependentUpon>BaseSubPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Home\LicensePage.xaml.cs">
+      <DependentUpon>LicensePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Home\ProjectsPage.xaml.cs">
+      <DependentUpon>ProjectsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page.cs" />
+    <Compile Include="Pages\PageBase.cs" />
+    <Compile Include="Pages\PreferencesPage.cs" />
+    <Compile Include="Pages\PreferencesSubPages\GeneralPreferencesPage.xaml.cs">
+      <DependentUpon>GeneralPreferencesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setup\FuelPage.xaml.cs">
+      <DependentUpon>FuelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Symbols\CandidateSymbol.cs" />
+    <Compile Include="DataObjectNamesConstructor.cs" />
+    <Compile Include="GenericTypeExtension.cs" />
+    <Compile Include="GridHelpers\ProjectDataWrapper.cs" />
+    <Compile Include="Symbols\LocationSymbol.cs" />
+    <Compile Include="Pages\GeocodablePage.cs" />
+    <Compile Include="Pages\Setup\LocationsPage.xaml.cs">
+      <DependentUpon>LocationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppSkinLoader.cs" />
+    <Compile Include="Pages\Deployment\ReportsSubPages\ReportsPreviewPage.xaml.cs">
+      <DependentUpon>ReportsPreviewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationTree.cs" />
+    <Compile Include="CategoryItem.cs" />
+    <Compile Include="INavigationItem.cs" />
+    <Compile Include="PageItem.cs" />
+    <Compile Include="Pages\Setup\BarriersPage.xaml.cs">
+      <DependentUpon>BarriersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setup\DefaultRoutesPage.xaml.cs">
+      <DependentUpon>DefaultRoutesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setup\DriversPage.xaml.cs">
+      <DependentUpon>DriversPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setup\MobileDevicesPage.xaml.cs">
+      <DependentUpon>MobileDevicesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setup\SpecialtiesPage.xaml.cs">
+      <DependentUpon>SpecialtiesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setup\VehiclesPage.xaml.cs">
+      <DependentUpon>VehiclesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setup\ZonesPage.xaml.cs">
+      <DependentUpon>ZonesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AGSAuthCallback.cs" />
+    <Compile Include="Services\LoginWindow.xaml.cs" />
+    <Compile Include="TaskPanelContentBuilder.cs" />
+    <Compile Include="Tools\EditingTool.cs" />
+    <Compile Include="Tools\PickPointTool.cs" />
+    <Compile Include="Tools\PickPolygonTool.cs" />
+    <Compile Include="Tools\ZonePointTool.cs" />
+    <Compile Include="Tools\ZonePolygonTool.cs" />
+    <Compile Include="Mapping\EditingMarker.cs" />
+    <Compile Include="Validators\NullNameValidationRule.cs" />
+    <Compile Include="Validators\NameValidationRule.cs" />
+    <Compile Include="Validators\RouteValidationRule.cs" />
+    <Compile Include="Validators\QuantityValidationRule.cs" />
+    <Compile Include="Validators\CategoryValidationRule.cs" />
+    <Compile Include="Widgets\CalendarWidget.xaml.cs">
+      <DependentUpon>CalendarWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\ExtensionWidget.cs" />
+    <Compile Include="Widgets\ReportsWidget.xaml.cs">
+      <DependentUpon>ReportsWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\ViewsWidget.xaml.cs">
+      <DependentUpon>ViewsWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\PageWidget.cs" />
+    <Compile Include="Widgets\PageWidgetBase.cs" />
+    <Compile Include="Widgets\QuickHelpWidget.xaml.cs">
+      <DependentUpon>QuickHelpWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\TasksWidget.xaml.cs">
+      <DependentUpon>TasksWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\WidgetPlugInAttribute.cs" />
+    <None Include="app.config" />
+    <Content Include="Help\arclogistics.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\RouteManifestShort.rpx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\CarbonFootprint.rpx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\DispatcherSummary.rpx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\bin\Release\ArcLogisticsPlugIns.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\LoadReport.rpx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\ManagerSummary.rpx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\PredictedViolations.rpx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\RouteManifest.rpx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\RouteManifestMapsDirections.rpx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\RouteManifestOverviewMap.rpx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Resources\Historydb_create.sql" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ALR.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="EULA.Bootstrap.Component">
+      <Visible>False</Visible>
+      <ProductName>ArcLogistics_EULA</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\splash.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NavigationTree.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArcLogistics\ArcLogistics.csproj">
+      <Project>{20B53CFD-FAA4-454E-8AD2-85A7208EC9E0}</Project>
+      <Name>ArcLogistics</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\goldKey.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Commands\Commands.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSDASC">
+      <Guid>{2206CEB0-19C1-11D1-89E0-00C04FD7A829}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\moveIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MoveVertex.cur" />
+    <Resource Include="Resources\MoveShape.cur" />
+    <EmbeddedResource Include="Dialogs\EndUserDesignerForm.resx">
+      <DependentUpon>EndUserDesignerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PreviewForm.resx">
+      <DependentUpon>PreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridHelpers\QuantitySymbologyGridStructure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="ActiveReports.Chart">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ActiveReports.Design3">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ActiveReports.HtmlExport">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ActiveReports.PdfExport">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ActiveReports.RtfExport">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ActiveReports.TextExport">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ActiveReports.TiffExport">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ActiveReports.Viewer3">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ActiveReports.XlsExport">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ActiveReports3">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Types">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Reports\CarbonFootprint.rpx">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Reports\DispatcherSummary.rpx">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="..\..\bin\Release\ArcLogisticsPlugIns.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Reports\LoadReport.rpx">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Reports\ManagerSummary.rpx">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Reports\PredictedViolations.rpx">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Reports\RouteManifest.rpx">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Reports\RouteManifestMapsDirections.rpx">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Reports\RouteManifestOverviewMap.rpx">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Reports\RouteManifestShort.rpx">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Symbols\DiamondSymbol.xaml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Symbols\SquareSymbol.xaml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Symbols\StarSymbol.xaml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Symbols\TriangleSymbol.xaml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\DockingLibrary\images\DockBottom32.png" />
+    <Resource Include="Controls\DockingLibrary\images\DockLeft32.png" />
+    <Resource Include="Controls\DockingLibrary\images\DockPane.PNG" />
+    <Resource Include="Controls\DockingLibrary\images\DockRight32.png" />
+    <Resource Include="Controls\DockingLibrary\images\DockTop32.png" />
+    <Content Include="defaults.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="help.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="reports.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\PNG_Icons\Barriers24.png" />
+    <Resource Include="Resources\PNG_Icons\CreatePointBarrier24.png" />
+    <Resource Include="Resources\PNG_Icons\CreatePointZone24.png" />
+    <Resource Include="Resources\PNG_Icons\CreatePolygonZone24.png" />
+    <Resource Include="Resources\PNG_Icons\Drivers24.png" />
+    <Resource Include="Resources\PNG_Icons\ExportProfiles24.png" />
+    <Resource Include="Resources\PNG_Icons\FindAddressByPoint24.png" />
+    <Resource Include="Resources\PNG_Icons\FuelType24.png" />
+    <Resource Include="Resources\PNG_Icons\GettingStarted24.png" />
+    <Resource Include="Resources\PNG_Icons\Help24.png" />
+    <Resource Include="Resources\PNG_Icons\ImportProfile24.png" />
+    <Resource Include="Resources\PNG_Icons\License24.png" />
+    <Resource Include="Resources\PNG_Icons\Locations24.png" />
+    <Resource Include="Resources\PNG_Icons\LockedStatus16.png" />
+    <Resource Include="Resources\PNG_Icons\MobileDevices24.png" />
+    <Resource Include="Resources\PNG_Icons\Preferences24.png" />
+    <Resource Include="Resources\PNG_Icons\Project24.png" />
+    <Resource Include="Resources\PNG_Icons\Question24.png" />
+    <Resource Include="Resources\PNG_Icons\Reports24.png" />
+    <Resource Include="Resources\PNG_Icons\Schedule24.png" />
+    <Resource Include="Resources\PNG_Icons\Specialities24.png" />
+    <Resource Include="Resources\PNG_Icons\Vehicles24.png" />
+    <Resource Include="Resources\PNG_Icons\VisibleStatus16.png" />
+    <Resource Include="Resources\PNG_Icons\Zones24.png" />
+    <Resource Include="Resources\PNG_Icons\IncompleteB16.png" />
+    <Resource Include="Resources\PNG_Icons\IncompleteA16.png" />
+    <Resource Include="Resources\PNG_Icons\DefaultRoutes24.png" />
+    <Resource Include="Resources\PNG_Icons\Error16.png" />
+    <Resource Include="Resources\PNG_Icons\Info16.png" />
+    <Resource Include="Resources\PNG_Icons\Warning16.png" />
+    <Content Include="services.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,387 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:local="clr-namespace:ESRI.ArcLogistics.App" 
+   xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+   xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+   xmlns:app="clr-namespace:ESRI.ArcLogistics.App"
+   mc:Ignorable="d"
+   xmlns:sys="clr-namespace:System;assembly=mscorlib"
+   xmlns:converters="clr-namespace:ESRI.ArcLogistics.App.Converters"
+   xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls">
+
+    <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- Xceed data row style -->
+    <Style TargetType="{x:Type xcdg:DataRow}">
+        <Setter Property="Height"  Value="{StaticResource XceedRowDefaultHeight}"/>
+        <Setter Property="MaxHeight"  Value="{StaticResource XceedRowDefaultHeight}"/>
+        <Setter Property="MinHeight"  Value="{StaticResource XceedRowDefaultHeight}"/>
+    </Style>
+
+    <Style TargetType="{x:Type xcdg:TableView}">
+        <Setter Property="IsAlternatingRowStyleEnabled" Value="True" />
+        <Setter Property="ColumnStretchMode" Value="Last"/>
+        <Setter Property="ColumnStretchMinWidth" Value="120"/>
+        <Setter Property="IsColumnVirtualizationEnabled" Value="False"/>
+        <Setter Property="ShowFixedColumnSplitter" Value="False"/>
+        <Setter Property="ShowScrollTip" Value="False"/>
+        <Setter Property="ShowRowSelectorPane" Value="False"/>
+        <Setter Property="Theme">
+            <Setter.Value>
+                <app:ArcLogisticsCustomTheme/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type xcdg:TableflowView}">
+        <Setter Property="IsAlternatingRowStyleEnabled" Value="True" />
+        <Setter Property="AreGroupHeadersSticky" Value="True"/>
+        <Setter Property="AreGroupFootersSticky" Value="True"/>
+        <Setter Property="AreParentRowsSticky" Value="True"/>
+        <Setter Property="AreGroupsFlattened" Value="True"/>
+        <Setter Property="ScrollingAnimationDuration" Value="1"/>
+        <Setter Property="RowFadeInAnimationDuration" Value="1"/>
+        <Setter Property="IsColumnVirtualizationEnabled" Value="False"/>
+        <Setter Property="ColumnStretchMinWidth" Value="120"/>
+        <Setter Property="ShowScrollTip" Value="False"/>
+        <Setter Property="ContainerHeight" Value="{StaticResource XceedRowDefaultHeight}"/>
+        <Setter Property="ShowFixedColumnSplitter" Value="False"/>
+        <Setter Property="ShowRowSelectorPane" Value="False"/>
+        <Setter Property="Theme">
+            <Setter.Value>
+                <app:ArcLogisticsCustomTheme/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Style to hide "Group By" top-level header -->
+    <Style TargetType="{x:Type xcdg:HierarchicalGroupByControl}">
+        <Setter Property="Height"
+                 Value="0" />
+    </Style>
+
+    <!-- Xceed data grid styles -->
+
+    <Style TargetType="{x:Type app_controls:DataGridControlEx }">
+        <Setter Property="UpdateSourceTrigger" Value="CellContentChanged"/>
+        <Setter Property="BorderThickness" Value="{StaticResource NullBorderThickness}"/>
+        <Setter Property="EditTriggers" Value="BeginEditCommand"/>
+        <Setter Property="CellEditorDisplayConditions" Value="None"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="ItemScrollingBehavior" Value="Immediate" />
+        <Setter Property="FontFamily" Value="{StaticResource DefaultApplicationFont}"/>
+    </Style>
+
+    <Style TargetType="{x:Type xcdg:DataGridControl}">
+        <Setter Property="UpdateSourceTrigger" Value="CellContentChanged"/>
+        <Setter Property="BorderThickness" Value="{StaticResource NullBorderThickness}"/>
+        <Setter Property="EditTriggers" Value="BeginEditCommand"/>
+        <Setter Property="CellEditorDisplayConditions" Value="None" />
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="FontFamily" Value="{StaticResource DefaultApplicationFont}"/>
+    </Style>
+
+    <!-- Xceed Row selector style -->
+
+    <converters:RowTooltipConverter x:Key="rowTooltipConverter"/>
+
+    <Style TargetType="xcdg:RowSelector">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=HasValidationError}"
+                    Value="True">
+                <Setter Property="ToolTip"
+                 Value="{Binding Converter={StaticResource rowTooltipConverter}}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=HasValidationError}"
+                    Value="False">
+                <Setter Property="ToolTip"
+                 Value="{x:Null}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Insertion Row Style -->
+
+    <Style x:Key="insertionStyle"
+                TargetType="{x:Type xcdg:InsertionRow}">
+        <Setter Property="Background" Value="{DynamicResource textBrush}"/>
+        <Setter Property="Height" Value="{StaticResource XceedRowDefaultHeight}"/>
+        <Setter Property="MaxHeight" Value="{StaticResource XceedRowDefaultHeight}"/>
+        <Setter Property="MinHeight" Value="{StaticResource XceedRowDefaultHeight}"/>
+        <Setter Property="EditTriggers" Value="ActivationGesture,CellIsCurrent"/>
+        <Setter Property="CellEditorDisplayConditions" Value="None"/>
+        <Style.Triggers>
+            <Trigger Property="xcdg:GroupLevelIndicatorPane.GroupLevel"
+                  Value="-1">
+                <!-- We don't want to display the Group Margins for the InsertionRow. -->
+                <Setter Property="xcdg:GroupLevelIndicatorPane.ShowIndicators"
+                    Value="False" />
+            </Trigger>
+
+        </Style.Triggers>
+    </Style>
+
+    <!-- Print view style -->
+    <Style TargetType="{x:Type xcdg:PrintTableView}">
+        <Setter Property="HorizontalGridLineThickness" Value="1" />
+        <Setter Property="HorizontalGridLineBrush" Value="{StaticResource gridPrintBorderBrush}"/>
+    </Style>
+
+    <!-- Data template for pages numbers -->
+    <DataTemplate x:Key="printFooter">
+        <TextBlock Text="{xcdg:ViewBinding CurrentPageNumber}"
+                        HorizontalAlignment="Center"
+                          FontFamily="{StaticResource DefaultApplicationFont}"
+                          FontWeight="Bold"
+                          FontSize="{StaticResource MiddleFontSize}"/>
+    </DataTemplate>
+
+    <!-- Xceed Data grid ScrollViewer style -->
+    <Style TargetType="{x:Type xcdg:TableViewScrollViewer}" x:Key="ScrollViewerStyleForGrid">
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="CanContentScroll" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type xcdg:TableViewScrollViewer}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="ScrollViewerMouseEnter">
+                            <DoubleAnimationUsingKeyFrames
+                                BeginTime="00:00:00"
+                                Storyboard.TargetName="PART_VerticalScrollBar"
+                                Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+                                BeginTime="00:00:00"
+                                Storyboard.TargetName="PART_HorizontalScrollBar"
+                                Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="ScrollViewerMouseLeave">
+                            <DoubleAnimationUsingKeyFrames
+                                BeginTime="00:00:00"
+                                Storyboard.TargetName="PART_VerticalScrollBar"
+                                Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+                                BeginTime="00:00:00"
+                                Storyboard.TargetName="PART_HorizontalScrollBar"
+                                Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.0000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+
+                    <!-- Root Grid that layout the "content" and the Scrollbars -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <!-- Content -->
+                            <ColumnDefinition />
+
+                            <!-- Vertical ScrollBar -->
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <!-- Content -->
+                            <RowDefinition />
+
+                            <!-- Horizontal ScrollBar -->
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Content -->
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <!-- RowSelectorPane-->
+                                <ColumnDefinition Width="Auto"/>
+
+                                <!-- ScrollContentPresenter -->
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <!-- Fixed Headers -->
+                                <RowDefinition Height="Auto"/>
+
+                                <!-- ScrollContentPresenter -->
+                                <RowDefinition />
+
+                                <!-- Fixed Footers -->
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- RowSelectorPane -->
+
+                            <xcdg:RowSelectorPane
+                                x:Name="PART_RowSelectorPane"
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                Grid.RowSpan="3"
+                                Width="{TemplateBinding RowSelectorPaneWidth}"/>
+
+                            <!-- Fixed Headers -->
+                            <xcdg:SynchronizedScrollViewer
+                                x:Name="fixedHeaderScrollViewer"
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                xcdg:TableViewScrollViewer.SynchronizedScrollViewerPosition="Top"
+                                Focusable="False">
+                                <!-- Using a TableViewHeaderFooterPanel will enable the columns
+                             auto width feature. -->
+                                <xcdg:TableViewHeaderFooterPanel
+                                    xcdg:DataGridControl.IsFixedHeadersHost="True"
+                                    Orientation="Vertical"
+                                    HorizontalAlignment="Left"/>
+
+                            </xcdg:SynchronizedScrollViewer>
+
+                            <!-- Fixed Footers -->
+                            <xcdg:SynchronizedScrollViewer
+                                x:Name="fixedFooterScrollViewer"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                Grid.Row="2"
+                                xcdg:TableViewScrollViewer.SynchronizedScrollViewerPosition="Bottom"
+                                Focusable="False">
+                                <!-- Using a TableViewHeaderFooterPanel will enable the columns
+                             auto width feature. -->
+                                <xcdg:TableViewHeaderFooterPanel
+                                    xcdg:DataGridControl.IsFixedFootersHost="True"
+                                    Orientation="Vertical"
+                                    HorizontalAlignment="Left"/>
+
+                            </xcdg:SynchronizedScrollViewer>
+
+                            <Rectangle
+                                x:Name="RectangleMargin"
+                                Height="0"
+                                Grid.Column="1"
+                                Grid.Row="2"
+                                HorizontalAlignment="Stretch"
+                                Fill="White"></Rectangle>
+
+                            <!-- ScrollContentPresenter (data rows) -->
+                            <ScrollContentPresenter
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                CanContentScroll="{TemplateBinding CanContentScroll}"
+                                x:Name="ScrollContentPresenter1"/>
+
+                            <!-- ScrollBars -->
+                            <ScrollBar
+                                Cursor="Arrow"
+                                Orientation="Vertical"
+                                ViewportSize="{TemplateBinding ScrollViewer.ViewportHeight}"
+                                Visibility="{TemplateBinding ScrollViewer.ComputedVerticalScrollBarVisibility}"
+                                x:Name="PART_VerticalScrollBar"
+                                Maximum="{TemplateBinding ScrollableHeight}"
+                                Minimum="0"
+                                ContextMenu="{x:Null}"
+                                Value="{Binding Path=VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                Margin="0,0,1,0"
+                                RenderTransformOrigin="0.5,0.5"
+                                VerticalAlignment="Stretch"
+                                HorizontalAlignment="Right"
+                                Opacity="0"
+                                Width="14"
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                Background="#00000000"/>
+                            <ScrollBar
+                                Cursor="Arrow"
+                                x:Name="PART_HorizontalScrollBar"
+                                Visibility=
+                                "{TemplateBinding ScrollViewer.ComputedHorizontalScrollBarVisibility}"
+                                Orientation="Horizontal"
+                                ContextMenu="{x:Null}"
+                                ViewportSize="{TemplateBinding ViewportWidth}"
+                                Maximum="{TemplateBinding ScrollableWidth}"
+                                Minimum="0"
+                                Value="{Binding Path=HorizontalOffset, 
+Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                RenderTransformOrigin="0.5,0.5"
+                                Margin="0,0,14,0"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Bottom"
+                                Opacity="0"
+                                Height="14"
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                Background="#00000000"/>
+
+                            <!-- ScrollTip only displayed when scrolling -->
+                            <xcdg:ScrollTip
+                                Visibility="Collapsed"
+                                Content="{x:Null}"
+                                ContentTemplate="{Binding RelativeSource={RelativeSource Self}, 
+Path=(xcdg:DataGridControl.DataGridContext).ScrollTipContentTemplate}"
+                                ContentTemplateSelector="{Binding RelativeSource={RelativeSource Self}, 
+Path=(xcdg:DataGridControl.DataGridContext).ScrollTipContentTemplateSelector}"/>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger
+                            Property="ShowRowSelectorPane"
+                            Value="False">
+                            <Setter TargetName="PART_RowSelectorPane"
+                             Property="Visibility"
+                             Value="Collapsed"/>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter
+                                Property="Margin"
+                                TargetName="PART_HorizontalScrollBar"
+                                Value="0,0,14,-14"/>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource ScrollViewerMouseEnter}"/>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource ScrollViewerMouseLeave}"/>
+                            </Trigger.ExitActions>
+                        </Trigger>
+
+                        <Trigger
+                            Property="ComputedHorizontalScrollBarVisibility"
+                            Value="Visible">
+                            <Setter
+                                Property="Height"
+                                TargetName="RectangleMargin"
+                                Value="14"/>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter
+                                Property="Margin"
+                                TargetName="PART_HorizontalScrollBar"
+                                Value="0,0,14,0"/>
+                            <Setter
+                                Property="Height"
+                                TargetName="RectangleMargin"
+                                Value="0"/>
+                        </Trigger>
+
+                        <Trigger
+                            Property="ComputedHorizontalScrollBarVisibility"
+                            Value="Hidden">
+                            <Setter
+                                Property="Height"
+                                TargetName="RectangleMargin"
+                                Value="0"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

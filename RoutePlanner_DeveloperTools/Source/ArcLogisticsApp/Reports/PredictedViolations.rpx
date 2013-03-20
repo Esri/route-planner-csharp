@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ActiveReportsLayout Version="3.1" PrintWidth="14803.2" MaxPages="200" DocumentName="ARNet Document" ScriptLang="C#" MasterReport="0">
+  <StyleSheet>
+    <Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; " />
+    <Style Name="Heading1" Value="font-size: 16pt; font-weight: bold; " />
+    <Style Name="Heading2" Value="font-family: Times New Roman; font-size: 14pt; font-weight: bold; font-style: italic; " />
+    <Style Name="Heading3" Value="font-size: 13pt; font-weight: bold; " />
+  </StyleSheet>
+  <Sections>
+    <Section Type="ReportHeader" Name="ReportHeader" Visible="0" Height="15" BackColor="16777215" />
+    <Section Type="PageHeader" Name="PageHeader" Height="1980" BackColor="16777215" CanGrow="0">
+      <Control Type="AR.Label" Name="lblTitle" Left="0" Top="90" Width="5760" Height="540" Caption="Predicted Violations Report" Style="ddo-char-set: 204; color: Teal; text-decoration: none; text-align: left; font-weight: bold; font-style: italic; font-size: 20.25pt; " />
+      <Control Type="AR.Line" Name="lineNameDecorator" X1="0" Y1="630" X2="5400" Y2="630" LineColor="8421376" LineWeight="2" />
+      <Control Type="AR.Label" Name="lblComment2" Left="0" Top="720" Width="4680" Height="270" Caption="Violations in excess of Time Window periods" Style="ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="labelPrintTime" Left="13680" Top="1080" Width="990" Height="270" Caption="Print Time" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelPrintDate" Left="12420" Top="1080" Width="1260" Height="270" Caption="Print Date" Style="ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="lblComment1" Left="10980" Top="1080" Width="1440" Height="270" Caption="Print Date/Time:" Style="ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblScheduleDescription" DataField="=PlannedDate.ToShortDateString();" Left="900" Top="1170" Width="1530" Height="270" Caption="PlannedDate" Style="color: Teal; ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="lblSchedule" Left="0" Top="1170" Width="900" Height="270" Caption="Schedule:" Style="color: Teal; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Field" Name="textBoxContentTotal" Left="0" Top="1530" Width="14803.2" Height="450.72" OutputFormat="" CanGrow="0" Style="color: Teal; ddo-char-set: 204; text-align: left; background-color: Teal; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="lblOrder" Left="180" Top="1620" Width="3240" Height="270" Caption="Order" Style="color: White; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblAddressLabel" Left="3600" Top="1620" Width="2880" Height="270" Caption="AddressLabel" Style="color: White; ddo-char-set: 204; text-align: center; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="labelCustomOrderProperty" Left="6480" Top="1620" Width="4320" Height="270" Caption="Custom Order  Properties" Style="color: White; ddo-char-set: 204; text-align: center; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblTimeWindow" Left="10890" Top="1620" Width="1980" Height="270" Caption="TimeWindow" Style="color: White; ddo-char-set: 204; text-align: center; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblViolation" Left="12960" Top="1620" Width="1710" Height="270" Caption="Violation" Style="color: White; ddo-char-set: 204; text-align: center; font-style: normal; font-size: 9pt; " />
+    </Section>
+    <Section Type="GroupHeader" Name="GroupHeader" Height="420" DataField="Route.ID" BackColor="16777215">
+      <Control Type="AR.Label" Name="labelVechicle" DataField="VehicleName" Left="810" Top="90" Width="3690" Height="270" Caption="Vehicle Name" Style="color: Teal; ddo-char-set: 204; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="lblVehicle" Left="0" Top="90" Width="810" Height="270" Caption="Vehicle:" Style="color: Teal; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="lblDriver" Left="4680" Top="90" Width="720" Height="270" Caption="Driver:" Style="color: Teal; ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="labelDriver" DataField="DriverName" Left="5400" Top="90" Width="4680" Height="270" Caption="Driver Name" Style="color: Teal; ddo-char-set: 204; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+    </Section>
+    <Section Type="GroupHeader" Name="groupHeader1" Visible="0" Height="0" DataField="Route.ID" BackColor="16777215" />
+    <Section Type="Detail" Name="Detail" Height="1244" BackColor="16777215" KeepTogether="1" CanGrow="0" CanShrink="1">
+      <Control Type="AR.Label" Name="labelOrderNumber" DataField="= (-1 == OrderSequence)? null : OrderSequence" Left="180" Top="90" Width="360" Height="270" Caption="OrderNumber" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxAddressLabel" DataField="FullAddressShort" Left="3510" Top="90" Width="2880" Height="720" Text="AddressLabel" OutputFormat="0" CanGrow="0" CanShrink="1" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: inherit; " />
+      <Control Type="AR.Label" Name="labelTimeWindow" Left="11340" Top="90" Width="1530" Height="270" Caption="TimeWindow" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelArriveTime" Left="11340" Top="450" Width="630" Height="270" Caption="ArriveTimeString" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Field" Name="textBoxStopName" DataField="Stop.Name" Left="630" Top="90" Width="2790" Height="720" Text="StopName" OutputFormat="0" CanGrow="0" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: inherit; " />
+      <Control Type="AR.Label" Name="labelViolation" Left="12960" Top="90" Width="1080" Height="270" Caption="Violation" Style="ddo-char-set: 204; text-align: right; font-weight: bold; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="lblLate" Left="14130" Top="90" Width="540" Height="270" Caption="LATE" Style="ddo-char-set: 204; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="labelTW" Left="10890" Top="90" Width="450" Height="270" Caption="TW" Style="ddo-char-set: 204; font-weight: bold; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="label4" Left="10890" Top="450" Width="450" Height="270" Caption="ETA" Style="ddo-char-set: 204; font-weight: bold; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Line" Name="lineVerticalSeparator1" X1="0" Y1="0" X2="15840" Y2="0" LineColor="8421376" LineWeight="2" />
+      <Control Type="AR.Field" Name="textBoxCustomOrderProperty" Left="6480" Top="90" Width="4320" Height="270" Text="CustomOrderProperty" OutputFormat="0" CanShrink="1" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: inherit; " />
+      <Control Type="AR.Label" Name="labelConfidence" DataField="Confidence" Left="3510" Top="900" Width="2880" Height="270" Caption="Confidence" Style="ddo-char-set: 204; font-weight: bold; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelArriveDate" DataField="=(PlannedDate == ArriveDate)? null : ArriveDate" Left="11970" Top="450" Width="900" Height="270" Caption="ArriveDate" Style="ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: inherit; " />
+    </Section>
+    <Section Type="GroupFooter" Name="groupFooter1" Visible="0" Height="315" BackColor="16777215" NewPage="2">
+      <Control Type="AR.Label" Name="label5" Left="1440" Top="0" Width="12060" Height="270" Caption="No violations in excess of Time Window periods predicted" Style="ddo-char-set: 204; text-align: center; font-weight: bold; font-style: normal; font-size: 9pt; " />
+    </Section>
+    <Section Type="GroupFooter" Name="GroupFooter" Visible="0" Height="780" BackColor="16777215" NewPage="2">
+      <Control Type="AR.Label" Name="label6" Left="7200" Top="90" Width="5760" Height="270" Caption="Predicted number of violations in excess of Time Window periods:" Style="ddo-char-set: 204; text-align: right; font-weight: bold; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="label7" Left="7200" Top="450" Width="5760" Height="270" Caption="Total predicted violation time:" Style="ddo-char-set: 204; text-align: right; font-weight: bold; font-style: normal; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="labelCountViolations" DataField="TotalViolations" Left="12960" Top="90" Width="1440" Height="270" Caption="CountViolations" Style="ddo-char-set: 204; text-align: left; font-weight: bold; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelTotalViolationTime" Left="12960" Top="450" Width="1440" Height="270" Caption="TotalTimeViolations" Style="ddo-char-set: 204; text-align: left; font-weight: bold; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Line" Name="lineVerticalSeparator2" X1="0" Y1="0" X2="14976" Y2="0" LineColor="8421376" LineWeight="2" />
+    </Section>
+    <Section Type="PageFooter" Name="PageFooter" Height="315" BackColor="16777215" CanGrow="0">
+      <Control Type="AR.ReportInfo" Name="reportInfo" Left="1440" Top="0" Width="12060" Height="270" FormatString="{PageNumber} of {PageCount}" Style="text-align: center; " />
+    </Section>
+    <Section Type="ReportFooter" Name="ReportFooter" Visible="0" Height="0" BackColor="16777215">
+      <Control Type="AR.Line" Name="line1" X1="0" Y1="0" X2="15840" Y2="0" LineColor="8421376" LineWeight="2" />
+    </Section>
+  </Sections>
+  <ReportComponentTray />
+  <DataSources>
+    <OleDbDataSource ConnectE="13IdEUWXLb8jDY6d7T6jJYmDRKY5Eee4itGMLIPDLT+VBQkrRemRcHciYcI1dvBprE9fQStE8tu+isu2CxpLq60nUFW0DfO+2JqbUlMrmZBzNYCg0lK/2VTwRb+N2Jid385Ewa4c8Mt+7KgVjOhLTA==" SQL="SELECT * FROM `Schedule`, `Route`, `Stop` WHERE (`Schedule`.`ID` = `Route`.`ScheduleID`) AND (`Route`.`ScheduleID` = `Stop`.`ScheduleID`) AND (`Route`.`ID` = `Stop`.`RouteID`) ORDER BY `Schedule`.`PlannedDate`, `Route`.`Name`, `Stop`.`Sequence`" />
+  </DataSources>
+  <Script><![CDATA[using System;
+using System.Data;
+using System.Data.OleDb;
+using System.Drawing;
+using System.Diagnostics;
+
+private const float SPACE_SEPARATOR_WIDTH = 0.0625f;
+        private const float SPACE_SEPARATOR_WIDTH_PAIR = SPACE_SEPARATOR_WIDTH * 2;
+        private const string FIELDS_FORMAT = "{0}";
+        private const string SELECT_STRING_SCHEMA = "SELECT * FROM `Schema` WHERE Type = \"CustomOrderPropertiesText\"";
+        private const int CONTROLS_PAIR_COUNT_PER_LINE = 1;
+        private const string WIDEOPEN = "Wideopen";
+        private const int MINUTES_PER_DAY = 1440;
+        private const int MINUTES_PER_HOUR = 60;
+        private const int HOUR_PER_DAY = 24;
+        private const string VIOLATION_TIME_FORMAT_LESS_MIN = "< {0} min";
+        private const string VIOLATION_TIME_FORMAT_ONLY_MIN = "{0} min";
+        private const string VIOLATION_TIME_FORMAT = "{0} hr {1} min";
+        private const string STOP_TABLE_NAME_FORMAT = "Stop.{0}";
+
+        public class Helper
+        {
+            public Helper()
+            { }
+
+            public static ARControl GetControlPrototype(string controlName, ControlCollection controls)
+            {
+                Debug.Assert(!string.IsNullOrEmpty(controlName));
+
+                int index = _FindPrototypeControlIndex(controlName, controls);
+                Debug.Assert(-1 != index);
+
+                return controls[index];
+            }
+
+            public static SizeF AddControlPairs(string[] namesArray, string fieldFormat, ARControl control,
+                                                int countPairPerLine, ControlCollection controls, FieldCollection fields)
+            {
+                Debug.Assert(!string.IsNullOrEmpty(fieldFormat));
+
+                RectangleF rect = control.Bounds;
+
+                float pairWidth = (float)(rect.Width - SPACE_SEPARATOR_WIDTH_PAIR * (countPairPerLine - 1)) / countPairPerLine; // NOTE: SPACE_SEPARATOR_WIDTH_PAIR spasing between pair of controls
+                PointF locationStart = new PointF(rect.Left, rect.Top);
+                SizeF size = new SizeF(pairWidth, rect.Height);
+
+                if (null != controls)
+                    controls.Remove(control); // remove prototype
+
+                if (null == namesArray)
+                    return new System.Drawing.SizeF(); // EXIT
+
+                PointF location = new PointF(locationStart.X, locationStart.Y);
+                int insertIndex = 0;
+                for (int i = 0; i < namesArray.Length; ++i)
+                {
+                    if ((0 != i) && (i % countPairPerLine) == 0)
+                        location.Y += rect.Height + SPACE_SEPARATOR_WIDTH;
+                    location.X = (0 == (i % countPairPerLine)) ? locationStart.X : location.X + SPACE_SEPARATOR_WIDTH_PAIR + pairWidth;
+
+                    RectangleF rectPair = new RectangleF(location, size);
+
+                    if (null != controls)
+                        _AddControlPair(namesArray[i], fieldFormat, rectPair, control, controls, fields, ref insertIndex);
+                    ++insertIndex;
+                }
+
+                return new SizeF(rect.Width, location.Y + rect.Height - locationStart.Y);
+            }
+
+
+            public static double GetTWToTimeInMin(FieldCollection fields, int dayInMinutes,
+                                                  string twStringFieldName, string twFromFieldName,
+                                                  string twToFieldName)
+            {
+                // get data for TW
+                string twString = WIDEOPEN;
+                if (null != fields[twStringFieldName].Value)
+                    twString = fields[twStringFieldName].Value.ToString();
+
+                double toDeliveryTime = -1;
+                if (!WIDEOPEN.Equals(twString, StringComparison.OrdinalIgnoreCase))
+                {   // read from value
+                    double fromDeliveryTime = -1;
+                    object value = fields[twFromFieldName].Value;
+                    if (!string.IsNullOrEmpty(value.ToString()))
+                        fromDeliveryTime = Convert.ToDouble(value.ToString()) + dayInMinutes;
+
+                    // read to value
+                    value = fields[twToFieldName].Value;
+                    if (!string.IsNullOrEmpty(value.ToString()))
+                        toDeliveryTime = Convert.ToDouble(value.ToString()) + dayInMinutes;
+
+                    if ((toDeliveryTime <= fromDeliveryTime) && (-1 != fromDeliveryTime))// if "To" before "From" then "To" is time of next day
+                        toDeliveryTime = toDeliveryTime + HOUR_PER_DAY * MINUTES_PER_HOUR; // add one day [minutes]
+                }
+
+                return toDeliveryTime;
+            }
+
+            public static string GetViolationFormattedString(double violation)
+            {
+                int violValue = (int)Math.Ceiling(violation);
+
+                string formatedTime = null;
+                if (violation < 1)
+                    formatedTime = string.Format(VIOLATION_TIME_FORMAT_LESS_MIN, violValue);
+                else if (violation < MINUTES_PER_HOUR)
+                    formatedTime = string.Format(VIOLATION_TIME_FORMAT_ONLY_MIN, violValue);
+                else
+                    formatedTime = string.Format(VIOLATION_TIME_FORMAT, (violValue / MINUTES_PER_HOUR), (violValue % MINUTES_PER_HOUR));
+
+                return formatedTime;
+            }
+
+
+            private static int _FindPrototypeControlIndex(string controlName, ControlCollection controls)
+            {
+                int index = -1;
+                for (int i = 0; i < controls.Count; ++i)
+                {
+                    if (controlName == controls[i].Name)
+                    {
+                        index = i;
+                        break; // founded
+                    }
+                }
+
+                Debug.Assert(-1 != index);
+                return index;
+            }
+
+            private static ARControl _CreateLabel(ARControl prototypeControl,
+                                                  RectangleF rectControl, string name)
+            {
+                TextBox prototypeCtrl = (TextBox)prototypeControl;
+                Label lb = new Label();
+                lb.Name = prototypeControl.Name + "Label" + name;
+                lb.Bounds = rectControl;
+                lb.Text = name + ":";
+                lb.ForeColor = prototypeCtrl.ForeColor;
+                lb.BackColor = prototypeCtrl.BackColor;
+                lb.Alignment = prototypeCtrl.Alignment;
+                lb.Visible = prototypeCtrl.Visible;
+                lb.Style = prototypeCtrl.Style;
+                lb.Font = new Font(prototypeCtrl.Font, FontStyle.Bold);
+                return lb;
+            }
+
+            private static ARControl _CreateTextBox(ARControl prototypeControl, RectangleF rectControl,
+                                                    FieldCollection fields, string name, string fieldFormat)
+            {
+                TextBox prototypeCtrl = (TextBox)prototypeControl;
+                TextBox tb = new TextBox();
+                tb.Name = prototypeControl.Name + name;
+                tb.Bounds = rectControl;
+                tb.Text = name;
+                tb.ForeColor = prototypeCtrl.ForeColor;
+                tb.BackColor = prototypeCtrl.BackColor;
+                tb.Alignment = prototypeCtrl.Alignment;
+                tb.SummaryGroup = prototypeCtrl.SummaryGroup;
+                tb.SummaryRunning = prototypeCtrl.SummaryRunning;
+                tb.SummaryType = prototypeCtrl.SummaryType;
+                tb.OutputFormat = prototypeCtrl.OutputFormat;
+                // init field name
+                string fieldName = string.Format(fieldFormat, name);
+                string stopFieldName  = string.Format(STOP_TABLE_NAME_FORMAT, fieldName);
+                if (fields.Contains(stopFieldName))
+                    fieldName = stopFieldName;
+                tb.DataField = fieldName;
+                
+                tb.Visible = prototypeCtrl.Visible;
+                tb.Style = prototypeCtrl.Style;
+                tb.Font = prototypeCtrl.Font;
+                return tb;
+            }
+
+            private static void _AddControlPair(string fieldName, string fieldFormat,
+                                                RectangleF pairBoundBox, ARControl prototypeControl,
+                                                ControlCollection controls, FieldCollection fields, ref int index)
+            {
+                PointF location = new PointF(pairBoundBox.Left, pairBoundBox.Top);
+                SizeF size = new SizeF(pairBoundBox.Width / 2, pairBoundBox.Height);
+
+                RectangleF rectControl = new RectangleF(location, size);
+                ARControl newLabel = _CreateLabel(prototypeControl, rectControl, fieldName);
+                controls.Insert(index, newLabel);
+
+                location.X += size.Width + SPACE_SEPARATOR_WIDTH;
+                size.Width = pairBoundBox.Width - size.Width - SPACE_SEPARATOR_WIDTH;
+                rectControl = new RectangleF(location, size);
+
+                ARControl newTextBox = _CreateTextBox(prototypeControl, rectControl, fields, fieldName, fieldFormat);
+                controls.Insert(++index, newTextBox);
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        
+public void ActiveReport_ReportStart()
+{
+            ControlCollection controls = rpt.Sections["PageHeader"].Controls;
+            ((Label)controls["labelPrintDate"]).Text = DateTime.Now.ToShortDateString();
+            ((Label)controls["labelPrintTime"]).Text = DateTime.Now.ToLongTimeString();
+
+            // read dynamicals fields
+            DataSources.OleDBDataSource ds = (DataSources.OleDBDataSource)rpt.DataSource;
+            using (OleDbConnection cnn = new OleDbConnection(ds.ConnectionString))
+            {
+                if (cnn.State == ConnectionState.Closed)
+                    cnn.Open();
+
+                char[] splitters = new char[] { ',' };
+
+                OleDbCommand cmd = new OleDbCommand(SELECT_STRING_SCHEMA, cnn);
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    Section detailSection = rpt.Sections["Detail"];
+                    ControlCollection detailControls = detailSection.Controls;
+                    if (reader.Read())
+                    {   // NOTE: only one proper record present in table
+                        // get fields list
+                        string names = reader["FieldNames"].ToString();
+                        string[] nameArray = names.Split(splitters);
+                        Debug.Assert(0 < nameArray.Length);
+                        
+                        FieldCollection fields = rpt.Fields;
+
+                        ARControl control = detailControls["textBoxCustomOrderProperty"];
+                        SizeF size = Helper.AddControlPairs(nameArray, FIELDS_FORMAT, control, CONTROLS_PAIR_COUNT_PER_LINE, detailControls, fields);
+                        float newHeight = size.Height + control.Bounds.Top + 2 * SPACE_SEPARATOR_WIDTH;
+                        // resize detail section
+                        if (detailSection.Height < newHeight)
+                            detailSection.Height = newHeight;
+                    }
+                    else
+                        detailControls["textBoxCustomOrderProperty"].Visible = false;
+                }
+            }
+}
+
+public void GroupHeader_Format()
+{
+            FieldCollection fields = rpt.Fields;
+
+            int totalViolations = 0;
+            object obj = fields["TotalViolations"].Value;
+            if (!string.IsNullOrEmpty(obj.ToString()))
+                totalViolations = Convert.ToInt32(obj.ToString());
+
+            double totalViolationTime = 0;
+            obj = fields["TotalViolationTime"].Value;
+            if (!string.IsNullOrEmpty(obj.ToString()))
+                totalViolationTime = Convert.ToDouble(obj.ToString());
+
+            Section groupFooter = rpt.Sections["GroupFooter"];
+            if (0 < totalViolations)
+            {
+                string formatedTime = Helper.GetViolationFormattedString(totalViolationTime);
+                ((Label)groupFooter.Controls["labelTotalViolationTime"]).Text = formatedTime;
+            }
+
+            Section groupFooter1 = rpt.Sections["groupFooter1"];
+            groupFooter1.Visible = (0 == totalViolations);
+            groupFooter.Visible = !groupFooter1.Visible;
+}
+
+public void Detail_Format()
+{
+            FieldCollection fields = rpt.Fields;
+
+            object value = fields["StartDate"].Value;
+            DateTime startDate = DateTime.Parse(value.ToString());
+            int dayInMinutes = startDate.Date.DayOfYear * MINUTES_PER_DAY;
+
+            // get data for TW
+            double toDeliveryTime = Helper.GetTWToTimeInMin(fields, dayInMinutes,
+                                                            "TWString", "TWFrom", "TWTo");
+            // get data for TW2
+            double toDeliveryTime2 = Helper.GetTWToTimeInMin(fields, dayInMinutes,
+                                                             "TW2String", "TW2From", "TW2To");
+
+            Section detailSection = rpt.Sections["Detail"];
+
+            // check violations
+            bool hasCurrentViolation = false;
+            if ((-1 != toDeliveryTime) || (-1 != toDeliveryTime2))
+            {
+                value = fields["ArriveDate"].Value;
+                DateTime arriveDate = DateTime.Parse(value.ToString());
+                int arriveDayInMinutes = arriveDate.Date.DayOfYear * MINUTES_PER_DAY;
+
+                double arriveTime = 0;
+                value = fields["ArriveTime"].Value;
+                if (!string.IsNullOrEmpty(value.ToString()))
+                    arriveTime = Convert.ToDouble(value.ToString()) + arriveDayInMinutes;
+
+                // calculate violations value
+                bool isTW1Violation = false;
+                double twViolationValue = 0;
+                if (-1 != toDeliveryTime)
+                {   // not wideopen
+                    if (toDeliveryTime < arriveTime)
+                    {   // TW1 have violation
+                        twViolationValue = arriveTime - toDeliveryTime;
+                        isTW1Violation = true;
+                    }
+                }
+
+                if (-1 != toDeliveryTime2)
+                {   // not wideopen
+                    if (toDeliveryTime2 < arriveTime)
+                    {   // TW2 have violation
+                        twViolationValue = arriveTime - toDeliveryTime2;
+                        isTW1Violation = false;
+                    }
+                    else // reset TW1 violation
+                        twViolationValue = 0;
+                }
+
+                // update GUI
+                hasCurrentViolation = (0 < twViolationValue);
+                if (hasCurrentViolation)
+                {
+                    ControlCollection controls = detailSection.Controls;
+
+                    string twString = WIDEOPEN;
+                    string TWStringFieldName = (isTW1Violation) ? "TWString" : "TW2String";
+                    if (null != fields[TWStringFieldName].Value)
+                        twString = fields[TWStringFieldName].Value.ToString();
+                    ((Label)controls["labelTimeWindow"]).Text = twString;
+
+                    string formatedTime = Helper.GetViolationFormattedString(twViolationValue);
+                    ((Label)controls["labelViolation"]).Text = formatedTime;
+
+                    ((Label)controls["labelTW"]).Text = (isTW1Violation) ? "TW1" : "TW2";
+
+                    DateTime arriveTimeVal = new DateTime(1981, 3, 24, 0, 0, 0).AddMinutes(arriveTime);
+
+                    ((Label)controls["labelArriveTime"]).Text = (startDate != arriveDate) ?
+                                                arriveTimeVal.ToString() : arriveTimeVal.ToLongTimeString();
+                }
+            }
+
+            detailSection.Visible = hasCurrentViolation;
+        }]]></Script>
+  <PageSettings LeftMargin="720" RightMargin="720" TopMargin="720" BottomMargin="720" Orientation="2" />
+  <Parameters />
+</ActiveReportsLayout>

@@ -1,0 +1,49 @@
+﻿<Grid x:Class="ESRI.ArcLogistics.App.Pages.CandidatesNotFoundSubPage"
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d"
+    xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Luna" >
+    <StackPanel Orientation="Vertical">
+        <TextBlock Name="CandidatesNotFoundSubPageText1"
+                   TextAlignment="Justify"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Left"
+                   FontSize="{StaticResource LargeFontSize}"
+                   FontFamily="{StaticResource DefaultApplicationFont}"
+                   Margin="{StaticResource FleetSetupWizardPageTextMargin}"
+                   />
+        <TextBlock Name="CandidatesNotFoundSubPageText2"
+                   TextAlignment="Justify"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Left"
+                   FontSize="{StaticResource LargeFontSize}"
+                   FontFamily="{StaticResource DefaultApplicationFont}"
+                   Margin="{StaticResource FleetSetupWizardPageTextMargin}"
+                   />
+        <ToggleButton Name="PushpinToolButton"
+                      Margin="{StaticResource FleetSetupWizardPageTextMargin}"
+                      Width="26"
+                      Height="26"
+                      Style="{StaticResource MapToolButtonStyle}"
+                      HorizontalAlignment="Left"
+                      IsEnabled="False">
+            <Image Style="{StaticResource ToolButtonImageStyle}"/>
+        </ToggleButton>
+        <TextBlock Name="CandidatesNotFoundSubPageText3"
+                   TextAlignment="Justify"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Left"
+                   FontSize="{StaticResource LargeFontSize}"
+                   FontFamily="{StaticResource DefaultApplicationFont}"
+                   Margin="{StaticResource FleetSetupWizardPageTextMargin}"
+                   />
+    </StackPanel>
+</Grid>

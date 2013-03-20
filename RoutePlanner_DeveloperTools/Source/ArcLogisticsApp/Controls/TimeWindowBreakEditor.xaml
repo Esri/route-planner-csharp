@@ -1,0 +1,73 @@
+﻿<UserControl 
+        x:ClassModifier="internal"
+        x:Class="ESRI.ArcLogistics.App.Controls.TimeWindowBreakEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:converters="clr-namespace:ESRI.ArcLogistics.App.Converters"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:xceedControls="clr-namespace:Xceed.Wpf.Controls;assembly=Xceed.Wpf.Controls"
+        xmlns:local="clr-namespace:ESRI.ArcLogistics.App.Controls" >
+    <UserControl.Resources>
+
+        <converters:DayToBooleanConverter x:Key="dayToBooleanConverter"/>
+
+        <Thickness x:Key="RowMargin" Left="4" Top="2" Right="4" Bottom="2"/>
+
+    </UserControl.Resources>
+     
+        <Grid x:Name="BreaksGrid" Background="Transparent" HorizontalAlignment="Center">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="23"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+            
+        <DockPanel Grid.Row="0" Margin="{StaticResource RowMargin}">
+            <Label Width="Auto" Content="{DynamicResource TimeWindowBreakInsertLabel}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <xceedControls:NumericTextBox 
+                                    AllowDrop="False" 
+                                    NumberStyles="Float"                                   
+                                    x:Name="DurationTextBox" 
+                                    Text="{Binding Path= Duration}"
+                                    MaxWidth="40" 
+                                    Width="30"
+                                    BorderBrush="LightGray"
+                                    VerticalAlignment="Center" 
+                                    HorizontalAlignment="Left" 
+                                    Height="22"
+                                    Padding="1"
+                                    TextAlignment="Right"
+                                    FontSize="{DynamicResource StandartHelpFontSize}"
+                                    HorizontalContentAlignment="Right"
+                                    VerticalContentAlignment="Center"
+                                    Style="{DynamicResource BreakDurationTextBoxStyle}"/>
+            <Label Content="{DynamicResource TimeWindowBreakMinutesLabel}" Width="Auto" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        </DockPanel>
+
+        <DockPanel Margin="{StaticResource RowMargin}" Grid.Row="2">
+            <Label Width="Auto" Content="{DynamicResource TimeWindowBreakBetweenLabel}"  HorizontalAlignment="Left"/>
+            <local:TimeTextBox AllowDrop="False" Focusable="False" 
+                               x:Name="FromTime" HorizontalAlignment="Left" 
+                               TimeSpan="{Binding Path=From,Mode=TwoWay}"/>
+            <Label Content="{DynamicResource TimeWindowBreakAndLabel}" Width="Auto" HorizontalAlignment="Left"/>
+            <local:TimeTextBox AllowDrop="False" Focusable="False" 
+                               x:Name="ToTime" HorizontalAlignment="Left" 
+                               TimeSpan="{Binding Path=To,Mode=TwoWay}"/>
+        </DockPanel>
+
+        <DockPanel Margin="{StaticResource RowMargin}" Grid.Row="3">
+            <CheckBox Margin="5 0 0 0"
+                IsChecked="{Binding Path=Day, Converter={StaticResource dayToBooleanConverter}}" 
+                Content="{DynamicResource CellTimeWindowDay2}"
+                Style="{DynamicResource CheckBoxInGridStyle}"/>
+        </DockPanel>
+            
+        <Separator Grid.Row="4"/>
+            
+    </Grid>
+
+</UserControl>

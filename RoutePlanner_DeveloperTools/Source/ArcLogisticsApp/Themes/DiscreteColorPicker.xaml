@@ -1,0 +1,44 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcLogistics.App.Controls">
+    
+    <Style TargetType="{x:Type local:DiscreteColorPicker}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:DiscreteColorPicker}">
+                    <Border Background="White"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <ListBox Margin="4,2,4,2"
+                                 Padding="0"
+                                 BorderThickness="0"
+                                 SelectionMode="Single"
+                                 FocusVisualStyle="{x:Null}"
+                                 ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                 ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                                 ItemContainerStyle="{DynamicResource GridColorPickerColorItemStyle}"
+                                   x:Name="PART_ColorsContainer"
+                                    MinHeight="30"
+                                    MinWidth="50">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel 
+                                        FocusVisualStyle="{x:Null}"
+                                        Width="{Binding ElementName=PART_ColorsContainer, Path=ActualWidth }"
+                                        MinHeight="30"
+                                        VerticalAlignment="Stretch" 
+                                        HorizontalAlignment="Stretch"
+                                        ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                        ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                                        />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                        </ListBox>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

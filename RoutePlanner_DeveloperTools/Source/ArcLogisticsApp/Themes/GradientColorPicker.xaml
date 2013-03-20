@@ -1,0 +1,88 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcLogistics.App.Controls">
+    <Style TargetType="{x:Type local:GradientColorPicker}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:GradientColorPicker}">
+                    <Border Background="White"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid Margin="1,1,1,1"
+                              VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              MinHeight="50">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="42"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid x:Name="PART_SolidColorGrid" 
+                                  VerticalAlignment="Stretch"
+                                  HorizontalAlignment="Stretch"
+                                  Grid.Column="0"
+                                  Margin="2,2,1,2">
+                            	<Border VerticalAlignment="Stretch"
+                            		HorizontalAlignment="Stretch">
+                            		<Border.OpacityMask>
+                            			<RadialGradientBrush GradientOrigin="0.827,0.157">
+                            				<RadialGradientBrush.RelativeTransform>
+                            					<TransformGroup>
+                            						<ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.258" ScaleY="1.198"/>
+                            						<SkewTransform AngleX="0" AngleY="0" CenterX="0.5" CenterY="0.5"/>
+                            						<RotateTransform Angle="0" CenterX="0.5" CenterY="0.5"/>
+                            						<TranslateTransform X="0.079" Y="-0.076"/>
+                            					</TransformGroup>
+                            				</RadialGradientBrush.RelativeTransform>
+                            				<GradientStop Color="#00000000" Offset="0.16"/>
+                            				<GradientStop Color="#FFFFFFFF" Offset="1"/>
+                            			</RadialGradientBrush>
+                            		</Border.OpacityMask>
+                            		<Border.Background>
+                            			<LinearGradientBrush EndPoint="0.502,1" StartPoint="0.498,0">
+                            				<GradientStop Color="#FF000000" Offset="1"/>
+                            				<GradientStop Color="#FFFFFFFF" Offset="0"/>
+                            			</LinearGradientBrush>
+                            		</Border.Background>
+                            	</Border>
+                            	<Ellipse RenderTransformOrigin="0.5,0.5" 
+                                         HorizontalAlignment="Left" 
+                                         Margin="0,0,0,0" 
+                                         x:Name="PART_SelectionEllipse" 
+                                         SnapsToDevicePixels="True"
+                                         VerticalAlignment="Top" 
+                                         Width="8" 
+                                         Height="8" 
+                                         Fill="Transparent" 
+                                         Stroke="Black">
+                            		<Ellipse.RenderTransform>
+                            			<TransformGroup>
+                            				<ScaleTransform ScaleX="1" ScaleY="1"/>
+                            				<SkewTransform AngleX="0" AngleY="0"/>
+                            				<RotateTransform Angle="0"/>
+                            				<TranslateTransform X="0" Y="0"/>
+                            			</TransformGroup>
+                            		</Ellipse.RenderTransform>
+                            	</Ellipse>
+                            </Grid>
+                            <Grid x:Name="PART_SpectrumGrid" 
+                                  VerticalAlignment="Stretch"
+                                  HorizontalAlignment="Stretch"
+                                  Margin="1,2,1,2" Grid.Column="1">
+                                <Slider x:Name="PART_SpectrumSlider"
+                                        Maximum="1254"
+                                        Minimum="1"
+                                        Margin="0,0,0,0"
+                                        VerticalAlignment="Stretch"
+                                        Orientation="Vertical" 
+                                        HorizontalAlignment="Center" 
+                                        Style="{DynamicResource ColorPickerSliderStyle}"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

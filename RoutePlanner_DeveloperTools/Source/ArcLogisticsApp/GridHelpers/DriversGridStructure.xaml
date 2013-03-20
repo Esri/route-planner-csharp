@@ -1,0 +1,64 @@
+<ResourceDictionary
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:app="clr-namespace:ESRI.ArcLogistics.App;assembly=ESRI.ArcLogistics.App"
+xmlns:domainObjects="clr-namespace:ESRI.ArcLogistics.DomainObjects;assembly=ESRI.ArcLogisticsNG"
+xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib">
+
+    <coll:ArrayList x:Key="itemProperties">
+        <xcdg:DataGridItemProperty Name="Name" />
+        <xcdg:DataGridItemProperty Name="FixedCost" />
+        <xcdg:DataGridItemProperty Name="PerHourSalary" />
+        <xcdg:DataGridItemProperty Name="PerHourOTSalary" />
+        <xcdg:DataGridItemProperty Name="TimeBeforeOT" />
+        <xcdg:DataGridItemProperty Name="Specialties" 
+                                   SortComparer="{StaticResource toStringComparer}"
+                                   DataType="{app:GenericType TypeName='System.Collections.Generic.ICollection', TypeArguments='domainObjects:DriverSpecialty'}"/>
+        <xcdg:DataGridItemProperty Name="MobileDevice" 
+                                   SortComparer="{StaticResource toStringComparer}"/>
+        <xcdg:DataGridItemProperty Name="Comment" />
+    </coll:ArrayList>
+
+    <coll:ArrayList x:Key="columns">
+        <xcdg:Column FieldName="Name"
+                     Title="{DynamicResource DriverNameHeader}"/>
+        <xcdg:Column FieldName="FixedCost"
+                     Title="{DynamicResource FixedCostColumnHeader}"
+                     CellContentTemplate="{DynamicResource UnitCellContentTemplate}"
+                     CellEditor="{DynamicResource UnitEditorTemplate}" />
+        <xcdg:Column FieldName="PerHourSalary"
+                     Title="{DynamicResource PerHourSalaryColumnHeader}"
+                     CellContentTemplate="{DynamicResource UnitCellContentTemplate}"
+                     CellEditor="{DynamicResource UnitEditorTemplate}" />
+        <xcdg:Column FieldName="PerHourOTSalary"
+                     Title="{DynamicResource PerHourOTSalaryColumnHeader}"
+                     CellContentTemplate="{DynamicResource UnitCellContentTemplate}"
+                     CellEditor="{DynamicResource UnitEditorTemplate}" />
+        <xcdg:Column FieldName="TimeBeforeOT"
+                     Title="{DynamicResource TimeBeforeOTColumnHeader}"
+                     CellContentTemplate="{DynamicResource UnitCellContentTemplate}"
+                     CellEditor="{DynamicResource UnitEditorTemplate}"/>
+        <xcdg:Column FieldName="Specialties" 
+                     Title="{DynamicResource SpecialtiesColumnHeader}"
+                     CellContentTemplate="{DynamicResource DriverSpecialtiesCell}"
+                     CellEditor="{DynamicResource DriverSpecialtiesEditor}"/>
+        <xcdg:Column FieldName="MobileDevice"
+                     Title="{DynamicResource MobileDeviceColumnHeader}"
+                     CellContentTemplate="{DynamicResource MobileDevicesCell}"
+                     CellEditor="{DynamicResource MobileDevicesEditor}"/>
+        <xcdg:Column FieldName="Comment"
+                     Title="{DynamicResource CommentColumnHeader}"/>
+    </coll:ArrayList>
+
+    <!-- Page print configuration -->
+    <DataTemplate x:Key="printHeader">
+        <Label    
+                    Content="{DynamicResource DriversPagePrintHeader}"
+                    HorizontalAlignment="Center"
+                    FontFamily="{DynamicResource DefaultApplicationFont}"
+                    FontWeight="Bold"
+                    FontSize="{DynamicResource LargeFontSize}"/>
+    </DataTemplate>
+
+</ResourceDictionary>

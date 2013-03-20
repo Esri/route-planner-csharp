@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="ESRI.ArcLogistics.ALObject">
+    <Position X="18.5" Y="1" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAQABCAgAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>ALObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Data.DataObject">
+    <Position X="18.25" Y="3.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABgAAAAAAAAkAAAIAAAAAAEAAAAAA=</HashCode>
+      <FileName>Data\DataObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Data.DomainObjects.Barrier">
+    <Position X="0.5" Y="6.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAACABAAAAAAAQAQCAgAEAQAAAAAAAAAEAAAAAAAABA=</HashCode>
+      <FileName>Data\DomainObjects\Barrier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Data.DomainObjects.Route">
+    <Position X="5.25" Y="6.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AEACABAAAAAAAQAACAgAEAAABAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Data\DomainObjects\Route.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Data.DomainObjects.Solution">
+    <Position X="10.25" Y="6.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAQAACAgAEAQAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Data\DomainObjects\Solution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Project" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="40" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DBAgAIIAABAgoAIAAAIAAATCQAEAAAAIEAAQAAiAAAA=</HashCode>
+      <FileName>Project.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Data.DomainObjects.Location">
+    <Position X="18" Y="6.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAAAQAACAgAAAQAAAAAAAACAAAAAAAJABA=</HashCode>
+      <FileName>Data\DomainObjects\Location.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Data.DomainObjects.Vehicle">
+    <Position X="32" Y="6.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAAAQAACAgAIAQAAABAEAAAEQAAAAAAABA=</HashCode>
+      <FileName>Data\DomainObjects\Vehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Data.DomainObjects.MobileDevice">
+    <Position X="21.5" Y="6.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAQQAACAgAAAQAAAAAAAAAAgAAAgAAABA=</HashCode>
+      <FileName>Data\DomainObjects\MobileDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Data.DomainObjects.Driver">
+    <Position X="13.75" Y="6.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAAAQAECAgAIAQAAAAAGAAgAAAAAAAAABA=</HashCode>
+      <FileName>Data\DomainObjects\Driver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Data.DomainObjects.VehicleSpecialty">
+    <Position X="28.5" Y="6.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAAAQAACAgAAAQAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Data\DomainObjects\VehicleSpecialty.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Data.DomainObjects.DriverSpecialty">
+    <Position X="25" Y="6.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAAAQAACAgAAAQAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Data\DomainObjects\DriverSpecialty.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Data.DomainObjects.Zone">
+    <Position X="36.25" Y="6.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAQAACAgAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Data\DomainObjects\Zone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.ProjectFactory" Collapsed="true">
+    <Position X="45.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAgACAgAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>ProjectFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.ProjectCatalog" Collapsed="true">
+    <Position X="41.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAACAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>ProjectCatalog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.ProjectConfiguration" Collapsed="true">
+    <Position X="43.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAgAAAIAAAAAAQAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>ProjectConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.AGSServerConnection" Collapsed="true">
+    <Position X="45.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAACAAAAAAAQAACAIAAAA=</HashCode>
+      <FileName>AGSServerConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.AGSServerCatalog" Collapsed="true">
+    <Position X="43.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>AGSServerCatalog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.AGSService" Collapsed="true">
+    <Position X="40" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AGSService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.AGSServiceInfo" Collapsed="true">
+    <Position X="41.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAgAAAAAAAAAAQAACAAAAAAAQAAAAABAAA=</HashCode>
+      <FileName>AGSServiceInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Map" Collapsed="true">
+    <Position X="45.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.AGSServer" Collapsed="true">
+    <Position X="41.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AGSServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.TimeWindow" BaseTypeListCollapsed="true">
+    <Position X="40" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAIAAQAAAAAAAAAABA=</HashCode>
+      <FileName>TimeWindow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Address" Collapsed="true">
+    <Position X="40" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Address.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESRI.ArcLogistics.Capacities" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="43.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAAAAAAAAAABAQAAAABAQAAAAAAAAAAAAAAABQIBA=</HashCode>
+      <FileName>Capacities.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Enum Name="ESRI.ArcLogistics.AGSServerConnectionType">
+    <Position X="40" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ESRI.ArcLogistics.AGSServiceType">
+    <Position X="41.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAgA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

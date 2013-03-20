@@ -1,0 +1,87 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ESRI.ArcLogistics.App.Controls"
+                    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Luna"
+                    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid">
+
+    <Style TargetType="{x:Type local:GridColorPicker}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:GridColorPicker}">
+                    <Grid Margin="0,0,0,0" Background="White"  x:Name="PART_TopLevelGrid">
+                        <Grid Margin="0,0,0,0" Background="White" x:Name="PART_CellLabel">
+                            <Border BorderBrush="{DynamicResource AquamarineSkinLightBlueColor}" 
+                                BorderThickness="1,1,1,1" Focusable="False">
+                                <Grid Margin="0,0,0,0" Width="Auto" 
+                                  MinWidth="50" 
+                                  VerticalAlignment="Stretch"
+                                  Focusable="False">
+                                    <Grid HorizontalAlignment="Stretch" 
+                                      VerticalAlignment="Stretch"
+                                      Margin="1,1,18,1"
+                                      Focusable="False">
+                                        <Border VerticalAlignment="Stretch" 
+                                    HorizontalAlignment="Stretch" 
+                                    CornerRadius="2,2,2,2"
+                                    Focusable="False"
+                                    Background="{Binding Path=FillColor ,RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger = PropertyChanged}"
+                                    BorderThickness="1,1,1,1">
+                                        </Border>
+                                        <Border CornerRadius="2,2,2,2" 
+                                            BorderThickness="1,1,1,1" 
+                                            BorderBrush="{DynamicResource GanttBorderBrush}"
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Stretch" 
+                                            Focusable="False"
+                                            Height="Auto">
+                                            <Border.Background>
+                                                <LinearGradientBrush EndPoint="0.531,0.952" StartPoint="0.531,-0.048">
+                                                    <GradientStop Color="#99FFFFFF" Offset="0"/>
+                                                    <GradientStop Color="#0CFFFFFF" Offset="0.173"/>
+                                                    <GradientStop Color="#19303030" Offset="1"/>
+                                                    <GradientStop Color="#0CFFFFFF" Offset="0.958"/>
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                        </Border>
+                                    </Grid>
+                                    <!-- Note : property IsChecked sets by binding to IsDropDownOpen property of combo box -->
+                                    <!-- Toggle button should hava a name "PART_OpenButton" -->
+                                    <ToggleButton x:Name="PART_OpenButton" 
+                                              Width="Auto" Height="Auto"  
+                                              Margin="0" 
+                                              HorizontalAlignment="Stretch" 
+                                              IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                              Style="{DynamicResource CellToggleButtonStyle}"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                        <!-- Note : property IsOpen sets by binding to corresponding property of combo box -->
+                        <Popup x:Name="PART_PopupPanel"
+                                   Width="Auto" 
+                                   Placement="Absolute"
+                                   IsOpen="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" 
+                                   AllowsTransparency="True"
+                                   PopupAnimation="Slide"
+                                   Margin="0,0,0,0">
+                            <Microsoft_Windows_Themes:SystemDropShadowChrome 
+                                  CornerRadius="4" Color="{DynamicResource DropDownShadowColor}">
+                                <Border BorderThickness="1,1,1,1" 
+                                        Margin="0,0,3,3" 
+                                        Style="{DynamicResource CellEditorBorderStyle}">
+                                    <Grid VerticalAlignment="Stretch">
+                                        <local:ColorPicker
+                                            x:Name="PART_ColorPicker"
+                                                VerticalAlignment="Stretch" 
+                                                HorizontalAlignment="Stretch"
+                                                />
+                                    </Grid>
+                                </Border>
+                            </Microsoft_Windows_Themes:SystemDropShadowChrome>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

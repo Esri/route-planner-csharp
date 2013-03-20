@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://arclogistics.arcgisonline.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://arclogistics.arcgisonline.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://arclogistics.arcgisonline.com/">
+      <s:element name="GetServiceUrl">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServiceUrlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceUrlResult" type="tns:LoadBalanceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LoadBalanceResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ServerUrl" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:StatusCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="StatusCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="Succeed" />
+          <s:enumeration value="NoServerAvailable" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetServiceUrlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceUrl" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceUrlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceUrlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LoadBalanceServiceSoap">
+    <wsdl:operation name="GetServiceUrl">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a spare service url.</wsdl:documentation>
+      <wsdl:input message="tns:GetServiceUrlSoapIn" />
+      <wsdl:output message="tns:GetServiceUrlSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LoadBalanceServiceSoap" type="tns:LoadBalanceServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServiceUrl">
+      <soap:operation soapAction="http://arclogistics.arcgisonline.com/GetServiceUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LoadBalanceServiceSoap12" type="tns:LoadBalanceServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServiceUrl">
+      <soap12:operation soapAction="http://arclogistics.arcgisonline.com/GetServiceUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoadBalanceService">
+    <wsdl:port name="LoadBalanceServiceSoap" binding="tns:LoadBalanceServiceSoap">
+      <soap:address location="http://arcgis-server/ArcLogistics/LoadBalance.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LoadBalanceServiceSoap12" binding="tns:LoadBalanceServiceSoap12">
+      <soap12:address location="http://arcgis-server/ArcLogistics/LoadBalance.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

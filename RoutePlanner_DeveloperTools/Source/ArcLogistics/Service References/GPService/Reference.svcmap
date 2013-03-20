@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="45108611-359d-47e3-9f1f-6423cf1df7a8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://networkanalysis.arcgisonline.com/arcgis/services/Premium/VehicleRoutingProblemSync/GPServer?wsdl&amp;token=1q2h7FhIfgFqwNG2ZuFohaGd3Ij7ypjOV0LRQfjv6rdIvJcuJQU2HbYrVm1heWnpZGmyq8Tf1928-m5adynrCQ.." Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GPServer.wsdl" MetadataType="Wsdl" ID="05bbd8f3-df74-452c-9431-57f0d8522cfc" SourceId="1" SourceUrl="http://networkanalysis.arcgisonline.com/arcgis/services/Premium/VehicleRoutingProblemSync/GPServer?wsdl&amp;token=1q2h7FhIfgFqwNG2ZuFohaGd3Ij7ypjOV0LRQfjv6rdIvJcuJQU2HbYrVm1heWnpZGmyq8Tf1928-m5adynrCQ.." />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

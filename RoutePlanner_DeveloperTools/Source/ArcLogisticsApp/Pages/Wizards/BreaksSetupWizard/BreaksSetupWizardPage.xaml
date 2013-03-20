@@ -1,0 +1,111 @@
+<wizardPages:WizardPageBase x:Class="ESRI.ArcLogistics.App.Pages.Wizards.BreaksSetupWizardPage"
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="992" d:DesignHeight="784"
+    xmlns:wizardPages="clr-namespace:ESRI.ArcLogistics.App.Pages.Wizards">
+    <Border Style="{StaticResource LicenseFormBorderStyle}"
+            Margin="{StaticResource FleetSetupWizardPageContentMargin}"
+            Grid.Row="0">
+        <Grid x:Name="layoutRoot" MaxHeight="600" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Name="stack" Grid.Row="0" Margin=" 0 0 10 0">
+                <Label Content="{StaticResource BreaksSetupWizardPageTitle}"
+                            FontSize="{StaticResource ExtraLargeFontSize}"
+                            FontFamily="{StaticResource DefaultApplicationFont}"
+                            Foreground="{StaticResource AquamarineSkinLightBlueColor}"
+                            FontWeight="Bold"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Margin="{StaticResource FleetSetupWizardPageTitleMargin}"/>
+
+                <Border BorderBrush="{StaticResource ApplicationBorder}"
+                            SnapsToDevicePixels="True"
+                            BorderThickness="{StaticResource FleetSetupWizardSeparatorThickness}"
+                            Margin="{StaticResource FleetSetupWizardSeparatorMargin}" />
+
+                <TextBlock FontSize="{StaticResource LargeFontSize}"
+                               FontFamily="{StaticResource DefaultApplicationFont}"
+                               Text="{StaticResource SelectBreakTypeMessage}"
+                               TextAlignment="Justify"
+                               TextWrapping="Wrap"
+                               VerticalAlignment="Stretch"
+                               HorizontalAlignment="Stretch"
+                               Margin="30 10 0 0"/>
+
+                <RadioButton Name="TimeWindow" GroupName="BreakSettings" Checked="_TimeWindowChecked"
+                                 FontSize="{StaticResource LargeFontSize}"
+                                 FontFamily="{StaticResource DefaultApplicationFont}" 
+                                 Content="{StaticResource TimeWindowRadioButtonContent}" 
+                                 Margin="{StaticResource BreaksSetupWizardRadioButtonMargin}"/>
+
+                <TextBlock FontSize="{StaticResource LargeFontSize}"
+                               FontFamily="{StaticResource DefaultApplicationFont}"
+                               Text="{StaticResource TimeWindowText}"
+                               TextAlignment="Justify"
+                               TextWrapping="Wrap"
+                               VerticalAlignment="Stretch"
+                               HorizontalAlignment="Stretch"
+                               Margin="{StaticResource BreaksSetupWizardTextBoxMargin}"/>
+
+                <RadioButton Name="DriveTime" GroupName="BreakSettings" Checked="_DriveTimeChecked" 
+                                 Content="{StaticResource TravelTimeRadioButtonContent}"
+                                 FontSize="{StaticResource LargeFontSize}"
+                                 FontFamily="{StaticResource DefaultApplicationFont}" 
+                                 Margin="{StaticResource BreaksSetupWizardRadioButtonMargin}"/>
+                <TextBlock FontSize="{StaticResource LargeFontSize}"
+                              FontFamily="{StaticResource DefaultApplicationFont}"
+                              Text="{StaticResource TravelTimeText}"
+                              TextAlignment="Justify"
+                              TextWrapping="Wrap"
+                              VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              Margin="{StaticResource BreaksSetupWizardTextBoxMargin}"/>
+
+                <RadioButton Name="WorkTime" GroupName="BreakSettings" Checked="_WorkTimeChecked" 
+                                 Content="{StaticResource WorkTimeRadioButtonContent}"
+                                 FontSize="{StaticResource LargeFontSize}"
+                                 FontFamily="{StaticResource DefaultApplicationFont}" 
+                                 Margin="{StaticResource BreaksSetupWizardRadioButtonMargin}"/>
+
+                <TextBlock Text="{StaticResource WorkTimeText}"
+                               FontSize="{StaticResource LargeFontSize}"
+                               FontFamily="{StaticResource DefaultApplicationFont}"
+                               TextAlignment="Justify"
+                               TextWrapping="Wrap"
+                               VerticalAlignment="Stretch"
+                               HorizontalAlignment="Stretch"
+                               Margin="{StaticResource BreaksSetupWizardTextBoxMargin}"/>
+
+            </StackPanel>
+            
+            <StackPanel  Orientation="Horizontal"  Grid.Row="1"
+                                Margin="0 20 10 0" HorizontalAlignment="Right">
+                <Button x:Name="buttonFinish"
+                                    Content="{StaticResource ButtonHeaderOk}"
+                                    IsEnabled="True"
+                                    Width="{StaticResource DefaultWizardPageButtonWidth}"
+                                    Height="{StaticResource DefaultWizardPageButtonHeight}"
+                                    FontSize="{StaticResource WizardButtonFontSize}"
+                                    Style="{StaticResource PageButtonStyle}"
+                                    Margin="{StaticResource FleetSetupWizardButtonMargin}"
+                                    Click="_ButtonOkClick" />
+                <Button x:Name="buttonCancel"
+                            Content="{StaticResource ButtonHeaderCancel}"
+                            IsEnabled="True"
+                            Width="{StaticResource DefaultWizardPageButtonWidth}"
+                            Height="{StaticResource DefaultWizardPageButtonHeight}"
+                            FontSize="{StaticResource WizardButtonFontSize}"
+                            Style="{StaticResource PageButtonStyle}"
+                                Margin="{StaticResource FleetSetupWizardButtonMargin}"
+                            Click="buttonCancel_Click" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</wizardPages:WizardPageBase>

@@ -1,0 +1,35 @@
+<ResourceDictionary
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:app="clr-namespace:ESRI.ArcLogistics.App;assembly=ESRI.ArcLogistics.App"
+xmlns:arcLogistics="clr-namespace:ESRI.ArcLogistics;assembly=ESRI.ArcLogisticsNG"
+xmlns:collections="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+xmlns:sys="clr-namespace:System;assembly=mscorlib"    
+xmlns:arcLogisticsPages="clr-namespace:ESRI.ArcLogistics.App.Pages;assembly=ESRI.ArcLogistics.App"
+xmlns:app_controls="clr-namespace:ESRI.ArcLogistics.App.Controls;assembly=ESRI.ArcLogistics.App"
+xmlns:domainObjects="clr-namespace:ESRI.ArcLogistics.DomainObjects;assembly=ESRI.ArcLogisticsNG"
+xmlns:validation="clr-namespace:ESRI.ArcLogistics.App.Validators;assembly=ESRI.ArcLogistics.App"
+xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib">
+
+    <coll:ArrayList x:Key="itemProperties">
+        <xcdg:DataGridItemProperty Name="SymbolFilename"/>
+        <xcdg:DataGridItemProperty Name="Size" DataType="{x:Type sys:Int32}"/>
+        <xcdg:DataGridItemProperty Name="Angle" DataType="{x:Type sys:Int32}"/>
+        <xcdg:DataGridItemProperty Name="Color" />
+        <xcdg:DataGridItemProperty Name="Value"/>
+        <xcdg:DataGridItemProperty Name="UseRouteColor" DataType="{x:Type sys:Boolean}"/>
+    </coll:ArrayList>
+
+    <coll:ArrayList x:Key="columns">
+        <xcdg:Column FieldName="SymbolFilename" Title="{DynamicResource SymbolColumnHeader}" CellContentTemplate="{DynamicResource SymbolCell}" CellEditor="{DynamicResource SymbolEditor}"/>
+        <xcdg:Column FieldName="Size" Title="{DynamicResource SizeColumnHeader}"/>
+        <xcdg:Column FieldName="Angle" Title="{DynamicResource AngleColumnHeader}"/>
+        <xcdg:Column FieldName="Color" Title="{DynamicResource ColorColumnHeader}" CellContentTemplate="{DynamicResource ColorCell}" CellEditor="{DynamicResource ColorCellEditor}"/>
+        <xcdg:Column FieldName="Value" Title="{DynamicResource ValueColumnHeader}"/>
+        <xcdg:Column FieldName="UseRouteColor" Title="{DynamicResource UseRouteColorColumnHeader}" 
+                     CellContentTemplate="{DynamicResource DefaultCheckBoxTemplate}" 
+                     CellEditor="{DynamicResource DefaultCheckBoxEditor}"
+                     CellEditorDisplayConditions="Always"/>
+    </coll:ArrayList>
+</ResourceDictionary>

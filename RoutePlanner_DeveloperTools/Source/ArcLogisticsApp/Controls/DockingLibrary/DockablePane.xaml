@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="ESRI.ArcLogistics.App.Controls.DockablePane"
+   x:ClassModifier="internal"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:custom="clr-namespace:ESRI.ArcLogistics.App.Controls"
+   SnapsToDevicePixels="True" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    <UserControl.Resources>
+        <Storyboard x:Key="OnMouseEnter">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="brHeader" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="OnMouseLeave">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="brHeader" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.7"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <DockPanel >
+        <Border SnapsToDevicePixels="True"
+            Width="Auto" Height="Auto"
+            BorderBrush="{DynamicResource AquamarineSkinMainWindowBorder}"
+            BorderThickness="1,1,1,1">
+            <Grid Background="{x:Null}" VerticalAlignment="Stretch">
+                <ContentPresenter x:Name="cpClientWindowContent" Visibility="Collapsed" Margin="0,0,0,0"/>
+                <Border SnapsToDevicePixels="True"
+                    x:Name="brHeader"
+                    MouseDown="OnHeaderMouseDown"
+                    MouseUp="OnHeaderMouseUp"
+                    MouseMove="OnHeaderMouseMove"
+                    Background="{DynamicResource CategoryButtonBackground}"
+                    BorderThickness="1,0,0,1"
+                    BorderBrush="{DynamicResource AquamarineSkinMainWindowBorder}" OpacityMask="{x:Null}" CornerRadius="0,0,0,25" Opacity="1" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,0,0" Height="{DynamicResource DockedWindowHeaderHeight}">
+                    <StackPanel Orientation="Horizontal" x:Name="stackPanel" Background="{x:Null}" Width="Auto" Height="Auto" Margin="25,0,2,0" VerticalAlignment="Center">
+                        <TextBlock Width="Auto"
+                            Height="Auto"
+                            TextWrapping="NoWrap"
+                            ToolTip="{DynamicResource DockedViewTooltip}"
+                            FontSize="{DynamicResource MiddleFontSize}"
+                            Foreground="{DynamicResource HeaderTextColor}"
+                            x:Name="tbTitle"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Stretch"
+                            Margin="0,0,4,0"
+                            Text="Title" />
+                        <Grid x:Name="btnClose"
+                            PreviewMouseDown="OnBtnCloseMouseDown"
+                            Width="20" Height="20"
+                            Style="{DynamicResource DockingHeaderButtonStyle}" Background="{x:Null}" >
+                            <ContentControl Foreground="{x:Null}"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                Style="{DynamicResource CloseButtonIcon}"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+    </DockPanel>
+</UserControl>

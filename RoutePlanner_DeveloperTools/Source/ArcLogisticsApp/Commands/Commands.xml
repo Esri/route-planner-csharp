@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--When you add/change/delete categories keep it synced with CategoryNames class constants.-->
+<Categories>
+  <Category name="ScheduleTaskWidgetCommands" pagetype="ESRI.ArcLogistics.App.Pages.OptimizeAndEditPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.ImportOrdersCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.BuildRoutesCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.SendRoutesCommand"/>
+  </Category>
+  <Category name="UnassignedOrdersRoutingCommands" pagetype="ESRI.ArcLogistics.App.Pages.OptimizeAndEditPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.MoveOrders"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteOrdersCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DuplicateOrdersCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.GeocodeOrdersCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.PrintDataGridItemsCmd"/>
+  </Category>
+  <Category name="RouteRoutingCommands" pagetype="ESRI.ArcLogistics.App.Pages.OptimizeAndEditPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.MoveOrders"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteOrdersCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.PrintDataGridItemsCmd"/>
+  </Category>
+  <Category name="RoutesRoutingCommands" pagetype="ESRI.ArcLogistics.App.Pages.OptimizeAndEditPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.MoveOrders"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteRoutesCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DuplicateRoutesCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.SequenceRoutesCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.PrintDataGridItemsCmd"/>
+  </Category>
+  <Category name="TimeViewRoutesRoutingCommands" pagetype="ESRI.ArcLogistics.App.Pages.OptimizeAndEditPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.MoveOrders"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteRoutesCmd"/>
+  </Category>
+  <Category name="TimeViewStopsRoutingCommands" pagetype="ESRI.ArcLogistics.App.Pages.OptimizeAndEditPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.MoveOrders"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteOrdersCmd"/>
+  </Category>
+  <Category name="FuelTypesCommands" pagetype="ESRI.ArcLogistics.App.Pages.FuelPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteFuelTypes"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.PrintDataGridItemsCmd"/>
+  </Category>
+  <Category name="VehiclesCommands" pagetype="ESRI.ArcLogistics.App.Pages.VehiclesPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteVehicles"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DuplicateVehicles"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.ImportVehiclesCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.PrintDataGridItemsCmd"/>
+  </Category>
+  <Category name="DriversCommands" pagetype="ESRI.ArcLogistics.App.Pages.DriversPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteDrivers"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DuplicateDrivers"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.ImportDriversCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.PrintDataGridItemsCmd"/>
+  </Category>
+  <Category name="BreaksCommands" pagetype="ESRI.ArcLogistics.App.Pages.BreaksPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteBreaks"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DuplicateBreaks"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.ReRunBreaksWizardCommand"/>
+  </Category>
+  <Category name="MobileDevicesCommands" pagetype="ESRI.ArcLogistics.App.Pages.MobileDevicesPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteMobileDevices"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DuplicateMobileDevices"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.ImportMobileDevicesCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.PrintDataGridItemsCmd"/>
+  </Category>
+  <Category name="ZonesCommands" pagetype="ESRI.ArcLogistics.App.Pages.ZonesPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteZones"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DuplicateZones"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.ImportZonesCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.PrintDataGridItemsCmd"/>
+  </Category>
+  <Category name="BarriersCommands" pagetype="ESRI.ArcLogistics.App.Pages.BarriersPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteBarriers"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DuplicateBarriers"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.ImportBarriersCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.PrintDataGridItemsCmd"/>
+  </Category>
+  <Category name="DefaultRoutesCommands" pagetype="ESRI.ArcLogistics.App.Pages.DefaultRoutesPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteDefaultRoutes"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DuplicateDefaultRoutes"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.ImportDefaultRoutesCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.PrintDataGridItemsCmd"/>
+  </Category>
+  <Category name="VehicleSpecialtiesCommands" pagetype="ESRI.ArcLogistics.App.Pages.SpecialtiesPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteVehicleSpecialties"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DuplicateVehicleSpecialties"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.ImportVehicleSpecialtiesCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.PrintDataGridItemsCmd"/>
+  </Category>
+  <Category name="DriverSpecialtiesCommands" pagetype="ESRI.ArcLogistics.App.Pages.SpecialtiesPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteDriverSpecialties"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DuplicateDriverSpecialties"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.ImportDriverSpecialtiesCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.PrintDataGridItemsCmd"/>
+  </Category>
+  <Category name="LocationsCommands" pagetype="ESRI.ArcLogistics.App.Pages.LocationsPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.DeleteLocations"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.DuplicateLocations"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.ImportLocationsCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.GeocodeLocationsCmd"/>
+    <Command type="ESRI.ArcLogistics.App.Commands.PrintDataGridItemsCmd"/>
+  </Category>
+  <Category name="ProjectTaskWidgetCommands" pagetype="ESRI.ArcLogistics.App.Pages.ProjectsPage">
+    <Command type="ESRI.ArcLogistics.App.Commands.ArchiveProjectCmd"/>
+  </Category>
+</Categories>

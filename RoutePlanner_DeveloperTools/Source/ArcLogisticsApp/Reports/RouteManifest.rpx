@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ActiveReportsLayout Version="3.1" PrintWidth="10396.8" MaxPages="200" DocumentName="ARNet Document" ScriptLang="C#" MasterReport="0">
+  <StyleSheet>
+    <Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; ddo-char-set: 204; " />
+    <Style Name="Heading1" Value="font-size: 16pt; font-weight: bold; ddo-char-set: 204; " />
+    <Style Name="Heading2" Value="font-family: Times New Roman; font-size: 14pt; font-weight: bold; font-style: italic; ddo-char-set: 204; " />
+    <Style Name="Heading3" Value="font-size: 13pt; font-weight: bold; ddo-char-set: 204; " />
+  </StyleSheet>
+  <Sections>
+    <Section Type="GroupHeader" Name="groupHeader" Height="420" DataField="Route.ID" RepeatStyle="1" BackColor="16777215">
+      <Control Type="AR.Label" Name="labelVechicle" DataField="VehicleName" Left="5940" Top="90" Width="3330" Height="270" Caption="Vehicle Name" Style="color: #01607B; ddo-char-set: 204; font-weight: bold; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="labelDriver" DataField="DriverName" Left="1800" Top="90" Width="4050" Height="270" Caption="Driver Name" Style="color: #01607B; ddo-char-set: 204; font-weight: bold; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="lblScheduleDescription" Left="9360" Top="90" Width="990" Height="270" Caption="PlannedDate" Style="color: #01607B; ddo-char-set: 204; text-align: right; font-weight: bold; background-color: Transparent; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Label" Name="lblRouteName" DataField="Route.Name" Left="0" Top="90" Width="1710" Height="270" Caption="RouteName" Style="color: #01607B; ddo-char-set: 204; text-align: left; font-weight: bold; font-style: normal; font-size: 9pt; white-space: nowrap; " />
+      <Control Type="AR.Line" Name="lineVerticalSeparator1" X1="0" Y1="0" X2="10350" Y2="0" LineColor="8085505" LineWeight="2" />
+    </Section>
+    <Section Type="Detail" Name="Detail" Height="690" BackColor="16777215" KeepTogether="1">
+      <Control Type="AR.Label" Name="labelBackgroundDetail" Left="0" Top="0" Width="10612.8" Height="270.72" Caption="" Style="color: Black; ddo-char-set: 204; font-weight: bold; font-style: normal; background-color: #01607B; font-size: 9pt; " />
+      <Control Type="AR.Label" Name="labelAddressDetail" DataField="FullAddressShort" Left="3420" Top="0" Width="5940" Height="270" Caption="FullAddress" Style="color: White; ddo-char-set: 204; text-align: left; background-color: Transparent; font-size: 9pt; white-space: inherit; " />
+      <Control Type="AR.Label" Name="labelStopName" DataField="= StopNamePrefix + Stop.Name + StopNamePostfix;" Left="0" Top="0" Width="3330" Height="270" Caption="StopName" Style="ddo-char-set: 1; color: White; text-decoration: none; font-weight: bold; font-style: normal; font-size: 9pt; white-space: inherit; " />
+      <Control Type="AR.Label" Name="labelArriveTimeDetail" DataField="ArriveTimeString" Left="9450" Top="0" Width="935.9999" Height="270.72" Caption="ArriveTimeString" Style="color: White; ddo-char-set: 204; text-align: right; background-color: Transparent; font-size: 9pt; white-space: inherit; " />
+      <Control Type="AR.Field" Name="textBoxContent" Visible="0" Left="0" Top="360" Width="10368" Height="270.72" Text="Content Control Prototype" OutputFormat="0" Style="ddo-char-set: 204; text-align: left; font-size: 9pt; white-space: inherit; " />
+    </Section>
+    <Section Type="GroupFooter" Name="groupFooter" Height="120" BackColor="16777215" NewPage="2" KeepTogether="1" CanShrink="1" />
+  </Sections>
+  <ReportComponentTray />
+  <DataSources>
+    <OleDbDataSource ConnectE="13IdEUWXLb8jDY6d7T6jJYmDRKY5Eee4itGMLIPDLT+VBQkrRemRcHciYcI1dvBprE9fQStE8tu+isu2CxpLq60nUFW0DfO+2JqbUlMrmZBzNYCg0lK/2VTwRb+N2Jid385Ewa4c8Mt+7KgVjOhLTA==" SQL="SELECT * FROM (`Route` `Route` INNER JOIN `Stop` `Stop` ON `Route`.`ID`=`Stop`.`RouteID`) INNER JOIN `Schedule` `Schedule` ON `Route`.`ScheduleID`=`Schedule`.`ID` ORDER BY `Route`.`Name`, `Stop`.`Sequence`" />
+  </DataSources>
+  <Script><![CDATA[using System.Data;
+using System.Data.OleDb;
+using System.Drawing;
+using System.Diagnostics;
+using System.Collections.Generic;
+        
+        private const float SPACE_SEPARATOR_Y = 0.0625f;
+        private const float SPACE_SEPARATOR_WIDTH_PAIR = 0.125f;
+        private const string SELECT_STRING_SCHEMA = "SELECT * FROM `Schema`";
+        private const string FIELD_NAME_SERVICE_TIME = "ServiceTime";
+        private const string DYNAMIC_VALUES_FORMAT = "{0}: {1}";
+        private const string DYNAMIC_LABEL_NAME_FORAMT = "lblDynamicRPT{0}";
+        private const int BIG_VALUE_SIZE = 25; // in chars
+        private const int LINE_LENGTH_VALUE_SIZE = 55; // in chars
+        private const string TIME_FORMAT_ONLY_MINUTES = "{0} min";
+        private const string TIME_FORMAT_ONLY_HOURS = "{0} hr";
+        private const string TIME_FORMAT = "{0} hr {1} min";
+        private const string DOUBLE_DATA_FORMAT = "#,##0.00";
+        private const int MINUTES_PER_HOUR = 60;
+        private const string STOP_TABLE_NAME_FORMAT = "Stop.{0}";
+
+        private sealed class LayoutHelper
+        {
+            public static void AddControls(ICollection<string> values, ARControl control,
+                                           ControlCollection controls)
+            {
+                RectangleF fullRect = control.Bounds;
+
+                if (null != controls)
+                    controls.Remove(control); // remove prototype
+
+                int insertIndex = 0;
+                for (int i = 0; i < values.Count; ++i)
+                {
+                    if (null != controls)
+                    {
+                        ARControl newCtrl = _CreateControl(control, fullRect, i.ToString());
+                        controls.Insert(insertIndex, newCtrl);
+                        ++insertIndex;
+                    }
+                }
+            }
+
+            public static SizeF RepositionControls(ICollection<string> values,
+                                                   ICollection<string> longValues,
+                                                   int dynamicFieldCount,
+                                                   RectangleF contentRect,
+                                                   ControlCollection controls)
+            {
+                Debug.Assert(values.Count + longValues.Count <= dynamicFieldCount);
+
+                int controlsPerLine = _CalcControlPerLine(values.Count);
+
+                // calculate dimensions
+                float controlWidth = (float)(contentRect.Width - SPACE_SEPARATOR_WIDTH_PAIR * (controlsPerLine - 1)) / controlsPerLine; // NOTE: SPACE_SEPARATOR_WIDTH_PAIR spasing between pair of controls
+                float controlHeight = contentRect.Height;
+                PointF locationStart = new PointF(contentRect.Left, contentRect.Top);
+                SizeF size = new SizeF(controlWidth, controlHeight);
+                PointF location = new PointF(locationStart.X, locationStart.Y);
+                float offsetY = controlHeight + SPACE_SEPARATOR_Y;
+                float offsetX = SPACE_SEPARATOR_WIDTH_PAIR + controlWidth;
+
+                int index = 0;
+                // add all short fields - controls per line
+                foreach (string value in values)
+                {
+                    if ((0 != index) && (index % controlsPerLine) == 0)
+                        location.Y += offsetY;
+                    location.X = (0 == (index % controlsPerLine)) ? locationStart.X : location.X + offsetX;
+
+                    RectangleF rect = new RectangleF(location, size);
+                    TextBox label = (TextBox)controls[index];
+                    label.Bounds = rect;
+                    label.Visible = true;
+                    label.Text = value;
+
+                    ++index;
+                }
+
+                // add all long fields - one per line
+                if (0 < longValues.Count)
+                {
+                    bool isFirst = true;
+                    location.X = contentRect.Left;
+                    foreach (string value in longValues)
+                    {
+                        // add offset every time after first and after short fields if its present
+                        if (!isFirst)
+                            location.Y += SPACE_SEPARATOR_Y;
+                        else if (0 < values.Count)
+                            location.Y += offsetY;
+
+                        TextBox ctrl = (TextBox)controls[index];
+                        int heightFactor = 1 + ((int)value.Length / LINE_LENGTH_VALUE_SIZE);
+                        size = new SizeF(contentRect.Width, controlHeight * heightFactor);
+                        RectangleF rect = new RectangleF(location, size);
+                        ctrl.Bounds = rect;
+                        ctrl.Visible = true;
+                        ctrl.Text = value;
+
+                        location.Y = rect.Bottom;
+                        isFirst = false;
+                        ++index;
+                    }
+                }
+
+                // hide dont used controls
+                for (int i = index; i < dynamicFieldCount; ++i)
+                    controls[i].Visible = false;
+
+                // calculate full space size
+                return new SizeF(contentRect.Width, location.Y - locationStart.Y);
+            }
+
+            private static ARControl _CreateControl(ARControl prototypeControl,
+                                                  RectangleF rectControl, string name)
+            {
+                TextBox prototypeCtrl = (DataDynamics.ActiveReports.TextBox)prototypeControl;
+                TextBox ctrl = new TextBox();
+                ctrl.Name = string.Format(DYNAMIC_LABEL_NAME_FORAMT, name);
+                ctrl.Bounds = rectControl;
+                ctrl.ForeColor = prototypeCtrl.ForeColor;
+                ctrl.BackColor = prototypeCtrl.BackColor;
+                ctrl.Alignment = prototypeCtrl.Alignment;
+                ctrl.Visible = prototypeCtrl.Visible;
+                ctrl.Style = prototypeCtrl.Style;
+                ctrl.Font = prototypeCtrl.Font;
+                ctrl.CanShrink = prototypeCtrl.CanShrink;
+                ctrl.CanGrow = prototypeCtrl.CanGrow;
+                return ctrl;
+            }
+
+            private static int _CalcControlPerLine(int totalControls)
+            {
+                return (totalControls < 5) ? totalControls : ((7 == totalControls) || (8 == totalControls) || (9 < totalControls)) ? 4 : 3;
+            }
+        }
+
+        private sealed class WorkHelper
+        {
+            public static string FormatTimeValue(string value)
+            {
+                int totalTime = (int)double.Parse(value);
+
+                string result = null;
+                if (totalTime < MINUTES_PER_HOUR)
+                   result = string.Format(TIME_FORMAT_ONLY_MINUTES, totalTime);
+                else
+                {
+                    int totalTimeHour = (int)totalTime / MINUTES_PER_HOUR;
+                    int restInMinutes = totalTime - totalTimeHour * MINUTES_PER_HOUR;
+                
+                    if (0 < restInMinutes)
+                        result = string.Format(TIME_FORMAT, totalTimeHour, restInMinutes);
+                    else
+                        result = string.Format(TIME_FORMAT_ONLY_HOURS, totalTimeHour);
+                }
+                
+                Debug.Assert(!string.IsNullOrEmpty(result));
+                return result;
+            }
+            
+            public static string FormatValue(string value)
+            {
+                string formattedValue = value;
+                if (_IsValueDouble(value))
+                {   // format float and double values
+                    double numericValue = 0.0;
+                    if (Double.TryParse(value, out numericValue))
+                        formattedValue = numericValue.ToString(DOUBLE_DATA_FORMAT);
+                }
+
+                return formattedValue;
+            }
+
+            public static string FiltrateReadedValue(object value)
+            {
+                string result = null;
+                if (null != value)
+                {
+                    string tmp = value.ToString().Trim();
+                    if (!string.IsNullOrEmpty(tmp))
+                    {
+                        if (!_IsIgnoredValue(tmp))
+                            result = tmp;
+                    }
+                }
+
+                return result;
+            }
+
+            private static bool _IsIgnoredValue(string value)
+            {
+                Debug.Assert(!string.IsNullOrEmpty(value));
+
+                bool result = false;
+                value = value.ToLower();
+                foreach (string ignored in IGNORED_VALUES)
+                {
+                    if (value == ignored)
+                    {
+                        result = true;
+                        break; // result founded
+                    }
+                }
+
+                return result;
+            }
+            
+            private static bool _IsValueDouble(string value)
+            {
+                return (value.Contains(".") || value.Contains(","));
+            }
+
+            private static string[] IGNORED_VALUES = { "0", "0.0", "0,0", "empty", "n\a", "n/a" };
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private bool _isInitialized = false;
+        private bool  _isDateInited = false;
+        private RectangleF _contentRect;
+        private List<string> _fieldNameArray = new List<string> ();
+
+        public void ActiveReport_ReportStart()
+        {
+            if (_isInitialized)
+                return; // only once
+                
+            _isDateInited = false;
+
+            // add predifined special field
+            _fieldNameArray.Add(FIELD_NAME_SERVICE_TIME);
+
+            // read dynamicals fields
+            DataSources.OleDBDataSource ds = (DataSources.OleDBDataSource)rpt.DataSource;
+            using (OleDbConnection cnn = new OleDbConnection(ds.ConnectionString))
+            {
+                if (cnn.State == ConnectionState.Closed)
+                    cnn.Open();
+
+                char[] splitters = new char[] { ',' };
+
+                OleDbCommand cmd = new OleDbCommand(SELECT_STRING_SCHEMA, cnn);
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        // get fields list
+                        string names = reader["FieldNames"].ToString();
+                        string[] nameArray = names.Split(splitters);
+                        Debug.Assert(0 < nameArray.Length);
+
+                        for (int index = 0; index < nameArray.Length; ++index)
+                            _fieldNameArray.Add(nameArray[index]);
+                    }
+                }
+            }
+
+            // add dynamic controls
+            ControlCollection detailControls = rpt.Sections["Detail"].Controls;
+            ARControl ctrlContent = detailControls["textBoxContent"];
+            _contentRect = ctrlContent.Bounds; // store boundbox - for space calculation
+            LayoutHelper.AddControls(_fieldNameArray.AsReadOnly(), ctrlContent, detailControls);
+
+            _isInitialized = true;
+        }
+
+        public void Detail_Format()
+        {
+            FieldCollection fields = rpt.Fields;
+
+            string stopType = fields["StopTypeString"].Value.ToString();
+            bool isOrder = stopType.Equals("Order", StringComparison.OrdinalIgnoreCase);
+
+            Section detailSection = rpt.Sections["Detail"];
+
+            ControlCollection controls = detailSection.Controls;
+
+            // read values
+            List<string> values = new List<string>();
+            List<string> longValues = new List<string>();
+            if (isOrder)
+            {
+                foreach (string fieldName in _fieldNameArray)
+                {
+                     string realName = fieldName;
+                     if (fields[realName] == null)
+                     {
+                        string stopFieldName = string.Format(STOP_TABLE_NAME_FORMAT, realName);
+                        if (fields[stopFieldName] != null)
+                            realName = stopFieldName;
+                     }
+                
+                    if (null == fields[realName])
+                        continue; // NOTE: skip
+
+                    string value = WorkHelper.FiltrateReadedValue(fields[realName].Value);
+                    if (null != value)
+                    {
+                         if (fieldName == FIELD_NAME_SERVICE_TIME)
+                             value = WorkHelper.FormatTimeValue(value);
+                         else
+                            value = WorkHelper.FormatValue(value);
+ 
+                        string textValue = string.Format(DYNAMIC_VALUES_FORMAT, fieldName, value);
+                        if (textValue.Length < BIG_VALUE_SIZE)
+                            values.Add(textValue);
+                        else
+                            longValues.Add(textValue);
+                    }
+                }
+            }
+            else
+            {   // NOTE: service time show allways
+                string value = WorkHelper.FormatTimeValue(fields[FIELD_NAME_SERVICE_TIME].Value.ToString());
+                values.Add(string.Format(DYNAMIC_VALUES_FORMAT, FIELD_NAME_SERVICE_TIME, value));
+            }
+
+            SizeF size = LayoutHelper.RepositionControls(values.AsReadOnly(),
+                                                         longValues.AsReadOnly(),
+                                                         _fieldNameArray.Count,
+                                                         _contentRect, controls);
+
+            float newHeight = _contentRect.Top + size.Height + SPACE_SEPARATOR_Y;
+            if (detailSection.Height < newHeight)
+                detailSection.Height = newHeight;
+        }
+        
+        public void ActiveReport_PageStart()
+        {
+                 // NOTE: Workarround for last record if it printed on separataly page - data can't read.
+                if (_isDateInited)
+                       return;
+  
+                Section detailSection = rpt.Sections["groupHeader"];
+                ControlCollection detailControls = detailSection.Controls;
+                ARControl ctrlContent = detailControls["lblScheduleDescription"];
+                ((Label)ctrlContent).Text = ((DateTime)rpt.Fields["PlannedDate"].Value).ToShortDateString();
+     
+               _isDateInited = true;
+       }]]></Script>
+  <PageSettings LeftMargin="720" RightMargin="720" TopMargin="720" BottomMargin="720" Orientation="1" />
+  <Parameters />
+</ActiveReportsLayout>

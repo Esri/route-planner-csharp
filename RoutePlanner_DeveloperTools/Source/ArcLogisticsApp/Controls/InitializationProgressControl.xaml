@@ -1,0 +1,161 @@
+﻿<Window x:Class="ESRI.ArcLogistics.App.Controls.InitializationProgressControl"
+        x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="395" Width="520" 
+        AllowsTransparency="True"
+        WindowStyle="None"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        Topmost="True"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:DesignHeight="388" d:DesignWidth="612" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+    <Window.Resources>
+
+        <RadialGradientBrush x:Key="CompletedGradientBrush" MappingMode="RelativeToBoundingBox">
+            <RadialGradientBrush.RelativeTransform>
+                <TransformGroup>
+                    <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="-1.934" ScaleY="-1.934"/>
+                    <SkewTransform AngleX="0" AngleY="0" CenterX="0.5" CenterY="0.5"/>
+                    <RotateTransform Angle="0" CenterX="0.5" CenterY="0.5"/>
+                    <TranslateTransform X="-0.275" Y="0.303"/>
+                </TransformGroup>
+            </RadialGradientBrush.RelativeTransform>
+            <GradientStop Color="#4C154D63" Offset="0"/>
+            <GradientStop Color="#FF3D8CAC" Offset="0.772"/>
+        </RadialGradientBrush>
+    
+        <SolidColorBrush x:Key="IncompletedBrush" Color="#3349839B"/>
+
+    </Window.Resources>
+    
+    <Grid RenderTransformOrigin="0.5,0.5" Height="Auto" 
+          VerticalAlignment="Stretch" 
+          HorizontalAlignment="Stretch">
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="0.425*"/>
+    		<ColumnDefinition Width="0.575*"/>
+    	</Grid.ColumnDefinitions>
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="0.813*"/>
+    		<RowDefinition Height="0.187*"/>
+    	</Grid.RowDefinitions>
+        <Image HorizontalAlignment="Stretch" 
+               VerticalAlignment="Stretch" 
+               Width="Auto" Height="Auto" 
+               Source="..\Resources\ArcLog-Splash.png" 
+               Stretch="None" 
+               Margin="10,10,10,10" Grid.RowSpan="2" Grid.ColumnSpan="2">
+        	<Image.BitmapEffect>
+        		<DropShadowBitmapEffect/>
+        	</Image.BitmapEffect>
+        </Image>
+        <Grid x:Name="rotationCanvas" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" Width="150" Height="150" d:LayoutOverrides="Width, Height" Margin="35,0,0,5" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Path OpacityMask="{x:Null}" Fill="#3FB3E3F7" Stretch="Fill" Stroke="{x:Null}" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Data="M399.5,200 C399.5,310.18081 310.18081,399.5 200,399.5 C89.819192,399.5 0.5,310.18081 0.5,200 C0.5,89.819192 89.819192,0.5 200,0.5 C310.18081,0.5 399.5,89.819192 399.5,200 z M274.5,200 C274.5,241.14521 241.14521,274.5 200,274.5 C158.85479,274.5 125.5,241.14521 125.5,200 C125.5,158.85479 158.85479,125.5 200,125.5 C241.14521,125.5 274.5,158.85479 274.5,200 z" x:Name="back"/>
+            <Path Stretch="Fill" 
+                  Stroke="{x:Null}" HorizontalAlignment="Right" 
+                  Margin="0,0.495,10.001,0" 
+                  VerticalAlignment="Top" 
+                  Width="64.142" Height="60.786" 
+                  RenderTransformOrigin="0.5,0.5" 
+                  Data="M200.46882,125.11161 L200.15734,0.33155416 C200.15734,0.33155416 309.81143,-3.4297778 370.67842,97.81121 L263.1746,161.25569 C263.1746,161.25569 243.64971,125.5812 200.46882,125.11161 z" 
+                  x:Name="_1"
+                  Visibility="Visible" Fill="{DynamicResource IncompletedBrush}" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment">
+                <Path.RenderTransform>
+                	<TransformGroup>
+                		<ScaleTransform ScaleX="1" ScaleY="1"/>
+                		<SkewTransform AngleX="0" AngleY="0.293"/>
+                		<RotateTransform Angle="0.904"/>
+                		<TranslateTransform X="0" Y="-0.162"/>
+                	</TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path Stretch="Fill" 
+                  Stroke="{x:Null}" 
+                  Margin="0,50.609,-11.551,38.171" 
+                  Data="M200.66667,124.66667 L200.16634,0.83299746 C200.16634,0.83299746 308.3801,-4.7875161 372.14797,97.786467 L264.04195,160.99875 C264.04195,160.99875 243.52826,123.99927 200.66667,124.66667 z" 
+                  HorizontalAlignment="Right" 
+                  Width="64.088" 
+                  RenderTransformOrigin="0.5,0.5" 
+                  x:Name="_2"
+                  Visibility="Visible" Fill="{DynamicResource IncompletedBrush}" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment">
+                <Path.RenderTransform>
+                	<TransformGroup>
+                		<ScaleTransform ScaleX="1" ScaleY="1"/>
+                		<SkewTransform AngleX="0.276" AngleY="0.634"/>
+                		<RotateTransform Angle="60.848"/>
+                		<TranslateTransform X="0.134" Y="0.526"/>
+                	</TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path Stretch="Fill" 
+                  Stroke="{x:Null}" 
+                  Margin="0,0,22.083,-6.748" 
+                  Data="M200.66667,124.66667 L200.16634,0.83299746 C200.16634,0.83299746 308.49355,-1.5280142 370.27983,98.166277 L264.04195,160.99875 C264.04195,160.99875 243.52826,123.99927 200.66667,124.66667 z" HorizontalAlignment="Right" 
+                  VerticalAlignment="Bottom" 
+                  Width="63.788" Height="60.824" 
+                  RenderTransformOrigin="0.5,0.5" 
+                  x:Name="_3"
+                  Visibility="Visible" Fill="{DynamicResource IncompletedBrush}" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment">
+                <Path.RenderTransform>
+                	<TransformGroup>
+                		<ScaleTransform ScaleX="1" ScaleY="1"/>
+                		<SkewTransform AngleX="-0.061" AngleY="0.106"/>
+                		<RotateTransform Angle="121.007"/>
+                		<TranslateTransform X="0.45" Y="-0.484"/>
+                	</TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path Stretch="Fill" 
+                  Stroke="{x:Null}" 
+                  Margin="16.046,0,70.15,0.908" 
+                  Data="M197.06927,124.72008 L195.10498,0.85619637 C195.10498,0.85619637 309.04307,-1.9931329 370.82935,97.701158 L261.71452,161.2294 C261.71452,161.2294 239.93086,124.05268 197.06927,124.72008 z" 
+                  RenderTransformOrigin="0.5,0.5" 
+                  x:Name="_4"
+                  Visibility="Visible" Fill="{DynamicResource IncompletedBrush}" d:LayoutOverrides="HorizontalAlignment" Height="60.629" VerticalAlignment="Bottom">
+                <Path.RenderTransform>
+                	<TransformGroup>
+                		<ScaleTransform ScaleX="-0.999" ScaleY="-1"/>
+                		<SkewTransform AngleX="-0.026" AngleY="-1.397"/>
+                		<RotateTransform Angle="1.682"/>
+                		<TranslateTransform X="-5.643" Y="0.565"/>
+                	</TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path Stretch="Fill" 
+                  Stroke="{x:Null}" Margin="-12.429,40.07,0,49.984" 
+                  Data="M200.37464,126.00513 L200.20634,2.2428668 C200.20634,2.2428668 307.1702,-3.7654004 370.93807,98.808583 L264.04195,160.99875 C264.04195,160.99875 243.23623,125.33773 200.37464,126.00513 z" 
+                  HorizontalAlignment="Left" Width="65.346" 
+                  RenderTransformOrigin="0.5,0.5" 
+                  x:Name="_5"
+                  Visibility="Visible" Fill="{DynamicResource IncompletedBrush}" d:LayoutOverrides="VerticalAlignment">
+                <Path.RenderTransform>
+                	<TransformGroup>
+                		<ScaleTransform ScaleX="0.999" ScaleY="0.998"/>
+                		<SkewTransform AngleX="-2.765" AngleY="2.687"/>
+                		<RotateTransform Angle="-121.633"/>
+                		<TranslateTransform X="-0.02" Y="-1.61"/>
+                	</TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path Stretch="Fill" Stroke="{x:Null}" 
+                  Margin="14.78,1.113,71.749,0" VerticalAlignment="Top" 
+                  Height="60.571" RenderTransformOrigin="0.5,0.5" 
+                  Data="M198.26863,125.69164 L197.5319,0.85527398 C197.5319,0.85527398 311.64211,-3.9136123 372.5091,97.327375 L263.24746,161.76355 C263.24746,161.76355 243.29008,124.58128 198.26863,125.69164 z" 
+                  x:Name="_6"
+                  Visibility="Visible" Fill="{DynamicResource IncompletedBrush}" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment">
+                <Path.RenderTransform>
+                	<TransformGroup>
+                		<ScaleTransform ScaleX="-1" ScaleY="1.001"/>
+                		<SkewTransform AngleX="0.632" AngleY="0.276"/>
+                		<RotateTransform Angle="-0.012"/>
+                		<TranslateTransform X="-3.715" Y="-1.411"/>
+                	</TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Text="" TextWrapping="NoWrap" Grid.Row="1" Margin="45,5,0,0" TextAlignment="Center" TextTrimming="CharacterEllipsis" x:Name="Statustext" FontSize="14" FontWeight="Bold" d:LayoutOverrides="Height" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>

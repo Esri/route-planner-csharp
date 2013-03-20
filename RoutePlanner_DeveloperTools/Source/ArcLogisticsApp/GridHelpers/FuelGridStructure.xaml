@@ -1,0 +1,40 @@
+<ResourceDictionary
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:app="clr-namespace:ESRI.ArcLogistics.App;assembly=ESRI.ArcLogistics.App"
+xmlns:collections="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+xmlns:sys="clr-namespace:System;assembly=mscorlib"
+xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib">
+
+    <coll:ArrayList x:Key="itemProperties">
+        <xcdg:DataGridItemProperty Name="Name"/>
+        <xcdg:DataGridItemProperty Name="Price"/>
+        <xcdg:DataGridItemProperty Name="Co2Emission"/>
+    </coll:ArrayList>
+
+    <coll:ArrayList x:Key="columns">
+        <xcdg:Column FieldName="Name"
+                     Title="{DynamicResource FuelTypeColumnHeader}"/>
+        <xcdg:Column FieldName="Price"
+                     Title="{DynamicResource PriceColumnHeader}"
+                     CellContentTemplate="{DynamicResource UnitCellContentTemplate}"
+                     CellEditor="{DynamicResource UnitEditorTemplate}"/>
+        <xcdg:Column FieldName="Co2Emission"
+                     Title="{DynamicResource Co2EmissionColumnHeader}"
+                     CellContentTemplate="{DynamicResource UnitCellContentTemplate}"
+                     CellEditor="{DynamicResource UnitEditorTemplate}"/>
+    </coll:ArrayList>
+
+
+    <!-- Page print configuration -->
+    <DataTemplate x:Key="printHeader">
+        <Label    
+                    Content="{DynamicResource FuelPagePrintHeader}"
+                    HorizontalAlignment="Center"
+                    FontFamily="{DynamicResource DefaultApplicationFont}"
+                    FontWeight="Bold"
+                    FontSize="{DynamicResource LargeFontSize}"/>
+    </DataTemplate>
+
+</ResourceDictionary>

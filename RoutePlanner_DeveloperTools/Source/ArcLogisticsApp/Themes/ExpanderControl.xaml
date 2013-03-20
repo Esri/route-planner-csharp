@@ -1,0 +1,124 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcLogistics.App.Controls">
+
+    <Style TargetType="{x:Type local:ExpanderControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ExpanderControl}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="onExpanded">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PART_ContentGrid" Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:0.15" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="backgroundGrid" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="2,3,2,-2"/>
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="2,3,2,1"/>
+                            </ThicknessAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="showBorder">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00" Storyboard.TargetName="PART_ContentBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <!--<ThicknessAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="backgroundGrid" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="2,3,2,-2"/>
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="2,3,2,1"/>
+                            </ThicknessAnimationUsingKeyFrames>-->
+                        </Storyboard>
+
+                        <Storyboard x:Key="onCollapsed">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PART_ContentGrid" Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:0.15" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="backgroundGrid" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="2,3,2,1"/>
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="2,3,2,-2"/>
+                            </ThicknessAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="hideBorder">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:0.1" Duration="00:00:00" Storyboard.TargetName="PART_ContentBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <!--<ThicknessAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="backgroundGrid" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="2,3,2,1"/>
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="2,3,2,-2"/>
+                            </ThicknessAnimationUsingKeyFrames>-->
+                        </Storyboard>
+
+                    </ControlTemplate.Resources>
+                    <Grid SnapsToDevicePixels="True" x:Name="backgroundGrid" Margin="2,3,2,1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <ToggleButton SnapsToDevicePixels="True"
+                              IsChecked="True"
+                              x:Name="PART_HeaderButton"
+                              IsEnabled="True"
+                              HorizontalAlignment="Stretch"
+                              Grid.Row="0"
+                              Height="30"
+                              Margin="0"
+                              Content="{Binding Path=Header, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}"
+                              Style = "{DynamicResource TasksHeaderToggleButtonStyle}"/>
+                            <Label SnapsToDevicePixels="True"
+                              x:Name="PART_Header"
+                              Content="{Binding Path=Header, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Center"
+                              Grid.Row="0"
+                              Foreground="{DynamicResource AquamarineSkinLightBlueColor}"
+                              Cursor="Hand"
+                              FontWeight="Bold"
+                              FontSize="13"
+                              Margin="4,0,0,0"
+                              Visibility="Hidden"
+                              FontFamily="{DynamicResource DefaultApplicationFont}" />
+                        </Grid>
+                        <Border SnapsToDevicePixels="True"
+                            x:Name="PART_ContentBorder"
+                            Grid.Row="1"
+                            Style="{DynamicResource ExpandedControlBorderStyle}">
+                            <Grid SnapsToDevicePixels="True"
+                              x:Name="PART_ContentGrid"
+                              Visibility="Visible"
+                              Height="Auto"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              Background="Transparent"
+                              Margin="4,0,4,2">
+                                <Grid.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1" ScaleY="0"/>
+                                        <SkewTransform AngleX="0" AngleY="0"/>
+                                        <RotateTransform Angle="0"/>
+                                        <TranslateTransform X="0" Y="0"/>
+                                    </TransformGroup>
+                                </Grid.LayoutTransform>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+
+                        <Trigger SourceName="PART_HeaderButton" Property="IsChecked" Value="true">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource showBorder}"/>
+                                <BeginStoryboard Storyboard="{StaticResource onExpanded}"/>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource onCollapsed}"/>
+                                <BeginStoryboard Storyboard="{StaticResource hideBorder}"/>
+                            </Trigger.ExitActions>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

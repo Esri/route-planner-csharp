@@ -1,0 +1,43 @@
+﻿<esri_Controls:DockableContent x:Class="ESRI.ArcLogistics.App.Pages.TimeView"
+   x:ClassModifier="internal"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:esri_Controls="clr-namespace:ESRI.ArcLogistics.App.Controls"
+   Title="{StaticResource TimeViewTitle}">
+    <Grid Background="{StaticResource ContentBackgroundColor}" x:Name="layoutRoot">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <esri_Controls:CommandButtonGroup HorizontalAlignment="Left"
+                                         Grid.Row="0"
+                                         Margin="{StaticResource ViewButtonsStackMargin}"
+                                         x:Name="commandButtonsGroup"
+                                         Focusable="False"/>
+
+            <Border Margin="0"
+                                         Grid.Row="1"
+                        SnapsToDevicePixels="True"
+                        BorderThickness="{StaticResource GridBorderThickness}"
+                        BorderBrush="{StaticResource ApplicationBorder}">
+                <esri_Controls:GanttControl
+                 BorderThickness="0"
+                 x:Name="ganttControl"
+                 VerticalAlignment="Stretch"
+                 Margin="{StaticResource ViewContentMargin}"
+                 MinHeight="40"
+                 AllowDrop="True"
+                 GanttItemElementDragging="_GanttControlDragItemsStarted"
+                 Drop="_GanttControlDrop"
+                 ToolTipService.InitialShowDelay="2000">
+                </esri_Controls:GanttControl>
+            </Border>
+        </Grid>
+
+        <Grid x:Name="lockedGrid"
+             Margin="0,0,0,0"
+             Background="{StaticResource LockedPageBackground}"
+             Visibility="Hidden" />
+    </Grid>
+</esri_Controls:DockableContent>
