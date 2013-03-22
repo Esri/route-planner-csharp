@@ -2,7 +2,7 @@
 
 Routing and scheduling sample application using arcgis.com directions (network analysis) services.
 
-![App](https://raw.github.com/ArcGIS/route-planner-csharp/master/RoutePlanner80.png)
+![App](https://raw.github.com/Esri/route-planner-csharp/master/RoutePlanner80.png)
 
 ## Features
 
