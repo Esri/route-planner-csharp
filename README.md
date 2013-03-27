@@ -19,7 +19,7 @@ The Route Planner sample application:
 
 1. To install and use the pre-built binaries, download and run RoutePlannerSetup.EXE.
 
-2. To build the application, download (code? Zip?) and see ..\Source\ReadMe.txt for build instructions. 
+2. To build the application, download RoutePlanner_DeveloperTools\Source and see ReadMe.txt for build instructions. 
 
 3. To contribute: Fork and then clone the repository.
 
