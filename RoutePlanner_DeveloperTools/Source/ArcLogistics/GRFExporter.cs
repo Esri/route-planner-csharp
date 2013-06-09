@@ -709,10 +709,12 @@ namespace ESRI.ArcLogistics
                 case UTurnPolicy.AtDeadEndsAndIntersections:
                     // GRF doesnt support "U-Turns at Dead Ends and Intersections" UTurnPolicy,
                     // so replace it with "U-Turns at Dead Ends".
-                    uTurnPolicy = UTurnAtDeadEnds;
+                    //fjk: updated so UTurnEverywhere respected
+                    uTurnPolicy = UTurnEverywhere;
 
+                    //fjk: commented out b/c of the above change
                     // Add warning message
-                    result.Warnings.Add(Properties.Messages.Warning_UTurnPolicyNotSupported);
+                    //result.Warnings.Add(Properties.Messages.Warning_UTurnPolicyNotSupported);
                     break;
                 default:
                     Debug.Assert(false); // NOTE: not supported
