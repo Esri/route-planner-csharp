@@ -724,7 +724,7 @@ namespace ESRI.ArcLogistics
             writer.WriteEndElement();
 
             writer.WriteStartElement(IMPEDANCE_ATTR_NODE_NAME);
-            writer.WriteAttributeString(NAME_ATTR_NAME, solver.NetworkDescription.ImpedanceAttributeName);
+            writer.WriteAttributeString(NAME_ATTR_NAME, "Time");
             writer.WriteEndElement();
 
             writer.WriteStartElement(RESTRICTIONS_ATTR_NODE_NAME);
