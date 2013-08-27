@@ -26,6 +26,7 @@ The Route Planner sample application:
 
 ## Requirements
 
+To rebuild and redeploy the application, you will need the below developer components.  To simply use the existing pre-built application, no additional components are necessrily needed - just run the installer.
 * ArcGIS Runtime SDK for WPF
 * Xceed Data Grid for WPF (www.xceed.com).
 * ActiveReports for .NET 3.0 (www.datadynamics.com).
