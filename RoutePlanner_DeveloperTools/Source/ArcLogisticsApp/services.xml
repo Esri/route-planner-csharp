@@ -78,7 +78,7 @@
     </routing>
     <solversettings>
       <maxordercountforsyncvrp>150</maxordercountforsyncvrp>
-      <maxroutecountforsyncvrp>3</maxroutecountforsyncvrp>
+      <maxroutecountforsyncvrp>2</maxroutecountforsyncvrp>
       <uturnatintersections>true</uturnatintersections>
       <uturnatdeadends>true</uturnatdeadends>
       <uturnatstops>true</uturnatstops>
