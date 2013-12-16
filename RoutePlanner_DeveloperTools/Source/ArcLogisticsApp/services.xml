@@ -209,7 +209,7 @@
     </server>
     <!-- Reference Geocode server here. Note that the server referenced below is an Esri hosted service.  Batch geocoding requires an organizational account and will utilize credits -->
 	<server name="ArcGIS.com Geocoding" tokentype="Arcgis_com" title="ArcGIS Online geocoding" description="The server is used for finding addresses." help="" authentication="yes">
-      <url>https://geocode.arcgis.com/ArcGIS/services</url>
+      <url>https://geocode.arcgis.com/arcgis/services</url>
     </server>
     <!--
     <server name="ArcGIS.com Features" tokentype="Arcgis_com" title="ArcGIS Online features" description="The server is used for feature services." help="" authentication="yes">
