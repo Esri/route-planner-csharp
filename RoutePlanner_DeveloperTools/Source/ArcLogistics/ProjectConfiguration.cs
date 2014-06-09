@@ -214,9 +214,19 @@ namespace ESRI.ArcLogistics
         /// <param name="filePath"></param>
         public void Save(string filePath)
         {
+
+            var bkupPath = string.Empty;
             XmlWriter writer = null;
             try
             {
+                //make a backup====================
+                string gu = Guid.NewGuid().ToString().Substring(0, 8) + ".bkup";
+                bkupPath = filePath + gu;
+                MakeBkupIfSizeGreaterThanZero(filePath, bkupPath);
+                //=================================
+            
+
+
                 XmlWriterSettings settings = new XmlWriterSettings();
                 settings.Indent = true;
                 settings.IndentChars = CommonHelpers.XML_SETTINGS_INDENT_CHARS;
@@ -262,10 +272,69 @@ namespace ESRI.ArcLogistics
             }
             finally
             {
-                if (writer != null)
+                if (writer != null) {
                     writer.Close();
+                }
+                RollBackToBackupOrDeleteBackup(filePath, bkupPath);
             }
         }
+
+        private static void MakeBkupIfSizeGreaterThanZero(string filePath, string bkupPath)
+        {
+            try
+            {
+                if (File.Exists(filePath) && string.IsNullOrEmpty(bkupPath) == false)
+                {
+                    var fileInfo = new FileInfo(filePath);
+                    long fileLength = fileInfo.Length;
+                    fileInfo = null;
+                    if (fileLength > 0)
+                    {
+                        File.Copy(filePath, bkupPath);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //swallow exception but log
+                Logger.Info(ex);
+            }
+        }
+
+        private void RollBackToBackupOrDeleteBackup(string filePath, string bkupPath)
+        {
+            //check if file exists, check size, if 0 
+            //  check for backup and roll back to that one
+            //  if not 0 delete the backup
+            try
+            {
+                if (string.IsNullOrEmpty(bkupPath) == false)
+                {
+                    if (File.Exists(filePath) && File.Exists(bkupPath))
+                    {
+                        var fileInfo = new FileInfo(filePath);
+                        long fileLength = fileInfo.Length;
+                        fileInfo = null;
+                        if (fileLength > 0)
+                        {
+                            File.Delete(bkupPath);
+                        }
+                        else
+                        {
+                            File.Delete(filePath);
+                            File.Move(bkupPath, filePath);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //swallow exception but log
+                Logger.Info(ex);
+            }
+        }
+
+
 
         #endregion
 
