@@ -585,10 +585,41 @@ namespace ESRI.ArcLogistics.App.Pages
             if (e.PropertyName.Equals(IS_LOCKED_PROPERTY_NAME) || e.PropertyName.Equals(IS_VISIBLE_PROPERTY_NAME))
             {
                 // Call EndEdit to save changes and cancel editing mode in RoutesGrid.
-                if (RoutesGrid.CurrentContext != null)
+                if (RoutesGrid.CurrentContext != null) {
                     RoutesGrid.CurrentContext.EndEdit();
+                }
+                
+                if (e.PropertyName.Equals(IS_LOCKED_PROPERTY_NAME)) {
+                    var routeX = sender as Route;
+                    if (routeX != null) {
+                        UnlockOtherVersions(routeX);
+                    }
+                }
             }
         }
+
+        private void UnlockOtherVersions(Route routeX)
+        {
+            IList<Schedule> schedules = App.Current.Project.Schedules.Search(App.Current.CurrentDate);
+
+            foreach (Schedule schedule in schedules) {
+                if (string.Compare(schedule.Name, "Current", true) == 0) {
+                    //skip only deal with non current
+                }
+                else {
+                    if (schedule.Routes != null) {
+                        foreach (Route route in schedule.Routes) {
+                            if (string.Compare(routeX.Name, route.Name, true) == 0) {
+                                route.IsLocked = routeX.IsLocked;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
 
         /// <summary>
         /// Updates objects collections.
