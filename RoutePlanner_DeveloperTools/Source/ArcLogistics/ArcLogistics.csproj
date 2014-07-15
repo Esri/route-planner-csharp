@@ -909,7 +909,7 @@
     <EmbeddedResource Include="Resources\aldb_update_renewal_locations.sql" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\aldb_update_route_locations.sql" />
+    <EmbeddedResource Include="Resources\aldb_update_route_zones.sql" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\aldb_upgrade_1_1.sql" />
