@@ -59,8 +59,9 @@ namespace ESRI.ArcLogistics.App.Dialogs
                 tempRouteLinks.EndLocation = route.EndLocation;
                 tempRouteLinks.Vehicle = route.Vehicle;
                 tempRouteLinks.Driver = route.Driver;
-                tempRouteLinks.Zones = route.Zones;
-                tempRouteLinks.RenewalLocations = route.RenewalLocations;
+
+                tempRouteLinks.Zones = tempRoute.Zones;
+                tempRouteLinks.RenewalLocations = tempRoute.RenewalLocations;
                 tempRouteLinks.savedRouteID = tempRoute.Id;
                 _oldDefaultRouteLinks.Add(tempRouteLinks);
             }
@@ -150,7 +151,7 @@ namespace ESRI.ArcLogistics.App.Dialogs
                 // If corresponding new route, differs from old
                 // route - collection needs to be updated.
                 if (newRoute != null && 
-                    (!route.EqualsByValue(newRoute) || !RouteLinksAreEqual(route, newRoute)))
+                    (!route.EqualsByValue(newRoute) || !RouteLinksAreEqual(route.Id, newRoute)))
                     return true;
             }
 
@@ -160,13 +161,13 @@ namespace ESRI.ArcLogistics.App.Dialogs
         /// <summary>
         /// Check that routes links are equal.
         /// </summary>
-        /// <param name="oldRoute">Previously saved route.</param>
+        /// <param name="Id">Previously saved route identificator.</param>
         /// <param name="newRoute">Corresponding route, which links will be checked on equality.</param>
         /// <returns>'True' if routes links are equal, 'false' otherwise.</returns>
-        private bool RouteLinksAreEqual(Route oldRoute, Route newRoute)
+        private bool RouteLinksAreEqual(Guid id, Route newRoute)
         {
             // Find RouteLink, corresponding to old route.
-            var oldRouteLink = _oldDefaultRouteLinks.Find(x => x.savedRouteID == oldRoute.Id);
+            var oldRouteLink = _oldDefaultRouteLinks.Find(x => x.savedRouteID == id);
 
             // It must exist.
             Debug.Assert(_oldDefaultRouteLinks != null);

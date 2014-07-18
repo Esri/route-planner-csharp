@@ -14,6 +14,7 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
+//update
 
 using System;
 using System.Collections.Generic;
@@ -608,6 +609,8 @@ namespace ESRI.ArcLogistics
                 COPY_DEFAULT_ROUTES_FOR_SCHEDULE_SCRIPT);
             _copyRenewalLocationsScript = ResourceLoader.ReadFileAsString(
                 COPY_RENEWAL_LOCATIONS_SCRIPT);
+            _copyRouteZonesScript = ResourceLoader.ReadFileAsString(
+                COPY_ROUTE_ZONES_SCRIPT);
 
             // zones
             _zones = new DataObjectOwnerCollection<Zone, DataModel.Zones>(
@@ -870,6 +873,11 @@ namespace ESRI.ArcLogistics
             context.ExecuteStoreCommand(
                 _copyRenewalLocationsScript,
                 scheduleIdParameter);
+            // and route zones
+            scheduleIdParameter = _CreateParameter(SCHEDULE_ID_PARAMETER_NAME, scheduleId);
+            context.ExecuteStoreCommand(
+                _copyRouteZonesScript,
+                scheduleIdParameter);
         }
         #endregion
 
@@ -891,6 +899,13 @@ namespace ESRI.ArcLogistics
         /// </summary>
         private const string COPY_RENEWAL_LOCATIONS_SCRIPT =
             "aldb_update_renewal_locations.sql";
+
+        /// <summary>
+        /// The name of the database script for copying zones from default routes to
+        /// routes of the specified schedule.
+        /// </summary>
+        private const string COPY_ROUTE_ZONES_SCRIPT =
+            "aldb_update_route_zones.sql";
 
         /// <summary>
         /// The name of the parameter for passing IDs of default routes to database commands.
@@ -987,6 +1002,12 @@ namespace ESRI.ArcLogistics
         /// Stores renewal location copying SQL script.
         /// </summary>
         private string _copyRenewalLocationsScript;
+
+        /// <summary>
+        /// Stores route zones copying SQL script.
+        /// </summary>
+        private string _copyRouteZonesScript;
+
         #endregion
     }
 }
