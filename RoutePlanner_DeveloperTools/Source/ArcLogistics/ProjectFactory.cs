@@ -413,7 +413,7 @@ namespace ESRI.ArcLogistics
         /// <summary>
         /// Maximum lentgh constraint for field in database.
         /// </summary>
-        private const long MAX_DB_FIELD_LENGTH = 2000;
+        private const long MAX_DB_FIELD_LENGTH = 4000;
 
         #endregion Private constants
     }
