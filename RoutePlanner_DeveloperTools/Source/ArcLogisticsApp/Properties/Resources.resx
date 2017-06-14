@@ -3450,6 +3450,12 @@ Microsoft Enterprise Library 4.1 - Microsoft Public License (Ms - PL)</value>
   <data name="OrderPriorityHigh" xml:space="preserve">
     <value>High</value>
   </data>
+  <data name="OrderPriorityLow" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="OrderPriorityUrgent" xml:space="preserve">
+    <value>Urgent</value>
+  </data>
   <data name="QuickHelpWidgetCaption" xml:space="preserve">
     <value>Quick Help</value>
   </data>

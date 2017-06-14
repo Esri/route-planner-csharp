@@ -111,13 +111,28 @@ namespace ESRI.ArcLogistics
     public enum OrderPriority
     {
         /// <summary>
-        /// High priorited servicing order.
+        /// Low priorited servicing order. 
+        /// Numeric value = 0
         /// </summary>
-        High,
+        Low = 0,
+
         /// <summary>
         /// Normal priorited servicing order.
+        /// Numeric value = 1
         /// </summary>
-        Normal
+        Normal = 1,
+
+        /// <summary>
+        /// High priorited servicing order.
+        /// Numeric value = 1000
+        /// </summary>
+        High = 1000,
+
+        /// <summary>
+        /// Urgent priorited servicing order.
+        /// Numeric value = 1000000
+        /// </summary>
+        Urgent = 1000000
     }
 
     public enum StopType

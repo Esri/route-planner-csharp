@@ -808,9 +808,8 @@ namespace ESRI.ArcLogistics.Routing
                 attrs.Add(NAAttribute.DELIVERY, null);
             }
 
-            // Revenue.
-            attrs.Add(NAAttribute.REVENUE,
-                unassignedOrder.Priority == OrderPriority.Normal ? 0 : (long)_orderRevenue);
+            // Revenue.            
+			attrs.Add(NAAttribute.REVENUE, (int)unassignedOrder.Priority);
 
             // Specialties.
             List<Guid> specIds = GetOrderSpecIds(unassignedOrder);
