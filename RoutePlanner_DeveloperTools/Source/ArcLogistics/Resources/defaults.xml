@@ -14,7 +14,7 @@
   </Locations>
   <Orders>
     <Type>Delivery</Type>
-    <Priority>Normal</Priority>
+    <Priority>Low</Priority>
     <CurbApproach>Both</CurbApproach>
     <ServiceTime>5</ServiceTime>
     <TimeWindow IsWideopen="true" />

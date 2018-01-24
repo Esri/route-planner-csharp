@@ -172,6 +172,12 @@ namespace ESRI.ArcLogistics
                 case OrderPriority.Normal:
                     supportedValues = Properties.Resources.OrderPriorityNormalSupportedValues;
                     break;
+				case OrderPriority.Low:
+                    supportedValues = Properties.Resources.OrderPriorityLowSupportedValues;
+                    break;
+                case OrderPriority.Urgent:
+                    supportedValues = Properties.Resources.OrderPriorityUrgentSupportedValues;
+                    break;   
                 default:
                     Debug.Assert(false); // NOTE: not supported
                     break;

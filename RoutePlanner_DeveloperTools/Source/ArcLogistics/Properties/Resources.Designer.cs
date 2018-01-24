@@ -3865,6 +3865,15 @@ using System;
                 return ResourceManager.GetString("OrderPriorityHighSupportedValues", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Low.
+        /// </summary>
+        internal static string OrderPriorityLowSupportedValues {
+            get {
+                return ResourceManager.GetString("OrderPriorityLowSupportedValues", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Normal.
@@ -3872,6 +3881,15 @@ using System;
         internal static string OrderPriorityNormalSupportedValues {
             get {
                 return ResourceManager.GetString("OrderPriorityNormalSupportedValues", resourceCulture);
+            }
+        }
+        
+		/// <summary>
+        ///   Looks up a localized string similar to Urgent.
+        /// </summary>
+        internal static string OrderPriorityUrgentSupportedValues {
+            get {
+                return ResourceManager.GetString("OrderPriorityUrgentSupportedValues", resourceCulture);
             }
         }
         

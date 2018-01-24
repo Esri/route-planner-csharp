@@ -7821,6 +7821,15 @@ using System;
             }
         }
         
+		/// <summary>
+        ///   Looks up a localized string similar to Low.
+        /// </summary>
+        internal static string OrderPriorityLow {
+            get {
+                return ResourceManager.GetString("OrderPriorityLow", resourceCulture);
+            }
+        }        
+		
         /// <summary>
         ///   Looks up a localized string similar to Normal.
         /// </summary>
@@ -7830,6 +7839,15 @@ using System;
             }
         }
         
+		/// <summary>
+        ///   Looks up a localized string similar to Urgent.
+        /// </summary>
+        internal static string OrderPriorityUrgent {
+            get {
+                return ResourceManager.GetString("OrderPriorityUrgent", resourceCulture);
+            }
+        }
+                
         /// <summary>
         ///   Looks up a localized string similar to Order Properties:.
         /// </summary>

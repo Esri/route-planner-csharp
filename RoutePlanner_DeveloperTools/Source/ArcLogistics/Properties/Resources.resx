@@ -1737,6 +1737,14 @@
     <value>Normal</value>
     <comment>Supported OrderPriority.Normal values (separate by ','). Used in import.</comment>
   </data>
+  <data name="OrderPriorityLowSupportedValues" xml:space="preserve">
+    <value>Low</value>
+    <comment>Supported OrderPriority.Low values (separate by ','). Used in import.</comment>
+  </data>
+  <data name="OrderPriorityUrgentSupportedValues" xml:space="preserve">
+    <value>Urgent</value>
+    <comment>Supported OrderPriority.Urgent values (separate by ','). Used in import.</comment>
+  </data>
   <data name="OrderTypeDeliverySupportedValues" xml:space="preserve">
     <value>Delivery</value>
     <comment>Supported OrderType.Delivery values (separate by ','). Used in import.</comment>

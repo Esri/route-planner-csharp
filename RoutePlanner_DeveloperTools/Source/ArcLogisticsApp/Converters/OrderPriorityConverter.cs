@@ -48,11 +48,17 @@ namespace ESRI.ArcLogistics.App.Converters
                 switch (syncType)
                 {
                     // Convert selected synctype to it's string representation.
+					case OrderPriority.Urgent:                        
+                        result = App.Current.GetString("OrderPriorityUrgent");
+                        break;     
                     case OrderPriority.High:
                         result = App.Current.GetString("OrderPriorityHigh");
                         break;
                     case OrderPriority.Normal:
                         result = App.Current.GetString("OrderPriorityNormal");
+                        break;
+					case OrderPriority.Low:
+                        result = App.Current.GetString("OrderPriorityLow");
                         break;
                     default:
                         // Not supported Enum value.
@@ -78,10 +84,14 @@ namespace ESRI.ArcLogistics.App.Converters
             OrderPriority result;
 
             // Convert string to enum.
-            if (name == App.Current.GetString("OrderPriorityHigh"))
+            if (name == App.Current.GetString("OrderPriorityUrgent"))
+                result = OrderPriority.Urgent;
+            else if (name == App.Current.GetString("OrderPriorityHigh"))
                 result = OrderPriority.High;
             else if (name == App.Current.GetString("OrderPriorityNormal"))
                 result = OrderPriority.Normal;
+            else if (name == App.Current.GetString("OrderPriorityLow"))
+                result = OrderPriority.Low;
             else
             {
                 // Not supported Enum value.

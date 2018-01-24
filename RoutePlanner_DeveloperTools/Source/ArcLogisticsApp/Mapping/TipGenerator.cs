@@ -588,7 +588,7 @@ namespace ESRI.ArcLogistics.App.Mapping
         /// <param name="inlines">Inlines to fill</param>
         private static void _AddPriorityIfNeeded(Order order, InlineCollection inlines)
         {
-            if (order.Priority == OrderPriority.High)
+            if (order.Priority != OrderPriority.Low)
             {
                 string priority = order.Priority.ToString();
                 _AddLine(_priorityCaption, priority, inlines, false);
