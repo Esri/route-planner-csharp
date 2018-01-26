@@ -1,5 +1,8 @@
 # route-planner-csharp
 
+DEPRECATION NOTICE: Please Read.
+Official Esri contribution and support for this code project will cease on December 31st 2018. After this date, parts of this application may no longer function as the application is dependent on web services that will continue to evolve beyond that date. 
+
 Routing and scheduling sample application using arcgis.com directions (network analysis) services.
 
 ![App](https://raw.github.com/Esri/route-planner-csharp/master/RoutePlanner80.png)
@@ -39,7 +42,7 @@ To rebuild and redeploy the application, you will need the below developer compo
 
 ## Issues
 
-Find a bug or want to request a new feature?  Please let us know by submitting an issue.
+Find a bug or want to request a new feature?  Please let us know by submitting an issue. Note that official bug fixes to this project will end on December 31, 2018.
 
 ## Contributing
 
