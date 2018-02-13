@@ -201,7 +201,7 @@ namespace ESRI.ArcLogistics.Services
 
 
             HttpRequestOptions opt = new HttpRequestOptions();
-            opt.Method = HttpMethod.Get;
+            opt.Method = HttpMethod.Post;
             opt.UseGZipEncoding = false;
             opt.Timeout = GET_TOKEN_TIMEOUT;
 
@@ -228,7 +228,7 @@ namespace ESRI.ArcLogistics.Services
             RestHelper.AddQueryParam(REFERER_PARAMETER_NAME, RefererValue, query, true);
 
             HttpRequestOptions opt = new HttpRequestOptions();
-            opt.Method = HttpMethod.Get;
+            opt.Method = HttpMethod.Post;
             opt.UseGZipEncoding = false;
             opt.Timeout = GET_TOKEN_TIMEOUT;
 
