@@ -26,33 +26,34 @@
             <GradientStop Color="#4C154D63" Offset="0"/>
             <GradientStop Color="#FF3D8CAC" Offset="0.772"/>
         </RadialGradientBrush>
-    
+
         <SolidColorBrush x:Key="IncompletedBrush" Color="#3349839B"/>
 
     </Window.Resources>
-    
+
     <Grid RenderTransformOrigin="0.5,0.5" Height="Auto" 
           VerticalAlignment="Stretch" 
           HorizontalAlignment="Stretch">
-    	<Grid.ColumnDefinitions>
-    		<ColumnDefinition Width="0.425*"/>
-    		<ColumnDefinition Width="0.575*"/>
-    	</Grid.ColumnDefinitions>
-    	<Grid.RowDefinitions>
-    		<RowDefinition Height="0.813*"/>
-    		<RowDefinition Height="0.187*"/>
-    	</Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.425*"/>
+            <ColumnDefinition Width="0.575*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="280*"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="97*"/>
+        </Grid.RowDefinitions>
         <Image HorizontalAlignment="Stretch" 
                VerticalAlignment="Stretch" 
                Width="Auto" Height="Auto" 
                Source="..\Resources\ArcLog-Splash.png" 
                Stretch="None" 
-               Margin="10,10,10,10" Grid.RowSpan="2" Grid.ColumnSpan="2">
-        	<Image.BitmapEffect>
-        		<DropShadowBitmapEffect/>
-        	</Image.BitmapEffect>
+               Margin="10,10,10,10" Grid.RowSpan="3" Grid.ColumnSpan="2">
+            <Image.BitmapEffect>
+                <DropShadowBitmapEffect/>
+            </Image.BitmapEffect>
         </Image>
-        <Grid x:Name="rotationCanvas" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" Width="150" Height="150" d:LayoutOverrides="Width, Height" Margin="35,0,0,5" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+        <Grid x:Name="rotationCanvas" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" Width="150" Height="150" Margin="35,0,0,5" VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <Path OpacityMask="{x:Null}" Fill="#3FB3E3F7" Stretch="Fill" Stroke="{x:Null}" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Data="M399.5,200 C399.5,310.18081 310.18081,399.5 200,399.5 C89.819192,399.5 0.5,310.18081 0.5,200 C0.5,89.819192 89.819192,0.5 200,0.5 C310.18081,0.5 399.5,89.819192 399.5,200 z M274.5,200 C274.5,241.14521 241.14521,274.5 200,274.5 C158.85479,274.5 125.5,241.14521 125.5,200 C125.5,158.85479 158.85479,125.5 200,125.5 C241.14521,125.5 274.5,158.85479 274.5,200 z" x:Name="back"/>
             <Path Stretch="Fill" 
                   Stroke="{x:Null}" HorizontalAlignment="Right" 
@@ -64,12 +65,12 @@
                   x:Name="_1"
                   Visibility="Visible" Fill="{DynamicResource IncompletedBrush}" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment">
                 <Path.RenderTransform>
-                	<TransformGroup>
-                		<ScaleTransform ScaleX="1" ScaleY="1"/>
-                		<SkewTransform AngleX="0" AngleY="0.293"/>
-                		<RotateTransform Angle="0.904"/>
-                		<TranslateTransform X="0" Y="-0.162"/>
-                	</TransformGroup>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <SkewTransform AngleX="0" AngleY="0.293"/>
+                        <RotateTransform Angle="0.904"/>
+                        <TranslateTransform X="0" Y="-0.162"/>
+                    </TransformGroup>
                 </Path.RenderTransform>
             </Path>
             <Path Stretch="Fill" 
@@ -82,12 +83,12 @@
                   x:Name="_2"
                   Visibility="Visible" Fill="{DynamicResource IncompletedBrush}" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment">
                 <Path.RenderTransform>
-                	<TransformGroup>
-                		<ScaleTransform ScaleX="1" ScaleY="1"/>
-                		<SkewTransform AngleX="0.276" AngleY="0.634"/>
-                		<RotateTransform Angle="60.848"/>
-                		<TranslateTransform X="0.134" Y="0.526"/>
-                	</TransformGroup>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <SkewTransform AngleX="0.276" AngleY="0.634"/>
+                        <RotateTransform Angle="60.848"/>
+                        <TranslateTransform X="0.134" Y="0.526"/>
+                    </TransformGroup>
                 </Path.RenderTransform>
             </Path>
             <Path Stretch="Fill" 
@@ -100,12 +101,12 @@
                   x:Name="_3"
                   Visibility="Visible" Fill="{DynamicResource IncompletedBrush}" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment">
                 <Path.RenderTransform>
-                	<TransformGroup>
-                		<ScaleTransform ScaleX="1" ScaleY="1"/>
-                		<SkewTransform AngleX="-0.061" AngleY="0.106"/>
-                		<RotateTransform Angle="121.007"/>
-                		<TranslateTransform X="0.45" Y="-0.484"/>
-                	</TransformGroup>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <SkewTransform AngleX="-0.061" AngleY="0.106"/>
+                        <RotateTransform Angle="121.007"/>
+                        <TranslateTransform X="0.45" Y="-0.484"/>
+                    </TransformGroup>
                 </Path.RenderTransform>
             </Path>
             <Path Stretch="Fill" 
@@ -116,12 +117,12 @@
                   x:Name="_4"
                   Visibility="Visible" Fill="{DynamicResource IncompletedBrush}" d:LayoutOverrides="HorizontalAlignment" Height="60.629" VerticalAlignment="Bottom">
                 <Path.RenderTransform>
-                	<TransformGroup>
-                		<ScaleTransform ScaleX="-0.999" ScaleY="-1"/>
-                		<SkewTransform AngleX="-0.026" AngleY="-1.397"/>
-                		<RotateTransform Angle="1.682"/>
-                		<TranslateTransform X="-5.643" Y="0.565"/>
-                	</TransformGroup>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-0.999" ScaleY="-1"/>
+                        <SkewTransform AngleX="-0.026" AngleY="-1.397"/>
+                        <RotateTransform Angle="1.682"/>
+                        <TranslateTransform X="-5.643" Y="0.565"/>
+                    </TransformGroup>
                 </Path.RenderTransform>
             </Path>
             <Path Stretch="Fill" 
@@ -132,12 +133,12 @@
                   x:Name="_5"
                   Visibility="Visible" Fill="{DynamicResource IncompletedBrush}" d:LayoutOverrides="VerticalAlignment">
                 <Path.RenderTransform>
-                	<TransformGroup>
-                		<ScaleTransform ScaleX="0.999" ScaleY="0.998"/>
-                		<SkewTransform AngleX="-2.765" AngleY="2.687"/>
-                		<RotateTransform Angle="-121.633"/>
-                		<TranslateTransform X="-0.02" Y="-1.61"/>
-                	</TransformGroup>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="0.999" ScaleY="0.998"/>
+                        <SkewTransform AngleX="-2.765" AngleY="2.687"/>
+                        <RotateTransform Angle="-121.633"/>
+                        <TranslateTransform X="-0.02" Y="-1.61"/>
+                    </TransformGroup>
                 </Path.RenderTransform>
             </Path>
             <Path Stretch="Fill" Stroke="{x:Null}" 
@@ -147,15 +148,16 @@
                   x:Name="_6"
                   Visibility="Visible" Fill="{DynamicResource IncompletedBrush}" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment">
                 <Path.RenderTransform>
-                	<TransformGroup>
-                		<ScaleTransform ScaleX="-1" ScaleY="1.001"/>
-                		<SkewTransform AngleX="0.632" AngleY="0.276"/>
-                		<RotateTransform Angle="-0.012"/>
-                		<TranslateTransform X="-3.715" Y="-1.411"/>
-                	</TransformGroup>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1" ScaleY="1.001"/>
+                        <SkewTransform AngleX="0.632" AngleY="0.276"/>
+                        <RotateTransform Angle="-0.012"/>
+                        <TranslateTransform X="-3.715" Y="-1.411"/>
+                    </TransformGroup>
                 </Path.RenderTransform>
             </Path>
         </Grid>
-        <TextBlock HorizontalAlignment="Left" Text="" TextWrapping="NoWrap" Grid.Row="1" Margin="45,5,0,0" TextAlignment="Center" TextTrimming="CharacterEllipsis" x:Name="Statustext" FontSize="14" FontWeight="Bold" d:LayoutOverrides="Height" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Text="" TextWrapping="NoWrap" Grid.Row="1" Margin="45,0,0,0" TextAlignment="Center" TextTrimming="CharacterEllipsis" x:Name="Statustext" FontSize="14" FontWeight="Bold" VerticalAlignment="Top" Height="19" Grid.ColumnSpan="2" />
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Margin="15,5,15,5" Text="DEPRECATION NOTICE: Please Read. Official Esri contribution and support for this code project will cease on December 31st 2018. After this date, parts of this application may no longer function as the application is dependent on web services that will continue to evolve beyond that date." TextAlignment="Justify" FontSize="12" TextWrapping="Wrap"></TextBlock>
     </Grid>
 </Window>

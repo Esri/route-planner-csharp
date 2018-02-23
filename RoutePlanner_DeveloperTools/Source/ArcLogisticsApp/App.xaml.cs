@@ -786,6 +786,8 @@ namespace ESRI.ArcLogistics.App
         {
             string defaultsFilePath = Path.Combine(DataFolder.Path, RELATIVE_FILEPATH_DEFAULTS);
 
+            _initWarningMessages.Add("DEPRECATION NOTICE: Please Read. Official Esri contribution and support for this code project will cease on December 31st 2018. After this date, parts of this application may no longer function as the application is dependent on web services that will continue to evolve beyond that date.");
+
             try
             {
                 // Try to init settings.
