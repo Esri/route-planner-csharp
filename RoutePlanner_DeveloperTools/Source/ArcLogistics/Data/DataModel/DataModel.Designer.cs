@@ -7,30 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-/*
- | Version 10.1.84
- | Copyright 2013 Esri
- |
- | Licensed under the Apache License, Version 2.0 (the "License");
- | you may not use this file except in compliance with the License.
- | You may obtain a copy of the License at
- |
- |    http://www.apache.org/licenses/LICENSE-2.0
- |
- | Unless required by applicable law or agreed to in writing, software
- | distributed under the License is distributed on an "AS IS" BASIS,
- | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- | See the License for the specific language governing permissions and
- | limitations under the License.
- */
-
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -341,6 +325,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         private ObjectSet<Zones> _Zones;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -464,11 +449,11 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -497,7 +482,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -516,7 +502,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -541,7 +527,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -565,7 +551,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCommentChanging(value);
                 ReportPropertyChanging("Comment");
-                _Comment = StructuralObject.SetValidValue(value, true);
+                _Comment = StructuralObject.SetValidValue(value, true, "Comment");
                 ReportPropertyChanged("Comment");
                 OnCommentChanged();
             }
@@ -589,7 +575,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnStartDateChanging(value);
                 ReportPropertyChanging("StartDate");
-                _StartDate = StructuralObject.SetValidValue(value);
+                _StartDate = StructuralObject.SetValidValue(value, "StartDate");
                 ReportPropertyChanged("StartDate");
                 OnStartDateChanged();
             }
@@ -613,7 +599,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnFinishDateChanging(value);
                 ReportPropertyChanging("FinishDate");
-                _FinishDate = StructuralObject.SetValidValue(value);
+                _FinishDate = StructuralObject.SetValidValue(value, "FinishDate");
                 ReportPropertyChanged("FinishDate");
                 OnFinishDateChanged();
             }
@@ -637,7 +623,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnGeometryChanging(value);
                 ReportPropertyChanging("Geometry");
-                _Geometry = StructuralObject.SetValidValue(value, true);
+                _Geometry = StructuralObject.SetValidValue(value, true, "Geometry");
                 ReportPropertyChanged("Geometry");
                 OnGeometryChanged();
             }
@@ -661,7 +647,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnBarrierTypeChanging(value);
                 ReportPropertyChanging("BarrierType");
-                _BarrierType = StructuralObject.SetValidValue(value, true);
+                _BarrierType = StructuralObject.SetValidValue(value, true, "BarrierType");
                 ReportPropertyChanged("BarrierType");
                 OnBarrierTypeChanged();
             }
@@ -685,7 +671,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCreationTimeChanging(value);
                 ReportPropertyChanging("CreationTime");
-                _CreationTime = StructuralObject.SetValidValue(value);
+                _CreationTime = StructuralObject.SetValidValue(value, "CreationTime");
                 ReportPropertyChanged("CreationTime");
                 OnCreationTimeChanged();
             }
@@ -695,7 +681,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnCreationTimeChanged();
 
         #endregion
-    
+
     }
     
     /// <summary>
@@ -720,7 +706,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -739,7 +726,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -764,7 +751,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -788,7 +775,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnValueChanging(value);
                 ReportPropertyChanging("Value");
-                _Value = StructuralObject.SetValidValue(value, true);
+                _Value = StructuralObject.SetValidValue(value, true, "Value");
                 ReportPropertyChanged("Value");
                 OnValueChanged();
             }
@@ -798,7 +785,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnValueChanged();
 
         #endregion
-    
+
     }
     
     /// <summary>
@@ -823,7 +810,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -842,7 +830,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -867,7 +855,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -891,7 +879,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCommentChanging(value);
                 ReportPropertyChanging("Comment");
-                _Comment = StructuralObject.SetValidValue(value, true);
+                _Comment = StructuralObject.SetValidValue(value, true, "Comment");
                 ReportPropertyChanged("Comment");
                 OnCommentChanged();
             }
@@ -915,7 +903,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnFixedSalaryChanging(value);
                 ReportPropertyChanging("FixedSalary");
-                _FixedSalary = StructuralObject.SetValidValue(value);
+                _FixedSalary = StructuralObject.SetValidValue(value, "FixedSalary");
                 ReportPropertyChanged("FixedSalary");
                 OnFixedSalaryChanged();
             }
@@ -939,7 +927,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnPerHourSalaryChanging(value);
                 ReportPropertyChanging("PerHourSalary");
-                _PerHourSalary = StructuralObject.SetValidValue(value);
+                _PerHourSalary = StructuralObject.SetValidValue(value, "PerHourSalary");
                 ReportPropertyChanged("PerHourSalary");
                 OnPerHourSalaryChanged();
             }
@@ -963,7 +951,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnPerHourOTSalaryChanging(value);
                 ReportPropertyChanging("PerHourOTSalary");
-                _PerHourOTSalary = StructuralObject.SetValidValue(value);
+                _PerHourOTSalary = StructuralObject.SetValidValue(value, "PerHourOTSalary");
                 ReportPropertyChanged("PerHourOTSalary");
                 OnPerHourOTSalaryChanged();
             }
@@ -987,7 +975,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnTimeBeforeOTChanging(value);
                 ReportPropertyChanging("TimeBeforeOT");
-                _TimeBeforeOT = StructuralObject.SetValidValue(value);
+                _TimeBeforeOT = StructuralObject.SetValidValue(value, "TimeBeforeOT");
                 ReportPropertyChanged("TimeBeforeOT");
                 OnTimeBeforeOTChanged();
             }
@@ -1011,7 +999,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCreationTimeChanging(value);
                 ReportPropertyChanging("CreationTime");
-                _CreationTime = StructuralObject.SetValidValue(value);
+                _CreationTime = StructuralObject.SetValidValue(value, "CreationTime");
                 ReportPropertyChanged("CreationTime");
                 OnCreationTimeChanged();
             }
@@ -1035,7 +1023,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -1045,7 +1033,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnDeletedChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -1131,6 +1119,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1155,7 +1144,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1174,7 +1164,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -1199,7 +1189,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -1223,7 +1213,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCommentChanging(value);
                 ReportPropertyChanging("Comment");
-                _Comment = StructuralObject.SetValidValue(value, true);
+                _Comment = StructuralObject.SetValidValue(value, true, "Comment");
                 ReportPropertyChanged("Comment");
                 OnCommentChanged();
             }
@@ -1247,7 +1237,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCreationTimeChanging(value);
                 ReportPropertyChanging("CreationTime");
-                _CreationTime = StructuralObject.SetValidValue(value);
+                _CreationTime = StructuralObject.SetValidValue(value, "CreationTime");
                 ReportPropertyChanged("CreationTime");
                 OnCreationTimeChanged();
             }
@@ -1271,7 +1261,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -1281,7 +1271,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnDeletedChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -1329,6 +1319,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1353,7 +1344,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1372,7 +1364,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -1397,7 +1389,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -1421,7 +1413,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnPriceChanging(value);
                 ReportPropertyChanging("Price");
-                _Price = StructuralObject.SetValidValue(value);
+                _Price = StructuralObject.SetValidValue(value, "Price");
                 ReportPropertyChanged("Price");
                 OnPriceChanged();
             }
@@ -1445,7 +1437,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCo2EmissionChanging(value);
                 ReportPropertyChanging("Co2Emission");
-                _Co2Emission = StructuralObject.SetValidValue(value);
+                _Co2Emission = StructuralObject.SetValidValue(value, "Co2Emission");
                 ReportPropertyChanged("Co2Emission");
                 OnCo2EmissionChanged();
             }
@@ -1469,7 +1461,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCreationTimeChanging(value);
                 ReportPropertyChanging("CreationTime");
-                _CreationTime = StructuralObject.SetValidValue(value);
+                _CreationTime = StructuralObject.SetValidValue(value, "CreationTime");
                 ReportPropertyChanged("CreationTime");
                 OnCreationTimeChanged();
             }
@@ -1493,7 +1485,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -1503,7 +1495,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnDeletedChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -1529,6 +1521,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1553,7 +1546,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1572,7 +1566,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -1597,7 +1591,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -1621,7 +1615,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCommentChanging(value);
                 ReportPropertyChanging("Comment");
-                _Comment = StructuralObject.SetValidValue(value, true);
+                _Comment = StructuralObject.SetValidValue(value, true, "Comment");
                 ReportPropertyChanged("Comment");
                 OnCommentChanged();
             }
@@ -1645,7 +1639,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnOpenFromChanging(value);
                 ReportPropertyChanging("OpenFrom");
-                _OpenFrom = StructuralObject.SetValidValue(value);
+                _OpenFrom = StructuralObject.SetValidValue(value, "OpenFrom");
                 ReportPropertyChanged("OpenFrom");
                 OnOpenFromChanged();
             }
@@ -1669,7 +1663,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnOpenToChanging(value);
                 ReportPropertyChanging("OpenTo");
-                _OpenTo = StructuralObject.SetValidValue(value);
+                _OpenTo = StructuralObject.SetValidValue(value, "OpenTo");
                 ReportPropertyChanged("OpenTo");
                 OnOpenToChanged();
             }
@@ -1693,7 +1687,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnOpenFrom2Changing(value);
                 ReportPropertyChanging("OpenFrom2");
-                _OpenFrom2 = StructuralObject.SetValidValue(value);
+                _OpenFrom2 = StructuralObject.SetValidValue(value, "OpenFrom2");
                 ReportPropertyChanged("OpenFrom2");
                 OnOpenFrom2Changed();
             }
@@ -1717,7 +1711,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnOpenTo2Changing(value);
                 ReportPropertyChanging("OpenTo2");
-                _OpenTo2 = StructuralObject.SetValidValue(value);
+                _OpenTo2 = StructuralObject.SetValidValue(value, "OpenTo2");
                 ReportPropertyChanged("OpenTo2");
                 OnOpenTo2Changed();
             }
@@ -1741,7 +1735,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnFullAddressChanging(value);
                 ReportPropertyChanging("FullAddress");
-                _FullAddress = StructuralObject.SetValidValue(value, true);
+                _FullAddress = StructuralObject.SetValidValue(value, true, "FullAddress");
                 ReportPropertyChanged("FullAddress");
                 OnFullAddressChanged();
             }
@@ -1765,7 +1759,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnUnitChanging(value);
                 ReportPropertyChanging("Unit");
-                _Unit = StructuralObject.SetValidValue(value, true);
+                _Unit = StructuralObject.SetValidValue(value, true, "Unit");
                 ReportPropertyChanged("Unit");
                 OnUnitChanged();
             }
@@ -1789,7 +1783,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnAddressLineChanging(value);
                 ReportPropertyChanging("AddressLine");
-                _AddressLine = StructuralObject.SetValidValue(value, true);
+                _AddressLine = StructuralObject.SetValidValue(value, true, "AddressLine");
                 ReportPropertyChanged("AddressLine");
                 OnAddressLineChanged();
             }
@@ -1813,7 +1807,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnLocality1Changing(value);
                 ReportPropertyChanging("Locality1");
-                _Locality1 = StructuralObject.SetValidValue(value, true);
+                _Locality1 = StructuralObject.SetValidValue(value, true, "Locality1");
                 ReportPropertyChanged("Locality1");
                 OnLocality1Changed();
             }
@@ -1837,7 +1831,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnLocality2Changing(value);
                 ReportPropertyChanging("Locality2");
-                _Locality2 = StructuralObject.SetValidValue(value, true);
+                _Locality2 = StructuralObject.SetValidValue(value, true, "Locality2");
                 ReportPropertyChanged("Locality2");
                 OnLocality2Changed();
             }
@@ -1861,7 +1855,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnLocality3Changing(value);
                 ReportPropertyChanging("Locality3");
-                _Locality3 = StructuralObject.SetValidValue(value, true);
+                _Locality3 = StructuralObject.SetValidValue(value, true, "Locality3");
                 ReportPropertyChanged("Locality3");
                 OnLocality3Changed();
             }
@@ -1885,7 +1879,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCountyPrefectureChanging(value);
                 ReportPropertyChanging("CountyPrefecture");
-                _CountyPrefecture = StructuralObject.SetValidValue(value, true);
+                _CountyPrefecture = StructuralObject.SetValidValue(value, true, "CountyPrefecture");
                 ReportPropertyChanged("CountyPrefecture");
                 OnCountyPrefectureChanged();
             }
@@ -1909,7 +1903,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnPostalCode1Changing(value);
                 ReportPropertyChanging("PostalCode1");
-                _PostalCode1 = StructuralObject.SetValidValue(value, true);
+                _PostalCode1 = StructuralObject.SetValidValue(value, true, "PostalCode1");
                 ReportPropertyChanged("PostalCode1");
                 OnPostalCode1Changed();
             }
@@ -1933,7 +1927,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnPostalCode2Changing(value);
                 ReportPropertyChanging("PostalCode2");
-                _PostalCode2 = StructuralObject.SetValidValue(value, true);
+                _PostalCode2 = StructuralObject.SetValidValue(value, true, "PostalCode2");
                 ReportPropertyChanged("PostalCode2");
                 OnPostalCode2Changed();
             }
@@ -1957,7 +1951,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnStateProvinceChanging(value);
                 ReportPropertyChanging("StateProvince");
-                _StateProvince = StructuralObject.SetValidValue(value, true);
+                _StateProvince = StructuralObject.SetValidValue(value, true, "StateProvince");
                 ReportPropertyChanged("StateProvince");
                 OnStateProvinceChanged();
             }
@@ -1981,7 +1975,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCountryChanging(value);
                 ReportPropertyChanging("Country");
-                _Country = StructuralObject.SetValidValue(value, true);
+                _Country = StructuralObject.SetValidValue(value, true, "Country");
                 ReportPropertyChanged("Country");
                 OnCountryChanged();
             }
@@ -2005,7 +1999,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnXChanging(value);
                 ReportPropertyChanging("X");
-                _X = StructuralObject.SetValidValue(value);
+                _X = StructuralObject.SetValidValue(value, "X");
                 ReportPropertyChanged("X");
                 OnXChanged();
             }
@@ -2029,7 +2023,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnYChanging(value);
                 ReportPropertyChanging("Y");
-                _Y = StructuralObject.SetValidValue(value);
+                _Y = StructuralObject.SetValidValue(value, "Y");
                 ReportPropertyChanged("Y");
                 OnYChanged();
             }
@@ -2053,7 +2047,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnLocatorChanging(value);
                 ReportPropertyChanging("Locator");
-                _Locator = StructuralObject.SetValidValue(value, true);
+                _Locator = StructuralObject.SetValidValue(value, true, "Locator");
                 ReportPropertyChanged("Locator");
                 OnLocatorChanged();
             }
@@ -2077,7 +2071,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCurbApproachChanging(value);
                 ReportPropertyChanging("CurbApproach");
-                _CurbApproach = StructuralObject.SetValidValue(value);
+                _CurbApproach = StructuralObject.SetValidValue(value, "CurbApproach");
                 ReportPropertyChanged("CurbApproach");
                 OnCurbApproachChanged();
             }
@@ -2101,7 +2095,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCreationTimeChanging(value);
                 ReportPropertyChanging("CreationTime");
-                _CreationTime = StructuralObject.SetValidValue(value);
+                _CreationTime = StructuralObject.SetValidValue(value, "CreationTime");
                 ReportPropertyChanged("CreationTime");
                 OnCreationTimeChanged();
             }
@@ -2125,7 +2119,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -2135,7 +2129,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnDeletedChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -2227,6 +2221,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2251,7 +2246,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2270,7 +2266,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -2295,7 +2291,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -2319,7 +2315,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnActiveSyncProfileNameChanging(value);
                 ReportPropertyChanging("ActiveSyncProfileName");
-                _ActiveSyncProfileName = StructuralObject.SetValidValue(value, true);
+                _ActiveSyncProfileName = StructuralObject.SetValidValue(value, true, "ActiveSyncProfileName");
                 ReportPropertyChanged("ActiveSyncProfileName");
                 OnActiveSyncProfileNameChanged();
             }
@@ -2343,7 +2339,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnEmailAddressChanging(value);
                 ReportPropertyChanging("EmailAddress");
-                _EmailAddress = StructuralObject.SetValidValue(value, true);
+                _EmailAddress = StructuralObject.SetValidValue(value, true, "EmailAddress");
                 ReportPropertyChanged("EmailAddress");
                 OnEmailAddressChanged();
             }
@@ -2367,7 +2363,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnSyncFolderChanging(value);
                 ReportPropertyChanging("SyncFolder");
-                _SyncFolder = StructuralObject.SetValidValue(value, true);
+                _SyncFolder = StructuralObject.SetValidValue(value, true, "SyncFolder");
                 ReportPropertyChanged("SyncFolder");
                 OnSyncFolderChanged();
             }
@@ -2391,7 +2387,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnSyncTypeChanging(value);
                 ReportPropertyChanging("SyncType");
-                _SyncType = StructuralObject.SetValidValue(value);
+                _SyncType = StructuralObject.SetValidValue(value, "SyncType");
                 ReportPropertyChanged("SyncType");
                 OnSyncTypeChanged();
             }
@@ -2415,7 +2411,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCreationTimeChanging(value);
                 ReportPropertyChanging("CreationTime");
-                _CreationTime = StructuralObject.SetValidValue(value);
+                _CreationTime = StructuralObject.SetValidValue(value, "CreationTime");
                 ReportPropertyChanged("CreationTime");
                 OnCreationTimeChanged();
             }
@@ -2439,7 +2435,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -2449,7 +2445,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnDeletedChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -2497,6 +2493,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2521,7 +2518,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2540,7 +2538,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -2565,7 +2563,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -2589,7 +2587,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnPlannedDateChanging(value);
                 ReportPropertyChanging("PlannedDate");
-                _PlannedDate = StructuralObject.SetValidValue(value);
+                _PlannedDate = StructuralObject.SetValidValue(value, "PlannedDate");
                 ReportPropertyChanged("PlannedDate");
                 OnPlannedDateChanged();
             }
@@ -2613,7 +2611,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnLocatorChanging(value);
                 ReportPropertyChanging("Locator");
-                _Locator = StructuralObject.SetValidValue(value, true);
+                _Locator = StructuralObject.SetValidValue(value, true, "Locator");
                 ReportPropertyChanged("Locator");
                 OnLocatorChanged();
             }
@@ -2637,7 +2635,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnFullAddressChanging(value);
                 ReportPropertyChanging("FullAddress");
-                _FullAddress = StructuralObject.SetValidValue(value, true);
+                _FullAddress = StructuralObject.SetValidValue(value, true, "FullAddress");
                 ReportPropertyChanged("FullAddress");
                 OnFullAddressChanged();
             }
@@ -2661,7 +2659,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnUnitChanging(value);
                 ReportPropertyChanging("Unit");
-                _Unit = StructuralObject.SetValidValue(value, true);
+                _Unit = StructuralObject.SetValidValue(value, true, "Unit");
                 ReportPropertyChanged("Unit");
                 OnUnitChanged();
             }
@@ -2685,7 +2683,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnAddressLineChanging(value);
                 ReportPropertyChanging("AddressLine");
-                _AddressLine = StructuralObject.SetValidValue(value, true);
+                _AddressLine = StructuralObject.SetValidValue(value, true, "AddressLine");
                 ReportPropertyChanged("AddressLine");
                 OnAddressLineChanged();
             }
@@ -2709,7 +2707,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnLocality1Changing(value);
                 ReportPropertyChanging("Locality1");
-                _Locality1 = StructuralObject.SetValidValue(value, true);
+                _Locality1 = StructuralObject.SetValidValue(value, true, "Locality1");
                 ReportPropertyChanged("Locality1");
                 OnLocality1Changed();
             }
@@ -2733,7 +2731,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnLocality2Changing(value);
                 ReportPropertyChanging("Locality2");
-                _Locality2 = StructuralObject.SetValidValue(value, true);
+                _Locality2 = StructuralObject.SetValidValue(value, true, "Locality2");
                 ReportPropertyChanged("Locality2");
                 OnLocality2Changed();
             }
@@ -2757,7 +2755,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnLocality3Changing(value);
                 ReportPropertyChanging("Locality3");
-                _Locality3 = StructuralObject.SetValidValue(value, true);
+                _Locality3 = StructuralObject.SetValidValue(value, true, "Locality3");
                 ReportPropertyChanged("Locality3");
                 OnLocality3Changed();
             }
@@ -2781,7 +2779,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCountyPrefectureChanging(value);
                 ReportPropertyChanging("CountyPrefecture");
-                _CountyPrefecture = StructuralObject.SetValidValue(value, true);
+                _CountyPrefecture = StructuralObject.SetValidValue(value, true, "CountyPrefecture");
                 ReportPropertyChanged("CountyPrefecture");
                 OnCountyPrefectureChanged();
             }
@@ -2805,7 +2803,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnPostalCode1Changing(value);
                 ReportPropertyChanging("PostalCode1");
-                _PostalCode1 = StructuralObject.SetValidValue(value, true);
+                _PostalCode1 = StructuralObject.SetValidValue(value, true, "PostalCode1");
                 ReportPropertyChanged("PostalCode1");
                 OnPostalCode1Changed();
             }
@@ -2829,7 +2827,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnPostalCode2Changing(value);
                 ReportPropertyChanging("PostalCode2");
-                _PostalCode2 = StructuralObject.SetValidValue(value, true);
+                _PostalCode2 = StructuralObject.SetValidValue(value, true, "PostalCode2");
                 ReportPropertyChanged("PostalCode2");
                 OnPostalCode2Changed();
             }
@@ -2853,7 +2851,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnStateProvinceChanging(value);
                 ReportPropertyChanging("StateProvince");
-                _StateProvince = StructuralObject.SetValidValue(value, true);
+                _StateProvince = StructuralObject.SetValidValue(value, true, "StateProvince");
                 ReportPropertyChanged("StateProvince");
                 OnStateProvinceChanged();
             }
@@ -2877,7 +2875,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCountryChanging(value);
                 ReportPropertyChanging("Country");
-                _Country = StructuralObject.SetValidValue(value, true);
+                _Country = StructuralObject.SetValidValue(value, true, "Country");
                 ReportPropertyChanged("Country");
                 OnCountryChanged();
             }
@@ -2901,7 +2899,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnXChanging(value);
                 ReportPropertyChanging("X");
-                _X = StructuralObject.SetValidValue(value);
+                _X = StructuralObject.SetValidValue(value, "X");
                 ReportPropertyChanged("X");
                 OnXChanged();
             }
@@ -2925,7 +2923,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnYChanging(value);
                 ReportPropertyChanging("Y");
-                _Y = StructuralObject.SetValidValue(value);
+                _Y = StructuralObject.SetValidValue(value, "Y");
                 ReportPropertyChanged("Y");
                 OnYChanged();
             }
@@ -2949,7 +2947,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnOrderTypeChanging(value);
                 ReportPropertyChanging("OrderType");
-                _OrderType = StructuralObject.SetValidValue(value);
+                _OrderType = StructuralObject.SetValidValue(value, "OrderType");
                 ReportPropertyChanged("OrderType");
                 OnOrderTypeChanged();
             }
@@ -2973,7 +2971,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnOrderPriorityChanging(value);
                 ReportPropertyChanging("OrderPriority");
-                _OrderPriority = StructuralObject.SetValidValue(value);
+                _OrderPriority = StructuralObject.SetValidValue(value, "OrderPriority");
                 ReportPropertyChanged("OrderPriority");
                 OnOrderPriorityChanged();
             }
@@ -2997,7 +2995,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnServiceTimeChanging(value);
                 ReportPropertyChanging("ServiceTime");
-                _ServiceTime = StructuralObject.SetValidValue(value);
+                _ServiceTime = StructuralObject.SetValidValue(value, "ServiceTime");
                 ReportPropertyChanged("ServiceTime");
                 OnServiceTimeChanged();
             }
@@ -3021,7 +3019,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCurbApproachChanging(value);
                 ReportPropertyChanging("CurbApproach");
-                _CurbApproach = StructuralObject.SetValidValue(value);
+                _CurbApproach = StructuralObject.SetValidValue(value, "CurbApproach");
                 ReportPropertyChanged("CurbApproach");
                 OnCurbApproachChanged();
             }
@@ -3045,7 +3043,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnTW1FromChanging(value);
                 ReportPropertyChanging("TW1From");
-                _TW1From = StructuralObject.SetValidValue(value);
+                _TW1From = StructuralObject.SetValidValue(value, "TW1From");
                 ReportPropertyChanged("TW1From");
                 OnTW1FromChanged();
             }
@@ -3069,7 +3067,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnTW1ToChanging(value);
                 ReportPropertyChanging("TW1To");
-                _TW1To = StructuralObject.SetValidValue(value);
+                _TW1To = StructuralObject.SetValidValue(value, "TW1To");
                 ReportPropertyChanged("TW1To");
                 OnTW1ToChanged();
             }
@@ -3093,7 +3091,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnTW2FromChanging(value);
                 ReportPropertyChanging("TW2From");
-                _TW2From = StructuralObject.SetValidValue(value);
+                _TW2From = StructuralObject.SetValidValue(value, "TW2From");
                 ReportPropertyChanged("TW2From");
                 OnTW2FromChanged();
             }
@@ -3117,7 +3115,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnTW2ToChanging(value);
                 ReportPropertyChanging("TW2To");
-                _TW2To = StructuralObject.SetValidValue(value);
+                _TW2To = StructuralObject.SetValidValue(value, "TW2To");
                 ReportPropertyChanged("TW2To");
                 OnTW2ToChanged();
             }
@@ -3141,7 +3139,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCapacitiesChanging(value);
                 ReportPropertyChanging("Capacities");
-                _Capacities = StructuralObject.SetValidValue(value, true);
+                _Capacities = StructuralObject.SetValidValue(value, true, "Capacities");
                 ReportPropertyChanged("Capacities");
                 OnCapacitiesChanged();
             }
@@ -3165,7 +3163,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCustomPropertiesChanging(value);
                 ReportPropertyChanging("CustomProperties");
-                _CustomProperties = StructuralObject.SetValidValue(value, true);
+                _CustomProperties = StructuralObject.SetValidValue(value, true, "CustomProperties");
                 ReportPropertyChanged("CustomProperties");
                 OnCustomPropertiesChanged();
             }
@@ -3189,7 +3187,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnMaxViolationTimeChanging(value);
                 ReportPropertyChanging("MaxViolationTime");
-                _MaxViolationTime = StructuralObject.SetValidValue(value);
+                _MaxViolationTime = StructuralObject.SetValidValue(value, "MaxViolationTime");
                 ReportPropertyChanged("MaxViolationTime");
                 OnMaxViolationTimeChanged();
             }
@@ -3213,7 +3211,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCreationTimeChanging(value);
                 ReportPropertyChanging("CreationTime");
-                _CreationTime = StructuralObject.SetValidValue(value);
+                _CreationTime = StructuralObject.SetValidValue(value, "CreationTime");
                 ReportPropertyChanged("CreationTime");
                 OnCreationTimeChanged();
             }
@@ -3223,7 +3221,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnCreationTimeChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -3293,6 +3291,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3317,7 +3316,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -3336,7 +3336,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -3361,7 +3361,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnVersionChanging(value);
                 ReportPropertyChanging("Version");
-                _Version = StructuralObject.SetValidValue(value);
+                _Version = StructuralObject.SetValidValue(value, "Version");
                 ReportPropertyChanged("Version");
                 OnVersionChanged();
             }
@@ -3371,7 +3371,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnVersionChanged();
 
         #endregion
-    
+
     }
     
     /// <summary>
@@ -3396,7 +3396,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -3415,7 +3416,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -3440,7 +3441,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -3464,7 +3465,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnWorkFromChanging(value);
                 ReportPropertyChanging("WorkFrom");
-                _WorkFrom = StructuralObject.SetValidValue(value);
+                _WorkFrom = StructuralObject.SetValidValue(value, "WorkFrom");
                 ReportPropertyChanged("WorkFrom");
                 OnWorkFromChanged();
             }
@@ -3488,7 +3489,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnWorkToChanging(value);
                 ReportPropertyChanging("WorkTo");
-                _WorkTo = StructuralObject.SetValidValue(value);
+                _WorkTo = StructuralObject.SetValidValue(value, "WorkTo");
                 ReportPropertyChanged("WorkTo");
                 OnWorkToChanged();
             }
@@ -3512,7 +3513,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnBreaksChanging(value);
                 ReportPropertyChanging("Breaks");
-                _Breaks = StructuralObject.SetValidValue(value, true);
+                _Breaks = StructuralObject.SetValidValue(value, true, "Breaks");
                 ReportPropertyChanged("Breaks");
                 OnBreaksChanged();
             }
@@ -3536,7 +3537,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnTimeAtStartChanging(value);
                 ReportPropertyChanging("TimeAtStart");
-                _TimeAtStart = StructuralObject.SetValidValue(value);
+                _TimeAtStart = StructuralObject.SetValidValue(value, "TimeAtStart");
                 ReportPropertyChanged("TimeAtStart");
                 OnTimeAtStartChanged();
             }
@@ -3560,7 +3561,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnTimeAtEndChanging(value);
                 ReportPropertyChanging("TimeAtEnd");
-                _TimeAtEnd = StructuralObject.SetValidValue(value);
+                _TimeAtEnd = StructuralObject.SetValidValue(value, "TimeAtEnd");
                 ReportPropertyChanged("TimeAtEnd");
                 OnTimeAtEndChanged();
             }
@@ -3584,7 +3585,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnTimeAtRenewalChanging(value);
                 ReportPropertyChanging("TimeAtRenewal");
-                _TimeAtRenewal = StructuralObject.SetValidValue(value);
+                _TimeAtRenewal = StructuralObject.SetValidValue(value, "TimeAtRenewal");
                 ReportPropertyChanged("TimeAtRenewal");
                 OnTimeAtRenewalChanged();
             }
@@ -3608,7 +3609,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnMaxOrdersChanging(value);
                 ReportPropertyChanging("MaxOrders");
-                _MaxOrders = StructuralObject.SetValidValue(value);
+                _MaxOrders = StructuralObject.SetValidValue(value, "MaxOrders");
                 ReportPropertyChanged("MaxOrders");
                 OnMaxOrdersChanged();
             }
@@ -3632,7 +3633,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnMaxTravelDistanceChanging(value);
                 ReportPropertyChanging("MaxTravelDistance");
-                _MaxTravelDistance = StructuralObject.SetValidValue(value);
+                _MaxTravelDistance = StructuralObject.SetValidValue(value, "MaxTravelDistance");
                 ReportPropertyChanged("MaxTravelDistance");
                 OnMaxTravelDistanceChanged();
             }
@@ -3656,7 +3657,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnMaxTravelDurationChanging(value);
                 ReportPropertyChanging("MaxTravelDuration");
-                _MaxTravelDuration = StructuralObject.SetValidValue(value);
+                _MaxTravelDuration = StructuralObject.SetValidValue(value, "MaxTravelDuration");
                 ReportPropertyChanged("MaxTravelDuration");
                 OnMaxTravelDurationChanged();
             }
@@ -3680,7 +3681,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnMaxTotalDurationChanging(value);
                 ReportPropertyChanging("MaxTotalDuration");
-                _MaxTotalDuration = StructuralObject.SetValidValue(value);
+                _MaxTotalDuration = StructuralObject.SetValidValue(value, "MaxTotalDuration");
                 ReportPropertyChanged("MaxTotalDuration");
                 OnMaxTotalDurationChanged();
             }
@@ -3704,7 +3705,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnColorChanging(value);
                 ReportPropertyChanging("Color");
-                _Color = StructuralObject.SetValidValue(value);
+                _Color = StructuralObject.SetValidValue(value, "Color");
                 ReportPropertyChanged("Color");
                 OnColorChanged();
             }
@@ -3728,7 +3729,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCommentChanging(value);
                 ReportPropertyChanging("Comment");
-                _Comment = StructuralObject.SetValidValue(value, true);
+                _Comment = StructuralObject.SetValidValue(value, true, "Comment");
                 ReportPropertyChanged("Comment");
                 OnCommentChanged();
             }
@@ -3752,7 +3753,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnDefaultChanging(value);
                 ReportPropertyChanging("Default");
-                _Default = StructuralObject.SetValidValue(value);
+                _Default = StructuralObject.SetValidValue(value, "Default");
                 ReportPropertyChanged("Default");
                 OnDefaultChanged();
             }
@@ -3776,7 +3777,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnDaysChanging(value);
                 ReportPropertyChanging("Days");
-                _Days = StructuralObject.SetValidValue(value, true);
+                _Days = StructuralObject.SetValidValue(value, true, "Days");
                 ReportPropertyChanged("Days");
                 OnDaysChanged();
             }
@@ -3800,7 +3801,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCostChanging(value);
                 ReportPropertyChanging("Cost");
-                _Cost = StructuralObject.SetValidValue(value);
+                _Cost = StructuralObject.SetValidValue(value, "Cost");
                 ReportPropertyChanged("Cost");
                 OnCostChanged();
             }
@@ -3824,7 +3825,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnStartTimeChanging(value);
                 ReportPropertyChanging("StartTime");
-                _StartTime = StructuralObject.SetValidValue(value);
+                _StartTime = StructuralObject.SetValidValue(value, "StartTime");
                 ReportPropertyChanged("StartTime");
                 OnStartTimeChanged();
             }
@@ -3848,7 +3849,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnEndTimeChanging(value);
                 ReportPropertyChanging("EndTime");
-                _EndTime = StructuralObject.SetValidValue(value);
+                _EndTime = StructuralObject.SetValidValue(value, "EndTime");
                 ReportPropertyChanged("EndTime");
                 OnEndTimeChanged();
             }
@@ -3872,7 +3873,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnOvertimeChanging(value);
                 ReportPropertyChanging("Overtime");
-                _Overtime = StructuralObject.SetValidValue(value);
+                _Overtime = StructuralObject.SetValidValue(value, "Overtime");
                 ReportPropertyChanged("Overtime");
                 OnOvertimeChanged();
             }
@@ -3896,7 +3897,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnTotalTimeChanging(value);
                 ReportPropertyChanging("TotalTime");
-                _TotalTime = StructuralObject.SetValidValue(value);
+                _TotalTime = StructuralObject.SetValidValue(value, "TotalTime");
                 ReportPropertyChanged("TotalTime");
                 OnTotalTimeChanged();
             }
@@ -3920,7 +3921,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnTotalDistanceChanging(value);
                 ReportPropertyChanging("TotalDistance");
-                _TotalDistance = StructuralObject.SetValidValue(value);
+                _TotalDistance = StructuralObject.SetValidValue(value, "TotalDistance");
                 ReportPropertyChanged("TotalDistance");
                 OnTotalDistanceChanged();
             }
@@ -3944,7 +3945,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnTravelTimeChanging(value);
                 ReportPropertyChanging("TravelTime");
-                _TravelTime = StructuralObject.SetValidValue(value);
+                _TravelTime = StructuralObject.SetValidValue(value, "TravelTime");
                 ReportPropertyChanged("TravelTime");
                 OnTravelTimeChanged();
             }
@@ -3968,7 +3969,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnViolationTimeChanging(value);
                 ReportPropertyChanging("ViolationTime");
-                _ViolationTime = StructuralObject.SetValidValue(value);
+                _ViolationTime = StructuralObject.SetValidValue(value, "ViolationTime");
                 ReportPropertyChanged("ViolationTime");
                 OnViolationTimeChanged();
             }
@@ -3992,7 +3993,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnWaitTimeChanging(value);
                 ReportPropertyChanging("WaitTime");
-                _WaitTime = StructuralObject.SetValidValue(value);
+                _WaitTime = StructuralObject.SetValidValue(value, "WaitTime");
                 ReportPropertyChanged("WaitTime");
                 OnWaitTimeChanged();
             }
@@ -4016,7 +4017,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCapacitiesChanging(value);
                 ReportPropertyChanging("Capacities");
-                _Capacities = StructuralObject.SetValidValue(value, true);
+                _Capacities = StructuralObject.SetValidValue(value, true, "Capacities");
                 ReportPropertyChanged("Capacities");
                 OnCapacitiesChanged();
             }
@@ -4040,7 +4041,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnLockedChanging(value);
                 ReportPropertyChanging("Locked");
-                _Locked = StructuralObject.SetValidValue(value);
+                _Locked = StructuralObject.SetValidValue(value, "Locked");
                 ReportPropertyChanged("Locked");
                 OnLockedChanged();
             }
@@ -4064,7 +4065,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnVisibleChanging(value);
                 ReportPropertyChanging("Visible");
-                _Visible = StructuralObject.SetValidValue(value);
+                _Visible = StructuralObject.SetValidValue(value, "Visible");
                 ReportPropertyChanged("Visible");
                 OnVisibleChanged();
             }
@@ -4088,7 +4089,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnHardZonesChanging(value);
                 ReportPropertyChanging("HardZones");
-                _HardZones = StructuralObject.SetValidValue(value);
+                _HardZones = StructuralObject.SetValidValue(value, "HardZones");
                 ReportPropertyChanged("HardZones");
                 OnHardZonesChanged();
             }
@@ -4112,7 +4113,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCreationTimeChanging(value);
                 ReportPropertyChanging("CreationTime");
-                _CreationTime = StructuralObject.SetValidValue(value);
+                _CreationTime = StructuralObject.SetValidValue(value, "CreationTime");
                 ReportPropertyChanged("CreationTime");
                 OnCreationTimeChanged();
             }
@@ -4136,7 +4137,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnDefaultRouteIDChanging(value);
                 ReportPropertyChanging("DefaultRouteID");
-                _DefaultRouteID = StructuralObject.SetValidValue(value);
+                _DefaultRouteID = StructuralObject.SetValidValue(value, "DefaultRouteID");
                 ReportPropertyChanged("DefaultRouteID");
                 OnDefaultRouteIDChanged();
             }
@@ -4146,7 +4147,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnDefaultRouteIDChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -4406,6 +4407,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4430,7 +4432,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4449,7 +4452,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -4474,7 +4477,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -4498,7 +4501,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnPlannedDateChanging(value);
                 ReportPropertyChanging("PlannedDate");
-                _PlannedDate = StructuralObject.SetValidValue(value);
+                _PlannedDate = StructuralObject.SetValidValue(value, "PlannedDate");
                 ReportPropertyChanged("PlannedDate");
                 OnPlannedDateChanged();
             }
@@ -4522,7 +4525,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnScheduleTypeChanging(value);
                 ReportPropertyChanging("ScheduleType");
-                _ScheduleType = StructuralObject.SetValidValue(value);
+                _ScheduleType = StructuralObject.SetValidValue(value, "ScheduleType");
                 ReportPropertyChanged("ScheduleType");
                 OnScheduleTypeChanged();
             }
@@ -4546,7 +4549,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCreationTimeChanging(value);
                 ReportPropertyChanging("CreationTime");
-                _CreationTime = StructuralObject.SetValidValue(value);
+                _CreationTime = StructuralObject.SetValidValue(value, "CreationTime");
                 ReportPropertyChanged("CreationTime");
                 OnCreationTimeChanged();
             }
@@ -4556,7 +4559,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnCreationTimeChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -4582,6 +4585,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4606,7 +4610,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4625,7 +4630,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -4650,7 +4655,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnArriveTimeChanging(value);
                 ReportPropertyChanging("ArriveTime");
-                _ArriveTime = StructuralObject.SetValidValue(value);
+                _ArriveTime = StructuralObject.SetValidValue(value, "ArriveTime");
                 ReportPropertyChanged("ArriveTime");
                 OnArriveTimeChanged();
             }
@@ -4674,7 +4679,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnDirectionsChanging(value);
                 ReportPropertyChanging("Directions");
-                _Directions = StructuralObject.SetValidValue(value, true);
+                _Directions = StructuralObject.SetValidValue(value, true, "Directions");
                 ReportPropertyChanged("Directions");
                 OnDirectionsChanged();
             }
@@ -4698,7 +4703,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnPathToChanging(value);
                 ReportPropertyChanging("PathTo");
-                _PathTo = StructuralObject.SetValidValue(value, true);
+                _PathTo = StructuralObject.SetValidValue(value, true, "PathTo");
                 ReportPropertyChanged("PathTo");
                 OnPathToChanged();
             }
@@ -4722,7 +4727,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnDistanceChanging(value);
                 ReportPropertyChanging("Distance");
-                _Distance = StructuralObject.SetValidValue(value);
+                _Distance = StructuralObject.SetValidValue(value, "Distance");
                 ReportPropertyChanged("Distance");
                 OnDistanceChanged();
             }
@@ -4746,7 +4751,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnSequenceNumberChanging(value);
                 ReportPropertyChanging("SequenceNumber");
-                _SequenceNumber = StructuralObject.SetValidValue(value);
+                _SequenceNumber = StructuralObject.SetValidValue(value, "SequenceNumber");
                 ReportPropertyChanged("SequenceNumber");
                 OnSequenceNumberChanged();
             }
@@ -4770,7 +4775,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnOrderSequenceNumberChanging(value);
                 ReportPropertyChanging("OrderSequenceNumber");
-                _OrderSequenceNumber = StructuralObject.SetValidValue(value);
+                _OrderSequenceNumber = StructuralObject.SetValidValue(value, "OrderSequenceNumber");
                 ReportPropertyChanged("OrderSequenceNumber");
                 OnOrderSequenceNumberChanged();
             }
@@ -4794,7 +4799,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnTypeChanging(value);
                 ReportPropertyChanging("Type");
-                _Type = StructuralObject.SetValidValue(value);
+                _Type = StructuralObject.SetValidValue(value, "Type");
                 ReportPropertyChanged("Type");
                 OnTypeChanged();
             }
@@ -4818,7 +4823,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnTimeAtStopChanging(value);
                 ReportPropertyChanging("TimeAtStop");
-                _TimeAtStop = StructuralObject.SetValidValue(value);
+                _TimeAtStop = StructuralObject.SetValidValue(value, "TimeAtStop");
                 ReportPropertyChanged("TimeAtStop");
                 OnTimeAtStopChanged();
             }
@@ -4842,7 +4847,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnTravelTimeChanging(value);
                 ReportPropertyChanging("TravelTime");
-                _TravelTime = StructuralObject.SetValidValue(value);
+                _TravelTime = StructuralObject.SetValidValue(value, "TravelTime");
                 ReportPropertyChanged("TravelTime");
                 OnTravelTimeChanged();
             }
@@ -4866,7 +4871,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnWaitTimeChanging(value);
                 ReportPropertyChanging("WaitTime");
-                _WaitTime = StructuralObject.SetValidValue(value);
+                _WaitTime = StructuralObject.SetValidValue(value, "WaitTime");
                 ReportPropertyChanged("WaitTime");
                 OnWaitTimeChanged();
             }
@@ -4890,7 +4895,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnLockedChanging(value);
                 ReportPropertyChanging("Locked");
-                _Locked = StructuralObject.SetValidValue(value);
+                _Locked = StructuralObject.SetValidValue(value, "Locked");
                 ReportPropertyChanged("Locked");
                 OnLockedChanged();
             }
@@ -4900,7 +4905,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnLockedChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -5018,6 +5023,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5042,7 +5048,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -5061,7 +5068,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -5086,7 +5093,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -5110,7 +5117,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCommentChanging(value);
                 ReportPropertyChanging("Comment");
-                _Comment = StructuralObject.SetValidValue(value, true);
+                _Comment = StructuralObject.SetValidValue(value, true, "Comment");
                 ReportPropertyChanged("Comment");
                 OnCommentChanged();
             }
@@ -5134,7 +5141,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnFixedSalaryChanging(value);
                 ReportPropertyChanging("FixedSalary");
-                _FixedSalary = StructuralObject.SetValidValue(value);
+                _FixedSalary = StructuralObject.SetValidValue(value, "FixedSalary");
                 ReportPropertyChanged("FixedSalary");
                 OnFixedSalaryChanged();
             }
@@ -5158,7 +5165,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnFuelConsumptionChanging(value);
                 ReportPropertyChanging("FuelConsumption");
-                _FuelConsumption = StructuralObject.SetValidValue(value);
+                _FuelConsumption = StructuralObject.SetValidValue(value, "FuelConsumption");
                 ReportPropertyChanged("FuelConsumption");
                 OnFuelConsumptionChanged();
             }
@@ -5182,7 +5189,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCapacitiesChanging(value);
                 ReportPropertyChanging("Capacities");
-                _Capacities = StructuralObject.SetValidValue(value, true);
+                _Capacities = StructuralObject.SetValidValue(value, true, "Capacities");
                 ReportPropertyChanged("Capacities");
                 OnCapacitiesChanged();
             }
@@ -5206,7 +5213,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCreationTimeChanging(value);
                 ReportPropertyChanging("CreationTime");
-                _CreationTime = StructuralObject.SetValidValue(value);
+                _CreationTime = StructuralObject.SetValidValue(value, "CreationTime");
                 ReportPropertyChanged("CreationTime");
                 OnCreationTimeChanged();
             }
@@ -5230,7 +5237,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -5240,7 +5247,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnDeletedChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -5364,6 +5371,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5388,7 +5396,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -5407,7 +5416,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -5432,7 +5441,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -5456,7 +5465,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCommentChanging(value);
                 ReportPropertyChanging("Comment");
-                _Comment = StructuralObject.SetValidValue(value, true);
+                _Comment = StructuralObject.SetValidValue(value, true, "Comment");
                 ReportPropertyChanged("Comment");
                 OnCommentChanged();
             }
@@ -5480,7 +5489,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCreationTimeChanging(value);
                 ReportPropertyChanging("CreationTime");
-                _CreationTime = StructuralObject.SetValidValue(value);
+                _CreationTime = StructuralObject.SetValidValue(value, "CreationTime");
                 ReportPropertyChanged("CreationTime");
                 OnCreationTimeChanged();
             }
@@ -5504,7 +5513,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -5514,7 +5523,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnDeletedChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -5562,6 +5571,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5586,7 +5596,8 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -5605,7 +5616,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -5630,7 +5641,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -5654,7 +5665,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCommentChanging(value);
                 ReportPropertyChanging("Comment");
-                _Comment = StructuralObject.SetValidValue(value, true);
+                _Comment = StructuralObject.SetValidValue(value, true, "Comment");
                 ReportPropertyChanged("Comment");
                 OnCommentChanged();
             }
@@ -5678,7 +5689,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnGeometryChanging(value);
                 ReportPropertyChanging("Geometry");
-                _Geometry = StructuralObject.SetValidValue(value, true);
+                _Geometry = StructuralObject.SetValidValue(value, true, "Geometry");
                 ReportPropertyChanged("Geometry");
                 OnGeometryChanged();
             }
@@ -5702,7 +5713,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnCreationTimeChanging(value);
                 ReportPropertyChanging("CreationTime");
-                _CreationTime = StructuralObject.SetValidValue(value);
+                _CreationTime = StructuralObject.SetValidValue(value, "CreationTime");
                 ReportPropertyChanged("CreationTime");
                 OnCreationTimeChanged();
             }
@@ -5726,7 +5737,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -5736,7 +5747,7 @@ namespace ESRI.ArcLogistics.Data.DataModel
         partial void OnDeletedChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -5762,8 +5773,9 @@ namespace ESRI.ArcLogistics.Data.DataModel
         }
 
         #endregion
+
     }
 
     #endregion
-    
+
 }
