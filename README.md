@@ -1,7 +1,15 @@
 # route-planner-csharp
 
-DEPRECATION NOTICE: Please Read.
-Official Esri contribution and support for this code project will cease on December 31st 2018. After this date, parts of this application may no longer function as the application is dependent on web services that will continue to evolve beyond that date. 
+DEPRECATION NOTICE UPDATE: January 9, 2019
+As of December 31, 2018, official Esri support and contribution to this sample has ended. Some components of this project have become
+out-of-date and it is no longer practical for the project as a whole to be maintained. The project as-built will continue to run when
+utilizing on-premise (ArcGIS Server) service endpoints for Route, Solve Vehicle Routing Problem, and Geocode. However the project will
+cease to function using cloud services in early 2019 when ArcGIS Online suport for Transport Layer Security (TLS) Protocol Support
+1.0/1.2 support ends. For more information on this change and its impact, see https://support.esri.com/en/tls
+
+Esri has provided one final update to the source code consisting of a sample upgrade to .NET Framework 4.6.2 to provide TLS1.2 support.
+Please find this update within the branch named "TLS-Update". Note that the application with this changes has not been feature tested
+and an updated applcation installer including these changes is not being provided. 
 
 Routing and scheduling sample application using arcgis.com directions (network analysis) services.
 
