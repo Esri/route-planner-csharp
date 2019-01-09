@@ -1,10 +1,9 @@
 This document describes how to build ArcLogistics.sln.
 
 Prerequisites
-- Microsoft Visual Studio 2012+
+- Microsoft Visual Studio 2010
 - Xceed Data Grid for WPF (www.xceed.com)
 - ActiveReports for .NET 3.0 (www.datadynamics.com)
-- .NET Framework 4.6.2
 
 You can obtain evaluation licenses for the Xceed Data Grid and for ActiveReports.
 
