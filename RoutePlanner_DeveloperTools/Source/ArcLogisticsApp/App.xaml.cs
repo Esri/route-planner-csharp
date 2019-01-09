@@ -998,6 +998,8 @@ namespace ESRI.ArcLogistics.App
                 RELATIVE_FILEPATH_USER_SERVICES);
 
             var certificateValidator = new ConfigurableCertificateValidator();
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             ServicePointManager.ServerCertificateValidationCallback =
                 certificateValidator.ValidateRemoteCertificate;
 
