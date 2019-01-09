@@ -54,8 +54,6 @@ namespace ArcLogisticsPlugIns.SendRoutesToNavigatorPage
                 if (!passwordEntered)
                     throw new InvalidOperationException(Properties.Resources.CanceledByUser);
             }
-            ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             ServicePointManager.ServerCertificateValidationCallback =
                 new RemoteCertificateValidationCallback(_ValidateServerCertificate);
         }

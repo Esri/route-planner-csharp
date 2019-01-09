@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ESRI.ArcLogistics</RootNamespace>
     <AssemblyName>ESRI.ArcLogisticsNG</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\ArcLogistics.snk</AssemblyOriginatorKeyFile>
@@ -45,7 +45,6 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <DocumentationFile>..\..\bin\Debug\ESRI.ArcLogisticsNG.XML</DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -56,7 +55,6 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <DocumentationFile>..\..\bin\Release\ESRI.ArcLogisticsNG.XML</DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ESRI.ArcGIS.Client, Version=2.2.0.525, Culture=neutral, PublicKeyToken=29c6dd6e8553d944, processorArchitecture=MSIL">
@@ -651,7 +649,6 @@
     <EmbeddedResource Include="Data\DataModel\DataModel.csdl" />
     <EmbeddedResource Include="Data\DataModel\DataModel.msl" />
     <EmbeddedResource Include="Data\DataModel\DataModel.ssdl" />
-    <None Include="Properties\DataSources\ESRI.ArcLogistics.Data.DataModel.Entities.datasource" />
     <None Include="Service References\CatalogService\ESRI.ArcLogistics.CatalogService.esriArcGISVersion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
